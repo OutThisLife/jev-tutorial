@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jev use cases, run on real Hermes data</title>
+<title>Jev in workflow gates, tried on real Hermes data</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
           <li><a href="#dups">Competing PRs</a></li>
           <li><a href="#router">Issue routing</a></li>
           <li><a href="#approvals">Approvals from chat</a></li>
-          <li><a href="#comments">Wake on evidence</a></li>
+          <li><a href="#comments">Which comments matter</a></li>
           <li><a href="#priority">Where it falls short</a></li>
           <li><a href="#run">Run it yourself</a></li>
         </ol>
@@ -32,30 +32,30 @@
 
   <main>
     <header>
-      <div class="kicker">Use cases · Workflows</div>
-      <h1>Seven jobs for Jev, run on real Hermes data</h1>
-      <p class="lede">Each case is a decision your workflows already make, or could make, with an agent step today. Every number below comes from live Jev calls against real NousResearch/hermes-agent issues, PRs and comments, scored against the labels maintainers actually applied.</p>
-      <div class="meta"><strong>926</strong> live calls · <strong>$0.046</strong> total · <strong>184 ms</strong> median per call · model <code>typesafe/jev-1.14</code> via OpenRouter. Code and raw results are in <code>cases/</code>.</div>
+      <div class="kicker">Examples</div>
+      <h1>Jev in workflow gates, tried on real Hermes data</h1>
+      <p class="lede">The tutorial explains the idea. This page shows how it holds up. Each section takes one decision a Hermes workflow makes, or could make, and asks Jev to make it on real issues, PRs and comments from NousResearch/hermes-agent. Its answers are checked against what maintainers actually did, so you can see both where it works and where it doesn't.</p>
+      <div class="meta"><strong>926</strong> calls · <strong>$0.046</strong> in total · <strong>184 ms</strong> median per call · model <code>typesafe/jev-1.14</code> via OpenRouter. The code and raw results are in <code>cases/</code>.</div>
     </header>
 
     <section id="verdicts">
-      <div class="kicker">01 · Agent step → Gate</div>
+      <div class="kicker">01 · Agent step, then a gate</div>
       <h2>Did the step actually work?</h2>
-      <p>Every gate starts from a verdict on the step before it. When an agent step doesn't return an explicit verdict, today's runner searches its reply for <code>PASS</code>, or a reply that starts with <code>YES</code>. Here are 10 step summaries, each asked as one Noul: <em>"The step achieved its goal and the work is ready to move on."</em></p>
+      <p>Every gate starts from a verdict on the step before it. When an agent step doesn't return an explicit verdict, the current runner decides by searching the reply for <code>PASS</code>, or checking whether it starts with <code>YES</code>. To see how that compares, here are 10 step summaries, each put to Jev as one noul: <em>"The step achieved its goal and the work is ready to move on."</em></p>
       <div class="scroll">
       <table class="data">
         <thead><tr><th>Step summary</th><th>Really done</th><th>Substring rule</th><th>Jev</th></tr></thead>
         <tbody><tr><td>Implemented the retry and all 14 tests pass.</td><td>✓</td><td class="">PASS</td><td><span class="chip unsure">0.79 · unsure</span></td></tr><tr><td>Done. PASS.</td><td>✓</td><td class="">PASS</td><td><span class="chip take">0.83 · take</span></td></tr><tr><td>The fix works on macOS; I could not test Windows but nothing there changed.</td><td>✓</td><td class="bad">FAIL</td><td><span class="chip unsure">0.51 · unsure</span></td></tr><tr><td>This should NOT PASS: the migration drops the sessions table.</td><td>✗</td><td class="bad">PASS</td><td><span class="chip skip">0.10 · skip</span></td></tr><tr><td>Tests PASS locally but CI is red on the lint job, so this is not ready.</td><td>✗</td><td class="bad">PASS</td><td><span class="chip skip">0.04 · skip</span></td></tr><tr><td>I couldn&#x27;t reproduce the bug, so I made no changes.</td><td>✗</td><td class="">FAIL</td><td><span class="chip skip">0.08 · skip</span></td></tr><tr><td>PASSED the type check; the runtime still crashes on startup.</td><td>✗</td><td class="bad">PASS</td><td><span class="chip skip">0.06 · skip</span></td></tr><tr><td>Yes, I looked at it. The approach is wrong and needs a redesign.</td><td>✗</td><td class="bad">PASS</td><td><span class="chip skip">0.07 · skip</span></td></tr><tr><td>Partially done: 3 of 5 endpoints migrated.</td><td>✗</td><td class="">FAIL</td><td><span class="chip skip">0.08 · skip</span></td></tr><tr><td>All checks green. Merged the branch into the PR as asked.</td><td>✓</td><td class="bad">FAIL</td><td><span class="chip unsure">0.77 · unsure</span></td></tr></tbody>
       </table>
       </div>
-      <p><strong>The substring rule gets 6 of 10 wrong; Jev at 0.5 gets 0 wrong.</strong> The substring misses aren't edge cases: "should NOT PASS", "PASSED the type check; the runtime still crashes" and "Yes, I looked at it. The approach is wrong" all pass. The unsure ones are useful too: "I couldn't test Windows" lands at 0.51, exactly the kind of summary a person should look at.</p>
-      <p class="note">Summaries are synthetic, written to cover the failure modes. The substring rule is <code>_arm_matches</code> verbatim.</p>
+      <p><strong>The substring rule gets 6 of 10 wrong. Jev, cutting at 0.5, gets 0 wrong.</strong> The rule's mistakes aren't exotic, either. "Should NOT PASS", "PASSED the type check; the runtime still crashes" and "Yes, I looked at it. The approach is wrong" all count as passes. Look at the middle scores too: "I couldn't test Windows" comes back at 0.51, which is exactly the kind of summary you'd want a person to read.</p>
+      <p class="note">These summaries are written by hand to cover the ways the rule fails. The rule itself is copied from <code>_arm_matches</code>.</p>
     </section>
 
     <section id="gate">
-      <div class="kicker">02 · Webhook (PR opened) → Gate</div>
+      <div class="kicker">02 · Webhook (PR opened), then a gate</div>
       <h2>Gate arms on real PRs</h2>
-      <p>A PR-intake workflow with three Judgement arms, all asked in <strong>one call per PR</strong>. Ground truth comes from the PR itself: its files (only <code>plugin-catalog/</code>, only <code>.md</code>/<code>website/</code>), or a security label a maintainer applied (<code>type/security</code>, <code>area/auth</code>, <code>sweeper:risk-security-boundary</code>). These are the 160 most recent PRs.</p>
+      <p>Picture a PR-intake workflow whose gate has three Judgement arms, all asked in <strong>one call per PR</strong>. The right answers come from the PRs themselves. A PR counts as catalog-only or docs-only based on the files it touches, and as security-related if a maintainer gave it a security label (<code>type/security</code>, <code>area/auth</code> or <code>sweeper:risk-security-boundary</code>). These are the 160 most recent PRs.</p>
 <pre><code><span class="s">"catalog"</span>:  <span class="s">"The pull request only adds or updates a plugin-catalog entry and changes</span>
 <span class="s">             no Hermes code."</span>
 <span class="s">"docs"</span>:     <span class="s">"The change only touches documentation and changes no runtime behavior."</span>
@@ -63,20 +63,20 @@
 <span class="s">             or sandbox boundary."</span></code></pre>
       <div class="scroll">
       <table class="data num">
-        <thead><tr><th>Arm</th><th>Really yes</th><th>Took, right</th><th>Took, wrong</th><th>Skipped, wrong</th><th>Unsure → human</th></tr></thead>
+        <thead><tr><th>Arm</th><th>Really yes</th><th>Took, right</th><th>Took, wrong</th><th>Skipped, wrong</th><th>Unsure, sent to a person</th></tr></thead>
         <tbody><tr><td>Catalog only</td><td>15</td><td>13</td><td>0</td><td>0</td><td>4</td></tr><tr><td>Docs only</td><td>4</td><td>2</td><td>0</td><td>1</td><td>3</td></tr><tr><td>Security boundary</td><td>13</td><td>10</td><td>5</td><td>1</td><td>26</td></tr></tbody>
       </table>
       </div>
-      <p><strong>Catalog and docs are clean enough to automate today.</strong> For example, a catalog-only PR could skip the full review agent and go straight to the catalog checks.</p>
-      <p><strong>Security behaves like a smoke detector.</strong> It sends 26 PRs to a human (2 of them labelled security). Its "wrong" yes answers are worth reading:</p>
+      <p><strong>The catalog and docs arms are reliable enough to automate now.</strong> A catalog-only PR, for instance, could skip the full review agent and go straight to the catalog checks.</p>
+      <p><strong>The security arm works more like a smoke detector.</strong> It sends 26 PRs to a person, and 2 of those had a security label. The PRs it said yes to without a label are worth a look:</p>
       <ul class="tight"><li><a href="https://github.com/NousResearch/hermes-agent/pull/139195">#139195</a> feat(providers): let provider plugins claim tenant-scoped endpoint hosts <span class="dim">(0.93)</span></li><li><a href="https://github.com/NousResearch/hermes-agent/pull/139191">#139191</a> fix(whatsapp): handle locked session dir on re-pair and reject empty creds in preflight <span class="dim">(0.85)</span></li><li><a href="https://github.com/NousResearch/hermes-agent/pull/139063">#139063</a> fix(gateway): preserve secondary local session policy <span class="dim">(0.80)</span></li><li><a href="https://github.com/NousResearch/hermes-agent/pull/139010">#139010</a> fix(agent): preserve custom provider headers for auto titles <span class="dim">(0.85)</span></li><li><a href="https://github.com/NousResearch/hermes-agent/pull/138958">#138958</a> feat(plugin-catalog): add hermes-xai (Grok Voice for Desktop + read-only xAI Collections search) <span class="dim">(0.82)</span></li></ul>
-      <p>Most of these handle credentials or tokens and simply never got a security label. That makes them misses in the labels, not mistakes by Jev. For a security arm, a false alarm costs a minute of a reviewer's time; a missed real one costs far more. Wire this arm to a human, never to auto-merge.</p>
+      <p>Most of them handle credentials or tokens and just never got labelled, so the label is what's missing, not Jev's judgement. For this arm, a false alarm costs a reviewer a minute, and a missed one can cost a lot more. Send it to a person, never to auto-merge.</p>
     </section>
 
     <section id="dups">
-      <div class="kicker">03 · Webhook (PR opened) → Agent (comment)</div>
-      <h2>Spot competing PRs</h2>
-      <p>The repo has four known pairs of PRs that fix the same thing. Maintainers or triage bots flagged them in comments like "closing in favour of…". I mixed those 8 PRs with 30 random others and a near-miss pair, then asked each PR one question about every other PR in the pool: <strong>39 Nouls in a single request</strong>, with no embeddings, vector store or pairwise prompts.</p>
+      <div class="kicker">03 · Webhook (PR opened), then an agent comment</div>
+      <h2>Spotting competing PRs</h2>
+      <p>The repo has four known pairs of PRs that fix the same thing, each flagged by a maintainer or triage bot with a comment like "closing in favour of…". The test mixes those 8 PRs with 30 random ones and one near-miss pair, then asks each PR a single question about every other PR in the pool. That comes to <strong>39 nouls in one request</strong>, with no embeddings, no vector store and no pairwise prompts.</p>
 <pre><code>questions = {
   str(other.number): {<span class="s">"type"</span>: <span class="s">"noul"</span>, <span class="s">"instructions"</span>: {
       <span class="s">"other_pull_request"</span>: {title, description, files},
@@ -92,81 +92,81 @@
         <tbody><tr><td><a href="https://github.com/NousResearch/hermes-agent/pull/139090">#139090</a> · <a href="https://github.com/NousResearch/hermes-agent/pull/139101">#139101</a></td><td>fix(bedrock): strip top-level oneOf/allOf/anyOf from Converse tool inputSchema<br><span class="dim">fix(bedrock): Converse tool schemas drop top-level combinators</span></td><td><span class="chip take">0.91 · take</span></td></tr><tr><td><a href="https://github.com/NousResearch/hermes-agent/pull/125130">#125130</a> · <a href="https://github.com/NousResearch/hermes-agent/pull/139177">#139177</a></td><td>docs(mcp): fix stale single-underscore MCP tool naming examples<br><span class="dim">docs(mcp): correct stale single-underscore tool names in docs and skills</span></td><td><span class="chip take">0.90 · take</span></td></tr><tr><td><a href="https://github.com/NousResearch/hermes-agent/pull/139170">#139170</a> · <a href="https://github.com/NousResearch/hermes-agent/pull/139171">#139171</a></td><td>fix(discord): durable re-authorization reads allowed_roles from the platforms block like ingress<br><span class="dim">fix(discord): resolve the durable re-authorization role gate from the platform block</span></td><td><span class="chip take">0.85 · take</span></td></tr><tr><td><a href="https://github.com/NousResearch/hermes-agent/pull/139097">#139097</a> · <a href="https://github.com/NousResearch/hermes-agent/pull/139100">#139100</a></td><td>fix(cli): put the Windows gateway tree in UTF-8 mode with PYTHONUTF8<br><span class="dim">fix(gateway): enable UTF-8 mode for Windows launchers</span></td><td><span class="chip take">0.82 · take</span></td></tr><tr class="sep"><td><a href="https://github.com/NousResearch/hermes-agent/pull/139117">#139117</a> · <a href="https://github.com/NousResearch/hermes-agent/pull/139182">#139182</a></td><td>fix(update): retry a timed-out source API read once<br><span class="dim">fix(update): retry transient fetch failures</span><br><span class="dim">Same area, different bug. Both should merge.</span></td><td><span class="chip skip">0.12 · skip</span></td></tr></tbody>
       </table>
       </div>
-      <p><strong>Perfect separation.</strong> The lowest real duplicate scored 0.82; the highest unrelated pair scored 0.16. The near miss is the impressive one: two "retry on update" PRs from the same afternoon, with almost the same titles, that fix different code paths. Jev put them at 0.12. A title-similarity bot would have flagged them.</p>
-      <p>Cost: 10 calls, $0.0077, about 283 ms each, for every pair in a 40-PR pool. In a workflow, a new PR asks one question per open PR in the same component. When the score is above 0.8, an agent step drafts the "possible duplicate of…" comment for a human to post.</p>
+      <p><strong>Every real pair scored higher than every unrelated one.</strong> The lowest real duplicate scored 0.82, and the highest unrelated pair scored 0.16. The near miss is the one to look at: two "retry on update" PRs opened the same afternoon, with almost identical titles, that fix different code paths. Jev gave them 0.12. Anything matching on title similarity would have flagged them.</p>
+      <p>All of it took 10 calls and cost $0.0077, about 283 ms each, covering every pair in a 40-PR pool. In a real workflow, a new PR would ask one question per open PR in the same component. Above 0.8, an agent step drafts a "possible duplicate of…" comment for a person to post.</p>
     </section>
 
     <section id="router">
-      <div class="kicker">04 · Webhook (issue opened) → Gate → Agent per component</div>
-      <h2>Route issues to a component</h2>
-      <p>One Choice over the repo's 11 <code>comp/*</code> labels, using the label descriptions from GitHub as the options. A pick counts as right if it matches any of the issue's maintainer-applied <code>comp/</code> labels. That's 150 issues, and <strong>89% were right overall</strong>, but the overall number isn't the useful part. The useful part is what the confidence tells you:</p>
+      <div class="kicker">04 · Webhook (issue opened), then a gate, then an agent per component</div>
+      <h2>Routing issues to a component</h2>
+      <p>This one is a single choice over the repo's 11 <code>comp/*</code> labels, using each label's GitHub description as the option text. A pick counts as right if it matches any <code>comp/</code> label a maintainer applied. Across 150 issues, <strong>89% were right</strong>. That headline number is less useful than what the confidence tells you:</p>
       <table class="data">
         <thead><tr><th>Confidence</th><th>Issues</th><th>Right</th></tr></thead>
         <tbody><tr><td>0.9 or higher</td><td>91</td><td><span class="bar" style="--w:92%"></span>92%</td></tr><tr><td>0.6 to 0.9</td><td>43</td><td><span class="bar" style="--w:88%"></span>88%</td></tr><tr><td>below 0.6</td><td>16</td><td><span class="bar" style="--w:69%"></span>69%</td></tr></tbody>
       </table>
-      <p>A gate that auto-routes at 0.9 or higher handles <strong>61% of issues at 92% accuracy</strong> and sends the rest to the triage agent. Its confident misses are mostly reasonable disagreements:</p>
+      <p>A gate that routes automatically at 0.9 or above would handle <strong>61% of issues at 92% accuracy</strong> and pass the rest to the triage agent. Most of its confident misses are reasonable disagreements:</p>
       <ul class="tight"><li><a href="https://github.com/NousResearch/hermes-agent/issues/138923">#138923</a> Public subagent lifecycle re-truncates native summaries and drops spill recovery metadata: picked <code>comp/agent</code> at 0.99; maintainers said <code>comp/plugins</code></li><li><a href="https://github.com/NousResearch/hermes-agent/issues/138893">#138893</a> npm vulnerabilities flagged by hermes doctor — missing overrides for minimatch, jsdom, undici, vitest, yaml: picked <code>comp/cli</code> at 0.99; maintainers said <code>comp/tui, comp/dashboard</code></li><li><a href="https://github.com/NousResearch/hermes-agent/issues/139121">#139121</a> [Bug]: Streaming STT resampler adds samples when 44.1 kHz audio arrives in chunks: picked <code>comp/tools</code> at 0.97; maintainers said <code>comp/desktop</code></li><li><a href="https://github.com/NousResearch/hermes-agent/issues/138793">#138793</a> Telegram: messages held across a disconnect are replayed out of order: picked <code>comp/gateway</code> at 0.97; maintainers said <code>comp/plugins</code></li></ul>
       <h3>Tune on one set, score on another</h3>
-      <p>Many misses are messaging adapters, which this repo files under <code>comp/plugins</code>. Rewriting the option descriptions to say so looks like an obvious fix. On <strong>150 held-out issues</strong>, though, the original descriptions score 88% (93% at 0.9 or higher), and the "improved" ones score 85% (90%). The rewrite was fitted to the misses it was written from. Keep a held-out set, and don't tune questions on the examples you score them with.</p>
+      <p>A lot of the misses are messaging adapters, which this repo files under <code>comp/plugins</code>. Rewriting the option descriptions to say so seems like an obvious fix. On <strong>150 held-out issues</strong>, though, the original descriptions score 88% (93% at 0.9 or above) and the rewritten ones score 85% (90%). The rewrite only fit the examples it was written from. Keep a separate set of examples for scoring, and don't tune questions on the same examples you measure them with.</p>
     </section>
 
     <section id="approvals">
-      <div class="kicker">05 · Human step (reply from Telegram/Slack/Discord)</div>
-      <h2>Read an approval reply</h2>
-      <p>The Human step parks until someone answers from a chat. A Choice turns the free-text reply into something the run can act on. The <code>conditional</code> and <code>question</code> options matter most: they keep "yes but fix the typo first" from counting as a yes.</p>
+      <div class="kicker">05 · Human step (reply from Telegram, Slack or Discord)</div>
+      <h2>Reading an approval reply</h2>
+      <p>A Human step waits until someone replies from chat. A choice question turns that free-text reply into something the run can act on. The <code>conditional</code> and <code>question</code> options do the most work here, because they stop "yes but fix the typo first" from counting as a plain yes.</p>
       <table class="data">
         <thead><tr><th>Reply</th><th>Read as</th><th>Confidence</th></tr></thead>
         <tbody><tr><td>“yes go ahead”</td><td><code>approve</code></td><td>1.00</td></tr><tr><td>“lgtm 🚀”</td><td><code>approve</code></td><td>1.00</td></tr><tr><td>“ship it”</td><td><code>approve</code></td><td>1.00</td></tr><tr><td>“approved, thanks!”</td><td><code>approve</code></td><td>1.00</td></tr><tr><td>“no”</td><td><code>reject</code></td><td>1.00</td></tr><tr><td>“don&#x27;t merge this”</td><td><code>reject</code></td><td>1.00</td></tr><tr><td>“reject — wrong branch”</td><td><code>reject</code></td><td>1.00</td></tr><tr><td>“hold off, this breaks prod”</td><td><code>reject</code></td><td>0.99</td></tr><tr><td>“what does this change for windows users?”</td><td><code>question</code></td><td>1.00</td></tr><tr><td>“can you show me the diff first?”</td><td><code>question</code></td><td>0.95</td></tr><tr><td>“yes but fix the typo in the title first”</td><td><code>conditional</code></td><td>1.00</td></tr><tr><td>“sure, after the release on friday”</td><td><code>conditional</code></td><td>1.00</td></tr><tr><td>“hmm”</td><td><code>unclear</code></td><td>0.99</td></tr><tr><td>“ok”</td><td><code>approve</code></td><td>0.99</td></tr><tr><td>“👀”</td><td><code>unclear</code></td><td>0.97</td></tr><tr><td>“idk ask teknium”</td><td><code>unclear</code></td><td>0.75</td></tr></tbody>
       </table>
-      <p>All 16 replies are read the way a person would read them, including "ok". "idk ask teknium" comes back as <code>unclear</code> at 0.75, below the auto-act line, which is right. In the workflow, <code>approve</code> at 0.9 or higher resumes the run, <code>reject</code> stops it, and everything else re-asks with the reply quoted.</p>
-      <p class="note">Replies are synthetic.</p>
+      <p>All 16 replies are read the way a person would read them, "ok" included. "idk ask teknium" comes back as <code>unclear</code> at 0.75, below the line for acting automatically, which is what you want. In a workflow, <code>approve</code> at 0.9 or above resumes the run, <code>reject</code> stops it, and anything else asks again with the reply quoted.</p>
+      <p class="note">These replies are written by hand.</p>
     </section>
 
     <section id="comments">
-      <div class="kicker">06 · Event trigger (issue comment) → Agent</div>
-      <h2>Wake an agent only when evidence arrives</h2>
-      <p>Long issue threads mostly fill up with +1s, bot output and closing notes. Three Nouls in one call, on each of the 40 most recent comments in the repo: does it add new evidence, is it automated, and does it close or supersede something?</p>
+      <div class="kicker">06 · Event trigger (issue comment), then an agent</div>
+      <h2>Waking an agent only for comments that matter</h2>
+      <p>Long issue threads fill up with +1s, bot output and closing notes. This test asks three nouls in one call about each of the 40 most recent comments in the repo: does it add new evidence, is it automated, and does it close or supersede something?</p>
       <div class="scroll">
       <table class="data num">
         <thead><tr><th>Author</th><th>Comment</th><th>Evidence</th><th>Bot</th><th>Closing</th></tr></thead>
         <tbody><tr><td>greptile-apps[bot]</td><td class="dim">&lt;!-- greptile_summary --&gt;  &lt;h2&gt;&lt;a href=&quot;https://app.greptile.com/api/retrigger?id=81530251…</td><td>0.12</td><td>0.98</td><td>0.06</td></tr><tr><td>Code0020161314</td><td class="dim">Direct reproduction of this path on 0.21.6, from a session that hit it today (2026-10-15).…</td><td>0.92</td><td>0.12</td><td>0.05</td></tr><tr><td>LordMelkor</td><td class="dim">🤖 Closing in favor of #139195, which replaces this with two provider-agnostic seams. A pro…</td><td>0.04</td><td>0.24</td><td>0.96</td></tr><tr><td>teknium1</td><td class="dim">**Two more, both Desktop renderer-side** (the gateway behaves correctly in both).  - **#13…</td><td>0.29</td><td>0.12</td><td>0.16</td></tr><tr><td>austinpickett</td><td class="dim">Maintainer update (cron-assisted) — pushed `05008b4726db` on top of your branch; no histor…</td><td>0.73</td><td>0.70</td><td>0.12</td></tr><tr><td>smallmj</td><td class="dim">## Independent confirmation + production-scale consequence (macOS client → Windows host)  …</td><td>0.94</td><td>0.03</td><td>0.13</td></tr><tr><td>alt-glitch</td><td class="dim">&gt; *This was generated by AI during triage.*  Related competing implementation: this patch …</td><td>0.06</td><td>0.44</td><td>0.28</td></tr></tbody>
       </table>
       </div>
-      <p><strong>10 of 40</strong> comments would wake a re-investigation agent (evidence 0.8 or higher, not automated). Every one of them is a reproduction or a field measurement: Windows confirmations, OOM-kill rates, a 180-message branch repro. The 13 closing notes could update a "superseded" state without running an agent.</p>
-      <p class="note">One wrinkle: LordMelkor's 🤖-prefixed comments are agent-written, but they score low on "automated" because they read as considered prose. Jev answers the question you asked. If what you really mean is "was this written by an agent", ask that as its own question.</p>
+      <p><strong>10 of 40</strong> comments would wake an agent to re-investigate (evidence at 0.8 or above, and not automated). Every one of them is a reproduction or a measurement from someone's machine: Windows confirmations, OOM-kill rates, a 180-message repro on a branch. The 13 closing notes could mark an issue as superseded without running an agent at all.</p>
+      <p class="note">LordMelkor's comments starting with 🤖 are written by an agent, but they score low on "automated" because they read as thoughtful prose. Jev answers the question you actually asked. If you mean "was this written by an agent", ask that directly.</p>
     </section>
 
     <section id="priority">
-      <div class="kicker">07 · The negative result</div>
+      <div class="kicker">07 · Where it doesn't work</div>
       <h2>Where it falls short: priority</h2>
-      <p>Score was asked to place each bug on the repo's P3 to P0 rubric. On 120 labeled bugs it hit the exact label only <strong>40%</strong> of the time, and its average score barely separates P3 from P2:</p>
+      <p>Here Jev was asked to place each bug on the repo's P3 to P0 scale with a score question. Across 120 labelled bugs it matched the exact label only <strong>40%</strong> of the time, and its average score barely tells P3 and P2 apart:</p>
       <table class="data">
         <thead><tr><th>Label</th><th>Bugs</th><th>Mean score (0 = P3, 3 = P0)</th></tr></thead>
         <tbody><tr><td>P3</td><td>36</td><td>1.55</td></tr><tr><td>P2</td><td>79</td><td>1.58</td></tr><tr><td>P1</td><td>5</td><td>2.11</td></tr></tbody>
       </table>
-      <p>For ranking, though, it's useful: a random P1 outscores a random non-P1 <strong>0.79</strong> of the time (0.5 would be chance). The top of the list is the right kind of bug:</p>
+      <p>It's still useful for ordering a queue. A random P1 outscores a random non-P1 <strong>0.79</strong> of the time, where 0.5 would be a coin flip. The top of its list is the right kind of bug:</p>
       <ul class="tight"><li><a href="https://github.com/NousResearch/hermes-agent/issues/139085">#139085</a> [Bug]: a gateway worker under a Python 3.14 runtime inherits a legacy hermes-agent/venv (cp311)  <span class="dim">(P2, 2.98)</span></li><li><a href="https://github.com/NousResearch/hermes-agent/issues/138914">#138914</a> session.list crash-loops when a live session&#x27;s DB row is gone (TypeError in session_authority._h <span class="dim">(P2, 2.97)</span></li><li><a href="https://github.com/NousResearch/hermes-agent/issues/138794">#138794</a> [Bug]: TUI session list never loads (TypeError in session_authority._handle) after `hermes sessi <span class="dim">(P2, 2.94)</span></li><li><a href="https://github.com/NousResearch/hermes-agent/issues/139062">#139062</a> execute_code: a nested tool call outlives its cell and applies a protected-file write after the  <span class="dim">(P2, 2.87)</span></li><li><a href="https://github.com/NousResearch/hermes-agent/issues/138939">#138939</a> Kanban dispatcher kills worker PID from DB without verifying process identity (PID reuse can hit <span class="dim">(P3, 2.85)</span></li><li><a href="https://github.com/NousResearch/hermes-agent/issues/139132">#139132</a> Windows: interrupted source-update auto-repair loops on every launch (sync-stage failures bypass <span class="dim">(P2, 2.83)</span></li></ul>
-      <p>So use it to sort the queue, not to set the label. P2 versus P3 here mostly depends on things that aren't in the issue text: how many people are affected, what's shipping this week, which maintainer picked it up. Jev can only judge what's in the state you send it, and here the state doesn't contain the answer. Splitting the rubric into six separate Noul questions combined with weights (TypeSafe's recommended "atomic questions" approach) didn't help either: 0.80 versus 0.79.</p>
+      <p>So use it to sort the queue, not to set the label. Whether something is P2 or P3 here mostly depends on things that aren't in the issue: how many people hit it, what's shipping this week, which maintainer picked it up. Jev can only judge what you send it, and the issue text doesn't contain that answer. Splitting the scale into six separate nouls and weighting them, which is the approach TypeSafe recommends, didn't help either (0.80 against 0.79).</p>
     </section>
 
     <section id="run">
       <h2>Run it yourself</h2>
 <pre><code>cd cases
 export OPENROUTER_API_KEY=…          <span class="c"># any OpenRouter key with credit</span>
-python3 run.py                       <span class="c"># all cases, ~15 s, about 5¢</span>
-python3 run.py duplicates gate       <span class="c"># or just some</span>
+python3 run.py                       <span class="c"># every case, about 15 s and 5¢</span>
+python3 run.py duplicates gate       <span class="c"># or just some of them</span>
 python3 build.py                     <span class="c"># rebuilds this page from results/</span></code></pre>
-      <p>The data snapshots in <code>cases/data/</code> came from <code>gh</code> on Oct 15.</p>
-      <h3>Build order</h3>
+      <p>The data in <code>cases/data/</code> was pulled with <code>gh</code> on Oct 15.</p>
+      <h3>What to build first</h3>
       <ol>
-        <li><strong>Step verdicts (01).</strong> This fixes a real bug in the runner, and every gate benefits.</li>
-        <li><strong>Competing-PR detection (03)</strong> on PR intake. It separated the pairs perfectly here, and it saves maintainers the most time.</li>
-        <li><strong>Approval replies (05)</strong> for the Human step. Without it, a reply from chat can't drive the run at all.</li>
+        <li><strong>Step verdicts (01).</strong> It fixes a real bug in the runner, and every gate benefits.</li>
+        <li><strong>Competing-PR detection (03)</strong> on PR intake. It separated every pair here, and it's the one that saves maintainers the most time.</li>
+        <li><strong>Approval replies (05)</strong> for the Human step. Without it, a reply from chat can't move the run forward at all.</li>
       </ol>
       <footer>
         Data: <a href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a> issues, PRs and comments as of Oct 15, 2026 ·
         <a href="https://docs.typesafe.ai/introduction">TypeSafe docs</a> ·
-        <a href="index.html">← back to the tutorial</a>
+        <a href="index.html">Back to the tutorial</a>
       </footer>
     </section>
   </main>
