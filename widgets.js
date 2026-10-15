@@ -138,7 +138,7 @@ function seg(root, onPick) {
     csrf: { verdict: 'FAIL', summary: 'Removed the CSRF check on /logout', nouls: { catalog: 0.01, security: 0.96 } },
     typo: { verdict: 'PASS', summary: 'Fixes a typo in a log message', nouls: { catalog: 0.04, security: 0.05 } },
   };
-  const list = $('.arms', w), log = $('[data-log]', w), calls = $('[data-calls]', w);
+  const list = $('.paths', w), log = $('[data-log]', w), calls = $('[data-calls]', w);
   list.innerHTML = PATHS.map((a, i) =>
     `<li><span class="n">${i + 1}</span><span><span class="name">${a.name}</span> <span class="to">→ ${a.to}</span>${a.kind === 'judgement' ? ' <span class="kind">asks Jev</span>' : ''}</span><span class="st"></span></li>`).join('');
   const lis = $$('li', list);
