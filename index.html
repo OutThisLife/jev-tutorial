@@ -154,8 +154,7 @@ curl -s https://openrouter.ai/api/v1/systemone \
           <button aria-pressed="true" data-no="0.35" data-yes="0.8" data-cost="The defaults used on this page.">A typical gate</button>
           <button data-no="0.1" data-yes="0.95" data-cost="Costly mistakes: most things go to a person.">Merging auth code</button>
         </div>
-        <div class="track" aria-hidden="true"><span></span><span></span><span></span></div>
-        <input type="range" id="p" min="0" max="1" step="0.01" value="0.62" aria-label="noul probability">
+        <input type="range" class="banded" id="p" min="0" max="1" step="0.01" value="0.62" aria-label="noul probability">
         <div class="legend"><span>0</span><span data-lno>no below 0.35</span><span data-lyes>yes from 0.80</span><span>1</span></div>
         <div class="readout"><span class="p" id="pv">0.62</span><span class="verdict" id="pverdict"></span><span class="why" id="pwhy"></span></div>
         <div class="wcap" data-cost>The defaults used on this page.</div>

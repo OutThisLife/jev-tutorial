@@ -3,6 +3,7 @@
 const D = window.JEV;
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const fillOf = r => r.style.setProperty('--fill', `${((r.value - r.min) / (r.max - r.min)) * 100}%`);
 const setText = (sel, root, t) => { const el = $(sel, root); if (el) el.textContent = t; };
 const f2 = p => p.toFixed(2);
 const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -38,16 +39,28 @@ function seg(root, onPick) {
 (() => {
   const w = $('#w-conf'); if (!w) return;
   const sliders = $$('input[type=range]', w), outs = $$('[data-opt]', w), keys = Object.keys(D.conf.choice);
+  const keys2 = keys, total = 100;
   const render = () => {
-    const raw = sliders.map(s => Math.max(+s.value, 0.1));
-    const sum = raw.reduce((a, b) => a + b, 0), p = raw.map(x => x / sum);
-    const n = p.length, conf = (Math.max(...p) - 1 / n) / (1 - 1 / n), top = p.indexOf(Math.max(...p));
+    const p = sliders.map(s => +s.value / total), n = p.length;
+    const conf = (Math.max(...p) - 1 / n) / (1 - 1 / n), top = p.indexOf(Math.max(...p));
     outs.forEach((o, i) => { o.textContent = f2(p[i]); });
-    $('[data-conf]', w).textContent = f2(conf);
+    $('[data-conf]', w).textContent = f2(Math.max(0, conf));
     $('[data-top]', w).textContent = `${sliders[top].getAttribute('aria-label')} wins with ${f2(p[top])}`;
   };
-  const reset = () => keys.forEach((k, i) => { sliders[i].value = Math.round(D.conf.choice[k] * 100); sliders[i].dispatchEvent(new Event('input')); });
-  sliders.forEach(s => s.addEventListener('input', render));
+  // moving one slider rescales the others, so the three always add up to 1
+  const rebalance = moved => {
+    const v = +moved.value, rest = sliders.filter(s => s !== moved), was = rest.reduce((a, s) => a + +s.value, 0);
+    rest.forEach(s => { s.value = was > 0 ? Math.round((+s.value / was) * (total - v)) : Math.round((total - v) / rest.length); });
+    const drift = total - sliders.reduce((a, s) => a + +s.value, 0);
+    if (drift) rest[0].value = +rest[0].value + drift;
+    sliders.forEach(fillOf);
+  };
+  const set = vals => { sliders.forEach((s, i) => { s.value = vals[i]; fillOf(s); }); render(); };
+  const reset = () => {
+    const raw = keys2.map(k => Math.round(D.conf.choice[k] * total)), d = total - raw.reduce((a, b) => a + b, 0);
+    raw[raw.indexOf(Math.max(...raw))] += d; set(raw);
+  };
+  sliders.forEach(s => s.addEventListener('input', () => { rebalance(s); render(); }));
   $('[data-reset]', w).addEventListener('click', reset);
   setText('[data-title]', w, D.conf.title);
   reset();
@@ -181,7 +194,4 @@ function seg(root, onPick) {
 })();
 
 // Fill each slider's track up to its thumb
-for (const r of $$('input[type=range]')) {
-  const fill = () => r.style.setProperty('--fill', `${((r.value - r.min) / (r.max - r.min)) * 100}%`);
-  r.addEventListener('input', fill); fill();
-}
+for (const r of $$('input[type=range]')) { r.addEventListener('input', () => fillOf(r)); fillOf(r); }

@@ -22,6 +22,7 @@ body {
 ::selection { background: rgba(35,71,214,.16); }
 a { color: var(--blue); text-decoration-color: rgba(35,71,214,.3); text-underline-offset: 3px; text-decoration-thickness: 1px; }
 a:hover { text-decoration-color: currentColor; }
+a:not(:hover) { transition: text-decoration-color .3s, color .3s, background .3s; }
 
 .layout {
   display: grid; grid-template-columns: 13.5rem minmax(0, 50rem);
@@ -99,20 +100,17 @@ td code { white-space: nowrap; }
 
 /* bands widget */
 .bands { margin: 1.8rem 0 2.2rem; padding: 1.2rem 1.3rem 1rem; background: var(--white); border-radius: 14px; box-shadow: var(--lift), 0 0 0 1px var(--hair); }
-.bands .track {
-  position: relative; height: 6px; border-radius: 99px; overflow: hidden;
-  display: grid; grid-template-columns: var(--no) calc(var(--yes) - var(--no)) calc(100% - var(--yes));
-}
-.bands .track span:nth-child(1) { background: var(--skip); }
-.bands .track span:nth-child(2) { background: var(--unsure); }
-.bands .track span:nth-child(3) { background: var(--take); }
-.bands input[type=range] { margin: .7rem 0 .1rem; }
+.bands input[type=range] { margin: .2rem 0 .1rem; }
+/* the band slider's own track is the three bands, so there's only one track */
+input[type=range].banded::-webkit-slider-runnable-track { height: 6px; background: linear-gradient(90deg, var(--skip) 0 var(--no), var(--unsure) var(--no) var(--yes), var(--take) var(--yes) 100%); }
+input[type=range].banded::-moz-range-track { height: 6px; background: linear-gradient(90deg, var(--skip) 0 var(--no), var(--unsure) var(--no) var(--yes), var(--take) var(--yes) 100%); }
+input[type=range].banded::-moz-range-progress { background: transparent; }
+input[type=range].banded::-webkit-slider-thumb { margin-top: -5px; }
 .bands .readout { display: flex; align-items: baseline; gap: 1rem; margin-top: .3rem; }
 .bands .p { font: 300 2.2rem/1 var(--sans); font-variant-numeric: tabular-nums; min-width: 4.2ch; letter-spacing: -.02em; }
 .bands .verdict { font-weight: 500; }
 .bands .why { color: var(--mid); font-size: 14.5px; }
 .bands .legend { display: flex; justify-content: space-between; font: 400 12.5px/1 var(--sans); color: var(--soft); margin-top: .5rem; }
-.bands .track { transition: grid-template-columns .3s ease; }
 
 /* mocked widgets: the same white sheet as the bands */
 .widget { margin: 1.8rem 0 2.2rem; padding: 1.2rem 1.3rem 1.1rem; background: var(--white); border-radius: 14px; box-shadow: var(--lift), 0 0 0 1px var(--hair); }
@@ -146,7 +144,8 @@ button, input { font-family: inherit; }
 .chips button[aria-pressed=true], .checks label:has(input:checked) { background: var(--ice); color: var(--ink); box-shadow: var(--c-ring-hi); }
 .checks { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 .9rem; }
 .checks input { position: absolute; opacity: 0; pointer-events: none; }
-.checks label::before { content: ""; width: 7px; height: 7px; border-radius: 99px; box-shadow: inset 0 0 0 1.5px var(--soft); transition: background .2s, box-shadow .2s; }
+.checks label::before { content: ""; width: 7px; height: 7px; border-radius: 99px; box-shadow: inset 0 0 0 1.5px var(--soft); }
+.checks label:not(:hover)::before { transition: background .3s, box-shadow .3s; }
 .checks label:has(input:checked)::before { background: var(--blue); box-shadow: none; }
 
 /* action pills; the main one is the board's blue "next" */
@@ -155,6 +154,7 @@ button, input { font-family: inherit; }
   display: inline-flex; align-items: center; border-radius: 99px;
   font: 500 12.5px/1 var(--sans); color: var(--mid); background: var(--white); box-shadow: var(--c-ring);
 }
+.wbtn:not(:hover) { transition: background .3s, color .3s, box-shadow .3s; }
 .wbtn:hover { background: var(--ice); color: var(--blue); box-shadow: var(--c-ring-hi); }
 .wbtn:active { transform: translateY(.5px); }
 .wbtn.next { background: var(--blue); color: #fff; box-shadow: 0 0 0 1px var(--blue), 0 4px 10px -5px rgba(35,71,214,.6); }
@@ -165,8 +165,9 @@ button, input { font-family: inherit; }
 .widget input[type=text] {
   width: 100%; box-sizing: border-box; height: 40px; padding: 0 .9rem; margin: 0 0 .4rem;
   font: 400 15px/1 var(--sans); color: var(--ink); border: 0; border-radius: 10px;
-  background: var(--porcelain); box-shadow: inset 0 0 0 1px var(--hair); transition: box-shadow .2s, background .2s;
+  background: var(--porcelain); box-shadow: inset 0 0 0 1px var(--hair);
 }
+.widget input[type=text]:not(:focus) { transition: box-shadow .3s, background .3s; }
 .widget input[type=text]:focus { outline: 0; background: var(--white); box-shadow: inset 0 0 0 1px rgba(35,71,214,.45), 0 0 0 3px rgba(35,71,214,.1); }
 
 /* slider: a hairline track filled in blue up to the thumb */
@@ -178,11 +179,12 @@ input[type=range]::-moz-range-track { height: 4px; border-radius: 99px; backgrou
 input[type=range]::-moz-range-progress { height: 4px; border-radius: 99px; background: var(--blue); }
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none; width: 16px; height: 16px; margin-top: -6px; border-radius: 99px; background: var(--white);
-  box-shadow: 0 0 0 1px rgba(11,29,58,.14), 0 2px 6px -1px rgba(20,52,120,.3); transition: transform .15s, box-shadow .15s;
+  box-shadow: 0 0 0 1px rgba(11,29,58,.14), 0 2px 6px -1px rgba(20,52,120,.3);
 }
 input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border: 0; border-radius: 99px; background: var(--white); box-shadow: 0 0 0 1px rgba(11,29,58,.14), 0 2px 6px -1px rgba(20,52,120,.3); }
 input[type=range]:hover::-webkit-slider-thumb { box-shadow: 0 0 0 1px rgba(35,71,214,.4), 0 2px 8px -1px rgba(35,71,214,.35); }
 input[type=range]:active::-webkit-slider-thumb { transform: scale(1.12); }
+input[type=range]:not(:hover)::-webkit-slider-thumb { transition: transform .3s, box-shadow .3s; }
 input[type=range]:focus { outline: 0; }
 input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 1px var(--blue), 0 0 0 4px rgba(35,71,214,.18); }
 
