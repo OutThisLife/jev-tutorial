@@ -194,7 +194,7 @@ page = Template((HERE / "cases.template.html").read_text()).substitute(
     R_N=len(rows), R_ACC=pct(acc), R_BANDS=router_bands, R_HI_SHARE=pct(len(hi) / len(rows)),
     R_HI_ACC=pct(sum(r["hit"] for r in hi) / len(hi)), R_MISSES=miss_list,
     H1_ACC=pct(H1[0]), H1_HI=pct(H1[2]), H2_ACC=pct(H2[0]), H2_HI=pct(H2[2]),
-    A_ROWS=ap_rows, A_N=len(ap),
+    A_ROWS=ap_rows, A_N=len(ap), A_LEAD=f'{next(r["confidence"] for r in ap if "lead" in r["reply"]):.2f}',
     C_N=len(cm), C_WAKE=len(wake), C_CLOSE=len(closing), C_BOTS=len(bots), C_ROWS=cm_rows,
     P_N=len(pr_rows_), P_EXACT=pct(exact), P_ROWS=prio_rows, P_TOP=top_list,
     P_AUC1=f"{AUC_P1:.2f}", P_AUC2=f"{AUC_P2:.2f}", P_ATOM=f"{AUC_ATOM:.2f}",

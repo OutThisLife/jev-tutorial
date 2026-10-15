@@ -3,6 +3,7 @@
 const D = window.JEV;
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const setText = (sel, root, t) => { const el = $(sel, root); if (el) el.textContent = t; };
 const f2 = p => p.toFixed(2);
 const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const band = (p, yes = 0.8, no = 0.35) => (p >= yes ? 'take' : p >= no ? 'unsure' : 'skip');
@@ -48,7 +49,7 @@ function seg(root, onPick) {
   const reset = () => keys.forEach((k, i) => { sliders[i].value = Math.round(D.conf.choice[k] * 100); sliders[i].dispatchEvent(new Event('input')); });
   sliders.forEach(s => s.addEventListener('input', render));
   $('[data-reset]', w).addEventListener('click', reset);
-  $('[data-title]', w).textContent = D.conf.title;
+  setText('[data-title]', w, D.conf.title);
   reset();
 })();
 
@@ -61,9 +62,9 @@ function seg(root, onPick) {
     const p = +r.value;
     pv.textContent = f2(p);
     const [label, color, text] =
-      p >= yes ? ['go this way', 'var(--accent)', 'A confident yes, so the gate takes this path.']
-      : p >= no ? ['not sure', 'var(--unsure-ink)', 'Jev isn’t sure, so the gate stops and asks a person.']
-      : ['skip', 'var(--muted)', 'A confident no, so the gate checks the next path.'];
+      p >= yes ? ['go this way', 'var(--accent)', 'Confident yes: take this path.']
+      : p >= no ? ['not sure', 'var(--unsure-ink)', 'Unsure: stop and ask a person.']
+      : ['skip', 'var(--muted)', 'Confident no: try the next path.'];
     verdict.textContent = label; verdict.style.color = color; why.textContent = text;
   };
   seg($('.seg', w), b => {
@@ -95,9 +96,8 @@ function seg(root, onPick) {
     $('[data-jt]', w).textContent = `${jev.toFixed(2)} s`;
   };
   r.max = pts[pts.length - 1][0];
-  $('[data-max]', w).textContent = r.max;
-  $('[data-llm]', w).textContent = f2(AGENT).replace(/0$/, '');
-  $('[data-pts]', w).textContent = pts.map(([n, ms]) => `${n} → ${ms} ms`).join(', ');
+  setText('[data-llm]', w, f2(AGENT).replace(/0$/, ''));
+  setText('[data-pts]', w, pts.map(([n, ms]) => `${ms} ms for ${n}`).join(', '));
   r.addEventListener('input', render);
   render();
 })();
@@ -107,8 +107,8 @@ function seg(root, onPick) {
   const w = $('#w-split'); if (!w) return;
   const ex = D.split.examples, Q = { auth: 'touches auth', no_tests: 'adds no tests' };
   const notes = [
-    'Jev’s yes/no answers say both are true. Asked as one multiple-choice question, it has to split its belief, and neither option clears 0.8.',
-    'Again both are true by the yes/no answers. This time the multiple-choice question put nearly everything on one of them, so a gate reading it would miss the other completely.',
+    'Both are true, but as one choice Jev splits its belief and neither clears 0.8.',
+    'Both are true, but the choice puts nearly everything on one, so a gate would miss the other.',
   ];
   seg($('.seg', w), b => {
     const e = ex[+b.dataset.i];
@@ -117,7 +117,7 @@ function seg(root, onPick) {
     $('[data-noul]', w).innerHTML = Object.keys(Q).map(k => row(Q[k], e.nouls[k])).join('');
     $('[data-note]', w).textContent = notes[+b.dataset.i];
   }).pick($('.seg button', w));
-  $('[data-count]', w).textContent = `${D.split.n_hurt} of ${D.split.n_both}`;
+  setText('[data-count]', w, `${D.split.n_hurt} of ${D.split.n_both}`);
 })();
 
 // Step through a gate, on real pull requests and Jev's real answers
@@ -140,15 +140,15 @@ function seg(root, onPick) {
     const steps = []; let asked = 0;
     const push = (i, st, msg, p) => steps.push({ i, st, msg, p, calls: asked });
     for (const [i, a] of PATHS.entries()) {
-      if (a.kind === 'unsure') { push(i, 'skip', '“Not sure” only applies when Jev comes back unsure, so the gate passes over it.'); continue; }
-      if (a.kind === 'always') { push(i, 'take', 'Nothing else applied, so it gets the full review.'); return steps; }
-      const pre = asked ? '' : 'The gate asks Jev all three questions in one call. ';
+      if (a.kind === 'unsure') { push(i, 'skip', 'Only used when Jev is unsure. Skipped.'); continue; }
+      if (a.kind === 'always') { push(i, 'take', 'Nothing else applied: full review.'); return steps; }
+      const pre = asked ? '' : 'One call asks Jev all three questions. ';
       asked = 1;
       const p = answers[a.id], v = band(p);
-      if (v === 'take') { push(i, 'take', `${pre}This one came back ${f2(p)}, a confident yes.`, p); return steps; }
-      if (v === 'skip') { push(i, 'skip', `${pre}This one came back ${f2(p)}, a confident no, so the gate moves on.`, p); continue; }
-      push(i, 'unsure', `${pre}This one came back ${f2(p)}, in the unsure band. The gate stops here rather than guess.`, p);
-      push(PATHS.findIndex(x => x.kind === 'unsure'), 'take', 'It goes to “Not sure”, and the run waits for a person.');
+      if (v === 'take') { push(i, 'take', `${pre}${f2(p)}: a confident yes.`, p); return steps; }
+      if (v === 'skip') { push(i, 'skip', `${pre}${f2(p)}: a confident no. Next.`, p); continue; }
+      push(i, 'unsure', `${pre}${f2(p)}: unsure, so the gate stops instead of guessing.`, p);
+      push(PATHS.findIndex(x => x.kind === 'unsure'), 'take', 'Handed to a person.');
       return steps;
     }
     return steps;

@@ -262,3 +262,4 @@ svg.strip .pos { fill: var(--blue); }
 .dot.pos { background: var(--blue); }
 .dot.near { border: 1.5px solid var(--unsure-ink); }
 .dot.neg { background: var(--steel); opacity: .35; }
+.widget .readout .stack { display: flex; flex-direction: column; gap: .1rem; }

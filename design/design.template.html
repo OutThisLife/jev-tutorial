@@ -35,13 +35,13 @@
     <header>
       <div class="kicker">Examples</div>
       <h1>Jev in n8n and design systems</h1>
-      <p class="lede">Most of this work follows a pattern. Something gets made, by an agent or a person, and then a small judgement call decides what happens next: which branch an n8n item takes, which component a frame should use, whether a new button breaks a rule. Jev can make those calls in about 200 ms and tell you how sure it is, so you only pull in a person or a bigger model when it isn't.</p>
+      <p class="lede">Something gets made, by an agent or a person, and a small call decides what happens next: which n8n branch, which component, whether a button breaks a rule. Jev makes those calls in about 200 ms and says how sure it is, so a person or a bigger model only steps in when it isn't.</p>
       <div class="meta">Data: n8n's public template library, plus a real desktop app's UI kit (<code>components/ui</code>), its design rules (<code>DESIGN.md</code>) and its git history · $CALLS Jev calls, $COST · the code and results are in <code>design/</code></div>
     </header>
 
     <section id="shape">
       <h2>Where it fits</h2>
-      <p>Jev doesn't draw or write code, and it only picks from options you give it. What it's good at is answering small multiple-choice questions about things that already exist, at roughly the cost of writing a log line. So it doesn't replace the model that writes your code. It handles the small decisions before and after:</p>
+      <p>Jev doesn't write code. It answers small multiple-choice questions about things that already exist, so it handles the decisions around the model that does:</p>
       <div class="scroll"><table class="data">
         <thead><tr><th>When</th><th>The question</th><th>Type</th></tr></thead>
         <tbody>
@@ -56,8 +56,8 @@
     <section id="n8n">
       <div class="kicker">01 · n8n</div>
       <h2>Swapping the LLM classifier for one HTTP node</h2>
-      <p>The most common AI pattern in n8n's template library goes trigger, LLM classifier, parse the JSON, Switch. Take <a href="https://n8n.io/workflows/15051">"Classify and route DevOps chat requests with Mattermost and Claude"</a>. Its classifier is a Sonnet agent with a <strong>$N_PROMPT-character</strong> system prompt, followed by an 85-line Code node that digs the JSON out of code fences, falls back to <code>other</code> when parsing fails, and double-checks that the category is a real one.</p>
-      <p>For Jev, the template's $N_CATS category descriptions become the options. Here's how both do on $N_N new DevOps messages, none of them taken from the template's own examples:</p>
+      <p>The most common AI pattern in n8n's templates is trigger, LLM classifier, parse JSON, Switch. In <a href="https://n8n.io/workflows/15051">"Classify and route DevOps chat requests with Mattermost and Claude"</a>, the classifier is a Sonnet agent with a <strong>$N_PROMPT-character</strong> prompt, then an 85-line Code node to dig the JSON out and validate it.</p>
+      <p>Jev uses the template's $N_CATS categories as its options. On $N_N new DevOps messages:</p>
       <div class="scroll"><table class="data num">
         <thead><tr><th></th><th>Right</th><th>Median time</th><th>Cost for all $N_N</th></tr></thead>
         <tbody>
@@ -65,68 +65,68 @@
           <tr><td>One Jev choice</td><td>$N_JEV / $N_N</td><td>$N_JEV_MS ms</td><td>$N_JEV_COST</td></tr>
         </tbody>
       </table></div>
-      <p><strong>Both got the same answers, but Jev was about $N_RATIO× cheaper and $N_SPEED× faster, and it needs no parser.</strong> Its response already has the shape the Switch reads. Its three least confident answers were the three messages that really were borderline, which is exactly where an "Ask a human" branch belongs:</p>
+      <p><strong>Same answers, about $N_RATIO× cheaper and $N_SPEED× faster, with no parser.</strong> Jev's three least confident answers were the three truly borderline messages, which is where an "Ask a human" branch belongs:</p>
       <ul class="tight">$N_LOW</ul>
       <h3>A workflow you can import</h3>
-      <p><code>design/n8n/jev-router.json</code> imports straight into n8n. It goes Webhook, Set, <strong>an HTTP Request to Jev</strong>, Set, then an If on confidence ≥ 0.6 leading to the Switch, with low-confidence items going to "Ask a human". The Jev node takes about $S_MS ms. For the sample message, about a deploy stuck waiting for a runner, it returns <code>$S_CAT</code> at $S_CONF.</p>
+      <p><code>design/n8n/jev-router.json</code> imports straight into n8n: Webhook, an HTTP Request to Jev, then an If on confidence ≥ 0.6 before the Switch, with low-confidence items going to "Ask a human". The Jev node takes about $S_MS ms; for a deploy stuck waiting on a runner it returns <code>$S_CAT</code> at $S_CONF.</p>
 <pre><code><span class="c">// all the "AI" in the workflow is this one HTTP Request node</span>
 POST https://openrouter.ai/api/v1/systemone
 { <span class="s">"model"</span>: <span class="s">"~typesafe/jev-latest"</span>,
   <span class="s">"state"</span>: { <span class="s">"message"</span>: <span class="s">"{{ $$json.message }}"</span> },
   <span class="s">"questions"</span>: { <span class="s">"category"</span>: { <span class="s">"type"</span>: <span class="s">"choice"</span>, <span class="s">"criteria"</span>: { …the template's categories… } } } }
 <span class="c">// Switch on {{ $$json.answers.category.choice }}; If on .confidence</span></code></pre>
-      <p class="note">n8n's built-in Text Classifier node does the same job with any chat model, but it doesn't give you a confidence. With an unclear item, the best it can do is drop it or send it down an "Other" branch. Jev's probabilities are what make a real "ask a human" branch possible.</p>
+      <p class="note">n8n's built-in Text Classifier does the same with any chat model, but without a confidence, so unclear items can only be dropped or sent to "Other".</p>
     </section>
 
     <section id="tips">
       <div class="kicker">02 · Design system · linting</div>
       <h2>Linting the rules a regex can't check</h2>
-      <p>The app's DESIGN.md has rules like <em>"Do not tip menu triggers"</em> and <em>"Do not tip close / dismiss X buttons — the glyph is the label"</em>. A regex can't tell what a button is for, but two yes/no questions per <code>&lt;Tip&gt;</code> can: "is this control a close or dismiss button?" and "does it open a menu?". Across all $T_N Tips in the desktop app:</p>
+      <p>The app's DESIGN.md says <em>"Do not tip menu triggers"</em> and <em>"Do not tip close / dismiss X buttons"</em>. A regex can't tell what a button does, but two yes/no questions per <code>&lt;Tip&gt;</code> can. Across all $T_N Tips:</p>
       <div class="scroll"><table class="data">
         <thead><tr><th>Tooltip</th><th>Rule it breaks</th><th>Jev</th><th>Where</th></tr></thead>
         <tbody>$T_ROWS</tbody>
       </table></div>
-      <p><strong>All $T_V are real violations.</strong> "Clear search" lives inside <code>SearchField</code>, so every search box in the app inherits it. A third question, "does hovering teach something new?", gives muddy scores. That depends on what's already visible around the control, which a snippet of code doesn't show. Keep the precise questions in the linter and leave the fuzzy one to a human reviewer.</p>
-      <p class="note">In a workflow, this check would run after the coding agent and before the PR, with one call per changed Tip. Anything at 0.8 or above becomes a review comment quoting the relevant line of DESIGN.md.</p>
+      <p><strong>All $T_V are real violations.</strong> "Clear search" lives in <code>SearchField</code>, so every search box inherits it. A fuzzier question, "does hovering teach something new?", gave muddy scores because it depends on surrounding context. Keep the linter to precise questions.</p>
+      <p class="note">In a workflow it runs after the coding agent, one call per changed Tip, and anything at 0.8+ becomes a review comment quoting the rule.</p>
     </section>
 
     <section id="icons">
       <div class="kicker">03 · Design system · icons</div>
       <h2>Does the icon say what the label says?</h2>
-      <p>DESIGN.md asks you to <em>"reuse the existing icon for an action."</em> One noul per icon-only button checks whether the icon clearly communicates its aria-label. Of the app's $I_N icon and label pairs, $I_OK score 0.8 or above, for example $I_HIGH. These are the lowest:</p>
+      <p>DESIGN.md asks you to <em>"reuse the existing icon for an action."</em> One noul per icon-only button asks whether the icon says what its label says. $I_OK of $I_N pairs score 0.8 or above. The lowest:</p>
       <div class="scroll">
       <table class="data">
         <thead><tr><th>Icon</th><th>Label</th><th>Fits</th><th>Jev would pick</th><th>Where</th></tr></thead>
         <tbody>$I_LOW</tbody>
       </table>
       </div>
-      <p>Treat these as things to review, not bugs. The clearest case is "New branch" on a kebab icon: the button opens the branch menu, but the icon says "more". The four <code>discard</code> rows are a naming question. The app consistently uses <code>discard</code> for revert and reset, while Jev expects <code>refresh</code>. Writing that convention into DESIGN.md once would save the next agent from guessing.</p>
+      <p>These are review candidates, not bugs. The clearest is "New branch" on a kebab icon, which says "more". The <code>discard</code> rows are a naming question: the app uses <code>discard</code> for revert and reset, where Jev expects <code>refresh</code>. One line in DESIGN.md would settle it.</p>
     </section>
 
     <section id="variants">
       <div class="kicker">04 · Design to code · while generating</div>
       <h2>Which Button variant goes here?</h2>
-      <p>An agent turning designs into code picks <code>&lt;Button variant="…"&gt;</code> over and over. This test takes $V_N Buttons from the app, removes their <code>variant</code> prop, and asks one choice over the 8 variants, described in the words of <code>button.tsx</code>'s own comments.</p>
+      <p>A design-to-code agent picks <code>&lt;Button variant="…"&gt;</code> constantly. Here are $V_N Buttons from the app with <code>variant</code> removed, put to one choice over the 8 variants, described in <code>button.tsx</code>'s own words.</p>
       <div class="scroll"><table class="data">
         <thead><tr><th>Confidence</th><th>Buttons</th><th>Matched the code</th></tr></thead>
         <tbody>$V_ROWS</tbody>
       </table></div>
-      <p>Only $V_ACC match overall, mostly because <code>ghost</code> versus <code>text</code> depends on what's around the button, and the snippet doesn't include that. The confident picks are almost always right, though ($V_HI Buttons at $V_HI_ACC). So take Jev's confident picks, and when it's unsure, have the coding agent look at the neighbouring components.</p>
+      <p>Only $V_ACC match overall, since <code>ghost</code> versus <code>text</code> depends on context the snippet lacks. But confident picks are almost always right ($V_HI at $V_HI_ACC), so take those and let the agent check neighbours otherwise.</p>
     </section>
 
     <section id="primitives">
       <div class="kicker">05 · Design to code · before generating</div>
       <h2>Building on the component that already exists</h2>
-      <p>The most common way a design system drifts is someone hand-building a copy of a component that already exists. The git history has plenty of commits cleaning that up, like "build the task modal on the shared Dialog primitive" and "one identity chip behind every avatar". For $P_N of those commits, the markup that was removed goes in as the state, and all $P_OPTS <code>components/ui</code> primitives become the options, each described by its own doc comment.</p>
-      <p>Jev's first pick is the primitive the commit actually used $P_TOP1 of $P_N times, and it's in the top three $P_TOP3 of $P_N times. At 0.9 confidence or above it's right $P_HI_OK of $P_HI times:</p>
+      <p>Design systems drift when someone hand-builds a copy of an existing component. For $P_N commits that cleaned this up, the removed markup is the state and the $P_OPTS <code>components/ui</code> primitives are the options.</p>
+      <p>Jev's first pick matches the commit $P_TOP1 of $P_N times, its top three $P_TOP3 of $P_N, and at 0.9+ it's right $P_HI_OK of $P_HI:</p>
       <ul class="tight">$P_WINS</ul>
-      <p>That makes it a hint rather than a gate. It reliably catches rebuilt copies of ConfirmDialog, AvatarChip and SearchField, which are the most common kind, and it's cheap enough to run on every component an agent writes. It misses when the right answer depends on what the thing is for, like a fade mask or a log view, rather than how its markup looks. Figma frames have the same problem, so send the frame name and the designer's notes along with the layer tree.</p>
-      <p class="note"><strong>Figma:</strong> Figma's Dev Mode MCP serves a frame's layer tree, which would go in <code>state</code> with the kit's components as the options. The question is the same as above. This part is untested, because the MCP needs the Figma desktop app with a file open.</p>
+      <p>So it's a hint, not a gate. It reliably catches rebuilt ConfirmDialogs, AvatarChips and SearchFields, the most common kind, and misses when the answer depends on purpose rather than markup. Figma frames share that limit, so send the frame name and notes too.</p>
+      <p class="note"><strong>Figma:</strong> the Dev Mode MCP's layer tree would go in <code>state</code>, with the kit as options. Untested: it needs the desktop app with a file open.</p>
     </section>
 
     <section id="where">
       <h2>Putting it together</h2>
-      <p>Here's a design-to-code workflow with Jev at each decision:</p>
+      <p>A design-to-code workflow with Jev at each decision:</p>
 <pre><code>Trigger: Figma frame / PR opened
   └─ Gate · Jev choice   <span class="c">which kit components? (≥0.9: pass them as hints)</span>
       └─ Agent           <span class="c">writes the code, using those components</span>
@@ -136,9 +136,9 @@ POST https://openrouter.ai/api/v1/systemone
               └─ unsure: Human, a designer reviews the flagged spots</code></pre>
       <p>What to build first:</p>
       <ol>
-        <li><strong>The n8n swap (01).</strong> Same answers as the Sonnet classifier, much cheaper and faster, and the workflow file imports as it is.</li>
-        <li><strong>The DESIGN.md linter (02).</strong> Each rule becomes one precise noul, run on the diff after every coding agent. It found 4 violations in the current app.</li>
-        <li><strong>Component hints before generating (05).</strong> Put the top three primitive picks into the coding agent's prompt. It's cheap, and it catches the most common kind of drift.</li>
+        <li><strong>The n8n swap (01).</strong> Same answers, far cheaper, and it imports as-is.</li>
+        <li><strong>The DESIGN.md linter (02).</strong> One noul per rule, on every agent's diff. Found $T_V violations.</li>
+        <li><strong>Component hints (05).</strong> Feed the top three picks into the coding agent's prompt.</li>
       </ol>
       <footer>
         <a href="index.html">What is Jev?</a> · <a href="cases.html">Workflow gates</a> ·
