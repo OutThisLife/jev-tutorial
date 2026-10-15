@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import random
+import re
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -284,7 +285,31 @@ def priority_atomic(n=120):
     save("priority_atomic", {"rows": rows, "usage": usage(rows), "factors": FACTORS})
 
 
-CASES = {f.__name__: f for f in (issue_router, issue_router_v2, priority, priority_atomic, duplicates, gate, approvals, verdicts, comments)}
+# 8 ── one choice across overlapping conditions vs a noul for each ──────────
+SPLIT_Q = {"auth": "The change touches authentication, authorization or secret handling.",
+           "no_tests": "The change adds or edits no tests."}
+
+
+def split(n=400):
+    prs = load("prs-all.json")[:n]
+    sec = ("type/security", "sweeper:risk-security-boundary", "area/auth")
+    test = re.compile(r"(^|/)tests?/|test_|_test\.|\.test\.|\.spec\.")
+
+    def one(p):
+        card = pr_card(p)
+        nouls, ms1, c1 = call(card, {k: {"type": "noul", "instructions": v} for k, v in SPLIT_Q.items()})
+        choice, ms2, c2 = call(card, {"which": {"type": "choice", "instructions": "Which of these best describes the change?",
+                                                "criteria": {**SPLIT_Q, "neither": "Neither of the above."}}})
+        return {"number": p["number"], "title": p["title"],
+                "truth": {"auth": any(l in p["labels"] for l in sec), "no_tests": not any(test.search(f) for f in p["files"])},
+                "nouls": {k: nouls[k]["noul"] for k in SPLIT_Q}, "choice": choice["which"]["probabilities"],
+                "ms": ms1 + ms2, "cost": c1 + c2}
+
+    rows = list(POOL.map(one, prs))
+    save("split", {"rows": rows, "usage": usage(rows), "questions": SPLIT_Q})
+
+
+CASES = {f.__name__: f for f in (issue_router, issue_router_v2, priority, priority_atomic, duplicates, gate, approvals, verdicts, comments, split)}
 
 if __name__ == "__main__":
     for name in sys.argv[1:] or CASES:

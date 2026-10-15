@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Using Jev for workflow gates</title>
+<title>What is Jev?</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -36,9 +36,9 @@
 
   <main>
     <header>
-      <div class="kicker">What is Jev?</div>
-      <h1>Using Jev for workflow gates</h1>
-      <p class="lede">Most of what a workflow does is mechanical: run this step, wait for that one, check whether the tests passed. Every so often it reaches a question that needs judgement, like whether a change touches security or whether a reply in Slack means yes. This tutorial is about handing those questions to Jev, a model that answers them with a number you can act on.</p>
+      <div class="kicker">A hands-on introduction</div>
+      <h1>What is Jev?</h1>
+      <p class="lede">Most of what a workflow does is mechanical: run this step, wait for that one, check whether the tests passed. Every so often it reaches a question that needs judgement, like whether a change touches security or whether a reply in Slack means yes. This page is for anyone building those workflows, whether in n8n, a CI pipeline or your own agent runner. It explains Jev, a model that answers those questions with a number you can act on, and walks through using it to decide which way a workflow goes.</p>
       <div class="meta">The API examples come from <a href="https://docs.typesafe.ai/introduction">TypeSafe's docs</a>. The gate is a small sketch that lives in the repo and runs.</div>
     </header>
 
@@ -47,34 +47,28 @@
       <p>Think about how you'd usually get a yes or no out of a language model. You write a prompt that ends with "answer PASS or FAIL", the model writes a sentence, and your code searches that sentence for the word PASS. It works most of the time. Then one day the model writes "this should NOT PASS", and your code ships it anyway.</p>
       <div class="widget" id="w-parse">
         <div class="wtitle">Try to fool the substring check</div>
-        <div class="chips">
-          <button>Done, all tests PASS.</button>
-          <button>This should NOT PASS review.</button>
-          <button>PASSED the type check; the runtime still crashes.</button>
-          <button>Yes, I looked at it. The approach is wrong.</button>
-          <button>Merged, CI green.</button>
-        </div>
-        <input type="text" value="This should NOT PASS review." aria-label="Step summary">
+        <div class="chips"></div>
+        <div class="wrow"><span class="lab">What actually happened</span><span data-quote></span></div>
         <div class="wrow"><span class="lab">"PASS" in text</span><span data-rule></span></div>
-        <div class="wrow"><span class="lab">A typed answer</span><span data-jev></span></div>
-        <div class="wcap">Pick one or type your own. The second row is a stand-in for a noul, scored on this page by a few keyword rules. It shows the shape of the answer, not Jev's real judgement.</div>
+        <div class="wrow"><span class="lab">Jev, one yes/no question</span><span data-jev></span></div>
+        <div class="wcap">Real Jev answers to the question "The step achieved its goal and the work is ready to move on". The summaries are written by hand to cover the ways the substring check fails.</div>
       </div>
       <p>Jev, from TypeSafe, removes that whole step. You don't prompt it and it never writes anything. You send it the thing you want judged plus a list of typed questions about it, and it sends back an answer to each question with a probability attached. TypeSafe calls this a <a href="https://docs.typesafe.ai/concepts/system-one">System One</a> model, borrowing the psychology term for fast, automatic judgement, as opposed to the slow, step-by-step reasoning a chat model does.</p>
-      <p>A request has three parts. The <strong>state</strong> is whatever you want judged. It can be a string or any JSON, and JSON with clear field names tends to get better answers than a wall of text. The <strong>questions</strong> are a map you write, from ids you pick to typed questions. The <strong>answers</strong> come back under those same ids. Jev evaluates every question separately and in parallel against the same state, so asking ten questions takes about as long as asking one.</p>
-      <p>What you give up is flexibility. Jev only picks among options you provide. It can't explain an answer, call a tool, or work through a problem in steps. In exchange it's fast (tens to a few hundred milliseconds), cheap (the 926 calls behind the <a href="cases.html">workflow-gate examples</a> cost under five cents in total, by OpenRouter's billing), and its probabilities mean something. TypeSafe trains it to be <em>calibrated</em>: across many calls, the answers it gives 0.9 should be right about nine times out of ten.</p>
+      <p>What you give up is flexibility. Jev only picks among options you provide. It can't explain an answer, call a tool, or work through a problem in steps. In exchange it's fast (tens to a few hundred milliseconds), cheap (the 1,326 calls behind the <a href="cases.html">workflow-gate examples</a> cost seven cents in total, by OpenRouter's billing), and its probabilities mean something. TypeSafe trains it to be <em>calibrated</em>: across many calls, the answers it gives 0.9 should be right about nine times out of ten.</p>
     </section>
 
     <section id="primitives">
       <h2>The kinds of question</h2>
       <p>For text, there are three, and most of the craft is picking the right one. A <strong>noul</strong> is a yes/no question, and its answer is simply the probability of yes. Reach for it whenever you'd naturally say "is it true that…". A <strong>choice</strong> picks one option from a list of up to 255 and gives a probability for each, all adding up to 1. Use it when exactly one option can be right. A <strong>score</strong> places the state on an ordered scale you describe, like calm, frustrated, furious, and tells you where it falls as a decimal, along with a probability for each step. (There's also a fourth kind, <a href="https://docs.typesafe.ai/primitives/box">box</a>, which finds where something is in an image. It doesn't come up in workflow gates, so it's left out here.)</p>
-      <table>
+      <div class="scroll"><table>
         <thead><tr><th>Type</th><th>It asks</th><th>You get back</th></tr></thead>
         <tbody>
           <tr><td><code>noul</code></td><td>Is this statement true?</td><td><code>noul</code>, the probability of yes, from 0 to 1</td></tr>
           <tr><td><code>choice</code></td><td>Which of these options?</td><td><code>choice</code>, <code>probabilities</code> for every option, <code>confidence</code></td></tr>
           <tr><td><code>score</code></td><td>Where on this scale?</td><td><code>score</code> as a decimal, <code>probabilities</code> for every step, <code>legend</code>, <code>confidence</code></td></tr>
         </tbody>
-      </table>
+      </table></div>
+      <p>A request has three parts. The <strong>state</strong> is whatever you want judged. It can be a string or any JSON, and JSON with clear field names tends to get better answers than a wall of text. The <strong>questions</strong> are a map you write, from ids you pick to typed questions. The <strong>answers</strong> come back under those same ids. Jev evaluates every question separately and in parallel against the same state, so asking ten questions takes about as long as asking one.</p>
       <p>Here's the example from <a href="https://docs.typesafe.ai/introduction/quickstart">TypeSafe's quickstart</a>, which asks all three about one support ticket:</p>
       <figure>
         <figcaption>Request</figcaption>
@@ -108,11 +102,11 @@
       <p>Confidence isn't the same as the winning probability. For a choice, TypeSafe rescales the top probability so that an even split counts as 0 and certainty as 1. That makes it comparable across questions with different numbers of options: 0.5 is a weak answer when there are two options and a strong one when there are ten. Try it:</p>
       <div class="widget" id="w-conf">
         <div class="wtitle">Move the probabilities and watch confidence</div>
-        <div class="wrow three"><span class="lab">billing</span><input type="range" min="0" max="100" value="16" aria-label="billing"><span data-opt></span></div>
-        <div class="wrow three"><span class="lab">technical</span><input type="range" min="0" max="100" value="84" aria-label="technical"><span data-opt></span></div>
-        <div class="wrow three"><span class="lab">sales</span><input type="range" min="0" max="100" value="0" aria-label="sales"><span data-opt></span></div>
+        <div class="wrow three"><span class="lab">touches auth</span><input type="range" min="0" max="100" value="44" aria-label="touches auth"><span data-opt></span></div>
+        <div class="wrow three"><span class="lab">adds no tests</span><input type="range" min="0" max="100" value="51" aria-label="adds no tests"><span data-opt></span></div>
+        <div class="wrow three"><span class="lab">neither</span><input type="range" min="0" max="100" value="5" aria-label="neither"><span data-opt></span></div>
         <div class="readout"><span class="big" data-conf></span><span><span class="wsub">confidence</span><span class="dim" data-top></span></span><button class="wbtn" data-reset style="margin-left:auto">Reset</button></div>
-        <div class="wcap">The sliders are rescaled to add up to 1. Confidence uses TypeSafe's <a href="https://docs.typesafe.ai/confidence#choice">published choice formula</a>, (top − 1/n) / (1 − 1/n).</div>
+        <div class="wcap">Starts from Jev's real answer for the pull request "<span data-title></span>". The sliders are rescaled to add up to 1, and confidence uses TypeSafe's <a href="https://docs.typesafe.ai/confidence#choice">published choice formula</a>, (top − 1/n) / (1 − 1/n).</div>
       </div>
       <p>A score's confidence also looks at <em>where</em> the leftover probability sits. Being torn between two neighbouring steps costs less than being torn between opposite ends: with three steps, a 50/50 split between the top two gives 0.25, while a 50/50 split between the bottom and the top gives 0. The quickstart's frustration answer is the neighbouring kind.</p>
     </section>
@@ -143,14 +137,14 @@ curl -s https://openrouter.ai/api/v1/systemone \
       <p>Each question is judged on its own, so an extra question doesn't muddy the others, and it barely adds time. That means it's fine to ask things you'll only need on some branches. If a later step cares about a ticket's language only when it's a billing ticket, ask about the language anyway and ignore the answer when it doesn't matter. TypeSafe calls this <a href="https://docs.typesafe.ai/patterns/fan-out">speculative fan-out</a>.</p>
       <div class="widget" id="w-fan">
         <div class="wtitle" data-n></div>
-        <input type="range" min="1" max="10" value="3" aria-label="number of questions">
+        <input type="range" min="1" max="39" value="3" aria-label="number of questions">
         <div style="margin-top:1rem">
-          <div class="wsub">An agent step per question, one after another</div>
+          <div class="wsub">A language model per question, one after another</div>
           <div class="tlwrap"><div class="lane" data-agent></div><span class="t" data-at></span></div>
           <div class="wsub" style="margin-top:.8rem">Jev, every question in one call</div>
           <div class="tlwrap"><div class="lane" data-jev></div><span class="t" data-jt></span></div>
         </div>
-        <div class="wcap">Illustrative timings: about 6.5 s per agent step, and about 180 ms for a Jev call, the median across the <a href="cases.html">workflow-gate examples</a>.</div>
+        <div class="wcap">Measured, not estimated. The language model is the Sonnet classifier from an n8n template, at a median of <span data-llm></span> s per call. Jev's medians by questions per call were <span data-pts></span>; in between is a straight line. The slider stops at <span data-max></span>, the most questions sent in one call here.</div>
       </div>
       <h3>Give "I don't know" somewhere to go</h3>
       <p>A probability beats a plain yes or no because it can tell you when the model isn't sure. To use that, split the range into three bands: act on a confident yes, skip on a confident no, and send everything in between to a person. How wide to make the middle depends on what a mistake costs. A narrow band is fine for routing a ticket. For anything that merges code touching auth, you want a wide one. Drag the slider to get a feel for it:</p>
@@ -187,17 +181,12 @@ curl -s https://openrouter.ai/api/v1/systemone \
       </ul>
       <p>Jev helps with all three. One call answers every plain-English condition at once, the answer is a number rather than a sentence, and the number tells you how sure Jev is. Pick a change and walk through the gate one path at a time:</p>
       <div class="widget" id="w-gate">
-        <div class="seg" data-sc>
-          <button data-k="catalog" aria-pressed="true">Adds a catalog entry</button>
-          <button data-k="token">Token refresh</button>
-          <button data-k="csrf">Removed CSRF check</button>
-          <button data-k="typo">Typo fix</button>
-        </div>
+        <div class="chips" data-sc></div>
         <div class="wstate" data-state></div>
         <ol class="paths"></ol>
         <p class="wlog" data-log></p>
         <div class="wbar"><button class="wbtn next" data-step>Step</button><button class="wbtn" data-run>Run to the end</button><button class="wbtn" data-reset>Reset</button><span class="dim" data-calls></span></div>
-        <div class="wcap">The changes and Jev's numbers are made up for illustration. The walk follows <code>choose_path</code> in the next section.</div>
+        <div class="wcap">Real pull requests from a busy open-source repo, with Jev's real answers to the three questions. The walk follows <code>choose_path</code> in the next section.</div>
       </div>
     </section>
 
@@ -206,14 +195,15 @@ curl -s https://openrouter.ai/api/v1/systemone \
       <h3>A yes/no question for each path</h3>
       <p>The natural first idea is one multiple-choice question: "which way should this go?" It's worth seeing why that doesn't fit. A choice assumes exactly one option is right, so its probabilities always add up to 1. A gate's conditions don't work like that. More than one can be true at once, since a change can touch auth and also have no tests, and the gate's order already decides which one wins. Asked as a choice, Jev has to split its belief between them, and both come out looking uncertain even though both are clearly true.</p>
       <div class="widget" id="w-split">
-        <div class="wtitle">Which of these are true for this change?</div>
-        <div class="checks"><label><input type="checkbox" checked>touches auth</label><label><input type="checkbox" checked>has no tests</label></div>
+        <div class="wtitle">Two things that are both true</div>
+        <div class="seg"><button data-i="0">Split down the middle</button><button data-i="1">One buried</button></div>
+        <div class="wstate" data-title></div>
         <div class="wcols">
           <div><div class="wsub">One multiple-choice question</div><div data-choice></div></div>
           <div><div class="wsub">A yes/no question for each</div><div data-noul></div></div>
         </div>
         <p class="wlog" data-note></p>
-        <div class="wcap">Mocked numbers that show the shape of each answer.</div>
+        <div class="wcap">Real Jev answers on real pull requests, asked both ways. Of the pull requests where both yes/no answers came back at 0.8 or above, the multiple-choice question put one of the two below 0.8 in <span data-count></span>.</div>
       </div>
       <p>Asking a separate yes/no question for each condition avoids that. You still send all of them in one request, and the gate's order decides which true condition wins.</p>
       <p class="note">A choice is the right tool when the options really do exclude each other, like routing a ticket to frontend, backend or infra. There, exactly one answer is correct and order doesn't matter.</p>
@@ -278,18 +268,13 @@ curl -s https://openrouter.ai/api/v1/systemone \
         <span class="k">return None</span>                <span class="c"># fall back to the usual check, never to "always"</span>
     <span class="k">return</span> {<span class="s">"path"</span>: path, <span class="s">"why"</span>: why}</code></pre>
       </figure>
-      <p>In the workflow editor, three small things would make this usable:</p>
-      <ul>
-        <li>A "Not sure" path people can add to a gate, with a hint to point it at a person.</li>
-        <li>The reason in the run log. If the <code>why</code> string is saved with each run, the log can say <code>security · jev 0.93</code>, and you can see at a glance why a run went the way it did.</li>
-        <li>A better default for people without a Jev key: replace the agent run with one structured call to a regular model that returns a typed verdict. That alone fixes the "NOT PASS" bug.</li>
-      </ul>
+      <p>If your tool has no plugin system, the same idea works as one step that calls <code>choose_path</code> before the fork. Whichever way you wire it, save the <code>why</code> string with each run, so the log can say <code>security · jev 0.93</code> and you can see why a run went the way it did.</p>
     </section>
 
     <section id="elsewhere">
       <h2>Other places it would help</h2>
       <p>Gates are the obvious spot, but anywhere a workflow asks an agent for a quick judgement call and then reads its prose, Jev could answer instead:</p>
-      <table>
+      <div class="scroll"><table>
         <thead><tr><th>Where</th><th>The question</th><th>Type</th></tr></thead>
         <tbody>
           <tr><td>An approval from chat</td><td>Is this reply an approval, a rejection, or a question back?</td><td><code>choice</code></td></tr>
@@ -297,7 +282,7 @@ curl -s https://openrouter.ai/api/v1/systemone \
           <tr><td>An agent's own verdict</td><td>How well does its summary meet the goal? A better signal than the agent saying PASS.</td><td><code>score</code></td></tr>
           <tr><td>The end of a chat session</td><td>Did it end in failure or frustration?</td><td><code>noul</code></td></tr>
         </tbody>
-      </table>
+      </table></div>
     </section>
 
     <section id="careful">
@@ -331,6 +316,7 @@ curl -s https://openrouter.ai/api/v1/systemone \
   </main>
 </div>
 
+<script src="widget-data.js"></script>
 <script src="widgets.js"></script>
 <script>
   const links = [...document.querySelectorAll('nav.toc .sections a')];

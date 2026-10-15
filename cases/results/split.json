@@ -1,0 +1,7613 @@
+{
+ "rows": [
+  {
+   "number": 139197,
+   "title": "fix(acp): retain provider identity in gateway model picks",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.11,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 459,
+   "cost": 5.2962e-05
+  },
+  {
+   "number": 139195,
+   "title": "feat(providers): let provider plugins claim tenant-scoped endpoint hosts",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.96,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.99,
+    "no_tests": 0,
+    "neither": 0.01
+   },
+   "ms": 364,
+   "cost": 6.0942e-05
+  },
+  {
+   "number": 139194,
+   "title": "fix(a2a): name the trust-list entry format in the fail-closed 403 and startup log",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.89,
+    "no_tests": 0.07
+   },
+   "choice": {
+    "auth": 0.96,
+    "no_tests": 0.01,
+    "neither": 0.03
+   },
+   "ms": 388,
+   "cost": 6.405000000000001e-05
+  },
+  {
+   "number": 139193,
+   "title": "feat(plugins): core-made xAI Grok requests so plugins never hold the token",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.98,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 1,
+    "no_tests": 0,
+    "neither": 0
+   },
+   "ms": 407,
+   "cost": 6.1026e-05
+  },
+  {
+   "number": 139192,
+   "title": "fix(tui): rank an exact skill match above weaker command matches in slash search",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.07
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 465,
+   "cost": 5.7918e-05
+  },
+  {
+   "number": 139191,
+   "title": "fix(whatsapp): handle locked session dir on re-pair and reject empty creds in preflight",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.92,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.99,
+    "no_tests": 0,
+    "neither": 0.01
+   },
+   "ms": 438,
+   "cost": 6.0102e-05
+  },
+  {
+   "number": 139188,
+   "title": "feat(gateway): add opt-in Telegram DM topic transfer",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 403,
+   "cost": 5.4558e-05
+  },
+  {
+   "number": 139187,
+   "title": "/loop shows a live countdown to the next wakeup on CLI, TUI and Desktop",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.09
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.03,
+    "neither": 0.97
+   },
+   "ms": 393,
+   "cost": 8.9586e-05
+  },
+  {
+   "number": 139186,
+   "title": "fix(agent): don't give custom providers local-engine reasoning carriers",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 370,
+   "cost": 5.9682e-05
+  },
+  {
+   "number": 139185,
+   "title": "feat(desktop): configure messaging slash admins",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.67,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.51,
+    "no_tests": 0.01,
+    "neither": 0.48
+   },
+   "ms": 310,
+   "cost": 5.8002e-05
+  },
+  {
+   "number": 139184,
+   "title": "fix(rss-feeds): normalize non-strict publication dates",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 361,
+   "cost": 5.2962e-05
+  },
+  {
+   "number": 139182,
+   "title": "fix(update): retry a timed-out source API read once",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.17,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0,
+    "neither": 0.99
+   },
+   "ms": 377,
+   "cost": 5.5902e-05
+  },
+  {
+   "number": 139181,
+   "title": "fix(agent): resolve a key-less non-native anthropic_messages provider's own key",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.98,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 1,
+    "no_tests": 0,
+    "neither": 0
+   },
+   "ms": 353,
+   "cost": 5.7498e-05
+  },
+  {
+   "number": 139180,
+   "title": "fix(slack): send enum status on Agent Sessions, fall back to phrase",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.33,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.08,
+    "no_tests": 0,
+    "neither": 0.92
+   },
+   "ms": 326,
+   "cost": 5.859e-05
+  },
+  {
+   "number": 139178,
+   "title": "fix(tui_gateway): import Path in methods_onboarding \u2014 module failed to import, killing cron WS session spawns",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.07
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.02,
+    "neither": 0.98
+   },
+   "ms": 369,
+   "cost": 6.0354e-05
+  },
+  {
+   "number": 139177,
+   "title": "docs(mcp): correct stale single-underscore tool names in docs and skills",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.11,
+    "no_tests": 0.91
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.92,
+    "neither": 0.08
+   },
+   "ms": 344,
+   "cost": 8.8494e-05
+  },
+  {
+   "number": 139175,
+   "title": "fix(gateway): keep pending-tail status diagnostic fast",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 341,
+   "cost": 5.775e-05
+  },
+  {
+   "number": 139174,
+   "title": "fix(desktop): mint gateway tickets with the bundled payload's Python",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.12,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0,
+    "neither": 0.99
+   },
+   "ms": 319,
+   "cost": 6.3882e-05
+  },
+  {
+   "number": 139173,
+   "title": "fix: delete of live secondary-profile sessions refused (routing index vs own store)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 339,
+   "cost": 5.5818e-05
+  },
+  {
+   "number": 139172,
+   "title": "fix(tts): ship piper with the Chinese phonemization stack",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.07
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.02,
+    "neither": 0.98
+   },
+   "ms": 351,
+   "cost": 6.1362e-05
+  },
+  {
+   "number": 139171,
+   "title": "fix(discord): durable re-authorization reads allowed_roles from the platforms block like ingress",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.97,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 1,
+    "no_tests": 0,
+    "neither": 0
+   },
+   "ms": 373,
+   "cost": 5.7834e-05
+  },
+  {
+   "number": 139170,
+   "title": "fix(discord): resolve the durable re-authorization role gate from the platform block",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.97,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 1,
+    "no_tests": 0,
+    "neither": 0
+   },
+   "ms": 353,
+   "cost": 5.7414e-05
+  },
+  {
+   "number": 139169,
+   "title": "fix(desktop): recover picker selection from catalog",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 409,
+   "cost": 5.4306e-05
+  },
+  {
+   "number": 139168,
+   "title": "Docs search monitor no longer cries wolf when only its own cached copy is stale",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.89
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.9,
+    "neither": 0.1
+   },
+   "ms": 472,
+   "cost": 6.0102e-05
+  },
+  {
+   "number": 139167,
+   "title": "Windows Desktop attaches to a Scheduled-Task gateway again (#139013, #139083)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.51,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.43,
+    "no_tests": 0.01,
+    "neither": 0.56
+   },
+   "ms": 391,
+   "cost": 6.405000000000001e-05
+  },
+  {
+   "number": 139166,
+   "title": "fix(agent): retain stale failures after partial stream errors",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 345,
+   "cost": 5.1618e-05
+  },
+  {
+   "number": 139164,
+   "title": "feat(plugins): fence and join managed workers across reloads",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 371,
+   "cost": 5.523e-05
+  },
+  {
+   "number": 139159,
+   "title": "fix(gateway): skip refusal-left bot mailbox pins quietly instead of warning on every scan",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.25,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0.03,
+    "no_tests": 0.01,
+    "neither": 0.96
+   },
+   "ms": 324,
+   "cost": 5.565e-05
+  },
+  {
+   "number": 139156,
+   "title": "fix(stt): keep resampler phase exact across chunk boundaries",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 411,
+   "cost": 5.8506e-05
+  },
+  {
+   "number": 139153,
+   "title": "Plugin catalog: add tradersagent-plugin \u2014 Trader's Agent, a chart-first Vela console for Desktop",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.61
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.69,
+    "neither": 0.31
+   },
+   "ms": 351,
+   "cost": 5.607e-05
+  },
+  {
+   "number": 139151,
+   "title": "fix(irc): reconnect when the server goes silent instead of staying deaf",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 335,
+   "cost": 5.6994000000000004e-05
+  },
+  {
+   "number": 139149,
+   "title": "/retry from messaging platforms works again on multi-profile gateways (#139040, salvage #139044)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.22,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.11,
+    "no_tests": 0.01,
+    "neither": 0.88
+   },
+   "ms": 430,
+   "cost": 6.3798e-05
+  },
+  {
+   "number": 139145,
+   "title": "fix(security): hold the plugin gate on websockets and for every served profile",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.75,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.79,
+    "no_tests": 0.01,
+    "neither": 0.2
+   },
+   "ms": 364,
+   "cost": 6.1866e-05
+  },
+  {
+   "number": 139143,
+   "title": "feat(plugin-catalog): add wallaby-provider plugin",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.73,
+    "no_tests": 0.92
+   },
+   "choice": {
+    "auth": 0.44,
+    "no_tests": 0.51,
+    "neither": 0.05
+   },
+   "ms": 291,
+   "cost": 5.5398e-05
+  },
+  {
+   "number": 139142,
+   "title": "feat(kanban): expose current blocker in diagnostics",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 408,
+   "cost": 5.7666e-05
+  },
+  {
+   "number": 139140,
+   "title": "fix(gateway): name the field a session.create refusal is about",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 363,
+   "cost": 6.0102e-05
+  },
+  {
+   "number": 139139,
+   "title": "fix(plugins): bind unscoped native registration workers to their owner",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.97,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 1,
+    "no_tests": 0,
+    "neither": 0
+   },
+   "ms": 345,
+   "cost": 5.4138e-05
+  },
+  {
+   "number": 139137,
+   "title": "fix(desktop): name the switched-to model in the timeline notice",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 412,
+   "cost": 5.5146000000000004e-05
+  },
+  {
+   "number": 139131,
+   "title": "[codex] feat(gateway): expose opt-in activation evidence",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.2,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.05,
+    "no_tests": 0,
+    "neither": 0.95
+   },
+   "ms": 397,
+   "cost": 5.5734e-05
+  },
+  {
+   "number": 139130,
+   "title": "chore(plugin-catalog): repin kanban-gantt to 51d9e6a and pin 1.6.1",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.96
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.96,
+    "neither": 0.04
+   },
+   "ms": 409,
+   "cost": 6.6906e-05
+  },
+  {
+   "number": 139129,
+   "title": "fix(desktop): restore connector editor wheel scrolling",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 384,
+   "cost": 5.901e-05
+  },
+  {
+   "number": 139128,
+   "title": "chore(plugin-catalog): pin kanban-gantt at 1.6.1",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.97
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.96,
+    "neither": 0.04
+   },
+   "ms": 383,
+   "cost": 6.598199999999999e-05
+  },
+  {
+   "number": 139127,
+   "title": "fix: config watcher and config backups race conditions",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.1,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 337,
+   "cost": 3.5238000000000004e-05
+  },
+  {
+   "number": 139126,
+   "title": "fix: config backups and Desktop pairing updates no longer miss writes in the same timestamp tick (main red after #137895)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.2,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0,
+    "neither": 0.99
+   },
+   "ms": 353,
+   "cost": 6.0606e-05
+  },
+  {
+   "number": 139122,
+   "title": "fix(kanban): contain respawn-guard skip loops and bound rate-limit retries",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.33,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.08,
+    "no_tests": 0,
+    "neither": 0.92
+   },
+   "ms": 392,
+   "cost": 6.5814e-05
+  },
+  {
+   "number": 139120,
+   "title": "chore(actions)(deps): bump the actions-minor-patch group across 1 directory with 7 updates",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.6,
+    "no_tests": 0.93
+   },
+   "choice": {
+    "auth": 0.05,
+    "no_tests": 0.89,
+    "neither": 0.06
+   },
+   "ms": 351,
+   "cost": 7.916999999999999e-05
+  },
+  {
+   "number": 139119,
+   "title": "chore(plugin-catalog): pin kanban-gantt at 1.6.1",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.96
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.9,
+    "neither": 0.1
+   },
+   "ms": 365,
+   "cost": 5.0358e-05
+  },
+  {
+   "number": 139118,
+   "title": "fix(tts): abandon an in-flight sync synthesis on barge-in",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.21
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.03,
+    "neither": 0.97
+   },
+   "ms": 346,
+   "cost": 5.607e-05
+  },
+  {
+   "number": 139117,
+   "title": "fix(update): retry transient fetch failures",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 366,
+   "cost": 5.4641999999999996e-05
+  },
+  {
+   "number": 139116,
+   "title": "feat(desktop): add a Role label to bots, shown beside the name and in teammates' rosters",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.01
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 333,
+   "cost": 8.244599999999999e-05
+  },
+  {
+   "number": 139115,
+   "title": "docs(model-catalog): add full-catalog OpenRouter picker recipe",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.98
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.99,
+    "neither": 0.01
+   },
+   "ms": 340,
+   "cost": 5.5482e-05
+  },
+  {
+   "number": 139113,
+   "title": "fix(tools): address reactions by the durable session id",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.15,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0,
+    "neither": 0.98
+   },
+   "ms": 349,
+   "cost": 5.397e-05
+  },
+  {
+   "number": 139112,
+   "title": "fix(tts): do not hold an interrupted turn waiting for the sync provider",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.07
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 389,
+   "cost": 5.5146000000000004e-05
+  },
+  {
+   "number": 139111,
+   "title": "fix(computer-use): support WSL Windows CUA driver interop (os error 123)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 366,
+   "cost": 4.6242e-05
+  },
+  {
+   "number": 139110,
+   "title": "fix(pm): keep identical held tool entries live",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 341,
+   "cost": 5.5314e-05
+  },
+  {
+   "number": 139109,
+   "title": "fix(cli): load the home dotenv before the update check reads a token",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.96,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 1,
+    "no_tests": 0,
+    "neither": 0
+   },
+   "ms": 390,
+   "cost": 5.3886e-05
+  },
+  {
+   "number": 139108,
+   "title": "fix(web_server): attach dashboard chat when it names the serving profile",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 391,
+   "cost": 5.5566e-05
+  },
+  {
+   "number": 139107,
+   "title": "fix(update): tolerate stable ancestry probe timeouts",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 376,
+   "cost": 5.5062e-05
+  },
+  {
+   "number": 139105,
+   "title": "fix(gateway): serve a named-pipe peer that exits before its SID is read",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.86,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0.96,
+    "no_tests": 0,
+    "neither": 0.04
+   },
+   "ms": 360,
+   "cost": 5.565e-05
+  },
+  {
+   "number": 139101,
+   "title": "fix(bedrock): Converse tool schemas drop top-level combinators",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 353,
+   "cost": 5.733e-05
+  },
+  {
+   "number": 139100,
+   "title": "fix(cli): put the Windows gateway tree in UTF-8 mode with PYTHONUTF8",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 399,
+   "cost": 6.321e-05
+  },
+  {
+   "number": 139098,
+   "title": "fix(skills): bound ClawHub owner enrichment",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 385,
+   "cost": 5.5734e-05
+  },
+  {
+   "number": 139097,
+   "title": "fix(gateway): enable UTF-8 mode for Windows launchers",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 447,
+   "cost": 5.7162e-05
+  },
+  {
+   "number": 139095,
+   "title": "fix(desktop): suggest Mandarin Edge voices",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 420,
+   "cost": 5.5314e-05
+  },
+  {
+   "number": 139094,
+   "title": "fix(status): use multiplex runtime for served profile status",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 424,
+   "cost": 5.5482e-05
+  },
+  {
+   "number": 139090,
+   "title": "fix(bedrock): strip top-level oneOf/allOf/anyOf from Converse tool inputSchema",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 429,
+   "cost": 5.7666e-05
+  },
+  {
+   "number": 139089,
+   "title": "fix(gateway): skip human waits during restart drain",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 416,
+   "cost": 5.4641999999999996e-05
+  },
+  {
+   "number": 139081,
+   "title": "fix(execute_code): a nested tool call does not outlive its cell, and the stub stops replaying a request the host is still serving",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.19,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0.03,
+    "no_tests": 0.01,
+    "neither": 0.96
+   },
+   "ms": 372,
+   "cost": 6.0186e-05
+  },
+  {
+   "number": 139079,
+   "title": "hermes update no longer refuses the stable channel when git is slow to find the unfetched release (#137646, salvage #137649)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 334,
+   "cost": 7.026600000000001e-05
+  },
+  {
+   "number": 139078,
+   "title": "feat(plugin-catalog): add gemini-voice",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.58,
+    "no_tests": 0.95
+   },
+   "choice": {
+    "auth": 0.16,
+    "no_tests": 0.72,
+    "neither": 0.12
+   },
+   "ms": 374,
+   "cost": 5.8506e-05
+  },
+  {
+   "number": 139076,
+   "title": "Plugin-rewritten messages are no longer refused on multi-profile gateways (#139045)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.54,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0.51,
+    "no_tests": 0.01,
+    "neither": 0.48
+   },
+   "ms": 346,
+   "cost": 5.5734e-05
+  },
+  {
+   "number": 139072,
+   "title": "fix(plugin-catalog): bump web-search-plus to 5.1.1",
+   "truth": {
+    "auth": true,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.16,
+    "no_tests": 0.96
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0.96,
+    "neither": 0.03
+   },
+   "ms": 458,
+   "cost": 6.6654e-05
+  },
+  {
+   "number": 139071,
+   "title": "fix(api_server): drop unknown include_editorial kwarg from /v1/skills",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 340,
+   "cost": 5.8002e-05
+  },
+  {
+   "number": 139070,
+   "title": "fix(tools): withdraw nested protected writes on cell timeout",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.65,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.67,
+    "no_tests": 0,
+    "neither": 0.33
+   },
+   "ms": 368,
+   "cost": 5.3718e-05
+  },
+  {
+   "number": 139069,
+   "title": "fix(gateway): log why a watch notification was not admitted (from #139032)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.57,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.46,
+    "no_tests": 0.01,
+    "neither": 0.53
+   },
+   "ms": 341,
+   "cost": 5.8926e-05
+  },
+  {
+   "number": 139068,
+   "title": "fix(gateway): keep native provenance through a pre_gateway_dispatch rewrite",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.26,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.19,
+    "no_tests": 0.01,
+    "neither": 0.8
+   },
+   "ms": 357,
+   "cost": 5.6406e-05
+  },
+  {
+   "number": 139067,
+   "title": "Shell hooks ask for consent on the CLI and follow config/allowlist changes without a gateway restart (CLI-5, #134889)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.41,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.25,
+    "no_tests": 0.01,
+    "neither": 0.74
+   },
+   "ms": 449,
+   "cost": 6.4638e-05
+  },
+  {
+   "number": 139066,
+   "title": "fix(skills): enable stripe-link-cli on Windows and document real-run pitfalls",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.83,
+    "no_tests": 0.92
+   },
+   "choice": {
+    "auth": 0.43,
+    "no_tests": 0.52,
+    "neither": 0.05
+   },
+   "ms": 297,
+   "cost": 5.691e-05
+  },
+  {
+   "number": 139064,
+   "title": "fix(desktop): scope chat image uploads to profile",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.3,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.17,
+    "no_tests": 0,
+    "neither": 0.83
+   },
+   "ms": 456,
+   "cost": 5.7666e-05
+  },
+  {
+   "number": 139063,
+   "title": "fix(gateway): preserve secondary local session policy",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.9,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.99,
+    "no_tests": 0,
+    "neither": 0.01
+   },
+   "ms": 432,
+   "cost": 5.523e-05
+  },
+  {
+   "number": 139058,
+   "title": "fix(sessions): restore CLI MRU for gateway rows",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 315,
+   "cost": 5.6322e-05
+  },
+  {
+   "number": 139057,
+   "title": "fix(gateway): session.usage frames carry the projected usage object",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.07
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.02,
+    "neither": 0.98
+   },
+   "ms": 429,
+   "cost": 5.6742e-05
+  },
+  {
+   "number": 139056,
+   "title": "fix(agent): never auto-archive a skill that a live skill depends on",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 448,
+   "cost": 5.9178e-05
+  },
+  {
+   "number": 139055,
+   "title": "feat(desktop): preview Word, Excel, CSV, PowerPoint, and OpenDocument in the rail",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 334,
+   "cost": 8.295000000000001e-05
+  },
+  {
+   "number": 139054,
+   "title": "fix(gateway): preserve native event identity on hook rewrite",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.16,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0.01,
+    "neither": 0.97
+   },
+   "ms": 339,
+   "cost": 5.4894e-05
+  },
+  {
+   "number": 139053,
+   "title": "fix(gateway): prune orphaned routing entries",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.01
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 347,
+   "cost": 5.9346000000000004e-05
+  },
+  {
+   "number": 139052,
+   "title": "Add the Promoat plugin to the catalog",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.84,
+    "no_tests": 0.95
+   },
+   "choice": {
+    "auth": 0.43,
+    "no_tests": 0.54,
+    "neither": 0.03
+   },
+   "ms": 327,
+   "cost": 4.3134e-05
+  },
+  {
+   "number": 139051,
+   "title": "feat(desktop): native composer behavior seam for standalone plugins",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.14,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 339,
+   "cost": 7.135799999999999e-05
+  },
+  {
+   "number": 139050,
+   "title": "fix(agent): auxiliary Relay calls decode as chat completions (#137202, salvage #137203)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 351,
+   "cost": 6.573000000000001e-05
+  },
+  {
+   "number": 139047,
+   "title": "fix(gateway): keep tool calls in caller-supplied /v1/runs conversation_history",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 398,
+   "cost": 5.6489999999999996e-05
+  },
+  {
+   "number": 139046,
+   "title": "fix(usage): stop double-scaling Anthropic utilization below 1 percent",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 375,
+   "cost": 6.0270000000000004e-05
+  },
+  {
+   "number": 139044,
+   "title": "fix(gateway): re-enter the native callback for a messaging /retry redispatch",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.13,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0,
+    "neither": 0.99
+   },
+   "ms": 355,
+   "cost": 5.7246e-05
+  },
+  {
+   "number": 139043,
+   "title": "fix(cli): Ctrl+T monitor and dock read the gateway session's subagents (CLI-12)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 406,
+   "cost": 5.8842000000000003e-05
+  },
+  {
+   "number": 139042,
+   "title": "fix(desktop): honor the active gateway for new sessions",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 351,
+   "cost": 4.4814e-05
+  },
+  {
+   "number": 139039,
+   "title": "feat(telegram): select Desktop Projects when starting a new session",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 357,
+   "cost": 7.6146e-05
+  },
+  {
+   "number": 139038,
+   "title": "fix(gateway): retain shared runtime for validated profile owner",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 332,
+   "cost": 5.3466e-05
+  },
+  {
+   "number": 139037,
+   "title": "fix(agent): persist managed worker RPCs from async callbacks",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 343,
+   "cost": 5.3718e-05
+  },
+  {
+   "number": 139036,
+   "title": "fix(scale-to-zero): keep the dashboard-client heartbeat write off the connection path",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 385,
+   "cost": 5.565e-05
+  },
+  {
+   "number": 139034,
+   "title": "feat(kanban): kanban.auto_subscribe_wake - passive chat auto-subscriptions per platform",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 405,
+   "cost": 6.0942e-05
+  },
+  {
+   "number": 139033,
+   "title": "fix(acp): surface failed provider turns",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 329,
+   "cost": 5.5062e-05
+  },
+  {
+   "number": 139032,
+   "title": "Background-job completions reach the chat again on Telegram and Discord (#138940, salvage #138967)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 346,
+   "cost": 6.0522e-05
+  },
+  {
+   "number": 139031,
+   "title": "fix(desktop): ignore messaging session completions and controls",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 484,
+   "cost": 5.943e-05
+  },
+  {
+   "number": 139030,
+   "title": "fix(desktop): accept bare session usage events",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 380,
+   "cost": 5.6658e-05
+  },
+  {
+   "number": 139028,
+   "title": "Fix state.db WAL lock owner attribution under container device translation",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.08
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 414,
+   "cost": 5.607e-05
+  },
+  {
+   "number": 139026,
+   "title": "fix(gateway): Discord/Telegram background completions reach the agent instead of requeueing forever (#138940, salvage #138947 #138967 #138986)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.12,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 393,
+   "cost": 6.6654e-05
+  },
+  {
+   "number": 139025,
+   "title": "feat(feishu): show live per-turn progress in a collapsible card",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.1,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 378,
+   "cost": 4.9517999999999996e-05
+  },
+  {
+   "number": 139024,
+   "title": "feat(plugin-catalog): add devkit (per-session Scratchpad)",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.89
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.93,
+    "neither": 0.07
+   },
+   "ms": 385,
+   "cost": 5.8422000000000004e-05
+  },
+  {
+   "number": 139023,
+   "title": "fix(tui): write the dashboard-client heartbeat marker off the event loop",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.08
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 343,
+   "cost": 5.6994000000000004e-05
+  },
+  {
+   "number": 139022,
+   "title": "fix(gateway): include provider in local session info",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 321,
+   "cost": 5.2962e-05
+  },
+  {
+   "number": 139021,
+   "title": "fix(update): restore newest valid state snapshot",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 447,
+   "cost": 5.481e-05
+  },
+  {
+   "number": 139020,
+   "title": "fix(gateway): honor omitted Windows task defaults",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.36,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.12,
+    "no_tests": 0,
+    "neither": 0.88
+   },
+   "ms": 355,
+   "cost": 5.3886e-05
+  },
+  {
+   "number": 139019,
+   "title": "fix(cli): restore snapshots through an offline gateway handoff",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.3,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.08,
+    "no_tests": 0,
+    "neither": 0.92
+   },
+   "ms": 298,
+   "cost": 5.9934e-05
+  },
+  {
+   "number": 139014,
+   "title": "Desktop no longer hangs on macOS when the home path's letter case differs (#138754, salvage #138961)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.23,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0.12,
+    "no_tests": 0.02,
+    "neither": 0.86
+   },
+   "ms": 379,
+   "cost": 6.0438e-05
+  },
+  {
+   "number": 139010,
+   "title": "fix(agent): preserve custom provider headers for auto titles",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.93,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.99,
+    "no_tests": 0,
+    "neither": 0.01
+   },
+   "ms": 344,
+   "cost": 5.481e-05
+  },
+  {
+   "number": 139009,
+   "title": "fix(gateway): a following session drops the coding posture when its profile leaves focus",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 348,
+   "cost": 6.1362e-05
+  },
+  {
+   "number": 139007,
+   "title": "fix(background-review): run unrouted review forks on the pending primary runtime after a fallback",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 403,
+   "cost": 5.9682e-05
+  },
+  {
+   "number": 139006,
+   "title": "feat(desktop): host the Desktop renderer through the existing Hermes web server",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.93,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.94,
+    "no_tests": 0,
+    "neither": 0.06
+   },
+   "ms": 324,
+   "cost": 8.076599999999999e-05
+  },
+  {
+   "number": 139005,
+   "title": "Stable releases start the Windows bundle without waiting for the arm64 smoke (~12 min faster)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 398,
+   "cost": 6.237e-05
+  },
+  {
+   "number": 139004,
+   "title": "Pasei/prompt workspace tail",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 418,
+   "cost": 6.270599999999999e-05
+  },
+  {
+   "number": 139003,
+   "title": "fix(gateway): preserve legacy ui meta CAS",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 334,
+   "cost": 5.6238e-05
+  },
+  {
+   "number": 139001,
+   "title": "fix(kanban): admit owner-run tasks as finite turns",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.19,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.04,
+    "no_tests": 0,
+    "neither": 0.96
+   },
+   "ms": 376,
+   "cost": 5.565e-05
+  },
+  {
+   "number": 139000,
+   "title": "fix(cli): drop the blank line above the streamed reasoning box footer",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 327,
+   "cost": 5.7078e-05
+  },
+  {
+   "number": 138999,
+   "title": "fix(toolsets): make zero tools expressible, fail closed on an empty -t",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.22,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.09,
+    "no_tests": 0.01,
+    "neither": 0.9
+   },
+   "ms": 597,
+   "cost": 6.0438e-05
+  },
+  {
+   "number": 138997,
+   "title": "test(install): preload Compression assembly for PS 5.1 ZipArchiveMode",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 403,
+   "cost": 6.279e-05
+  },
+  {
+   "number": 138996,
+   "title": "test(cli): skip the live schtasks /Create probes when task creation is denied",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.34,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.06,
+    "no_tests": 0.01,
+    "neither": 0.93
+   },
+   "ms": 556,
+   "cost": 5.7246e-05
+  },
+  {
+   "number": 138995,
+   "title": "perf(cli): memoize stable profile home resolution",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 398,
+   "cost": 5.3634e-05
+  },
+  {
+   "number": 138993,
+   "title": "fix(desktop): give an unset plugin secret field a placeholder",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.8,
+    "no_tests": 0.11
+   },
+   "choice": {
+    "auth": 0.76,
+    "no_tests": 0.02,
+    "neither": 0.22
+   },
+   "ms": 367,
+   "cost": 6.6654e-05
+  },
+  {
+   "number": 138991,
+   "title": "fix(config): load SOUL.md from HERMES_MANAGED_DIR",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.2,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.03,
+    "no_tests": 0,
+    "neither": 0.97
+   },
+   "ms": 480,
+   "cost": 6.153e-05
+  },
+  {
+   "number": 138989,
+   "title": "fix(models): list hy4-preview in the curated opencode-go catalog",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.08
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.03,
+    "neither": 0.97
+   },
+   "ms": 335,
+   "cost": 5.8002e-05
+  },
+  {
+   "number": 138988,
+   "title": "fix(cli): avoid repeated footer overflow redraws",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 404,
+   "cost": 5.6238e-05
+  },
+  {
+   "number": 138987,
+   "title": "chore(plugins): pin birkin-mnemosyne to core 0.7.2",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.97
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.93,
+    "neither": 0.07
+   },
+   "ms": 366,
+   "cost": 7.0182e-05
+  },
+  {
+   "number": 138986,
+   "title": "fix(gateway): never reply-anchor internal wakes to their producer identity",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 439,
+   "cost": 5.6574000000000004e-05
+  },
+  {
+   "number": 138981,
+   "title": "chore(plugins): update Activity to v0.2.2",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.12,
+    "no_tests": 0.93
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0.88,
+    "neither": 0.11
+   },
+   "ms": 354,
+   "cost": 4.7586e-05
+  },
+  {
+   "number": 138980,
+   "title": "fix(messaging): link Discord setup guide to Hermes docs",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.23,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.04,
+    "no_tests": 0,
+    "neither": 0.96
+   },
+   "ms": 370,
+   "cost": 5.6238e-05
+  },
+  {
+   "number": 138978,
+   "title": "fix(ssh): budget the full ControlMaster listener path for every root",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.12,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 403,
+   "cost": 6.0942e-05
+  },
+  {
+   "number": 138977,
+   "title": "fix(process): stop env-backed background writers and their children",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 312,
+   "cost": 5.3046e-05
+  },
+  {
+   "number": 138976,
+   "title": "fix(cli): survive aarch64 hosts that advertise SVE they cannot execute",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.19,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0,
+    "neither": 0.99
+   },
+   "ms": 467,
+   "cost": 5.8842000000000003e-05
+  },
+  {
+   "number": 138972,
+   "title": "fix(copy): advise /model on exhaustion only when a viable hop remains",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 392,
+   "cost": 5.7918e-05
+  },
+  {
+   "number": 138971,
+   "title": "feat(kanban): retain more of latest context comment",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 507,
+   "cost": 5.733e-05
+  },
+  {
+   "number": 138970,
+   "title": "fix(subagent-lifecycle): stop double-clipping native-finalized summaries and pass spill metadata through",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 349,
+   "cost": 6.2118e-05
+  },
+  {
+   "number": 138968,
+   "title": "fix(cron): find unified-runtime cron runs by their scheduler admission",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 434,
+   "cost": 7.1274e-05
+  },
+  {
+   "number": 138967,
+   "title": "fix(gateway): admit completion wakes whose source differs only by message_id",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.07
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 333,
+   "cost": 5.481e-05
+  },
+  {
+   "number": 138966,
+   "title": "plugin-catalog: bump Jot to 0.4.1",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.73,
+    "no_tests": 0.84
+   },
+   "choice": {
+    "auth": 0.46,
+    "no_tests": 0.45,
+    "neither": 0.09
+   },
+   "ms": 400,
+   "cost": 6.0354e-05
+  },
+  {
+   "number": 138962,
+   "title": "fix(desktop): localize the \"New session\" / \"Untitled session\" tab names",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.87
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.84,
+    "neither": 0.16
+   },
+   "ms": 333,
+   "cost": 6.354599999999999e-05
+  },
+  {
+   "number": 138961,
+   "title": "fix(desktop): mint gateway tickets for a home's identity, not its spelling",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.18,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0.01,
+    "neither": 0.98
+   },
+   "ms": 396,
+   "cost": 5.7582e-05
+  },
+  {
+   "number": 138960,
+   "title": "fix(gateway): keep a local session's endpoint and key together on a model pick",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.93,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0.95,
+    "no_tests": 0,
+    "neither": 0.05
+   },
+   "ms": 323,
+   "cost": 5.8674e-05
+  },
+  {
+   "number": 138959,
+   "title": "fix(desktop): retire stale generation mutations",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.16,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0,
+    "neither": 0.99
+   },
+   "ms": 436,
+   "cost": 5.5818e-05
+  },
+  {
+   "number": 138958,
+   "title": "feat(plugin-catalog): add hermes-xai (Grok Voice for Desktop + read-only xAI Collections search)",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.89,
+    "no_tests": 0.92
+   },
+   "choice": {
+    "auth": 0.68,
+    "no_tests": 0.29,
+    "neither": 0.03
+   },
+   "ms": 373,
+   "cost": 6.069e-05
+  },
+  {
+   "number": 138957,
+   "title": "fix(docker): start TUI gateway through s6",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 288,
+   "cost": 5.5398e-05
+  },
+  {
+   "number": 138956,
+   "title": "fix(gateway): the gateway picks the coding toolsets, decided once per session (salvage #138818)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.39,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0,
+    "neither": 0.98
+   },
+   "ms": 323,
+   "cost": 6.6486e-05
+  },
+  {
+   "number": 138955,
+   "title": "feat(plugin-catalog): add specstream plugin",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.87,
+    "no_tests": 0.87
+   },
+   "choice": {
+    "auth": 0.43,
+    "no_tests": 0.52,
+    "neither": 0.05
+   },
+   "ms": 345,
+   "cost": 4.7669999999999996e-05
+  },
+  {
+   "number": 138954,
+   "title": "fix(gateway): re-sweep idle scratch entries on the housekeeping tick",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 345,
+   "cost": 5.7582e-05
+  },
+  {
+   "number": 138953,
+   "title": "feat(agent): add opt-in finished reasoning replay trimming",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 446,
+   "cost": 5.6489999999999996e-05
+  },
+  {
+   "number": 138951,
+   "title": "fix(acp): resolve private overlay gateway homes",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.36,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.09,
+    "no_tests": 0,
+    "neither": 0.91
+   },
+   "ms": 506,
+   "cost": 5.6489999999999996e-05
+  },
+  {
+   "number": 138950,
+   "title": "fix(dashboard): forward standalone mutations to the live gateway owner",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.46,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.29,
+    "no_tests": 0.01,
+    "neither": 0.7
+   },
+   "ms": 394,
+   "cost": 5.4978e-05
+  },
+  {
+   "number": 138948,
+   "title": "catalog: add hermes-federated-search",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.82,
+    "no_tests": 0.9
+   },
+   "choice": {
+    "auth": 0.2,
+    "no_tests": 0.72,
+    "neither": 0.08
+   },
+   "ms": 427,
+   "cost": 5.3886e-05
+  },
+  {
+   "number": 138947,
+   "title": "fix(gateway): bound failed completion notification retries",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 356,
+   "cost": 5.2626e-05
+  },
+  {
+   "number": 138946,
+   "title": "feat(plugins): expose tool registration options",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 379,
+   "cost": 5.4726e-05
+  },
+  {
+   "number": 138944,
+   "title": "feat(cron): support URL blueprint slots",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 368,
+   "cost": 6.6234e-05
+  },
+  {
+   "number": 138942,
+   "title": "feat(plugins): add session lifecycle admission hooks",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.35,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.18,
+    "no_tests": 0,
+    "neither": 0.8200000000000001
+   },
+   "ms": 390,
+   "cost": 6.531000000000001e-05
+  },
+  {
+   "number": 138941,
+   "title": "feat(plugins): expose skill validation in dashboard",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 367,
+   "cost": 5.4306e-05
+  },
+  {
+   "number": 138937,
+   "title": "docs(egress): running Hermes behind an external broker",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.94,
+    "no_tests": 0.96
+   },
+   "choice": {
+    "auth": 0.59,
+    "no_tests": 0.36,
+    "neither": 0.05
+   },
+   "ms": 320,
+   "cost": 4.6746e-05
+  },
+  {
+   "number": 138936,
+   "title": "fix(tools): stabilize validated batch code paths",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 389,
+   "cost": 5.355e-05
+  },
+  {
+   "number": 138935,
+   "title": "Update Vornik companion catalogue to 0.21.6",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.95,
+    "no_tests": 0.71
+   },
+   "choice": {
+    "auth": 0.98,
+    "no_tests": 0.02,
+    "neither": 0
+   },
+   "ms": 380,
+   "cost": 6.0438e-05
+  },
+  {
+   "number": 138933,
+   "title": "fix(plugins): route plugin tool calls through policy middleware",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.58,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.41,
+    "no_tests": 0.01,
+    "neither": 0.58
+   },
+   "ms": 321,
+   "cost": 5.4726e-05
+  },
+  {
+   "number": 138932,
+   "title": "fix: support dashboard mutations on insecure origins",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.13,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0,
+    "neither": 0.98
+   },
+   "ms": 370,
+   "cost": 5.5398e-05
+  },
+  {
+   "number": 138931,
+   "title": "Config: per-path transaction lock; contended writers merge, RMWs rebase",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.89,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.93,
+    "no_tests": 0,
+    "neither": 0.07
+   },
+   "ms": 319,
+   "cost": 6.1446e-05
+  },
+  {
+   "number": 138930,
+   "title": "Checkpoints: fail-closed raster-media guards at staging and restore boundaries",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 396,
+   "cost": 5.6574000000000004e-05
+  },
+  {
+   "number": 138929,
+   "title": "chore(catalog): bump limbic to 0.6.4 @ cddf94d",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.52
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.29,
+    "neither": 0.71
+   },
+   "ms": 404,
+   "cost": 5.6658e-05
+  },
+  {
+   "number": 138927,
+   "title": "Update Vornik companion catalogue to 0.21.6",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.96,
+    "no_tests": 0.71
+   },
+   "choice": {
+    "auth": 0.98,
+    "no_tests": 0.02,
+    "neither": 0
+   },
+   "ms": 353,
+   "cost": 6.0438e-05
+  },
+  {
+   "number": 138926,
+   "title": "docs(zh-Hans): move skills that left the bundled set out of the zh-Hans bundled catalog",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.1,
+    "no_tests": 0.95
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.93,
+    "neither": 0.07
+   },
+   "ms": 367,
+   "cost": 6.5478e-05
+  },
+  {
+   "number": 138925,
+   "title": "docs: fix two dead anchors and list three orphaned guides in the sidebar",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.71,
+    "no_tests": 0.96
+   },
+   "choice": {
+    "auth": 0.13,
+    "no_tests": 0.83,
+    "neither": 0.04
+   },
+   "ms": 371,
+   "cost": 5.8758e-05
+  },
+  {
+   "number": 138924,
+   "title": "RFC: remote plugin seam",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.18,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 373,
+   "cost": 7.4466e-05
+  },
+  {
+   "number": 138922,
+   "title": "fix(gateway): restore legacy local session routes",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.16,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0,
+    "neither": 0.98
+   },
+   "ms": 581,
+   "cost": 5.2793999999999996e-05
+  },
+  {
+   "number": 138921,
+   "title": "Preserve code fences in progress counters",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 325,
+   "cost": 4.557e-05
+  },
+  {
+   "number": 138920,
+   "title": "fix(gateway): declare room actor identity fields",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.11,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 327,
+   "cost": 5.9262e-05
+  },
+  {
+   "number": 138919,
+   "title": "fix(desktop): show canonical model routes in picker",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 333,
+   "cost": 5.9514e-05
+  },
+  {
+   "number": 138918,
+   "title": "fix(desktop): route remote mutation snapshots",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.3,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.1,
+    "no_tests": 0,
+    "neither": 0.9
+   },
+   "ms": 326,
+   "cost": 5.5314e-05
+  },
+  {
+   "number": 138917,
+   "title": "fix(gateway): wire the desktop window bridges for local-viewer turns",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.09,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0.01,
+    "neither": 0.98
+   },
+   "ms": 398,
+   "cost": 5.8926e-05
+  },
+  {
+   "number": 138916,
+   "title": "fix(desktop): use payload Python for gateway tickets",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.22,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0,
+    "neither": 0.98
+   },
+   "ms": 354,
+   "cost": 5.6826e-05
+  },
+  {
+   "number": 138911,
+   "title": "feat(plugins): add pre-profile-create hook",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.1,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 361,
+   "cost": 5.5734e-05
+  },
+  {
+   "number": 138910,
+   "title": "fix(discord): localize auto-registered slash-command descriptions",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.76
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.85,
+    "neither": 0.15
+   },
+   "ms": 429,
+   "cost": 5.4474e-05
+  },
+  {
+   "number": 138909,
+   "title": "fix(gateway): allow memory review commands locally",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.13,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0,
+    "neither": 0.98
+   },
+   "ms": 405,
+   "cost": 5.3046e-05
+  },
+  {
+   "number": 138907,
+   "title": "fix(discord): keep the resolved footer when a prompt view times out",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.28,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0.02,
+    "neither": 0.96
+   },
+   "ms": 393,
+   "cost": 5.9178e-05
+  },
+  {
+   "number": 138904,
+   "title": "fix(update): preserve dashboard argv and separate restart follow-ups",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 366,
+   "cost": 6.069e-05
+  },
+  {
+   "number": 138902,
+   "title": "fix(pricing): add Claude Haiku 5.5 / Fable 5 / Fable 5.1 official rates",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 385,
+   "cost": 6.808199999999999e-05
+  },
+  {
+   "number": 138899,
+   "title": "fix(kanban): let workers hand off running tasks",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.4,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.13,
+    "no_tests": 0,
+    "neither": 0.87
+   },
+   "ms": 351,
+   "cost": 6.405000000000001e-05
+  },
+  {
+   "number": 138898,
+   "title": "fix(tui): Ink's gateway bootstrap and clipboard helper boot PM's dependencies",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 351,
+   "cost": 5.9514e-05
+  },
+  {
+   "number": 138897,
+   "title": "fix(gateway): switch models away from an unresolvable frozen route",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.92,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0.97,
+    "no_tests": 0,
+    "neither": 0.03
+   },
+   "ms": 344,
+   "cost": 5.397e-05
+  },
+  {
+   "number": 138896,
+   "title": "fix(mattermost): pass empty media lists so text posts pass native admission",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 412,
+   "cost": 5.817e-05
+  },
+  {
+   "number": 138894,
+   "title": "fix(tui_gateway): stop the previous notification poller on agent rebuild",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.1
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.02,
+    "neither": 0.98
+   },
+   "ms": 349,
+   "cost": 5.4558e-05
+  },
+  {
+   "number": 138892,
+   "title": "fix(codex): cap harmony-token neutralization recursion depth",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 333,
+   "cost": 5.8506e-05
+  },
+  {
+   "number": 138891,
+   "title": "fix(metrics): let managed scope disable sending",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.17,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.06,
+    "no_tests": 0,
+    "neither": 0.94
+   },
+   "ms": 318,
+   "cost": 5.4726e-05
+  },
+  {
+   "number": 138890,
+   "title": "fix(gateway): reconnect API server after listener loss",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 326,
+   "cost": 5.6322e-05
+  },
+  {
+   "number": 138889,
+   "title": "plugin-catalog: add wallpaper-theme",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.87
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.89,
+    "neither": 0.11
+   },
+   "ms": 377,
+   "cost": 5.5146000000000004e-05
+  },
+  {
+   "number": 138888,
+   "title": "fix: add missing npm vulnerability overrides and legacy-peer-deps",
+   "truth": {
+    "auth": true,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.94
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.94,
+    "neither": 0.06
+   },
+   "ms": 361,
+   "cost": 5.481e-05
+  },
+  {
+   "number": 138887,
+   "title": "feat(desktop): opt-in transparent chat windows on Linux",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.08
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 362,
+   "cost": 5.8674e-05
+  },
+  {
+   "number": 138885,
+   "title": "fix(memory-setup): keep structured schema defaults typed when accepted",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.11,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 372,
+   "cost": 5.6322e-05
+  },
+  {
+   "number": 138884,
+   "title": "fix(tui): apply a picker-issued --reasoning after the canonical model pick",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.16
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.03,
+    "neither": 0.97
+   },
+   "ms": 385,
+   "cost": 6.119400000000001e-05
+  },
+  {
+   "number": 138883,
+   "title": "fix(gateway): park profiles after confirmed unserve",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 357,
+   "cost": 6.119400000000001e-05
+  },
+  {
+   "number": 138882,
+   "title": "fix(plugins): preserve lifecycle ownership across session rotation",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.52,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.47,
+    "no_tests": 0.01,
+    "neither": 0.52
+   },
+   "ms": 345,
+   "cost": 5.6742e-05
+  },
+  {
+   "number": 138880,
+   "title": "fix(llamacpp): terminate server tree on SIGTERM/SIGINT so desktop close releases RAM",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.02,
+    "neither": 0.98
+   },
+   "ms": 324,
+   "cost": 5.7666e-05
+  },
+  {
+   "number": 138877,
+   "title": "fix(agent): preserve public subagent handles across compression",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.88,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.99,
+    "no_tests": 0,
+    "neither": 0.01
+   },
+   "ms": 376,
+   "cost": 5.3802e-05
+  },
+  {
+   "number": 138876,
+   "title": "fix(cron): use dependency Python for shell scripts",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 350,
+   "cost": 5.4978e-05
+  },
+  {
+   "number": 138875,
+   "title": "fix(gateway): fail closed on background probe errors",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 346,
+   "cost": 5.4726e-05
+  },
+  {
+   "number": 138874,
+   "title": "fix(plugins): reject skill directories at registration",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 321,
+   "cost": 5.5398e-05
+  },
+  {
+   "number": 138871,
+   "title": "fix(install): install git on macOS again when /usr/bin/git is the CLT stub",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 450,
+   "cost": 5.5818e-05
+  },
+  {
+   "number": 138870,
+   "title": "fix(gateway): drop the previous provider's route on a provider-only launch pick",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.92,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0.85,
+    "no_tests": 0.01,
+    "neither": 0.14
+   },
+   "ms": 362,
+   "cost": 5.3382e-05
+  },
+  {
+   "number": 138862,
+   "title": "fix(gateway): let a multiplexed profile's delete pass the routing guard",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.2,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.06,
+    "no_tests": 0,
+    "neither": 0.94
+   },
+   "ms": 392,
+   "cost": 5.3382e-05
+  },
+  {
+   "number": 138861,
+   "title": "fix(discord): preserve skills slash arguments",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 349,
+   "cost": 5.4978e-05
+  },
+  {
+   "number": 138858,
+   "title": "fix(gateway): skip reasoning projection for local viewers",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 411,
+   "cost": 5.5986e-05
+  },
+  {
+   "number": 138857,
+   "title": "fix(fuzzy_match): whitespace-normalized match no longer eats whitespace before the match",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 381,
+   "cost": 5.9598e-05
+  },
+  {
+   "number": 138855,
+   "title": "fix(cli): classify Anthropic model cooldowns as transient",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.6,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.5,
+    "no_tests": 0.01,
+    "neither": 0.49
+   },
+   "ms": 321,
+   "cost": 5.7582e-05
+  },
+  {
+   "number": 138854,
+   "title": "fix(gateway): a local session survives a frozen config secret the profile dropped",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.97,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 1,
+    "no_tests": 0,
+    "neither": 0
+   },
+   "ms": 315,
+   "cost": 5.565e-05
+  },
+  {
+   "number": 138853,
+   "title": "fix(desktop): stream reasoning for active sessions",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 333,
+   "cost": 5.7246e-05
+  },
+  {
+   "number": 138851,
+   "title": "fix(desktop): normalize canonical usage ticks",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 331,
+   "cost": 5.7414e-05
+  },
+  {
+   "number": 138850,
+   "title": "fix(tui): honor saved Kanban notification delivery policy",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.11,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 342,
+   "cost": 5.6322e-05
+  },
+  {
+   "number": 138849,
+   "title": "feat(plugins): support native lifecycle image and output contracts",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 346,
+   "cost": 5.5902e-05
+  },
+  {
+   "number": 138848,
+   "title": "feat(plugin-catalog): add hermes-windows-ops",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.9
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.89,
+    "neither": 0.11
+   },
+   "ms": 375,
+   "cost": 5.6406e-05
+  },
+  {
+   "number": 138847,
+   "title": "fix(kanban): keep zero-retry rate limits parked",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 336,
+   "cost": 5.7834e-05
+  },
+  {
+   "number": 138846,
+   "title": "fix(gateway): delete secondary profile sessions",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.15,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.07,
+    "no_tests": 0,
+    "neither": 0.93
+   },
+   "ms": 352,
+   "cost": 5.4138e-05
+  },
+  {
+   "number": 138845,
+   "title": "fix(relay): run queued relay admissions after a restart, warm restored egress, admit forwarded components",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.92,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.96,
+    "no_tests": 0,
+    "neither": 0.04
+   },
+   "ms": 373,
+   "cost": 7.1694e-05
+  },
+  {
+   "number": 138844,
+   "title": "fix(desktop): allow callers to cancel pending SDK session opens",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.22,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0,
+    "neither": 0.98
+   },
+   "ms": 351,
+   "cost": 5.9598e-05
+  },
+  {
+   "number": 138842,
+   "title": "fix(agent): preserve native lifecycle contracts",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 367,
+   "cost": 5.5734e-05
+  },
+  {
+   "number": 138841,
+   "title": "fix(profiles): serialize ui_meta compare-and-swap across processes",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 374,
+   "cost": 5.3046e-05
+  },
+  {
+   "number": 138840,
+   "title": "fix(cli): reap Windows child tree on crash",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 343,
+   "cost": 5.4894e-05
+  },
+  {
+   "number": 138839,
+   "title": "fix(browser): recheck inactivity under the lock before tearing a session down",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.09
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 353,
+   "cost": 5.439e-05
+  },
+  {
+   "number": 138838,
+   "title": "fix(state): repair placeholder creation provenance on creator upsert",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.16,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0,
+    "neither": 0.99
+   },
+   "ms": 415,
+   "cost": 5.3382e-05
+  },
+  {
+   "number": 138837,
+   "title": "fix: pool-bench 429 is not a missing credential; let pinned cron jobs carry a fallback chain",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.96,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.99,
+    "no_tests": 0,
+    "neither": 0.01
+   },
+   "ms": 335,
+   "cost": 6.2958e-05
+  },
+  {
+   "number": 138835,
+   "title": "feat(plugin-catalog): add cursor-acp model provider plugin",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.53,
+    "no_tests": 0.93
+   },
+   "choice": {
+    "auth": 0.04,
+    "no_tests": 0.86,
+    "neither": 0.1
+   },
+   "ms": 363,
+   "cost": 5.4306e-05
+  },
+  {
+   "number": 138834,
+   "title": "fix(plugins): allow provider-managed native clients",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.95,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 1,
+    "no_tests": 0,
+    "neither": 0
+   },
+   "ms": 365,
+   "cost": 5.8506e-05
+  },
+  {
+   "number": 138833,
+   "title": "fix(skills): isolate concurrent hub installs",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.12,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0,
+    "neither": 0.99
+   },
+   "ms": 368,
+   "cost": 5.5986e-05
+  },
+  {
+   "number": 138832,
+   "title": "fix(browser): redact daemon output and honor fallback opt-out",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.96,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.99,
+    "no_tests": 0,
+    "neither": 0.01
+   },
+   "ms": 334,
+   "cost": 5.4978e-05
+  },
+  {
+   "number": 138830,
+   "title": "fix(gateway): refresh TUI session info after model switch",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 333,
+   "cost": 5.3886e-05
+  },
+  {
+   "number": 138829,
+   "title": "feat(xiaomi): send the binary thinking toggle for MiMo chat models",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 406,
+   "cost": 5.4558e-05
+  },
+  {
+   "number": 138827,
+   "title": "fix(terminal): a deleted working directory no longer wedges every command; the model is told where it ran (port lobehub#20735, salvage #131554)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 325,
+   "cost": 6.3882e-05
+  },
+  {
+   "number": 138825,
+   "title": "fix(cli): route voice restart through invalidate helper",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 344,
+   "cost": 5.6322e-05
+  },
+  {
+   "number": 138824,
+   "title": "fix(desktop): allow recovery while primary gateway is unreachable",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 357,
+   "cost": 5.7918e-05
+  },
+  {
+   "number": 138823,
+   "title": "fix(gateway): fail fast for standalone parked profiles",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 390,
+   "cost": 5.565e-05
+  },
+  {
+   "number": 138822,
+   "title": "fix(browser): prevent idle cleanup from closing reactivated sessions",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 364,
+   "cost": 5.4222e-05
+  },
+  {
+   "number": 138821,
+   "title": "fix(cron): list unified runtime run sessions",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 335,
+   "cost": 5.5062e-05
+  },
+  {
+   "number": 138820,
+   "title": "feat(desktop): redesign Capabilities catalog (Skills, Plugins, Connectors, Tools)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 336,
+   "cost": 9.109799999999999e-05
+  },
+  {
+   "number": 138819,
+   "title": "fix(tools): identify nested execute code calls",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 342,
+   "cost": 5.5482e-05
+  },
+  {
+   "number": 138818,
+   "title": "fix(gateway): apply the coding posture in the gateway, not the client",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 320,
+   "cost": 6.0270000000000004e-05
+  },
+  {
+   "number": 138817,
+   "title": "fix(gateway): resolve a live session whose durable row is gone as not_found",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.76,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.94,
+    "no_tests": 0,
+    "neither": 0.06
+   },
+   "ms": 354,
+   "cost": 5.4641999999999996e-05
+  },
+  {
+   "number": 138815,
+   "title": "fix(state): refuse unproven strict teardown",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.01
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 339,
+   "cost": 5.7834e-05
+  },
+  {
+   "number": 138813,
+   "title": "fix(cli): retain task id for single-query turns",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0,
+    "neither": 0.99
+   },
+   "ms": 387,
+   "cost": 5.859e-05
+  },
+  {
+   "number": 138811,
+   "title": "fix(agent): tolerate deleted working directory",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 394,
+   "cost": 5.4222e-05
+  },
+  {
+   "number": 138809,
+   "title": "fix(desktop): carry the launcher-reported root on override command backends",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.44,
+    "no_tests": 0.14
+   },
+   "choice": {
+    "auth": 0.24,
+    "no_tests": 0.05,
+    "neither": 0.71
+   },
+   "ms": 388,
+   "cost": 5.7918e-05
+  },
+  {
+   "number": 138795,
+   "title": "fix(telegram): replay held inbound in arrival order",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 335,
+   "cost": 5.901e-05
+  },
+  {
+   "number": 138792,
+   "title": "fix(web): return 404 for unknown curator profiles",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 373,
+   "cost": 5.6406e-05
+  },
+  {
+   "number": 138786,
+   "title": "test(browser): order the deferred-cancel tests' timeout after the disconnect",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 336,
+   "cost": 5.4222e-05
+  },
+  {
+   "number": 138784,
+   "title": "feat(plugin-catalog): add git-autosave plugin",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.25,
+    "no_tests": 0.85
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0.88,
+    "neither": 0.1
+   },
+   "ms": 368,
+   "cost": 5.4222e-05
+  },
+  {
+   "number": 138782,
+   "title": "fix(acp): stop the 'Install GitHub Copilot CLI?' prompt on Windows startup",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.29,
+    "no_tests": 0.08
+   },
+   "choice": {
+    "auth": 0.04,
+    "no_tests": 0.01,
+    "neither": 0.95
+   },
+   "ms": 397,
+   "cost": 5.8926e-05
+  },
+  {
+   "number": 138776,
+   "title": "fix(desktop): probe the SSH remote version from the Hermes stdout line only",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.12
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.03,
+    "neither": 0.97
+   },
+   "ms": 346,
+   "cost": 5.607e-05
+  },
+  {
+   "number": 138775,
+   "title": "fix(telegram): normalize slug case in _build_provider_keyboard (active plugin path)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 345,
+   "cost": 6.0606e-05
+  },
+  {
+   "number": 138773,
+   "title": "fix(desktop): Artifacts page lists files linked with spaced paths (port block/buzz#8168)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 431,
+   "cost": 6.0186e-05
+  },
+  {
+   "number": 138770,
+   "title": "fix(agent): retry a reasoning-channel runaway once with a wrap-up nudge",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 321,
+   "cost": 5.6406e-05
+  },
+  {
+   "number": 138769,
+   "title": "fix(tools): reject empty and no-op terminal/execute_code payloads",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 440,
+   "cost": 5.5902e-05
+  },
+  {
+   "number": 138768,
+   "title": "fix(agent): nudge a stall line that follows a tool round (#122119)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 363,
+   "cost": 5.9598e-05
+  },
+  {
+   "number": 138767,
+   "title": "fix(desktop): scope SOUL editor tickets to profiles",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.47,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.33,
+    "no_tests": 0.01,
+    "neither": 0.66
+   },
+   "ms": 344,
+   "cost": 5.7078e-05
+  },
+  {
+   "number": 138766,
+   "title": "feat(desktop): add optional chat column width cap",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 308,
+   "cost": 6.1698e-05
+  },
+  {
+   "number": 138765,
+   "title": "fix(auth): tombstone removed pool rows so stale processes cannot write them back",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.98,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 1,
+    "no_tests": 0,
+    "neither": 0
+   },
+   "ms": 322,
+   "cost": 6.0102e-05
+  },
+  {
+   "number": 138763,
+   "title": "fix(whatsapp): abort re-pair when session cleanup fails",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.62,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.46,
+    "no_tests": 0.01,
+    "neither": 0.53
+   },
+   "ms": 329,
+   "cost": 5.4474e-05
+  },
+  {
+   "number": 138762,
+   "title": "feat(compression): defer automatic compaction for unrelated turns",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 364,
+   "cost": 5.8337999999999996e-05
+  },
+  {
+   "number": 138760,
+   "title": "fix(cron): scoped worker waits out an update's gateway handover instead of failing",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.34,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.17,
+    "no_tests": 0.01,
+    "neither": 0.82
+   },
+   "ms": 476,
+   "cost": 6.2118e-05
+  },
+  {
+   "number": 138758,
+   "title": "fix(tui): apply model picker reasoning through canonical controls",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 354,
+   "cost": 5.0022e-05
+  },
+  {
+   "number": 138757,
+   "title": "fix(mattermost): keep direct messages flat when reply mode is thread",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 319,
+   "cost": 5.1702e-05
+  },
+  {
+   "number": 138755,
+   "title": "fix(tools): inherit the deployment's TZ in the execute_code sandbox child",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 407,
+   "cost": 5.5314e-05
+  },
+  {
+   "number": 138753,
+   "title": "fix(gateway): name the member on every hosted room submit",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.19,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.03,
+    "no_tests": 0,
+    "neither": 0.97
+   },
+   "ms": 368,
+   "cost": 6.522599999999999e-05
+  },
+  {
+   "number": 138752,
+   "title": "fix(dashboard): admit console commands through the retirement fence",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.22,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0.03,
+    "no_tests": 0.01,
+    "neither": 0.96
+   },
+   "ms": 390,
+   "cost": 5.4474e-05
+  },
+  {
+   "number": 138751,
+   "title": "feat(desktop): quote a transcript selection into the composer",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 366,
+   "cost": 8.706600000000001e-05
+  },
+  {
+   "number": 138749,
+   "title": "hermes doctor --turn: one real agent turn catches a main model that answers /models but cannot chat",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.21,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 308,
+   "cost": 5.8086e-05
+  },
+  {
+   "number": 138747,
+   "title": "fix(local): stop two log lines from misleading on a sleeping laptop",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 396,
+   "cost": 5.8002e-05
+  },
+  {
+   "number": 138746,
+   "title": "feat(dashboard): expose the cron store write probe at GET /api/cron/store-health",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 417,
+   "cost": 5.985e-05
+  },
+  {
+   "number": 138745,
+   "title": "feat: add structured session control setters",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.36,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.15,
+    "no_tests": 0.01,
+    "neither": 0.84
+   },
+   "ms": 371,
+   "cost": 5.9262e-05
+  },
+  {
+   "number": 138744,
+   "title": "fix(cli): leave the profile-default toolsets to the gateway on session.create",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 449,
+   "cost": 5.9514e-05
+  },
+  {
+   "number": 138743,
+   "title": "fix(gateway): refuse a hosted room file on a route that cannot carry it",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 369,
+   "cost": 6.9762e-05
+  },
+  {
+   "number": 138742,
+   "title": "fix(relay): admit connector-stamped profiles instead of acking and dropping them",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.29,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.05,
+    "no_tests": 0,
+    "neither": 0.95
+   },
+   "ms": 350,
+   "cost": 5.9346000000000004e-05
+  },
+  {
+   "number": 138739,
+   "title": "docs(install): add a from-source fallback for Android/Termux while the package is broken",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.97
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.94,
+    "neither": 0.06
+   },
+   "ms": 325,
+   "cost": 5.6489999999999996e-05
+  },
+  {
+   "number": 138737,
+   "title": "fix(cron): reword scheduled-run hint that stalls provider routes past origin timeout",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.82
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.91,
+    "neither": 0.09
+   },
+   "ms": 339,
+   "cost": 6.0270000000000004e-05
+  },
+  {
+   "number": 138736,
+   "title": "feat(kanban): support checkpoint pause handoffs",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.01
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 424,
+   "cost": 6.5058e-05
+  },
+  {
+   "number": 138735,
+   "title": "feat(delegation): let lifecycle-launched children display like delegate_task children",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 360,
+   "cost": 7.9842e-05
+  },
+  {
+   "number": 138734,
+   "title": "test: keep the live-system guard from letting tests restart a real hermes-dashboard",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 313,
+   "cost": 6.3798e-05
+  },
+  {
+   "number": 138733,
+   "title": "fix(gateway): recognise a gateway started by the bundled/Docker bin/hermes launcher",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 365,
+   "cost": 6.0186e-05
+  },
+  {
+   "number": 138732,
+   "title": "/goal cancel clears the goal instead of starting a goal named \"cancel\" (inspired by Muse Code)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 451,
+   "cost": 5.943e-05
+  },
+  {
+   "number": 138731,
+   "title": "fix(cli): ignore unavailable saved toolset names at launch",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 379,
+   "cost": 5.229e-05
+  },
+  {
+   "number": 138730,
+   "title": "A keystroke that lands as an approval prompt appears no longer approves it (CLI + TUI, inspired by Muse Code)",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.17,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.18,
+    "no_tests": 0.01,
+    "neither": 0.8099999999999999
+   },
+   "ms": 341,
+   "cost": 6.363000000000001e-05
+  },
+  {
+   "number": 138728,
+   "title": "find -exec behind sudo/env/nice/timeout no longer deletes matches without approval (inspired by Muse Code)",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.3,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.34,
+    "no_tests": 0.01,
+    "neither": 0.65
+   },
+   "ms": 405,
+   "cost": 6.2118e-05
+  },
+  {
+   "number": 138726,
+   "title": "fix(agent): preserve complete repeated tool arguments",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 339,
+   "cost": 5.4978e-05
+  },
+  {
+   "number": 138725,
+   "title": "fix(telegram): preserve markdown file rendering",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 345,
+   "cost": 5.6574000000000004e-05
+  },
+  {
+   "number": 138724,
+   "title": "fix(update): a hung merge-base probe falls back to GitHub instead of aborting",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 394,
+   "cost": 5.7834e-05
+  },
+  {
+   "number": 138723,
+   "title": "feat(kanban): add confirmed operator stop for tracked workers",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 392,
+   "cost": 5.8254e-05
+  },
+  {
+   "number": 138722,
+   "title": "fix(update): treat an ancestry probe that cannot answer as an unknown relation",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 328,
+   "cost": 6.0102e-05
+  },
+  {
+   "number": 138721,
+   "title": "fix(desktop): route preview widget intents to group threads",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 336,
+   "cost": 6.0270000000000004e-05
+  },
+  {
+   "number": 138720,
+   "title": "fix(gateway): run session-end lifecycle on the owner when the last viewer closes",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.26,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.04,
+    "no_tests": 0,
+    "neither": 0.96
+   },
+   "ms": 355,
+   "cost": 6.363000000000001e-05
+  },
+  {
+   "number": 138719,
+   "title": "fix(acp): gateway owns each session's editor MCP servers and hermes acp flags",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.85,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.62,
+    "no_tests": 0.01,
+    "neither": 0.37
+   },
+   "ms": 383,
+   "cost": 7.547399999999999e-05
+  },
+  {
+   "number": 138718,
+   "title": "fix(cli): carry classic CLI launch flags and the worktree note into the gateway session",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 324,
+   "cost": 7.009799999999999e-05
+  },
+  {
+   "number": 138717,
+   "title": "fix(cli): route /model, /refine, /review and /moa through the gateway session",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.09,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 331,
+   "cost": 7.245e-05
+  },
+  {
+   "number": 138715,
+   "title": "[Security] redaction: mask environment-shaped interpreter output",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.83,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0.9,
+    "no_tests": 0,
+    "neither": 0.1
+   },
+   "ms": 368,
+   "cost": 5.1282e-05
+  },
+  {
+   "number": 138714,
+   "title": "[Security] MCP: redact results before returning tool output",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.92,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.99,
+    "no_tests": 0,
+    "neither": 0.01
+   },
+   "ms": 375,
+   "cost": 5.1786e-05
+  },
+  {
+   "number": 138713,
+   "title": "[Security] file tools: require approval for additional instruction files",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.49,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0.46,
+    "no_tests": 0.01,
+    "neither": 0.53
+   },
+   "ms": 426,
+   "cost": 5.6154e-05
+  },
+  {
+   "number": 138712,
+   "title": "fix(signal): publish runtime status so the Messaging card stops asking for a restart",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.07
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.02,
+    "neither": 0.98
+   },
+   "ms": 380,
+   "cost": 5.6322e-05
+  },
+  {
+   "number": 138711,
+   "title": "fix(signal): publish connected runtime status",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 334,
+   "cost": 5.4054e-05
+  },
+  {
+   "number": 138710,
+   "title": "fmt(js): `npm run fix` auto-fix",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.1,
+    "no_tests": 0.08
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 365,
+   "cost": 7.102200000000001e-05
+  },
+  {
+   "number": 138708,
+   "title": "fix(bundles): bake pycs owner-writable so Squirrel.Mac updates install",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.07
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 401,
+   "cost": 6.0018e-05
+  },
+  {
+   "number": 138707,
+   "title": "fmt(js): `npm run fix` auto-fix",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.07
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 285,
+   "cost": 7.077e-05
+  },
+  {
+   "number": 138706,
+   "title": "fix(local-runtime): account for Windows AMD iGPU memory reservations",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 354,
+   "cost": 5.4641999999999996e-05
+  },
+  {
+   "number": 138705,
+   "title": "feat(plugins): add Render skills and MCP catalog entry",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.16,
+    "no_tests": 0.96
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.91,
+    "neither": 0.09
+   },
+   "ms": 394,
+   "cost": 5.5146000000000004e-05
+  },
+  {
+   "number": 138704,
+   "title": "plugin-catalog: bump alans-way and alans-way-computer to 0.21.6",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.16,
+    "no_tests": 0.95
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0.9,
+    "neither": 0.09
+   },
+   "ms": 402,
+   "cost": 6.1446e-05
+  },
+  {
+   "number": 138703,
+   "title": "fix(pm): stop wiping the tools python's site-packages on digest drift",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 347,
+   "cost": 6.0270000000000004e-05
+  },
+  {
+   "number": 138701,
+   "title": "fix(desktop): track late sidebar mounts",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 429,
+   "cost": 5.4558e-05
+  },
+  {
+   "number": 138700,
+   "title": "fix(cli): subscribe the session a /resume or /sessions switch lands on",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.64,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.57,
+    "no_tests": 0.01,
+    "neither": 0.42
+   },
+   "ms": 395,
+   "cost": 6.2622e-05
+  },
+  {
+   "number": 138699,
+   "title": "fix(pm): count interrupted repair attempts",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 328,
+   "cost": 5.271e-05
+  },
+  {
+   "number": 138698,
+   "title": "feat(matrix): report agent run state in the protocol (org.fluxchat.agent) + session bridge",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 383,
+   "cost": 6.598199999999999e-05
+  },
+  {
+   "number": 138697,
+   "title": "Project skills in .claude/skills now load in trusted repos; a skill shipped for two harnesses loads once (port cline#14846)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.25,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0.04,
+    "no_tests": 0.01,
+    "neither": 0.95
+   },
+   "ms": 405,
+   "cost": 6.111e-05
+  },
+  {
+   "number": 138696,
+   "title": "fix(update): export the custodian as the Windows hand-off pid",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 362,
+   "cost": 5.9262e-05
+  },
+  {
+   "number": 138694,
+   "title": "fix: enable native compaction for Codex GPT-6 tiers",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.15,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0,
+    "neither": 0.98
+   },
+   "ms": 326,
+   "cost": 5.8422000000000004e-05
+  },
+  {
+   "number": 138693,
+   "title": "fix(desktop): identify hermes processes on Windows, not just macOS/Linux",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.02,
+    "neither": 0.98
+   },
+   "ms": 373,
+   "cost": 6.0858e-05
+  },
+  {
+   "number": 138692,
+   "title": "i18n(fr): translate identical values and extract hardcoded strings",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.91
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.87,
+    "neither": 0.13
+   },
+   "ms": 339,
+   "cost": 4.9686e-05
+  },
+  {
+   "number": 138691,
+   "title": "Plugin list and Desktop Plugins hub survive a corrupt install-metadata file (port of gemini-cli#29720)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 347,
+   "cost": 5.8758e-05
+  },
+  {
+   "number": 138688,
+   "title": "chore(plugin-catalog): bump search1api to 0.2.1",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.92,
+    "no_tests": 0.95
+   },
+   "choice": {
+    "auth": 0.86,
+    "no_tests": 0.13,
+    "neither": 0.01
+   },
+   "ms": 331,
+   "cost": 6.522599999999999e-05
+  },
+  {
+   "number": 138687,
+   "title": "fix(cli): feed cat-file --batch from a file so update can never hang on the pipe",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.08
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.02,
+    "neither": 0.98
+   },
+   "ms": 346,
+   "cost": 5.7414e-05
+  },
+  {
+   "number": 138686,
+   "title": "fix(plugins): preserve native CLI command ownership",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 354,
+   "cost": 5.6826e-05
+  },
+  {
+   "number": 138685,
+   "title": "fix(catalog): update Senler.io to 0.5.2",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.16,
+    "no_tests": 0.94
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0.9,
+    "neither": 0.08
+   },
+   "ms": 356,
+   "cost": 5.6658e-05
+  },
+  {
+   "number": 138683,
+   "title": "feat(mcp-catalog): add Search1API remote MCP",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.84,
+    "no_tests": 0.95
+   },
+   "choice": {
+    "auth": 0.73,
+    "no_tests": 0.25,
+    "neither": 0.02
+   },
+   "ms": 350,
+   "cost": 5.7498e-05
+  },
+  {
+   "number": 138682,
+   "title": "fix(desktop): don't load disk plugins into the HUD window",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.11
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.02,
+    "neither": 0.98
+   },
+   "ms": 319,
+   "cost": 3.1794e-05
+  },
+  {
+   "number": 138681,
+   "title": "fix(agent): image eviction keeps batching when uploads alone breach the ceiling (#133999)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 415,
+   "cost": 5.7918e-05
+  },
+  {
+   "number": 138680,
+   "title": "feat(optional-mcps): add PostEverywhere (social media scheduler) MCP entry",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.88,
+    "no_tests": 0.93
+   },
+   "choice": {
+    "auth": 0.61,
+    "no_tests": 0.36,
+    "neither": 0.03
+   },
+   "ms": 332,
+   "cost": 5.775e-05
+  },
+  {
+   "number": 138679,
+   "title": "fix(cron): show the resolved target and a remedy when a script path escapes the scripts dir",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.82
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.96,
+    "neither": 0.04
+   },
+   "ms": 354,
+   "cost": 5.3886e-05
+  },
+  {
+   "number": 138678,
+   "title": "fix(gateway): treat whole-output NOCHANGE as a silence marker",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 299,
+   "cost": 5.4726e-05
+  },
+  {
+   "number": 138675,
+   "title": "fix(tui-gateway): pass the member_id proof on hosted member submits",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.19,
+    "no_tests": 0.07
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0.01,
+    "neither": 0.97
+   },
+   "ms": 354,
+   "cost": 5.6322e-05
+  },
+  {
+   "number": 138674,
+   "title": "feat(catalog): add Render Sandboxes provider",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.83,
+    "no_tests": 0.9
+   },
+   "choice": {
+    "auth": 0.39,
+    "no_tests": 0.55,
+    "neither": 0.06
+   },
+   "ms": 354,
+   "cost": 5.3802e-05
+  },
+  {
+   "number": 138673,
+   "title": "feat(skills): list all 21 Render skills from upstream",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 328,
+   "cost": 7.9086e-05
+  },
+  {
+   "number": 138669,
+   "title": "fix(gateway): name the member on every hosted room submit",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.58,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.41,
+    "no_tests": 0,
+    "neither": 0.59
+   },
+   "ms": 353,
+   "cost": 6.2622e-05
+  },
+  {
+   "number": 138668,
+   "title": "fix(cli): answer gateway-owned state from the gateway in classic CLI commands",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.25,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 349,
+   "cost": 7.2786e-05
+  },
+  {
+   "number": 138667,
+   "title": "fix(gateway): route the Ink and Desktop requests the shared gateway refused",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.32,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0,
+    "neither": 0.99
+   },
+   "ms": 345,
+   "cost": 7.2786e-05
+  },
+  {
+   "number": 138666,
+   "title": "fix(acp): restore session metadata, commands and usage on GatewayACPAgent",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 322,
+   "cost": 6.825e-05
+  },
+  {
+   "number": 138665,
+   "title": "fix(gateway): resolve local paths against the session's folder, not the daemon's",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.11,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 364,
+   "cost": 7.581e-05
+  },
+  {
+   "number": 138664,
+   "title": "fix(security): honour allowlist removals and the plugin gate on the shared gateway",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.9,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.9400000000000001,
+    "no_tests": 0,
+    "neither": 0.06
+   },
+   "ms": 350,
+   "cost": 6.2958e-05
+  },
+  {
+   "number": 138662,
+   "title": "feat(plugin-catalog): add protonpass (Proton Pass secret source)",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.98,
+    "no_tests": 0.93
+   },
+   "choice": {
+    "auth": 0.95,
+    "no_tests": 0.05,
+    "neither": 0
+   },
+   "ms": 392,
+   "cost": 6.0606e-05
+  },
+  {
+   "number": 138656,
+   "title": "fix(plugins): age out wedged abandoned-worker slots",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 300,
+   "cost": 5.7414e-05
+  },
+  {
+   "number": 138655,
+   "title": "Merge release/0.22.1 back into main (gateway host-record + local-model laptop fixes)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.29
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.14,
+    "neither": 0.86
+   },
+   "ms": 337,
+   "cost": 8.2278e-05
+  },
+  {
+   "number": 138654,
+   "title": "fix(kanban): support plugin terminal handoff tools",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.84
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.86,
+    "neither": 0.14
+   },
+   "ms": 358,
+   "cost": 5.9682e-05
+  },
+  {
+   "number": 138652,
+   "title": "catalog: update Ando platform to v0.2.1",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.14,
+    "no_tests": 0.96
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0.88,
+    "neither": 0.11
+   },
+   "ms": 328,
+   "cost": 3.7842e-05
+  },
+  {
+   "number": 138650,
+   "title": "fix(catalog): deliver the approved official plugin fixes",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.13,
+    "no_tests": 0.81
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0.73,
+    "neither": 0.25
+   },
+   "ms": 345,
+   "cost": 6.1446e-05
+  },
+  {
+   "number": 138648,
+   "title": "fix(plugins): skip the Node question for build-only package.json",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 334,
+   "cost": 5.4222e-05
+  },
+  {
+   "number": 138647,
+   "title": "fix(browser): distinguish OTP inspection failures from missing fields",
+   "truth": {
+    "auth": true,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.71,
+    "no_tests": 0.95
+   },
+   "choice": {
+    "auth": 0.26,
+    "no_tests": 0.73,
+    "neither": 0.01
+   },
+   "ms": 385,
+   "cost": 3.9858e-05
+  },
+  {
+   "number": 138645,
+   "title": "feat(plugin-catalog): add make-parts-now",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.12,
+    "no_tests": 0.94
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.9,
+    "neither": 0.1
+   },
+   "ms": 339,
+   "cost": 5.9262e-05
+  },
+  {
+   "number": 138642,
+   "title": "fix(plugins): skip unused Node dev toolchains",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.95
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.98,
+    "neither": 0.02
+   },
+   "ms": 479,
+   "cost": 4.0446e-05
+  },
+  {
+   "number": 138641,
+   "title": "fix(gateway): preserve running launchd jobs during EIO recovery",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.96
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.98,
+    "neither": 0.02
+   },
+   "ms": 331,
+   "cost": 3.9858e-05
+  },
+  {
+   "number": 138639,
+   "title": "fix(mcp): distinguish resource 403 from OAuth registration refusal",
+   "truth": {
+    "auth": true,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.96,
+    "no_tests": 0.95
+   },
+   "choice": {
+    "auth": 0.91,
+    "no_tests": 0.09,
+    "neither": 0
+   },
+   "ms": 438,
+   "cost": 3.7926e-05
+  },
+  {
+   "number": 138638,
+   "title": "fix(desktop): rewind persisted failed turns on retry instead of duplicating them",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.08
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 311,
+   "cost": 5.7666e-05
+  },
+  {
+   "number": 138636,
+   "title": "fix(desktop): anchor gateway file saves in Downloads",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.96
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.98,
+    "neither": 0.02
+   },
+   "ms": 299,
+   "cost": 3.7002e-05
+  },
+  {
+   "number": 138635,
+   "title": "feat(mcp): add GovInbox to the optional-mcps catalog",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.86,
+    "no_tests": 0.94
+   },
+   "choice": {
+    "auth": 0.73,
+    "no_tests": 0.25,
+    "neither": 0.02
+   },
+   "ms": 355,
+   "cost": 5.7246e-05
+  },
+  {
+   "number": 138634,
+   "title": "fix(whatsapp): fail preflight on a truncated or invalid creds.json",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.94,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.99,
+    "no_tests": 0,
+    "neither": 0.01
+   },
+   "ms": 333,
+   "cost": 5.8926e-05
+  },
+  {
+   "number": 138633,
+   "title": "fix(desktop): open a session-less project's drill-in with its empty state",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 394,
+   "cost": 6.0354e-05
+  },
+  {
+   "number": 138631,
+   "title": "fix(opencode): route Zen Gemini models through the native API",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.39,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.04,
+    "no_tests": 0,
+    "neither": 0.96
+   },
+   "ms": 388,
+   "cost": 7.589399999999999e-05
+  },
+  {
+   "number": 138629,
+   "title": "fix(mcp): warn when a profile has no mcp_servers instead of silent skip",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.1,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 387,
+   "cost": 5.691e-05
+  },
+  {
+   "number": 138628,
+   "title": "fix(cli): say why a zero-mcp_servers profile skips MCP discovery",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 371,
+   "cost": 5.4726e-05
+  },
+  {
+   "number": 138626,
+   "title": "feat(teams): add certificate-based authentication",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.99,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 1,
+    "no_tests": 0,
+    "neither": 0
+   },
+   "ms": 430,
+   "cost": 6.1698e-05
+  },
+  {
+   "number": 138625,
+   "title": "fix(photon): fall back to sent-text index for tapback target text",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 396,
+   "cost": 5.8842000000000003e-05
+  },
+  {
+   "number": 138624,
+   "title": "fix(gateway): bring the gateway and its local clients back cleanly after a restart",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.11,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 360,
+   "cost": 7.832999999999999e-05
+  },
+  {
+   "number": 138623,
+   "title": "fix(pm): resolve a relative runtimeDir against its stamp, not the cwd",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.02,
+    "neither": 0.98
+   },
+   "ms": 363,
+   "cost": 5.6574000000000004e-05
+  },
+  {
+   "number": 138621,
+   "title": "Add per-task Kanban triage decomposition opt-out",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.93
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.98,
+    "neither": 0.02
+   },
+   "ms": 395,
+   "cost": 5.0778e-05
+  },
+  {
+   "number": 138620,
+   "title": "fix(terminal): state the one-shot completion-linger bound on notify spawns",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.06
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.02,
+    "neither": 0.98
+   },
+   "ms": 351,
+   "cost": 5.4641999999999996e-05
+  },
+  {
+   "number": 138619,
+   "title": "Fix stale Kanban auth blocker after successful handoff",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.65,
+    "no_tests": 0.91
+   },
+   "choice": {
+    "auth": 0.2,
+    "no_tests": 0.78,
+    "neither": 0.02
+   },
+   "ms": 344,
+   "cost": 4.1538e-05
+  },
+  {
+   "number": 138617,
+   "title": "fix(kanban): include completion metadata in goal gate",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.95
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.98,
+    "neither": 0.02
+   },
+   "ms": 328,
+   "cost": 4.641e-05
+  },
+  {
+   "number": 138616,
+   "title": "Use active llama.cpp backend for GPU detection",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 353,
+   "cost": 4.1538e-05
+  },
+  {
+   "number": 138614,
+   "title": "fix(tools): keep hosted connector tools discoverable when the lexical gate finds nothing",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 445,
+   "cost": 5.2962e-05
+  },
+  {
+   "number": 138611,
+   "title": "fix(relay): decode Codex shim aux calls with the chat codec, not the Responses codec",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.17,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0.02,
+    "no_tests": 0.01,
+    "neither": 0.97
+   },
+   "ms": 383,
+   "cost": 5.7498e-05
+  },
+  {
+   "number": 138610,
+   "title": "fmt(js): `npm run fix` auto-fix",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.08
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 305,
+   "cost": 7.077e-05
+  },
+  {
+   "number": 138609,
+   "title": "fix(agent): retry transient Bedrock stream exception frames instead of ending the turn",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 302,
+   "cost": 5.8337999999999996e-05
+  },
+  {
+   "number": 138608,
+   "title": "fix(gateway): isolate standalone cron ticker",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 346,
+   "cost": 5.4726e-05
+  },
+  {
+   "number": 138607,
+   "title": "fix(agent): keep the kanban stop nudge after a REJECTED terminal call",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 355,
+   "cost": 5.4726e-05
+  },
+  {
+   "number": 138605,
+   "title": "plugin-catalog: add experimental Cursor SDK provider",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.9,
+    "no_tests": 0.63
+   },
+   "choice": {
+    "auth": 0.67,
+    "no_tests": 0.2,
+    "neither": 0.13
+   },
+   "ms": 356,
+   "cost": 5.0022e-05
+  },
+  {
+   "number": 138604,
+   "title": "fix(docker): bake NumPy into the image for the holographic memory provider (#136707)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 393,
+   "cost": 6.3378e-05
+  },
+  {
+   "number": 138602,
+   "title": "fix(backup): exclude chrome-debug from full backups",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.44,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0.07,
+    "no_tests": 0,
+    "neither": 0.93
+   },
+   "ms": 404,
+   "cost": 5.4894e-05
+  },
+  {
+   "number": 138600,
+   "title": "fix(gateway): a free host lock falsifies a leftover rendezvous owner",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 401,
+   "cost": 6.1362e-05
+  },
+  {
+   "number": 138598,
+   "title": "fix(desktop): resolve Windows shell paths before attachment previews",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 350,
+   "cost": 5.6489999999999996e-05
+  },
+  {
+   "number": 138597,
+   "title": "fix(docker): bake NumPy into the image for the holographic memory provider (#136707)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.07,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 286,
+   "cost": 3.759e-05
+  },
+  {
+   "number": 138596,
+   "title": "fix(computer-use): request structured window elements from Cua >= 0.35",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 361,
+   "cost": 6.5394e-05
+  },
+  {
+   "number": 138595,
+   "title": "chore(plugin-catalog): repin intelligent_memory to 3b3d00ac and decla\u2026",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.96
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.94,
+    "neither": 0.06
+   },
+   "ms": 322,
+   "cost": 6.396599999999999e-05
+  },
+  {
+   "number": 138594,
+   "title": "fix(gateway): a recycled PID after reboot no longer wedges the supervised gateway (#133744, salvage #138565)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 334,
+   "cost": 6.438599999999999e-05
+  },
+  {
+   "number": 138593,
+   "title": "redact: short registered vault values must not eat dates, account numbers or amounts",
+   "truth": {
+    "auth": true,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.89,
+    "no_tests": 0.13
+   },
+   "choice": {
+    "auth": 0.88,
+    "no_tests": 0.02,
+    "neither": 0.1
+   },
+   "ms": 356,
+   "cost": 6.119400000000001e-05
+  },
+  {
+   "number": 138592,
+   "title": "ci(release): admit stable releases from release/* branches, not just main",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.13,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0.01,
+    "no_tests": 0,
+    "neither": 0.99
+   },
+   "ms": 360,
+   "cost": 6.329400000000001e-05
+  },
+  {
+   "number": 138591,
+   "title": "fix: skip desktop gateway restart without runtime plan",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 355,
+   "cost": 5.5734e-05
+  },
+  {
+   "number": 138590,
+   "title": "fix(agent): recover plugin sections past the profile paragraph",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.07
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 324,
+   "cost": 5.1534e-05
+  },
+  {
+   "number": 138589,
+   "title": "i18n(fr): add the French bundle to the hermes-bots plugin locales",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.81
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.77,
+    "neither": 0.23
+   },
+   "ms": 352,
+   "cost": 5.5818e-05
+  },
+  {
+   "number": 138588,
+   "title": "fix(cli): surface holographic HRR numpy/health state in doctor and memory status",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 328,
+   "cost": 5.9682e-05
+  },
+  {
+   "number": 138587,
+   "title": "i18n(fr): French for the kanban plugin and dashboard catalogue",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.02,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 339,
+   "cost": 6.405000000000001e-05
+  },
+  {
+   "number": 138586,
+   "title": "fix(desktop): probe backend before refusing stale steer",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.95
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.98,
+    "neither": 0.02
+   },
+   "ms": 326,
+   "cost": 4.7418e-05
+  },
+  {
+   "number": 138585,
+   "title": "feat(gateway): make the /sessions and /resume listing size configurable",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.06,
+    "no_tests": 0.05
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.03,
+    "neither": 0.97
+   },
+   "ms": 386,
+   "cost": 6.0270000000000004e-05
+  },
+  {
+   "number": 138584,
+   "title": "fix(desktop): keep the machine awake for 5 min after a turn ends, so unattended Windows can't sleep between turns (#134434, salvage #134781)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.04
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.01,
+    "neither": 0.99
+   },
+   "ms": 445,
+   "cost": 8.5554e-05
+  },
+  {
+   "number": 138583,
+   "title": "fix(kanban): load assignee profile instructions",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.08,
+    "no_tests": 0.96
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.99,
+    "neither": 0.01
+   },
+   "ms": 421,
+   "cost": 4.7082e-05
+  },
+  {
+   "number": 138578,
+   "title": "fix(gateway): paginate messaging session listings",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 369,
+   "cost": 5.5482e-05
+  },
+  {
+   "number": 138577,
+   "title": "fix(titles): ignore Discord empty-content placeholder",
+   "truth": {
+    "auth": false,
+    "no_tests": true
+   },
+   "nouls": {
+    "auth": 0.03,
+    "no_tests": 0.95
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0.99,
+    "neither": 0.01
+   },
+   "ms": 371,
+   "cost": 4.2966e-05
+  },
+  {
+   "number": 138576,
+   "title": "fix(cli): keep preloaded skills in stable prompt prefix",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.05,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 367,
+   "cost": 6.993e-05
+  },
+  {
+   "number": 138574,
+   "title": "fix(tui): import Path and flag unbound split-module annotations (HX014)",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.04,
+    "no_tests": 0.03
+   },
+   "choice": {
+    "auth": 0,
+    "no_tests": 0,
+    "neither": 1
+   },
+   "ms": 362,
+   "cost": 6.6234e-05
+  },
+  {
+   "number": 138572,
+   "title": "feat: add authenticated WordPress beverage inventory plugin",
+   "truth": {
+    "auth": false,
+    "no_tests": false
+   },
+   "nouls": {
+    "auth": 0.98,
+    "no_tests": 0.02
+   },
+   "choice": {
+    "auth": 1,
+    "no_tests": 0,
+    "neither": 0
+   },
+   "ms": 415,
+   "cost": 4.2966e-05
+  }
+ ],
+ "usage": {
+  "calls": 400,
+  "ms_median": 362,
+  "cost_usd": 0.02338
+ },
+ "questions": {
+  "auth": "The change touches authentication, authorization or secret handling.",
+  "no_tests": "The change adds or edits no tests."
+ }
+}

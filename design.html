@@ -42,7 +42,7 @@
     <section id="shape">
       <h2>Where it fits</h2>
       <p>Jev doesn't draw or write code, and it only picks from options you give it. What it's good at is answering small multiple-choice questions about things that already exist, at roughly the cost of writing a log line. So it doesn't replace the model that writes your code. It handles the small decisions before and after:</p>
-      <table class="data">
+      <div class="scroll"><table class="data">
         <thead><tr><th>When</th><th>The question</th><th>Type</th></tr></thead>
         <tbody>
           <tr><td>Before generating</td><td>Which existing component should this frame become?</td><td><code>choice</code> over the kit</td></tr>
@@ -50,7 +50,7 @@
           <tr><td>After generating</td><td>Does this break a rule in DESIGN.md?</td><td><code>noul</code> per rule</td></tr>
           <tr><td>In n8n</td><td>Which branch does this item take?</td><td><code>choice</code>, feeding a Switch</td></tr>
         </tbody>
-      </table>
+      </table></div>
     </section>
 
     <section id="n8n">
@@ -58,13 +58,13 @@
       <h2>Swapping the LLM classifier for one HTTP node</h2>
       <p>The most common AI pattern in n8n's template library goes trigger, LLM classifier, parse the JSON, Switch. Take <a href="https://n8n.io/workflows/15051">"Classify and route DevOps chat requests with Mattermost and Claude"</a>. Its classifier is a Sonnet agent with a <strong>5,280-character</strong> system prompt, followed by an 85-line Code node that digs the JSON out of code fences, falls back to <code>other</code> when parsing fails, and double-checks that the category is a real one.</p>
       <p>For Jev, the template's 7 category descriptions become the options. Here's how both do on 28 new DevOps messages, none of them taken from the template's own examples:</p>
-      <table class="data num">
+      <div class="scroll"><table class="data num">
         <thead><tr><th></th><th>Right</th><th>Median time</th><th>Cost for all 28</th></tr></thead>
         <tbody>
           <tr><td>The template's Sonnet classifier</td><td>28 / 28</td><td>2.1 s</td><td>$0.151</td></tr>
           <tr><td>One Jev choice</td><td>28 / 28</td><td>180 ms</td><td>$0.0014</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <p><strong>Both got the same answers, but Jev was about 106× cheaper and 12× faster, and it needs no parser.</strong> Its response already has the shape the Switch reads. Its three least confident answers were the three messages that really were borderline, which is exactly where an "Ask a human" branch belongs:</p>
       <ul class="tight"><li>“how do I get read access to the prod replica?”: <code>question</code> at 0.54</li><li>“Let&#x27;s move our secrets from env files to Vault properly, we&#x27;ve never had it”: <code>new_system</code> at 0.66</li><li>“the release workflow can&#x27;t push the image, 403 from the registry”: <code>ci_cd_error</code> at 0.89</li></ul>
       <h3>A workflow you can import</h3>
@@ -82,10 +82,10 @@ POST https://openrouter.ai/api/v1/systemone
       <div class="kicker">02 · Design system · linting</div>
       <h2>Linting the rules a regex can't check</h2>
       <p>The app's DESIGN.md has rules like <em>"Do not tip menu triggers"</em> and <em>"Do not tip close / dismiss X buttons — the glyph is the label"</em>. A regex can't tell what a button is for, but two yes/no questions per <code>&lt;Tip&gt;</code> can: "is this control a close or dismiss button?" and "does it open a menu?". Across all 53 Tips in the desktop app:</p>
-      <table class="data">
+      <div class="scroll"><table class="data">
         <thead><tr><th>Tooltip</th><th>Rule it breaks</th><th>Jev</th><th>Where</th></tr></thead>
         <tbody><tr><td>Clear</td><td>close / dismiss</td><td>0.92</td><td><code>keybind-settings.tsx</code></td></tr><tr><td>Voice chat engine</td><td>opens a menu</td><td>0.92</td><td><code>start-voice-button.tsx</code></td></tr><tr><td>New…</td><td>opens a menu</td><td>0.94</td><td><code>roster-pane-toolbar.tsx</code></td></tr><tr><td>Clear search</td><td>close / dismiss</td><td>0.95</td><td><code>search-field.tsx</code></td></tr></tbody>
-      </table>
+      </table></div>
       <p><strong>All 4 are real violations.</strong> "Clear search" lives inside <code>SearchField</code>, so every search box in the app inherits it. A third question, "does hovering teach something new?", gives muddy scores. That depends on what's already visible around the control, which a snippet of code doesn't show. Keep the precise questions in the linter and leave the fuzzy one to a human reviewer.</p>
       <p class="note">In a workflow, this check would run after the coding agent and before the PR, with one call per changed Tip. Anything at 0.8 or above becomes a review comment quoting the relevant line of DESIGN.md.</p>
     </section>
@@ -107,10 +107,10 @@ POST https://openrouter.ai/api/v1/systemone
       <div class="kicker">04 · Design to code · while generating</div>
       <h2>Which Button variant goes here?</h2>
       <p>An agent turning designs into code picks <code>&lt;Button variant="…"&gt;</code> over and over. This test takes 166 Buttons from the app, removes their <code>variant</code> prop, and asks one choice over the 8 variants, described in the words of <code>button.tsx</code>'s own comments.</p>
-      <table class="data">
+      <div class="scroll"><table class="data">
         <thead><tr><th>Confidence</th><th>Buttons</th><th>Matched the code</th></tr></thead>
         <tbody><tr><td>0.9 or higher</td><td>37</td><td><span class="bar" style="--w:95%"></span>95%</td></tr><tr><td>0.6 to 0.9</td><td>33</td><td><span class="bar" style="--w:30%"></span>30%</td></tr><tr><td>below 0.6</td><td>96</td><td><span class="bar" style="--w:21%"></span>21%</td></tr></tbody>
-      </table>
+      </table></div>
       <p>Only 39% match overall, mostly because <code>ghost</code> versus <code>text</code> depends on what's around the button, and the snippet doesn't include that. The confident picks are almost always right, though (37 Buttons at 95%). So take Jev's confident picks, and when it's unsure, have the coding agent look at the neighbouring components.</p>
     </section>
 

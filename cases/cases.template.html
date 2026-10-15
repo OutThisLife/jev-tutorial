@@ -102,10 +102,10 @@
       <div class="kicker">04 · When an issue opens</div>
       <h2>Routing issues to a component</h2>
       <p>This one is a single choice over the repo's 11 <code>comp/*</code> labels, using each label's GitHub description as the option text. A pick counts as right if it matches any <code>comp/</code> label a maintainer applied. Across $R_N issues, <strong>$R_ACC were right</strong>. That headline number is less useful than what the confidence tells you:</p>
-      <table class="data">
+      <div class="scroll"><table class="data">
         <thead><tr><th>Confidence</th><th>Issues</th><th>Right</th></tr></thead>
         <tbody>$R_BANDS</tbody>
-      </table>
+      </table></div>
       <p>A gate that routes automatically at 0.9 or above would handle <strong>$R_HI_SHARE of issues at $R_HI_ACC accuracy</strong> and pass the rest to the triage agent. Most of its confident misses are reasonable disagreements:</p>
       <ul class="tight">$R_MISSES</ul>
       <h3>Tune on one set, score on another</h3>
@@ -116,10 +116,10 @@
       <div class="kicker">05 · Waiting on a person in chat</div>
       <h2>Reading an approval reply</h2>
       <p>When a workflow asks someone to approve something, it waits until they reply from chat. A choice question turns that free-text reply into something the run can act on. The <code>conditional</code> and <code>question</code> options do the most work here, because they stop "yes but fix the typo first" from counting as a plain yes.</p>
-      <table class="data">
+      <div class="scroll"><table class="data">
         <thead><tr><th>Reply</th><th>Read as</th><th>Confidence</th></tr></thead>
         <tbody>$A_ROWS</tbody>
-      </table>
+      </table></div>
       <p>All $A_N replies are read the way a person would read them, "ok" included. "idk ask the lead" comes back as <code>unclear</code> at 0.75, below the line for acting automatically, which is what you want. In a workflow, <code>approve</code> at 0.9 or above resumes the run, <code>reject</code> stops it, and anything else asks again with the reply quoted.</p>
       <p class="note">These replies are written by hand.</p>
     </section>
@@ -142,10 +142,10 @@
       <div class="kicker">07 · Where it doesn't work</div>
       <h2>Where it falls short: priority</h2>
       <p>Here Jev was asked to place each bug on the repo's P3 to P0 scale with a score question. Across $P_N labelled bugs it matched the exact label only <strong>$P_EXACT</strong> of the time, and its average score barely tells P3 and P2 apart:</p>
-      <table class="data">
+      <div class="scroll"><table class="data">
         <thead><tr><th>Label</th><th>Bugs</th><th>Mean score (0 = P3, 3 = P0)</th></tr></thead>
         <tbody>$P_ROWS</tbody>
-      </table>
+      </table></div>
       <p>It's still useful for ordering a queue. A random P1 outscores a random non-P1 <strong>$P_AUC1</strong> of the time, where 0.5 would be a coin flip. The top of its list is the right kind of bug:</p>
       <ul class="tight">$P_TOP</ul>
       <p>So use it to sort the queue, not to set the label. Whether something is P2 or P3 here mostly depends on things that aren't in the issue: how many people hit it, what's shipping this week, which maintainer picked it up. Jev can only judge what you send it, and the issue text doesn't contain that answer. Splitting the scale into six separate nouls and weighting them, which is the approach TypeSafe recommends, barely moved it either ($P_ATOM against $P_AUC1).</p>
