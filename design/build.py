@@ -8,8 +8,6 @@ from string import Template
 
 HERE = Path(__file__).parent
 R = HERE / "results"
-GH = "https://github.com/NousResearch/hermes-agent"
-SRC = f"{GH}/blob/main/apps/desktop/src"
 
 
 def load(n):
@@ -24,12 +22,12 @@ def pct(x):
     return f"{x * 100:.0f}%"
 
 
-def src(path, label=None):
-    return f'<a href="{SRC}/{path}"><code>{e(label or path.split("/")[-1])}</code></a>'
+def src(path):
+    return f'<code>{e(path.split("/")[-1])}</code>'
 
 
-def commit(sha):
-    return f'<a href="{GH}/commit/{sha}"><code>{sha[:7]}</code></a>'
+def subject(s):
+    return s.split(": ", 1)[-1]
 
 
 files = list(R.glob("*.json"))
@@ -64,7 +62,7 @@ VAR_ROWS = "".join(
 )
 
 # ── icons ───────────────────────────────────────────────────────────────────
-ir = sorted(load("icons")["rows"], key=lambda r: r["fits"])
+ir = sorted((r for r in load("icons")["rows"] if "hermes" not in r["file"]), key=lambda r: r["fits"])
 fit_ok = [r for r in ir if r["fits"] >= 0.8]
 ICON_LOW = "".join(
     f'<tr><td><code>{r["icon"]}</code></td><td>{e(r["text"])}</td><td>{r["fits"]:.2f}</td>'
@@ -90,13 +88,13 @@ p_hi_ok = sum(r["pick"] == r["truth"] for r in p_hi)
 wins = [r for r in prr if r["pick"] == r["truth"] and r["confidence"] >= 0.9]
 seen, P_WINS = set(), ""
 for r in wins:
-    if r["subject"] in seen:
+    if subject(r["subject"]) in seen:
         continue
-    seen.add(r["subject"])
-    P_WINS += f'<li>{commit(r["sha"])} {e(r["subject"])}: <code>{r["truth"]}</code> at {r["confidence"]:.2f}</li>'
+    seen.add(subject(r["subject"]))
+    P_WINS += f'<li>{e(subject(r["subject"]))}: <code>{r["truth"]}</code> at {r["confidence"]:.2f}</li>'
 
 page = Template((HERE / "design.template.html").read_text()).substitute(
-    CALLS=CALLS, COST=f"${COST:.3f}", GH=GH, SRC=SRC,
+    CALLS=CALLS, COST=f"${COST:.3f}",
     N_N=len(nr), N_JEV=jev_ok, N_LLM=llm_ok, N_LLM_MS=f"{llm_ms / 1000:.1f} s", N_JEV_MS=n["usage"]["ms_median"],
     N_LLM_COST=f"${llm_cost:.3f}", N_JEV_COST=f"${jev_cost:.4f}", N_RATIO=f"{llm_cost / jev_cost:.0f}",
     N_SPEED=f'{llm_ms / n["usage"]["ms_median"]:.0f}',

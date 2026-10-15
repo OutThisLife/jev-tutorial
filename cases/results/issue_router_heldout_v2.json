@@ -8,23 +8,23 @@
     "comp/desktop"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.99,
+   "confidence": 0.98,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.99,
+    "comp/gateway": 0.98,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.01,
+    "comp/desktop": 0.02,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 282,
-   "cost": 4.5318e-05
+   "ms": 173,
+   "cost": 4.5192e-05
   },
   {
    "number": 138788,
@@ -34,23 +34,23 @@
     "comp/desktop"
    ],
    "pick": "comp/desktop",
-   "confidence": 0.99,
+   "confidence": 1,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.01,
+    "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.99,
+    "comp/desktop": 1,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 307,
-   "cost": 4.8426e-05
+   "ms": 180,
+   "cost": 4.83e-05
   },
   {
    "number": 138787,
@@ -60,23 +60,23 @@
     "comp/desktop"
    ],
    "pick": "comp/desktop",
-   "confidence": 0.57,
+   "confidence": 0.64,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.39,
+    "comp/gateway": 0.33,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.61,
+    "comp/desktop": 0.67,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 214,
-   "cost": 4.998e-05
+   "ms": 176,
+   "cost": 4.9854e-05
   },
   {
    "number": 138785,
@@ -85,24 +85,24 @@
     "comp/cli",
     "comp/cron"
    ],
-   "pick": "comp/cli",
-   "confidence": 0.7,
+   "pick": "comp/agent",
+   "confidence": 0.27,
    "probabilities": {
-    "comp/agent": 0.15,
-    "comp/cli": 0.73,
-    "comp/gateway": 0.1,
-    "comp/tools": 0,
+    "comp/agent": 0.34,
+    "comp/cli": 0.3,
+    "comp/gateway": 0.25,
+    "comp/tools": 0.02,
     "comp/tui": 0,
     "comp/acp": 0,
-    "comp/cron": 0.01,
-    "comp/plugins": 0.01,
+    "comp/cron": 0.04,
+    "comp/plugins": 0.05,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
-   "hit": true,
-   "ms": 191,
-   "cost": 5.4852e-05
+   "hit": false,
+   "ms": 180,
+   "cost": 5.4726e-05
   },
   {
    "number": 138783,
@@ -112,23 +112,23 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.99,
+   "confidence": 1,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.01,
+    "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.99,
+    "comp/plugins": 1,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 199,
-   "cost": 5.0064e-05
+   "ms": 183,
+   "cost": 4.9938e-05
   },
   {
    "number": 138781,
@@ -137,24 +137,24 @@
     "comp/cli",
     "comp/dashboard"
    ],
-   "pick": "comp/cli",
-   "confidence": 0.34,
+   "pick": "comp/dashboard",
+   "confidence": 0.65,
    "probabilities": {
-    "comp/agent": 0.01,
-    "comp/cli": 0.4,
-    "comp/gateway": 0.21,
+    "comp/agent": 0.02,
+    "comp/cli": 0.02,
+    "comp/gateway": 0.27,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
     "comp/desktop": 0,
-    "comp/dashboard": 0.37,
-    "comp/portal": 0.01
+    "comp/dashboard": 0.68,
+    "comp/portal": 0
    },
    "hit": true,
-   "ms": 172,
-   "cost": 3.8346e-05
+   "ms": 200,
+   "cost": 3.822e-05
   },
   {
    "number": 138780,
@@ -178,8 +178,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 179,
-   "cost": 3.8304e-05
+   "ms": 157,
+   "cost": 3.8178e-05
   },
   {
    "number": 138779,
@@ -188,11 +188,11 @@
     "comp/gateway"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.99,
+   "confidence": 1,
    "probabilities": {
-    "comp/agent": 0.01,
+    "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.99,
+    "comp/gateway": 1,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
@@ -203,8 +203,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 188,
-   "cost": 3.7884e-05
+   "ms": 172,
+   "cost": 3.7758e-05
   },
   {
    "number": 138778,
@@ -214,11 +214,11 @@
     "comp/gateway"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.93,
+   "confidence": 0.96,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.06,
-    "comp/gateway": 0.9400000000000001,
+    "comp/cli": 0.04,
+    "comp/gateway": 0.96,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
@@ -229,8 +229,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 214,
-   "cost": 4.1076e-05
+   "ms": 164,
+   "cost": 4.095e-05
   },
   {
    "number": 138777,
@@ -240,31 +240,6 @@
     "comp/desktop"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.96,
-   "probabilities": {
-    "comp/agent": 0,
-    "comp/cli": 0,
-    "comp/gateway": 0.03,
-    "comp/tools": 0,
-    "comp/tui": 0,
-    "comp/acp": 0,
-    "comp/cron": 0,
-    "comp/plugins": 0.96,
-    "comp/desktop": 0.01,
-    "comp/dashboard": 0,
-    "comp/portal": 0
-   },
-   "hit": false,
-   "ms": 198,
-   "cost": 4.5066e-05
-  },
-  {
-   "number": 138774,
-   "title": "Desktop: HERMES_DESKTOP_HERMES pin yields a rootless 'command' backend that ticketRuntimeFor rejects \u2014 all gateway-API requests fail",
-   "truth": [
-    "comp/desktop"
-   ],
-   "pick": "comp/desktop",
    "confidence": 0.98,
    "probabilities": {
     "comp/agent": 0,
@@ -274,18 +249,18 @@
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0,
-    "comp/desktop": 0.98,
+    "comp/plugins": 0.98,
+    "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
-   "hit": true,
-   "ms": 246,
-   "cost": 5.9892e-05
+   "hit": false,
+   "ms": 168,
+   "cost": 4.494e-05
   },
   {
-   "number": 138772,
-   "title": "[Bug]: Desktop SSH remote logs a plugin's stderr warning as the remote Hermes version (version probe uses 2>&1)",
+   "number": 138774,
+   "title": "Desktop: HERMES_DESKTOP_HERMES pin yields a rootless 'command' backend that ticketRuntimeFor rejects \u2014 all gateway-API requests fail",
    "truth": [
     "comp/desktop"
    ],
@@ -293,8 +268,8 @@
    "confidence": 0.99,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.01,
-    "comp/gateway": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.01,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
@@ -305,8 +280,33 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 160,
-   "cost": 5.0442e-05
+   "ms": 204,
+   "cost": 5.9766e-05
+  },
+  {
+   "number": 138772,
+   "title": "[Bug]: Desktop SSH remote logs a plugin's stderr warning as the remote Hermes version (version probe uses 2>&1)",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 154,
+   "cost": 5.0316e-05
   },
   {
    "number": 138771,
@@ -314,24 +314,24 @@
    "truth": [
     "comp/cli"
    ],
-   "pick": "comp/tui",
-   "confidence": 0.33,
+   "pick": "comp/desktop",
+   "confidence": 0.44,
    "probabilities": {
-    "comp/agent": 0.08,
-    "comp/cli": 0.17,
+    "comp/agent": 0.04,
+    "comp/cli": 0.11,
     "comp/gateway": 0.01,
     "comp/tools": 0,
-    "comp/tui": 0.39,
-    "comp/acp": 0,
+    "comp/tui": 0.25,
+    "comp/acp": 0.01,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.27,
-    "comp/dashboard": 0.08,
+    "comp/desktop": 0.49,
+    "comp/dashboard": 0.09,
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 225,
-   "cost": 3.9816e-05
+   "ms": 182,
+   "cost": 3.969e-05
   },
   {
    "number": 138764,
@@ -339,24 +339,24 @@
    "truth": [
     "comp/gateway"
    ],
-   "pick": "comp/gateway",
-   "confidence": 0.65,
+   "pick": "comp/plugins",
+   "confidence": 0.54,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.68,
+    "comp/gateway": 0.42,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.32,
+    "comp/plugins": 0.58,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
-   "hit": true,
-   "ms": 174,
-   "cost": 5.0694e-05
+   "hit": false,
+   "ms": 168,
+   "cost": 5.0568e-05
   },
   {
    "number": 138761,
@@ -380,8 +380,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 256,
-   "cost": 5.8464e-05
+   "ms": 159,
+   "cost": 5.8338e-05
   },
   {
    "number": 138759,
@@ -405,8 +405,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 330,
-   "cost": 5.355e-05
+   "ms": 166,
+   "cost": 5.3424e-05
   },
   {
    "number": 138756,
@@ -416,23 +416,23 @@
     "comp/cli"
    ],
    "pick": "comp/cli",
-   "confidence": 1,
+   "confidence": 0.97,
    "probabilities": {
-    "comp/agent": 0,
-    "comp/cli": 1,
+    "comp/agent": 0.01,
+    "comp/cli": 0.97,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0,
+    "comp/desktop": 0.02,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 234,
-   "cost": 5.2626e-05
+   "ms": 169,
+   "cost": 5.25e-05
   },
   {
    "number": 138754,
@@ -442,23 +442,23 @@
     "comp/desktop"
    ],
    "pick": "comp/desktop",
-   "confidence": 0.99,
+   "confidence": 0.98,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.01,
+    "comp/gateway": 0.02,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.99,
+    "comp/desktop": 0.98,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 235,
-   "cost": 4.9182e-05
+   "ms": 177,
+   "cost": 4.9056e-05
   },
   {
    "number": 138750,
@@ -468,23 +468,23 @@
     "comp/dashboard"
    ],
    "pick": "comp/dashboard",
-   "confidence": 0.65,
+   "confidence": 0.68,
    "probabilities": {
     "comp/agent": 0.01,
-    "comp/cli": 0.2,
-    "comp/gateway": 0.1,
+    "comp/cli": 0.12,
+    "comp/gateway": 0.14,
     "comp/tools": 0,
-    "comp/tui": 0.01,
+    "comp/tui": 0.02,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
     "comp/desktop": 0,
-    "comp/dashboard": 0.68,
+    "comp/dashboard": 0.71,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 221,
-   "cost": 5.502e-05
+   "ms": 176,
+   "cost": 5.4894e-05
   },
   {
    "number": 138748,
@@ -495,13 +495,13 @@
     "comp/plugins"
    ],
    "pick": "comp/cli",
-   "confidence": 0.97,
+   "confidence": 0.96,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.97,
+    "comp/cli": 0.96,
     "comp/gateway": 0,
     "comp/tools": 0,
-    "comp/tui": 0.03,
+    "comp/tui": 0.04,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
@@ -510,8 +510,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 165,
-   "cost": 3.9606e-05
+   "ms": 201,
+   "cost": 3.948e-05
   },
   {
    "number": 138740,
@@ -521,13 +521,13 @@
     "comp/tui"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.74,
+   "confidence": 0.55,
    "probabilities": {
     "comp/agent": 0.01,
-    "comp/cli": 0.01,
-    "comp/gateway": 0.76,
+    "comp/cli": 0,
+    "comp/gateway": 0.59,
     "comp/tools": 0,
-    "comp/tui": 0.22,
+    "comp/tui": 0.4,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
@@ -536,8 +536,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 280,
-   "cost": 5.6532e-05
+   "ms": 168,
+   "cost": 5.6406e-05
   },
   {
    "number": 138738,
@@ -547,23 +547,23 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.76,
+   "confidence": 0.74,
    "probabilities": {
-    "comp/agent": 0.13,
-    "comp/cli": 0.08,
-    "comp/gateway": 0.01,
+    "comp/agent": 0.2,
+    "comp/cli": 0.02,
+    "comp/gateway": 0.02,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.78,
+    "comp/plugins": 0.76,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 144,
-   "cost": 5.1828e-05
+   "ms": 200,
+   "cost": 5.1702e-05
   },
   {
    "number": 138729,
@@ -573,23 +573,23 @@
     "comp/cron"
    ],
    "pick": "comp/agent",
-   "confidence": 0.69,
+   "confidence": 0.71,
    "probabilities": {
-    "comp/agent": 0.72,
+    "comp/agent": 0.74,
     "comp/cli": 0,
     "comp/gateway": 0.01,
-    "comp/tools": 0.23,
+    "comp/tools": 0.22,
     "comp/tui": 0,
     "comp/acp": 0,
-    "comp/cron": 0.01,
+    "comp/cron": 0,
     "comp/plugins": 0.03,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 162,
-   "cost": 5.2122e-05
+   "ms": 166,
+   "cost": 5.1996e-05
   },
   {
    "number": 138727,
@@ -598,23 +598,23 @@
     "comp/agent"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.75,
+   "confidence": 0.77,
    "probabilities": {
-    "comp/agent": 0.12,
+    "comp/agent": 0.11,
     "comp/cli": 0,
-    "comp/gateway": 0.1,
+    "comp/gateway": 0.09,
     "comp/tools": 0.01,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.77,
+    "comp/plugins": 0.79,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 170,
-   "cost": 5.2962e-05
+   "ms": 145,
+   "cost": 5.2836e-05
   },
   {
    "number": 138716,
@@ -638,8 +638,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 164,
-   "cost": 5.1198e-05
+   "ms": 170,
+   "cost": 5.1072e-05
   },
   {
    "number": 138709,
@@ -652,9 +652,9 @@
    "confidence": 0.54,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.01,
+    "comp/cli": 0,
     "comp/gateway": 0.4,
-    "comp/tools": 0,
+    "comp/tools": 0.01,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
@@ -664,8 +664,8 @@
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 324,
-   "cost": 4.1076e-05
+   "ms": 158,
+   "cost": 4.095e-05
   },
   {
    "number": 138702,
@@ -674,23 +674,23 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.99,
+   "confidence": 0.98,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.01,
+    "comp/cli": 0.02,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.99,
+    "comp/plugins": 0.98,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 151,
-   "cost": 5.4642e-05
+   "ms": 174,
+   "cost": 5.4516e-05
   },
   {
    "number": 138690,
@@ -700,23 +700,23 @@
     "comp/desktop"
    ],
    "pick": "comp/cli",
-   "confidence": 0.63,
+   "confidence": 0.47,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.66,
+    "comp/cli": 0.52,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.34,
+    "comp/desktop": 0.48,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 173,
-   "cost": 5.7708e-05
+   "ms": 189,
+   "cost": 5.7582e-05
   },
   {
    "number": 138689,
@@ -725,23 +725,23 @@
     "comp/desktop"
    ],
    "pick": "comp/desktop",
-   "confidence": 0.99,
+   "confidence": 1,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.01,
+    "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.99,
+    "comp/desktop": 1,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 172,
-   "cost": 5.544e-05
+   "ms": 163,
+   "cost": 5.5314e-05
   },
   {
    "number": 138684,
@@ -751,23 +751,23 @@
     "comp/tui"
    ],
    "pick": "comp/tui",
-   "confidence": 0.56,
+   "confidence": 0.72,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.36,
+    "comp/gateway": 0.24,
     "comp/tools": 0,
-    "comp/tui": 0.6,
+    "comp/tui": 0.75,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0.01,
     "comp/desktop": 0,
     "comp/dashboard": 0,
-    "comp/portal": 0.03
+    "comp/portal": 0
    },
    "hit": true,
-   "ms": 212,
-   "cost": 5.4978e-05
+   "ms": 152,
+   "cost": 5.4852e-05
   },
   {
    "number": 138677,
@@ -791,8 +791,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 204,
-   "cost": 4.5864e-05
+   "ms": 195,
+   "cost": 4.5738e-05
   },
   {
    "number": 138676,
@@ -800,24 +800,24 @@
    "truth": [
     "comp/plugins"
    ],
-   "pick": "comp/gateway",
-   "confidence": 0.48,
+   "pick": "comp/plugins",
+   "confidence": 0.46,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.53,
+    "comp/gateway": 0.49,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.47,
+    "comp/plugins": 0.51,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
-   "hit": false,
-   "ms": 196,
-   "cost": 5.4516e-05
+   "hit": true,
+   "ms": 203,
+   "cost": 5.439e-05
   },
   {
    "number": 138672,
@@ -826,23 +826,23 @@
     "comp/cli"
    ],
    "pick": "comp/cli",
-   "confidence": 1,
+   "confidence": 0.99,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 1,
+    "comp/cli": 0.99,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0,
+    "comp/desktop": 0.01,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 204,
-   "cost": 5.6784e-05
+   "ms": 146,
+   "cost": 5.6658e-05
   },
   {
    "number": 138671,
@@ -866,8 +866,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 170,
-   "cost": 3.8388e-05
+   "ms": 203,
+   "cost": 3.8262e-05
   },
   {
    "number": 138670,
@@ -878,12 +878,12 @@
     "comp/tools"
    ],
    "pick": "comp/tools",
-   "confidence": 0.79,
+   "confidence": 0.71,
    "probabilities": {
     "comp/agent": 0.16,
-    "comp/cli": 0.02,
+    "comp/cli": 0.09,
     "comp/gateway": 0,
-    "comp/tools": 0.81,
+    "comp/tools": 0.74,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
@@ -893,8 +893,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 146,
-   "cost": 4.7586e-05
+   "ms": 177,
+   "cost": 4.746e-05
   },
   {
    "number": 138663,
@@ -919,8 +919,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 211,
-   "cost": 5.2962e-05
+   "ms": 231,
+   "cost": 5.2836e-05
   },
   {
    "number": 138661,
@@ -945,7 +945,7 @@
    },
    "hit": false,
    "ms": 174,
-   "cost": 5.3424e-05
+   "cost": 5.3298e-05
   },
   {
    "number": 138660,
@@ -955,23 +955,23 @@
     "comp/tui"
    ],
    "pick": "comp/tui",
-   "confidence": 0.85,
+   "confidence": 0.82,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.09,
+    "comp/gateway": 0.15,
     "comp/tools": 0,
-    "comp/tui": 0.86,
+    "comp/tui": 0.84,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0.01,
     "comp/desktop": 0,
     "comp/dashboard": 0,
-    "comp/portal": 0.04
+    "comp/portal": 0
    },
    "hit": true,
-   "ms": 200,
-   "cost": 6.0186e-05
+   "ms": 181,
+   "cost": 6.006e-05
   },
   {
    "number": 138659,
@@ -980,23 +980,23 @@
     "comp/desktop"
    ],
    "pick": "comp/desktop",
-   "confidence": 0.98,
+   "confidence": 0.96,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.02,
+    "comp/cli": 0.04,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.98,
+    "comp/desktop": 0.96,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 178,
-   "cost": 5.4852e-05
+   "ms": 153,
+   "cost": 5.4726e-05
   },
   {
    "number": 138658,
@@ -1021,7 +1021,7 @@
    },
    "hit": true,
    "ms": 198,
-   "cost": 4.305e-05
+   "cost": 4.2924e-05
   },
   {
    "number": 138657,
@@ -1045,8 +1045,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 198,
-   "cost": 5.313e-05
+   "ms": 176,
+   "cost": 5.3004e-05
   },
   {
    "number": 138653,
@@ -1055,12 +1055,12 @@
     "comp/agent"
    ],
    "pick": "comp/agent",
-   "confidence": 0.54,
+   "confidence": 0.45,
    "probabilities": {
-    "comp/agent": 0.58,
+    "comp/agent": 0.5,
     "comp/cli": 0,
     "comp/gateway": 0,
-    "comp/tools": 0.4,
+    "comp/tools": 0.48,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
@@ -1070,8 +1070,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 165,
-   "cost": 3.654e-05
+   "ms": 152,
+   "cost": 3.6414e-05
   },
   {
    "number": 138651,
@@ -1083,23 +1083,23 @@
     "comp/plugins"
    ],
    "pick": "comp/agent",
-   "confidence": 0.52,
+   "confidence": 0.61,
    "probabilities": {
-    "comp/agent": 0.56,
+    "comp/agent": 0.65,
     "comp/cli": 0,
     "comp/gateway": 0,
-    "comp/tools": 0.4,
+    "comp/tools": 0.34,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.04,
+    "comp/plugins": 0.01,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 185,
-   "cost": 3.9858e-05
+   "ms": 239,
+   "cost": 3.9732e-05
   },
   {
    "number": 138649,
@@ -1109,23 +1109,23 @@
     "comp/plugins"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.51,
+   "confidence": 0.45,
    "probabilities": {
     "comp/agent": 0.01,
     "comp/cli": 0,
-    "comp/gateway": 0.55,
+    "comp/gateway": 0.5,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.44,
+    "comp/plugins": 0.49,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 170,
-   "cost": 6.0102e-05
+   "ms": 161,
+   "cost": 5.9976e-05
   },
   {
    "number": 138646,
@@ -1149,8 +1149,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 285,
-   "cost": 5.0778e-05
+   "ms": 196,
+   "cost": 5.0652e-05
   },
   {
    "number": 138644,
@@ -1163,8 +1163,8 @@
    "confidence": 0.77,
    "probabilities": {
     "comp/agent": 0.01,
-    "comp/cli": 0.01,
-    "comp/gateway": 0.18,
+    "comp/cli": 0,
+    "comp/gateway": 0.19,
     "comp/tools": 0.01,
     "comp/tui": 0,
     "comp/acp": 0,
@@ -1175,8 +1175,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 206,
-   "cost": 5.1954e-05
+   "ms": 162,
+   "cost": 5.1828e-05
   },
   {
    "number": 138643,
@@ -1185,23 +1185,23 @@
     "comp/agent"
    ],
    "pick": "comp/agent",
-   "confidence": 0.42,
+   "confidence": 0.36,
    "probabilities": {
-    "comp/agent": 0.47000000000000003,
-    "comp/cli": 0.03,
-    "comp/gateway": 0.19,
-    "comp/tools": 0.11,
-    "comp/tui": 0.03,
+    "comp/agent": 0.42,
+    "comp/cli": 0.07,
+    "comp/gateway": 0.1,
+    "comp/tools": 0.2,
+    "comp/tui": 0.05,
     "comp/acp": 0.02,
-    "comp/cron": 0.01,
-    "comp/plugins": 0.07,
-    "comp/desktop": 0.01,
-    "comp/dashboard": 0.02,
-    "comp/portal": 0.04
+    "comp/cron": 0,
+    "comp/plugins": 0.06,
+    "comp/desktop": 0.03,
+    "comp/dashboard": 0.04,
+    "comp/portal": 0.01
    },
    "hit": true,
-   "ms": 187,
-   "cost": 2.5116e-05
+   "ms": 158,
+   "cost": 2.499e-05
   },
   {
    "number": 138640,
@@ -1211,23 +1211,23 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.51,
+   "confidence": 0.6,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.45,
+    "comp/cli": 0.36,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.55,
+    "comp/plugins": 0.64,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 151,
-   "cost": 4.8888e-05
+   "ms": 156,
+   "cost": 4.8762e-05
   },
   {
    "number": 138637,
@@ -1236,23 +1236,23 @@
     "comp/tools"
    ],
    "pick": "comp/tools",
-   "confidence": 0.77,
+   "confidence": 0.82,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.16,
-    "comp/gateway": 0.01,
-    "comp/tools": 0.79,
-    "comp/tui": 0.01,
+    "comp/cli": 0.09999999999999999,
+    "comp/gateway": 0.02,
+    "comp/tools": 0.84,
+    "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.02,
+    "comp/plugins": 0.03,
     "comp/desktop": 0.01,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 1611,
-   "cost": 5.397e-05
+   "ms": 168,
+   "cost": 5.3844e-05
   },
   {
    "number": 138632,
@@ -1276,8 +1276,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 153,
-   "cost": 5.3382e-05
+   "ms": 174,
+   "cost": 5.3256e-05
   },
   {
    "number": 138630,
@@ -1301,8 +1301,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 221,
-   "cost": 5.1198e-05
+   "ms": 192,
+   "cost": 5.1072e-05
   },
   {
    "number": 138627,
@@ -1312,23 +1312,23 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.97,
+   "confidence": 0.96,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.03,
+    "comp/gateway": 0.04,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.97,
+    "comp/plugins": 0.96,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 187,
-   "cost": 5.2668e-05
+   "ms": 158,
+   "cost": 5.2542e-05
   },
   {
    "number": 138622,
@@ -1336,24 +1336,24 @@
    "truth": [
     "comp/cli"
    ],
-   "pick": "comp/cli",
-   "confidence": 0.46,
+   "pick": "comp/desktop",
+   "confidence": 0.36,
    "probabilities": {
-    "comp/agent": 0,
-    "comp/cli": 0.51,
-    "comp/gateway": 0.03,
-    "comp/tools": 0.3,
+    "comp/agent": 0.01,
+    "comp/cli": 0.2,
+    "comp/gateway": 0.05,
+    "comp/tools": 0.31,
     "comp/tui": 0,
-    "comp/acp": 0,
+    "comp/acp": 0.01,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.16,
+    "comp/desktop": 0.42,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
-   "hit": true,
-   "ms": 175,
-   "cost": 5.3256e-05
+   "hit": false,
+   "ms": 209,
+   "cost": 5.313e-05
   },
   {
    "number": 138618,
@@ -1362,24 +1362,24 @@
     "comp/cli",
     "comp/cron"
    ],
-   "pick": "comp/cli",
-   "confidence": 0.38,
+   "pick": "comp/cron",
+   "confidence": 0.41,
    "probabilities": {
-    "comp/agent": 0.03,
-    "comp/cli": 0.44,
-    "comp/gateway": 0.22,
+    "comp/agent": 0.1,
+    "comp/cli": 0.07,
+    "comp/gateway": 0.35,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
-    "comp/cron": 0.31,
-    "comp/plugins": 0,
+    "comp/cron": 0.46,
+    "comp/plugins": 0.02,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 188,
-   "cost": 4.4394e-05
+   "ms": 164,
+   "cost": 4.4268e-05
   },
   {
    "number": 138615,
@@ -1388,23 +1388,23 @@
     "comp/desktop"
    ],
    "pick": "comp/desktop",
-   "confidence": 1,
+   "confidence": 0.99,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0,
+    "comp/cli": 0.01,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 1,
+    "comp/desktop": 0.99,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 162,
-   "cost": 4.0908e-05
+   "ms": 147,
+   "cost": 4.0782e-05
   },
   {
    "number": 138613,
@@ -1428,8 +1428,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 177,
-   "cost": 4.5528e-05
+   "ms": 174,
+   "cost": 4.5402e-05
   },
   {
    "number": 138612,
@@ -1439,23 +1439,23 @@
     "comp/gateway"
    ],
    "pick": "comp/cli",
-   "confidence": 0.48,
+   "confidence": 0.58,
    "probabilities": {
-    "comp/agent": 0,
-    "comp/cli": 0.53,
-    "comp/gateway": 0.33,
+    "comp/agent": 0.01,
+    "comp/cli": 0.62,
+    "comp/gateway": 0.32,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
-    "comp/cron": 0.12,
+    "comp/cron": 0.03,
     "comp/plugins": 0,
     "comp/desktop": 0.01,
     "comp/dashboard": 0.01,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 182,
-   "cost": 5.607e-05
+   "ms": 157,
+   "cost": 5.5944e-05
   },
   {
    "number": 138606,
@@ -1464,23 +1464,23 @@
     "comp/tools"
    ],
    "pick": "comp/cli",
-   "confidence": 0.56,
+   "confidence": 0.47,
    "probabilities": {
-    "comp/agent": 0.05,
-    "comp/cli": 0.6,
-    "comp/gateway": 0.05,
-    "comp/tools": 0.18,
+    "comp/agent": 0.06,
+    "comp/cli": 0.52,
+    "comp/gateway": 0.01,
+    "comp/tools": 0.3,
     "comp/tui": 0,
-    "comp/acp": 0.02,
+    "comp/acp": 0.03,
     "comp/cron": 0,
-    "comp/plugins": 0.09,
+    "comp/plugins": 0.07,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0.01
    },
    "hit": false,
-   "ms": 168,
-   "cost": 5.5482e-05
+   "ms": 160,
+   "cost": 5.5356e-05
   },
   {
    "number": 138603,
@@ -1489,24 +1489,24 @@
     "comp/gateway",
     "comp/cron"
    ],
-   "pick": "comp/cron",
-   "confidence": 0.47,
+   "pick": "comp/gateway",
+   "confidence": 0.53,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.48,
+    "comp/gateway": 0.5700000000000001,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
-    "comp/cron": 0.52,
+    "comp/cron": 0.43,
     "comp/plugins": 0,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 210,
-   "cost": 4.935e-05
+   "ms": 177,
+   "cost": 4.9224e-05
   },
   {
    "number": 138601,
@@ -1516,23 +1516,23 @@
     "comp/portal"
    ],
    "pick": "comp/tools",
-   "confidence": 0.83,
+   "confidence": 0.69,
    "probabilities": {
-    "comp/agent": 0.01,
+    "comp/agent": 0.05,
     "comp/cli": 0,
-    "comp/gateway": 0.12,
-    "comp/tools": 0.85,
+    "comp/gateway": 0.21,
+    "comp/tools": 0.72,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0,
+    "comp/plugins": 0.01,
     "comp/desktop": 0.01,
     "comp/dashboard": 0,
-    "comp/portal": 0.01
+    "comp/portal": 0
    },
    "hit": true,
-   "ms": 254,
-   "cost": 5.3172e-05
+   "ms": 213,
+   "cost": 5.3046e-05
   },
   {
    "number": 138599,
@@ -1541,12 +1541,12 @@
     "comp/cli"
    ],
    "pick": "comp/cli",
-   "confidence": 1,
+   "confidence": 0.99,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 1,
+    "comp/cli": 0.99,
     "comp/gateway": 0,
-    "comp/tools": 0,
+    "comp/tools": 0.01,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
@@ -1556,8 +1556,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 169,
-   "cost": 5.9976e-05
+   "ms": 171,
+   "cost": 5.985e-05
   },
   {
    "number": 138582,
@@ -1572,19 +1572,19 @@
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0.48,
-    "comp/gateway": 0.36,
+    "comp/gateway": 0.3,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.16,
+    "comp/desktop": 0.22,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 196,
-   "cost": 5.2836e-05
+   "ms": 167,
+   "cost": 5.271e-05
   },
   {
    "number": 138581,
@@ -1608,8 +1608,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 202,
-   "cost": 5.4306e-05
+   "ms": 195,
+   "cost": 5.418e-05
   },
   {
    "number": 138580,
@@ -1618,11 +1618,11 @@
     "comp/agent"
    ],
    "pick": "comp/agent",
-   "confidence": 0.94,
+   "confidence": 0.96,
    "probabilities": {
-    "comp/agent": 0.95,
+    "comp/agent": 0.96,
     "comp/cli": 0,
-    "comp/gateway": 0.05,
+    "comp/gateway": 0.04,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
@@ -1633,8 +1633,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 170,
-   "cost": 4.137e-05
+   "ms": 200,
+   "cost": 4.1244e-05
   },
   {
    "number": 138579,
@@ -1644,23 +1644,23 @@
     "comp/desktop"
    ],
    "pick": "comp/cron",
-   "confidence": 0.94,
+   "confidence": 0.97,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.03,
+    "comp/gateway": 0.02,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
-    "comp/cron": 0.95,
+    "comp/cron": 0.97,
     "comp/plugins": 0,
-    "comp/desktop": 0.02,
+    "comp/desktop": 0.01,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 193,
-   "cost": 5.628e-05
+   "ms": 173,
+   "cost": 5.6154e-05
   },
   {
    "number": 138575,
@@ -1669,23 +1669,23 @@
     "comp/gateway"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.53,
+   "confidence": 0.54,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.5700000000000001,
+    "comp/gateway": 0.58,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.43,
+    "comp/plugins": 0.42,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 248,
-   "cost": 4.6998e-05
+   "ms": 216,
+   "cost": 4.6872e-05
   },
   {
    "number": 138573,
@@ -1695,23 +1695,23 @@
     "comp/gateway"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.42,
+   "confidence": 0.51,
    "probabilities": {
-    "comp/agent": 0.21,
+    "comp/agent": 0.14,
     "comp/cli": 0,
-    "comp/gateway": 0.47,
+    "comp/gateway": 0.55,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.32,
+    "comp/plugins": 0.31,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 176,
-   "cost": 5.229e-05
+   "ms": 163,
+   "cost": 5.2164e-05
   },
   {
    "number": 138570,
@@ -1721,10 +1721,10 @@
     "comp/cli"
    ],
    "pick": "comp/agent",
-   "confidence": 0.97,
+   "confidence": 0.98,
    "probabilities": {
-    "comp/agent": 0.97,
-    "comp/cli": 0.03,
+    "comp/agent": 0.98,
+    "comp/cli": 0.02,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
@@ -1736,8 +1736,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 154,
-   "cost": 5.1198e-05
+   "ms": 152,
+   "cost": 5.1072e-05
   },
   {
    "number": 138562,
@@ -1746,23 +1746,23 @@
     "comp/dashboard"
    ],
    "pick": "comp/dashboard",
-   "confidence": 0.89,
+   "confidence": 0.92,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.08,
+    "comp/gateway": 0.07,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
     "comp/desktop": 0,
-    "comp/dashboard": 0.9,
-    "comp/portal": 0.02
+    "comp/dashboard": 0.93,
+    "comp/portal": 0
    },
    "hit": true,
-   "ms": 233,
-   "cost": 3.5994e-05
+   "ms": 212,
+   "cost": 3.5868e-05
   },
   {
    "number": 138553,
@@ -1772,23 +1772,23 @@
     "comp/gateway"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.86,
+   "confidence": 0.9,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.06,
-    "comp/gateway": 0.87,
+    "comp/cli": 0.01,
+    "comp/gateway": 0.91,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.07,
+    "comp/plugins": 0.08,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 196,
-   "cost": 5.1114e-05
+   "ms": 165,
+   "cost": 5.0988e-05
   },
   {
    "number": 138546,
@@ -1812,8 +1812,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 176,
-   "cost": 6.0522e-05
+   "ms": 174,
+   "cost": 6.0396e-05
   },
   {
    "number": 138544,
@@ -1837,8 +1837,8 @@
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 167,
-   "cost": 5.5062e-05
+   "ms": 166,
+   "cost": 5.4936e-05
   },
   {
    "number": 138538,
@@ -1848,23 +1848,23 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.65,
+   "confidence": 0.64,
    "probabilities": {
     "comp/agent": 0.01,
     "comp/cli": 0,
     "comp/gateway": 0,
-    "comp/tools": 0.31,
+    "comp/tools": 0.32,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.68,
+    "comp/plugins": 0.67,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 197,
-   "cost": 5.25e-05
+   "ms": 170,
+   "cost": 5.2374e-05
   },
   {
    "number": 138525,
@@ -1873,11 +1873,11 @@
     "comp/gateway"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.99,
+   "confidence": 0.97,
    "probabilities": {
-    "comp/agent": 0,
-    "comp/cli": 0.01,
-    "comp/gateway": 0.99,
+    "comp/agent": 0.01,
+    "comp/cli": 0.02,
+    "comp/gateway": 0.97,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
@@ -1888,8 +1888,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 158,
-   "cost": 6.1656e-05
+   "ms": 453,
+   "cost": 6.153e-05
   },
   {
    "number": 138523,
@@ -1899,11 +1899,11 @@
     "comp/cron"
    ],
    "pick": "comp/agent",
-   "confidence": 0.83,
+   "confidence": 0.8,
    "probabilities": {
-    "comp/agent": 0.85,
-    "comp/cli": 0.04,
-    "comp/gateway": 0.1,
+    "comp/agent": 0.82,
+    "comp/cli": 0.01,
+    "comp/gateway": 0.16,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
@@ -1914,8 +1914,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 863,
-   "cost": 5.1492e-05
+   "ms": 168,
+   "cost": 5.1366e-05
   },
   {
    "number": 138520,
@@ -1925,23 +1925,23 @@
     "comp/plugins"
    ],
    "pick": "comp/tools",
-   "confidence": 0.92,
+   "confidence": 0.96,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
     "comp/gateway": 0.01,
-    "comp/tools": 0.93,
+    "comp/tools": 0.96,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.06,
+    "comp/plugins": 0.03,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 200,
-   "cost": 5.3172e-05
+   "ms": 156,
+   "cost": 5.3046e-05
   },
   {
    "number": 138516,
@@ -1965,8 +1965,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 169,
-   "cost": 5.796e-05
+   "ms": 153,
+   "cost": 5.7834e-05
   },
   {
    "number": 138503,
@@ -1977,13 +1977,13 @@
     "comp/desktop"
    ],
    "pick": "comp/cli",
-   "confidence": 0.35,
+   "confidence": 0.28,
    "probabilities": {
-    "comp/agent": 0.15,
-    "comp/cli": 0.41,
-    "comp/gateway": 0.2,
+    "comp/agent": 0.17,
+    "comp/cli": 0.35,
+    "comp/gateway": 0.21,
     "comp/tools": 0,
-    "comp/tui": 0.04,
+    "comp/tui": 0.07,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
@@ -1992,8 +1992,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 381,
-   "cost": 4.9476e-05
+   "ms": 153,
+   "cost": 4.935e-05
   },
   {
    "number": 138502,
@@ -2003,23 +2003,23 @@
     "comp/desktop"
    ],
    "pick": "comp/desktop",
-   "confidence": 0.98,
+   "confidence": 0.78,
    "probabilities": {
-    "comp/agent": 0,
-    "comp/cli": 0.02,
+    "comp/agent": 0.01,
+    "comp/cli": 0.19,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.98,
+    "comp/desktop": 0.8,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 155,
-   "cost": 6.1656e-05
+   "ms": 170,
+   "cost": 6.153e-05
   },
   {
    "number": 138500,
@@ -2043,8 +2043,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 180,
-   "cost": 5.565e-05
+   "ms": 158,
+   "cost": 5.5524e-05
   },
   {
    "number": 138498,
@@ -2052,24 +2052,24 @@
    "truth": [
     "comp/agent"
    ],
-   "pick": "comp/tools",
-   "confidence": 0.41,
+   "pick": "comp/desktop",
+   "confidence": 0.33,
    "probabilities": {
     "comp/agent": 0.13,
     "comp/cli": 0,
     "comp/gateway": 0.01,
-    "comp/tools": 0.46,
+    "comp/tools": 0.33,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.16,
-    "comp/desktop": 0.24,
+    "comp/plugins": 0.14,
+    "comp/desktop": 0.39,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 166,
-   "cost": 5.4012e-05
+   "ms": 154,
+   "cost": 5.3886e-05
   },
   {
    "number": 138492,
@@ -2093,8 +2093,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 207,
-   "cost": 5.04e-05
+   "ms": 226,
+   "cost": 5.0274e-05
   },
   {
    "number": 138486,
@@ -2103,23 +2103,23 @@
     "comp/agent"
    ],
    "pick": "comp/tools",
-   "confidence": 0.97,
+   "confidence": 0.93,
    "probabilities": {
     "comp/agent": 0.01,
     "comp/cli": 0,
     "comp/gateway": 0,
-    "comp/tools": 0.97,
+    "comp/tools": 0.94,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.02,
+    "comp/plugins": 0.05,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 184,
-   "cost": 5.019e-05
+   "ms": 158,
+   "cost": 5.0064e-05
   },
   {
    "number": 138479,
@@ -2143,8 +2143,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 227,
-   "cost": 5.3844e-05
+   "ms": 149,
+   "cost": 5.3718e-05
   },
   {
    "number": 138478,
@@ -2154,23 +2154,23 @@
     "comp/cron"
    ],
    "pick": "comp/cli",
-   "confidence": 0.79,
+   "confidence": 0.52,
    "probabilities": {
-    "comp/agent": 0.1,
-    "comp/cli": 0.81,
-    "comp/gateway": 0.02,
-    "comp/tools": 0.04,
-    "comp/tui": 0,
-    "comp/acp": 0,
+    "comp/agent": 0.24,
+    "comp/cli": 0.5599999999999999,
+    "comp/gateway": 0.04,
+    "comp/tools": 0.07,
+    "comp/tui": 0.01,
+    "comp/acp": 0.01,
     "comp/cron": 0,
-    "comp/plugins": 0,
+    "comp/plugins": 0.02,
     "comp/desktop": 0,
-    "comp/dashboard": 0.03,
+    "comp/dashboard": 0.05,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 246,
-   "cost": 5.3592e-05
+   "ms": 216,
+   "cost": 5.3466e-05
   },
   {
    "number": 138469,
@@ -2179,9 +2179,9 @@
     "comp/agent"
    ],
    "pick": "comp/agent",
-   "confidence": 0.87,
+   "confidence": 0.9,
    "probabilities": {
-    "comp/agent": 0.88,
+    "comp/agent": 0.91,
     "comp/cli": 0,
     "comp/gateway": 0,
     "comp/tools": 0,
@@ -2189,13 +2189,13 @@
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.12,
+    "comp/desktop": 0.09,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 198,
-   "cost": 5.5986e-05
+   "ms": 214,
+   "cost": 5.586e-05
   },
   {
    "number": 138466,
@@ -2204,12 +2204,12 @@
     "comp/agent"
    ],
    "pick": "comp/agent",
-   "confidence": 0.56,
+   "confidence": 0.6,
    "probabilities": {
-    "comp/agent": 0.6,
+    "comp/agent": 0.64,
     "comp/cli": 0,
     "comp/gateway": 0,
-    "comp/tools": 0.4,
+    "comp/tools": 0.36,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
@@ -2219,8 +2219,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 223,
-   "cost": 5.649e-05
+   "ms": 161,
+   "cost": 5.6364e-05
   },
   {
    "number": 138458,
@@ -2231,24 +2231,24 @@
     "comp/tools",
     "comp/cron"
    ],
-   "pick": "comp/gateway",
-   "confidence": 0.23,
+   "pick": "comp/tools",
+   "confidence": 0.34,
    "probabilities": {
-    "comp/agent": 0.17,
-    "comp/cli": 0.24,
-    "comp/gateway": 0.3,
-    "comp/tools": 0.26,
+    "comp/agent": 0.32,
+    "comp/cli": 0.03,
+    "comp/gateway": 0.18,
+    "comp/tools": 0.4,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.02,
+    "comp/plugins": 0.06,
     "comp/desktop": 0,
     "comp/dashboard": 0.01,
     "comp/portal": 0
    },
-   "hit": false,
-   "ms": 148,
-   "cost": 5.25e-05
+   "hit": true,
+   "ms": 176,
+   "cost": 5.2374e-05
   },
   {
    "number": 138454,
@@ -2272,8 +2272,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 166,
-   "cost": 5.7372e-05
+   "ms": 164,
+   "cost": 5.7246e-05
   },
   {
    "number": 138450,
@@ -2283,23 +2283,23 @@
     "comp/gateway"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.7,
+   "confidence": 0.64,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0.01,
-    "comp/gateway": 0.73,
-    "comp/tools": 0.14,
+    "comp/gateway": 0.67,
+    "comp/tools": 0.16,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.12,
+    "comp/plugins": 0.16,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 179,
-   "cost": 5.1408e-05
+   "ms": 144,
+   "cost": 5.1282e-05
   },
   {
    "number": 138449,
@@ -2309,23 +2309,23 @@
     "comp/tools"
    ],
    "pick": "comp/tools",
-   "confidence": 0.79,
+   "confidence": 0.87,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.1,
-    "comp/gateway": 0.06,
-    "comp/tools": 0.81,
+    "comp/cli": 0.04,
+    "comp/gateway": 0.04,
+    "comp/tools": 0.88,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.03,
+    "comp/plugins": 0.04,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 189,
-   "cost": 5.2878e-05
+   "ms": 154,
+   "cost": 5.2752e-05
   },
   {
    "number": 138448,
@@ -2335,12 +2335,12 @@
     "comp/tools"
    ],
    "pick": "comp/tools",
-   "confidence": 0.86,
+   "confidence": 0.81,
    "probabilities": {
-    "comp/agent": 0.13,
+    "comp/agent": 0.16,
     "comp/cli": 0,
-    "comp/gateway": 0,
-    "comp/tools": 0.87,
+    "comp/gateway": 0.01,
+    "comp/tools": 0.83,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
@@ -2350,8 +2350,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 199,
-   "cost": 5.0988e-05
+   "ms": 159,
+   "cost": 5.0862e-05
   },
   {
    "number": 138445,
@@ -2375,8 +2375,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 181,
-   "cost": 4.5948e-05
+   "ms": 184,
+   "cost": 4.5822e-05
   },
   {
    "number": 138444,
@@ -2400,8 +2400,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 154,
-   "cost": 5.4306e-05
+   "ms": 156,
+   "cost": 5.418e-05
   },
   {
    "number": 138441,
@@ -2411,7 +2411,7 @@
     "comp/desktop"
    ],
    "pick": "comp/desktop",
-   "confidence": 0.59,
+   "confidence": 0.6,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
@@ -2419,15 +2419,15 @@
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
-    "comp/cron": 0.37,
+    "comp/cron": 0.36,
     "comp/plugins": 0,
-    "comp/desktop": 0.63,
+    "comp/desktop": 0.64,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 147,
-   "cost": 5.3718e-05
+   "ms": 223,
+   "cost": 5.3592e-05
   },
   {
    "number": 138439,
@@ -2436,23 +2436,23 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.63,
+   "confidence": 0.58,
    "probabilities": {
     "comp/agent": 0.01,
     "comp/cli": 0,
-    "comp/gateway": 0.02,
-    "comp/tools": 0.31,
+    "comp/gateway": 0.01,
+    "comp/tools": 0.36,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.66,
+    "comp/plugins": 0.62,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 156,
-   "cost": 3.3012e-05
+   "ms": 163,
+   "cost": 3.2886e-05
   },
   {
    "number": 138438,
@@ -2461,23 +2461,23 @@
     "comp/gateway"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.65,
+   "confidence": 0.54,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.32,
+    "comp/gateway": 0.42,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.68,
+    "comp/plugins": 0.58,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 182,
-   "cost": 5.2458e-05
+   "ms": 154,
+   "cost": 5.2332e-05
   },
   {
    "number": 138433,
@@ -2487,23 +2487,23 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.53,
+   "confidence": 0.52,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.43,
+    "comp/gateway": 0.44,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.57,
+    "comp/plugins": 0.56,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 194,
-   "cost": 4.305e-05
+   "ms": 169,
+   "cost": 4.2924e-05
   },
   {
    "number": 138431,
@@ -2512,23 +2512,23 @@
     "comp/cron"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.9,
+   "confidence": 0.89,
    "probabilities": {
-    "comp/agent": 0.02,
+    "comp/agent": 0.03,
     "comp/cli": 0,
-    "comp/gateway": 0.91,
+    "comp/gateway": 0.9,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
-    "comp/cron": 0.01,
+    "comp/cron": 0.02,
     "comp/plugins": 0.01,
-    "comp/desktop": 0,
-    "comp/dashboard": 0.05,
+    "comp/desktop": 0.01,
+    "comp/dashboard": 0.03,
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 183,
-   "cost": 4.9434e-05
+   "ms": 134,
+   "cost": 4.9308e-05
   },
   {
    "number": 138429,
@@ -2538,23 +2538,23 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.54,
+   "confidence": 0.69,
    "probabilities": {
     "comp/agent": 0.01,
     "comp/cli": 0,
-    "comp/gateway": 0.12,
-    "comp/tools": 0.29,
+    "comp/gateway": 0.09,
+    "comp/tools": 0.18,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.58,
+    "comp/plugins": 0.72,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 173,
-   "cost": 3.9984e-05
+   "ms": 148,
+   "cost": 3.9858e-05
   },
   {
    "number": 138424,
@@ -2563,23 +2563,23 @@
     "comp/agent"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.65,
+   "confidence": 0.68,
    "probabilities": {
-    "comp/agent": 0.23,
+    "comp/agent": 0.22,
     "comp/cli": 0,
-    "comp/gateway": 0.68,
+    "comp/gateway": 0.71,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.07,
+    "comp/plugins": 0.06,
     "comp/desktop": 0.01,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 168,
-   "cost": 9.3324e-05
+   "ms": 162,
+   "cost": 9.3198e-05
   },
   {
    "number": 138416,
@@ -2588,23 +2588,23 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.97,
+   "confidence": 0.98,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.03,
+    "comp/gateway": 0.02,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.97,
+    "comp/plugins": 0.98,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 184,
-   "cost": 5.061e-05
+   "ms": 158,
+   "cost": 5.0484e-05
   },
   {
    "number": 138415,
@@ -2613,23 +2613,23 @@
     "comp/desktop"
    ],
    "pick": "comp/desktop",
-   "confidence": 0.76,
+   "confidence": 0.74,
    "probabilities": {
-    "comp/agent": 0.15000000000000002,
-    "comp/cli": 0.01,
+    "comp/agent": 0.18,
+    "comp/cli": 0,
     "comp/gateway": 0.04,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0.01,
-    "comp/desktop": 0.78,
+    "comp/desktop": 0.76,
     "comp/dashboard": 0.01,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 167,
-   "cost": 5.2206e-05
+   "ms": 195,
+   "cost": 5.208e-05
   },
   {
    "number": 138413,
@@ -2639,13 +2639,13 @@
     "comp/cli"
    ],
    "pick": "comp/cli",
-   "confidence": 0.88,
+   "confidence": 0.87,
    "probabilities": {
-    "comp/agent": 0,
-    "comp/cli": 0.89,
-    "comp/gateway": 0.03,
+    "comp/agent": 0.01,
+    "comp/cli": 0.88,
+    "comp/gateway": 0.04,
     "comp/tools": 0,
-    "comp/tui": 0.06,
+    "comp/tui": 0.05,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0.02,
@@ -2654,8 +2654,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 173,
-   "cost": 4.83e-05
+   "ms": 242,
+   "cost": 4.8174e-05
   },
   {
    "number": 138411,
@@ -2665,23 +2665,23 @@
     "comp/cli"
    ],
    "pick": "comp/agent",
-   "confidence": 0.75,
+   "confidence": 0.71,
    "probabilities": {
-    "comp/agent": 0.77,
-    "comp/cli": 0.09,
+    "comp/agent": 0.74,
+    "comp/cli": 0.06,
     "comp/gateway": 0,
     "comp/tools": 0.06,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.08,
+    "comp/plugins": 0.14,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
    "ms": 156,
-   "cost": 5.0106e-05
+   "cost": 4.998e-05
   },
   {
    "number": 138405,
@@ -2690,23 +2690,23 @@
     "comp/desktop"
    ],
    "pick": "comp/desktop",
-   "confidence": 0.96,
+   "confidence": 0.99,
    "probabilities": {
-    "comp/agent": 0.03,
+    "comp/agent": 0.01,
     "comp/cli": 0,
-    "comp/gateway": 0.01,
+    "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.96,
+    "comp/desktop": 0.99,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 190,
-   "cost": 5.3466e-05
+   "ms": 218,
+   "cost": 5.334e-05
   },
   {
    "number": 138404,
@@ -2715,23 +2715,23 @@
     "comp/cli"
    ],
    "pick": "comp/cli",
-   "confidence": 1,
+   "confidence": 0.99,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 1,
+    "comp/cli": 0.99,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0,
+    "comp/plugins": 0.01,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 173,
-   "cost": 5.3466e-05
+   "ms": 209,
+   "cost": 5.334e-05
   },
   {
    "number": 138403,
@@ -2740,23 +2740,23 @@
     "comp/cron"
    ],
    "pick": "comp/agent",
-   "confidence": 0.45,
+   "confidence": 0.52,
    "probabilities": {
-    "comp/agent": 0.5,
+    "comp/agent": 0.56,
     "comp/cli": 0,
-    "comp/gateway": 0.33,
+    "comp/gateway": 0.29,
     "comp/tools": 0.02,
     "comp/tui": 0,
     "comp/acp": 0,
-    "comp/cron": 0.02,
-    "comp/plugins": 0.11,
+    "comp/cron": 0.01,
+    "comp/plugins": 0.1,
     "comp/desktop": 0,
-    "comp/dashboard": 0.01,
-    "comp/portal": 0.01
+    "comp/dashboard": 0.02,
+    "comp/portal": 0
    },
    "hit": false,
-   "ms": 174,
-   "cost": 4.9812e-05
+   "ms": 248,
+   "cost": 4.9686e-05
   },
   {
    "number": 138396,
@@ -2765,23 +2765,23 @@
     "comp/agent"
    ],
    "pick": "comp/agent",
-   "confidence": 0.25,
+   "confidence": 0.21,
    "probabilities": {
-    "comp/agent": 0.32,
-    "comp/cli": 0.08,
-    "comp/gateway": 0.23,
-    "comp/tools": 0.04,
+    "comp/agent": 0.27999999999999997,
+    "comp/cli": 0.03,
+    "comp/gateway": 0.15,
+    "comp/tools": 0.13,
     "comp/tui": 0.01,
-    "comp/acp": 0.02,
+    "comp/acp": 0.03,
     "comp/cron": 0.01,
-    "comp/plugins": 0.06,
-    "comp/desktop": 0.02,
-    "comp/dashboard": 0.05,
-    "comp/portal": 0.16
+    "comp/plugins": 0.11,
+    "comp/desktop": 0.03,
+    "comp/dashboard": 0.03,
+    "comp/portal": 0.19
    },
    "hit": true,
-   "ms": 175,
-   "cost": 2.583e-05
+   "ms": 137,
+   "cost": 2.5704e-05
   },
   {
    "number": 138395,
@@ -2805,8 +2805,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 177,
-   "cost": 5.418e-05
+   "ms": 203,
+   "cost": 5.4054e-05
   },
   {
    "number": 138392,
@@ -2815,12 +2815,12 @@
     "comp/agent"
    ],
    "pick": "comp/agent",
-   "confidence": 0.94,
+   "confidence": 0.97,
    "probabilities": {
-    "comp/agent": 0.95,
+    "comp/agent": 0.97,
     "comp/cli": 0,
-    "comp/gateway": 0.03,
-    "comp/tools": 0.01,
+    "comp/gateway": 0.02,
+    "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
@@ -2830,8 +2830,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 171,
-   "cost": 5.5062e-05
+   "ms": 131,
+   "cost": 5.4936e-05
   },
   {
    "number": 138388,
@@ -2840,10 +2840,10 @@
     "comp/cli"
    ],
    "pick": "comp/dashboard",
-   "confidence": 0.77,
+   "confidence": 0.96,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.18,
+    "comp/cli": 0.01,
     "comp/gateway": 0.03,
     "comp/tools": 0,
     "comp/tui": 0,
@@ -2851,12 +2851,12 @@
     "comp/cron": 0,
     "comp/plugins": 0,
     "comp/desktop": 0,
-    "comp/dashboard": 0.79,
+    "comp/dashboard": 0.96,
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 159,
-   "cost": 5.8128e-05
+   "ms": 204,
+   "cost": 5.8002e-05
   },
   {
    "number": 138378,
@@ -2880,8 +2880,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 189,
-   "cost": 5.7372e-05
+   "ms": 150,
+   "cost": 5.7246e-05
   },
   {
    "number": 138375,
@@ -2891,23 +2891,23 @@
     "comp/cli"
    ],
    "pick": "comp/agent",
-   "confidence": 0.64,
+   "confidence": 0.85,
    "probabilities": {
-    "comp/agent": 0.67,
-    "comp/cli": 0.28,
+    "comp/agent": 0.86,
+    "comp/cli": 0.03,
     "comp/gateway": 0.01,
-    "comp/tools": 0.02,
+    "comp/tools": 0.08,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.01,
+    "comp/plugins": 0.02,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 199,
-   "cost": 6.2832e-05
+   "ms": 167,
+   "cost": 6.2706e-05
   },
   {
    "number": 138374,
@@ -2931,8 +2931,8 @@
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 188,
-   "cost": 3.8388e-05
+   "ms": 173,
+   "cost": 3.8262e-05
   },
   {
    "number": 138372,
@@ -2941,13 +2941,13 @@
     "comp/cron"
    ],
    "pick": "comp/cli",
-   "confidence": 0.99,
+   "confidence": 0.91,
    "probabilities": {
-    "comp/agent": 0.01,
-    "comp/cli": 0.99,
+    "comp/agent": 0.06,
+    "comp/cli": 0.92,
     "comp/gateway": 0,
-    "comp/tools": 0,
-    "comp/tui": 0,
+    "comp/tools": 0.01,
+    "comp/tui": 0.01,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
@@ -2956,8 +2956,8 @@
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 286,
-   "cost": 4.4268e-05
+   "ms": 173,
+   "cost": 4.4142e-05
   },
   {
    "number": 138365,
@@ -2966,23 +2966,23 @@
     "comp/gateway"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.8,
+   "confidence": 0.81,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.8200000000000001,
+    "comp/gateway": 0.83,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.18,
+    "comp/plugins": 0.17,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 161,
-   "cost": 4.6494e-05
+   "ms": 195,
+   "cost": 4.6368e-05
   },
   {
    "number": 138362,
@@ -2991,23 +2991,23 @@
     "comp/gateway"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.85,
+   "confidence": 0.92,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.86,
+    "comp/gateway": 0.93,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.14,
+    "comp/plugins": 0.07,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 188,
-   "cost": 5.1198e-05
+   "ms": 183,
+   "cost": 5.1072e-05
   },
   {
    "number": 138359,
@@ -3016,23 +3016,23 @@
     "comp/cli"
    ],
    "pick": "comp/cli",
-   "confidence": 0.65,
+   "confidence": 0.76,
    "probabilities": {
-    "comp/agent": 0.08,
-    "comp/cli": 0.68,
-    "comp/gateway": 0.05,
-    "comp/tools": 0.13,
+    "comp/agent": 0.03,
+    "comp/cli": 0.78,
+    "comp/gateway": 0.02,
+    "comp/tools": 0.12,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.06,
+    "comp/plugins": 0.05,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 158,
-   "cost": 4.8888e-05
+   "ms": 170,
+   "cost": 4.8762e-05
   },
   {
    "number": 138358,
@@ -3041,23 +3041,23 @@
     "comp/gateway"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.93,
+   "confidence": 0.94,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.9400000000000001,
+    "comp/gateway": 0.95,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.06,
+    "comp/plugins": 0.05,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 147,
-   "cost": 5.4852e-05
+   "ms": 264,
+   "cost": 5.4726e-05
   },
   {
    "number": 138355,
@@ -3070,7 +3070,7 @@
    "probabilities": {
     "comp/agent": 0.89,
     "comp/cli": 0,
-    "comp/gateway": 0.1,
+    "comp/gateway": 0.09999999999999999,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
@@ -3081,8 +3081,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 236,
-   "cost": 5.2878e-05
+   "ms": 176,
+   "cost": 5.2752e-05
   },
   {
    "number": 138350,
@@ -3093,23 +3093,23 @@
     "comp/dashboard"
    ],
    "pick": "comp/dashboard",
-   "confidence": 0.82,
+   "confidence": 0.8,
    "probabilities": {
-    "comp/agent": 0.01,
-    "comp/cli": 0.1,
-    "comp/gateway": 0.03,
+    "comp/agent": 0.02,
+    "comp/cli": 0.08,
+    "comp/gateway": 0.04,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.02,
-    "comp/dashboard": 0.84,
+    "comp/desktop": 0.03,
+    "comp/dashboard": 0.8200000000000001,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 163,
-   "cost": 4.6704e-05
+   "ms": 140,
+   "cost": 4.6578e-05
   },
   {
    "number": 138349,
@@ -3119,24 +3119,24 @@
     "comp/cli",
     "comp/tui"
    ],
-   "pick": "comp/cli",
-   "confidence": 0.36,
+   "pick": "comp/agent",
+   "confidence": 0.54,
    "probabilities": {
-    "comp/agent": 0.41,
-    "comp/cli": 0.42,
-    "comp/gateway": 0.11,
+    "comp/agent": 0.58,
+    "comp/cli": 0.09,
+    "comp/gateway": 0.14,
     "comp/tools": 0.01,
-    "comp/tui": 0.03,
-    "comp/acp": 0,
+    "comp/tui": 0.11,
+    "comp/acp": 0.01,
     "comp/cron": 0,
-    "comp/plugins": 0.02,
-    "comp/desktop": 0,
+    "comp/plugins": 0.03,
+    "comp/desktop": 0.03,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 187,
-   "cost": 5.46e-05
+   "ms": 198,
+   "cost": 5.4474e-05
   },
   {
    "number": 138347,
@@ -3145,7 +3145,7 @@
     "comp/desktop"
    ],
    "pick": "comp/desktop",
-   "confidence": 0.58,
+   "confidence": 0.68,
    "probabilities": {
     "comp/agent": 0.01,
     "comp/cli": 0,
@@ -3154,14 +3154,14 @@
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.36,
-    "comp/desktop": 0.62,
+    "comp/plugins": 0.27,
+    "comp/desktop": 0.71,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 227,
-   "cost": 5.2122e-05
+   "ms": 176,
+   "cost": 5.1996e-05
   },
   {
    "number": 138345,
@@ -3185,8 +3185,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 207,
-   "cost": 5.271e-05
+   "ms": 180,
+   "cost": 5.2584e-05
   },
   {
    "number": 138343,
@@ -3196,23 +3196,23 @@
     "comp/cron"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.99,
+   "confidence": 0.96,
    "probabilities": {
-    "comp/agent": 0.01,
+    "comp/agent": 0.03,
     "comp/cli": 0,
-    "comp/gateway": 0.99,
+    "comp/gateway": 0.96,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
-    "comp/cron": 0,
+    "comp/cron": 0.01,
     "comp/plugins": 0,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 184,
-   "cost": 5.5944e-05
+   "ms": 181,
+   "cost": 5.5818e-05
   },
   {
    "number": 138337,
@@ -3225,8 +3225,8 @@
    "probabilities": {
     "comp/agent": 0.9,
     "comp/cli": 0,
-    "comp/gateway": 0.05,
-    "comp/tools": 0,
+    "comp/gateway": 0.04,
+    "comp/tools": 0.01,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
@@ -3236,8 +3236,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 202,
-   "cost": 6.0144e-05
+   "ms": 159,
+   "cost": 6.0018e-05
   },
   {
    "number": 138330,
@@ -3246,13 +3246,13 @@
     "comp/cli"
    ],
    "pick": "comp/cli",
-   "confidence": 1,
+   "confidence": 0.97,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 1,
+    "comp/cli": 0.97,
     "comp/gateway": 0,
     "comp/tools": 0,
-    "comp/tui": 0,
+    "comp/tui": 0.03,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
@@ -3261,8 +3261,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 183,
-   "cost": 4.6578e-05
+   "ms": 165,
+   "cost": 4.6452e-05
   },
   {
    "number": 138329,
@@ -3271,23 +3271,23 @@
     "comp/tools"
    ],
    "pick": "comp/gateway",
-   "confidence": 0.53,
+   "confidence": 0.35,
    "probabilities": {
-    "comp/agent": 0.06,
-    "comp/cli": 0.16,
-    "comp/gateway": 0.57,
-    "comp/tools": 0.06,
-    "comp/tui": 0.01,
-    "comp/acp": 0.03,
+    "comp/agent": 0.18000000000000002,
+    "comp/cli": 0.1,
+    "comp/gateway": 0.41000000000000003,
+    "comp/tools": 0.11,
+    "comp/tui": 0,
+    "comp/acp": 0.05,
     "comp/cron": 0,
-    "comp/plugins": 0.05,
-    "comp/desktop": 0.06,
+    "comp/plugins": 0.06,
+    "comp/desktop": 0.09,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 174,
-   "cost": 5.8422e-05
+   "ms": 166,
+   "cost": 5.8296e-05
   },
   {
    "number": 138326,
@@ -3296,9 +3296,9 @@
     "comp/agent"
    ],
    "pick": "comp/agent",
-   "confidence": 0.98,
+   "confidence": 0.99,
    "probabilities": {
-    "comp/agent": 0.98,
+    "comp/agent": 0.99,
     "comp/cli": 0,
     "comp/gateway": 0,
     "comp/tools": 0.01,
@@ -3308,11 +3308,11 @@
     "comp/plugins": 0,
     "comp/desktop": 0,
     "comp/dashboard": 0,
-    "comp/portal": 0.01
+    "comp/portal": 0
    },
    "hit": true,
-   "ms": 203,
-   "cost": 5.7162e-05
+   "ms": 158,
+   "cost": 5.7036e-05
   },
   {
    "number": 138322,
@@ -3321,23 +3321,23 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.94,
+   "confidence": 0.92,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.04,
+    "comp/cli": 0.06,
     "comp/gateway": 0,
     "comp/tools": 0.01,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.95,
+    "comp/plugins": 0.93,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 179,
-   "cost": 5.8716e-05
+   "ms": 180,
+   "cost": 5.859e-05
   },
   {
    "number": 138321,
@@ -3362,8 +3362,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 184,
-   "cost": 5.5272e-05
+   "ms": 145,
+   "cost": 5.5146e-05
   },
   {
    "number": 138320,
@@ -3387,8 +3387,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 182,
-   "cost": 5.1492e-05
+   "ms": 193,
+   "cost": 5.1366e-05
   },
   {
    "number": 138313,
@@ -3412,8 +3412,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 195,
-   "cost": 4.6788e-05
+   "ms": 168,
+   "cost": 4.6662e-05
   },
   {
    "number": 138310,
@@ -3422,7 +3422,7 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.67,
+   "confidence": 0.68,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
@@ -3431,14 +3431,14 @@
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.7,
+    "comp/plugins": 0.71,
     "comp/desktop": 0,
-    "comp/dashboard": 0.3,
+    "comp/dashboard": 0.29,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 232,
-   "cost": 5.4642e-05
+   "ms": 203,
+   "cost": 5.4516e-05
   },
   {
    "number": 138309,
@@ -3447,23 +3447,23 @@
     "comp/agent"
    ],
    "pick": "comp/agent",
-   "confidence": 0.98,
+   "confidence": 1,
    "probabilities": {
-    "comp/agent": 0.98,
+    "comp/agent": 1,
     "comp/cli": 0,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.01,
+    "comp/plugins": 0,
     "comp/desktop": 0,
     "comp/dashboard": 0,
-    "comp/portal": 0.01
+    "comp/portal": 0
    },
    "hit": true,
-   "ms": 174,
-   "cost": 7.2954e-05
+   "ms": 161,
+   "cost": 7.2828e-05
   },
   {
    "number": 138304,
@@ -3474,23 +3474,23 @@
     "comp/desktop"
    ],
    "pick": "comp/cron",
-   "confidence": 0.89,
+   "confidence": 0.91,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
-    "comp/gateway": 0.05,
+    "comp/gateway": 0.04,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
-    "comp/cron": 0.9,
+    "comp/cron": 0.92,
     "comp/plugins": 0,
-    "comp/desktop": 0.05,
+    "comp/desktop": 0.04,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 180,
-   "cost": 5.691e-05
+   "ms": 134,
+   "cost": 5.6784e-05
   },
   {
    "number": 138303,
@@ -3514,8 +3514,8 @@
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 225,
-   "cost": 5.4096e-05
+   "ms": 156,
+   "cost": 5.397e-05
   },
   {
    "number": 138299,
@@ -3539,8 +3539,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 177,
-   "cost": 5.2836e-05
+   "ms": 162,
+   "cost": 5.271e-05
   },
   {
    "number": 138296,
@@ -3555,32 +3555,7 @@
     "comp/agent": 0.02,
     "comp/cli": 0,
     "comp/gateway": 0.79,
-    "comp/tools": 0.09,
-    "comp/tui": 0,
-    "comp/acp": 0,
-    "comp/cron": 0,
-    "comp/plugins": 0.1,
-    "comp/desktop": 0,
-    "comp/dashboard": 0,
-    "comp/portal": 0
-   },
-   "hit": true,
-   "ms": 189,
-   "cost": 3.9228e-05
-  },
-  {
-   "number": 138295,
-   "title": "Gateway `/new` reply always appends a CLI tip; add a setting to turn it off",
-   "truth": [
-    "comp/gateway"
-   ],
-   "pick": "comp/gateway",
-   "confidence": 0.9,
-   "probabilities": {
-    "comp/agent": 0,
-    "comp/cli": 0,
-    "comp/gateway": 0.91,
-    "comp/tools": 0,
+    "comp/tools": 0.1,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
@@ -3590,8 +3565,33 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 270,
-   "cost": 3.3978e-05
+   "ms": 176,
+   "cost": 3.9102e-05
+  },
+  {
+   "number": 138295,
+   "title": "Gateway `/new` reply always appends a CLI tip; add a setting to turn it off",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.93,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.9400000000000001,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.06,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 152,
+   "cost": 3.3852e-05
   },
   {
    "number": 138288,
@@ -3615,8 +3615,8 @@
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 174,
-   "cost": 4.2126e-05
+   "ms": 165,
+   "cost": 4.2e-05
   },
   {
    "number": 138286,
@@ -3640,8 +3640,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 171,
-   "cost": 5.628e-05
+   "ms": 246,
+   "cost": 5.6154e-05
   },
   {
    "number": 138284,
@@ -3650,10 +3650,10 @@
     "comp/cli"
    ],
    "pick": "comp/agent",
-   "confidence": 0.6,
+   "confidence": 0.64,
    "probabilities": {
-    "comp/agent": 0.64,
-    "comp/cli": 0.36,
+    "comp/agent": 0.67,
+    "comp/cli": 0.33,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
@@ -3665,8 +3665,8 @@
     "comp/portal": 0
    },
    "hit": false,
-   "ms": 176,
-   "cost": 3.9228e-05
+   "ms": 183,
+   "cost": 3.9102e-05
   },
   {
    "number": 138280,
@@ -3677,23 +3677,23 @@
     "comp/plugins"
    ],
    "pick": "comp/plugins",
-   "confidence": 0.88,
+   "confidence": 0.94,
    "probabilities": {
     "comp/agent": 0,
-    "comp/cli": 0.11,
+    "comp/cli": 0.05,
     "comp/gateway": 0,
     "comp/tools": 0,
     "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
-    "comp/plugins": 0.89,
+    "comp/plugins": 0.95,
     "comp/desktop": 0,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 156,
-   "cost": 5.3928e-05
+   "ms": 197,
+   "cost": 5.3802e-05
   },
   {
    "number": 138278,
@@ -3717,8 +3717,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 244,
-   "cost": 4.6704e-05
+   "ms": 186,
+   "cost": 4.6578e-05
   },
   {
    "number": 138277,
@@ -3727,23 +3727,23 @@
     "comp/desktop"
    ],
    "pick": "comp/desktop",
-   "confidence": 0.99,
+   "confidence": 1,
    "probabilities": {
     "comp/agent": 0,
     "comp/cli": 0,
     "comp/gateway": 0,
     "comp/tools": 0,
-    "comp/tui": 0.01,
+    "comp/tui": 0,
     "comp/acp": 0,
     "comp/cron": 0,
     "comp/plugins": 0,
-    "comp/desktop": 0.99,
+    "comp/desktop": 1,
     "comp/dashboard": 0,
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 190,
-   "cost": 6.2874e-05
+   "ms": 154,
+   "cost": 6.2748e-05
   },
   {
    "number": 138274,
@@ -3767,8 +3767,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 189,
-   "cost": 5.7414e-05
+   "ms": 161,
+   "cost": 5.7288e-05
   },
   {
    "number": 138271,
@@ -3792,8 +3792,8 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 209,
-   "cost": 5.1198e-05
+   "ms": 144,
+   "cost": 5.1072e-05
   },
   {
    "number": 138263,
@@ -3817,13 +3817,13 @@
     "comp/portal": 0
    },
    "hit": true,
-   "ms": 226,
-   "cost": 5.5902e-05
+   "ms": 161,
+   "cost": 5.5776e-05
   }
  ],
  "usage": {
   "calls": 150,
-  "ms_median": 185,
-  "cost_usd": 0.00767
+  "ms_median": 170,
+  "cost_usd": 0.00765
  }
 }

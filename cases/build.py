@@ -9,7 +9,9 @@ from string import Template
 
 HERE = Path(__file__).parent
 R = HERE / "results"
-GH = "https://github.com/NousResearch/hermes-agent"
+import re
+
+SKIP = re.compile(r"(?i)hermes|nous|teknium|melkor")  # keep the source project out of the page
 YES, NO = 0.8, 0.35
 
 
@@ -21,12 +23,8 @@ def e(s):
     return html.escape(str(s))
 
 
-def pr(n):
-    return f'<a href="{GH}/pull/{n}">#{n}</a>'
-
-
-def iss(n):
-    return f'<a href="{GH}/issues/{n}">#{n}</a>'
+def clean(rows, key="title"):
+    return [r for r in rows if not SKIP.search(r[key])]
 
 
 def pct(x):
@@ -85,9 +83,9 @@ axis = "".join(
 dup_svg = (f'<svg viewBox="0 0 {W} {H}" class="strip" role="img" aria-label="{len(agg)} PR pairs by duplicate probability">'
            f'<line x1="16" x2="{W - 16}" y1="56" y2="56" class="tick"/>{axis}{dots}</svg>')
 dup_rows = "".join(
-    f'<tr><td>{pr(a["pair"][0])} · {pr(a["pair"][1])}</td><td>{e(a["titles"][0])}<br><span class="dim">{e(a["titles"][1])}</span></td>'
+    f'<tr><td>{e(a["titles"][0])}<br><span class="dim">{e(a["titles"][1])}</span></td>'
     f'<td>{chip(a["noul"])}</td></tr>' for a in true
-) + (f'<tr class="sep"><td>{pr(near["pair"][0])} · {pr(near["pair"][1])}</td><td>{e(near["titles"][0])}<br>'
+) + (f'<tr class="sep"><td>{e(near["titles"][0])}<br>'
      f'<span class="dim">{e(near["titles"][1])}</span><br><span class="dim">Same area, different bug. Both should merge.</span></td>'
      f'<td>{chip(near["noul"])}</td></tr>')
 
@@ -104,7 +102,7 @@ for arm, label in (("catalog", "Catalog only"), ("docs", "Docs only"), ("securit
     grow.append(f"<tr><td>{label}</td><td>{pos}</td><td>{take_ok}</td><td>{take_bad}</td><td>{miss}</td><td>{uns}</td></tr>")
 gate_rows = "".join(grow)
 sec_fp = [r for r in g["rows"] if r["nouls"]["security"] >= YES and not r["truth"]["security"]]
-sec_fp_list = "".join(f'<li>{pr(r["number"])} {e(r["title"])} <span class="dim">({r["nouls"]["security"]:.2f})</span></li>' for r in sec_fp)
+sec_fp_list = "".join(f'<li>{e(r["title"])} <span class="dim">({r["nouls"]["security"]:.2f})</span></li>' for r in clean(sec_fp))
 sec_unsure = [r for r in g["rows"] if NO <= r["nouls"]["security"] < YES]
 
 # ── 4 router ────────────────────────────────────────────────────────────────
@@ -122,10 +120,10 @@ def bandrow(lo, hi, label):
 
 router_bands = bandrow(0.9, 1.01, "0.9 or higher") + bandrow(0.6, 0.9, "0.6 to 0.9") + bandrow(0, 0.6, "below 0.6")
 hi = [r for r in rows if r["confidence"] >= 0.9]
-misses = sorted([r for r in rows if not r["hit"]], key=lambda r: -r["confidence"])[:4]
+misses = sorted(clean([r for r in rows if not r["hit"]]), key=lambda r: -r["confidence"])[:4]
 miss_list = "".join(
-    f'<li>{iss(r["number"])} {e(r["title"])}: picked <code>{r["pick"]}</code> at {r["confidence"]:.2f}; '
-    f'maintainers said <code>{", ".join(r["truth"])}</code></li>' for r in misses
+    f'<li>{e(r["title"])}: picked <code>{r["pick"]}</code> at {r["confidence"]:.2f}; '
+    f'the maintainers chose <code>{", ".join(r["truth"])}</code></li>' for r in misses
 )
 h1, h2 = load("issue_router_heldout_v1")["rows"], load("issue_router_heldout_v2")["rows"]
 
@@ -146,13 +144,16 @@ cm = load("comments")["rows"]
 wake = [r for r in cm if r["new_evidence"] >= YES and r["automated"] < YES]
 closing = [r for r in cm if r["closing"] >= YES]
 bots = [r for r in cm if r["automated"] >= YES]
-pick = {"Code0020161314", "smallmj", "LordMelkor", "greptile-apps[bot]", "austinpickett", "alt-glitch", "teknium1"}
-seen, cm_rows = set(), ""
-for r in cm:
-    if r["user"] in pick and r["user"] not in seen:
-        seen.add(r["user"])
-        cm_rows += (f'<tr><td>{e(r["user"])}</td><td class="dim">{e(r["excerpt"][:90].replace(chr(10), " "))}…</td>'
-                    f'<td>{r["new_evidence"]:.2f}</td><td>{r["automated"]:.2f}</td><td>{r["closing"]:.2f}</td></tr>')
+ok = [r for r in cm if not SKIP.search(r["excerpt"]) and not r["excerpt"].lstrip().startswith("<")]
+show = []
+for key in ("new_evidence", "closing", "automated"):
+    for r in sorted(ok, key=lambda r: -r[key])[:2]:
+        if r not in show:
+            show.append(r)
+cm_rows = "".join(
+    f'<tr><td class="dim">{e(r["excerpt"][:110].replace(chr(10), " "))}…</td>'
+    f'<td>{r["new_evidence"]:.2f}</td><td>{r["automated"]:.2f}</td><td>{r["closing"]:.2f}</td></tr>' for r in show
+)
 
 # ── 7 priority ──────────────────────────────────────────────────────────────
 pr_rows_ = load("priority")["rows"]
@@ -167,8 +168,8 @@ def mean(t):
 prio_rows = "".join(
     f'<tr><td>{lab}</td><td>{mean(t)[0]}</td><td>{mean(t)[1]:.2f}</td></tr>' for t, lab in ((0, "P3"), (1, "P2"), (2, "P1"))
 )
-top6 = sorted(pr_rows_, key=lambda r: -r["score"])[:6]
-top_list = "".join(f'<li>{iss(r["number"])} {e(r["title"][:96])} <span class="dim">({["P3", "P2", "P1", "P0"][r["truth"]]}, {r["score"]:.2f})</span></li>' for r in top6)
+top6 = sorted(clean(pr_rows_), key=lambda r: -r["score"])[:6]
+top_list = "".join(f'<li>{e(r["title"][:96])} <span class="dim">({["P3", "P2", "P1", "P0"][r["truth"]]}, {r["score"]:.2f})</span></li>' for r in top6)
 
 
 def auc(xs, cut):
@@ -179,9 +180,11 @@ def auc(xs, cut):
 
 xs = [(r["score"], r["truth"]) for r in pr_rows_]
 AUC_P1, AUC_P2 = auc(xs, 2), auc(xs, 1)
+WEIGHTS = {"data_loss": 2, "security": 2, "cannot_start": 1.5, "no_workaround": 1, "cosmetic": -1.5, "narrow": -1}
+AUC_ATOM = auc([(sum(w * r["f"][k] for k, w in WEIGHTS.items()), r["truth"]) for r in load("priority_atomic")["rows"]], 2)
 
 page = Template((HERE / "cases.template.html").read_text()).substitute(
-    CALLS=CALLS, COST=f"${COST:.3f}", MS=MS, GH=GH,
+    CALLS=CALLS, COST=f"${COST:.3f}", MS=MS,
     V_N=len(v), V_SUB=v_sub_wrong, V_JEV=v_jev_wrong, V_ROWS=v_rows,
     D_PAIRS=len(agg), D_CALLS=dd["usage"]["calls"], D_Q=dd["questions_per_call"], D_COST=f'${dd["usage"]["cost_usd"]:.4f}',
     D_MS=dd["usage"]["ms_median"], D_MIN=f'{min(a["noul"] for a in true):.2f}', D_MAX=f'{neg[0]["noul"]:.2f}',
@@ -194,7 +197,7 @@ page = Template((HERE / "cases.template.html").read_text()).substitute(
     A_ROWS=ap_rows, A_N=len(ap),
     C_N=len(cm), C_WAKE=len(wake), C_CLOSE=len(closing), C_BOTS=len(bots), C_ROWS=cm_rows,
     P_N=len(pr_rows_), P_EXACT=pct(exact), P_ROWS=prio_rows, P_TOP=top_list,
-    P_AUC1=f"{AUC_P1:.2f}", P_AUC2=f"{AUC_P2:.2f}",
+    P_AUC1=f"{AUC_P1:.2f}", P_AUC2=f"{AUC_P2:.2f}", P_ATOM=f"{AUC_ATOM:.2f}",
 )
 (HERE.parent / "cases.html").write_text(page)
 print("wrote cases.html", CALLS, f"${COST:.4f}", f"{MS}ms")

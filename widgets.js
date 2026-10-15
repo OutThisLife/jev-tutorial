@@ -36,7 +36,7 @@ function seg(root, onPick) {
     const p = t.trim() ? mock(t) : 0.5;
     jev.innerHTML = `${meter(p)}${chip(p)}<span class="dim">${say[band(p)]}</span>`;
   };
-  const btns = seg($('.seg', w), b => { input.value = b.textContent; render(); });
+  const btns = seg($('.chips', w), b => { input.value = b.textContent; render(); });
   input.addEventListener('input', () => { btns.forEach(x => x.setAttribute('aria-pressed', false)); render(); });
   render();
 })();
@@ -57,7 +57,7 @@ function seg(root, onPick) {
     $('[data-top]', w).textContent = `${names[top]} wins with ${f2(p[top])}`;
   };
   sliders.forEach(s => s.addEventListener('input', render));
-  $('[data-reset]', w).addEventListener('click', () => { [16, 84, 0].forEach((v, i) => { sliders[i].value = v; }); render(); });
+  $('[data-reset]', w).addEventListener('click', () => { [16, 84, 0].forEach((v, i) => { sliders[i].value = v; sliders[i].dispatchEvent(new Event('input')); }); });
   render();
 })();
 
@@ -70,9 +70,9 @@ function seg(root, onPick) {
     const p = +r.value;
     pv.textContent = f2(p);
     const [label, color, text] =
-      p >= yes ? ['take the arm', 'var(--accent)', 'A confident yes, so the gate takes this arm.']
+      p >= yes ? ['go this way', 'var(--accent)', 'A confident yes, so the gate takes this path.']
       : p >= no ? ['not sure', 'var(--unsure-ink)', 'Jev isn’t sure, so the gate stops and asks a person.']
-      : ['skip', 'var(--muted)', 'A confident no, so the gate moves on to the next arm.'];
+      : ['skip', 'var(--muted)', 'A confident no, so the gate checks the next path.'];
     verdict.textContent = label; verdict.style.color = color; why.textContent = text;
   };
   seg($('.seg', w), b => {
@@ -103,7 +103,7 @@ function seg(root, onPick) {
   render();
 })();
 
-// One choice across arms vs one noul per arm
+// One multiple-choice question vs a yes/no question for each
 (() => {
   const w = $('#w-split'); if (!w) return;
   const boxes = $$('input[type=checkbox]', w), labels = ['touches auth', 'has no tests'];
@@ -114,8 +114,8 @@ function seg(root, onPick) {
     $('[data-choice]', w).innerHTML = [...labels, 'neither'].map((l, i) => row(l, cp[i])).join('');
     $('[data-noul]', w).innerHTML = labels.map((l, i) => row(l, t[i] ? 0.95 : 0.04)).join('');
     $('[data-note]', w).textContent =
-      k === 2 ? 'Both are true, so the choice has to split its belief, and each arm lands around 0.48, in the unsure band. The nouls judge each arm on its own, so both come back as a confident yes.'
-      : k === 1 ? 'With only one true, the two approaches agree. The trouble starts when more than one arm is true.'
+      k === 2 ? 'Both are true, so the choice has to split its belief, and each lands around 0.48, which reads as unsure. The yes/no questions judge each one on its own, so both come back as a confident yes.'
+      : k === 1 ? 'With only one true, the two approaches agree. The trouble starts when more than one is true.'
       : 'With neither true, the two approaches agree. Tick both boxes to see where they come apart.';
   };
   boxes.forEach(b => b.addEventListener('change', render));
@@ -125,41 +125,41 @@ function seg(root, onPick) {
 // Step through a gate
 (() => {
   const w = $('#w-gate'); if (!w) return;
-  const ARMS = [
-    { id: 'fix', kind: 'rule', name: 'Any input failed', to: 'Fix loop' },
-    { id: 'catalog', kind: 'judgement', name: 'Only adds a plugin-catalog entry', to: 'Catalog checks' },
-    { id: 'security', kind: 'judgement', name: 'Alters an auth or secret boundary', to: 'Security review' },
-    { id: 'unsure', kind: 'unsure', name: 'Not sure', to: 'Human approval' },
-    { id: 'always', kind: 'always', name: 'Always', to: 'Full review' },
+  const PATHS = [
+    { id: 'fix', kind: 'rule', name: 'The review failed', to: 'Send back to fix' },
+    { id: 'catalog', kind: 'judgement', name: 'Only adds a catalog entry', to: 'Quick catalog checks' },
+    { id: 'security', kind: 'judgement', name: 'Touches auth or secrets', to: 'Security review' },
+    { id: 'unsure', kind: 'unsure', name: 'Not sure', to: 'Ask a person' },
+    { id: 'always', kind: 'always', name: 'Anything else', to: 'Full review' },
   ];
   const SC = {
-    catalog: { verdict: 'PASS', summary: 'Adds the linear-sync entry to plugin-catalog/', nouls: { catalog: 0.97, security: 0.03 } },
+    catalog: { verdict: 'PASS', summary: 'Adds a linear-sync entry to the integrations catalog', nouls: { catalog: 0.97, security: 0.03 } },
     token: { verdict: 'PASS', summary: 'Moves OAuth token refresh into a shared helper', nouls: { catalog: 0.02, security: 0.58 } },
     csrf: { verdict: 'FAIL', summary: 'Removed the CSRF check on /logout', nouls: { catalog: 0.01, security: 0.96 } },
     typo: { verdict: 'PASS', summary: 'Fixes a typo in a log message', nouls: { catalog: 0.04, security: 0.05 } },
   };
   const list = $('.arms', w), log = $('[data-log]', w), calls = $('[data-calls]', w);
-  list.innerHTML = ARMS.map((a, i) =>
-    `<li><span class="n">${i + 1}</span><span><span class="name">${a.name}</span> <span class="to">→ ${a.to}</span>${a.kind === 'judgement' ? ' <span class="kind">Judgement</span>' : ''}</span><span class="st"></span></li>`).join('');
+  list.innerHTML = PATHS.map((a, i) =>
+    `<li><span class="n">${i + 1}</span><span><span class="name">${a.name}</span> <span class="to">→ ${a.to}</span>${a.kind === 'judgement' ? ' <span class="kind">asks Jev</span>' : ''}</span><span class="st"></span></li>`).join('');
   const lis = $$('li', list);
 
   function trace(sc) {
     const steps = []; let asked = 0;
     const push = (i, st, msg, p) => steps.push({ i, st, msg, p, calls: asked });
-    for (const [i, a] of ARMS.entries()) {
+    for (const [i, a] of PATHS.entries()) {
       if (a.kind === 'rule') {
-        if (sc.verdict === 'FAIL') { push(i, 'take', 'The review said FAIL, so this rule holds. The gate never needs to ask Jev.'); return steps; }
-        push(i, 'skip', 'The review passed, so this rule doesn’t hold. On to the next arm.'); continue;
+        if (sc.verdict === 'FAIL') { push(i, 'take', 'The review failed, so the change goes back to be fixed. The gate never needs to ask Jev.'); return steps; }
+        push(i, 'skip', 'The review passed, so this doesn’t apply. On to the next path.'); continue;
       }
-      if (a.kind === 'unsure') { push(i, 'skip', '“Not sure” is only taken when a Judgement arm comes back unsure, so the loop passes over it.'); continue; }
-      if (a.kind === 'always') { push(i, 'take', 'Nothing else matched, so the fallback takes the run.'); return steps; }
-      const pre = asked ? '' : 'First Judgement arm, so the gate asks Jev about both Judgement arms in one call. ';
+      if (a.kind === 'unsure') { push(i, 'skip', '“Not sure” only applies when Jev comes back unsure, so the gate passes over it.'); continue; }
+      if (a.kind === 'always') { push(i, 'take', 'Nothing else applied, so it gets the full review.'); return steps; }
+      const pre = asked ? '' : 'This is the first question for Jev, so the gate asks both of its questions in one call. ';
       asked = 1;
       const p = sc.nouls[a.id], v = band(p);
       if (v === 'take') { push(i, 'take', `${pre}This one came back ${f2(p)}, a confident yes.`, p); return steps; }
-      if (v === 'skip') { push(i, 'skip', `${pre}This one came back ${f2(p)}, a confident no, so it moves on.`, p); continue; }
-      push(i, 'unsure', `${pre}This one came back ${f2(p)}, in the unsure band. The gate stops here instead of moving on.`, p);
-      push(ARMS.findIndex(x => x.kind === 'unsure'), 'take', 'It routes to “Not sure”, and the run waits for a person to approve.');
+      if (v === 'skip') { push(i, 'skip', `${pre}This one came back ${f2(p)}, a confident no, so the gate moves on.`, p); continue; }
+      push(i, 'unsure', `${pre}This one came back ${f2(p)}, in the unsure band. The gate stops here rather than guess.`, p);
+      push(PATHS.findIndex(x => x.kind === 'unsure'), 'take', 'It goes to “Not sure”, and the run waits for a person.');
       return steps;
     }
     return steps;
@@ -177,13 +177,13 @@ function seg(root, onPick) {
     });
     const last = steps[at - 1];
     if (last) lis[last.i].classList.add('cur');
-    log.textContent = last ? last.msg : 'Press Step to walk the arms in order.';
+    log.textContent = last ? last.msg : 'Press Step to check each path in order.';
     calls.textContent = `Jev calls: ${last ? last.calls : 0}`;
     $('[data-step]', w).disabled = at >= steps.length;
   };
   const load = k => {
     const sc = SC[k];
-    $('[data-state]', w).innerHTML = `Review step: <strong>${sc.verdict}</strong> · ${sc.summary}`;
+    $('[data-state]', w).innerHTML = `${sc.summary} · review <strong>${sc.verdict === 'PASS' ? 'passed' : 'failed'}</strong>`;
     steps = trace(sc); at = 0; paint();
   };
   seg($('[data-sc]', w), b => load(b.dataset.k));
@@ -192,3 +192,9 @@ function seg(root, onPick) {
   $('[data-reset]', w).addEventListener('click', () => { at = 0; paint(); });
   load('catalog');
 })();
+
+// Fill each slider's track up to its thumb
+for (const r of $$('input[type=range]')) {
+  const fill = () => r.style.setProperty('--fill', `${((r.value - r.min) / (r.max - r.min)) * 100}%`);
+  r.addEventListener('input', fill); fill();
+}

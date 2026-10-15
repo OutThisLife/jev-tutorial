@@ -6,7 +6,7 @@
    "labels": [],
    "files": 2,
    "nouls": {
-    "catalog": 0.04,
+    "catalog": 0.02,
     "security": 0.11,
     "docs": 0.02
    },
@@ -15,7 +15,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 180,
+   "ms": 260,
    "cost": 2.6922e-05
   },
   {
@@ -25,15 +25,15 @@
    "files": 8,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.93,
-    "docs": 0.02
+    "security": 0.94,
+    "docs": 0.01
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 192,
+   "ms": 250,
    "cost": 3.0912e-05
   },
   {
@@ -46,16 +46,16 @@
    ],
    "files": 5,
    "nouls": {
-    "catalog": 0.03,
-    "security": 0.48,
-    "docs": 0.15
+    "catalog": 0.02,
+    "security": 0.51,
+    "docs": 0.11
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 180,
+   "ms": 269,
    "cost": 3.2466e-05
   },
   {
@@ -80,7 +80,7 @@
     "security": true,
     "docs": false
    },
-   "ms": 160,
+   "ms": 268,
    "cost": 3.0954e-05
   },
   {
@@ -93,7 +93,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.04,
+    "catalog": 0.02,
     "security": 0.03,
     "docs": 0.02
    },
@@ -102,7 +102,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 170,
+   "ms": 260,
    "cost": 2.94e-05
   },
   {
@@ -120,7 +120,7 @@
    "files": 4,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.85,
+    "security": 0.84,
     "docs": 0.02
    },
    "truth": {
@@ -128,7 +128,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 181,
+   "ms": 259,
    "cost": 3.0492e-05
   },
   {
@@ -143,7 +143,7 @@
    ],
    "files": 4,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.07,
     "docs": 0.01
    },
@@ -152,7 +152,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 172,
+   "ms": 281,
    "cost": 2.772e-05
   },
   {
@@ -170,8 +170,8 @@
    ],
    "files": 34,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.04,
+    "catalog": 0.01,
+    "security": 0.03,
     "docs": 0.02
    },
    "truth": {
@@ -179,7 +179,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 150,
+   "ms": 249,
    "cost": 4.5234e-05
   },
   {
@@ -192,8 +192,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
-    "security": 0.05,
+    "catalog": 0.02,
+    "security": 0.06,
     "docs": 0.02
    },
    "truth": {
@@ -201,7 +201,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 182,
+   "ms": 196,
    "cost": 3.0282e-05
   },
   {
@@ -217,7 +217,7 @@
    ],
    "files": 6,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.69,
     "docs": 0.01
    },
@@ -226,7 +226,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 172,
+   "ms": 189,
    "cost": 2.9442e-05
   },
   {
@@ -239,8 +239,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.05,
-    "security": 0.04,
+    "catalog": 0.02,
+    "security": 0.03,
     "docs": 0.02
    },
    "truth": {
@@ -248,7 +248,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 166,
+   "ms": 174,
    "cost": 2.6922e-05
   },
   {
@@ -266,15 +266,15 @@
    "files": 3,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.08,
-    "docs": 0.02
+    "security": 0.07,
+    "docs": 0.01
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 171,
+   "ms": 186,
    "cost": 2.8392e-05
   },
   {
@@ -293,7 +293,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.94,
     "docs": 0.02
    },
@@ -302,7 +302,7 @@
     "security": true,
     "docs": false
    },
-   "ms": 230,
+   "ms": 172,
    "cost": 2.919e-05
   },
   {
@@ -317,8 +317,8 @@
    ],
    "files": 4,
    "nouls": {
-    "catalog": 0.05,
-    "security": 0.19,
+    "catalog": 0.02,
+    "security": 0.2,
     "docs": 0.02
    },
    "truth": {
@@ -326,7 +326,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 183,
+   "ms": 175,
    "cost": 2.9736e-05
   },
   {
@@ -340,16 +340,16 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.04,
-    "docs": 0.02
+    "docs": 0.03
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 178,
+   "ms": 182,
    "cost": 3.0618e-05
   },
   {
@@ -362,16 +362,16 @@
    ],
    "files": 17,
    "nouls": {
-    "catalog": 0.08,
-    "security": 0.05,
-    "docs": 0.89
+    "catalog": 0.1,
+    "security": 0.04,
+    "docs": 0.9
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": true
    },
-   "ms": 181,
+   "ms": 172,
    "cost": 4.4688e-05
   },
   {
@@ -387,7 +387,7 @@
    ],
    "files": 4,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.05,
     "docs": 0.02
    },
@@ -396,7 +396,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 212,
+   "ms": 220,
    "cost": 2.9316e-05
   },
   {
@@ -410,16 +410,16 @@
    ],
    "files": 5,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.14,
-    "docs": 0.01
+    "catalog": 0.01,
+    "security": 0.15,
+    "docs": 0.02
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 155,
+   "ms": 198,
    "cost": 3.2382e-05
   },
   {
@@ -435,8 +435,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
-    "security": 0.19,
+    "catalog": 0.02,
+    "security": 0.18,
     "docs": 0.02
    },
    "truth": {
@@ -444,7 +444,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 152,
+   "ms": 230,
    "cost": 2.835e-05
   },
   {
@@ -469,7 +469,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 142,
+   "ms": 158,
    "cost": 3.1122e-05
   },
   {
@@ -485,7 +485,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.04,
+    "catalog": 0.02,
     "security": 0.94,
     "docs": 0.02
    },
@@ -494,7 +494,7 @@
     "security": true,
     "docs": false
    },
-   "ms": 172,
+   "ms": 179,
    "cost": 2.9358e-05
   },
   {
@@ -511,7 +511,7 @@
    "files": 2,
    "nouls": {
     "catalog": 0.03,
-    "security": 0.94,
+    "security": 0.95,
     "docs": 0.03
    },
    "truth": {
@@ -519,7 +519,7 @@
     "security": true,
     "docs": false
    },
-   "ms": 192,
+   "ms": 178,
    "cost": 2.9148e-05
   },
   {
@@ -532,8 +532,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.05,
-    "security": 0.04,
+    "catalog": 0.02,
+    "security": 0.03,
     "docs": 0.02
    },
    "truth": {
@@ -541,7 +541,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 144,
+   "ms": 158,
    "cost": 2.7594e-05
   },
   {
@@ -556,16 +556,16 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.05,
+    "catalog": 0.03,
     "security": 0.04,
-    "docs": 0.14
+    "docs": 0.17
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": true
    },
-   "ms": 203,
+   "ms": 165,
    "cost": 3.0492e-05
   },
   {
@@ -586,7 +586,7 @@
    "files": 5,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.58,
+    "security": 0.56,
     "docs": 0.02
    },
    "truth": {
@@ -594,7 +594,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 184,
+   "ms": 186,
    "cost": 3.2466e-05
   },
   {
@@ -608,8 +608,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.04,
+    "catalog": 0.01,
+    "security": 0.03,
     "docs": 0.01
    },
    "truth": {
@@ -617,7 +617,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 162,
+   "ms": 158,
    "cost": 2.625e-05
   },
   {
@@ -632,7 +632,7 @@
    "files": 8,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.17,
+    "security": 0.18,
     "docs": 0.02
    },
    "truth": {
@@ -640,7 +640,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 187,
+   "ms": 186,
    "cost": 2.8056e-05
   },
   {
@@ -655,7 +655,7 @@
    "files": 2,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.09,
+    "security": 0.08,
     "docs": 0.02
    },
    "truth": {
@@ -663,7 +663,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 273,
+   "ms": 196,
    "cost": 2.8266e-05
   },
   {
@@ -679,14 +679,14 @@
    "nouls": {
     "catalog": 0.02,
     "security": 0.02,
-    "docs": 0.01
+    "docs": 0.02
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 187,
+   "ms": 192,
    "cost": 2.9694e-05
   },
   {
@@ -699,7 +699,7 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.61,
+    "catalog": 0.52,
     "security": 0.14,
     "docs": 0.19
    },
@@ -708,7 +708,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 139,
+   "ms": 178,
    "cost": 2.8476e-05
   },
   {
@@ -723,16 +723,16 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.03,
-    "docs": 0.02
+    "docs": 0.01
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 178,
+   "ms": 167,
    "cost": 2.8938e-05
   },
   {
@@ -753,8 +753,8 @@
    ],
    "files": 5,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.4,
+    "catalog": 0.01,
+    "security": 0.38,
     "docs": 0.02
    },
    "truth": {
@@ -762,7 +762,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 192,
+   "ms": 157,
    "cost": 3.234e-05
   },
   {
@@ -779,7 +779,7 @@
    "files": 6,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.93,
+    "security": 0.92,
     "docs": 0.02
    },
    "truth": {
@@ -787,7 +787,7 @@
     "security": true,
     "docs": false
    },
-   "ms": 152,
+   "ms": 172,
    "cost": 3.1374e-05
   },
   {
@@ -800,8 +800,8 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.85,
-    "security": 0.53,
+    "catalog": 0.72,
+    "security": 0.56,
     "docs": 0.05
    },
    "truth": {
@@ -809,7 +809,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 167,
+   "ms": 157,
    "cost": 2.814e-05
   },
   {
@@ -823,7 +823,7 @@
    "files": 4,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.06,
+    "security": 0.05,
     "docs": 0.02
    },
    "truth": {
@@ -831,7 +831,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 195,
+   "ms": 171,
    "cost": 2.9274e-05
   },
   {
@@ -845,8 +845,8 @@
    ],
    "files": 7,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.07,
+    "catalog": 0.01,
+    "security": 0.08,
     "docs": 0.02
    },
    "truth": {
@@ -854,7 +854,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 231,
+   "ms": 196,
    "cost": 3.0492e-05
   },
   {
@@ -880,7 +880,7 @@
     "security": true,
     "docs": false
    },
-   "ms": 197,
+   "ms": 191,
    "cost": 2.751e-05
   },
   {
@@ -903,7 +903,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 212,
+   "ms": 197,
    "cost": 2.8014e-05
   },
   {
@@ -919,8 +919,8 @@
    ],
    "files": 7,
    "nouls": {
-    "catalog": 0.04,
-    "security": 0.38,
+    "catalog": 0.02,
+    "security": 0.35,
     "docs": 0.02
    },
    "truth": {
@@ -928,7 +928,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 177,
+   "ms": 157,
    "cost": 2.8308e-05
   },
   {
@@ -942,7 +942,7 @@
    "files": 1,
    "nouls": {
     "catalog": 0.94,
-    "security": 0.04,
+    "security": 0.03,
     "docs": 0.68
    },
    "truth": {
@@ -950,7 +950,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 200,
+   "ms": 207,
    "cost": 3.3894e-05
   },
   {
@@ -964,7 +964,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.04,
+    "catalog": 0.02,
     "security": 0.04,
     "docs": 0.02
    },
@@ -973,7 +973,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 181,
+   "ms": 163,
    "cost": 2.9946e-05
   },
   {
@@ -988,14 +988,14 @@
    "nouls": {
     "catalog": 0.94,
     "security": 0.04,
-    "docs": 0.66
+    "docs": 0.67
    },
    "truth": {
     "catalog": true,
     "security": false,
     "docs": false
    },
-   "ms": 187,
+   "ms": 190,
    "cost": 3.3432e-05
   },
   {
@@ -1020,7 +1020,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 177,
+   "ms": 168,
    "cost": 1.806e-05
   },
   {
@@ -1038,7 +1038,7 @@
    "files": 4,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.08,
+    "security": 0.07,
     "docs": 0.02
    },
    "truth": {
@@ -1046,7 +1046,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 164,
+   "ms": 178,
    "cost": 3.0744e-05
   },
   {
@@ -1062,8 +1062,8 @@
    ],
    "files": 9,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.34,
+    "catalog": 0.01,
+    "security": 0.33,
     "docs": 0.02
    },
    "truth": {
@@ -1071,7 +1071,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 198,
+   "ms": 175,
    "cost": 3.3348e-05
   },
   {
@@ -1085,16 +1085,16 @@
    ],
    "files": 12,
    "nouls": {
-    "catalog": 0.08,
-    "security": 0.29,
-    "docs": 0.09
+    "catalog": 0.09,
+    "security": 0.34,
+    "docs": 0.1
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 174,
+   "ms": 157,
    "cost": 4.0026e-05
   },
   {
@@ -1103,16 +1103,16 @@
    "labels": [],
    "files": 1,
    "nouls": {
-    "catalog": 0.9,
-    "security": 0.1,
-    "docs": 0.08
+    "catalog": 0.86,
+    "security": 0.11,
+    "docs": 0.07
    },
    "truth": {
     "catalog": true,
     "security": false,
     "docs": false
    },
-   "ms": 170,
+   "ms": 153,
    "cost": 2.562e-05
   },
   {
@@ -1127,7 +1127,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.01,
     "security": 0.03,
     "docs": 0.02
    },
@@ -1136,7 +1136,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 162,
+   "ms": 155,
    "cost": 2.8476e-05
   },
   {
@@ -1152,7 +1152,7 @@
    "files": 2,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.04,
+    "security": 0.05,
     "docs": 0.02
    },
    "truth": {
@@ -1160,7 +1160,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 141,
+   "ms": 180,
    "cost": 2.7762e-05
   },
   {
@@ -1183,7 +1183,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 186,
+   "ms": 209,
    "cost": 4.1664e-05
   },
   {
@@ -1196,8 +1196,8 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.45,
-    "security": 0.06,
+    "catalog": 0.51,
+    "security": 0.05,
     "docs": 0.97
    },
    "truth": {
@@ -1205,7 +1205,7 @@
     "security": false,
     "docs": true
    },
-   "ms": 212,
+   "ms": 156,
    "cost": 2.8182e-05
   },
   {
@@ -1220,8 +1220,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.13,
+    "catalog": 0.01,
+    "security": 0.14,
     "docs": 0.02
    },
    "truth": {
@@ -1229,7 +1229,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 172,
+   "ms": 154,
    "cost": 2.7426e-05
   },
   {
@@ -1244,7 +1244,7 @@
    "files": 2,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.03,
+    "security": 0.04,
     "docs": 0.02
    },
    "truth": {
@@ -1252,7 +1252,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 182,
+   "ms": 164,
    "cost": 2.8014e-05
   },
   {
@@ -1267,16 +1267,16 @@
    ],
    "files": 3,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.09,
-    "docs": 0.02
+    "docs": 0.01
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 155,
+   "ms": 247,
    "cost": 2.3562e-05
   },
   {
@@ -1294,7 +1294,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.14,
+    "catalog": 0.02,
     "security": 0.05,
     "docs": 0.02
    },
@@ -1303,7 +1303,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 157,
+   "ms": 160,
    "cost": 2.8098e-05
   },
   {
@@ -1329,7 +1329,7 @@
     "security": true,
     "docs": false
    },
-   "ms": 147,
+   "ms": 166,
    "cost": 2.7384e-05
   },
   {
@@ -1346,7 +1346,7 @@
    "files": 2,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.19,
+    "security": 0.18,
     "docs": 0.02
    },
    "truth": {
@@ -1354,7 +1354,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 161,
+   "ms": 146,
    "cost": 2.8224e-05
   },
   {
@@ -1378,7 +1378,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 180,
+   "ms": 164,
    "cost": 2.7972e-05
   },
   {
@@ -1395,8 +1395,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
-    "security": 0.82,
+    "catalog": 0.01,
+    "security": 0.84,
     "docs": 0.02
    },
    "truth": {
@@ -1404,7 +1404,7 @@
     "security": true,
     "docs": false
    },
-   "ms": 146,
+   "ms": 166,
    "cost": 2.8266e-05
   },
   {
@@ -1419,16 +1419,16 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.05,
-    "docs": 0.03
+    "docs": 0.02
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 362,
+   "ms": 144,
    "cost": 2.9106e-05
   },
   {
@@ -1446,7 +1446,7 @@
    "files": 5,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.06,
+    "security": 0.07,
     "docs": 0.02
    },
    "truth": {
@@ -1454,7 +1454,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 184,
+   "ms": 236,
    "cost": 3.2046e-05
   },
   {
@@ -1469,7 +1469,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.04,
+    "catalog": 0.02,
     "security": 0.06,
     "docs": 0.02
    },
@@ -1478,7 +1478,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 164,
+   "ms": 176,
    "cost": 2.8308e-05
   },
   {
@@ -1504,7 +1504,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 155,
+   "ms": 172,
    "cost": 2.9022e-05
   },
   {
@@ -1519,7 +1519,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.07,
+    "catalog": 0.02,
     "security": 0.03,
     "docs": 0.03
    },
@@ -1528,7 +1528,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 145,
+   "ms": 166,
    "cost": 2.8098e-05
   },
   {
@@ -1546,7 +1546,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.06,
     "docs": 0.02
    },
@@ -1555,7 +1555,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 252,
+   "ms": 169,
    "cost": 2.8182e-05
   },
   {
@@ -1571,7 +1571,7 @@
    "files": 2,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.06,
+    "security": 0.05,
     "docs": 0.02
    },
    "truth": {
@@ -1579,7 +1579,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 144,
+   "ms": 165,
    "cost": 2.9274e-05
   },
   {
@@ -1593,7 +1593,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.05,
     "docs": 0.02
    },
@@ -1602,7 +1602,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 164,
+   "ms": 168,
    "cost": 2.7762e-05
   },
   {
@@ -1619,7 +1619,7 @@
    "files": 4,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.45,
+    "security": 0.43,
     "docs": 0.02
    },
    "truth": {
@@ -1627,7 +1627,7 @@
     "security": true,
     "docs": false
    },
-   "ms": 152,
+   "ms": 168,
    "cost": 3.0534e-05
   },
   {
@@ -1644,7 +1644,7 @@
    "files": 4,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.05,
+    "security": 0.04,
     "docs": 0.02
    },
    "truth": {
@@ -1652,7 +1652,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 164,
+   "ms": 158,
    "cost": 3.5574e-05
   },
   {
@@ -1668,14 +1668,14 @@
    "nouls": {
     "catalog": 0.96,
     "security": 0.32,
-    "docs": 0.3
+    "docs": 0.29
    },
    "truth": {
     "catalog": true,
     "security": false,
     "docs": false
    },
-   "ms": 222,
+   "ms": 164,
    "cost": 2.9694e-05
   },
   {
@@ -1692,7 +1692,7 @@
    "files": 3,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.68,
+    "security": 0.67,
     "docs": 0.02
    },
    "truth": {
@@ -1700,7 +1700,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 140,
+   "ms": 175,
    "cost": 2.8308e-05
   },
   {
@@ -1714,15 +1714,15 @@
    "files": 1,
    "nouls": {
     "catalog": 0.93,
-    "security": 0.27,
-    "docs": 0.04
+    "security": 0.28,
+    "docs": 0.03
    },
    "truth": {
     "catalog": true,
     "security": true,
     "docs": false
    },
-   "ms": 170,
+   "ms": 180,
    "cost": 3.3768e-05
   },
   {
@@ -1738,7 +1738,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.04,
+    "catalog": 0.02,
     "security": 0.04,
     "docs": 0.02
    },
@@ -1747,7 +1747,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 133,
+   "ms": 191,
    "cost": 2.9442e-05
   },
   {
@@ -1763,8 +1763,8 @@
    ],
    "files": 4,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.79,
+    "catalog": 0.01,
+    "security": 0.8,
     "docs": 0.01
    },
    "truth": {
@@ -1772,7 +1772,7 @@
     "security": true,
     "docs": false
    },
-   "ms": 211,
+   "ms": 204,
    "cost": 2.73e-05
   },
   {
@@ -1786,8 +1786,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
-    "security": 0.18,
+    "catalog": 0.02,
+    "security": 0.19,
     "docs": 0.02
    },
    "truth": {
@@ -1795,7 +1795,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 154,
+   "ms": 165,
    "cost": 2.9904e-05
   },
   {
@@ -1810,7 +1810,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.05,
+    "catalog": 0.02,
     "security": 0.38,
     "docs": 0.02
    },
@@ -1819,7 +1819,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 143,
+   "ms": 170,
    "cost": 2.8644e-05
   },
   {
@@ -1839,8 +1839,8 @@
    ],
    "files": 11,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.68,
+    "catalog": 0.01,
+    "security": 0.7,
     "docs": 0.01
    },
    "truth": {
@@ -1848,7 +1848,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 157,
+   "ms": 150,
    "cost": 3.276e-05
   },
   {
@@ -1862,16 +1862,16 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.56,
+    "catalog": 0.54,
     "security": 0.51,
-    "docs": 0.38
+    "docs": 0.41
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": true
    },
-   "ms": 167,
+   "ms": 160,
    "cost": 2.8896e-05
   },
   {
@@ -1885,8 +1885,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.55,
+    "catalog": 0.01,
+    "security": 0.52,
     "docs": 0.02
    },
    "truth": {
@@ -1894,7 +1894,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 147,
+   "ms": 289,
    "cost": 2.9274e-05
   },
   {
@@ -1909,8 +1909,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.8,
+    "catalog": 0.01,
+    "security": 0.78,
     "docs": 0.02
    },
    "truth": {
@@ -1918,7 +1918,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 156,
+   "ms": 170,
    "cost": 2.8056e-05
   },
   {
@@ -1933,8 +1933,8 @@
    ],
    "files": 3,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.06,
+    "catalog": 0.01,
+    "security": 0.05,
     "docs": 0.02
    },
    "truth": {
@@ -1942,7 +1942,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 213,
+   "ms": 147,
    "cost": 2.8602e-05
   },
   {
@@ -1958,16 +1958,16 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.04,
-    "docs": 0.03
+    "docs": 0.02
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 190,
+   "ms": 185,
    "cost": 2.8812e-05
   },
   {
@@ -1982,7 +1982,7 @@
    ],
    "files": 5,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.01,
     "security": 0.04,
     "docs": 0.02
    },
@@ -1991,7 +1991,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 159,
+   "ms": 186,
    "cost": 3.003e-05
   },
   {
@@ -2004,7 +2004,7 @@
    ],
    "files": 24,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.11,
     "docs": 0.01
    },
@@ -2013,7 +2013,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 145,
+   "ms": 153,
    "cost": 4.1916e-05
   },
   {
@@ -2027,8 +2027,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
-    "security": 0.16,
+    "catalog": 0.02,
+    "security": 0.14,
     "docs": 0.02
    },
    "truth": {
@@ -2036,7 +2036,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 161,
+   "ms": 190,
    "cost": 2.7888e-05
   },
   {
@@ -2053,7 +2053,7 @@
    ],
    "files": 5,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.08,
     "docs": 0.01
    },
@@ -2062,7 +2062,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 209,
+   "ms": 152,
    "cost": 3.0114e-05
   },
   {
@@ -2075,16 +2075,16 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.92,
-    "security": 0.67,
-    "docs": 0.11
+    "catalog": 0.93,
+    "security": 0.71,
+    "docs": 0.12
    },
    "truth": {
     "catalog": true,
     "security": false,
     "docs": false
    },
-   "ms": 172,
+   "ms": 184,
    "cost": 2.2008e-05
   },
   {
@@ -2100,8 +2100,8 @@
    ],
    "files": 15,
    "nouls": {
-    "catalog": 0.03,
-    "security": 0.47,
+    "catalog": 0.02,
+    "security": 0.46,
     "docs": 0.02
    },
    "truth": {
@@ -2109,7 +2109,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 164,
+   "ms": 294,
    "cost": 3.612e-05
   },
   {
@@ -2124,8 +2124,8 @@
    ],
    "files": 6,
    "nouls": {
-    "catalog": 0.03,
-    "security": 0.12,
+    "catalog": 0.02,
+    "security": 0.11,
     "docs": 0.02
    },
    "truth": {
@@ -2133,7 +2133,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 168,
+   "ms": 154,
    "cost": 3.3306e-05
   },
   {
@@ -2147,7 +2147,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.05,
     "docs": 0.02
    },
@@ -2156,7 +2156,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 252,
+   "ms": 170,
    "cost": 2.8686e-05
   },
   {
@@ -2173,7 +2173,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.04,
     "docs": 0.02
    },
@@ -2182,7 +2182,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 164,
+   "ms": 196,
    "cost": 3.0576e-05
   },
   {
@@ -2199,7 +2199,7 @@
    "files": 3,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.22,
+    "security": 0.25,
     "docs": 0.02
    },
    "truth": {
@@ -2207,7 +2207,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 306,
+   "ms": 176,
    "cost": 2.9064e-05
   },
   {
@@ -2222,7 +2222,7 @@
    "files": 3,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.13,
+    "security": 0.14,
     "docs": 0.02
    },
    "truth": {
@@ -2230,7 +2230,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 185,
+   "ms": 172,
    "cost": 2.9862e-05
   },
   {
@@ -2246,7 +2246,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.08,
     "docs": 0.02
    },
@@ -2255,7 +2255,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 205,
+   "ms": 170,
    "cost": 2.2848e-05
   },
   {
@@ -2278,7 +2278,7 @@
    "files": 27,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.15,
+    "security": 0.14,
     "docs": 0.02
    },
    "truth": {
@@ -2286,7 +2286,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 174,
+   "ms": 172,
    "cost": 3.8514e-05
   },
   {
@@ -2300,7 +2300,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.05,
     "docs": 0.02
    },
@@ -2309,7 +2309,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 159,
+   "ms": 164,
    "cost": 2.7174e-05
   },
   {
@@ -2324,8 +2324,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.08,
+    "catalog": 0.01,
+    "security": 0.09,
     "docs": 0.02
    },
    "truth": {
@@ -2333,7 +2333,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 176,
+   "ms": 304,
    "cost": 2.73e-05
   },
   {
@@ -2349,7 +2349,7 @@
    "files": 2,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.14,
+    "security": 0.12,
     "docs": 0.02
    },
    "truth": {
@@ -2357,7 +2357,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 162,
+   "ms": 156,
    "cost": 2.8266e-05
   },
   {
@@ -2376,7 +2376,7 @@
    "files": 7,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.06,
+    "security": 0.05,
     "docs": 0.02
    },
    "truth": {
@@ -2384,7 +2384,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 160,
+   "ms": 188,
    "cost": 3.0912e-05
   },
   {
@@ -2398,7 +2398,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.07,
     "docs": 0.02
    },
@@ -2407,7 +2407,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 155,
+   "ms": 164,
    "cost": 2.7972e-05
   },
   {
@@ -2427,7 +2427,7 @@
    ],
    "files": 5,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.09,
     "docs": 0.02
    },
@@ -2436,7 +2436,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 151,
+   "ms": 154,
    "cost": 3.0702e-05
   },
   {
@@ -2453,8 +2453,8 @@
    ],
    "files": 5,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.09,
+    "catalog": 0.01,
+    "security": 0.08,
     "docs": 0.02
    },
    "truth": {
@@ -2462,7 +2462,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 190,
+   "ms": 183,
    "cost": 3.0156e-05
   },
   {
@@ -2487,7 +2487,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 179,
+   "ms": 169,
    "cost": 2.877e-05
   },
   {
@@ -2502,16 +2502,16 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.12,
-    "docs": 0.02
+    "docs": 0.03
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 145,
+   "ms": 177,
    "cost": 2.8476e-05
   },
   {
@@ -2531,7 +2531,7 @@
    "files": 7,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.17,
+    "security": 0.15,
     "docs": 0.02
    },
    "truth": {
@@ -2539,7 +2539,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 179,
+   "ms": 169,
    "cost": 3.3768e-05
   },
   {
@@ -2555,7 +2555,7 @@
    ],
    "files": 8,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.12,
     "docs": 0.02
    },
@@ -2564,7 +2564,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 167,
+   "ms": 203,
    "cost": 2.52e-05
   },
   {
@@ -2577,16 +2577,16 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.85,
-    "security": 0.16,
-    "docs": 0.07
+    "catalog": 0.84,
+    "security": 0.15,
+    "docs": 0.09
    },
    "truth": {
     "catalog": true,
     "security": false,
     "docs": false
    },
-   "ms": 192,
+   "ms": 162,
    "cost": 2.9652e-05
   },
   {
@@ -2601,7 +2601,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.05,
     "docs": 0.02
    },
@@ -2610,7 +2610,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 167,
+   "ms": 146,
    "cost": 2.8938e-05
   },
   {
@@ -2626,7 +2626,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.04,
+    "catalog": 0.02,
     "security": 0.06,
     "docs": 0.02
    },
@@ -2635,7 +2635,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 149,
+   "ms": 175,
    "cost": 2.6922e-05
   },
   {
@@ -2652,7 +2652,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.04,
     "docs": 0.02
    },
@@ -2661,7 +2661,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 162,
+   "ms": 141,
    "cost": 2.7846e-05
   },
   {
@@ -2680,7 +2680,7 @@
    "files": 2,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.54,
+    "security": 0.57,
     "docs": 0.02
    },
    "truth": {
@@ -2688,7 +2688,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 158,
+   "ms": 191,
    "cost": 2.7384e-05
   },
   {
@@ -2704,8 +2704,8 @@
    ],
    "files": 7,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.38,
+    "catalog": 0.01,
+    "security": 0.39,
     "docs": 0.02
    },
    "truth": {
@@ -2713,7 +2713,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 141,
+   "ms": 180,
    "cost": 3.0408e-05
   },
   {
@@ -2729,8 +2729,8 @@
    ],
    "files": 3,
    "nouls": {
-    "catalog": 0.03,
-    "security": 0.39,
+    "catalog": 0.01,
+    "security": 0.41,
     "docs": 0.02
    },
    "truth": {
@@ -2738,7 +2738,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 152,
+   "ms": 162,
    "cost": 3.066e-05
   },
   {
@@ -2752,8 +2752,8 @@
    ],
    "files": 4,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.85,
+    "catalog": 0.01,
+    "security": 0.86,
     "docs": 0.02
    },
    "truth": {
@@ -2761,7 +2761,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 160,
+   "ms": 180,
    "cost": 2.7846e-05
   },
   {
@@ -2778,7 +2778,7 @@
    ],
    "files": 4,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.06,
     "docs": 0.02
    },
@@ -2787,7 +2787,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 199,
+   "ms": 205,
    "cost": 3.1122e-05
   },
   {
@@ -2802,7 +2802,7 @@
    ],
    "files": 6,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.08,
     "docs": 0.03
    },
@@ -2811,7 +2811,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 231,
+   "ms": 154,
    "cost": 3.0282e-05
   },
   {
@@ -2831,8 +2831,8 @@
    ],
    "files": 40,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.84,
+    "catalog": 0.01,
+    "security": 0.82,
     "docs": 0.02
    },
    "truth": {
@@ -2840,7 +2840,7 @@
     "security": true,
     "docs": false
    },
-   "ms": 190,
+   "ms": 173,
    "cost": 4.0824e-05
   },
   {
@@ -2857,16 +2857,16 @@
    ],
    "files": 7,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.05,
-    "docs": 0.01
+    "docs": 0.02
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 156,
+   "ms": 168,
    "cost": 3.1626e-05
   },
   {
@@ -2875,7 +2875,7 @@
    "labels": [],
    "files": 40,
    "nouls": {
-    "catalog": 0.06,
+    "catalog": 0.03,
     "security": 0.09,
     "docs": 0.07
    },
@@ -2884,7 +2884,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 191,
+   "ms": 182,
    "cost": 3.1794e-05
   },
   {
@@ -2908,7 +2908,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 932,
+   "ms": 173,
    "cost": 2.856e-05
   },
   {
@@ -2924,8 +2924,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
-    "security": 0.33,
+    "catalog": 0.02,
+    "security": 0.41,
     "docs": 0.02
    },
    "truth": {
@@ -2933,7 +2933,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 150,
+   "ms": 170,
    "cost": 2.8266e-05
   },
   {
@@ -2947,7 +2947,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.02,
     "docs": 0.02
    },
@@ -2956,7 +2956,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 141,
+   "ms": 166,
    "cost": 2.898e-05
   },
   {
@@ -2979,7 +2979,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 159,
+   "ms": 343,
    "cost": 3.066e-05
   },
   {
@@ -3003,7 +3003,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 244,
+   "ms": 172,
    "cost": 3.1836e-05
   },
   {
@@ -3019,7 +3019,7 @@
    "files": 2,
    "nouls": {
     "catalog": 0.03,
-    "security": 0.27,
+    "security": 0.23,
     "docs": 0.06
    },
    "truth": {
@@ -3027,7 +3027,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 176,
+   "ms": 161,
    "cost": 2.9064e-05
   },
   {
@@ -3051,7 +3051,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 154,
+   "ms": 162,
    "cost": 2.7258e-05
   },
   {
@@ -3065,8 +3065,8 @@
    ],
    "files": 8,
    "nouls": {
-    "catalog": 0.03,
-    "security": 0.4,
+    "catalog": 0.02,
+    "security": 0.37,
     "docs": 0.02
    },
    "truth": {
@@ -3074,7 +3074,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 175,
+   "ms": 173,
    "cost": 3.3768e-05
   },
   {
@@ -3091,7 +3091,7 @@
    "files": 5,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.32,
+    "security": 0.35,
     "docs": 0.02
    },
    "truth": {
@@ -3099,7 +3099,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 167,
+   "ms": 191,
    "cost": 3.1206e-05
   },
   {
@@ -3112,8 +3112,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.26,
-    "security": 0.06,
+    "catalog": 0.56,
+    "security": 0.05,
     "docs": 0.03
    },
    "truth": {
@@ -3121,7 +3121,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 205,
+   "ms": 199,
    "cost": 2.9442e-05
   },
   {
@@ -3134,8 +3134,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.02,
+    "catalog": 0.01,
+    "security": 0.03,
     "docs": 0.02
    },
    "truth": {
@@ -3143,7 +3143,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 185,
+   "ms": 187,
    "cost": 2.856e-05
   },
   {
@@ -3157,16 +3157,16 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.95,
+    "catalog": 0.96,
     "security": 0.07,
-    "docs": 0.2
+    "docs": 0.25
    },
    "truth": {
     "catalog": true,
     "security": false,
     "docs": false
    },
-   "ms": 221,
+   "ms": 173,
    "cost": 3.5532e-05
   },
   {
@@ -3181,16 +3181,16 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.05,
-    "docs": 0.01
+    "docs": 0.02
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 229,
+   "ms": 233,
    "cost": 2.8728e-05
   },
   {
@@ -3203,8 +3203,8 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.87,
-    "security": 0.1,
+    "catalog": 0.92,
+    "security": 0.09,
     "docs": 0.1
    },
    "truth": {
@@ -3212,7 +3212,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 165,
+   "ms": 171,
    "cost": 2.4234e-05
   },
   {
@@ -3229,14 +3229,14 @@
    "nouls": {
     "catalog": 0.04,
     "security": 0.09,
-    "docs": 0.1
+    "docs": 0.08
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 166,
+   "ms": 152,
    "cost": 2.856e-05
   },
   {
@@ -3251,7 +3251,7 @@
    "files": 3,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.25,
+    "security": 0.26,
     "docs": 0.02
    },
    "truth": {
@@ -3259,7 +3259,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 163,
+   "ms": 149,
    "cost": 3.0912e-05
   },
   {
@@ -3273,8 +3273,8 @@
    ],
    "files": 3,
    "nouls": {
-    "catalog": 0.03,
-    "security": 0.1,
+    "catalog": 0.02,
+    "security": 0.09,
     "docs": 0.02
    },
    "truth": {
@@ -3282,7 +3282,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 179,
+   "ms": 177,
    "cost": 2.6964e-05
   },
   {
@@ -3295,16 +3295,16 @@
    ],
    "files": 3,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.09,
-    "docs": 0.01
+    "catalog": 0.01,
+    "security": 0.12,
+    "docs": 0.02
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 288,
+   "ms": 145,
    "cost": 2.9862e-05
   },
   {
@@ -3317,7 +3317,7 @@
    ],
    "files": 3,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.06,
     "docs": 0.03
    },
@@ -3326,7 +3326,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 178,
+   "ms": 156,
    "cost": 2.94e-05
   },
   {
@@ -3348,7 +3348,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 161,
+   "ms": 138,
    "cost": 2.9106e-05
   },
   {
@@ -3363,7 +3363,7 @@
    ],
    "files": 3,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.04,
     "docs": 0.03
    },
@@ -3372,7 +3372,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 170,
+   "ms": 146,
    "cost": 3.15e-05
   },
   {
@@ -3389,7 +3389,7 @@
    ],
    "files": 14,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.07,
     "docs": 0.02
    },
@@ -3398,7 +3398,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 295,
+   "ms": 278,
    "cost": 3.6078e-05
   },
   {
@@ -3416,8 +3416,8 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.11,
+    "catalog": 0.01,
+    "security": 0.12,
     "docs": 0.02
    },
    "truth": {
@@ -3425,7 +3425,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 302,
+   "ms": 211,
    "cost": 2.7846e-05
   },
   {
@@ -3438,16 +3438,16 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.67,
-    "security": 0.67,
-    "docs": 0.06
+    "catalog": 0.64,
+    "security": 0.63,
+    "docs": 0.07
    },
    "truth": {
     "catalog": true,
     "security": false,
     "docs": false
    },
-   "ms": 232,
+   "ms": 178,
    "cost": 3.0618e-05
   },
   {
@@ -3461,7 +3461,7 @@
    ],
    "files": 6,
    "nouls": {
-    "catalog": 0.04,
+    "catalog": 0.02,
     "security": 0.03,
     "docs": 0.02
    },
@@ -3470,7 +3470,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 188,
+   "ms": 168,
    "cost": 3.2214e-05
   },
   {
@@ -3485,7 +3485,7 @@
    ],
    "files": 3,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.26,
     "docs": 0.02
    },
@@ -3494,7 +3494,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 174,
+   "ms": 210,
    "cost": 2.9232e-05
   },
   {
@@ -3514,7 +3514,7 @@
    "files": 5,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.89,
+    "security": 0.88,
     "docs": 0.02
    },
    "truth": {
@@ -3522,7 +3522,7 @@
     "security": true,
     "docs": false
    },
-   "ms": 189,
+   "ms": 170,
    "cost": 2.9778e-05
   },
   {
@@ -3536,7 +3536,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.13,
     "docs": 0.02
    },
@@ -3545,7 +3545,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 168,
+   "ms": 144,
    "cost": 2.835e-05
   },
   {
@@ -3560,7 +3560,7 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.8,
+    "catalog": 0.88,
     "security": 0.82,
     "docs": 0.06
    },
@@ -3569,7 +3569,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 133,
+   "ms": 160,
    "cost": 3.0786e-05
   },
   {
@@ -3593,7 +3593,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 136,
+   "ms": 163,
    "cost": 2.814e-05
   },
   {
@@ -3615,8 +3615,8 @@
    ],
    "files": 12,
    "nouls": {
-    "catalog": 0.02,
-    "security": 0.16,
+    "catalog": 0.01,
+    "security": 0.15,
     "docs": 0.02
    },
    "truth": {
@@ -3624,7 +3624,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 152,
+   "ms": 189,
    "cost": 3.3684e-05
   },
   {
@@ -3637,8 +3637,8 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.89,
-    "security": 0.76,
+    "catalog": 0.83,
+    "security": 0.74,
     "docs": 0.11
    },
    "truth": {
@@ -3646,7 +3646,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 171,
+   "ms": 174,
    "cost": 2.4276e-05
   },
   {
@@ -3660,7 +3660,7 @@
    ],
    "files": 2,
    "nouls": {
-    "catalog": 0.03,
+    "catalog": 0.02,
     "security": 0.05,
     "docs": 0.02
    },
@@ -3669,7 +3669,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 181,
+   "ms": 260,
    "cost": 2.9232e-05
   },
   {
@@ -3685,7 +3685,7 @@
    ],
    "files": 6,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.04,
     "docs": 0.02
    },
@@ -3694,7 +3694,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 142,
+   "ms": 165,
    "cost": 2.8686e-05
   },
   {
@@ -3711,7 +3711,7 @@
    "files": 2,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.43,
+    "security": 0.42,
     "docs": 0.02
    },
    "truth": {
@@ -3719,7 +3719,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 142,
+   "ms": 164,
    "cost": 2.8686e-05
   },
   {
@@ -3736,7 +3736,7 @@
    "files": 3,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.59,
+    "security": 0.62,
     "docs": 0.02
    },
    "truth": {
@@ -3744,7 +3744,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 174,
+   "ms": 152,
    "cost": 2.793e-05
   },
   {
@@ -3758,16 +3758,16 @@
    ],
    "files": 1,
    "nouls": {
-    "catalog": 0.91,
-    "security": 0.49,
-    "docs": 0.12
+    "catalog": 0.9,
+    "security": 0.5,
+    "docs": 0.16
    },
    "truth": {
     "catalog": true,
     "security": false,
     "docs": false
    },
-   "ms": 169,
+   "ms": 154,
    "cost": 2.7384e-05
   },
   {
@@ -3791,7 +3791,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 178,
+   "ms": 152,
    "cost": 2.6754e-05
   },
   {
@@ -3814,7 +3814,7 @@
     "security": false,
     "docs": false
    },
-   "ms": 152,
+   "ms": 203,
    "cost": 2.7804e-05
   },
   {
@@ -3833,15 +3833,15 @@
    "files": 12,
    "nouls": {
     "catalog": 0.02,
-    "security": 0.34,
-    "docs": 0.02
+    "security": 0.35,
+    "docs": 0.01
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 193,
+   "ms": 183,
    "cost": 3.3558e-05
   },
   {
@@ -3860,16 +3860,16 @@
    ],
    "files": 11,
    "nouls": {
-    "catalog": 0.02,
+    "catalog": 0.01,
     "security": 0.59,
-    "docs": 0.01
+    "docs": 0.02
    },
    "truth": {
     "catalog": false,
     "security": false,
     "docs": false
    },
-   "ms": 159,
+   "ms": 150,
    "cost": 3.3096e-05
   }
  ],
@@ -3879,7 +3879,7 @@
   "cost_usd": 0.00478
  },
  "arms": {
-  "catalog": "The pull request only adds or updates a plugin-catalog entry and changes no Hermes code.",
+  "catalog": "The pull request only adds or updates a plugin-catalog entry and changes no application code.",
   "security": "The change alters an authentication, authorization, secret-handling, or sandbox boundary.",
   "docs": "The change only touches documentation and changes no runtime behavior."
  }

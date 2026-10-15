@@ -11,7 +11,7 @@
     "conditional": 0,
     "unclear": 0
    },
-   "ms": 928,
+   "ms": 242,
    "cost": 1.7136e-05
   },
   {
@@ -25,7 +25,7 @@
     "conditional": 0,
     "unclear": 0
    },
-   "ms": 297,
+   "ms": 170,
    "cost": 1.7262e-05
   },
   {
@@ -39,7 +39,7 @@
     "conditional": 0,
     "unclear": 0
    },
-   "ms": 241,
+   "ms": 200,
    "cost": 1.7094e-05
   },
   {
@@ -53,7 +53,7 @@
     "conditional": 0,
     "unclear": 0
    },
-   "ms": 238,
+   "ms": 194,
    "cost": 1.7178e-05
   },
   {
@@ -67,7 +67,7 @@
     "conditional": 0,
     "unclear": 0
    },
-   "ms": 232,
+   "ms": 309,
    "cost": 1.7052e-05
   },
   {
@@ -81,7 +81,7 @@
     "conditional": 0,
     "unclear": 0
    },
-   "ms": 270,
+   "ms": 203,
    "cost": 1.7178e-05
   },
   {
@@ -95,7 +95,7 @@
     "conditional": 0,
     "unclear": 0
    },
-   "ms": 250,
+   "ms": 188,
    "cost": 1.7178e-05
   },
   {
@@ -109,7 +109,7 @@
     "conditional": 0.01,
     "unclear": 0
    },
-   "ms": 224,
+   "ms": 189,
    "cost": 1.7262e-05
   },
   {
@@ -123,21 +123,21 @@
     "conditional": 0,
     "unclear": 0
    },
-   "ms": 168,
+   "ms": 152,
    "cost": 1.7346e-05
   },
   {
    "reply": "can you show me the diff first?",
    "pick": "question",
-   "confidence": 0.95,
+   "confidence": 0.94,
    "probabilities": {
     "approve": 0,
     "reject": 0,
-    "question": 0.96,
-    "conditional": 0.04,
+    "question": 0.95,
+    "conditional": 0.05,
     "unclear": 0
    },
-   "ms": 176,
+   "ms": 220,
    "cost": 1.7346e-05
   },
   {
@@ -151,7 +151,7 @@
     "conditional": 1,
     "unclear": 0
    },
-   "ms": 204,
+   "ms": 240,
    "cost": 1.7388e-05
   },
   {
@@ -165,7 +165,7 @@
     "conditional": 1,
     "unclear": 0
    },
-   "ms": 184,
+   "ms": 191,
    "cost": 1.7304e-05
   },
   {
@@ -179,7 +179,7 @@
     "conditional": 0,
     "unclear": 0.99
    },
-   "ms": 211,
+   "ms": 208,
    "cost": 1.7094e-05
   },
   {
@@ -193,7 +193,7 @@
     "conditional": 0,
     "unclear": 0.01
    },
-   "ms": 164,
+   "ms": 156,
    "cost": 1.7052e-05
   },
   {
@@ -207,27 +207,27 @@
     "conditional": 0,
     "unclear": 0.98
    },
-   "ms": 156,
+   "ms": 183,
    "cost": 1.7094e-05
   },
   {
-   "reply": "idk ask teknium",
+   "reply": "idk ask the lead",
    "pick": "unclear",
-   "confidence": 0.75,
+   "confidence": 0.71,
    "probabilities": {
     "approve": 0,
-    "reject": 0.03,
-    "question": 0.15,
-    "conditional": 0.02,
-    "unclear": 0.8
+    "reject": 0.02,
+    "question": 0.18,
+    "conditional": 0.03,
+    "unclear": 0.77
    },
-   "ms": 186,
+   "ms": 148,
    "cost": 1.722e-05
   }
  ],
  "usage": {
   "calls": 16,
-  "ms_median": 224,
+  "ms_median": 194,
   "cost_usd": 0.00028
  },
  "criteria": {

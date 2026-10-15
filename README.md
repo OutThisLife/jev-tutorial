@@ -1,9 +1,9 @@
 # Jev for workflow gates
 
-A tutorial and two sets of use cases for [TypeSafe Jev](https://docs.typesafe.ai/introduction), a model that returns calibrated probabilities instead of text.
+An explainer and two sets of examples for [TypeSafe Jev](https://docs.typesafe.ai/introduction), a model that returns calibrated probabilities instead of text.
 
 - `index.html`: what Jev is, and a Jev-backed gate for a workflow runner (`judge.py`, `test_judge.py`)
-- `cases.html`: workflow-gate decisions run against real NousResearch/hermes-agent issues, PRs and comments (`cases/`)
+- `cases.html`: workflow-gate decisions run against a snapshot of a large open-source repo's issues, pull requests and comments (`cases/`)
 - `design.html`: n8n and design-system decisions (`design/`), including an importable n8n workflow at `design/n8n/jev-router.json`
 
 Every number on the case pages is rebuilt from `*/results/*.json`:

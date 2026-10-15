@@ -1,4 +1,4 @@
-"""Jev-backed judgement for workflow gates — the sketch from the tutorial, runnable."""
+"""A workflow gate that asks Jev about its judgement paths. The sketch from the tutorial, runnable."""
 from __future__ import annotations
 
 import json
@@ -11,7 +11,7 @@ ENDPOINTS = {
     "openrouter": ("https://openrouter.ai/api/v1/systemone", "OPENROUTER_API_KEY", "~typesafe/jev-latest"),
 }
 
-YES, NO = 0.8, 0.35  # noul >= YES takes the arm; noul < NO skips it; between is "unsure"
+YES, NO = 0.8, 0.35  # at or above YES, take the path; below NO, skip it; in between, ask a person
 
 
 def _backend() -> tuple[str, str, str] | None:
@@ -34,46 +34,43 @@ def ask_jev(state: Any, questions: dict, timeout: float = 5.0) -> dict:
         return json.load(resp)["answers"]
 
 
-def gate_state(inputs: list[dict], summaries: dict, payload: Any, cap: int = 2000) -> dict:
-    """What the gate knows, as structured state — not a prompt."""
+def gate_state(steps: list[dict], payload: Any, cap: int = 2000) -> dict:
+    """What the gate knows, sent as data rather than a prompt."""
     return {
-        "upstream": [
-            {"step": i["nodeId"], "verdict": i.get("verdict"), "summary": str(summaries.get(i["nodeId"], ""))[:cap]}
-            for i in inputs
-        ],
-        "trigger_payload": json.dumps(payload, default=str)[:cap] if payload is not None else None,
+        "steps": [{"step": s["id"], "verdict": s.get("verdict"), "summary": str(s.get("summary", ""))[:cap]} for s in steps],
+        "trigger": json.dumps(payload, default=str)[:cap] if payload is not None else None,
     }
 
 
-def judge_arms(arms: list[dict], state: dict, ask: Callable[[Any, dict], dict] = ask_jev) -> dict[str, float]:
-    """One Noul per Judgement arm, all in one call. {arm_id: noul}."""
-    questions = {
-        a["id"]: {"type": "noul", "instructions": a["when"]["source"]}
-        for a in arms
-        if (a.get("when") or {}).get("mode") == "prose"
-    }
+def is_judgement(path: dict) -> bool:
+    return (path.get("when") or {}).get("kind") == "judgement"
+
+
+def judge_paths(paths: list[dict], state: dict, ask: Callable[[Any, dict], dict] = ask_jev) -> dict[str, float]:
+    """One yes/no question per judgement path, all in one call. {path_id: probability of yes}."""
+    questions = {p["id"]: {"type": "noul", "instructions": p["when"]["question"]} for p in paths if is_judgement(p)}
     if not questions:
         return {}
-    return {arm_id: ans["noul"] for arm_id, ans in ask(state, questions).items()}
+    return {pid: ans["noul"] for pid, ans in ask(state, questions).items()}
 
 
-def choose_arm(arms: list[dict], inputs: list[dict], state: dict, holds, ask=ask_jev) -> tuple[dict | None, str]:
-    """First match wins, same as today. Returns (arm, why)."""
-    nouls: dict[str, float] | None = None  # asked lazily: no Jev call if a rule arm wins first
-    for arm in arms:
-        when = arm.get("when") or {}
-        if when.get("mode") != "prose":
-            if holds(when, inputs):
-                return arm, "rule"
+def choose_path(paths: list[dict], steps: list[dict], state: dict, rule_holds, ask=ask_jev) -> tuple[dict | None, str]:
+    """Walk the paths in order; the first one that holds wins. Returns (path, why)."""
+    answers: dict[str, float] | None = None  # asked lazily, so a rule can win with no Jev call
+    for path in paths:
+        when = path.get("when") or {}
+        if not is_judgement(path):
+            if rule_holds(when, steps):
+                return path, "rule"
             continue
-        if nouls is None:
-            nouls = judge_arms(arms, state, ask)
-        p = nouls.get(arm["id"], 0.0)
+        if answers is None:
+            answers = judge_paths(paths, state, ask)
+        p = answers.get(path["id"], 0.0)
         if p >= YES:
-            return arm, f"jev {p:.2f}"
+            return path, f"jev {p:.2f}"
         if p >= NO:
-            # Stop here: a later arm must not win by default. Hand off to an
-            # "unsure" arm (wire it to a Human approval step) if the gate has one.
-            unsure = next((a for a in arms if (a.get("when") or {}).get("mode") == "unsure"), None)
-            return unsure, f"unsure {p:.2f} on {arm['id']}"
-    return None, "no arm"
+            # Stop here, so a later path can't win by default. Hand off to the
+            # "not sure" path (wire it to a person) if the gate has one.
+            unsure = next((x for x in paths if (x.get("when") or {}).get("kind") == "unsure"), None)
+            return unsure, f"unsure {p:.2f} on {path['id']}"
+    return None, "no path"

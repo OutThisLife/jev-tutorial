@@ -1,4 +1,4 @@
-"""Run every use case against live Jev on real hermes-agent data. Writes results/<case>.json."""
+"""Run every use case against live Jev on a snapshot of a large open-source repo. Writes results/<case>.json."""
 from __future__ import annotations
 
 import json
@@ -41,7 +41,7 @@ def call(state, questions):
 # 1 ── issue → component (choice) ────────────────────────────────────────────
 COMPONENTS = {
     "comp/agent": "Core agent runtime: loop, agent_init, prompt builder, context-compression, responses endpoint",
-    "comp/cli": "CLI entry point, hermes_cli/, setup wizard, install and update",
+    "comp/cli": "CLI entry point, setup wizard, install and update",
     "comp/gateway": "Gateway runner, session dispatch, delivery, messaging platforms",
     "comp/tools": "Tool registry, model_tools, toolsets, individual tools",
     "comp/tui": "Terminal UI (ui-tui/ + tui_gateway/)",
@@ -50,7 +50,7 @@ COMPONENTS = {
     "comp/plugins": "Plugin system and bundled plugins",
     "comp/desktop": "Electron desktop app (apps/desktop/*)",
     "comp/dashboard": "Web dashboard / control panel UI",
-    "comp/portal": "Nous portal / Hermes Pro / hosted-Hermes path",
+    "comp/portal": "Hosted accounts, subscriptions and the managed cloud path",
 }
 
 
@@ -60,7 +60,7 @@ def issue_router(n=150, criteria=None, out="issue_router", start=0):
     def one(i):
         a, ms, cost = call(
             {"title": i["title"], "body": i["body"][:2500]},
-            {"component": {"type": "choice", "instructions": "Which part of Hermes is this issue mainly about?",
+            {"component": {"type": "choice", "instructions": "Which part of the project is this issue mainly about?",
                            "criteria": criteria or COMPONENTS}},
         )
         c = a["component"]
@@ -155,7 +155,7 @@ def duplicates():
 
 # 4 ── the workflow gate itself, on real PRs ─────────────────────────────────
 ARMS = {
-    "catalog": "The pull request only adds or updates a plugin-catalog entry and changes no Hermes code.",
+    "catalog": "The pull request only adds or updates a plugin-catalog entry and changes no application code.",
     "security": "The change alters an authentication, authorization, secret-handling, or sandbox boundary.",
     "docs": "The change only touches documentation and changes no runtime behavior.",
 }
@@ -188,7 +188,7 @@ REPLIES = [
     "no", "don't merge this", "reject — wrong branch", "hold off, this breaks prod",
     "what does this change for windows users?", "can you show me the diff first?",
     "yes but fix the typo in the title first", "sure, after the release on friday",
-    "hmm", "ok", "👀", "idk ask teknium",
+    "hmm", "ok", "👀", "idk ask the lead",
 ]
 
 
@@ -262,7 +262,7 @@ def comments():
 FACTORS = {
     "data_loss": "The bug loses, corrupts, or overwrites user data.",
     "security": "The bug exposes secrets or lets someone bypass an access control.",
-    "cannot_start": "Hermes or a whole surface cannot start, crash-loops, or becomes unusable until restarted.",
+    "cannot_start": "The app or a whole surface cannot start, crash-loops, or becomes unusable until restarted.",
     "no_workaround": "The reporter has no way to work around the problem.",
     "cosmetic": "The bug is cosmetic: wrong text, styling, or a misleading message, with no functional impact.",
     "narrow": "The bug only affects an unusual configuration or a rare edge case.",
