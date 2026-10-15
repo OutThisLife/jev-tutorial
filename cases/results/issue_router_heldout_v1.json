@@ -1,0 +1,3829 @@
+{
+ "rows": [
+  {
+   "number": 138789,
+   "title": "desktop: a fresh session's first submit answers with a busy-style reply until the model is re-picked",
+   "truth": [
+    "comp/gateway",
+    "comp/desktop"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.99,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.01,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 250,
+   "cost": 4.3386e-05
+  },
+  {
+   "number": 138788,
+   "title": "desktop: statusbar cache-hit-rate / tokens-per-second never populate \u2014 canonical session.usage ticks carry top-level fields, desktop only reads nested usage",
+   "truth": [
+    "comp/gateway",
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 234,
+   "cost": 4.6494e-05
+  },
+  {
+   "number": 138787,
+   "title": "desktop: live reasoning stream never appears mid-turn \u2014 desktop never sets the session's show_reasoning flag (v0.22.1 regression)",
+   "truth": [
+    "comp/gateway",
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.6,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.36,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.64,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 1112,
+   "cost": 4.8048e-05
+  },
+  {
+   "number": 138785,
+   "title": "Anthropic 'credentials are rate-limited for <model>' AuthError has no code, so a kanban worker exits 1 (not 75) at startup and charges the failure breaker",
+   "truth": [
+    "comp/cli",
+    "comp/cron"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.71,
+   "probabilities": {
+    "comp/agent": 0.18,
+    "comp/cli": 0.74,
+    "comp/gateway": 0.04,
+    "comp/tools": 0.01,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0.03,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 288,
+   "cost": 5.292e-05
+  },
+  {
+   "number": 138783,
+   "title": "Discord: native /skills slash command has no args option, so /skills pending|approve|diff from the picker arrives bare",
+   "truth": [
+    "comp/cli",
+    "comp/plugins"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.64,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.03,
+    "comp/gateway": 0.67,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0.01,
+    "comp/cron": 0,
+    "comp/plugins": 0.29,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 293,
+   "cost": 4.8132e-05
+  },
+  {
+   "number": 138781,
+   "title": "Dashboard curator run returns 500 instead of 404 for an unknown profile",
+   "truth": [
+    "comp/cli",
+    "comp/dashboard"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.43,
+   "probabilities": {
+    "comp/agent": 0.01,
+    "comp/cli": 0.48,
+    "comp/gateway": 0.09,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0.41000000000000003,
+    "comp/portal": 0.01
+   },
+   "hit": true,
+   "ms": 273,
+   "cost": 3.6414e-05
+  },
+  {
+   "number": 138780,
+   "title": "System prompt build crashes when the process working directory was deleted",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 1,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 215,
+   "cost": 3.6372e-05
+  },
+  {
+   "number": 138779,
+   "title": "Scale-to-zero treats a failed background-work probe as idle",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 1,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 244,
+   "cost": 3.5952e-05
+  },
+  {
+   "number": 138778,
+   "title": "Multiplexed gateway stop marks a profile parked even when the host fails to unserve it",
+   "truth": [
+    "comp/cli",
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.97,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.03,
+    "comp/gateway": 0.97,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 222,
+   "cost": 3.9144e-05
+  },
+  {
+   "number": 138777,
+   "title": "[Feature]: Telegram /new -project inline picker for existing Desktop Projects",
+   "truth": [
+    "comp/gateway",
+    "comp/desktop"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.97,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.97,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0.01,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.02,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 149,
+   "cost": 4.3134e-05
+  },
+  {
+   "number": 138774,
+   "title": "Desktop: HERMES_DESKTOP_HERMES pin yields a rootless 'command' backend that ticketRuntimeFor rejects \u2014 all gateway-API requests fail",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.01,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.99,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 208,
+   "cost": 5.796e-05
+  },
+  {
+   "number": 138772,
+   "title": "[Bug]: Desktop SSH remote logs a plugin's stderr warning as the remote Hermes version (version probe uses 2>&1)",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 181,
+   "cost": 4.851e-05
+  },
+  {
+   "number": 138771,
+   "title": "[Bug]: Something wrong with model selector",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.32,
+   "probabilities": {
+    "comp/agent": 0.08,
+    "comp/cli": 0.13,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0.32,
+    "comp/acp": 0.01,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.38,
+    "comp/dashboard": 0.07,
+    "comp/portal": 0.01
+   },
+   "hit": false,
+   "ms": 247,
+   "cost": 3.7884e-05
+  },
+  {
+   "number": 138764,
+   "title": "Feature: quick one-shot switch of a messenger bot (Telegram) between profiles/model sets",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 1,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 194,
+   "cost": 4.8762e-05
+  },
+  {
+   "number": 138761,
+   "title": "[Bug]: Desktop Profiles screen: SOUL.md editor returns 403 profile_scope_mismatch for every profile except the active one (Windows)",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.01,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.99,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 213,
+   "cost": 5.6532e-05
+  },
+  {
+   "number": 138759,
+   "title": "[BUG] `sdk_transform_bypass` (`keep_slots=True`) sends `messages` twice \u2014 top-level `messages: []` placeholder + `extra_body.messages` \u2192 HTTP 400 `duplicate field reasoning_content` on strict serde OpenAI-compatible gateways",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.98,
+   "probabilities": {
+    "comp/agent": 0.98,
+    "comp/cli": 0,
+    "comp/gateway": 0.01,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0.01,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 206,
+   "cost": 5.1618e-05
+  },
+  {
+   "number": 138756,
+   "title": "fix(auth): removed pool credential is written back by stale processes",
+   "truth": [
+    "comp/agent",
+    "comp/cli"
+   ],
+   "pick": "comp/cli",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 1,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 173,
+   "cost": 5.0694e-05
+  },
+  {
+   "number": 138754,
+   "title": "[Bug]: macOS Desktop hangs during startup when Gateway profile path differs only in letter casing",
+   "truth": [
+    "comp/gateway",
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.98,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.02,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.98,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 212,
+   "cost": 4.725e-05
+  },
+  {
+   "number": 138750,
+   "title": "Retirement fence: new-work entry points in hermes serve that skip admission",
+   "truth": [
+    "comp/cli",
+    "comp/dashboard"
+   ],
+   "pick": "comp/dashboard",
+   "confidence": 0.55,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.33,
+    "comp/gateway": 0.07,
+    "comp/tools": 0,
+    "comp/tui": 0.01,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0.59,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 173,
+   "cost": 5.3088e-05
+  },
+  {
+   "number": 138748,
+   "title": "[Bug]: CLI\u4e0b\u6267\u884chermes\u62a5Error: invalid_params",
+   "truth": [
+    "comp/cli",
+    "comp/gateway",
+    "comp/plugins"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.97,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.97,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0.03,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 332,
+   "cost": 3.7674e-05
+  },
+  {
+   "number": 138740,
+   "title": "[Feature]: session.control setters: heartbeat.set, loop.set, goal.set, goal.wait_time",
+   "truth": [
+    "comp/gateway",
+    "comp/tui"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.79,
+   "probabilities": {
+    "comp/agent": 0.01,
+    "comp/cli": 0,
+    "comp/gateway": 0.81,
+    "comp/tools": 0,
+    "comp/tui": 0.17,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 184,
+   "cost": 5.46e-05
+  },
+  {
+   "number": 138738,
+   "title": "[Feature]: Opt-in fail-closed for plugin hooks and middleware (pre_llm_call, execution middleware)",
+   "truth": [
+    "comp/agent",
+    "comp/plugins"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.85,
+   "probabilities": {
+    "comp/agent": 0.1,
+    "comp/cli": 0.04,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.86,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 192,
+   "cost": 4.9896e-05
+  },
+  {
+   "number": 138729,
+   "title": "[Feature]: Kanban: a worker cannot end a turn \"paused at a checkpoint\" \u2014 the stop-nudge pushes it to complete/block/review",
+   "truth": [
+    "comp/agent",
+    "comp/cron"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.65,
+   "probabilities": {
+    "comp/agent": 0.68,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0.23,
+    "comp/tui": 0,
+    "comp/acp": 0.02,
+    "comp/cron": 0,
+    "comp/plugins": 0.06,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 164,
+   "cost": 5.019e-05
+  },
+  {
+   "number": 138727,
+   "title": "[Feature]: Support the OpenRouter Batch API as a transport for offline agent swarms",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.82,
+   "probabilities": {
+    "comp/agent": 0.09,
+    "comp/cli": 0,
+    "comp/gateway": 0.04,
+    "comp/tools": 0.01,
+    "comp/tui": 0,
+    "comp/acp": 0.02,
+    "comp/cron": 0,
+    "comp/plugins": 0.84,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 224,
+   "cost": 5.103e-05
+  },
+  {
+   "number": 138716,
+   "title": "[Bug]: update failed, must new install",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/cli",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 1,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 260,
+   "cost": 4.9266e-05
+  },
+  {
+   "number": 138709,
+   "title": "Signal: Messaging page shows permanent \"Restart needed\" \u2014 SignalAdapter.connect() never calls _mark_connected()",
+   "truth": [
+    "comp/cli",
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 1,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 179,
+   "cost": 3.9144e-05
+  },
+  {
+   "number": 138702,
+   "title": "PM workspace: two same-named BUILDABLE plugins across profile homes collide in uv lock (virtual members dedupe, buildable don't)",
+   "truth": [
+    "comp/plugins"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.01,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.99,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 184,
+   "cost": 5.271e-05
+  },
+  {
+   "number": 138690,
+   "title": "[Bug]: Windows Desktop update hand-off refuses its own custodian's claim (exit 2) after launch preparation drops the delegate line \u2014 windows.ps1 never exports HERMES_UPDATE_HANDOFF_PID",
+   "truth": [
+    "comp/cli",
+    "comp/desktop"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.55,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.59,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.41,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 179,
+   "cost": 5.5776e-05
+  },
+  {
+   "number": 138689,
+   "title": "[Bug]: Desktop wipes bundled tools-Python site-packages on every app launch \u2014 plugin third-party deps silently lost",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 163,
+   "cost": 5.3508e-05
+  },
+  {
+   "number": 138684,
+   "title": "[Bug]: Hosted room driver forwards an `attachments` kwarg the in-process and peer transports never declared, so a member turn carrying a bound file dies as an ambiguous attempt",
+   "truth": [
+    "comp/gateway",
+    "comp/tui"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.58,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.62,
+    "comp/tools": 0,
+    "comp/tui": 0.37,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0.01
+   },
+   "hit": true,
+   "ms": 181,
+   "cost": 5.3046e-05
+  },
+  {
+   "number": 138677,
+   "title": "[Bug]: Repetition guard trips on simple repeated tool-call patterns (back-to-back near-identical greps).",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 1,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 189,
+   "cost": 4.3932e-05
+  },
+  {
+   "number": 138676,
+   "title": "[Bug]: Bot-authored Slack message text is dropped before the model sees it, while the sender label is built correctly",
+   "truth": [
+    "comp/plugins"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 1,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 227,
+   "cost": 5.2584e-05
+  },
+  {
+   "number": 138672,
+   "title": "hermes update hangs forever on macOS after \"Fetching updates...\": pipe deadlock with `git cat-file --batch` (timeout never fires)",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/cli",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 1,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 173,
+   "cost": 5.4852e-05
+  },
+  {
+   "number": 138671,
+   "title": "Desktop: hover cards / tooltips anchored at top-left (0,0) instead of the trigger",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 175,
+   "cost": 3.6456e-05
+  },
+  {
+   "number": 138670,
+   "title": "CLI: stale platform_toolsets entry hard-fails agent init with invalid_params after v0.22.0 update (eb75627f)",
+   "truth": [
+    "comp/agent",
+    "comp/cli",
+    "comp/tools"
+   ],
+   "pick": "comp/tools",
+   "confidence": 0.74,
+   "probabilities": {
+    "comp/agent": 0.2,
+    "comp/cli": 0.03,
+    "comp/gateway": 0,
+    "comp/tools": 0.76,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.01,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 198,
+   "cost": 4.5654e-05
+  },
+  {
+   "number": 138663,
+   "title": "[Bug]: HUD mode renders the home dashboard widget grid instead of the floating chat composer",
+   "truth": [
+    "comp/plugins",
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.01,
+    "comp/desktop": 0.99,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 219,
+   "cost": 5.103e-05
+  },
+  {
+   "number": 138661,
+   "title": "[Bug] Markdown file rendering in telegram 95% broken, issues with `rich` text and MarkdownV2 confusion - missing documentation and config",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.58,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.62,
+    "comp/tools": 0.01,
+    "comp/tui": 0,
+    "comp/acp": 0.01,
+    "comp/cron": 0,
+    "comp/plugins": 0.36,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 196,
+   "cost": 5.1492e-05
+  },
+  {
+   "number": 138660,
+   "title": "[Bug]: Hosted room driver omits member_id in submit, so group member turns never run (since eb75627)",
+   "truth": [
+    "comp/gateway",
+    "comp/tui"
+   ],
+   "pick": "comp/tui",
+   "confidence": 0.64,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.28,
+    "comp/tools": 0,
+    "comp/tui": 0.67,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0.04
+   },
+   "hit": true,
+   "ms": 217,
+   "cost": 5.8254e-05
+  },
+  {
+   "number": 138659,
+   "title": "[Bug]: macOS desktop update never installs: Squirrel.Mac aborts on the read-only .pyc files bytecode.py bakes",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.98,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.02,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.98,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 200,
+   "cost": 5.292e-05
+  },
+  {
+   "number": 138658,
+   "title": "[Feature][Desktop]: Right-click context menu on images in chat (\"Add to chat\") + drag-and-drop image to composer or another session in sidebar",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 170,
+   "cost": 4.1118e-05
+  },
+  {
+   "number": 138657,
+   "title": "[Bug]: Desktop: ::preview widget buttons (data-hermes-send / hermes.send) silently do nothing in Bot Mode group chats",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 181,
+   "cost": 5.1198e-05
+  },
+  {
+   "number": 138653,
+   "title": "Curator selects skills by usage, not outcome: no signal for whether a loaded skill helped",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.54,
+   "probabilities": {
+    "comp/agent": 0.58,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0.32,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0.01,
+    "comp/plugins": 0.09,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 163,
+   "cost": 3.4608e-05
+  },
+  {
+   "number": 138651,
+   "title": "kanban worker stop/recovery nudges hard-code built-in board tools (break plugin-provided board tools)",
+   "truth": [
+    "comp/agent",
+    "comp/tools",
+    "comp/cron",
+    "comp/plugins"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.64,
+   "probabilities": {
+    "comp/agent": 0.67,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0.3,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.03,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 184,
+   "cost": 3.7926e-05
+  },
+  {
+   "number": 138649,
+   "title": "[Bug]: Telegram init hangs pre-socket inside gateway (no SYN, healthy loop, standalone 0.3s) \u2014 recurring #63309-family variant",
+   "truth": [
+    "comp/gateway",
+    "comp/plugins"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 1,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 174,
+   "cost": 5.817e-05
+  },
+  {
+   "number": 138646,
+   "title": "feat(compression): skip/defer summarization when the new message is unrelated to the thread",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 1,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 188,
+   "cost": 4.8846e-05
+  },
+  {
+   "number": 138644,
+   "title": "pre_tool_call hook: one timeout can fail-closed skip ALL later tool calls for hours (abandoned-worker cap never drains)",
+   "truth": [
+    "comp/cli",
+    "comp/plugins"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.97,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.02,
+    "comp/tools": 0.01,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.97,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 165,
+   "cost": 5.0022e-05
+  },
+  {
+   "number": 138643,
+   "title": "PROBE",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.38,
+   "probabilities": {
+    "comp/agent": 0.44,
+    "comp/cli": 0.04,
+    "comp/gateway": 0.04,
+    "comp/tools": 0.18,
+    "comp/tui": 0.03,
+    "comp/acp": 0.11,
+    "comp/cron": 0.01,
+    "comp/plugins": 0.03,
+    "comp/desktop": 0.02,
+    "comp/dashboard": 0.03,
+    "comp/portal": 0.07
+   },
+   "hit": true,
+   "ms": 184,
+   "cost": 2.3184e-05
+  },
+  {
+   "number": 138640,
+   "title": "[Bug]: Plugin install treats a build-only package.json as Node dependencies and npm-installs the dev toolchain",
+   "truth": [
+    "comp/cli",
+    "comp/plugins"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.72,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.25,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.75,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 169,
+   "cost": 4.6956e-05
+  },
+  {
+   "number": 138637,
+   "title": "[Bug]: Indeed MCP sign-in succeeds, then the resource returns invalid_client / Client not allowed \u2014 and login reports a registration 403",
+   "truth": [
+    "comp/tools"
+   ],
+   "pick": "comp/tools",
+   "confidence": 0.85,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.09,
+    "comp/gateway": 0,
+    "comp/tools": 0.86,
+    "comp/tui": 0,
+    "comp/acp": 0.01,
+    "comp/cron": 0,
+    "comp/plugins": 0.03,
+    "comp/desktop": 0.01,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 179,
+   "cost": 5.2038e-05
+  },
+  {
+   "number": 138632,
+   "title": "[Bug]: Desktop gateway file download passes a bare filename as save-dialog defaultPath; on macOS the save can land on read-only / (EROFS)",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.01,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.99,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 219,
+   "cost": 5.145e-05
+  },
+  {
+   "number": 138630,
+   "title": "Desktop sidebar: session-less project selection dead-ends (blank single-folder drill-in; auto projects never open)",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 200,
+   "cost": 4.9266e-05
+  },
+  {
+   "number": 138627,
+   "title": "[Bug]: WhatsApp Baileys bridge: 0-byte creds.json corruption causes headless timeout loop + Windows file lock contention on re-pair",
+   "truth": [
+    "comp/gateway",
+    "comp/plugins"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.74,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.76,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.24,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 200,
+   "cost": 5.0736e-05
+  },
+  {
+   "number": 138622,
+   "title": "Multiplexed desktop: profile without mcp_servers config silently gets zero MCP tools",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.56,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.6,
+    "comp/gateway": 0.01,
+    "comp/tools": 0.21,
+    "comp/tui": 0,
+    "comp/acp": 0.01,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.17,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 241,
+   "cost": 5.1324e-05
+  },
+  {
+   "number": 138618,
+   "title": "kanban: stale rate-limit last_failure_error survives a later successful run and parks review cards (blocker_auth every tick)",
+   "truth": [
+    "comp/cli",
+    "comp/cron"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.45,
+   "probabilities": {
+    "comp/agent": 0.04,
+    "comp/cli": 0.5,
+    "comp/gateway": 0.07,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0.39,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 169,
+   "cost": 4.2462e-05
+  },
+  {
+   "number": 138615,
+   "title": "Desktop updates take 4\u20135 minutes, even the smallest ones",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 173,
+   "cost": 3.8976e-05
+  },
+  {
+   "number": 138613,
+   "title": "Native Codex compaction gate excludes gpt-6-luna / gpt-6-sol / gpt-6.1-sol (backend supports it)",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 1,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 170,
+   "cost": 4.3596e-05
+  },
+  {
+   "number": 138612,
+   "title": "[Bug]: macOS update pause records wrapper PIDs with the wrong profile home; cancellation bootouts already-running gateways",
+   "truth": [
+    "comp/cli",
+    "comp/gateway"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.58,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.62,
+    "comp/gateway": 0.28,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0.07,
+    "comp/plugins": 0,
+    "comp/desktop": 0.02,
+    "comp/dashboard": 0.01,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 184,
+   "cost": 5.4138e-05
+  },
+  {
+   "number": 138606,
+   "title": "[Bug]: OAuth MCP login on Stytch-backed servers (Descript): CIMD client_id fails with connected_app_not_found; DCR fallback verified",
+   "truth": [
+    "comp/tools"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.57,
+   "probabilities": {
+    "comp/agent": 0.06,
+    "comp/cli": 0.61,
+    "comp/gateway": 0.02,
+    "comp/tools": 0.13,
+    "comp/tui": 0,
+    "comp/acp": 0.12,
+    "comp/cron": 0,
+    "comp/plugins": 0.05,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0.01
+   },
+   "hit": false,
+   "ms": 209,
+   "cost": 5.355e-05
+  },
+  {
+   "number": 138603,
+   "title": "Standalone gateway's cron ticker includes every profile, not just its own",
+   "truth": [
+    "comp/gateway",
+    "comp/cron"
+   ],
+   "pick": "comp/cron",
+   "confidence": 0.68,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.29,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0.71,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 153,
+   "cost": 4.7418e-05
+  },
+  {
+   "number": 138601,
+   "title": "Hosted connector tools are never surfaced by tool_search (v0.22.0)",
+   "truth": [
+    "comp/tools",
+    "comp/portal"
+   ],
+   "pick": "comp/tools",
+   "confidence": 0.88,
+   "probabilities": {
+    "comp/agent": 0.03,
+    "comp/cli": 0,
+    "comp/gateway": 0.05,
+    "comp/tools": 0.89,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.01,
+    "comp/desktop": 0.01,
+    "comp/dashboard": 0,
+    "comp/portal": 0.01
+   },
+   "hit": true,
+   "ms": 165,
+   "cost": 5.124e-05
+  },
+  {
+   "number": 138599,
+   "title": "backup: `chrome-debug` is credential-protected but not backup-excluded \u2014 full pre-update archives degrade to `*.incomplete.zip`",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/cli",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 1,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 183,
+   "cost": 5.8044e-05
+  },
+  {
+   "number": 138582,
+   "title": "hermes update starts a spurious `gateway run` on a Windows desktop install whose update plan lists no runtimes",
+   "truth": [
+    "comp/cli",
+    "comp/gateway",
+    "comp/desktop"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.44,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.38,
+    "comp/gateway": 0.49,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.13,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 263,
+   "cost": 5.0904e-05
+  },
+  {
+   "number": 138581,
+   "title": "Desktop: mid-turn messages silently queue instead of steering in a long-lived session until window reload",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 195,
+   "cost": 5.2374e-05
+  },
+  {
+   "number": 138580,
+   "title": "Bedrock streaming error (HTTP 400, internalServerException) is treated as a local bug and ends the turn",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.98,
+   "probabilities": {
+    "comp/agent": 0.98,
+    "comp/cli": 0,
+    "comp/gateway": 0.02,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 158,
+   "cost": 3.9438e-05
+  },
+  {
+   "number": 138579,
+   "title": "[Bug]: cron deliver=local leaves the job prompt in the Desktop window with no completed run",
+   "truth": [
+    "comp/cron",
+    "comp/desktop"
+   ],
+   "pick": "comp/cron",
+   "confidence": 0.97,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.02,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0.97,
+    "comp/plugins": 0,
+    "comp/desktop": 0.01,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 193,
+   "cost": 5.4348e-05
+  },
+  {
+   "number": 138575,
+   "title": "[Feature] /sessions and /resume on messaging platforms are hardcoded to 10 entries \u2014 no pagination, no config",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 1,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 191,
+   "cost": 4.5066e-05
+  },
+  {
+   "number": 138573,
+   "title": "Discord voice-note sessions get junk titles ('Empty message greeting') that lock permanently: empty-content placeholder leaks into title-generator input",
+   "truth": [
+    "comp/agent",
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.7,
+   "probabilities": {
+    "comp/agent": 0.25,
+    "comp/cli": 0,
+    "comp/gateway": 0.73,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.02,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 183,
+   "cost": 5.0358e-05
+  },
+  {
+   "number": 138570,
+   "title": "[Performance]: Put CLI --skills preloads in stable prompt prefix for cross-session KV reuse",
+   "truth": [
+    "comp/agent",
+    "comp/cli"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.96,
+   "probabilities": {
+    "comp/agent": 0.96,
+    "comp/cli": 0.04,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 153,
+   "cost": 4.9266e-05
+  },
+  {
+   "number": 138562,
+   "title": "[Feature]: Passkey support for the web UI",
+   "truth": [
+    "comp/dashboard"
+   ],
+   "pick": "comp/dashboard",
+   "confidence": 0.86,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.11,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0.87,
+    "comp/portal": 0.02
+   },
+   "hit": true,
+   "ms": 565,
+   "cost": 3.4062e-05
+  },
+  {
+   "number": 138553,
+   "title": "[Bug]: GitHub Copilot authentication fails in multiplexed gateway for secondary profiles \u2014 os.getenv() bypasses profile secret scope",
+   "truth": [
+    "comp/cli",
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.97,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.03,
+    "comp/gateway": 0.97,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 254,
+   "cost": 4.9182e-05
+  },
+  {
+   "number": 138546,
+   "title": "[Bug]: Desktop (Windows) \u2014 whole window goes black on session switch; `useClientLookup` out-of-bounds + React #520 logged, on a build that already carries the #41787/#61958 fixes",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 164,
+   "cost": 5.859e-05
+  },
+  {
+   "number": 138544,
+   "title": "[Bug]: image_generate check_fn lazy-installs `fal` at session start, and the PM snapshot copies the 1.4 GB tool store into HERMES_HOME (Docker) \u2014 volume fills, running turns die",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/tools",
+   "confidence": 0.96,
+   "probabilities": {
+    "comp/agent": 0.01,
+    "comp/cli": 0,
+    "comp/gateway": 0.01,
+    "comp/tools": 0.96,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.02,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 161,
+   "cost": 5.313e-05
+  },
+  {
+   "number": 138538,
+   "title": "transform_tool_result hooks don't chain (first string wins): a plugin that appends to the result silently drops a later redaction plugin",
+   "truth": [
+    "comp/tools",
+    "comp/plugins"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.81,
+   "probabilities": {
+    "comp/agent": 0.01,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0.16,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.83,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 177,
+   "cost": 5.0568e-05
+  },
+  {
+   "number": 138525,
+   "title": "[Bug]: gateway restart exit 75 can outrun the teardown phase chain \u2014 .restart_pending.json / .clean_shutdown never written, \"Gateway online\" notice lost",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.01,
+    "comp/gateway": 0.99,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 161,
+   "cost": 5.9724e-05
+  },
+  {
+   "number": 138523,
+   "title": "Kanban workers never load the assignee profile's AGENTS.md (only the workspace's project context)",
+   "truth": [
+    "comp/agent",
+    "comp/cron"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.88,
+   "probabilities": {
+    "comp/agent": 0.89,
+    "comp/cli": 0.03,
+    "comp/gateway": 0.08,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 162,
+   "cost": 4.956e-05
+  },
+  {
+   "number": 138520,
+   "title": "execute_code RPC dispatch fires transform_tool_result; hermes_tools helpers raise JSONDecodeError when a plugin rewrites the result",
+   "truth": [
+    "comp/tools",
+    "comp/plugins"
+   ],
+   "pick": "comp/tools",
+   "confidence": 0.88,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0.89,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.11,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 179,
+   "cost": 5.124e-05
+  },
+  {
+   "number": 138516,
+   "title": "[Bug]: tui_gateway.methods_onboarding uses Path() with no import \u2014 TUI/Desktop backend fails to import on Python 3.11\u20133.13",
+   "truth": [
+    "comp/tui"
+   ],
+   "pick": "comp/tui",
+   "confidence": 0.94,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.05,
+    "comp/tools": 0,
+    "comp/tui": 0.95,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 252,
+   "cost": 5.6028e-05
+  },
+  {
+   "number": 138503,
+   "title": "[Feature]: Per-project default model route for sessions",
+   "truth": [
+    "comp/cli",
+    "comp/tui",
+    "comp/desktop"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.37,
+   "probabilities": {
+    "comp/agent": 0.24,
+    "comp/cli": 0.43,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0.04,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.28,
+    "comp/dashboard": 0.01,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 170,
+   "cost": 4.7544e-05
+  },
+  {
+   "number": 138502,
+   "title": "Desktop app crashes with SIGTRAP ~1s after `hermes update` re-extracts the running install (self-update replaces live binary)",
+   "truth": [
+    "comp/cli",
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.97,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.03,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.97,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 219,
+   "cost": 5.9724e-05
+  },
+  {
+   "number": 138500,
+   "title": "test:desktop:platforms runs the whole Electron suite on every OS; only 18.7% of files guard on process.platform",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 222,
+   "cost": 5.3718e-05
+  },
+  {
+   "number": 138498,
+   "title": "Support: Gmail unread (token revoked / CDP unsigned); \u201csend to Hermes support\u201d went to local Bot Chat, not GitHub/Discord",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/tools",
+   "confidence": 0.43,
+   "probabilities": {
+    "comp/agent": 0.12,
+    "comp/cli": 0,
+    "comp/gateway": 0.21,
+    "comp/tools": 0.48,
+    "comp/tui": 0,
+    "comp/acp": 0.02,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.17,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 204,
+   "cost": 5.208e-05
+  },
+  {
+   "number": 138492,
+   "title": "[Bug]: Desktop loses a manual model selection made before a historical session finishes resuming",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 186,
+   "cost": 4.8468e-05
+  },
+  {
+   "number": 138486,
+   "title": "Browser OTP recovery dead end over Discord: vault misses a visible code field, prompts block alternatives, and user is away from desktop",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/tools",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0.01,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0.99,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 192,
+   "cost": 4.8258e-05
+  },
+  {
+   "number": 138479,
+   "title": "Gateway hygiene auto-compressing log always cites the token threshold, even when the hard message limit fired",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.91,
+   "probabilities": {
+    "comp/agent": 0.08,
+    "comp/cli": 0,
+    "comp/gateway": 0.92,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 189,
+   "cost": 5.1912e-05
+  },
+  {
+   "number": 138478,
+   "title": "Kanban: human-only precedent log that workers consult before blocking on needs_input",
+   "truth": [
+    "comp/cli",
+    "comp/cron"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.81,
+   "probabilities": {
+    "comp/agent": 0.1,
+    "comp/cli": 0.83,
+    "comp/gateway": 0,
+    "comp/tools": 0.04,
+    "comp/tui": 0,
+    "comp/acp": 0.01,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0.02,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 190,
+   "cost": 5.166e-05
+  },
+  {
+   "number": 138469,
+   "title": "[Bug]: Latched compression fallback pins the compressor's own revoked Anthropic key: compaction 401s for hours and `auxiliary.compression` is ignored (gap left after #121756 / #123362)",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.88,
+   "probabilities": {
+    "comp/agent": 0.89,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.11,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 154,
+   "cost": 5.4054e-05
+  },
+  {
+   "number": 138466,
+   "title": "[Bug]: pytest from a shell with security.redact_secrets: false fails 4 redaction tests: agent.redact's import-time snapshot escapes the hermetic env scrub",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.67,
+   "probabilities": {
+    "comp/agent": 0.7,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0.3,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 210,
+   "cost": 5.4558e-05
+  },
+  {
+   "number": 138458,
+   "title": "[Feature]: kanban dispatcher injects skills, toolsets and model overrides into workers at spawn \u2014 make the assignee profile authoritative (opt-in worker_policy)",
+   "truth": [
+    "comp/agent",
+    "comp/cli",
+    "comp/tools",
+    "comp/cron"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.27,
+   "probabilities": {
+    "comp/agent": 0.19,
+    "comp/cli": 0.34,
+    "comp/gateway": 0.17,
+    "comp/tools": 0.27,
+    "comp/tui": 0,
+    "comp/acp": 0.01,
+    "comp/cron": 0.01,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 176,
+   "cost": 5.0568e-05
+  },
+  {
+   "number": 138454,
+   "title": "Desktop transcript misses the newest rows of a compacted session \u2014 backend returns them correctly (front-end tail-state cache)",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 172,
+   "cost": 5.544e-05
+  },
+  {
+   "number": 138450,
+   "title": "Discord: fallback platform note says 'no Discord API access' instead of pointing at the opt-in discord toolset",
+   "truth": [
+    "comp/cli",
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.94,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.95,
+    "comp/tools": 0.05,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 455,
+   "cost": 4.9476e-05
+  },
+  {
+   "number": 138449,
+   "title": "Discord gateway: discord/discord_admin tools silently off without explicit platform_toolsets.discord; docs say they're active",
+   "truth": [
+    "comp/cli",
+    "comp/tools"
+   ],
+   "pick": "comp/tools",
+   "confidence": 0.65,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.12,
+    "comp/gateway": 0.2,
+    "comp/tools": 0.68,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 174,
+   "cost": 5.0946e-05
+  },
+  {
+   "number": 138448,
+   "title": "[Feature]: per-tool selection in profile config + step-aware kanban lifecycle tools and guidance (enforce workflow contracts by tool surface, not prompt text)",
+   "truth": [
+    "comp/agent",
+    "comp/tools"
+   ],
+   "pick": "comp/tools",
+   "confidence": 0.81,
+   "probabilities": {
+    "comp/agent": 0.17,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0.83,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 170,
+   "cost": 4.9056e-05
+  },
+  {
+   "number": 138445,
+   "title": "Desktop: \"New session in <branch>\" group-header button ignores the Project's primary folder inside that repo",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 192,
+   "cost": 4.4016e-05
+  },
+  {
+   "number": 138444,
+   "title": "[Bug]: updater sends raw `gh auth token` stdout as the Bearer token \u2014 any stdout-printing wrapper breaks every update with \"Invalid header value\"",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/cli",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 1,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 226,
+   "cost": 5.2374e-05
+  },
+  {
+   "number": 138441,
+   "title": "[Bug]: Desktop Cron model changes retain stale base_url and fail at runtime",
+   "truth": [
+    "comp/cron",
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.63,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0.34,
+    "comp/plugins": 0,
+    "comp/desktop": 0.66,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 137,
+   "cost": 5.1786e-05
+  },
+  {
+   "number": 138439,
+   "title": "[Feature]: Add Browserless integration support",
+   "truth": [
+    "comp/plugins"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.86,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0.13,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.87,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 210,
+   "cost": 3.108e-05
+  },
+  {
+   "number": 138438,
+   "title": "[Feature]: show a visible MoA marker on messenger replies (e.g. Telegram)",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 1,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 236,
+   "cost": 5.0526e-05
+  },
+  {
+   "number": 138433,
+   "title": "WhatsApp: observe unmentioned group messages (parity with TELEGRAM_OBSERVE_UNMENTIONED_GROUP_MESSAGES)",
+   "truth": [
+    "comp/gateway",
+    "comp/plugins"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 1,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 173,
+   "cost": 4.1118e-05
+  },
+  {
+   "number": 138431,
+   "title": "Kanban respawns protocol_violation workers while their native sessions continue (macOS)",
+   "truth": [
+    "comp/cron"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.92,
+   "probabilities": {
+    "comp/agent": 0.02,
+    "comp/cli": 0,
+    "comp/gateway": 0.93,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0.02,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0.03,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 189,
+   "cost": 4.7502e-05
+  },
+  {
+   "number": 138429,
+   "title": "Plugin API: provide per-dispatch tool-call correlation",
+   "truth": [
+    "comp/tools",
+    "comp/plugins"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.79,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0.19,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.81,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 209,
+   "cost": 3.8052e-05
+  },
+  {
+   "number": 138424,
+   "title": "[Feature]: \u652f\u6301\u5bf9\u8bdd\u5185\u9501\u5b9a\u6a21\u578b\uff0c\u5931\u8d25\u65f6\u660e\u786e\u62a5\u9519\u800c\u4e0d\u662f\u81ea\u52a8\u56de\u9000\uff08session model lock / no fallback\uff09",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.54,
+   "probabilities": {
+    "comp/agent": 0.41000000000000003,
+    "comp/cli": 0,
+    "comp/gateway": 0.58,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.01,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 200,
+   "cost": 9.1392e-05
+  },
+  {
+   "number": 138416,
+   "title": "[Bug]: Email drops .txt/.html files attached by Apple Mail / iOS Mail (inline disposition), and can use one as the body",
+   "truth": [
+    "comp/plugins"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.92,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.06,
+    "comp/tools": 0.01,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.93,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 166,
+   "cost": 4.8678e-05
+  },
+  {
+   "number": 138415,
+   "title": "Bot Mode: business isolation vs persona bots, bulk SOUL/skill edits, and catalog-scale teams (vs Grok Bot / OpenMausBot)",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.76,
+   "probabilities": {
+    "comp/agent": 0.19,
+    "comp/cli": 0.01,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.78,
+    "comp/dashboard": 0.02,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 165,
+   "cost": 5.0274e-05
+  },
+  {
+   "number": 138413,
+   "title": "Non-TTY environments: `hermes hooks accept` / `--accept-hooks` / `HERMES_ACCEPT_HOOKS=1` don't accept hooks (direct allowlist write is the only working path)",
+   "truth": [
+    "comp/agent",
+    "comp/cli"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.89,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.9,
+    "comp/gateway": 0.03,
+    "comp/tools": 0,
+    "comp/tui": 0.05,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.02,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 230,
+   "cost": 4.6368e-05
+  },
+  {
+   "number": 138411,
+   "title": "[Bug]: A skill config value of false or 0 is shown to the agent and in hermes config as \"(not set)\"",
+   "truth": [
+    "comp/agent",
+    "comp/cli"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.68,
+   "probabilities": {
+    "comp/agent": 0.71,
+    "comp/cli": 0.09,
+    "comp/gateway": 0,
+    "comp/tools": 0.06,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.14,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 191,
+   "cost": 4.8174e-05
+  },
+  {
+   "number": 138405,
+   "title": "[Bug]: Desktop re-downloads a file link from the conversation on every agent turn, stacking native Save dialogs",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.98,
+   "probabilities": {
+    "comp/agent": 0.02,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.98,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 163,
+   "cost": 5.1534e-05
+  },
+  {
+   "number": 138404,
+   "title": "Update channel resolution times out on git <2.44: merge-base probe lazy-fetches history in partial clones",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/cli",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 1,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 167,
+   "cost": 5.1534e-05
+  },
+  {
+   "number": 138403,
+   "title": "Gap: core kanban auto-decomposer lacks an approval-gate concept",
+   "truth": [
+    "comp/cron"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.71,
+   "probabilities": {
+    "comp/agent": 0.74,
+    "comp/cli": 0,
+    "comp/gateway": 0.05,
+    "comp/tools": 0.04,
+    "comp/tui": 0,
+    "comp/acp": 0.03,
+    "comp/cron": 0.05,
+    "comp/plugins": 0.06,
+    "comp/desktop": 0,
+    "comp/dashboard": 0.02,
+    "comp/portal": 0.01
+   },
+   "hit": false,
+   "ms": 170,
+   "cost": 4.788e-05
+  },
+  {
+   "number": 138396,
+   "title": "Moved to a private security report",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.24,
+   "probabilities": {
+    "comp/agent": 0.31,
+    "comp/cli": 0.12,
+    "comp/gateway": 0.09,
+    "comp/tools": 0.07,
+    "comp/tui": 0.01,
+    "comp/acp": 0.03,
+    "comp/cron": 0.01,
+    "comp/plugins": 0.02,
+    "comp/desktop": 0.03,
+    "comp/dashboard": 0.05,
+    "comp/portal": 0.26
+   },
+   "hit": true,
+   "ms": 196,
+   "cost": 2.3898e-05
+  },
+  {
+   "number": 138395,
+   "title": "[Bug] Windows Desktop: sidebar-scoped glass stays opaque after a cold launch until a window resize or settings change",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 188,
+   "cost": 5.2248e-05
+  },
+  {
+   "number": 138392,
+   "title": "[Bug]: auxiliary.<task>.extra_body is forwarded to fallback_chain providers \u2014 chat_template_kwargs makes Anthropic fallback 400",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.98,
+   "probabilities": {
+    "comp/agent": 0.98,
+    "comp/cli": 0,
+    "comp/gateway": 0.01,
+    "comp/tools": 0.01,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 175,
+   "cost": 5.313e-05
+  },
+  {
+   "number": 138388,
+   "title": "[Bug]: /api/status one-second health fallback waits past its deadline in executor __exit__",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/dashboard",
+   "confidence": 0.7,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.24,
+    "comp/gateway": 0.03,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0.73,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 225,
+   "cost": 5.6196e-05
+  },
+  {
+   "number": 138378,
+   "title": "[Bug]: Desktop SSH to Windows remote intermittently times out (80%+ failure rate) due to PowerShell stdin ReadToEnd() EOF race over Windows OpenSSH",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 177,
+   "cost": 5.544e-05
+  },
+  {
+   "number": 138375,
+   "title": "[Bug]: kimi-coding static catalog carries 8 retired ids and omits k3-256k \u2014 and k3-256k's context_length resolves to the wrong 256,000",
+   "truth": [
+    "comp/agent",
+    "comp/cli"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.63,
+   "probabilities": {
+    "comp/agent": 0.66,
+    "comp/cli": 0.3,
+    "comp/gateway": 0,
+    "comp/tools": 0.02,
+    "comp/tui": 0,
+    "comp/acp": 0.01,
+    "comp/cron": 0,
+    "comp/plugins": 0.01,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 188,
+   "cost": 6.09e-05
+  },
+  {
+   "number": 138374,
+   "title": "'Unknown toolsets: messaging, moa, rl' warning on every run from stale platform_toolsets.cli entries",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/tools",
+   "confidence": 0.8,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.18,
+    "comp/gateway": 0,
+    "comp/tools": 0.82,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 157,
+   "cost": 3.6456e-05
+  },
+  {
+   "number": 138372,
+   "title": "[Feature]: `kanban context` truncates each comment at 2,048 characters",
+   "truth": [
+    "comp/cron"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0.01,
+    "comp/cli": 0.99,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 1076,
+   "cost": 4.2336e-05
+  },
+  {
+   "number": 138365,
+   "title": "[Bug]: Idle /queue or /steer as a bare photo caption drops the photo and replies with usage",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 1,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 203,
+   "cost": 4.4562e-05
+  },
+  {
+   "number": 138362,
+   "title": "[Security] gateway: weixin media redirects bypass SSRF/CDN allowlist; dynamic webhook subscriptions can self-grant script/cron/deliver",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 1,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 188,
+   "cost": 4.9266e-05
+  },
+  {
+   "number": 138359,
+   "title": "[Security] pm: lock.json sha256 not shape-validated -> path traversal to arbitrary rmtree (verified) + facts.json env injection + downloader loopback gate bypass",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.68,
+   "probabilities": {
+    "comp/agent": 0.08,
+    "comp/cli": 0.71,
+    "comp/gateway": 0,
+    "comp/tools": 0.11,
+    "comp/tui": 0,
+    "comp/acp": 0.01,
+    "comp/cron": 0,
+    "comp/plugins": 0.09,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 144,
+   "cost": 4.6956e-05
+  },
+  {
+   "number": 138358,
+   "title": "[Bug]: Telegram turn wedges before the agent starts: no timeout, no reply, later messages silently queued (80 min)",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 1,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 191,
+   "cost": 5.292e-05
+  },
+  {
+   "number": 138355,
+   "title": "`_carry_parent_timestamps` is a no-op in both in-place compaction paths: the archive runs before its donor query, so carried copies drift to `now_ts` and one logical message renders twice",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.98,
+   "probabilities": {
+    "comp/agent": 0.98,
+    "comp/cli": 0,
+    "comp/gateway": 0.02,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 217,
+   "cost": 5.0946e-05
+  },
+  {
+   "number": 138350,
+   "title": "Legacy `dashboard` spawn never registers shell hooks \u2014 declarative config.yaml `hooks:` silently inert for Desktop-hosted sessions (follow-up to the serve/cli fixes in #69825/#102681)",
+   "truth": [
+    "comp/cli",
+    "comp/desktop",
+    "comp/dashboard"
+   ],
+   "pick": "comp/dashboard",
+   "confidence": 0.82,
+   "probabilities": {
+    "comp/agent": 0.01,
+    "comp/cli": 0.11,
+    "comp/gateway": 0.01,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.03,
+    "comp/dashboard": 0.84,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 228,
+   "cost": 4.4772e-05
+  },
+  {
+   "number": 138349,
+   "title": "Skills: fallback advice points to non-existent `/skill <name>`; skill-command cache ignores disk changes until restart",
+   "truth": [
+    "comp/agent",
+    "comp/cli",
+    "comp/tui"
+   ],
+   "pick": "comp/cli",
+   "confidence": 0.4,
+   "probabilities": {
+    "comp/agent": 0.4,
+    "comp/cli": 0.45,
+    "comp/gateway": 0.09,
+    "comp/tools": 0.01,
+    "comp/tui": 0.03,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.02,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 165,
+   "cost": 5.2668e-05
+  },
+  {
+   "number": 138347,
+   "title": "[Feature]: Bot Mode rooms \u2014 route unmentioned turns to a configured reader (opt-in, shipped default unchanged)",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.61,
+   "probabilities": {
+    "comp/agent": 0.01,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.34,
+    "comp/desktop": 0.65,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 219,
+   "cost": 5.019e-05
+  },
+  {
+   "number": 138345,
+   "title": "[Feishu] Outbound @Name is plain text, so mention-gated bots can never be addressed \u2014 bot-to-bot group collaboration is deadlocked (3 open PRs since May)",
+   "truth": [
+    "comp/plugins"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.9,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.91,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0.08,
+    "comp/cron": 0,
+    "comp/plugins": 0.01,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 186,
+   "cost": 5.0778e-05
+  },
+  {
+   "number": 138343,
+   "title": "Gateway restart loop after unclean death + recycled pid strands cron; stale async-delegation delivery burns provider quota",
+   "truth": [
+    "comp/gateway",
+    "comp/cron"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.97,
+   "probabilities": {
+    "comp/agent": 0.02,
+    "comp/cli": 0,
+    "comp/gateway": 0.97,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0.01,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 167,
+   "cost": 5.4012e-05
+  },
+  {
+   "number": 138337,
+   "title": "[Bug]: delegate_task children sharing an Anthropic OAuth pool revoke each other's token on 401, then die at a refresh cap that never resets or rotates",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0.99,
+    "comp/cli": 0,
+    "comp/gateway": 0.01,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 186,
+   "cost": 5.8212e-05
+  },
+  {
+   "number": 138330,
+   "title": "[Bug]: CLI /history prints image turns as a Python list with the base64 data URL",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/cli",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 1,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 177,
+   "cost": 4.4646e-05
+  },
+  {
+   "number": 138329,
+   "title": "httpx2==2.12.0's 1 MiB per-SSE-event cap silently breaks MCP servers with a large tools/list (reported as \"SSE stream ended without a response\")",
+   "truth": [
+    "comp/tools"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.19,
+   "probabilities": {
+    "comp/agent": 0.07,
+    "comp/cli": 0.17,
+    "comp/gateway": 0.26,
+    "comp/tools": 0.04,
+    "comp/tui": 0.01,
+    "comp/acp": 0.25,
+    "comp/cron": 0,
+    "comp/plugins": 0.05,
+    "comp/desktop": 0.14,
+    "comp/dashboard": 0.01,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 142,
+   "cost": 5.649e-05
+  },
+  {
+   "number": 138326,
+   "title": "auxiliary.title_generation: stage-2 model upgrade sends the MAIN model name to the aux provider (intermittent HTTP 400)",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0.99,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0.01
+   },
+   "hit": true,
+   "ms": 170,
+   "cost": 5.523e-05
+  },
+  {
+   "number": 138322,
+   "title": "Plugin deps are re-seeded from the previous generation's uv.lock and never advance - hindsight-embed stuck at 0.10.2, breaking the Hindsight daemon on Windows",
+   "truth": [
+    "comp/plugins"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.01,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.99,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 191,
+   "cost": 5.6784e-05
+  },
+  {
+   "number": 138321,
+   "title": "[Bug]: Dashboard browser login from loopback dead-ends with \"Missing PKCE state cookie\" when public_url is set",
+   "truth": [
+    "comp/cli",
+    "comp/dashboard"
+   ],
+   "pick": "comp/dashboard",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 1,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 183,
+   "cost": 5.334e-05
+  },
+  {
+   "number": 138320,
+   "title": "[Feature]: Purify resolveEditor() with an injected exists probe (last mixed-world seam)",
+   "truth": [
+    "comp/tui"
+   ],
+   "pick": "comp/tui",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.01,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0.99,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 205,
+   "cost": 4.956e-05
+  },
+  {
+   "number": 138313,
+   "title": "[Feature]: Desktop: surface cross-profile delegated work in the conversation\u2019s task/status area",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 189,
+   "cost": 4.4856e-05
+  },
+  {
+   "number": 138310,
+   "title": "[Bug]: Achievements scan skips archived sessions \u2014 lifetime totals shrink when sessions are archived",
+   "truth": [
+    "comp/plugins"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.8,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.82,
+    "comp/desktop": 0,
+    "comp/dashboard": 0.18,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 240,
+   "cost": 5.271e-05
+  },
+  {
+   "number": 138309,
+   "title": "auxiliary.title_generation upgrade sends the main model name to the aux provider (intermittent HTTP 400)",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.96,
+   "probabilities": {
+    "comp/agent": 0.96,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0.01,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.02,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0.01
+   },
+   "hit": true,
+   "ms": 181,
+   "cost": 7.1022e-05
+  },
+  {
+   "number": 138304,
+   "title": "[Bug]: a cron run killed by a gateway shutdown never gets its session row closed \u2014 the Desktop Cron view opens it read-only forever",
+   "truth": [
+    "comp/gateway",
+    "comp/cron",
+    "comp/desktop"
+   ],
+   "pick": "comp/cron",
+   "confidence": 0.93,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.02,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0.94,
+    "comp/plugins": 0,
+    "comp/desktop": 0.04,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 178,
+   "cost": 5.4978e-05
+  },
+  {
+   "number": 138303,
+   "title": "[Bug]: Mattermost reply_mode=thread threads DM replies, and follow-ups in that thread lose the session context",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.47,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.4,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0.08,
+    "comp/cron": 0,
+    "comp/plugins": 0.52,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 197,
+   "cost": 5.2164e-05
+  },
+  {
+   "number": 138299,
+   "title": "[Bug]: API server ignores OpenAI-standard top-level reasoning_effort (Homarr assistant cannot disable thinking)",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.97,
+   "probabilities": {
+    "comp/agent": 0.02,
+    "comp/cli": 0,
+    "comp/gateway": 0.97,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0.01,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 222,
+   "cost": 5.0904e-05
+  },
+  {
+   "number": 138296,
+   "title": "Multi-user gateways: option to disable persistent approval choices, so one participant cannot turn off confirmations for everyone",
+   "truth": [
+    "comp/gateway",
+    "comp/tools"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.82,
+   "probabilities": {
+    "comp/agent": 0.04,
+    "comp/cli": 0,
+    "comp/gateway": 0.84,
+    "comp/tools": 0.11,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.01,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 177,
+   "cost": 3.7296e-05
+  },
+  {
+   "number": 138295,
+   "title": "Gateway `/new` reply always appends a CLI tip; add a setting to turn it off",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 1,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 198,
+   "cost": 3.2046e-05
+  },
+  {
+   "number": 138288,
+   "title": "WhatsApp Cloud adapter: option to not quote the inbound message on every reply",
+   "truth": [
+    "comp/gateway"
+   ],
+   "pick": "comp/gateway",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0.99,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0.01,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 184,
+   "cost": 4.0194e-05
+  },
+  {
+   "number": 138286,
+   "title": "[Bug]: Enter-while-busy redirects in the Bot Chat and silently queues in other sessions",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 171,
+   "cost": 5.4348e-05
+  },
+  {
+   "number": 138284,
+   "title": "[Bug]: `$HERMES_MANAGED_DIR/SOUL.md` is ignored",
+   "truth": [
+    "comp/cli"
+   ],
+   "pick": "comp/agent",
+   "confidence": 0.57,
+   "probabilities": {
+    "comp/agent": 0.61,
+    "comp/cli": 0.38,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.01,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": false,
+   "ms": 194,
+   "cost": 3.7296e-05
+  },
+  {
+   "number": 138280,
+   "title": "[Feature]: plugin goal seam (ctx.goals) \u2014 plugins cannot set, read or clear a standing /goal; the classic CLI ignores goals written outside its cached manager",
+   "truth": [
+    "comp/cli",
+    "comp/gateway",
+    "comp/plugins"
+   ],
+   "pick": "comp/plugins",
+   "confidence": 0.92,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0.07,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.93,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 181,
+   "cost": 5.1996e-05
+  },
+  {
+   "number": 138278,
+   "title": "[Feature]: Share to Hermes Desktop from the macOS share sheet",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0.01,
+    "comp/desktop": 0.99,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 172,
+   "cost": 4.4772e-05
+  },
+  {
+   "number": 138277,
+   "title": "[Bug]:",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 0.99,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0.99,
+    "comp/dashboard": 0.01,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 156,
+   "cost": 6.0942e-05
+  },
+  {
+   "number": 138274,
+   "title": "[Bug]: Hermes Desktop blank window",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 175,
+   "cost": 5.5482e-05
+  },
+  {
+   "number": 138271,
+   "title": "[Feature]: Per-platform compression thresholds (compression.platform_overrides.<platform>)",
+   "truth": [
+    "comp/agent"
+   ],
+   "pick": "comp/agent",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 1,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 0,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 169,
+   "cost": 4.9266e-05
+  },
+  {
+   "number": 138263,
+   "title": "[Bug]: Two distinct model ids render to the identical label when the id carries a suffix after the variant tag (\u2026-flash-us)",
+   "truth": [
+    "comp/desktop"
+   ],
+   "pick": "comp/desktop",
+   "confidence": 1,
+   "probabilities": {
+    "comp/agent": 0,
+    "comp/cli": 0,
+    "comp/gateway": 0,
+    "comp/tools": 0,
+    "comp/tui": 0,
+    "comp/acp": 0,
+    "comp/cron": 0,
+    "comp/plugins": 0,
+    "comp/desktop": 1,
+    "comp/dashboard": 0,
+    "comp/portal": 0
+   },
+   "hit": true,
+   "ms": 168,
+   "cost": 5.397e-05
+  }
+ ],
+ "usage": {
+  "calls": 150,
+  "ms_median": 188,
+  "cost_usd": 0.00738
+ }
+}

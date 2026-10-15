@@ -1,0 +1,409 @@
+{
+ "rows": [
+  {
+   "issue": "9855",
+   "user": "mrshu",
+   "excerpt": "<!-- review-anvil-marker: ed10b75a-2724-44af-b9c0-bb7aad20e92c -->\nreview-anvil-improve-pr started on this PR. cc @mrshu.\n\nReview agents will inspect this PR ag",
+   "ms": 216,
+   "cost": 1.9488e-05,
+   "new_evidence": 0.15,
+   "automated": 0.96,
+   "closing": 0.03
+  },
+  {
+   "issue": "139187",
+   "user": "greptile-apps[bot]",
+   "excerpt": "<!-- greptile_summary -->\n\n<h2><a href=\"https://app.greptile.com/api/retrigger?id=81530251\"><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https:",
+   "ms": 183,
+   "cost": 3.4524e-05,
+   "new_evidence": 0.12,
+   "automated": 0.98,
+   "closing": 0.06
+  },
+  {
+   "issue": "122607",
+   "user": "Code0020161314",
+   "excerpt": "Direct reproduction of this path on 0.21.6, from a session that hit it today (2026-10-15).\n\n**Setup**: Hermes runtime 0.21.6, Windows 11 x64, OpenAI-compatible ",
+   "ms": 174,
+   "cost": 3.3306e-05,
+   "new_evidence": 0.92,
+   "automated": 0.12,
+   "closing": 0.05
+  },
+  {
+   "issue": "116520",
+   "user": "LordMelkor",
+   "excerpt": "\ud83e\udd16 Closing in favor of #139195, which replaces this with two provider-agnostic seams. A provider plugin can claim an endpoint host; the Anthropic Messages route ",
+   "ms": 162,
+   "cost": 1.8396e-05,
+   "new_evidence": 0.04,
+   "automated": 0.24,
+   "closing": 0.96
+  },
+  {
+   "issue": "134889",
+   "user": "teknium1",
+   "excerpt": "**Two more, both Desktop renderer-side** (the gateway behaves correctly in both).\n\n- **#139190: the Desktop queue panel shows the previous session's queued prom",
+   "ms": 189,
+   "cost": 2.898e-05,
+   "new_evidence": 0.29,
+   "automated": 0.12,
+   "closing": 0.16
+  },
+  {
+   "issue": "62728",
+   "user": "Black-Studio-ia",
+   "excerpt": "The thread nails the root cause, and I'd like to suggest inverting the design rather than extending the matcher list: no enumerated set of canonical test comman",
+   "ms": 189,
+   "cost": 2.9022e-05,
+   "new_evidence": 0.09,
+   "automated": 0.02,
+   "closing": 0.09
+  },
+  {
+   "issue": "125130",
+   "user": "sprd-tmu",
+   "excerpt": "Heads-up from someone who accidentally wrote the same PR: I built a parallel version of this against the same 17 files before finding yours, and I've closed min",
+   "ms": 203,
+   "cost": 3.1878e-05,
+   "new_evidence": 0.68,
+   "automated": 0.03,
+   "closing": 0.7
+  },
+  {
+   "issue": "139177",
+   "user": "sprd-tmu",
+   "excerpt": "Closing in favour of #125130, which came first and covers the same 17 files. The one delta here (the 64-character clamp note for native-mcp.md) has been posted ",
+   "ms": 206,
+   "cost": 1.806e-05,
+   "new_evidence": 0.04,
+   "automated": 0.13,
+   "closing": 0.97
+  },
+  {
+   "issue": "90188",
+   "user": "enzo-adami",
+   "excerpt": "Closing in favour of a standalone plugin, per the AGENTS.md rule that third-party products ship as their own plugin repo rather than in the core tree (same reas",
+   "ms": 150,
+   "cost": 2.7468e-05,
+   "new_evidence": 0.44,
+   "automated": 0.06,
+   "closing": 0.96
+  },
+  {
+   "issue": "138228",
+   "user": "arthmel",
+   "excerpt": "+1, with one extension: the same methods as an **agent-facing tool**, not only a CLI.\n\nOur use case: the default profile is an orchestrator that turns a plannin",
+   "ms": 146,
+   "cost": 2.3562e-05,
+   "new_evidence": 0.14,
+   "automated": 0.02,
+   "closing": 0.04
+  },
+  {
+   "issue": "125258",
+   "user": "arthmel",
+   "excerpt": "+1 from a heavy Bot Mode user. One practical data point:\n\nThe hardcoded 3 rounds / 10 member messages per user send (`GROUP_CHAT_MAX_ROUNDS` / `GROUP_CHAT_MAX_M",
+   "ms": 175,
+   "cost": 2.31e-05,
+   "new_evidence": 0.45,
+   "automated": 0.02,
+   "closing": 0.04
+  },
+  {
+   "issue": "124273",
+   "user": "austinpickett",
+   "excerpt": "Maintainer update (cron-assisted) \u2014 pushed `05008b4726db` on top of your branch; no history rewritten.\n\n**Why:** this branch went `CONFLICTING` again as `main` ",
+   "ms": 172,
+   "cost": 3.2088e-05,
+   "new_evidence": 0.73,
+   "automated": 0.7,
+   "closing": 0.12
+  },
+  {
+   "issue": "138788",
+   "user": "Old2D",
+   "excerpt": "+1 \u2014 independent confirmation, plus two verifications of the analysis already posted here.\n\n**Environment**: Windows 11, desktop v0.22.1, local gateway, provide",
+   "ms": 355,
+   "cost": 3.1374e-05,
+   "new_evidence": 0.94,
+   "automated": 0.03,
+   "closing": 0.09
+  },
+  {
+   "issue": "138748",
+   "user": "lzmuhioin",
+   "excerpt": "Confirmed on native Windows 11 as well (v0.22.1, `297552a9d646`) \u2014 same mechanism, with the connectability discriminator reproduced independently.\n\nConfig has 5",
+   "ms": 240,
+   "cost": 3.15e-05,
+   "new_evidence": 0.96,
+   "automated": 0.04,
+   "closing": 0.11
+  },
+  {
+   "issue": "138915",
+   "user": "wweic-code",
+   "excerpt": "Tested the forwarding PR #138950 live on main (macOS, multiplex gateway + standalone `hermes serve` + local Desktop). The forward clears the `exclusive_maintena",
+   "ms": 169,
+   "cost": 2.2764e-05,
+   "new_evidence": 0.9,
+   "automated": 0.04,
+   "closing": 0.19
+  },
+  {
+   "issue": "138950",
+   "user": "wweic-code",
+   "excerpt": "Tried this PR live on `main` (`v0.22.1+104.gecac27c`, macOS 15 arm64, single UID, multiplex gateway under launchd + a separately running `hermes serve` that the",
+   "ms": 150,
+   "cost": 3.1416e-05,
+   "new_evidence": 0.92,
+   "automated": 0.03,
+   "closing": 0.1
+  },
+  {
+   "issue": "139187",
+   "user": "github-actions[bot]",
+   "excerpt": "<!-- hermes-ci-review-bot -->\n# \u0aee >\ufecc< \u10d0 ci review\n\n<sub>ran on [2360a86](https://github.com/NousResearch/hermes-agent/pull/139187/commits/2360a869698b8715c4cb30",
+   "ms": 260,
+   "cost": 3.0492e-05,
+   "new_evidence": 0.6,
+   "automated": 0.98,
+   "closing": 0.03
+  },
+  {
+   "issue": "138393",
+   "user": "smallmj",
+   "excerpt": "## Independent confirmation + production-scale consequence (macOS client \u2192 Windows host)\n\nFollowing from #127320 (where I documented the spawn-stage data point)",
+   "ms": 146,
+   "cost": 3.0618e-05,
+   "new_evidence": 0.94,
+   "automated": 0.03,
+   "closing": 0.13
+  },
+  {
+   "issue": "136193",
+   "user": "Gabriele-Tomberli",
+   "excerpt": "Can confirm the issue, branching on a 180 messages session on the last message produced a fork with exactly the first 28 visible messages. Reproducible even aft",
+   "ms": 214,
+   "cost": 1.7976e-05,
+   "new_evidence": 0.94,
+   "automated": 0.02,
+   "closing": 0.04
+  },
+  {
+   "issue": "91132",
+   "user": "LordMelkor",
+   "excerpt": "\ud83e\udd16 Closing to combine this with my other key_cmd credential fixes (#88536, #91109, #91132) into one PR rebased on current main. I'll link it here once it's open.",
+   "ms": 150,
+   "cost": 1.701e-05,
+   "new_evidence": 0.03,
+   "automated": 0.11,
+   "closing": 0.86
+  },
+  {
+   "issue": "91109",
+   "user": "LordMelkor",
+   "excerpt": "\ud83e\udd16 Closing to combine this with my other key_cmd credential fixes (#88536, #91109, #91132) into one PR rebased on current main. I'll link it here once it's open.",
+   "ms": 152,
+   "cost": 1.701e-05,
+   "new_evidence": 0.04,
+   "automated": 0.13,
+   "closing": 0.86
+  },
+  {
+   "issue": "88536",
+   "user": "LordMelkor",
+   "excerpt": "\ud83e\udd16 Closing to combine this with my other key_cmd credential fixes (#88536, #91109, #91132) into one PR rebased on current main. I'll link it here once it's open.",
+   "ms": 176,
+   "cost": 1.701e-05,
+   "new_evidence": 0.03,
+   "automated": 0.12,
+   "closing": 0.86
+  },
+  {
+   "issue": "116526",
+   "user": "LordMelkor",
+   "excerpt": "\ud83e\udd16 Closing: main deliberately skips callable (key_cmd) credentials in the Anthropic context-length probe as of 2b3bab0a5c, which fixes the original AttributeErro",
+   "ms": 141,
+   "cost": 1.7472e-05,
+   "new_evidence": 0.14,
+   "automated": 0.22,
+   "closing": 0.92
+  },
+  {
+   "issue": "134889",
+   "user": "xiaoxiangtao",
+   "excerpt": "## Desktop/local: completed delegations remain pending; LOCAL source identity is lost after routing reload\n\nReporting here per this tracker\u2019s instruction to con",
+   "ms": 249,
+   "cost": 2.982e-05,
+   "new_evidence": 0.91,
+   "automated": 0.04,
+   "closing": 0.05
+  },
+  {
+   "issue": "111940",
+   "user": "pswong661-eng",
+   "excerpt": "Status ping from Gigi (Eric's chief of staff) \u2014 this PR is **CONFLICTING** against `main` again despite the Oct 7 rebase (head is now `c4cf5c8d`, updated Oct 10",
+   "ms": 158,
+   "cost": 1.8312e-05,
+   "new_evidence": 0.43,
+   "automated": 0.11,
+   "closing": 0.08
+  },
+  {
+   "issue": "130013",
+   "user": "sdalonzo",
+   "excerpt": "Field data from a second host, plus one measurement that may help size the fix.\n\n**Setup:** Linux, 26 GiB RAM, cgroup v2, gateway as a systemd user unit, kanban",
+   "ms": 158,
+   "cost": 3.4062e-05,
+   "new_evidence": 0.96,
+   "automated": 0.03,
+   "closing": 0.11
+  },
+  {
+   "issue": "137102",
+   "user": "KoNit-K",
+   "excerpt": "Thanks @PiToTheOneHalvth.\n\nResolved the composer conflicts while preserving onboarding and busy-input behavior. Queue, Send, and independent Steer exit preview ",
+   "ms": 246,
+   "cost": 2.73e-05,
+   "new_evidence": 0.75,
+   "automated": 0.45,
+   "closing": 0.31
+  },
+  {
+   "issue": "137102",
+   "user": "KoNit-K",
+   "excerpt": "Thanks @PiToTheOneHalvth for [the feedback](https://github.com/NousResearch/hermes-agent/pull/137102#pullrequestreview-5502099291).\n\nThanks for the detailed ver",
+   "ms": 141,
+   "cost": 2.793e-05,
+   "new_evidence": 0.58,
+   "automated": 0.44,
+   "closing": 0.07
+  },
+  {
+   "issue": "101704",
+   "user": "LordMelkor",
+   "excerpt": "\ud83e\udd16 Closing: #101640 was fixed on main by b609c745df, which scopes the config-record cache to the active gateway connection. If the profile-scoped launch window d",
+   "ms": 162,
+   "cost": 1.7556e-05,
+   "new_evidence": 0.12,
+   "automated": 0.25,
+   "closing": 0.93
+  },
+  {
+   "issue": "116508",
+   "user": "LordMelkor",
+   "excerpt": "\ud83e\udd16 Closing: this change landed on main as 6808bca1f4, with follow-ups 7418dcb23b and 38732f7fe2 covering opaque carriers and hydration tests. Nothing left to mer",
+   "ms": 172,
+   "cost": 1.7304e-05,
+   "new_evidence": 0.12,
+   "automated": 0.45,
+   "closing": 0.93
+  },
+  {
+   "issue": "100713",
+   "user": "LordMelkor",
+   "excerpt": "\ud83e\udd16 Closing in favor of #116513, which replaces this approach: it uses a sentinel, so an omitted reasoning_config resolves the configured effort while an explicit",
+   "ms": 175,
+   "cost": 1.7094e-05,
+   "new_evidence": 0.05,
+   "automated": 0.35,
+   "closing": 0.96
+  },
+  {
+   "issue": "67876",
+   "user": "tragicwinds",
+   "excerpt": "Follow-up after running this change in production for a week, in a channel where several bots talk to each other.\n\n`_self_is_explicitly_mentioned` now accepts t",
+   "ms": 174,
+   "cost": 3.0072e-05,
+   "new_evidence": 0.69,
+   "automated": 0.03,
+   "closing": 0.12
+  },
+  {
+   "issue": "63543",
+   "user": "LordMelkor",
+   "excerpt": "\ud83e\udd16 Closing: #20203 was resolved on main by 3910489f78, which adds agent.text_verbosity and sends text.verbosity on Responses requests. Thanks to everyone who rev",
+   "ms": 155,
+   "cost": 1.7094e-05,
+   "new_evidence": 0.1,
+   "automated": 0.6,
+   "closing": 0.9
+  },
+  {
+   "issue": "121095",
+   "user": "tragicwinds",
+   "excerpt": "Some measurements from a Linux install where `browser_exec` runs unattended inside scheduled jobs (each job is a separate `hermes` process that an external sche",
+   "ms": 183,
+   "cost": 3.024e-05,
+   "new_evidence": 0.83,
+   "automated": 0.02,
+   "closing": 0.05
+  },
+  {
+   "issue": "138916",
+   "user": "austinpickett",
+   "excerpt": "Superseded by #139174. Your commit is kept there as is, with credit. On top of it, the payload runtime helpers move into `payload-backend.ts` so the PR clears t",
+   "ms": 176,
+   "cost": 1.7346e-05,
+   "new_evidence": 0.05,
+   "automated": 0.19,
+   "closing": 0.91
+  },
+  {
+   "issue": "139171",
+   "user": "liuhao1024",
+   "excerpt": "Thanks for the triage note. Having compared the two patches, I'm closing this one in favor of #139170: resolving the gate through the adapter's own `_gate_raw` ",
+   "ms": 145,
+   "cost": 1.9992e-05,
+   "new_evidence": 0.05,
+   "automated": 0.04,
+   "closing": 0.97
+  },
+  {
+   "issue": "136635",
+   "user": "djagya",
+   "excerpt": "Rebased onto main after #137502 landed. As suggested there, the parked self-probe now gates on `HermesTokenStorage.credential_stamp()` (plus the remote rebind k",
+   "ms": 226,
+   "cost": 1.8732e-05,
+   "new_evidence": 0.06,
+   "automated": 0.05,
+   "closing": 0.22
+  },
+  {
+   "issue": "139170",
+   "user": "686f6c61",
+   "excerpt": "Reworked in `efdbd16d55` toward the direction #134889 states for this row (`Both must go through one resolver`): the re-authorization now resolves the allowlist",
+   "ms": 206,
+   "cost": 2.1378e-05,
+   "new_evidence": 0.39,
+   "automated": 0.07,
+   "closing": 0.19
+  },
+  {
+   "issue": "139170",
+   "user": "alt-glitch",
+   "excerpt": "> *This was generated by AI during triage.*\n\nRelated competing implementation: this patch follows platform-block normalization before legacy top-level config, w",
+   "ms": 136,
+   "cost": 1.701e-05,
+   "new_evidence": 0.06,
+   "automated": 0.44,
+   "closing": 0.28
+  },
+  {
+   "issue": "139171",
+   "user": "alt-glitch",
+   "excerpt": "> *This was generated by AI during triage.*\n\nRelated competing implementation: #139170 normalizes the platform block before the legacy top-level block, while th",
+   "ms": 196,
+   "cost": 1.7136e-05,
+   "new_evidence": 0.07,
+   "automated": 0.42,
+   "closing": 0.31
+  }
+ ],
+ "usage": {
+  "calls": 40,
+  "ms_median": 175,
+  "cost_usd": 0.00096
+ }
+}

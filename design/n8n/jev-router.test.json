@@ -1,0 +1,406 @@
+{
+ "name": "Route DevOps requests with Jev (smoke test)",
+ "nodes": [
+  {
+   "parameters": {},
+   "name": "Start",
+   "type": "n8n-nodes-base.manualTrigger",
+   "typeVersion": 1,
+   "position": [
+    0,
+    300
+   ],
+   "id": "start"
+  },
+  {
+   "parameters": {
+    "assignments": {
+     "assignments": [
+      {
+       "id": "ch",
+       "name": "channel",
+       "value": "#devops",
+       "type": "string"
+      },
+      {
+       "id": "ms",
+       "name": "message",
+       "value": "deploy to staging has been stuck on 'waiting for runner' for 40 min",
+       "type": "string"
+      }
+     ]
+    },
+    "options": {}
+   },
+   "name": "Message",
+   "type": "n8n-nodes-base.set",
+   "typeVersion": 3.4,
+   "position": [
+    220,
+    300
+   ],
+   "id": "message"
+  },
+  {
+   "parameters": {
+    "method": "POST",
+    "url": "https://openrouter.ai/api/v1/systemone",
+    "sendBody": true,
+    "contentType": "raw",
+    "rawContentType": "application/json",
+    "body": "={{ JSON.stringify({ model: '~typesafe/jev-latest', state: { channel: $json.channel, message: $json.message }, questions: { category: { type: 'choice', instructions: 'Which kind of request is this message?', criteria: {\"modify_infrastructure\": \"A group of requests related to infrastructure modifications. Typically, this involves changes to the architectural characteristics of the system: high availability, scalability, security, cost management, perfromance, operations, etc Main types of requests 1. Changing characteristics of existing resources, changing integrations between resources, scaling, icnresing limits and deleting resources. Examples: - Increase max memory in stateful Valkey - Add the X-Region header to the ingress of our main API - Scale the Redpanda cluster to 5 instances in production - Remove the Meilisearch instance, we no longer use it - Increase the memory limit for bottle-api 2. A request to create, allocate, or configure new standard infrastructure resources, i.e., those that we have already organized in our infrastructure. Creation databases (PostgreSQL, Redpanda, Valkey, ScyllaDB), secrets in Vault, ntopics in Kafka/Redpanda, DNS records, create new git repository, write new github actions workflow, add new alert into Prometheus etc. Examples: - Can you create a Postgres for the new service? - Please add a Vault secret - Can we add battlepass to the stateless Valkey? - We need Redis and Postgres for \", \"incident\": \"Something is broken, down, not working, returning errors. Active production or staging issues. Keywords: broken, down, 500, 502, errors flooding, not working, crashed, fell over, investigate alert. Examples: - Two hours ago we broke the Kafka connection in Vault - Are you changing something? The admin panel is returning 500s - Postgres is down on staging - fetch had inner topic errors from broker - The network on staging is acting up - 502 errors are flooding in - Sentry is down - Sockets have been broken for about an hour - All jobs are stuck on staging - We got a disk space alert - Need to investigate the 500 error issue\", \"question\": \"Asking for information, clarification, checking status. No urgent breakage, just wants to understand or verify something. This must be related to our infrastructure. Keywords: tell me, how does it work, is there docs, can you check, it seems like, I have a feeling, could it be. Examples: - How do pod crash alerts work? - Is there any documentation on domains? - There was an OOM on user-api but no alert came through - Please check the memory on stateful Valkey - It seems like battlepass-api metrics are not being collected - Could it be that the CDN is blocking MP3 files? - Are the ingress settings different between staging and production?\", \"ci_cd_error\": \"CI/CD pipeline failures: builds broken, deployments failing, GitHub Actions issues, builds stuck in queue, timeouts. Examples: - Builds seem to be broken (link to GitHub Actions) - The build is taking very long - Builds are queuing but not running - Staging deployment is failing - CI/CD in Flutter is broken - Builds in pull requests are failing en masse - GitHub CI/CD is not working\", \"new_system\": \"1. Implementing a fundamentally new system or integration. Use the knowledge base to determine whether such a system already exists in our infrastructure. This could be a request to create a vector database that we don't yet have. This could be a request to implement tracing using Grafana Tempo. Examples: - Set up a Qdrant vector database for us - Deploy OpenClaw on a DigitalOcean droplet 2. This could be replacing the current solution with some new one that we haven't had yet. Examples: - We need to replace Nginx Ingress Controller with Envoy API Gateway - Let's migrate from Redis to Valkey\", \"announcement\": \"Notifications about changes related to our infrastructure. For example, work in our cloud provider's Kubernetes cluster on a specific date. Changes in the cost of resources consumed by our infrastructure.\", \"other\": \"Anything that does not clearly fit the above categories.\"} } } }) }}",
+    "options": {},
+    "sendHeaders": true,
+    "headerParameters": {
+     "parameters": [
+      {
+       "name": "Authorization",
+       "value": "=Bearer {{ $env.OPENROUTER_API_KEY }}"
+      }
+     ]
+    }
+   },
+   "name": "Ask Jev",
+   "type": "n8n-nodes-base.httpRequest",
+   "typeVersion": 4.2,
+   "position": [
+    440,
+    300
+   ],
+   "id": "ask-jev"
+  },
+  {
+   "parameters": {
+    "assignments": {
+     "assignments": [
+      {
+       "id": "c",
+       "name": "category",
+       "value": "={{ $json.answers.category.choice }}",
+       "type": "string"
+      },
+      {
+       "id": "f",
+       "name": "confidence",
+       "value": "={{ $json.answers.category.confidence }}",
+       "type": "number"
+      },
+      {
+       "id": "m",
+       "name": "message",
+       "value": "={{ $('Message').item.json.message }}",
+       "type": "string"
+      }
+     ]
+    },
+    "options": {}
+   },
+   "name": "Verdict",
+   "type": "n8n-nodes-base.set",
+   "typeVersion": 3.4,
+   "position": [
+    660,
+    300
+   ],
+   "id": "verdict"
+  },
+  {
+   "parameters": {
+    "conditions": {
+     "options": {
+      "caseSensitive": true,
+      "leftValue": "",
+      "typeValidation": "strict",
+      "version": 2
+     },
+     "conditions": [
+      {
+       "id": "s",
+       "leftValue": "={{ $json.confidence }}",
+       "rightValue": 0.6,
+       "operator": {
+        "type": "number",
+        "operation": "gte"
+       }
+      }
+     ],
+     "combinator": "and"
+    },
+    "options": {}
+   },
+   "name": "Sure?",
+   "type": "n8n-nodes-base.if",
+   "typeVersion": 2.2,
+   "position": [
+    880,
+    300
+   ],
+   "id": "sure?"
+  },
+  {
+   "parameters": {
+    "rules": {
+     "values": [
+      {
+       "outputKey": "modify_infrastructure",
+       "renameOutput": true,
+       "conditions": {
+        "options": {
+         "caseSensitive": true,
+         "leftValue": "",
+         "typeValidation": "strict",
+         "version": 2
+        },
+        "conditions": [
+         {
+          "id": "modify_infrastructure",
+          "leftValue": "={{ $json.category }}",
+          "rightValue": "modify_infrastructure",
+          "operator": {
+           "type": "string",
+           "operation": "equals"
+          }
+         }
+        ],
+        "combinator": "and"
+       }
+      },
+      {
+       "outputKey": "incident",
+       "renameOutput": true,
+       "conditions": {
+        "options": {
+         "caseSensitive": true,
+         "leftValue": "",
+         "typeValidation": "strict",
+         "version": 2
+        },
+        "conditions": [
+         {
+          "id": "incident",
+          "leftValue": "={{ $json.category }}",
+          "rightValue": "incident",
+          "operator": {
+           "type": "string",
+           "operation": "equals"
+          }
+         }
+        ],
+        "combinator": "and"
+       }
+      },
+      {
+       "outputKey": "question",
+       "renameOutput": true,
+       "conditions": {
+        "options": {
+         "caseSensitive": true,
+         "leftValue": "",
+         "typeValidation": "strict",
+         "version": 2
+        },
+        "conditions": [
+         {
+          "id": "question",
+          "leftValue": "={{ $json.category }}",
+          "rightValue": "question",
+          "operator": {
+           "type": "string",
+           "operation": "equals"
+          }
+         }
+        ],
+        "combinator": "and"
+       }
+      },
+      {
+       "outputKey": "ci_cd_error",
+       "renameOutput": true,
+       "conditions": {
+        "options": {
+         "caseSensitive": true,
+         "leftValue": "",
+         "typeValidation": "strict",
+         "version": 2
+        },
+        "conditions": [
+         {
+          "id": "ci_cd_error",
+          "leftValue": "={{ $json.category }}",
+          "rightValue": "ci_cd_error",
+          "operator": {
+           "type": "string",
+           "operation": "equals"
+          }
+         }
+        ],
+        "combinator": "and"
+       }
+      },
+      {
+       "outputKey": "new_system",
+       "renameOutput": true,
+       "conditions": {
+        "options": {
+         "caseSensitive": true,
+         "leftValue": "",
+         "typeValidation": "strict",
+         "version": 2
+        },
+        "conditions": [
+         {
+          "id": "new_system",
+          "leftValue": "={{ $json.category }}",
+          "rightValue": "new_system",
+          "operator": {
+           "type": "string",
+           "operation": "equals"
+          }
+         }
+        ],
+        "combinator": "and"
+       }
+      },
+      {
+       "outputKey": "announcement",
+       "renameOutput": true,
+       "conditions": {
+        "options": {
+         "caseSensitive": true,
+         "leftValue": "",
+         "typeValidation": "strict",
+         "version": 2
+        },
+        "conditions": [
+         {
+          "id": "announcement",
+          "leftValue": "={{ $json.category }}",
+          "rightValue": "announcement",
+          "operator": {
+           "type": "string",
+           "operation": "equals"
+          }
+         }
+        ],
+        "combinator": "and"
+       }
+      },
+      {
+       "outputKey": "other",
+       "renameOutput": true,
+       "conditions": {
+        "options": {
+         "caseSensitive": true,
+         "leftValue": "",
+         "typeValidation": "strict",
+         "version": 2
+        },
+        "conditions": [
+         {
+          "id": "other",
+          "leftValue": "={{ $json.category }}",
+          "rightValue": "other",
+          "operator": {
+           "type": "string",
+           "operation": "equals"
+          }
+         }
+        ],
+        "combinator": "and"
+       }
+      }
+     ]
+    },
+    "options": {}
+   },
+   "name": "Route",
+   "type": "n8n-nodes-base.switch",
+   "typeVersion": 3.2,
+   "position": [
+    1100,
+    200
+   ],
+   "id": "route"
+  },
+  {
+   "parameters": {},
+   "name": "Ask a human",
+   "type": "n8n-nodes-base.noOp",
+   "typeVersion": 1,
+   "position": [
+    1100,
+    420
+   ],
+   "id": "ask-a-human"
+  }
+ ],
+ "connections": {
+  "Start": {
+   "main": [
+    [
+     {
+      "node": "Message",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Message": {
+   "main": [
+    [
+     {
+      "node": "Ask Jev",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Ask Jev": {
+   "main": [
+    [
+     {
+      "node": "Verdict",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Verdict": {
+   "main": [
+    [
+     {
+      "node": "Sure?",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  },
+  "Sure?": {
+   "main": [
+    [
+     {
+      "node": "Route",
+      "type": "main",
+      "index": 0
+     }
+    ],
+    [
+     {
+      "node": "Ask a human",
+      "type": "main",
+      "index": 0
+     }
+    ]
+   ]
+  }
+ },
+ "settings": {
+  "executionOrder": "v1"
+ },
+ "active": false,
+ "id": "jevSmokeTest01"
+}

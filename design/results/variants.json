@@ -1,0 +1,3163 @@
+{
+ "rows": [
+  {
+   "file": "plugins/hermes-bots/screen-pane.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.84,
+   "probabilities": {
+    "ghost": 0.86,
+    "text": 0.01,
+    "textStrong": 0,
+    "outline": 0.02,
+    "secondary": 0.06,
+    "default": 0.05,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={t.screen.reconnect}\n  disabled={conn === 'attaching'}\n  onClick={() => void attach()}\n  size=\"sm\"\n  >\n  <Codicon name=\"refresh\" />\n  </Button>",
+   "ms": 261,
+   "cost": 2.52e-05
+  },
+  {
+   "file": "app/right-sidebar/review/index.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.93,
+   "probabilities": {
+    "ghost": 0.94,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0.01,
+    "secondary": 0.02,
+    "default": 0.03,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={t.rightSidebar.refreshTree}\n  className={ACTION_BTN}\n  onClick={() => void refreshReview()}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"refresh\" size=\"0.8125rem\" spinning={loading} />\n  </Button>",
+   "ms": 283,
+   "cost": 2.583e-05
+  },
+  {
+   "file": "app/chat/composer/status-stack/coding-row.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={s.newBranch}\n  className=\"pointer-events-none size-4 shrink-0 text-muted-foreground/60 opacity-0 transition hover:text-foreground group-hover/status-row:pointer-events-auto group-hover/status-row:opacity-100 group-focus-within/status-row:pointer-events-auto group-focus-within/status-row:opacity-100 data-[state=open]:pointer-events-auto data-[state=open]:opacity-100\"\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"kebab-vertical\" size=\"0.8rem\" />\n  </Button>",
+   "ms": 248,
+   "cost": 2.8938e-05
+  },
+  {
+   "file": "components/assistant-ui/catalog-install-tool.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.65,
+   "probabilities": {
+    "ghost": 0.69,
+    "text": 0.05,
+    "textStrong": 0.08,
+    "outline": 0.05,
+    "secondary": 0.07,
+    "default": 0.05,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  className=\"h-full rounded-none px-2 text-xs font-medium text-primary hover:bg-primary/15 hover:text-primary\"\n  onClick={onInstall}\n  size=\"xs\"\n  >\n  {copy.install}\n  </Button>",
+   "ms": 219,
+   "cost": 2.5284e-05
+  },
+  {
+   "file": "app/chat/composer/url-dialog.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.82,
+   "probabilities": {
+    "ghost": 0.01,
+    "text": 0.84,
+    "textStrong": 0,
+    "outline": 0.03,
+    "secondary": 0.12,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => onOpenChange(false)} type=\"button\">\n  {t.common.cancel}\n  </Button>",
+   "ms": 234,
+   "cost": 2.4066e-05
+  },
+  {
+   "file": "app/capabilities/plugins/plugins-tab.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.97,
+   "probabilities": {
+    "ghost": 0.97,
+    "text": 0.01,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0.02,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={`${p.uninstall}: ${pkg.name}`}\n  className=\"text-(--ui-text-tertiary) hover:text-(--ui-danger,#f87171)\"\n  disabled={busy}\n  onClick={() => onAgentRemove(agent)}\n  size=\"icon\"\n  >\n  <Trash2 className=\"size-3.5\" />\n  </Button>",
+   "ms": 253,
+   "cost": 2.6544e-05
+  },
+  {
+   "file": "app/chat/sidebar/profile-remote-override-dialog.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.55,
+   "probabilities": {
+    "ghost": 0.04,
+    "text": 0.61,
+    "textStrong": 0.01,
+    "outline": 0.06,
+    "secondary": 0.24,
+    "default": 0.04,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button disabled={saving} onClick={() => setConfirming(false)} type=\"button\">\n  {p.confirmBack}\n  </Button>",
+   "ms": 233,
+   "cost": 2.4444e-05
+  },
+  {
+   "file": "app/chat/sidebar/gateway-groups.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.73,
+   "probabilities": {
+    "ghost": 0.01,
+    "text": 0.76,
+    "textStrong": 0,
+    "outline": 0.03,
+    "secondary": 0.19,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => setRenaming(false)} type=\"button\">\n  {t.common.cancel}\n  </Button>",
+   "ms": 228,
+   "cost": 2.4066e-05
+  },
+  {
+   "file": "plugins/hermes-bots/cron.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.9,
+   "probabilities": {
+    "ghost": 0.91,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0.01,
+    "secondary": 0.02,
+    "default": 0.06,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button aria-label={c.newCron} onClick={openCreate} size=\"icon-xs\">\n  <Codicon name=\"add\" />\n  </Button>",
+   "ms": 159,
+   "cost": 2.4402e-05
+  },
+  {
+   "file": "components/assistant-ui/catalog-install-tool.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.58,
+   "probabilities": {
+    "ghost": 0.63,
+    "text": 0.34,
+    "textStrong": 0.01,
+    "outline": 0.01,
+    "secondary": 0.01,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"h-6 px-1.5 text-(--ui-text-tertiary)\"\n  disabled={sending}\n  loading={sending}\n  onClick={onRetry}\n  size=\"xs\"\n  >\n  {retryLabel}\n  </Button>",
+   "ms": 188,
+   "cost": 2.5536e-05
+  },
+  {
+   "file": "app/chat/composer/model-pill.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.15,
+   "probabilities": {
+    "ghost": 0.26,
+    "text": 0.18,
+    "textStrong": 0.09,
+    "outline": 0.15,
+    "secondary": 0.24,
+    "default": 0.08,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={copy.openModelPicker}\n  className={pillClass}\n  data-tour={tourMarker}\n  disabled={disabled}\n  onClick={() => setModelPickerOpen(true)}\n  type=\"button\"\n  >\n  {label}\n  </Button>",
+   "ms": 199,
+   "cost": 2.562e-05
+  },
+  {
+   "file": "app/chat/sidebar/session-row.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={r.sessionActions}\n  className={cn(\n  'size-5 rounded-[4px] bg-transparent text-transparent transition-colors duration-100 hover:bg-(--ui-control-active-background) hover:text-foreground focus-visible:bg-(--ui-control-active-background) focus-visible:text-foreground focus-visible:ring-0 data-[state=open]:bg-(--ui-control-active-background) data-[state=open]:text-foreground group-hover:text-(--ui-text-tertiary) [&_svg]:size-3.5!',\n  trailing.length > 0 && 'absolute right-0',\n  pr && KEBAB_YIELDS\n  )}\n  size=\"icon\"\n  >\n  <Codicon name=\"kebab-vertical\" size=\"0.875rem\" />\n  </Button>",
+   "ms": 210,
+   "cost": 3.0618e-05
+  },
+  {
+   "file": "app/overlays/overlay-view.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={closeLabel}\n  className=\"text-(--ui-text-tertiary) hover:bg-(--chrome-action-hover) hover:text-foreground\"\n  onClick={closeOverlay}\n  size=\"icon-titlebar\"\n  >\n  <TitlebarIcon name=\"close\" />\n  </Button>",
+   "ms": 158,
+   "cost": 2.6208e-05
+  },
+  {
+   "file": "app/chat/sidebar/chrome.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.97,
+   "probabilities": {
+    "ghost": 0.97,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0.01,
+    "secondary": 0.01,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={ariaLabel}\n  className={HEADER_ACTION_BTN}\n  onClick={event => {\n  event.stopPropagation()\n  onPlainClick()\n  }}\n  onPointerDown={\n  onNewProjectDrag\n  ? event => {\n  startNewProjectDrag(onNewProjectDrag.onArm, event, { onTap: onPlainClick })\n  }\n  : onNewSessionSplit\n  ? event => {\n  startNewSessionDrag(placement => {\n  onNewSessionSplit(placement.dir, { anchor: placement.anchor, before: placement.before })\n  }, event)\n  }\n  : undefined\n  }\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"add\" size=\"0.75rem\" />\n  </Button>",
+   "ms": 182,
+   "cost": 3.0744e-05
+  },
+  {
+   "file": "plugins/hermes-bots/avatar-picker.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.67,
+   "probabilities": {
+    "ghost": 0.71,
+    "text": 0.01,
+    "textStrong": 0.01,
+    "outline": 0.05,
+    "secondary": 0.16,
+    "default": 0.06,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  onClick={() => onShape(blobShapeString(locked ? '' : pickerName, kind))}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <Codicon className=\"mr-1 text-[0.8rem]\" name={locked ? 'unlock' : 'lock'} />\n  {locked ? b.editor.unlock : b.editor.lockFace}\n  </Button>",
+   "ms": 164,
+   "cost": 2.6628e-05
+  },
+  {
+   "file": "plugins/hermes-bots/group-chat-view.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={b.group.removeAttachment}\n  onClick={() => removeImage(thread, index)}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"close\" />\n  </Button>",
+   "ms": 181,
+   "cost": 2.5074e-05
+  },
+  {
+   "file": "app/right-sidebar/files/remote-picker.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.35,
+   "probabilities": {
+    "ghost": 0.43,
+    "text": 0.09,
+    "textStrong": 0.02,
+    "outline": 0.07,
+    "secondary": 0.24,
+    "default": 0.15,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  disabled={newFolderName !== null || Boolean(error)}\n  onClick={() => setNewFolderName('')}\n  size=\"sm\"\n  >\n  <Codicon name=\"new-folder\" size=\"0.875rem\" />\n  {r.remotePickerNewFolder}\n  </Button>",
+   "ms": 204,
+   "cost": 2.5872e-05
+  },
+  {
+   "file": "app/chat/sidebar/index.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.98,
+   "probabilities": {
+    "ghost": 0.98,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0.01,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={s.markAllRead}\n  className={HEADER_ACTION_BTN}\n  onClick={event => {\n  event.stopPropagation()\n  markAllSessionsRead()\n  // Ack the persisted layer too, or the next list\n  // refresh repaints every dot just dismissed.\n  ackAllSessionsRead()\n  }}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"check-all\" size=\"0.75rem\" />\n  </Button>",
+   "ms": 160,
+   "cost": 2.7426e-05
+  },
+  {
+   "file": "plugins/hermes-bots/roster-pane-groups.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={`${rowProps.group}: ${delta === -1 ? b.sections.moveUp : b.sections.moveDown}`}\n  disabled={!reorderGroupRows(sortedGroupRows, rowProps.group, delta)}\n  onClick={() => moveRoom(rowProps.group, delta)}\n  size=\"icon-xs\"\n  >\n  <Codicon name={delta === -1 ? 'chevron-up' : 'chevron-down'} />\n  </Button>",
+   "ms": 174,
+   "cost": 2.73e-05
+  },
+  {
+   "file": "plugins/kanban/board.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.47,
+   "probabilities": {
+    "ghost": 0.54,
+    "text": 0.02,
+    "textStrong": 0.03,
+    "outline": 0.07,
+    "secondary": 0.22,
+    "default": 0.12,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button disabled={busy} size=\"xs\">\n  {k.moveToShort}\n  <Codicon name=\"chevron-down\" size=\"0.7rem\" />\n  </Button>",
+   "ms": 349,
+   "cost": 2.4612e-05
+  },
+  {
+   "file": "app/chat/composer/voice-menu.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={triggerLabel}\n  className={cn(GHOST_ICON_BTN, 'p-0', active && ACTIVE_ICON_BTN)}\n  disabled={disabled}\n  size=\"icon\"\n  type=\"button\"\n  >\n  {voiceStatus === 'recording' ? (\n  <Square className={cn('fill-current', iconSize.xs)} />\n  ) : voiceStatus === 'transcribing' ? (\n  <Loader2 className={cn('animate-spin', iconSize.sm)} />\n  ) : wakeListening ? (\n  <Ear className={iconSize.sm} />\n  ) : (\n  <Codicon name=\"mic\" size=\"0.875rem\" />\n  )}\n  </Button>",
+   "ms": 189,
+   "cost": 3.0072e-05
+  },
+  {
+   "file": "components/external-open-failed-dialog.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.59,
+   "probabilities": {
+    "ghost": 0.13,
+    "text": 0.64,
+    "textStrong": 0.02,
+    "outline": 0.02,
+    "secondary": 0.14,
+    "default": 0.05,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => setFailure(null)}>\n  {copy.close}\n  </Button>",
+   "ms": 184,
+   "cost": 2.3856e-05
+  },
+  {
+   "file": "app/chat/composer/index.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.61,
+   "probabilities": {
+    "ghost": 0.08,
+    "text": 0.66,
+    "textStrong": 0,
+    "outline": 0.15,
+    "secondary": 0.1,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"h-6 rounded-md px-2 text-[0.68rem]\"\n  onClick={() => exitQueuedEdit('cancel')}\n  type=\"button\"\n  >\n  {t.common.cancel}\n  </Button>",
+   "ms": 152,
+   "cost": 2.5158e-05
+  },
+  {
+   "file": "app/right-sidebar/files/remote-picker.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.87,
+   "probabilities": {
+    "ghost": 0.89,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0.02,
+    "secondary": 0.03,
+    "default": 0.06,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={r.remotePickerCreateFolder}\n  disabled={creating}\n  onClick={() => void createFolder()}\n  size=\"icon-xs\"\n  >\n  <Codicon name={creating ? 'loading' : 'check'} size=\"0.875rem\" spinning={creating} />\n  </Button>",
+   "ms": 234,
+   "cost": 2.6082e-05
+  },
+  {
+   "file": "components/assistant-ui/catalog-install-tool.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.67,
+   "probabilities": {
+    "ghost": 0.27,
+    "text": 0.71,
+    "textStrong": 0,
+    "outline": 0.01,
+    "secondary": 0.01,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button className=\"h-6 px-1.5 text-(--ui-text-tertiary)\" onClick={onSkip} size=\"xs\">\n  {copy.skip}\n  </Button>",
+   "ms": 176,
+   "cost": 2.478e-05
+  },
+  {
+   "file": "app/right-sidebar/review/ship-bar.tsx",
+   "truth": "ghost",
+   "pick": "textStrong",
+   "confidence": 0.29,
+   "probabilities": {
+    "ghost": 0.08,
+    "text": 0.28,
+    "textStrong": 0.38,
+    "outline": 0.03,
+    "secondary": 0.09,
+    "default": 0.1,
+    "destructive": 0,
+    "link": 0.04
+   },
+   "jsx": "<Button\n  className=\"min-w-0 flex-1 justify-center px-7 text-[0.7rem] text-muted-foreground/85 hover:text-foreground\"\n  disabled={!hasFiles}\n  onClick={() => {\n  if (!requestComposerSubmit(c.agentShipPrompt, { target: scopeTarget })) {\n  notifyError(new Error(c.agentShipUnavailable), c.agentShip)\n  }\n  }}\n  size=\"sm\"\n  >\n  <span className=\"truncate underline underline-offset-2\">{c.agentShip}</span>\n  </Button>",
+   "ms": 198,
+   "cost": 2.8938e-05
+  },
+  {
+   "file": "app/settings/connections-registry.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={s.editConnection}\n  onClick={() => openEditor(editorFromConnection(conn), conn)}\n  size=\"icon-sm\"\n  >\n  <Pencil className=\"size-3.5\" />\n  </Button>",
+   "ms": 168,
+   "cost": 2.562e-05
+  },
+  {
+   "file": "app/chat/composer/start-voice-button.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={t.composer.voiceEngine}\n  className={cn(GHOST_ICON_BTN, 'w-5 rounded-l-none p-0')}\n  disabled={disabled}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <ChevronDown className={iconSize.xs} />\n  </Button>",
+   "ms": 184,
+   "cost": 2.6124e-05
+  },
+  {
+   "file": "app/chat/composer/status-stack/session-control-goal.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={ctrl.copyCriterion(index)}\n  className=\"size-6 rounded text-muted-foreground/60 hover:text-foreground/90\"\n  onClick={() => void copyCriterionText(subgoal)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"copy\" size=\"0.7rem\" />\n  </Button>",
+   "ms": 152,
+   "cost": 2.7006e-05
+  },
+  {
+   "file": "app/settings/providers-settings.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.82,
+   "probabilities": {
+    "ghost": 0.84,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0.16,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={`${copy.disconnect} ${title}`}\n  onClick={() => onTerminalDisconnect(provider)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Trash2 className=\"size-3\" />\n  </Button>",
+   "ms": 183,
+   "cost": 2.5158e-05
+  },
+  {
+   "file": "components/pane-shell/tree/renderer/edit-bar.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.55,
+   "probabilities": {
+    "ghost": 0.61,
+    "text": 0.14,
+    "textStrong": 0.02,
+    "outline": 0.06,
+    "secondary": 0.13,
+    "default": 0.03,
+    "destructive": 0.01,
+    "link": 0
+   },
+   "jsx": "<Button onClick={resetLayoutTree} size=\"sm\">\n  {t.zones.reset}\n  </Button>",
+   "ms": 144,
+   "cost": 2.415e-05
+  },
+  {
+   "file": "app/pet-generate/components/hatch-preview.tsx",
+   "truth": "ghost",
+   "pick": "secondary",
+   "confidence": 0.15,
+   "probabilities": {
+    "ghost": 0.23,
+    "text": 0.2,
+    "textStrong": 0.01,
+    "outline": 0.11,
+    "secondary": 0.26,
+    "default": 0.08,
+    "destructive": 0.1,
+    "link": 0.01
+   },
+   "jsx": "<Button disabled={adopting} onClick={onDiscard}>\n  <RefreshCw />\n  {copy.startOver}\n  </Button>",
+   "ms": 186,
+   "cost": 2.457e-05
+  },
+  {
+   "file": "app/starmap/share-controls.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.99,
+   "probabilities": {
+    "ghost": 0.99,
+    "text": 0.01,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={t.starmap.shareTitle}\n  className=\"text-muted-foreground hover:text-foreground\"\n  size=\"icon\"\n  >\n  <Upload className=\"size-3.5\" />\n  </Button>",
+   "ms": 176,
+   "cost": 2.5368e-05
+  },
+  {
+   "file": "app/settings/model-settings.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.74,
+   "probabilities": {
+    "ghost": 0.04,
+    "text": 0.77,
+    "textStrong": 0,
+    "outline": 0.05,
+    "secondary": 0.13,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => setEditingAuxTask(null)} size=\"sm\">\n  {t.common.cancel}\n  </Button>",
+   "ms": 220,
+   "cost": 2.4066e-05
+  },
+  {
+   "file": "plugins/kanban/board.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.43,
+   "probabilities": {
+    "ghost": 0.5,
+    "text": 0.13,
+    "textStrong": 0.03,
+    "outline": 0.03,
+    "secondary": 0.08,
+    "default": 0.04,
+    "destructive": 0.18,
+    "link": 0.01
+   },
+   "jsx": "<Button disabled={busy} onClick={() => bulk.mutate({ archive: true })} size=\"xs\">\n  {k.archive}\n  </Button>",
+   "ms": 147,
+   "cost": 2.4318e-05
+  },
+  {
+   "file": "app/messaging/allowlist-field.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.97,
+   "probabilities": {
+    "ghost": 0.97,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0.03,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={m.removeListEntry}\n  className=\"size-8 shrink-0\"\n  disabled={lone}\n  onClick={() => remove(row.id)}\n  >\n  <X className=\"size-3.5\" />\n  </Button>",
+   "ms": 973,
+   "cost": 2.5536e-05
+  },
+  {
+   "file": "components/onboarding/index.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={t.common.close}\n  className=\"absolute right-3 top-3 z-10 text-(--ui-text-tertiary) hover:bg-(--chrome-action-hover) hover:text-foreground\"\n  onClick={() => closeManualOnboarding()}\n  size=\"icon-sm\"\n  >\n  <Codicon name=\"close\" size=\"1rem\" />\n  </Button>",
+   "ms": 274,
+   "cost": 2.6712e-05
+  },
+  {
+   "file": "app/chat/composer/status-stack/session-control-goal.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={ctrl.removeCriterion(index)}\n  className=\"size-6 rounded text-muted-foreground/60 hover:text-destructive\"\n  disabled={isBusy}\n  onClick={() => confirmRemoveCriterion(index)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"close\" size=\"0.7rem\" />\n  </Button>",
+   "ms": 146,
+   "cost": 2.6964e-05
+  },
+  {
+   "file": "app/profiles/create-profile-dialog.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.57,
+   "probabilities": {
+    "ghost": 0.02,
+    "text": 0.62,
+    "textStrong": 0,
+    "outline": 0.04,
+    "secondary": 0.31,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button disabled={busy} onClick={onClose} type=\"button\">\n  {t.common.cancel}\n  </Button>",
+   "ms": 186,
+   "cost": 2.4066e-05
+  },
+  {
+   "file": "app/chat/sidebar/profile-switcher.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.61,
+   "probabilities": {
+    "ghost": 0.03,
+    "text": 0.66,
+    "textStrong": 0,
+    "outline": 0.05,
+    "secondary": 0.25,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button disabled={saving} onClick={onClose} type=\"button\">\n  {t.common.cancel}\n  </Button>",
+   "ms": 169,
+   "cost": 2.4108e-05
+  },
+  {
+   "file": "plugins/kanban/drawer.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button aria-label={k.close} onClick={onClose} size=\"icon-xs\">\n  <Codicon name=\"close\" />\n  </Button>",
+   "ms": 296,
+   "cost": 2.436e-05
+  },
+  {
+   "file": "app/capabilities/plugins/plugins-tab.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.97,
+   "probabilities": {
+    "ghost": 0.97,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0.01,
+    "secondary": 0.01,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={d.rescan}\n  onClick={() => {\n  triggerHaptic('selection')\n  void rescanAll(requestGateway, scope)\n  }}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <RefreshCw className=\"size-3.5\" />\n  </Button>",
+   "ms": 162,
+   "cost": 2.6082e-05
+  },
+  {
+   "file": "plugins/hermes-bots/avatar-picker.tsx",
+   "truth": "ghost",
+   "pick": "destructive",
+   "confidence": 0.43,
+   "probabilities": {
+    "ghost": 0.19,
+    "text": 0.25,
+    "textStrong": 0.01,
+    "outline": 0.02,
+    "secondary": 0.03,
+    "default": 0,
+    "destructive": 0.5,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => onImage(null)} size=\"sm\" type=\"button\">\n  {b.avatar.removeImage}\n  </Button>",
+   "ms": 175,
+   "cost": 2.4318e-05
+  },
+  {
+   "file": "components/prompt-overlays.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.39,
+   "probabilities": {
+    "ghost": 0.01,
+    "text": 0.47,
+    "textStrong": 0,
+    "outline": 0.07,
+    "secondary": 0.38,
+    "default": 0.03,
+    "destructive": 0.04,
+    "link": 0
+   },
+   "jsx": "<Button disabled={submitting} onClick={() => void send('')} type=\"button\">\n  {copy.vaultSaveDecline}\n  </Button>",
+   "ms": 162,
+   "cost": 2.436e-05
+  },
+  {
+   "file": "components/chat/log-search.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={t.findInPage[direction]}\n  className=\"size-5 shrink-0 text-muted-foreground/85 hover:bg-accent/60 hover:text-foreground\"\n  disabled={search.hits.length === 0}\n  onClick={search[direction]}\n  size=\"icon-xs\"\n  >\n  <Icon className=\"size-3.5\" />\n  </Button>",
+   "ms": 158,
+   "cost": 2.6922e-05
+  },
+  {
+   "file": "app/settings/memory/provider-config-modal.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.77,
+   "probabilities": {
+    "ghost": 0.02,
+    "text": 0.8,
+    "textStrong": 0,
+    "outline": 0.04,
+    "secondary": 0.13,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button size=\"sm\" type=\"button\">\n  Cancel\n  </Button>",
+   "ms": 157,
+   "cost": 2.3646e-05
+  },
+  {
+   "file": "app/overlays/overlay-split-layout.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-controls={childrenId}\n  aria-expanded={expanded}\n  aria-label={`${expanded ? t.common.collapse : t.common.expand}: ${group.label}`}\n  className=\"absolute right-0.5 top-1/2 -translate-y-1/2\"\n  data-tour={`nav-toggle-${group.id}`}\n  onClick={() => setDisclosures(previous => ({ ...previous, [group.id]: !expanded }))}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <DisclosureCaret open={expanded} />\n  </Button>",
+   "ms": 539,
+   "cost": 2.8224e-05
+  },
+  {
+   "file": "components/prompt-overlays.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.7,
+   "probabilities": {
+    "ghost": 0.01,
+    "text": 0.74,
+    "textStrong": 0,
+    "outline": 0.05,
+    "secondary": 0.19,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button disabled={submitting} onClick={() => void send('')} type=\"button\">\n  {t.common.cancel}\n  </Button>",
+   "ms": 184,
+   "cost": 2.4192e-05
+  },
+  {
+   "file": "app/settings/local-models-model-rows.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.9,
+   "probabilities": {
+    "ghost": 0.91,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0.09,
+    "link": 0
+   },
+   "jsx": "<Button\n  className={cn(deleting && '[&_svg]:animate-spin')}\n  onClick={() => void handleDelete()}\n  size=\"icon\"\n  >\n  {deleting ? <Loader2 /> : <Trash2 />}\n  </Button>",
+   "ms": 159,
+   "cost": 2.5368e-05
+  },
+  {
+   "file": "plugins/hermes-bots/create-dialog.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.81,
+   "probabilities": {
+    "ghost": 0.01,
+    "text": 0.83,
+    "textStrong": 0,
+    "outline": 0.02,
+    "secondary": 0.13,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  disabled={busy}\n  onClick={() => {\n  discardDraft()\n  reset()\n  onClose()\n  }}\n  >\n  {t.common.cancel}\n  </Button>",
+   "ms": 164,
+   "cost": 2.4738e-05
+  },
+  {
+   "file": "app/messaging/telegram-qr-setup.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.62,
+   "probabilities": {
+    "ghost": 0.03,
+    "text": 0.67,
+    "textStrong": 0,
+    "outline": 0.06,
+    "secondary": 0.23,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => void cancel()} size=\"sm\">\n  {t.common.cancel}\n  </Button>",
+   "ms": 166,
+   "cost": 2.4108e-05
+  },
+  {
+   "file": "app/chat/composer/status-stack/session-control-goal.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.78,
+   "probabilities": {
+    "ghost": 0.01,
+    "text": 0.81,
+    "textStrong": 0,
+    "outline": 0.05,
+    "secondary": 0.12,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button disabled={isBusy} onClick={() => setAddCriterionOpen(false)} type=\"button\">\n  {t.common.cancel}\n  </Button>",
+   "ms": 147,
+   "cost": 2.4528e-05
+  },
+  {
+   "file": "app/overlays/overlay-chrome.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className={cn('text-(--ui-text-tertiary) hover:bg-(--chrome-action-hover) hover:text-foreground', className)}\n  size=\"icon-titlebar\"\n  type={type}\n  {...props}\n  >\n  {children}\n  </Button>",
+   "ms": 150,
+   "cost": 2.5746e-05
+  },
+  {
+   "file": "components/free-tier/sign-in-dialog.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.68,
+   "probabilities": {
+    "ghost": 0.05,
+    "text": 0.72,
+    "textStrong": 0,
+    "outline": 0.04,
+    "secondary": 0.18,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => closeFreeTierSignIn()} size=\"sm\" type=\"button\">\n  {t.common.cancel}\n  </Button>",
+   "ms": 182,
+   "cost": 2.4234e-05
+  },
+  {
+   "file": "components/desktop-install-overlay.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.37,
+   "probabilities": {
+    "ghost": 0.09,
+    "text": 0.45,
+    "textStrong": 0.01,
+    "outline": 0.11,
+    "secondary": 0.2,
+    "default": 0.06,
+    "destructive": 0.08,
+    "link": 0
+   },
+   "jsx": "<Button\n  disabled={cancelling}\n  onClick={async () => {\n  setCancelling(true)\n  try {\n  await window.hermesDesktop?.cancelBootstrap?.()\n  } catch {\n  // ignore -- the failed/cancelled event will surface the result\n  }\n  }}\n  size=\"sm\"\n  >\n  {cancelling ? <Loader className=\"size-4\" type=\"fourier-flow\" /> : null}\n  {cancelling ? copy.cancelling : copy.cancelInstall}\n  </Button>",
+   "ms": 217,
+   "cost": 2.8182e-05
+  },
+  {
+   "file": "app/capabilities/plugins/plugins-tab.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={d.openFolder}\n  onClick={() => void revealPluginsDir()}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <FolderOpen className=\"size-3.5\" />\n  </Button>",
+   "ms": 148,
+   "cost": 2.541e-05
+  },
+  {
+   "file": "app/chat/composer/restored-draft-notice.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.19,
+   "probabilities": {
+    "ghost": 0.19,
+    "text": 0.29,
+    "textStrong": 0.06,
+    "outline": 0.2,
+    "secondary": 0.19,
+    "default": 0.04,
+    "destructive": 0.02,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  className=\"h-6 rounded-md px-2 text-[0.68rem]\"\n  onClick={() => {\n  if (undoRestoredDraft(readLiveText())) {\n  onUndone()\n  }\n  }}\n  type=\"button\"\n  >\n  {t.composer.restoredDraftUndo}\n  </Button>",
+   "ms": 211,
+   "cost": 2.6208e-05
+  },
+  {
+   "file": "app/artifacts/index.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={refreshing ? a.refreshing : a.refresh}\n  className=\"text-(--ui-text-tertiary) hover:bg-(--chrome-action-hover) hover:text-foreground\"\n  disabled={refreshing}\n  onClick={() => void refreshArtifacts()}\n  size=\"icon-titlebar\"\n  >\n  {refreshing ? <TitlebarIcon name=\"loading\" spinning /> : <TitlebarIcon name=\"refresh\" />}\n  </Button>",
+   "ms": 167,
+   "cost": 2.7636e-05
+  },
+  {
+   "file": "components/model-visibility-dialog.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.95,
+   "probabilities": {
+    "ghost": 0.96,
+    "text": 0.01,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0.03,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={copy.removeCustomModel}\n  className=\"-my-1 text-(--ui-text-tertiary)\"\n  onClick={event => {\n  event.preventDefault()\n  removeCustomModel(provider.slug, family.id)\n  }}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <X className=\"size-3\" />\n  </Button>",
+   "ms": 196,
+   "cost": 2.6586e-05
+  },
+  {
+   "file": "components/pane-shell/tree/zone-editor.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.63,
+   "probabilities": {
+    "ghost": 0.03,
+    "text": 0.68,
+    "textStrong": 0,
+    "outline": 0.07,
+    "secondary": 0.2,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => $zoneEditorOpen.set(false)} size=\"sm\">\n  {t.common.cancel}\n  </Button>",
+   "ms": 164,
+   "cost": 2.4276e-05
+  },
+  {
+   "file": "components/notifications.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={copy.dismiss}\n  className=\"col-start-3 -mr-1 text-muted-foreground\"\n  disabled={stack.busy || !stack.active}\n  onClick={() => {\n  void stack.depart(() => userDismiss(notification.id))\n  }}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"close\" size=\"0.875rem\" />\n  </Button>",
+   "ms": 170,
+   "cost": 2.6922e-05
+  },
+  {
+   "file": "app/chat/right-rail/real-profile-consent-dialog.tsx",
+   "truth": "ghost",
+   "pick": "text",
+   "confidence": 0.5,
+   "probabilities": {
+    "ghost": 0.04,
+    "text": 0.5599999999999999,
+    "textStrong": 0.01,
+    "outline": 0.07,
+    "secondary": 0.27,
+    "default": 0.04,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button disabled={busy} onClick={() => $realProfilePromptMuted.set(true)} type=\"button\">\n  {prompt.notNow}\n  </Button>",
+   "ms": 154,
+   "cost": 2.4612e-05
+  },
+  {
+   "file": "app/chat/sidebar/index.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.98,
+   "probabilities": {
+    "ghost": 0.98,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0.01,
+    "secondary": 0.01,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={s.showProjects}\n  className={HEADER_NAV_BTN}\n  onClick={event => {\n  event.stopPropagation()\n  exitProjectScope()\n  }}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"list-unordered\" size=\"0.75rem\" />\n  </Button>",
+   "ms": 178,
+   "cost": 2.6166e-05
+  },
+  {
+   "file": "app/chat/composer/controls.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 1,
+   "probabilities": {
+    "ghost": 1,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={t.titlebar.exitHud}\n  className={cn(GHOST_ICON_BTN, 'p-0')}\n  onClick={closeHud}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <Codicon name=\"screen-normal\" size=\"0.875rem\" />\n  </Button>",
+   "ms": 164,
+   "cost": 2.6124e-05
+  },
+  {
+   "file": "app/settings/connections-registry.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.92,
+   "probabilities": {
+    "ghost": 0.93,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0.07,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={s.removeConnection}\n  disabled={busy}\n  onClick={() => setRemoveTarget(conn)}\n  size=\"icon-sm\"\n  >\n  {busy ? <Loader2 className=\"animate-spin\" /> : <Trash2 />}\n  </Button>",
+   "ms": 193,
+   "cost": 2.5662e-05
+  },
+  {
+   "file": "app/capabilities/plugins/plugins-tab.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.99,
+   "probabilities": {
+    "ghost": 0.99,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0.01,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => reveal(desktop.file!)} size=\"icon\">\n  <Codicon name=\"folder-opened\" size=\"0.85rem\" />\n  </Button>",
+   "ms": 182,
+   "cost": 2.4738e-05
+  },
+  {
+   "file": "app/settings/providers-settings.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.86,
+   "probabilities": {
+    "ghost": 0.88,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0.12,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={`${t.common.remove} ${title}`}\n  disabled={disconnecting}\n  onClick={() => onDisconnect(provider)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  {disconnecting ? <Loader2 className=\"size-3 animate-spin\" /> : <Trash2 className=\"size-3\" />}\n  </Button>",
+   "ms": 199,
+   "cost": 2.6334e-05
+  },
+  {
+   "file": "app/shell/titlebar-controls.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.99,
+   "probabilities": {
+    "ghost": 0.99,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button asChild className={className} size=\"icon-titlebar\">\n  <a\n  aria-label={tool.label}\n  data-tour={tool.tour}\n  href={tool.href}\n  onPointerDown={event => event.stopPropagation()}\n  rel=\"noreferrer\"\n  target=\"_blank\"\n  >\n  {withCountBadge(tool.icon, tool.badge)}\n  </a>\n  </Button>",
+   "ms": 166,
+   "cost": 2.7132e-05
+  },
+  {
+   "file": "app/shell/gateway-menu-panel.tsx",
+   "truth": "ghost",
+   "pick": "ghost",
+   "confidence": 0.99,
+   "probabilities": {
+    "ghost": 0.99,
+    "text": 0.01,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={copy.reconnectGateway}\n  className=\"text-muted-foreground hover:text-foreground\"\n  disabled={reconnecting}\n  onClick={reconnect}\n  size=\"icon-xs\"\n  >\n  <RefreshCw className={cn(reconnecting && 'animate-spin')} />\n  </Button>",
+   "ms": 168,
+   "cost": 2.646e-05
+  },
+  {
+   "file": "plugins/kanban/board.tsx",
+   "truth": "ghost",
+   "pick": "destructive",
+   "confidence": 0.59,
+   "probabilities": {
+    "ghost": 0.24,
+    "text": 0.11,
+    "textStrong": 0.01,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0.64,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"text-destructive\"\n  disabled={busy}\n  onClick={() => bulkDelete.mutate()}\n  size=\"xs\"\n  >\n  {k.delete}\n  </Button>",
+   "ms": 163,
+   "cost": 2.4822e-05
+  },
+  {
+   "file": "app/capabilities/skills/skills-tab.tsx",
+   "truth": "text",
+   "pick": "default",
+   "confidence": 0.63,
+   "probabilities": {
+    "ghost": 0.07,
+    "text": 0.04,
+    "textStrong": 0.02,
+    "outline": 0.04,
+    "secondary": 0.14,
+    "default": 0.68,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button disabled={installing} onClick={() => handleInstallOfficial(skill)} size=\"xs\">\n  {installing && <Loader2 className=\"size-3 animate-spin\" />}\n  {installing ? t.skills.hub.installing : t.skills.hub.install}\n  </Button>",
+   "ms": 156,
+   "cost": 2.5956e-05
+  },
+  {
+   "file": "plugins/hermes-bots/skills-hub.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.45,
+   "probabilities": {
+    "ghost": 0.52,
+    "text": 0.48,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"text-[0.65rem] text-(--ui-text-quaternary) hover:text-(--ui-text-secondary)\"\n  onClick={() => setBrowseHub(v => !v)}\n  size=\"inline\"\n  >\n  {browseHub ? h.pickerHide : h.pickerBrowse}\n  </Button>",
+   "ms": 221,
+   "cost": 2.6208e-05
+  },
+  {
+   "file": "components/onboarding/index.tsx",
+   "truth": "text",
+   "pick": "text",
+   "confidence": 0.18,
+   "probabilities": {
+    "ghost": 0.24,
+    "text": 0.28,
+    "textStrong": 0.04,
+    "outline": 0.1,
+    "secondary": 0.19,
+    "default": 0.12,
+    "destructive": 0,
+    "link": 0.03
+   },
+   "jsx": "<Button\n  onClick={() => void onDismiss(() => startManualOnboarding(null))}\n  size=\"xs\"\n  type=\"button\"\n  >\n  {copy.otherProviders}\n  </Button>",
+   "ms": 198,
+   "cost": 2.499e-05
+  },
+  {
+   "file": "app/settings/sessions-settings.tsx",
+   "truth": "text",
+   "pick": "text",
+   "confidence": 0.62,
+   "probabilities": {
+    "ghost": 0.11,
+    "text": 0.67,
+    "textStrong": 0.01,
+    "outline": 0.03,
+    "secondary": 0.07,
+    "default": 0.02,
+    "destructive": 0.09,
+    "link": 0
+   },
+   "jsx": "<Button disabled={busy} onClick={() => void clear()} size=\"sm\" type=\"button\">\n  {s.clear}\n  </Button>",
+   "ms": 169,
+   "cost": 2.4192e-05
+  },
+  {
+   "file": "app/settings/computer-use-panel.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.43,
+   "probabilities": {
+    "ghost": 0.5,
+    "text": 0.05,
+    "textStrong": 0.03,
+    "outline": 0.1,
+    "secondary": 0.25,
+    "default": 0.07,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => void refresh()} size=\"sm\">\n  <RefreshCw className=\"size-3.5\" />\n  Recheck\n  </Button>",
+   "ms": 158,
+   "cost": 2.4528e-05
+  },
+  {
+   "file": "app/capabilities/connectors/connectors-directory.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.22,
+   "probabilities": {
+    "ghost": 0.32,
+    "text": 0.28,
+    "textStrong": 0.05,
+    "outline": 0.01,
+    "secondary": 0.01,
+    "default": 0,
+    "destructive": 0.32,
+    "link": 0.01
+   },
+   "jsx": "<Button className=\"text-destructive\" onClick={onRetryHosted} size=\"xs\">\n  {copy.page.retry}\n  </Button>",
+   "ms": 154,
+   "cost": 2.4612e-05
+  },
+  {
+   "file": "app/capabilities/skills/embedded-hub-picker.tsx",
+   "truth": "text",
+   "pick": "default",
+   "confidence": 0.54,
+   "probabilities": {
+    "ghost": 0.06,
+    "text": 0.04,
+    "textStrong": 0.03,
+    "outline": 0.04,
+    "secondary": 0.22,
+    "default": 0.6,
+    "destructive": 0.01,
+    "link": 0
+   },
+   "jsx": "<Button disabled={updating} onClick={updateAll} size=\"xs\">\n  {updating && <Loader2 className=\"size-3 animate-spin\" />}\n  {updating ? h.updating : h.updateAll}\n  </Button>",
+   "ms": 204,
+   "cost": 2.562e-05
+  },
+  {
+   "file": "app/chat/composer/status-stack/session-control-goal.tsx",
+   "truth": "text",
+   "pick": "text",
+   "confidence": 0.76,
+   "probabilities": {
+    "ghost": 0.19,
+    "text": 0.79,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0.02,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"text-[0.68rem] text-muted-foreground/60 hover:text-destructive\"\n  disabled={isBusy}\n  onClick={confirmClearCriteria}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {ctrl.clearCriteria}\n  </Button>",
+   "ms": 314,
+   "cost": 2.6208e-05
+  },
+  {
+   "file": "app/chat/composer/status-stack/session-control-goal.tsx",
+   "truth": "text",
+   "pick": "text",
+   "confidence": 0.54,
+   "probabilities": {
+    "ghost": 0.34,
+    "text": 0.6,
+    "textStrong": 0.06,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"text-[0.7rem] text-muted-foreground/75 hover:text-foreground/90\"\n  onClick={() => setDetailsOpen(true)}\n  size=\"inline\"\n  type=\"button\"\n  >\n  {ctrl.viewDetails}\n  </Button>",
+   "ms": 1759,
+   "cost": 2.6082e-05
+  },
+  {
+   "file": "app/settings/toolset-config-panel.tsx",
+   "truth": "text",
+   "pick": "text",
+   "confidence": 0.73,
+   "probabilities": {
+    "ghost": 0.03,
+    "text": 0.76,
+    "textStrong": 0,
+    "outline": 0.04,
+    "secondary": 0.16,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => setEditing(false)} size=\"sm\">\n  {t.common.cancel}\n  </Button>",
+   "ms": 176,
+   "cost": 2.4066e-05
+  },
+  {
+   "file": "components/onboarding/index.tsx",
+   "truth": "text",
+   "pick": "text",
+   "confidence": 0.41,
+   "probabilities": {
+    "ghost": 0.08,
+    "text": 0.48,
+    "textStrong": 0.13,
+    "outline": 0.06,
+    "secondary": 0.12,
+    "default": 0.06,
+    "destructive": 0,
+    "link": 0.07
+   },
+   "jsx": "<Button onClick={() => void onDismiss(() => openFreeTierSignIn())} size=\"xs\" type=\"button\">\n  {copy.signInInstead}\n  </Button>",
+   "ms": 220,
+   "cost": 2.4738e-05
+  },
+  {
+   "file": "app/settings/toolset-config-panel.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.37,
+   "probabilities": {
+    "ghost": 0.45,
+    "text": 0.09,
+    "textStrong": 0.07,
+    "outline": 0.11,
+    "secondary": 0.18,
+    "default": 0.09,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  disabled={selecting !== null || isExtractBackend}\n  onClick={() => void handleSelectCapability(provider, 'extract')}\n  size=\"xs\"\n  >\n  {copy.webUseForExtract}\n  </Button>",
+   "ms": 306,
+   "cost": 2.5368e-05
+  },
+  {
+   "file": "app/chat/composer/status-stack/session-control-goal.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.51,
+   "probabilities": {
+    "ghost": 0.57,
+    "text": 0.33,
+    "textStrong": 0.06,
+    "outline": 0.01,
+    "secondary": 0.02,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"text-[0.68rem] text-muted-foreground/75 hover:text-foreground/90\"\n  disabled={isBusy}\n  onClick={openAddCriterion}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {ctrl.addCriterion}\n  </Button>",
+   "ms": 199,
+   "cost": 2.6292e-05
+  },
+  {
+   "file": "components/free-tier/sign-in-dialog.tsx",
+   "truth": "text",
+   "pick": "text",
+   "confidence": 0.41,
+   "probabilities": {
+    "ghost": 0.26,
+    "text": 0.48,
+    "textStrong": 0.01,
+    "outline": 0.07,
+    "secondary": 0.15,
+    "default": 0.02,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button onClick={() => closeFreeTierSignIn()} size=\"sm\" type=\"button\">\n  {state.kind === 'unavailable' ? copy.done : copy.notNow}\n  </Button>",
+   "ms": 132,
+   "cost": 2.478e-05
+  },
+  {
+   "file": "components/model-visibility-dialog.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.42,
+   "probabilities": {
+    "ghost": 0.49,
+    "text": 0.29,
+    "textStrong": 0.1,
+    "outline": 0.03,
+    "secondary": 0.07,
+    "default": 0.02,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button className=\"-mr-2\" onClick={() => void resetToDefaults()} size=\"xs\" type=\"button\">\n  {copy.resetToDefaults}\n  </Button>",
+   "ms": 198,
+   "cost": 2.4738e-05
+  },
+  {
+   "file": "components/onboarding/flow.tsx",
+   "truth": "text",
+   "pick": "link",
+   "confidence": 0.34,
+   "probabilities": {
+    "ghost": 0.18,
+    "text": 0.19,
+    "textStrong": 0.07,
+    "outline": 0.02,
+    "secondary": 0.07,
+    "default": 0.05,
+    "destructive": 0,
+    "link": 0.42
+   },
+   "jsx": "<Button asChild size=\"xs\">\n  <a href={href} rel=\"noreferrer\" target=\"_blank\">\n  <ExternalLink className=\"size-3\" />\n  {children}\n  </a>\n  </Button>",
+   "ms": 162,
+   "cost": 2.5116e-05
+  },
+  {
+   "file": "components/free-tier/notice-strip.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.58,
+   "probabilities": {
+    "ghost": 0.63,
+    "text": 0.37,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"text-muted-foreground/75 hover:text-foreground/90\"\n  onClick={() => {\n  recordFriction('notice_dismissed', 'free_tier_notice')\n  consume()\n  }}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {copy.dismiss}\n  </Button>",
+   "ms": 164,
+   "cost": 2.6208e-05
+  },
+  {
+   "file": "components/error-boundary.tsx",
+   "truth": "text",
+   "pick": "default",
+   "confidence": 0.45,
+   "probabilities": {
+    "ghost": 0.01,
+    "text": 0.07,
+    "textStrong": 0.01,
+    "outline": 0.04,
+    "secondary": 0.25,
+    "default": 0.52,
+    "destructive": 0.08,
+    "link": 0.02
+   },
+   "jsx": "<Button onClick={() => window.location.reload()}>\n  {t.errors.reloadWindow}\n  </Button>",
+   "ms": 246,
+   "cost": 2.394e-05
+  },
+  {
+   "file": "app/settings/gateway-settings.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.6,
+   "probabilities": {
+    "ghost": 0.65,
+    "text": 0.02,
+    "textStrong": 0.01,
+    "outline": 0.07,
+    "secondary": 0.16,
+    "default": 0.09,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  disabled={cloudDiscover === 'loading'}\n  onClick={() => void discoverCloud(cloudOrg ?? undefined)}\n  size=\"sm\"\n  >\n  {cloudDiscover === 'loading' ? <Loader2 className=\"animate-spin\" /> : <RefreshCw />}\n  {g.cloudRefresh}\n  </Button>",
+   "ms": 160,
+   "cost": 2.6292e-05
+  },
+  {
+   "file": "app/command-center/maintenance.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.34,
+   "probabilities": {
+    "ghost": 0.42,
+    "text": 0.13,
+    "textStrong": 0.03,
+    "outline": 0.1,
+    "secondary": 0.17,
+    "default": 0.15,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button disabled={curatorBusy} onClick={() => void toggleCurator()} size=\"xs\">\n  {curator.paused ? mm.resume : mm.pause}\n  </Button>",
+   "ms": 182,
+   "cost": 2.4696e-05
+  },
+  {
+   "file": "components/onboarding/index.tsx",
+   "truth": "text",
+   "pick": "textStrong",
+   "confidence": 0.28,
+   "probabilities": {
+    "ghost": 0.35,
+    "text": 0.12,
+    "textStrong": 0.37,
+    "outline": 0.03,
+    "secondary": 0.07,
+    "default": 0.04,
+    "destructive": 0,
+    "link": 0.02
+   },
+   "jsx": "<Button className=\"-mr-2 font-medium\" onClick={() => openKeyForm()} size=\"xs\" type=\"button\">\n  {t.onboarding.haveApiKey}\n  </Button>",
+   "ms": 173,
+   "cost": 2.478e-05
+  },
+  {
+   "file": "app/shell/gateway-menu-panel.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.42,
+   "probabilities": {
+    "ghost": 0.49,
+    "text": 0.26,
+    "textStrong": 0.24,
+    "outline": 0,
+    "secondary": 0.01,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"-mr-2 h-auto py-0 font-medium leading-none text-muted-foreground\"\n  onClick={openSystem}\n  size=\"xs\"\n  type=\"button\"\n  >\n  {copy.viewAllLogs}\n  </Button>",
+   "ms": 200,
+   "cost": 2.5494e-05
+  },
+  {
+   "file": "app/capabilities/connectors/tools-filter-bar.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.68,
+   "probabilities": {
+    "ghost": 0.72,
+    "text": 0.07,
+    "textStrong": 0.01,
+    "outline": 0.05,
+    "secondary": 0.11,
+    "default": 0.04,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button className=\"shrink-0\" onClick={onShowSummary} size=\"xs\">\n  {copy.showSummary}\n  </Button>",
+   "ms": 151,
+   "cost": 2.4612e-05
+  },
+  {
+   "file": "components/free-tier/sign-in-dialog.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.38,
+   "probabilities": {
+    "ghost": 0.46,
+    "text": 0.18,
+    "textStrong": 0.04,
+    "outline": 0.09,
+    "secondary": 0.13,
+    "default": 0.06,
+    "destructive": 0,
+    "link": 0.04
+   },
+   "jsx": "<Button onClick={() => void copyFreeTierUrl()} size=\"xs\" type=\"button\">\n  {state.urlCopied ? t.common.copied : copy.copyLink}\n  </Button>",
+   "ms": 226,
+   "cost": 2.4738e-05
+  },
+  {
+   "file": "app/settings/gateway-settings.tsx",
+   "truth": "text",
+   "pick": "secondary",
+   "confidence": 0.29,
+   "probabilities": {
+    "ghost": 0.14,
+    "text": 0.04,
+    "textStrong": 0.02,
+    "outline": 0.09,
+    "secondary": 0.38,
+    "default": 0.33,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"mr-auto\"\n  disabled={testing || !state.sshHost.trim()}\n  onClick={() => void testSsh()}\n  size=\"sm\"\n  >\n  {testing ? <Loader2 className=\"animate-spin\" /> : null}\n  {g.sshTestConnection}\n  </Button>",
+   "ms": 172,
+   "cost": 2.5914e-05
+  },
+  {
+   "file": "components/free-tier/sign-in-dialog.tsx",
+   "truth": "text",
+   "pick": "text",
+   "confidence": 0.58,
+   "probabilities": {
+    "ghost": 0.19,
+    "text": 0.63,
+    "textStrong": 0,
+    "outline": 0.05,
+    "secondary": 0.12,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => closeFreeTierSignIn()} size=\"sm\" type=\"button\">\n  {copy.offer.notNow}\n  </Button>",
+   "ms": 170,
+   "cost": 2.4276e-05
+  },
+  {
+   "file": "app/session-import/index.tsx",
+   "truth": "text",
+   "pick": "default",
+   "confidence": 0.36,
+   "probabilities": {
+    "ghost": 0.02,
+    "text": 0.14,
+    "textStrong": 0.05,
+    "outline": 0.04,
+    "secondary": 0.24,
+    "default": 0.44,
+    "destructive": 0,
+    "link": 0.07
+   },
+   "jsx": "<Button\n  disabled={sessions.isFetchingNextPage}\n  onClick={() => void sessions.fetchNextPage()}\n  >\n  {copy.more}\n  </Button>",
+   "ms": 224,
+   "cost": 2.4486e-05
+  },
+  {
+   "file": "plugins/hermes-bots/group-chat-view.tsx",
+   "truth": "text",
+   "pick": "textStrong",
+   "confidence": 0.78,
+   "probabilities": {
+    "ghost": 0.02,
+    "text": 0.13,
+    "textStrong": 0.81,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0.03
+   },
+   "jsx": "<Button\n  className=\"text-left text-[0.7rem] font-semibold text-(--ui-accent)\"\n  onClick={() => setRevealedSpeaker(revealed ? null : entryKey)}\n  size=\"inline\"\n  >\n  {label}\n  </Button>",
+   "ms": 154,
+   "cost": 2.5578e-05
+  },
+  {
+   "file": "components/assistant-ui/tool/approval.tsx",
+   "truth": "text",
+   "pick": "text",
+   "confidence": 0.15,
+   "probabilities": {
+    "ghost": 0.19,
+    "text": 0.26,
+    "textStrong": 0.01,
+    "outline": 0.08,
+    "secondary": 0.21,
+    "default": 0.02,
+    "destructive": 0.23,
+    "link": 0
+   },
+   "jsx": "<Button data-approval-deny=\"\" disabled={busy} onClick={() => void respond('deny')} size=\"sm\">\n  {submitting === 'deny' ? <Loader2 className=\"size-3 animate-spin\" /> : copy.reject}\n  </Button>",
+   "ms": 176,
+   "cost": 2.5452e-05
+  },
+  {
+   "file": "components/billing-banner.tsx",
+   "truth": "text",
+   "pick": "ghost",
+   "confidence": 0.38,
+   "probabilities": {
+    "ghost": 0.46,
+    "text": 0.36,
+    "textStrong": 0.07,
+    "outline": 0.02,
+    "secondary": 0.04,
+    "default": 0.04,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  className=\"text-foreground/90 hover:text-foreground\"\n  onClick={() => runBillingRecovery(block)}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {billingCtaLabel(block, copy)}\n  </Button>",
+   "ms": 208,
+   "cost": 2.562e-05
+  },
+  {
+   "file": "app/capabilities/connectors/add-server-form.tsx",
+   "truth": "text",
+   "pick": "default",
+   "confidence": 0.31,
+   "probabilities": {
+    "ghost": 0.15,
+    "text": 0.1,
+    "textStrong": 0.09,
+    "outline": 0.06,
+    "secondary": 0.19,
+    "default": 0.4,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button className=\"justify-self-start\" onClick={onAdd} size=\"xs\">\n  {addLabel}\n  </Button>",
+   "ms": 171,
+   "cost": 2.436e-05
+  },
+  {
+   "file": "app/settings/gateway-settings.tsx",
+   "truth": "text",
+   "pick": "textStrong",
+   "confidence": 0.57,
+   "probabilities": {
+    "ghost": 0.14,
+    "text": 0.03,
+    "textStrong": 0.62,
+    "outline": 0.06,
+    "secondary": 0.1,
+    "default": 0.04,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button onClick={() => changeCloudOrg()} size=\"sm\">\n  {g.cloudOrgChange}\n  </Button>",
+   "ms": 198,
+   "cost": 2.4108e-05
+  },
+  {
+   "file": "app/settings/memory/provider-config-panel.tsx",
+   "truth": "secondary",
+   "pick": "secondary",
+   "confidence": 0.27,
+   "probabilities": {
+    "ghost": 0.23,
+    "text": 0.07,
+    "textStrong": 0.02,
+    "outline": 0.14,
+    "secondary": 0.36,
+    "default": 0.18,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => void refresh()} size=\"sm\" type=\"button\">\n  Retry\n  </Button>",
+   "ms": 159,
+   "cost": 2.3982e-05
+  },
+  {
+   "file": "app/capabilities/connectors/accounts-section.tsx",
+   "truth": "secondary",
+   "pick": "ghost",
+   "confidence": 0.22,
+   "probabilities": {
+    "ghost": 0.32,
+    "text": 0.11,
+    "textStrong": 0.19,
+    "outline": 0.11,
+    "secondary": 0.17,
+    "default": 0.09,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  disabled={reconnecting || (connecting && account.connection_id !== retryable)}\n  onClick={() => onReconnect(account)}\n  size=\"xs\"\n  >\n  {t.connectorsPage.card.verb.reconnect}\n  </Button>",
+   "ms": 162,
+   "cost": 2.5494e-05
+  },
+  {
+   "file": "app/messaging/telegram-qr-setup.tsx",
+   "truth": "secondary",
+   "pick": "default",
+   "confidence": 0.21,
+   "probabilities": {
+    "ghost": 0.18,
+    "text": 0.04,
+    "textStrong": 0.05,
+    "outline": 0.08,
+    "secondary": 0.23,
+    "default": 0.31,
+    "destructive": 0,
+    "link": 0.11
+   },
+   "jsx": "<Button onClick={() => openExternalLink(setup.deep_link)} size=\"sm\">\n  <ExternalLink />\n  {q.openTelegram}\n  </Button>",
+   "ms": 242,
+   "cost": 2.4738e-05
+  },
+  {
+   "file": "plugins/hermes-bots/group-chat-view.tsx",
+   "truth": "secondary",
+   "pick": "ghost",
+   "confidence": 0.85,
+   "probabilities": {
+    "ghost": 0.87,
+    "text": 0.03,
+    "textStrong": 0.01,
+    "outline": 0.02,
+    "secondary": 0.06,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  aria-label={`${b.group.compressHistory}: ${member.name}`}\n  disabled={compressing !== null}\n  onClick={() => void compressMember(member)}\n  size=\"sm\"\n  >\n  <Codicon name={compressing === key ? 'loading' : 'fold'} spinning={compressing === key} />\n  {b.group.compressHistory}\n  </Button>",
+   "ms": 158,
+   "cost": 2.667e-05
+  },
+  {
+   "file": "plugins/hermes-bots/cron.tsx",
+   "truth": "secondary",
+   "pick": "secondary",
+   "confidence": 0.23,
+   "probabilities": {
+    "ghost": 0.3,
+    "text": 0.09,
+    "textStrong": 0.02,
+    "outline": 0.12,
+    "secondary": 0.33,
+    "default": 0.13,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button onClick={() => void refetch()} size=\"sm\">\n  {t.common.retry}\n  </Button>",
+   "ms": 218,
+   "cost": 2.3982e-05
+  },
+  {
+   "file": "app/settings/hud-modifier-settings.tsx",
+   "truth": "secondary",
+   "pick": "secondary",
+   "confidence": 0.22,
+   "probabilities": {
+    "ghost": 0.25,
+    "text": 0.07,
+    "textStrong": 0.04,
+    "outline": 0.11,
+    "secondary": 0.32,
+    "default": 0.2,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  disabled={busy}\n  onClick={() => void refresh(error ? undefined : status?.enabled)}\n  size=\"sm\"\n  >\n  {common.retry}\n  </Button>",
+   "ms": 181,
+   "cost": 2.4654e-05
+  },
+  {
+   "file": "plugins/hermes-bots/mcp-setup.tsx",
+   "truth": "secondary",
+   "pick": "default",
+   "confidence": 0.22,
+   "probabilities": {
+    "ghost": 0.29,
+    "text": 0.06,
+    "textStrong": 0.07,
+    "outline": 0.06,
+    "secondary": 0.2,
+    "default": 0.32,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => void submitKeys()} size=\"xs\">\n  {b.tools.saveTest}\n  </Button>",
+   "ms": 167,
+   "cost": 2.415e-05
+  },
+  {
+   "file": "app/capabilities/connectors/connectors-directory.tsx",
+   "truth": "secondary",
+   "pick": "text",
+   "confidence": 0.81,
+   "probabilities": {
+    "ghost": 0.11,
+    "text": 0.83,
+    "textStrong": 0,
+    "outline": 0.02,
+    "secondary": 0.03,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => set(EMPTY_CONNECTORS_FILTER)} size=\"xs\">\n  {copy.page.clearSearch}\n  </Button>",
+   "ms": 186,
+   "cost": 2.4612e-05
+  },
+  {
+   "file": "plugins/hermes-bots/cron.tsx",
+   "truth": "secondary",
+   "pick": "ghost",
+   "confidence": 0.37,
+   "probabilities": {
+    "ghost": 0.45,
+    "text": 0.26,
+    "textStrong": 0,
+    "outline": 0.02,
+    "secondary": 0.22,
+    "default": 0.05,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={onClose}>\n  {t.common.close}\n  </Button>",
+   "ms": 155,
+   "cost": 2.3772e-05
+  },
+  {
+   "file": "app/capabilities/connectors/ways-section.tsx",
+   "truth": "secondary",
+   "pick": "textStrong",
+   "confidence": 0.17,
+   "probabilities": {
+    "ghost": 0.12,
+    "text": 0.14,
+    "textStrong": 0.27,
+    "outline": 0.1,
+    "secondary": 0.18,
+    "default": 0.18,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button onClick={() => onToggleForMe(true)} size=\"xs\">\n  {copy.card.verb.turnBackOn}\n  </Button>",
+   "ms": 179,
+   "cost": 2.457e-05
+  },
+  {
+   "file": "app/right-sidebar/terminal/instance.tsx",
+   "truth": "secondary",
+   "pick": "ghost",
+   "confidence": 0.33,
+   "probabilities": {
+    "ghost": 0.41,
+    "text": 0.02,
+    "textStrong": 0.01,
+    "outline": 0.1,
+    "secondary": 0.34,
+    "default": 0.12,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"h-6 rounded-md px-2 text-[0.68rem] shadow-md backdrop-blur-md\"\n  onClick={event => event.preventDefault()}\n  onMouseDown={event => {\n  event.preventDefault()\n  event.stopPropagation()\n  addSelectionToChat()\n  }}\n  type=\"button\"\n  >\n  {t.rightSidebar.addToChat}\n  <KbdCombo className=\"ml-1 opacity-70\" combo=\"mod+l\" size=\"sm\" />\n  </Button>",
+   "ms": 175,
+   "cost": 2.8308e-05
+  },
+  {
+   "file": "app/messaging/index.tsx",
+   "truth": "secondary",
+   "pick": "default",
+   "confidence": 0.59,
+   "probabilities": {
+    "ghost": 0.09,
+    "text": 0.02,
+    "textStrong": 0.06,
+    "outline": 0.06,
+    "secondary": 0.13,
+    "default": 0.64,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  disabled={busy || !user.request_id}\n  onClick={() => onApprove(user)}\n  size=\"sm\"\n  >\n  {busy ? m.approving : m.approve}\n  </Button>",
+   "ms": 194,
+   "cost": 2.4864e-05
+  },
+  {
+   "file": "components/desktop-install-overlay.tsx",
+   "truth": "secondary",
+   "pick": "ghost",
+   "confidence": 0.21,
+   "probabilities": {
+    "ghost": 0.31,
+    "text": 0.05,
+    "textStrong": 0.02,
+    "outline": 0.12,
+    "secondary": 0.28,
+    "default": 0.2,
+    "destructive": 0,
+    "link": 0.02
+   },
+   "jsx": "<Button onClick={() => setRemoteOpen(true)} size=\"sm\">\n  <Globe className=\"size-4\" />\n  {copy.connectExistingShort}\n  </Button>",
+   "ms": 169,
+   "cost": 2.4738e-05
+  },
+  {
+   "file": "app/capabilities/connectors/connect-element.tsx",
+   "truth": "secondary",
+   "pick": "default",
+   "confidence": 0.18,
+   "probabilities": {
+    "ghost": 0.15,
+    "text": 0.19,
+    "textStrong": 0.05,
+    "outline": 0.12,
+    "secondary": 0.2,
+    "default": 0.28,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button disabled={retrying} onClick={onRetry} size=\"xs\">\n  {copy.card.verb.tryAgain}\n  </Button>",
+   "ms": 196,
+   "cost": 2.4486e-05
+  },
+  {
+   "file": "app/settings/memory/provider-config-panel.tsx",
+   "truth": "secondary",
+   "pick": "ghost",
+   "confidence": 0.43,
+   "probabilities": {
+    "ghost": 0.5,
+    "text": 0.04,
+    "textStrong": 0.03,
+    "outline": 0.12,
+    "secondary": 0.23,
+    "default": 0.08,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={() => setShowModal(true)} size=\"sm\" type=\"button\">\n  <SlidersHorizontal className=\"size-3.5\" />\n  Full config\u2026\n  </Button>",
+   "ms": 208,
+   "cost": 2.499e-05
+  },
+  {
+   "file": "plugins/hermes-bots/group-chat-view.tsx",
+   "truth": "secondary",
+   "pick": "text",
+   "confidence": 0.73,
+   "probabilities": {
+    "ghost": 0.02,
+    "text": 0.76,
+    "textStrong": 0,
+    "outline": 0.01,
+    "secondary": 0.2,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={onClose}>\n  {t.common.cancel}\n  </Button>",
+   "ms": 159,
+   "cost": 2.3814e-05
+  },
+  {
+   "file": "app/settings/billing/index.tsx",
+   "truth": "secondary",
+   "pick": "default",
+   "confidence": 0.95,
+   "probabilities": {
+    "ghost": 0,
+    "text": 0,
+    "textStrong": 0,
+    "outline": 0.01,
+    "secondary": 0.03,
+    "default": 0.96,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button disabled={!canBuy} onClick={startBuy} size=\"xs\" type=\"button\">\n  {b.buyCredits.buyButton}\n  </Button>",
+   "ms": 261,
+   "cost": 2.4486e-05
+  },
+  {
+   "file": "app/settings/model-settings.tsx",
+   "truth": "textStrong",
+   "pick": "textStrong",
+   "confidence": 0.81,
+   "probabilities": {
+    "ghost": 0.08,
+    "text": 0.02,
+    "textStrong": 0.83,
+    "outline": 0.02,
+    "secondary": 0.03,
+    "default": 0.02,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  disabled={!providers.length || applying}\n  onClick={() => beginAuxiliaryEdit(meta.key)}\n  size=\"sm\"\n  >\n  {m.change}\n  </Button>",
+   "ms": 200,
+   "cost": 2.4612e-05
+  },
+  {
+   "file": "app/settings/model-settings.tsx",
+   "truth": "textStrong",
+   "pick": "secondary",
+   "confidence": 0.11,
+   "probabilities": {
+    "ghost": 0.2,
+    "text": 0.16,
+    "textStrong": 0.07,
+    "outline": 0.12,
+    "secondary": 0.22,
+    "default": 0.12,
+    "destructive": 0.1,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  disabled={!mainModel || applying}\n  onClick={() => void resetAuxiliaryModels()}\n  size=\"sm\"\n  >\n  {m.resetAllToMain}\n  </Button>",
+   "ms": 160,
+   "cost": 2.4654e-05
+  },
+  {
+   "file": "components/assistant-ui/catalog-install-tool.tsx",
+   "truth": "textStrong",
+   "pick": "default",
+   "confidence": 0.23,
+   "probabilities": {
+    "ghost": 0.12,
+    "text": 0.1,
+    "textStrong": 0.19,
+    "outline": 0.07,
+    "secondary": 0.18,
+    "default": 0.33,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button onClick={() => void continueConnectionRequest(request)} size=\"xs\">\n  {t.common.continue}\n  </Button>",
+   "ms": 158,
+   "cost": 2.4318e-05
+  },
+  {
+   "file": "components/assistant-ui/connector-tool.tsx",
+   "truth": "textStrong",
+   "pick": "textStrong",
+   "confidence": 0.11,
+   "probabilities": {
+    "ghost": 0.18,
+    "text": 0.14,
+    "textStrong": 0.22,
+    "outline": 0.08,
+    "secondary": 0.19,
+    "default": 0.18,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button onClick={() => void continueConnectionRequest(request)} size=\"xs\">\n  {t.common.continue}\n  </Button>",
+   "ms": 178,
+   "cost": 2.436e-05
+  },
+  {
+   "file": "app/capabilities/toolsets/toolset-detail.tsx",
+   "truth": "textStrong",
+   "pick": "textStrong",
+   "confidence": 0.1,
+   "probabilities": {
+    "ghost": 0.21,
+    "text": 0.18,
+    "textStrong": 0.21,
+    "outline": 0.07,
+    "secondary": 0.1,
+    "default": 0.03,
+    "destructive": 0,
+    "link": 0.2
+   },
+   "jsx": "<Button\n  onClick={() => navigate(`${SETTINGS_ROUTE}?tab=config:model&aux=vision`)}\n  size=\"xs\"\n  >\n  {t.skills.visionModelLink}\n  </Button>",
+   "ms": 190,
+   "cost": 2.5116e-05
+  },
+  {
+   "file": "app/command-center/maintenance.tsx",
+   "truth": "textStrong",
+   "pick": "default",
+   "confidence": 0.45,
+   "probabilities": {
+    "ghost": 0.17,
+    "text": 0.05,
+    "textStrong": 0.03,
+    "outline": 0.05,
+    "secondary": 0.17,
+    "default": 0.52,
+    "destructive": 0.01,
+    "link": 0
+   },
+   "jsx": "<Button disabled={disabled} onClick={onRun} size=\"xs\">\n  {label}\n  </Button>",
+   "ms": 1014,
+   "cost": 2.4066e-05
+  },
+  {
+   "file": "components/update-status.tsx",
+   "truth": "textStrong",
+   "pick": "ghost",
+   "confidence": 0.44,
+   "probabilities": {
+    "ghost": 0.51,
+    "text": 0.03,
+    "textStrong": 0.01,
+    "outline": 0.08,
+    "secondary": 0.2,
+    "default": 0.17,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  disabled={checking || view.applying}\n  onClick={() => void handleCheck()}\n  size=\"sm\"\n  >\n  {checking ? <Loader2 className=\"size-3 animate-spin\" /> : <RefreshCw className=\"size-3\" />}\n  {checking ? u.checkingShort : u.checkNow}\n  </Button>",
+   "ms": 171,
+   "cost": 2.6292e-05
+  },
+  {
+   "file": "app/capabilities/connectors/tools-summary.tsx",
+   "truth": "textStrong",
+   "pick": "text",
+   "confidence": 0.38,
+   "probabilities": {
+    "ghost": 0.06,
+    "text": 0.46,
+    "textStrong": 0.38,
+    "outline": 0.01,
+    "secondary": 0.04,
+    "default": 0.02,
+    "destructive": 0,
+    "link": 0.03
+   },
+   "jsx": "<Button onClick={onShowAll} size=\"inline\">\n  {copy.showAllTools(total)}\n  </Button>",
+   "ms": 994,
+   "cost": 2.4234e-05
+  },
+  {
+   "file": "app/settings/model-settings.tsx",
+   "truth": "textStrong",
+   "pick": "default",
+   "confidence": 0.75,
+   "probabilities": {
+    "ghost": 0,
+    "text": 0.01,
+    "textStrong": 0.01,
+    "outline": 0.03,
+    "secondary": 0.17,
+    "default": 0.78,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  disabled={!newMoaPresetName.trim() || !!moa.presets[newMoaPresetName.trim()] || applying}\n  onClick={() => {\n  const name = newMoaPresetName.trim()\n  const next: MoaConfigResponse = {\n  ...moa,\n  presets: {\n  ...moa.presets,\n  [name]: { ...currentMoaPreset, reference_models: [...currentMoaPreset.reference_models] }\n  }\n  }\n  setSelectedMoaPreset(name)\n  setNewMoaPresetName('')\n  void saveMoa(next)\n  }}\n  size=\"sm\"\n  >\n  {m.moaAddPreset}\n  </Button>",
+   "ms": 208,
+   "cost": 2.9526e-05
+  },
+  {
+   "file": "app/settings/sessions-settings.tsx",
+   "truth": "textStrong",
+   "pick": "textStrong",
+   "confidence": 0.29,
+   "probabilities": {
+    "ghost": 0.14,
+    "text": 0.02,
+    "textStrong": 0.38,
+    "outline": 0.09,
+    "secondary": 0.21,
+    "default": 0.16,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button disabled={busy} onClick={() => void choose()} size=\"sm\" type=\"button\">\n  <FolderOpen className=\"size-3.5\" />\n  <span>{dir ? s.change : s.choose}</span>\n  </Button>",
+   "ms": 197,
+   "cost": 2.5242e-05
+  },
+  {
+   "file": "app/command-center/maintenance.tsx",
+   "truth": "textStrong",
+   "pick": "default",
+   "confidence": 0.39,
+   "probabilities": {
+    "ghost": 0.19,
+    "text": 0.05,
+    "textStrong": 0.07,
+    "outline": 0.06,
+    "secondary": 0.15,
+    "default": 0.47,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  disabled={actionStatus?.running === true}\n  onClick={() => void launch(mm.curator, runCurator)}\n  size=\"xs\"\n  >\n  {mm.runNow}\n  </Button>",
+   "ms": 189,
+   "cost": 2.5032e-05
+  },
+  {
+   "file": "app/capabilities/connectors/tools-list.tsx",
+   "truth": "textStrong",
+   "pick": "text",
+   "confidence": 0.26,
+   "probabilities": {
+    "ghost": 0.08,
+    "text": 0.35,
+    "textStrong": 0.27,
+    "outline": 0.02,
+    "secondary": 0.06,
+    "default": 0.17,
+    "destructive": 0,
+    "link": 0.05
+   },
+   "jsx": "<Button onClick={onSignIn} size=\"inline\">\n  {t.connectorsPage.page.signIn}\n  </Button>",
+   "ms": 151,
+   "cost": 2.4234e-05
+  },
+  {
+   "file": "plugins/kanban/board.tsx",
+   "truth": "textStrong",
+   "pick": "text",
+   "confidence": 0.59,
+   "probabilities": {
+    "ghost": 0.02,
+    "text": 0.64,
+    "textStrong": 0.28,
+    "outline": 0,
+    "secondary": 0.02,
+    "default": 0.02,
+    "destructive": 0,
+    "link": 0.02
+   },
+   "jsx": "<Button onClick={() => $introDismissed.set(true)} size=\"inline\">\n  {k.introGotIt}\n  </Button>",
+   "ms": 197,
+   "cost": 2.4276e-05
+  },
+  {
+   "file": "components/onboarding/flow.tsx",
+   "truth": "outline",
+   "pick": "default",
+   "confidence": 0.18,
+   "probabilities": {
+    "ghost": 0.01,
+    "text": 0.2,
+    "textStrong": 0.1,
+    "outline": 0.06,
+    "secondary": 0.26,
+    "default": 0.28,
+    "destructive": 0,
+    "link": 0.09
+   },
+   "jsx": "<Button onClick={() => startManualOnboarding(null, ctx.scope ?? ctx.profile)}>\n  {t.onboarding.useApiKeyInstead}\n  </Button>",
+   "ms": 346,
+   "cost": 2.4612e-05
+  },
+  {
+   "file": "app/settings/local-models-browse.tsx",
+   "truth": "outline",
+   "pick": "secondary",
+   "confidence": 0.34,
+   "probabilities": {
+    "ghost": 0.19,
+    "text": 0.01,
+    "textStrong": 0.02,
+    "outline": 0.1,
+    "secondary": 0.42,
+    "default": 0.26,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={sideload} size=\"sm\">\n  <FolderOpen className=\"mr-1 size-3.5\" />\n  {copy.sideloadButton}\n  </Button>",
+   "ms": 192,
+   "cost": 2.4906e-05
+  },
+  {
+   "file": "app/settings/local-model-download-progress.tsx",
+   "truth": "outline",
+   "pick": "ghost",
+   "confidence": 0.23,
+   "probabilities": {
+    "ghost": 0.33,
+    "text": 0.06,
+    "textStrong": 0.04,
+    "outline": 0.07,
+    "secondary": 0.24,
+    "default": 0.25,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  className={cn(busy && '[&_svg]:animate-spin')}\n  disabled={busy}\n  onClick={() => void send('resume')}\n  size=\"sm\"\n  >\n  {busy ? <Loader2 /> : <Play />}\n  {copy.downloadResumeAction}\n  </Button>",
+   "ms": 166,
+   "cost": 2.583e-05
+  },
+  {
+   "file": "app/right-sidebar/index.tsx",
+   "truth": "outline",
+   "pick": "ghost",
+   "confidence": 0.3,
+   "probabilities": {
+    "ghost": 0.39,
+    "text": 0.04,
+    "textStrong": 0.05,
+    "outline": 0.09,
+    "secondary": 0.29,
+    "default": 0.14,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button className=\"h-7 gap-1.5 text-xs\" onClick={() => void openFolderAsProject()} size=\"sm\">\n  <Codicon name=\"folder-opened\" size=\"0.8125rem\" />\n  {r.openFolder}\n  </Button>",
+   "ms": 225,
+   "cost": 2.5662e-05
+  },
+  {
+   "file": "app/settings/local-models-runtime-section.tsx",
+   "truth": "outline",
+   "pick": "default",
+   "confidence": 0.59,
+   "probabilities": {
+    "ghost": 0.12,
+    "text": 0.01,
+    "textStrong": 0.02,
+    "outline": 0.04,
+    "secondary": 0.17,
+    "default": 0.64,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className={cn(serverBusy && '[&_svg]:animate-spin')}\n  disabled={serverBusy}\n  onClick={() => void handleServer('start')}\n  size=\"sm\"\n  >\n  {serverBusy ? <Loader2 /> : <Zap />}\n  {copy.startServer}\n  </Button>",
+   "ms": 159,
+   "cost": 2.6166e-05
+  },
+  {
+   "file": "app/settings/billing/index.tsx",
+   "truth": "outline",
+   "pick": "default",
+   "confidence": 0.44,
+   "probabilities": {
+    "ghost": 0.1,
+    "text": 0.02,
+    "textStrong": 0.04,
+    "outline": 0.08,
+    "secondary": 0.21,
+    "default": 0.51,
+    "destructive": 0,
+    "link": 0.04
+   },
+   "jsx": "<Button onClick={() => onPortal(portalUrl)} size=\"sm\" type=\"button\">\n  {b.buyCredits.openPortal}\n  <ExternalLink className=\"size-3.5\" />\n  </Button>",
+   "ms": 211,
+   "cost": 2.5158e-05
+  },
+  {
+   "file": "app/capabilities/plugins/plugins-tab.tsx",
+   "truth": "outline",
+   "pick": "ghost",
+   "confidence": 0.29,
+   "probabilities": {
+    "ghost": 0.38,
+    "text": 0.11,
+    "textStrong": 0.24000000000000002,
+    "outline": 0.11,
+    "secondary": 0.12,
+    "default": 0.04,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"h-5 px-1.5 text-[0.65rem]\"\n  disabled={busy}\n  onClick={() => onAgentUpdate(agent)}\n  size=\"xs\"\n  >\n  {p.updateToPin(agent.catalog_version ?? agent.catalog_sha?.slice(0, 8) ?? '')}\n  </Button>",
+   "ms": 156,
+   "cost": 2.6166e-05
+  },
+  {
+   "file": "app/settings/plugin-install-modal.tsx",
+   "truth": "outline",
+   "pick": "text",
+   "confidence": 0.66,
+   "probabilities": {
+    "ghost": 0.02,
+    "text": 0.7,
+    "textStrong": 0,
+    "outline": 0.04,
+    "secondary": 0.23,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button disabled={busy} onClick={handleClose}>\n  {t.common.cancel}\n  </Button>",
+   "ms": 189,
+   "cost": 2.3898e-05
+  },
+  {
+   "file": "app/settings/billing/inline-feedback.tsx",
+   "truth": "outline",
+   "pick": "textStrong",
+   "confidence": 0.15,
+   "probabilities": {
+    "ghost": 0.16,
+    "text": 0.06,
+    "textStrong": 0.26,
+    "outline": 0.07,
+    "secondary": 0.15,
+    "default": 0.22,
+    "destructive": 0,
+    "link": 0.08
+   },
+   "jsx": "<Button onClick={flow.openVerification} size=\"sm\" type=\"button\">\n  {b.openVerification}\n  <ExternalLink className=\"size-3.5\" />\n  </Button>",
+   "ms": 185,
+   "cost": 2.5032e-05
+  },
+  {
+   "file": "app/settings/gateway-settings.tsx",
+   "truth": "outline",
+   "pick": "destructive",
+   "confidence": 0.13,
+   "probabilities": {
+    "ghost": 0.12,
+    "text": 0.22,
+    "textStrong": 0.01,
+    "outline": 0.1,
+    "secondary": 0.21,
+    "default": 0.09,
+    "destructive": 0.24,
+    "link": 0.01
+   },
+   "jsx": "<Button disabled={cloudSigningIn} onClick={() => void cloudSignOut()}>\n  {cloudSigningIn ? <Loader2 className=\"animate-spin\" /> : null}\n  {g.signOut}\n  </Button>",
+   "ms": 185,
+   "cost": 2.5116e-05
+  },
+  {
+   "file": "app/settings/billing/account-row-value.tsx",
+   "truth": "outline",
+   "pick": "textStrong",
+   "confidence": 0.34,
+   "probabilities": {
+    "ghost": 0.4,
+    "text": 0.04,
+    "textStrong": 0.42,
+    "outline": 0.03,
+    "secondary": 0.06,
+    "default": 0.02,
+    "destructive": 0,
+    "link": 0.03
+   },
+   "jsx": "<Button\n  disabled={action.disabled}\n  onClick={action.disabled ? undefined : onAction ? onAction : () => openExternal(action.url)}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {action.label}\n  {!action.disabled && action.url && <ExternalLink className=\"size-3.5\" />}\n  </Button>",
+   "ms": 221,
+   "cost": 2.6334e-05
+  },
+  {
+   "file": "app/cron/index.tsx",
+   "truth": "outline",
+   "pick": "text",
+   "confidence": 0.47,
+   "probabilities": {
+    "ghost": 0.01,
+    "text": 0.54,
+    "textStrong": 0,
+    "outline": 0.03,
+    "secondary": 0.4,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button disabled={saving} onClick={onClose} type=\"button\">\n  {t.common.cancel}\n  </Button>",
+   "ms": 154,
+   "cost": 2.3982e-05
+  },
+  {
+   "file": "app/capabilities/connectors/add-dialog.tsx",
+   "truth": "outline",
+   "pick": "text",
+   "confidence": 0.49,
+   "probabilities": {
+    "ghost": 0.16,
+    "text": 0.55,
+    "textStrong": 0.01,
+    "outline": 0.08,
+    "secondary": 0.18,
+    "default": 0.02,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button onClick={leaveRaw} size=\"sm\">\n  {t.common.back}\n  </Button>",
+   "ms": 163,
+   "cost": 2.4066e-05
+  },
+  {
+   "file": "app/settings/local-model-download-progress.tsx",
+   "truth": "outline",
+   "pick": "ghost",
+   "confidence": 0.31,
+   "probabilities": {
+    "ghost": 0.4,
+    "text": 0.13,
+    "textStrong": 0.02,
+    "outline": 0.07,
+    "secondary": 0.28,
+    "default": 0.09,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className={cn(busy && '[&_svg]:animate-spin')}\n  disabled={busy}\n  onClick={() => void send('pause')}\n  size=\"sm\"\n  >\n  {busy ? <Loader2 /> : <Pause />}\n  {copy.downloadPauseAction}\n  </Button>",
+   "ms": 233,
+   "cost": 2.583e-05
+  },
+  {
+   "file": "app/settings/billing/index.tsx",
+   "truth": "outline",
+   "pick": "secondary",
+   "confidence": 0.15,
+   "probabilities": {
+    "ghost": 0.18,
+    "text": 0.08,
+    "textStrong": 0.07,
+    "outline": 0.14,
+    "secondary": 0.26,
+    "default": 0.14,
+    "destructive": 0,
+    "link": 0.13
+   },
+   "jsx": "<Button\n  className=\"mt-3\"\n  onClick={() => openExternal(notice.action?.url)}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {notice.action.label}\n  <ExternalLink className=\"size-3.5\" />\n  </Button>",
+   "ms": 183,
+   "cost": 2.5578e-05
+  },
+  {
+   "file": "app/settings/notifications-settings.tsx",
+   "truth": "outline",
+   "pick": "ghost",
+   "confidence": 0.47,
+   "probabilities": {
+    "ghost": 0.54,
+    "text": 0.04,
+    "textStrong": 0.02,
+    "outline": 0.06,
+    "secondary": 0.15,
+    "default": 0.19,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button className=\"self-start\" onClick={() => void runTest()} size=\"sm\" type=\"button\">\n  <Bell />\n  {copy.test}\n  </Button>",
+   "ms": 235,
+   "cost": 2.4486e-05
+  },
+  {
+   "file": "app/settings/billing/index.tsx",
+   "truth": "outline",
+   "pick": "secondary",
+   "confidence": 0.12,
+   "probabilities": {
+    "ghost": 0.13,
+    "text": 0.13,
+    "textStrong": 0.2,
+    "outline": 0.11,
+    "secondary": 0.22999999999999998,
+    "default": 0.18,
+    "destructive": 0.01,
+    "link": 0.01
+   },
+   "jsx": "<Button className=\"mt-3\" onClick={notice.action.onSelect} size=\"sm\" type=\"button\">\n  {notice.action.label}\n  </Button>",
+   "ms": 184,
+   "cost": 2.4444e-05
+  },
+  {
+   "file": "app/settings/vault-settings.tsx",
+   "truth": "outline",
+   "pick": "default",
+   "confidence": 0.51,
+   "probabilities": {
+    "ghost": 0.11,
+    "text": 0.02,
+    "textStrong": 0.01,
+    "outline": 0.09,
+    "secondary": 0.2,
+    "default": 0.57,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button className=\"gap-1.5\" onClick={() => openAdd()} size=\"sm\" type=\"button\">\n  <Plus className=\"size-3.5\" />\n  {v.add}\n  </Button>",
+   "ms": 183,
+   "cost": 2.4948e-05
+  },
+  {
+   "file": "app/settings/notifications-settings.tsx",
+   "truth": "outline",
+   "pick": "ghost",
+   "confidence": 0.54,
+   "probabilities": {
+    "ghost": 0.6,
+    "text": 0.09,
+    "textStrong": 0.03,
+    "outline": 0.06,
+    "secondary": 0.17,
+    "default": 0.04,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  className=\"gap-1.5\"\n  onClick={() => {\n  previewCompletionSound()\n  triggerHaptic('crisp')\n  }}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <Play className=\"size-3.5\" />\n  {copy.completionSoundPreview}\n  </Button>",
+   "ms": 1785,
+   "cost": 2.6292e-05
+  },
+  {
+   "file": "plugins/kanban/board.tsx",
+   "truth": "outline",
+   "pick": "ghost",
+   "confidence": 0.49,
+   "probabilities": {
+    "ghost": 0.55,
+    "text": 0.03,
+    "textStrong": 0.02,
+    "outline": 0.05,
+    "secondary": 0.19,
+    "default": 0.16,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button className=\"mt-0.5\" onClick={() => setAddStatus('triage')} size=\"sm\">\n  <Codicon name=\"add\" size=\"0.75rem\" />\n  {k.newTask}\n  </Button>",
+   "ms": 161,
+   "cost": 2.5284e-05
+  },
+  {
+   "file": "components/pane-shell/tree/zone-editor.tsx",
+   "truth": "outline",
+   "pick": "default",
+   "confidence": 0.31,
+   "probabilities": {
+    "ghost": 0.24,
+    "text": 0.01,
+    "textStrong": 0.01,
+    "outline": 0.06,
+    "secondary": 0.28,
+    "default": 0.4,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  className=\"shadow-lg\"\n  onClick={merge}\n  onPointerDown={e => e.stopPropagation()}\n  size=\"sm\"\n  >\n  {t.zones.mergeZones(selection.length)}\n  </Button>",
+   "ms": 270,
+   "cost": 2.5368e-05
+  },
+  {
+   "file": "app/capabilities/connectors/local-server-control.tsx",
+   "truth": "outline",
+   "pick": "default",
+   "confidence": 0.44,
+   "probabilities": {
+    "ghost": 0.1,
+    "text": 0.03,
+    "textStrong": 0.06,
+    "outline": 0.08,
+    "secondary": 0.22,
+    "default": 0.51,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button\n  disabled={installing || missing}\n  loading={installing}\n  onClick={() => onInstall(draft)}\n  size=\"xs\"\n  >\n  {t.connectorsPage.card.verb.install}\n  </Button>",
+   "ms": 179,
+   "cost": 2.5326e-05
+  },
+  {
+   "file": "app/capabilities/connectors/connectors-tab.tsx",
+   "truth": "outline",
+   "pick": "default",
+   "confidence": 0.17,
+   "probabilities": {
+    "ghost": 0.21,
+    "text": 0.06,
+    "textStrong": 0.09,
+    "outline": 0.11,
+    "secondary": 0.25,
+    "default": 0.27,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button disabled={mcp.profilePending} onClick={() => setAddOpen(true)} size=\"xs\">\n  {copy.add.action}\n  </Button>",
+   "ms": 198,
+   "cost": 2.4654e-05
+  },
+  {
+   "file": "app/settings/gateway-settings.tsx",
+   "truth": "outline",
+   "pick": "secondary",
+   "confidence": 0.18,
+   "probabilities": {
+    "ghost": 0.17,
+    "text": 0.04,
+    "textStrong": 0.13,
+    "outline": 0.09,
+    "secondary": 0.27999999999999997,
+    "default": 0.28,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  disabled={cloudConnectingId !== null}\n  onClick={() => void activateSavedCloud(connection.id, connection.url)}\n  size=\"sm\"\n  >\n  {cloudConnectingId === connection.id ? <Loader2 className=\"animate-spin\" /> : null}\n  {g.cloudUseSaved}\n  </Button>",
+   "ms": 162,
+   "cost": 2.6208e-05
+  },
+  {
+   "file": "app/settings/connections-registry.tsx",
+   "truth": "outline",
+   "pick": "textStrong",
+   "confidence": 0.27,
+   "probabilities": {
+    "ghost": 0.24,
+    "text": 0.05,
+    "textStrong": 0.36,
+    "outline": 0.07,
+    "secondary": 0.11,
+    "default": 0.16,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button disabled={busy} onClick={() => void makePrimary(conn.id)} size=\"sm\">\n  {s.makePrimary}\n  </Button>",
+   "ms": 160,
+   "cost": 2.4402e-05
+  },
+  {
+   "file": "components/assistant-ui/tool/approval.tsx",
+   "truth": "destructive",
+   "pick": "default",
+   "confidence": 0.3,
+   "probabilities": {
+    "ghost": 0.05,
+    "text": 0.1,
+    "textStrong": 0.09,
+    "outline": 0.08,
+    "secondary": 0.28,
+    "default": 0.39,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  onClick={() => {\n  setConfirmAlways(false)\n  void respond('always')\n  }}\n  size=\"sm\"\n  >\n  {copy.alwaysAllow}\n  </Button>",
+   "ms": 189,
+   "cost": 2.4906e-05
+  },
+  {
+   "file": "components/update-hold-overlay.tsx",
+   "truth": "destructive",
+   "pick": "default",
+   "confidence": 0.77,
+   "probabilities": {
+    "ghost": 0,
+    "text": 0.02,
+    "textStrong": 0,
+    "outline": 0.01,
+    "secondary": 0.06,
+    "default": 0.8,
+    "destructive": 0.11,
+    "link": 0
+   },
+   "jsx": "<Button disabled={Boolean(busy)} onClick={() => void startAnyway()}>\n  {busy === 'start' ? <Loader2 className=\"animate-spin\" /> : null}\n  {copy.confirmStart}\n  </Button>",
+   "ms": 149,
+   "cost": 2.499e-05
+  },
+  {
+   "file": "app/settings/uninstall-section.tsx",
+   "truth": "destructive",
+   "pick": "destructive",
+   "confidence": 0.98,
+   "probabilities": {
+    "ghost": 0,
+    "text": 0.01,
+    "textStrong": 0,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0.01,
+    "destructive": 0.98,
+    "link": 0
+   },
+   "jsx": "<Button disabled={running} onClick={(): void => void handleConfirm()} size=\"sm\">\n  {running && <Loader2 className=\"size-3 animate-spin\" />}\n  {running ? u.uninstalling : u.yesUninstall}\n  </Button>",
+   "ms": 169,
+   "cost": 2.5494e-05
+  },
+  {
+   "file": "app/settings/memory/connect.tsx",
+   "truth": "link",
+   "pick": "text",
+   "confidence": 0.91,
+   "probabilities": {
+    "ghost": 0.05,
+    "text": 0.92,
+    "textStrong": 0,
+    "outline": 0.01,
+    "secondary": 0.02,
+    "default": 0,
+    "destructive": 0,
+    "link": 0
+   },
+   "jsx": "<Button className=\"h-auto p-0 text-xs\" onClick={cancel} size=\"sm\" type=\"button\">\n  Cancel\n  </Button>",
+   "ms": 173,
+   "cost": 2.4276e-05
+  },
+  {
+   "file": "plugins/hermes-bots/mcp-setup.tsx",
+   "truth": "link",
+   "pick": "text",
+   "confidence": 0.47,
+   "probabilities": {
+    "ghost": 0.01,
+    "text": 0.54,
+    "textStrong": 0.39,
+    "outline": 0,
+    "secondary": 0.01,
+    "default": 0.01,
+    "destructive": 0,
+    "link": 0.03
+   },
+   "jsx": "<Button className=\"underline\" onClick={() => setPhase('idle')} size=\"inline\">\n  {t.common.retry}\n  </Button>",
+   "ms": 201,
+   "cost": 2.436e-05
+  },
+  {
+   "file": "plugins/hermes-bots/mcp-setup.tsx",
+   "truth": "link",
+   "pick": "textStrong",
+   "confidence": 0.33,
+   "probabilities": {
+    "ghost": 0.03,
+    "text": 0.37,
+    "textStrong": 0.41000000000000003,
+    "outline": 0,
+    "secondary": 0,
+    "default": 0,
+    "destructive": 0,
+    "link": 0.19
+   },
+   "jsx": "<Button\n  className=\"ml-1.5 text-[0.65rem] text-(--ui-accent) underline\"\n  onClick={() => void (isOAuth ? beginOAuth() : beginKeys())}\n  size=\"inline\"\n  >\n  {isOAuth ? b.tools.signIn : b.tools.setUp}\n  </Button>",
+   "ms": 159,
+   "cost": 2.6334e-05
+  },
+  {
+   "file": "components/desktop-install-overlay.tsx",
+   "truth": "default",
+   "pick": "default",
+   "confidence": 0.44,
+   "probabilities": {
+    "ghost": 0.04,
+    "text": 0.06,
+    "textStrong": 0.03,
+    "outline": 0.06,
+    "secondary": 0.29,
+    "default": 0.51,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button\n  onClick={async () => {\n  // Tell main.ts to clear its latched failure BEFORE we\n  // reload. Otherwise the renderer reload calls getConnection\n  // and main short-circuits to the latched error without\n  // re-running install.ps1.\n  try {\n  await window.hermesDesktop?.resetBootstrap?.()\n  } catch {\n  // best-effort -- continue with reload regardless\n  }\n  window.location.reload()\n  }}\n  size=\"sm\"\n  >\n  {copy.reloadRetry}\n  </Button>",
+   "ms": 198,
+   "cost": 2.8224e-05
+  },
+  {
+   "file": "components/notifications.tsx",
+   "truth": "default",
+   "pick": "text",
+   "confidence": 0.22,
+   "probabilities": {
+    "ghost": 0.1,
+    "text": 0.32,
+    "textStrong": 0.19,
+    "outline": 0.08,
+    "secondary": 0.15,
+    "default": 0.13,
+    "destructive": 0.01,
+    "link": 0.02
+   },
+   "jsx": "<Button\n  disabled={stack.busy || !stack.active}\n  onClick={() => {\n  void stack.depart(() => {\n  notification.action?.onClick()\n  dismissNotification(notification.id)\n  })\n  }}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {notification.action.label}\n  </Button>",
+   "ms": 200,
+   "cost": 2.5788e-05
+  },
+  {
+   "file": "components/desktop-install-overlay.tsx",
+   "truth": "default",
+   "pick": "default",
+   "confidence": 0.28,
+   "probabilities": {
+    "ghost": 0.07,
+    "text": 0.11,
+    "textStrong": 0.02,
+    "outline": 0.11,
+    "secondary": 0.31,
+    "default": 0.37,
+    "destructive": 0,
+    "link": 0.01
+   },
+   "jsx": "<Button onClick={() => window.location.reload()} size=\"sm\">\n  {copy.retryAfterRun}\n  </Button>",
+   "ms": 147,
+   "cost": 2.4066e-05
+  }
+ ],
+ "usage": {
+  "calls": 166,
+  "ms_median": 182,
+  "cost_usd": 0.00422
+ }
+}

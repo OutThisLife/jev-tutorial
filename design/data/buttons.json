@@ -1,0 +1,2612 @@
+[
+ {
+  "file": "app/master-detail.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-expanded={!collapsed}\n  aria-label={collapsed ? t.common.expand : t.common.collapse}\n  className={ICON_BUTTON}\n  onClick={() => setPaneHeightOverride(id, collapsed ? undefined : 0)}\n  size=\"icon\"\n  >\n  <Codicon name={collapsed ? 'chevron-up' : 'chevron-down'} size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/master-detail.tsx",
+  "variant": "ghost",
+  "jsx": "<Button aria-label={t.common.close} className={ICON_BUTTON} onClick={onClose} size=\"icon\">\n  <Codicon name=\"close\" size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/master-detail.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={label}\n  className={cn(\n  ICON_BUTTON,\n  'data-[state=open]:bg-(--ui-control-active-background) data-[state=open]:text-foreground'\n  )}\n  size=\"icon\"\n  >\n  <Codicon name=\"kebab-vertical\" size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/retirement-view.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={onDismiss}>\n  {t.updates.maybeLater}\n  </Button>"
+ },
+ {
+  "file": "app/updates-overlay.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"font-medium\" onClick={onLater} type=\"button\">\n  {u.maybeLater}\n  </Button>"
+ },
+ {
+  "file": "app/updates-overlay.tsx",
+  "variant": "secondary",
+  "jsx": "<Button className=\"font-semibold\" onClick={onDone} size=\"lg\">\n  {u.done}\n  </Button>"
+ },
+ {
+  "file": "app/updates-overlay.tsx",
+  "variant": "secondary",
+  "jsx": "<Button className=\"font-semibold\" onClick={onDone} size=\"lg\">\n  {u.done}\n  </Button>"
+ },
+ {
+  "file": "app/updates-overlay.tsx",
+  "variant": "secondary",
+  "jsx": "<Button className=\"font-semibold\" onClick={onDone} size=\"lg\">\n  {u.done}\n  </Button>"
+ },
+ {
+  "file": "app/updates-overlay.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={onDismiss}>\n  {u.notNow}\n  </Button>"
+ },
+ {
+  "file": "app/command-center/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={title}\n  className={cn('text-(--ui-text-tertiary) hover:bg-(--chrome-action-hover) hover:text-foreground', className)}\n  onClick={onClick}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  {children}\n  </Button>"
+ },
+ {
+  "file": "app/command-center/index.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => void runSystemAction('restart')} size=\"xs\">\n  {cc.restartGateway}\n  </Button>"
+ },
+ {
+  "file": "app/command-center/index.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={() => void runSystemAction('update')} size=\"xs\">\n  {cc.updateHermes}\n  </Button>"
+ },
+ {
+  "file": "app/command-center/index.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={onRefresh} size=\"xs\">\n  {cc.retry}\n  </Button>"
+ },
+ {
+  "file": "app/command-center/maintenance.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  onClick={() => {\n  void window.hermesDesktop.writeClipboard(url)\n  notify({ durationMs: 1500, kind: 'success', message: mm.linkCopied })\n  }}\n  size=\"xs\"\n  >\n  {mm.copyLink}\n  </Button>"
+ },
+ {
+  "file": "app/command-center/maintenance.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={curatorBusy} onClick={() => void toggleCurator()} size=\"xs\">\n  {curator.paused ? mm.resume : mm.pause}\n  </Button>"
+ },
+ {
+  "file": "app/command-center/maintenance.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button\n  disabled={actionStatus?.running === true}\n  onClick={() => void launch(mm.curator, runCurator)}\n  size=\"xs\"\n  >\n  {mm.runNow}\n  </Button>"
+ },
+ {
+  "file": "app/command-center/maintenance.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button disabled={disabled} onClick={onRun} size=\"xs\">\n  {label}\n  </Button>"
+ },
+ {
+  "file": "app/command-center/maintenance.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-destructive hover:text-destructive\"\n  disabled={busy || size <= 0}\n  onClick={onReset}\n  size=\"xs\"\n  >\n  {resetLabel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/credential-key-ui.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.settings.credentials.remove}\n  className=\"text-muted-foreground hover:text-destructive\"\n  disabled={busy}\n  onClick={() => void onClear(varKey, editKey)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Trash2 />\n  </Button>"
+ },
+ {
+  "file": "app/settings/notifications-settings.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  className=\"gap-1.5\"\n  onClick={() => {\n  previewCompletionSound()\n  triggerHaptic('crisp')\n  }}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <Play className=\"size-3.5\" />\n  {copy.completionSoundPreview}\n  </Button>"
+ },
+ {
+  "file": "app/settings/notifications-settings.tsx",
+  "variant": "outline",
+  "jsx": "<Button className=\"self-start\" onClick={() => void runTest()} size=\"sm\" type=\"button\">\n  <Bell />\n  {copy.test}\n  </Button>"
+ },
+ {
+  "file": "app/settings/managed-updates-section.tsx",
+  "variant": "secondary",
+  "jsx": "<Button disabled size=\"sm\">\n  <Loader2 className=\"animate-spin\" /> {m.updating}\n  </Button>"
+ },
+ {
+  "file": "app/settings/plugin-install-modal.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={busy} onClick={handleClose}>\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/hud-modifier-settings.tsx",
+  "variant": "secondary",
+  "jsx": "<Button disabled={busy} onClick={() => void openPermissionSettings()} size=\"sm\">\n  {common.openSettings}\n  </Button>"
+ },
+ {
+  "file": "app/settings/hud-modifier-settings.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  disabled={busy}\n  onClick={() => void refresh(error ? undefined : status?.enabled)}\n  size=\"sm\"\n  >\n  {common.retry}\n  </Button>"
+ },
+ {
+  "file": "app/settings/local-models-quickstart.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={onConfigure} size=\"sm\">\n  {copy.quickstartConfigure}\n  </Button>"
+ },
+ {
+  "file": "app/settings/local-models-model-rows.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => void ejectModel(scope, modelId)} size=\"icon\">\n  <Eject />\n  </Button>"
+ },
+ {
+  "file": "app/settings/local-models-model-rows.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className={cn(deleting && '[&_svg]:animate-spin')}\n  onClick={() => void handleDelete()}\n  size=\"icon\"\n  >\n  {deleting ? <Loader2 /> : <Trash2 />}\n  </Button>"
+ },
+ {
+  "file": "app/settings/local-models-model-rows.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={!model.fits || anyDownloadRunning || !status.runtime_installed}\n  onClick={() => void downloadCatalogModel(scope, model)}\n  size=\"sm\"\n  >\n  <Download />\n  {copy.downloadAction(model.size_label)}\n  </Button>"
+ },
+ {
+  "file": "app/settings/aux-task-rows.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={disabled} onClick={onFollow} size=\"sm\">\n  {t.settings.model.followTask(baseLabel)}\n  </Button>"
+ },
+ {
+  "file": "app/settings/primitives.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className={cn(\n  'flex min-h-7 w-full justify-start gap-2 rounded-md px-2 text-left text-[length:var(--conversation-text-font-size)] transition',\n  active\n  ? 'bg-(--ui-bg-tertiary) text-foreground'\n  : 'text-(--ui-text-secondary) hover:bg-(--chrome-action-hover) hover:text-foreground'\n  )}\n  onClick={onClick}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <Icon className=\"size-4 shrink-0\" />\n  <span className=\"min-w-0 flex-1 truncate\">{label}</span>\n  </Button>"
+ },
+ {
+  "file": "app/settings/primitives.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  onClick={() => {\n  triggerHaptic('selection')\n  onClick()\n  }}\n  size=\"inline\"\n  >\n  {children}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button disabled={applying} onClick={onReset} size=\"sm\">\n  {m.resetAllToMain}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button disabled={applying} onClick={onDismiss} size=\"sm\">\n  {m.staleAuxDismiss}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button disabled={restartingBackend} onClick={() => void recycleStaleBackend()} size=\"sm\">\n  {restartingBackend && <Loader2 className=\"size-3.5 animate-spin\" />}\n  {restartingBackend ? m.restartingBackend : m.restartBackend}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={startProviderSetup} size=\"sm\">\n  {m.setUpProvider(selectedProviderRow?.name ?? m.setupProviderFallback)}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button\n  disabled={!mainModel || applying}\n  onClick={() => void resetAuxiliaryModels()}\n  size=\"sm\"\n  >\n  {m.resetAllToMain}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-settings.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  disabled={!mainModel || applying}\n  onClick={() =>\n  mainModel && void assignAuxiliary(meta.key, auxMainRoute(mainModel, endpointForProvider))\n  }\n  size=\"sm\"\n  >\n  {m.setToMain}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button\n  disabled={!providers.length || applying}\n  onClick={() => beginAuxiliaryEdit(meta.key)}\n  size=\"sm\"\n  >\n  {m.change}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => setEditingAuxTask(null)} size=\"sm\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-settings.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  disabled={applying}\n  onClick={() => {\n  const next: MoaConfigResponse = {\n  ...moa,\n  default_preset: selectedMoaPreset || moa.default_preset\n  }\n  void saveMoa(next)\n  }}\n  size=\"sm\"\n  >\n  {m.moaSetDefault}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button\n  disabled={!newMoaPresetName.trim() || !!moa.presets[newMoaPresetName.trim()] || applying}\n  onClick={() => {\n  const name = newMoaPresetName.trim()\n  const next: MoaConfigResponse = {\n  ...moa,\n  presets: {\n  ...moa.presets,\n  [name]: { ...currentMoaPreset, reference_models: [...currentMoaPreset.reference_models] }\n  }\n  }\n  setSelectedMoaPreset(name)\n  setNewMoaPresetName('')\n  void saveMoa(next)\n  }}\n  size=\"sm\"\n  >\n  {m.moaAddPreset}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  disabled={currentMoaPreset.reference_models.length <= 1 || applying}\n  onClick={() =>\n  updateMoaPreset(prev => ({\n  ...prev,\n  reference_models: prev.reference_models.filter((_, i) => i !== index)\n  }))\n  }\n  size=\"sm\"\n  >\n  {t.common.remove}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button\n  disabled={applying}\n  onClick={() =>\n  updateMoaPreset(prev => ({\n  ...prev,\n  reference_models: [...prev.reference_models, { ...prev.aggregator, enabled: true }]\n  }))\n  }\n  size=\"sm\"\n  >\n  {m.moaAddReference}\n  </Button>"
+ },
+ {
+  "file": "app/settings/plugin-settings.tsx",
+  "variant": "outline",
+  "jsx": "<Button asChild className=\"gap-1.5\" size=\"sm\">\n  <a href={MANAGE_PLUGINS_HREF}>\n  {copy.manage}\n  <Codicon name=\"arrow-right\" size=\"0.75rem\" />\n  </a>\n  </Button>"
+ },
+ {
+  "file": "app/settings/gateway-settings.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={cloudConnectingId !== null}\n  onClick={() => void activateSavedCloud(connection.id, connection.url)}\n  size=\"sm\"\n  >\n  {cloudConnectingId === connection.id ? <Loader2 className=\"animate-spin\" /> : null}\n  {g.cloudUseSaved}\n  </Button>"
+ },
+ {
+  "file": "app/settings/gateway-settings.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={cloudSigningIn} onClick={() => void cloudSignOut()}>\n  {cloudSigningIn ? <Loader2 className=\"animate-spin\" /> : null}\n  {g.signOut}\n  </Button>"
+ },
+ {
+  "file": "app/settings/gateway-settings.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => changeCloudOrg()} size=\"sm\">\n  {g.cloudOrgChange}\n  </Button>"
+ },
+ {
+  "file": "app/settings/gateway-settings.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  disabled={cloudDiscover === 'loading'}\n  onClick={() => void discoverCloud(cloudOrg ?? undefined)}\n  size=\"sm\"\n  >\n  {cloudDiscover === 'loading' ? <Loader2 className=\"animate-spin\" /> : <RefreshCw />}\n  {g.cloudRefresh}\n  </Button>"
+ },
+ {
+  "file": "app/settings/gateway-settings.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"mr-auto\"\n  disabled={state.envOverride || saving || remote.testing || !remote.canTest}\n  onClick={() => void remote.test()}\n  size=\"sm\"\n  >\n  {remote.testing ? <Loader2 className=\"animate-spin\" /> : null}\n  {g.testRemote}\n  </Button>"
+ },
+ {
+  "file": "app/settings/gateway-settings.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"mr-auto\"\n  disabled={testing || !state.sshHost.trim()}\n  onClick={() => void testSsh()}\n  size=\"sm\"\n  >\n  {testing ? <Loader2 className=\"animate-spin\" /> : null}\n  {g.sshTestConnection}\n  </Button>"
+ },
+ {
+  "file": "app/settings/gateway-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button\n  disabled={state.envOverride || saving}\n  onClick={() => void save(false)}\n  size=\"sm\"\n  >\n  {g.saveForRestart}\n  </Button>"
+ },
+ {
+  "file": "app/settings/gateway-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={() => void window.hermesDesktop?.revealLogs()} size=\"sm\">\n  <FileText />\n  {g.openLogs}\n  </Button>"
+ },
+ {
+  "file": "app/settings/model-select.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={m.chooseFromList}\n  className=\"pointer-events-auto -my-1.5 -mr-1.5 text-muted-foreground\"\n  onClick={() => setTyping(false)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <X />\n  </Button>"
+ },
+ {
+  "file": "app/settings/terminal-backend-panel.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={loading} onClick={() => void refresh()} size=\"sm\">\n  <RefreshCw className={cn('size-3.5', loading && 'animate-spin')} />\n  </Button>"
+ },
+ {
+  "file": "app/settings/developer-settings.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={resetting} onClick={() => void reset()} size=\"sm\">\n  {c.resetOnboardingAction}\n  </Button>"
+ },
+ {
+  "file": "app/settings/custom-endpoints-settings.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={endpoint.is_current || activating === endpoint.id}\n  onClick={() => void handleActivate(endpoint)}\n  size=\"sm\"\n  >\n  {activating === endpoint.id ? <Loader2 className=\"animate-spin\" /> : <Zap />}\n  {ce.use}\n  </Button>"
+ },
+ {
+  "file": "app/settings/custom-endpoints-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.settings.customEndpoints.deleteEndpoint}\n  className=\"hover:text-destructive\"\n  disabled={deleting === endpoint.id}\n  onClick={() => void handleDelete(endpoint)}\n  size=\"icon-sm\"\n  >\n  {deleting === endpoint.id ? <Loader2 className=\"animate-spin\" /> : <Trash2 />}\n  </Button>"
+ },
+ {
+  "file": "app/settings/custom-endpoints-settings.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={testing || !form.baseUrl.trim()}\n  onClick={() => void handleValidate()}\n  >\n  {testing ? <Loader2 className=\"animate-spin\" /> : <Zap />}\n  {ce.test}\n  </Button>"
+ },
+ {
+  "file": "app/settings/custom-endpoints-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className={cn(!form.id && 'hidden')}\n  onClick={() => {\n  setForm(EMPTY_FORM)\n  setDiscoveredModels([])\n  setDiscoveredDetails([])\n  }}\n  type=\"button\"\n  >\n  {ce.newEndpoint}\n  </Button>"
+ },
+ {
+  "file": "app/settings/local-models-browse.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={sideload} size=\"sm\">\n  <FolderOpen className=\"mr-1 size-3.5\" />\n  {copy.sideloadButton}\n  </Button>"
+ },
+ {
+  "file": "app/settings/local-models-browse.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => openFiles(hit.repo)} size=\"sm\">\n  {openRepo === hit.repo ? copy.browseRefresh : copy.browseShowFiles}\n  </Button>"
+ },
+ {
+  "file": "app/settings/local-models-browse.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={copy.browseDownloadAria.replace('{name}', group.label)}\n  className=\"h-6 shrink-0 px-2\"\n  disabled={group.fit === 'too-big' || Boolean(dJob)}\n  onClick={() => startBrowsedDownload(hit.repo, group)}\n  size=\"sm\"\n  >\n  {dJob ? <Loader2 className=\"size-3.5 animate-spin\" /> : <Download className=\"size-3.5\" />}\n  </Button>"
+ },
+ {
+  "file": "app/settings/fallback-models-field.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.common.remove}\n  onClick={() => commit(rows.filter((_, i) => i !== index))}\n  size=\"icon-xs\"\n  >\n  <X className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/fallback-models-field.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={() => commit([...rows, { provider: '', model: '' }])} size=\"sm\">\n  <Plus className=\"size-3.5\" />\n  {m.fallbackAdd}\n  </Button>"
+ },
+ {
+  "file": "app/settings/chat-font-setting.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={!value || draft === null} onClick={() => update('')} size=\"inline\">\n  {copy.chatFontReset}\n  </Button>"
+ },
+ {
+  "file": "app/settings/pet-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => setRenameTarget(null)} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/sessions-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button\n  disabled={busy}\n  onClick={() => void unarchive(session)}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {busy ? <Loader2 className=\"size-3.5 animate-spin\" /> : <ArchiveOff className=\"size-3.5\" />}\n  <span>{s.unarchive}</span>\n  </Button>"
+ },
+ {
+  "file": "app/settings/sessions-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={s.deletePermanently}\n  className=\"text-muted-foreground hover:text-destructive\"\n  disabled={busy}\n  onClick={() => void remove(session)}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <Trash2 className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/sessions-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button disabled={busy} onClick={() => void choose()} size=\"sm\" type=\"button\">\n  <FolderOpen className=\"size-3.5\" />\n  <span>{dir ? s.change : s.choose}</span>\n  </Button>"
+ },
+ {
+  "file": "app/settings/sessions-settings.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={busy} onClick={() => void clear()} size=\"sm\" type=\"button\">\n  {s.clear}\n  </Button>"
+ },
+ {
+  "file": "app/settings/providers-settings.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button\n  className=\"text-[length:var(--conversation-caption-font-size)]\"\n  onClick={onWantApiKey}\n  size=\"inline\"\n  type=\"button\"\n  >\n  {p.haveApiKey}\n  </Button>"
+ },
+ {
+  "file": "app/settings/providers-settings.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"py-1 text-[length:var(--conversation-caption-font-size)]\"\n  onClick={() => setShowAll(v => !v)}\n  size=\"inline\"\n  type=\"button\"\n  >\n  {showAll ? p.collapse : connected.length > 0 ? p.connectAnother : p.otherProviders}\n  <ChevronDown className={cn('size-3.5 transition', showAll && 'rotate-180')} />\n  </Button>"
+ },
+ {
+  "file": "app/settings/providers-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={`${copy.disconnect} ${title} in terminal`}\n  onClick={() => onTerminalDisconnect(provider)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Terminal className=\"size-4\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/providers-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={`${t.common.remove} ${title}`}\n  disabled={disconnecting}\n  onClick={() => onDisconnect(provider)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  {disconnecting ? <Loader2 className=\"size-3 animate-spin\" /> : <Trash2 className=\"size-3\" />}\n  </Button>"
+ },
+ {
+  "file": "app/settings/providers-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={`${copy.disconnect} ${title}`}\n  onClick={() => onTerminalDisconnect(provider)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Trash2 className=\"size-3\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/vault-settings.tsx",
+  "variant": "outline",
+  "jsx": "<Button className=\"gap-1.5\" onClick={() => openAdd()} size=\"sm\" type=\"button\">\n  <Plus className=\"size-3.5\" />\n  {v.add}\n  </Button>"
+ },
+ {
+  "file": "app/settings/vault-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={v.deleteAction}\n  className=\"text-(--ui-text-tertiary) hover:text-destructive\"\n  onClick={() => setPendingDelete(item)}\n  size=\"icon-sm\"\n  type=\"button\"\n  >\n  <Trash2 className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/vault-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"gap-1.5\"\n  disabled={lockSource.isPending}\n  onClick={() => lockSource.mutate(source.name)}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <Lock className=\"size-3.5\" />\n  {v.sources.lock}\n  </Button>"
+ },
+ {
+  "file": "app/settings/vault-settings.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  className=\"gap-1.5\"\n  onClick={() => setUnlockTarget(source)}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <KeyRound className=\"size-3.5\" />\n  {v.sources.unlock}\n  </Button>"
+ },
+ {
+  "file": "app/settings/vault-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={closeUnlock} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/vault-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={closeAdd} size=\"sm\" type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/keybind-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={k.clear}\n  className=\"shrink-0 text-(--ui-text-tertiary) opacity-0 group-hover:opacity-100 focus-visible:opacity-100\"\n  onClick={() => clearBinding(action.id)}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"close\" size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/keybind-settings.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={k.reset}\n  className=\"shrink-0 text-(--ui-text-tertiary) opacity-0 group-hover:opacity-100 focus-visible:opacity-100\"\n  onClick={() => resetBinding(action.id)}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"discard\" size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/env-var-actions-menu.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={copy.actions}\n  className={cn('text-muted-foreground hover:text-foreground', className)}\n  size=\"icon-sm\"\n  {...props}\n  >\n  <Codicon name=\"ellipsis\" size=\"0.875rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/computer-use-panel.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => void refresh()} size=\"sm\">\n  <RefreshCw className=\"size-3.5\" />\n  Recheck\n  </Button>"
+ },
+ {
+  "file": "app/settings/connections-registry.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={testingId === conn.id}\n  onClick={() => {\n  triggerHaptic('selection')\n  void test(conn)\n  }}\n  size=\"sm\"\n  >\n  {testingId === conn.id ? <Loader2 className=\"animate-spin\" /> : s.testConnection}\n  </Button>"
+ },
+ {
+  "file": "app/settings/connections-registry.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={busy} onClick={() => void makePrimary(conn.id)} size=\"sm\">\n  {s.makePrimary}\n  </Button>"
+ },
+ {
+  "file": "app/settings/connections-registry.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={s.editConnection}\n  onClick={() => openEditor(editorFromConnection(conn), conn)}\n  size=\"icon-sm\"\n  >\n  <Pencil className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/connections-registry.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={s.removeConnection}\n  disabled={busy}\n  onClick={() => setRemoveTarget(conn)}\n  size=\"icon-sm\"\n  >\n  {busy ? <Loader2 className=\"animate-spin\" /> : <Trash2 />}\n  </Button>"
+ },
+ {
+  "file": "app/settings/connections-registry.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  onClick={() => setEditor({ ...editor, headers: editor.headers.filter((_, i) => i !== index) })}\n  size=\"sm\"\n  >\n  {s.headerRemove}\n  </Button>"
+ },
+ {
+  "file": "app/settings/connections-registry.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  onClick={() =>\n  setEditor({ ...editor, headers: [...editor.headers, { name: '', stored: false, value: '' }] })\n  }\n  size=\"sm\"\n  >\n  {s.headerAdd}\n  </Button>"
+ },
+ {
+  "file": "app/settings/connections-registry.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={saving} onClick={() => openEditor(null)} size=\"sm\">\n  {s.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/connections-registry.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  onClick={() => {\n  triggerHaptic('selection')\n  openEditor(emptyEditor('remote'))\n  }}\n  size=\"sm\"\n  >\n  <Plus className=\"size-3.5\" /> {s.addConnection}\n  </Button>"
+ },
+ {
+  "file": "app/settings/connections-registry.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={updatingAll}\n  onClick={() => {\n  triggerHaptic('selection')\n  void updateAll()\n  }}\n  size=\"sm\"\n  >\n  {updatingAll ? (\n  <>\n  <Loader2 className=\"animate-spin\" /> {s.updateAllRunning}\n  </>\n  ) : (\n  <>\n  <RefreshCw /> {s.updateAll}\n  </>\n  )}\n  </Button>"
+ },
+ {
+  "file": "app/settings/local-models-runtime-section.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  className={cn(serverBusy && '[&_svg]:animate-spin')}\n  disabled={serverBusy}\n  onClick={() => void handleServer('stop')}\n  size=\"sm\"\n  >\n  {serverBusy ? <Loader2 /> : <StopFilled />}\n  {copy.stopServer}\n  </Button>"
+ },
+ {
+  "file": "app/settings/local-models-runtime-section.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  className={cn(serverBusy && '[&_svg]:animate-spin')}\n  disabled={serverBusy}\n  onClick={() => void handleServer('start')}\n  size=\"sm\"\n  >\n  {serverBusy ? <Loader2 /> : <Zap />}\n  {copy.startServer}\n  </Button>"
+ },
+ {
+  "file": "app/settings/local-model-download-progress.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  className={cn(busy && '[&_svg]:animate-spin')}\n  disabled={busy}\n  onClick={() => void send('resume')}\n  size=\"sm\"\n  >\n  {busy ? <Loader2 /> : <Play />}\n  {copy.downloadResumeAction}\n  </Button>"
+ },
+ {
+  "file": "app/settings/local-model-download-progress.tsx",
+  "variant": "outline",
+  "jsx": "<Button className={cn('[&_svg]:animate-spin')} disabled size=\"sm\">\n  <Loader2 />\n  {copy.downloadPauseAction}\n  </Button>"
+ },
+ {
+  "file": "app/settings/local-model-download-progress.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  className={cn(busy && '[&_svg]:animate-spin')}\n  disabled={busy}\n  onClick={() => void send('pause')}\n  size=\"sm\"\n  >\n  {busy ? <Loader2 /> : <Pause />}\n  {copy.downloadPauseAction}\n  </Button>"
+ },
+ {
+  "file": "app/settings/screenshot-settings.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => void openSettings()} size=\"sm\">\n  {s.openSettings}\n  </Button>"
+ },
+ {
+  "file": "app/settings/screenshot-settings.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => void refresh(retryEnabled)} size=\"sm\">\n  {s.retry}\n  </Button>"
+ },
+ {
+  "file": "app/settings/minimize-to-tray-setting.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => void load()} size=\"sm\">\n  {t.settings.screenshot.retry}\n  </Button>"
+ },
+ {
+  "file": "app/settings/terminal-font-setting.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={!value || draft === null} onClick={() => update('')} size=\"inline\">\n  {copy.terminalFontReset}\n  </Button>"
+ },
+ {
+  "file": "app/settings/toolset-config-panel.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => setEditing(false)} size=\"sm\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/toolset-config-panel.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={running} onClick={() => void run()} size=\"sm\">\n  {running ? <Loader2 className=\"size-3.5 animate-spin\" /> : <Terminal className=\"size-3.5\" />}\n  {running ? copy.postSetupRunning : copy.postSetupRerun}\n  </Button>"
+ },
+ {
+  "file": "app/settings/toolset-config-panel.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  disabled={selecting !== null || isSearchBackend}\n  onClick={() => void handleSelectCapability(provider, 'search')}\n  size=\"xs\"\n  >\n  {copy.webUseForSearch}\n  </Button>"
+ },
+ {
+  "file": "app/settings/toolset-config-panel.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  disabled={selecting !== null || isExtractBackend}\n  onClick={() => void handleSelectCapability(provider, 'extract')}\n  size=\"xs\"\n  >\n  {copy.webUseForExtract}\n  </Button>"
+ },
+ {
+  "file": "app/settings/uninstall-section.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={(): void => void bridge.openAppsSettings()} size=\"sm\">\n  {u.openAppsSettings}\n  </Button>"
+ },
+ {
+  "file": "app/settings/uninstall-section.tsx",
+  "variant": "destructive",
+  "jsx": "<Button disabled={running} onClick={(): void => void handleConfirm()} size=\"sm\">\n  {running && <Loader2 className=\"size-3 animate-spin\" />}\n  {running ? u.uninstalling : u.yesUninstall}\n  </Button>"
+ },
+ {
+  "file": "app/settings/uninstall-section.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={running} onClick={(): void => setPending(null)} size=\"sm\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/memory/connect.tsx",
+  "variant": "link",
+  "jsx": "<Button className=\"h-auto p-0 text-xs\" onClick={cancel} size=\"sm\" type=\"button\">\n  Cancel\n  </Button>"
+ },
+ {
+  "file": "app/settings/memory/connect.tsx",
+  "variant": "link",
+  "jsx": "<Button\n  className=\"h-auto gap-1 p-0 text-xs\"\n  onClick={() => void connect()}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <ExternalLink className=\"size-3\" />\n  {connectLabel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/memory/provider-config-modal.tsx",
+  "variant": "ghost",
+  "jsx": "<Button size=\"sm\" type=\"button\">\n  Cancel\n  </Button>"
+ },
+ {
+  "file": "app/settings/memory/provider-config-panel.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => void refresh()} size=\"sm\" type=\"button\">\n  Retry\n  </Button>"
+ },
+ {
+  "file": "app/settings/memory/provider-config-panel.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => setShowModal(true)} size=\"sm\" type=\"button\">\n  <SlidersHorizontal className=\"size-3.5\" />\n  Full config\u2026\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/index.tsx",
+  "variant": "outline",
+  "jsx": "<Button className=\"mt-3\" onClick={notice.action.onSelect} size=\"sm\" type=\"button\">\n  {notice.action.label}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/index.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  className=\"mt-3\"\n  onClick={() => openExternal(notice.action?.url)}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {notice.action.label}\n  <ExternalLink className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/index.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button\n  disabled={row.action.disabled}\n  onClick={row.action.url ? () => openExternal(row.action?.url) : undefined}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {row.action.label}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/index.tsx",
+  "variant": "secondary",
+  "jsx": "<Button disabled={!canBuy} onClick={startBuy} size=\"xs\" type=\"button\">\n  {b.buyCredits.buyButton}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/index.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={() => onPortal(outcome.portalUrl)} size=\"sm\" type=\"button\">\n  {b.buyCredits.openPortal}\n  <ExternalLink className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/index.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={onRetry} size=\"sm\" type=\"button\">\n  {b.buyCredits.retry}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/index.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={() => onPortal(portalUrl)} size=\"sm\" type=\"button\">\n  {b.buyCredits.openPortal}\n  <ExternalLink className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/auto-reload-row.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={busy} onClick={() => void disable()} size=\"sm\" type=\"button\">\n  {b.turnOff}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/auto-reload-row.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  disabled={busy}\n  onClick={() => setConfirmDisable(false)}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {b.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/auto-reload-row.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={busy}\n  onClick={() => setConfirmDisable(true)}\n  size=\"sm\"\n  tabIndex={editing ? undefined : -1}\n  type=\"button\"\n  >\n  {b.disable}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/auto-reload-row.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={busy} onClick={cancelEdit} size=\"sm\" type=\"button\">\n  {b.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/auto-reload-row.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={openEdit} size=\"sm\" type=\"button\">\n  {b.manage}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/plans-view.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={busy} onClick={flow.cancel} size=\"sm\" type=\"button\">\n  {bp.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/plans-view.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  onClick={() => tier.action && openExternalLink(tier.action.url)}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {tier.action.label}\n  <ExternalLink className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/plans-view.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={flow.mutating}\n  onClick={() => flow.begin({ tierId: tier.tierId, tierName: tier.name })}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {bp.downgrade}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/plans-view.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={bp.backAria}\n  className=\"size-7 p-0 text-(--ui-text-tertiary)\"\n  disabled={flow.mutating}\n  onClick={onBack}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <ChevronLeft className=\"size-4\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/account-row-value.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={chip.disabled}\n  key={chip.label}\n  onClick={chip.url ? () => openExternal(chip.url) : undefined}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {chip.label}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/account-row-value.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={action.disabled}\n  onClick={action.disabled ? undefined : onAction ? onAction : () => openExternal(action.url)}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {action.label}\n  {!action.disabled && action.url && <ExternalLink className=\"size-3.5\" />}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/inline-feedback.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={flow.openVerification} size=\"sm\" type=\"button\">\n  {b.openVerification}\n  <ExternalLink className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/inline-feedback.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={flow.dismiss} size=\"sm\" type=\"button\">\n  {b.dismiss}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/inline-feedback.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={() => void flow.start()} size=\"sm\" type=\"button\">\n  {b.verify}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/inline-feedback.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={() => openExternalLink(portalUrl)} size=\"sm\" type=\"button\">\n  {t.settings.billing.buyCredits.openPortal}\n  <ExternalLink className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/current-plan-card.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={plan.action.onSelect ?? onViewPlans} size=\"sm\" type=\"button\">\n  {plan.action.label}\n  </Button>"
+ },
+ {
+  "file": "app/settings/billing/current-plan-card.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={() => plan.link && openExternal(plan.link.url)} size=\"sm\" type=\"button\">\n  {plan.link.label}\n  <ExternalLink className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/artifacts/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={refreshing ? a.refreshing : a.refresh}\n  className=\"text-(--ui-text-tertiary) hover:bg-(--chrome-action-hover) hover:text-foreground\"\n  disabled={refreshing}\n  onClick={() => void refreshArtifacts()}\n  size=\"icon-titlebar\"\n  >\n  {refreshing ? <TitlebarIcon name=\"loading\" spinning /> : <TitlebarIcon name=\"refresh\" />}\n  </Button>"
+ },
+ {
+  "file": "app/artifacts/index.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={() => onOpenChat(artifact.sessionId)} size=\"xs\" type=\"button\">\n  <FolderOpen className=\"size-3\" />\n  {a.chat}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/connector-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button aria-label={t.common.close} size=\"icon-xs\">\n  <X className=\"size-3\" />\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/connector-dialog.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={waiting} size=\"inline\">\n  {t.connectorsPage.card.verb.stopWaiting}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/connector-dialog.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button className=\"justify-self-start\" onClick={onOpenAdmin} size=\"inline\">\n  {copy.orgLink}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/tools-filter-bar.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"shrink-0\" onClick={onShowSummary} size=\"xs\">\n  {copy.showSummary}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/tools-summary.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={onShowAll} size=\"inline\">\n  {copy.showAllTools(total)}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/tools-list.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={onRetry} size=\"inline\">\n  {t.connectorsPage.tools.retry}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/tools-list.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={onSignIn} size=\"inline\">\n  {t.connectorsPage.page.signIn}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/tools-list.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={onSignIn} size=\"inline\">\n  {copy.page.signIn}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/tools-list.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={onRetryRules} size=\"inline\">\n  {copy.page.retry}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/tools-list.tsx",
+  "variant": "text",
+  "jsx": "<Button aria-pressed={shown} onClick={onToggle} size=\"xs\">\n  {shown ? copy.hideDeprecated(count) : copy.showDeprecated(count)}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/tools-list.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={saving} onClick={onDiscard} size=\"xs\">\n  {copy.discard}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/accounts-section.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  disabled={reconnecting || (connecting && account.connection_id !== retryable)}\n  onClick={() => onReconnect(account)}\n  size=\"xs\"\n  >\n  {t.connectorsPage.card.verb.reconnect}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/accounts-section.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  onClick={() => onEditChange({ connectionId: account.connection_id, kind: 'rename' })}\n  size=\"xs\"\n  >\n  {copy.rename}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/accounts-section.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => onRemove(account)} size=\"xs\">\n  {copy.remove}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/accounts-section.tsx",
+  "variant": "secondary",
+  "jsx": "<Button disabled={connecting} onClick={() => onEditChange({ kind: 'add' })} size=\"xs\">\n  {copy.addAnother}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/accounts-section.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => onRemove(account)} size=\"xs\">\n  {copy.remove}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/accounts-section.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={busy} onClick={onCancel} size=\"xs\" type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/plugin-tools-panel.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={onOpenPlugins} size=\"inline\">\n  {copy.dialog.openPlugins}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/plugin-tools-panel.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={() => void probe.refetch()} size=\"inline\">\n  {copy.tools.retry}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/ways-section.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={() => rest.onServerToggle?.(false)} size=\"inline\">\n  {copy.dialog.turnOffLocal}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/ways-section.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={onReconnect} size=\"xs\">\n  {copy.card.verb.reconnect}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/ways-section.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => onToggleForMe(true)} size=\"xs\">\n  {copy.card.verb.turnBackOn}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/dialog-menu.tsx",
+  "variant": "ghost",
+  "jsx": "<Button aria-label={copy.dialog.moreActions} size=\"icon-xs\">\n  <Codicon name=\"ellipsis\" size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/connectors-directory.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => set({ segment: 'all' })} size=\"xs\">\n  {copy.page.showAllMatches}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/connectors-directory.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"text-destructive\" onClick={onRetryHosted} size=\"xs\">\n  {copy.page.retry}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/connectors-directory.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => set(EMPTY_CONNECTORS_FILTER)} size=\"xs\">\n  {copy.page.clearSearch}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/add-dialog.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={leaveRaw} size=\"sm\">\n  {t.common.back}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/add-dialog.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={openRaw} size=\"sm\">\n  {copy.editJson}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/local-server-control.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={installing || missing}\n  loading={installing}\n  onClick={() => onInstall(draft)}\n  size=\"xs\"\n  >\n  {t.connectorsPage.card.verb.install}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/connectors-tab.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={mcp.profilePending} onClick={() => setAddOpen(true)} size=\"xs\">\n  {copy.add.action}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/add-server-form.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={label}\n  className=\"shrink-0 text-(--ui-text-tertiary)\"\n  onClick={onClick}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"trash\" size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/add-server-form.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"justify-self-start\" onClick={onAdd} size=\"xs\">\n  {addLabel}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/hosted-notice.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => openFreeTierSignIn()} size=\"xs\">\n  {copy.signIn}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/connect-element.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => void window.hermesDesktop?.openExternal?.(link)} size=\"xs\">\n  {copy.dialog.connectOpenAgain}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/connect-element.tsx",
+  "variant": "secondary",
+  "jsx": "<Button disabled={retrying} onClick={onRetry} size=\"xs\">\n  {copy.card.verb.tryAgain}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/connect-element.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={onStopWaiting} size=\"xs\">\n  {copy.card.verb.stopWaiting}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/local-slots.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"justify-self-start text-destructive\" onClick={onRemove} size=\"xs\">\n  {m.remove}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => reveal(desktop.file!)} size=\"icon\">\n  <Codicon name=\"folder-opened\" size=\"0.85rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "variant": "ghost",
+  "jsx": "<Button aria-label={p.settingsToggle(pkg.name)} onClick={openSettings} size=\"icon\">\n  <Codicon name=\"settings-gear\" size=\"0.85rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={`${p.uninstall}: ${pkg.name}`}\n  className=\"text-(--ui-text-tertiary) hover:text-(--ui-danger,#f87171)\"\n  disabled={busy}\n  onClick={() => onAgentRemove(agent)}\n  size=\"icon\"\n  >\n  <Trash2 className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={`${p.uninstall}: ${pkg.name}`}\n  className=\"text-(--ui-text-tertiary) hover:text-(--ui-danger,#f87171)\"\n  onClick={() => onDesktopRemove(desktop)}\n  size=\"icon\"\n  >\n  <Trash2 className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  className=\"h-5 px-1.5 text-[0.65rem]\"\n  disabled={busy}\n  onClick={() => onAgentUpdate(agent)}\n  size=\"xs\"\n  >\n  {p.updateToPin(agent.catalog_version ?? agent.catalog_sha?.slice(0, 8) ?? '')}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  className=\"h-5 px-1.5 text-[0.65rem]\"\n  disabled={!desktop.packageOrigin?.repo}\n  onClick={() => installAgentHalfHere(desktop, scope)}\n  size=\"xs\"\n  >\n  {p.installAgentHere}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  onClick={() => openPluginInstallRequest({ profile: scope, repo: '' })}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {d.installModal.installFromGit}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={d.openFolder}\n  onClick={() => void revealPluginsDir()}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <FolderOpen className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={d.rescan}\n  onClick={() => {\n  triggerHaptic('selection')\n  void rescanAll(requestGateway, scope)\n  }}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <RefreshCw className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => setPaneHeightOverride(CATALOG_PANE_ID, open ? 0 : undefined)} size=\"xs\">\n  {open ? p.catalogHide : p.catalogBrowse}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/skills/skills-tab.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={installing} onClick={() => handleInstallOfficial(skill)} size=\"xs\">\n  {installing && <Loader2 className=\"size-3 animate-spin\" />}\n  {installing ? t.skills.hub.installing : t.skills.hub.install}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/skills/embedded-hub-picker.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={updating} onClick={updateAll} size=\"xs\">\n  {updating && <Loader2 className=\"size-3 animate-spin\" />}\n  {updating ? h.updating : h.updateAll}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/skills/embedded-hub-picker.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => setPaneHeightOverride(HUB_PANE_ID, open ? 0 : undefined)} size=\"xs\">\n  {open ? h.pickerHide : h.pickerBrowse}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/skills/skill-detail.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={onEdit} size=\"xs\">\n  {t.skills.edit}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/skills/skill-detail.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"text-destructive hover:text-destructive\" onClick={onArchive} size=\"xs\">\n  {t.skills.archive}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/skills/official-skill-detail.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button disabled={installing} onClick={onInstall} size=\"xs\">\n  {installing && <Loader2 className=\"size-3 animate-spin\" />}\n  {installing ? t.skills.hub.installing : t.skills.hub.install}\n  </Button>"
+ },
+ {
+  "file": "app/capabilities/toolsets/toolset-detail.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button\n  onClick={() => navigate(`${SETTINGS_ROUTE}?tab=config:model&aux=vision`)}\n  size=\"xs\"\n  >\n  {t.skills.visionModelLink}\n  </Button>"
+ },
+ {
+  "file": "app/chat/resume-exhausted-overlay.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={() => requestFreshSession()} size=\"sm\">\n  {t.assistant.thread.errorStartNewSession}\n  </Button>"
+ },
+ {
+  "file": "app/chat/resume-exhausted-overlay.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={() => onRetryResume(sessionId)} size=\"sm\">\n  {t.desktop.resumeRetry}\n  </Button>"
+ },
+ {
+  "file": "app/chat/session-tile.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={() => patchSessionTile(storedSessionId, { error: undefined })} size=\"sm\">\n  Retry\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={s.markAllRead}\n  className={HEADER_ACTION_BTN}\n  onClick={event => {\n  event.stopPropagation()\n  markAllSessionsRead()\n  // Ack the persisted layer too, or the next list\n  // refresh repaints every dot just dismissed.\n  ackAllSessionsRead()\n  }}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"check-all\" size=\"0.75rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={s.showProjects}\n  className={HEADER_NAV_BTN}\n  onClick={event => {\n  event.stopPropagation()\n  exitProjectScope()\n  }}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"list-unordered\" size=\"0.75rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/section-states.tsx",
+  "variant": "ghost",
+  "jsx": "<Button className=\"mt-0.5 text-(--ui-text-secondary)\" onClick={onNewProject} size=\"sm\">\n  <Codicon name=\"add\" size=\"0.75rem\" />\n  {s.projects.newButton}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/section-states.tsx",
+  "variant": "ghost",
+  "jsx": "<Button className=\"mt-0.5 text-(--ui-text-secondary)\" onClick={onRetry} size=\"sm\">\n  <Codicon name=\"refresh\" size=\"0.75rem\" />\n  {t.common.retry}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/section-states.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"-ml-1 mt-0.5 text-(--ui-text-secondary)\"\n  onClick={() => openRecoveryGuide(SESSION_STORAGE_RECOVERY_URL)}\n  size=\"sm\"\n  >\n  <ExternalLink />\n  {copy.guide}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/session-actions-menu.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={submitting} onClick={() => onOpenChange(false)} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/session-row.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={r.sessionActions}\n  className={cn(\n  'size-5 rounded-[4px] bg-transparent text-transparent transition-colors duration-100 hover:bg-(--ui-control-active-background) hover:text-foreground focus-visible:bg-(--ui-control-active-background) focus-visible:text-foreground focus-visible:ring-0 data-[state=open]:bg-(--ui-control-active-background) data-[state=open]:text-foreground group-hover:text-(--ui-text-tertiary) [&_svg]:size-3.5!',\n  trailing.length > 0 && 'absolute right-0',\n  pr && KEBAB_YIELDS\n  )}\n  size=\"icon\"\n  >\n  <Codicon name=\"kebab-vertical\" size=\"0.875rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/profile-switcher.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={saving} onClick={onClose} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/profile-switcher.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-busy={pending || undefined}\n  aria-label={accessibleLabel}\n  aria-pressed={active}\n  className={cn(\n  'bg-transparent text-(--ui-text-tertiary) hover:bg-(--ui-control-hover-background) hover:text-foreground',\n  active && 'bg-(--ui-control-active-background) text-foreground',\n  muted && 'opacity-40 hover:opacity-100',\n  summary && !active && 'relative'\n  )}\n  data-connection-id={connectionId}\n  data-slot={slot}\n  onClick={onSelect}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  {pending ? <Loader2 className=\"animate-spin\" /> : <Codicon name={glyph} size=\"0.875rem\" />}\n  {summary && !active && (\n  <span className=\"absolute -right-0.5 -top-0.5\">\n  <ProfileStatusDot summary={summary} />\n "
+ },
+ {
+  "file": "app/chat/sidebar/gateway-groups.tsx",
+  "variant": "ghost",
+  "jsx": "<Button aria-label={`${copy.actions}: ${label}`} size=\"icon-xs\">\n  <Codicon name=\"ellipsis\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/gateway-groups.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => setRenaming(false)} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/project-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={p.removeFolder}\n  className=\"size-5 shrink-0 text-(--ui-text-quaternary) hover:text-foreground\"\n  onClick={() => setFolders(prev => prev.filter(f => f !== folder))}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"close\" size=\"0.75rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/project-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"self-start\"\n  disabled={submitting}\n  onClick={() => void pickFolder()}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <Codicon name=\"add\" size=\"0.75rem\" />\n  {p.addFolder}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/project-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={p.ideaShuffle}\n  className=\"size-5 text-(--ui-text-quaternary) hover:text-foreground\"\n  disabled={submitting}\n  onClick={() => setTemplates(randomIdeaTemplates())}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"refresh\" size=\"0.75rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/project-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={submitting} onClick={() => onOpenChange(false)} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/profile-remote-override-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={saving} onClick={() => setConfirming(false)} type=\"button\">\n  {p.confirmBack}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/profile-remote-override-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"mr-auto\"\n  disabled={saving}\n  onClick={() => void removeOverride()}\n  type=\"button\"\n  >\n  {p.disconnect}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/profile-remote-override-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={saving} onClick={close} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/filter-menu.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={f.filters}\n  className={cn(\n  className,\n  'data-[state=open]:bg-(--ui-control-active-background) data-[state=open]:text-foreground data-[state=open]:opacity-100',\n  // Active filters read as \"this control is engaged\", the same way the\n  // open menu does \u2014 never as an accent, which the sidebar reserves\n  // for a session that is actually doing something.\n  filtersActive && 'bg-(--ui-control-active-background) text-foreground opacity-100'\n  )}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"list-filter\" size=\"0.75rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/chrome.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={ariaLabel}\n  className={HEADER_ACTION_BTN}\n  onClick={event => {\n  event.stopPropagation()\n  onPlainClick()\n  }}\n  onPointerDown={\n  onNewProjectDrag\n  ? event => {\n  startNewProjectDrag(onNewProjectDrag.onArm, event, { onTap: onPlainClick })\n  }\n  : onNewSessionSplit\n  ? event => {\n  startNewSessionDrag(placement => {\n  onNewSessionSplit(placement.dir, { anchor: placement.anchor, before: placement.before })\n  }, event)\n  }\n  : undefined\n  }\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"add\" size=\"0.75rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/projects/base-branch-picker.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"group w-full flex justify-start items-center min-w-0 gap-1.5 hover:no-underline hover:text-muted-foreground\"\n  disabled={disabled || loading}\n  size=\"inline\"\n  >\n  <Codicon className=\"shrink-0 text-(--ui-text-tertiary)\" name=\"git-branch\" size=\"0.8rem\" />\n  <span className=\"shrink-0\">{parts.before}</span>\n  <span className=\"shrink-0 text-primary underline-offset-4 decoration-current/20 group-hover:underline\">\n  {loading ? '...' : value}\n  </span>\n  <Codicon className=\"shrink-0 text-(--ui-text-tertiary)\" name=\"chevron-down\" size=\"0.75rem\" />\n  <span className=\"shrink-0\">{parts.after}</span>\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/projects/worktree-dialog.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"group w-full flex justify-start items-center min-w-0 gap-1.5 hover:no-underline hover:text-muted-foreground\"\n  disabled={pending}\n  size=\"inline\"\n  >\n  <Codicon className=\"shrink-0 text-(--ui-text-tertiary)\" name=\"folder\" size=\"0.8rem\" />\n  <span className=\"shrink-0\">{p.worktreeProjectLabel}</span>\n  <span className=\"truncate text-primary underline-offset-4 decoration-current/20 group-hover:underline\">\n  {activeProjectLabel}\n  </span>\n  <Codicon className=\"shrink-0 text-(--ui-text-tertiary)\" name=\"chevron-down\" size=\"0.75rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/projects/worktree-dialog.tsx",
+  "variant": "link",
+  "jsx": "<Button\n  className=\"px-0 text-(--ui-text-secondary) hover:text-foreground\"\n  disabled={pending}\n  onClick={() => setConvertMode(false)}\n  type=\"button\"\n  >\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/projects/worktree-dialog.tsx",
+  "variant": "link",
+  "jsx": "<Button\n  className=\"px-0 text-(--ui-text-secondary) hover:text-foreground\"\n  disabled={pending}\n  onClick={enterConvert}\n  type=\"button\"\n  >\n  {p.convertBranchInstead}\n  </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/projects/worktree-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={pending} onClick={() => onOpenChange(false)} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/start-voice-button.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.composer.voiceEngine}\n  className={cn(GHOST_ICON_BTN, 'w-5 rounded-l-none p-0')}\n  disabled={disabled}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <ChevronDown className={iconSize.xs} />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"h-6 rounded-md px-2 text-[0.68rem]\"\n  onClick={() => exitQueuedEdit('cancel')}\n  type=\"button\"\n  >\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/url-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => onOpenChange(false)} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/reasoning-pill.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={title}\n  className={PILL}\n  data-testid=\"reasoning-pill\"\n  disabled={disabled}\n  type=\"button\"\n  >\n  {pending ? <GlyphSpinner className=\"opacity-50\" spinner=\"braille\" /> : <span>{label}</span>}\n  <ChevronDown className=\"size-2.5 shrink-0 opacity-50\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/restored-draft-notice.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"h-6 rounded-md px-2 text-[0.68rem]\"\n  onClick={() => {\n  if (undoRestoredDraft(readLiveText())) {\n  onUndone()\n  }\n  }}\n  type=\"button\"\n  >\n  {t.composer.restoredDraftUndo}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/restored-draft-notice.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.common.close}\n  className=\"h-6 rounded-md px-2 text-[0.68rem]\"\n  onClick={dismissRestoredDraftNotice}\n  type=\"button\"\n  >\n  \u00d7\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/model-pill.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={copy.openModelPicker}\n  className={pillClass}\n  data-tour={tourMarker}\n  disabled={disabled}\n  onClick={() => setModelPickerOpen(true)}\n  type=\"button\"\n  >\n  {label}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/model-pill.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={title}\n  className={pillClass}\n  data-tour={tourMarker}\n  disabled={disabled}\n  type=\"button\"\n  >\n  {label}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/controls.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={c.queueMessage}\n  className={GHOST_ICON_BTN}\n  disabled={disabled}\n  onClick={onQueue}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <Layers3 className={iconSize.sm} />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/controls.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.titlebar.resetHudLayout}\n  className={cn(GHOST_ICON_BTN, 'p-0')}\n  onClick={resetHudLayout}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <Codicon name=\"discard\" size=\"0.875rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/controls.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.titlebar.exitHud}\n  className={cn(GHOST_ICON_BTN, 'p-0')}\n  onClick={closeHud}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <Codicon name=\"screen-normal\" size=\"0.875rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/controls.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={muted ? c.unmuteMic : c.muteMic}\n  aria-pressed={muted}\n  className={cn(GHOST_ICON_BTN, 'p-0', muted && 'bg-muted text-muted-foreground')}\n  disabled={disabled}\n  onClick={() => {\n  triggerHaptic('selection')\n  onToggleMute()\n  }}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <Codicon name={muted ? 'mic-off' : 'mic'} size=\"1rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/controls.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={c.stopListening}\n  className=\"h-(--composer-control-size) shrink-0 gap-1.5 rounded-full px-2.5 text-xs text-muted-foreground hover:bg-accent hover:text-foreground\"\n  disabled={disabled}\n  onClick={() => {\n  triggerHaptic('submit')\n  onStopTurn()\n  }}\n  type=\"button\"\n  >\n  <Square className={cn('fill-current', iconSize.xs)} />\n  <span>{c.stopShort}</span>\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/controls.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={label}\n  aria-pressed={wake.listening && !pausedForVoice}\n  className={cn(GHOST_ICON_BTN, 'p-0', wake.listening && !pausedForVoice && ACTIVE_ICON_BTN)}\n  disabled={disabled || pausedForVoice || wake.pending}\n  onClick={() => {\n  triggerHaptic(wake.listening ? 'close' : 'open')\n  void toggleWakeWord()\n  }}\n  size=\"icon\"\n  type=\"button\"\n  >\n  {wake.listening && !pausedForVoice ? <Ear className={iconSize.sm} /> : <EarOff className={iconSize.sm} />}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/queue-panel.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-muted-foreground/75 hover:text-foreground/90\"\n  onClick={onResume}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {c.queueResume}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/queue-panel.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-expanded={isExpanded}\n  aria-label={isExpanded ? c.queueCollapse : c.queueExpand}\n  className=\"size-5 rounded-md\"\n  onClick={() => toggleExpanded(entry.id)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon\n  className={cn('transition-transform', isExpanded && 'rotate-180')}\n  name=\"chevron-down\"\n  size={iconSize.xs}\n  />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/queue-panel.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={c.queueEdit}\n  className=\"size-5 rounded-md\"\n  disabled={Boolean(editingId) && !isEditing}\n  onClick={() => onEdit(entry)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Pencil className={iconSize.xs} />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/queue-panel.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={c.queueSteer}\n  className=\"size-5 rounded-md\"\n  disabled={isEditing}\n  onClick={() => onSteerNow?.(entry.id)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <SteeringWheel className={iconSize.xs} />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/queue-panel.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={busy ? c.queueSendNext : c.queueSend}\n  className=\"size-5 rounded-md\"\n  disabled={isEditing}\n  onClick={() => onSendNow(entry.id)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <CornerDownLeft className={iconSize.xs} />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/voice-menu.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={triggerLabel}\n  className={cn(GHOST_ICON_BTN, 'p-0', active && ACTIVE_ICON_BTN)}\n  disabled={disabled}\n  size=\"icon\"\n  type=\"button\"\n  >\n  {voiceStatus === 'recording' ? (\n  <Square className={cn('fill-current', iconSize.xs)} />\n  ) : voiceStatus === 'transcribing' ? (\n  <Loader2 className={cn('animate-spin', iconSize.sm)} />\n  ) : wakeListening ? (\n  <Ear className={iconSize.sm} />\n  ) : (\n  <Codicon name=\"mic\" size=\"0.875rem\" />\n  )}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/voice-activity.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"h-6 shrink-0 gap-1 rounded-full px-2 text-[0.6875rem]\"\n  onClick={stopVoicePlayback}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <VolumeX className={iconSize.xs} />\n  Stop\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/context-menu.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={state.tools.label}\n  className={cn(\n  GHOST_ICON_BTN,\n  'data-[state=open]:bg-(--chrome-action-hover) data-[state=open]:text-foreground'\n  )}\n  disabled={!state.tools.enabled}\n  size=\"icon\"\n  type=\"button\"\n  >\n  <Codicon name=\"add\" size=\"0.875rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/index.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-muted-foreground/75 hover:text-foreground/90\"\n  onClick={openAgents}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {t.statusStack.agents}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/session-control.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={ctrl.dismissError}\n  className=\"size-6 shrink-0 p-0 text-destructive hover:bg-destructive/20\"\n  onClick={handleDismissError}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"close\" size=\"0.75rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/drawer.tsx",
+  "variant": "grip",
+  "jsx": "<Button\n  aria-controls={controls}\n  aria-expanded={!collapsed}\n  aria-label={label}\n  className=\"status-drawer-toggle absolute -top-2 left-1/2 z-10 -translate-x-1/2\"\n  data-slot=\"status-drawer-toggle\"\n  onClick={onToggle}\n  size=\"grip\"\n  type=\"button\"\n  >\n  <span aria-hidden className=\"h-0.75 w-7 rounded-full bg-current\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/coding-row.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={s.newBranch}\n  className=\"pointer-events-none size-4 shrink-0 text-muted-foreground/60 opacity-0 transition hover:text-foreground group-hover/status-row:pointer-events-auto group-hover/status-row:opacity-100 group-focus-within/status-row:pointer-events-auto group-focus-within/status-row:opacity-100 data-[state=open]:pointer-events-auto data-[state=open]:opacity-100\"\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"kebab-vertical\" size=\"0.8rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/session-control-goal.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-[0.7rem] text-muted-foreground/75 hover:text-foreground/90\"\n  onClick={() => setDetailsOpen(true)}\n  size=\"inline\"\n  type=\"button\"\n  >\n  {ctrl.viewDetails}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/session-control-goal.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-[0.68rem] text-muted-foreground/75 hover:text-foreground/90\"\n  disabled={isBusy}\n  onClick={openAddCriterion}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {ctrl.addCriterion}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/session-control-goal.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-[0.68rem] text-muted-foreground/60 hover:text-destructive\"\n  disabled={isBusy}\n  onClick={confirmClearCriteria}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {ctrl.clearCriteria}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/session-control-goal.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={ctrl.copyCriterion(index)}\n  className=\"size-6 rounded text-muted-foreground/60 hover:text-foreground/90\"\n  onClick={() => void copyCriterionText(subgoal)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"copy\" size=\"0.7rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/session-control-goal.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={ctrl.removeCriterion(index)}\n  className=\"size-6 rounded text-muted-foreground/60 hover:text-destructive\"\n  disabled={isBusy}\n  onClick={() => confirmRemoveCriterion(index)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"close\" size=\"0.7rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/session-control-goal.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={isBusy} onClick={() => setAddCriterionOpen(false)} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/subagent-controls.tsx",
+  "variant": "secondary",
+  "jsx": "<Button disabled={pending || !text.trim()} size=\"xs\" type=\"submit\">\n  {t.agents.steer}\n  </Button>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/subagent-controls.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={pending} onClick={() => void send('interrupt')} size=\"xs\" type=\"button\">\n  {t.statusStack.stop}\n  </Button>"
+ },
+ {
+  "file": "app/chat/right-rail/real-profile-consent-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={busy} onClick={() => $realProfilePromptMuted.set(true)} type=\"button\">\n  {prompt.notNow}\n  </Button>"
+ },
+ {
+  "file": "app/shell/butterbar.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.common.close}\n  className=\"-mr-1 size-5 text-(--bb-fg) hover:bg-(--bb-hover) hover:text-(--bb-link)\"\n  onClick={() => dismissButterbar(item)}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"close\" size=\"0.75rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/shell/gateway-menu-panel.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={copy.reconnectGateway}\n  className=\"text-muted-foreground hover:text-foreground\"\n  disabled={reconnecting}\n  onClick={reconnect}\n  size=\"icon-xs\"\n  >\n  <RefreshCw className={cn(reconnecting && 'animate-spin')} />\n  </Button>"
+ },
+ {
+  "file": "app/shell/gateway-menu-panel.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={copy.openSystem}\n  className=\"text-muted-foreground hover:text-foreground\"\n  onClick={openSystem}\n  size=\"icon-xs\"\n  >\n  <LayoutDashboard />\n  </Button>"
+ },
+ {
+  "file": "app/shell/gateway-menu-panel.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.commandCenter.restartGateway}\n  className=\"text-muted-foreground hover:text-destructive\"\n  onClick={restart}\n  size=\"icon-xs\"\n  >\n  <Power />\n  </Button>"
+ },
+ {
+  "file": "app/shell/gateway-menu-panel.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"-mr-2 h-auto py-0 font-medium leading-none text-muted-foreground\"\n  onClick={openSystem}\n  size=\"xs\"\n  type=\"button\"\n  >\n  {copy.viewAllLogs}\n  </Button>"
+ },
+ {
+  "file": "app/shell/titlebar-controls.tsx",
+  "variant": "ghost",
+  "jsx": "<Button asChild className={className} size=\"icon-titlebar\">\n  <a\n  aria-label={tool.label}\n  data-tour={tool.tour}\n  href={tool.href}\n  onPointerDown={event => event.stopPropagation()}\n  rel=\"noreferrer\"\n  target=\"_blank\"\n  >\n  {withCountBadge(tool.icon, tool.badge)}\n  </a>\n  </Button>"
+ },
+ {
+  "file": "app/shell/titlebar-controls.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={tool.label}\n  aria-pressed={tool.active ?? undefined}\n  className={className}\n  data-tour={tool.tour}\n  disabled={tool.disabled}\n  onClick={event => {\n  if (tool.actionId) {\n  recordAction(tool.actionId, 'click')\n  }\n  if (tool.to) {\n  navigate(tool.to)\n  }\n  tool.onSelect?.(event)\n  }}\n  onPointerDown={event => event.stopPropagation()}\n  size=\"icon-titlebar\"\n  type=\"button\"\n  >\n  {withCountBadge(tool.icon, tool.badge)}\n  </Button>"
+ },
+ {
+  "file": "app/overlays/overlay-split-layout.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-controls={childrenId}\n  aria-expanded={expanded}\n  aria-label={`${expanded ? t.common.collapse : t.common.expand}: ${group.label}`}\n  className=\"absolute right-0.5 top-1/2 -translate-y-1/2\"\n  data-tour={`nav-toggle-${group.id}`}\n  onClick={() => setDisclosures(previous => ({ ...previous, [group.id]: !expanded }))}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <DisclosureCaret open={expanded} />\n  </Button>"
+ },
+ {
+  "file": "app/overlays/overlay-chrome.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className={cn('text-(--ui-text-tertiary) hover:bg-(--chrome-action-hover) hover:text-foreground', className)}\n  size=\"icon-titlebar\"\n  type={type}\n  {...props}\n  >\n  {children}\n  </Button>"
+ },
+ {
+  "file": "app/overlays/panel.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={label}\n  className=\"size-5 rounded-[4px] bg-transparent text-(--ui-text-tertiary) opacity-0 transition-colors duration-100 hover:bg-(--ui-control-active-background) hover:text-foreground focus-visible:opacity-100 focus-visible:ring-0 group-hover/row:opacity-100 data-[state=open]:bg-(--ui-control-active-background) data-[state=open]:text-foreground data-[state=open]:opacity-100 [&_svg]:size-3.5!\"\n  size=\"icon\"\n  >\n  <Codicon name=\"kebab-vertical\" size=\"0.875rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/overlays/panel.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={label}\n  className=\"h-7 w-full shrink-0 justify-center text-muted-foreground/70 hover:bg-(--ui-row-hover-background) hover:text-foreground\"\n  onClick={onClick}\n  size=\"sm\"\n  >\n  <Codicon name={icon} size=\"0.875rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/overlays/overlay-view.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={closeLabel}\n  className=\"text-(--ui-text-tertiary) hover:bg-(--chrome-action-hover) hover:text-foreground\"\n  onClick={closeOverlay}\n  size=\"icon-titlebar\"\n  >\n  <TitlebarIcon name=\"close\" />\n  </Button>"
+ },
+ {
+  "file": "app/overlays/overlay-breadcrumb-header.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={group.onSelect} size=\"inline\">\n  {group.label}\n  </Button>"
+ },
+ {
+  "file": "app/overlays/overlay-breadcrumb-header.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"min-w-0 truncate\" onClick={child.onSelect} size=\"inline\">\n  {child.label}\n  </Button>"
+ },
+ {
+  "file": "app/contrib/mcp-install-deeplink-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={saving} onClick={close} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/pet-generate/components/empty-hint.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  className=\"h-auto w-fit rounded-full font-normal\"\n  key={example}\n  onClick={() => onExample(`a ${example}`)}\n  size=\"xs\"\n  >\n  {example}\n  </Button>"
+ },
+ {
+  "file": "app/pet-generate/components/draft-grid.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={copy.remix}\n  className={cn(\n  'absolute right-1 top-1 z-20',\n  'text-(--ui-text-tertiary) opacity-10 transition',\n  'hover:bg-transparent hover:text-foreground focus-visible:opacity-100 group-hover:opacity-100'\n  )}\n  onClick={event => {\n  event.stopPropagation()\n  onRemix(draft)\n  }}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"git-branch\" size={12} />\n  </Button>"
+ },
+ {
+  "file": "app/pet-generate/components/draft-grid.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"self-center\" onClick={onCancel} size=\"xs\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/pet-generate/components/hatch-preview.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={adopting} onClick={onDiscard}>\n  <RefreshCw />\n  {copy.startOver}\n  </Button>"
+ },
+ {
+  "file": "app/session-import/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.common.refresh}\n  disabled={sessions.isFetching}\n  onClick={() => {\n  void sessions.refetch()\n  if (current) {\n  void preview.refetch()\n  }\n  }}\n  size=\"icon-titlebar\"\n  >\n  <Codicon name=\"refresh\" />\n  </Button>"
+ },
+ {
+  "file": "app/session-import/index.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => void sessions.refetch()}>\n  {t.common.retry}\n  </Button>"
+ },
+ {
+  "file": "app/session-import/index.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  disabled={sessions.isFetchingNextPage}\n  onClick={() => void sessions.fetchNextPage()}\n  >\n  {copy.more}\n  </Button>"
+ },
+ {
+  "file": "app/session-import/index.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => setSelected(null)}>\n  {t.common.back}\n  </Button>"
+ },
+ {
+  "file": "app/session-import/index.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => void preview.refetch()}>\n  {t.common.retry}\n  </Button>"
+ },
+ {
+  "file": "app/starmap/share-controls.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-muted-foreground hover:text-foreground\"\n  onClick={() => onResetMap?.()}\n  size=\"xs\"\n  >\n  {t.starmap.resetToMine}\n  </Button>"
+ },
+ {
+  "file": "app/starmap/share-controls.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.starmap.shareTitle}\n  className=\"text-muted-foreground hover:text-foreground\"\n  size=\"icon\"\n  >\n  <Upload className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/starmap/node-context-menu.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={saving} onClick={() => setEditing(null)} type=\"button\">\n  Cancel\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/index.tsx",
+  "variant": "outline",
+  "jsx": "<Button className=\"h-7 gap-1.5 text-xs\" onClick={() => void openFolderAsProject()} size=\"sm\">\n  <Codicon name=\"folder-opened\" size=\"0.8125rem\" />\n  {r.openFolder}\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={showIgnored ? r.hideIgnored : r.showIgnored}\n  aria-pressed={showIgnored}\n  // Stays visible while active: the tree is showing more than the\n  // repo does, and that has to be legible without hovering.\n  className={showIgnored ? HEADER_ACTION_CLASS : HEADER_ACTION_LABEL_REVEAL}\n  onClick={onToggleShowIgnored}\n  size=\"icon-xs\"\n  >\n  <Codicon name={showIgnored ? 'eye' : 'eye-closed'} size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={r.refreshTree}\n  className={HEADER_ACTION_LABEL_REVEAL}\n  disabled={loading}\n  onClick={onRefresh}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"refresh\" size=\"0.8125rem\" spinning={loading} />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={r.collapseAll}\n  className={cn(HEADER_ACTION_CLASS, !canCollapse && 'pointer-events-none opacity-0')}\n  disabled={!canCollapse}\n  onClick={onCollapseAll}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"collapse-all\" size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/terminal/instance.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  className=\"h-6 rounded-md px-2 text-[0.68rem] shadow-md backdrop-blur-md\"\n  onClick={event => event.preventDefault()}\n  onMouseDown={event => {\n  event.preventDefault()\n  event.stopPropagation()\n  addSelectionToChat()\n  }}\n  type=\"button\"\n  >\n  {t.rightSidebar.addToChat}\n  <KbdCombo className=\"ml-1 opacity-70\" combo=\"mod+l\" size=\"sm\" />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/terminal/instance.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => createTerminal()} size=\"sm\" type=\"button\">\n  {t.rightSidebar.terminalOpenInteractive}\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={treeMode === 'tree' ? c.viewAsList : c.viewAsTree}\n  className={ACTION_BTN}\n  disabled={!hasFiles}\n  onClick={toggleReviewTreeMode}\n  size=\"icon-xs\"\n  >\n  <Codicon name={treeMode === 'tree' ? 'list-flat' : 'list-tree'} size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={c.stageAll}\n  className={ACTION_BTN}\n  disabled={!hasFiles || !isUncommitted}\n  onClick={() => void stageReviewFile(null).catch(err => notifyError(err, c.stageAll))}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"add\" size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={c.revertAll}\n  className={ACTION_BTN}\n  disabled={!hasFiles || !isUncommitted}\n  onClick={() => requestRevert(null)}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"discard\" size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.rightSidebar.refreshTree}\n  className={ACTION_BTN}\n  onClick={() => void refreshReview()}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"refresh\" size=\"0.8125rem\" spinning={loading} />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button aria-label={c.close} className={ACTION_BTN} onClick={closeReview} size=\"icon-xs\">\n  <Codicon name=\"close\" size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={selectedFile.staged ? c.unstage : c.stage}\n  className={ACTION_BTN}\n  onClick={() =>\n  void (\n  selectedFile.staged ? unstageReviewFile(selectedFile.path) : stageReviewFile(selectedFile.path)\n  ).catch(err => notifyError(err, c.stage))\n  }\n  size=\"icon-xs\"\n  >\n  <Codicon name={selectedFile.staged ? 'remove' : 'add'} size=\"0.8rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={c.close}\n  className={ACTION_BTN}\n  onClick={clearReviewSelection}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"close\" size=\"0.8rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/review/file-tree.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={file.staged ? c.unstage : c.stage}\n  className=\"size-4 rounded text-muted-foreground/70 hover:text-foreground\"\n  onClick={event => {\n  event.stopPropagation()\n  void (file.staged ? unstageReviewFile(file.path) : stageReviewFile(file.path))\n  }}\n  size=\"icon-xs\"\n  >\n  <Codicon name={file.staged ? 'remove' : 'add'} size=\"0.7rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/review/file-tree.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={c.revert}\n  className=\"size-4 rounded text-muted-foreground/70 hover:text-(--ui-red)\"\n  onClick={event => {\n  event.stopPropagation()\n  requestRevert(file.path)\n  }}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"discard\" size=\"0.7rem\" />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/review/ship-bar.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"min-w-0 flex-1 justify-center px-7 text-[0.7rem] text-muted-foreground/85 hover:text-foreground\"\n  disabled={!hasFiles}\n  onClick={() => {\n  if (!requestComposerSubmit(c.agentShipPrompt, { target: scopeTarget })) {\n  notifyError(new Error(c.agentShipUnavailable), c.agentShip)\n  }\n  }}\n  size=\"sm\"\n  >\n  <span className=\"truncate underline underline-offset-2\">{c.agentShip}</span>\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/review/ship-bar.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={prLabel}\n  className=\"size-7 text-muted-foreground/80 hover:text-foreground\"\n  disabled={!ship.ghReady || busy}\n  onClick={() => void createOrOpenPr().catch(err => notifyError(err, prLabel))}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"git-pull-request\" size={ICON} />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/files/remote-picker.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={r.remotePickerCreateFolder}\n  disabled={creating}\n  onClick={() => void createFolder()}\n  size=\"icon-xs\"\n  >\n  <Codicon name={creating ? 'loading' : 'check'} size=\"0.875rem\" spinning={creating} />\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/files/remote-picker.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  disabled={newFolderName !== null || Boolean(error)}\n  onClick={() => setNewFolderName('')}\n  size=\"sm\"\n  >\n  <Codicon name=\"new-folder\" size=\"0.875rem\" />\n  {r.remotePickerNewFolder}\n  </Button>"
+ },
+ {
+  "file": "app/right-sidebar/files/remote-picker.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => close()} size=\"sm\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/profiles/rename-profile-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={busy} onClick={onClose} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/profiles/create-profile-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={busy} onClick={onClose} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/webhooks/index.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  className=\"mt-1\"\n  disabled={restarting}\n  onClick={() => void restartGatewayNow()}\n  size=\"sm\"\n  >\n  <RefreshCw />\n  {restarting ? w.restartingGateway : w.restartGateway}\n  </Button>"
+ },
+ {
+  "file": "app/messaging/index.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  disabled={gatewayRestarting}\n  onClick={() => void restartGatewayNow()}\n  size=\"sm\"\n  >\n  <RefreshCw className={gatewayRestarting ? 'animate-spin' : undefined} />\n  {gatewayRestarting ? m.restarting : m.restartNow}\n  </Button>"
+ },
+ {
+  "file": "app/messaging/index.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  disabled={busy || !user.request_id}\n  onClick={() => onApprove(user)}\n  size=\"sm\"\n  >\n  {busy ? m.approving : m.approve}\n  </Button>"
+ },
+ {
+  "file": "app/messaging/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={m.revokeAria(pairingLabel(user))}\n  onClick={() => onRevoke(user)}\n  size=\"sm\"\n  >\n  {m.revoke}\n  </Button>"
+ },
+ {
+  "file": "app/messaging/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button asChild className=\"size-8 shrink-0\">\n  <a href={field.url} rel=\"noreferrer\" target=\"_blank\">\n  <ExternalLink className=\"size-3.5\" />\n  </a>\n  </Button>"
+ },
+ {
+  "file": "app/messaging/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"size-8 shrink-0\"\n  disabled={saving === `clear:${field.key}`}\n  onClick={() => onClear(field.key)}\n  >\n  <Trash2 className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/messaging/telegram-qr-setup.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={addAllowedId} size=\"sm\">\n  <Check />\n  {q.add}\n  </Button>"
+ },
+ {
+  "file": "app/messaging/telegram-qr-setup.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={phase === 'applying'} onClick={() => void cancel()} size=\"sm\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/messaging/telegram-qr-setup.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => openExternalLink(setup.deep_link)} size=\"sm\">\n  <ExternalLink />\n  {q.openTelegram}\n  </Button>"
+ },
+ {
+  "file": "app/messaging/telegram-qr-setup.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => void cancel()} size=\"sm\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/messaging/allowlist-field.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={m.removeListEntry}\n  className=\"size-8 shrink-0\"\n  disabled={lone}\n  onClick={() => remove(row.id)}\n  >\n  <X className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "app/messaging/allowlist-field.tsx",
+  "variant": "ghost",
+  "jsx": "<Button className=\"h-7 gap-1 px-2 text-xs\" onClick={add} size=\"sm\">\n  <Plus className=\"size-3.5\" />\n  {m.addListEntry}\n  </Button>"
+ },
+ {
+  "file": "app/cron/index.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={saving} onClick={onClose} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "app/cron/index.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={saving} onClick={onClose} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board-switcher.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={onClose}>\n  {k.cancel}\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board-switcher.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={`${k.board}: ${label}`}\n  className=\"h-full min-w-0 max-w-full gap-1.5 px-2\"\n  size=\"sm\"\n  >\n  <Codicon className=\"shrink-0 text-(--ui-text-tertiary)\" name=\"project\" size=\"0.8125rem\" />\n  <span className=\"shrink-0 text-[0.6875rem] font-medium text-(--ui-text-tertiary)\">{k.board}</span>\n  <span className=\"min-w-0 flex-1 truncate text-[0.75rem] font-medium leading-none\">{label}</span>\n  {typeof current?.total === 'number' && (\n  <span className=\"text-[0.6875rem] tabular-nums text-(--ui-text-quaternary)\">{current.total}</span>\n  )}\n  <Codicon className=\"shrink-0 text-(--ui-text-tertiary)\" name=\"chevron-down\" size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/drawer.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={sendLabel}\n  className=\"absolute top-1 right-1 text-muted-foreground/80 hover:text-foreground\"\n  disabled={empty}\n  onClick={submit}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"arrow-up\" size=\"0.85rem\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/drawer.tsx",
+  "variant": "outline",
+  "jsx": "<Button className=\"shrink-0\" disabled={empty} onClick={requeue} size=\"xs\">\n  <Codicon name=\"debug-restart\" size=\"0.7rem\" />\n  {k.requeueWithNote}\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/drawer.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={editing ? k.cancelEdit : k.editDescription}\n  onClick={() => {\n  setDraft(body ?? '')\n  setEditing(!editing)\n  }}\n  size=\"icon-xs\"\n  >\n  <Codicon name={editing ? 'close' : 'edit'} size=\"0.75rem\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/drawer.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  className=\"self-end\"\n  onClick={() => {\n  onSave(draft)\n  setEditing(false)\n  }}\n  size=\"xs\"\n  >\n  {k.save}\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/drawer.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  aria-label={`${t.fileMenu.download} ${attachment.filename}`}\n  className=\"max-w-full justify-start font-normal\"\n  disabled={!path || download.isPending}\n  onClick={() => download.mutate()}\n  size=\"inline\"\n  >\n  <Codicon name={download.isPending ? 'sync' : 'cloud-download'} size=\"0.75rem\" spinning={download.isPending} />\n  <span className=\"truncate\">{attachment.filename}</span>\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/drawer.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={k.uploadAttachment}\n  disabled={pending}\n  onClick={() => fileRef.current?.click()}\n  size=\"icon-xs\"\n  >\n  <Codicon name={pending ? 'sync' : 'cloud-upload'} size=\"0.8rem\" spinning={pending} />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/drawer.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={k.reEstimate}\n  className=\"ml-auto\"\n  disabled={est.isPending}\n  onClick={() => est.mutate()}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"refresh\" size=\"0.75rem\" spinning={est.isPending} />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/drawer.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={est.isPending} onClick={() => est.mutate()} size=\"xs\">\n  <Codicon name={est.isPending ? 'loading' : 'dashboard'} size=\"0.75rem\" spinning={est.isPending} />\n  {est.isPending ? k.estimating : k.estimateEffort}\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/drawer.tsx",
+  "variant": "ghost",
+  "jsx": "<Button aria-label={k.taskActions} size=\"icon-xs\">\n  <Codicon name=\"ellipsis\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/drawer.tsx",
+  "variant": "ghost",
+  "jsx": "<Button aria-label={k.close} onClick={onClose} size=\"icon-xs\">\n  <Codicon name=\"close\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={k.reEstimate}\n  disabled={!title.trim() || estMut.isPending}\n  onClick={() => estMut.mutate()}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"refresh\" size=\"0.7rem\" spinning={estMut.isPending} />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  disabled={!title.trim() || estMut.isPending}\n  onClick={() => estMut.mutate()}\n  size=\"xs\"\n  >\n  <Codicon\n  name={estMut.isPending ? 'loading' : 'dashboard'}\n  size=\"0.75rem\"\n  spinning={estMut.isPending}\n  />\n  {estMut.isPending ? k.estimating : k.estimate}\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={onClose}>\n  {k.cancel}\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={() => $introDismissed.set(true)} size=\"inline\">\n  {k.introGotIt}\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={k.filters}\n  className={cn(active && 'bg-(--ui-control-active-background) text-foreground')}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"filter\" size=\"0.85rem\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={busy} size=\"xs\">\n  {k.moveToShort}\n  <Codicon name=\"chevron-down\" size=\"0.7rem\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={busy} size=\"xs\">\n  {k.assign}\n  <Codicon name=\"chevron-down\" size=\"0.7rem\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={busy} onClick={() => bulk.mutate({ archive: true })} size=\"xs\">\n  {k.archive}\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"text-destructive\"\n  disabled={busy}\n  onClick={() => bulkDelete.mutate()}\n  size=\"xs\"\n  >\n  {k.delete}\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board.tsx",
+  "variant": "ghost",
+  "jsx": "<Button aria-label={k.clearSelection} onClick={onClear} size=\"icon-xs\">\n  <Codicon name=\"close\" size=\"0.8rem\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={k.orchestrationSettings}\n  className={cn(settingsOpen && 'bg-(--ui-control-active-background) text-foreground')}\n  onClick={() => setSettingsOpen(!settingsOpen)}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"organization\" size=\"0.85rem\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/board.tsx",
+  "variant": "outline",
+  "jsx": "<Button className=\"mt-0.5\" onClick={() => setAddStatus('triage')} size=\"sm\">\n  <Codicon name=\"add\" size=\"0.75rem\" />\n  {k.newTask}\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/orchestration.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={save.isPending || draft.trim() === profile.description}\n  onClick={() => save.mutate()}\n  size=\"xs\"\n  >\n  {k.save}\n  </Button>"
+ },
+ {
+  "file": "plugins/kanban/orchestration.tsx",
+  "variant": "ghost",
+  "jsx": "<Button className=\"relative\" disabled={auto.isPending} onClick={() => auto.mutate()} size=\"xs\">\n  <span className={auto.isPending ? 'invisible' : ''}>{k.auto}</span>\n  {auto.isPending && (\n  <span className=\"absolute inset-0 grid place-items-center\">\n  <Codicon className=\"animate-spin [animation-duration:1.2s]\" name=\"loading\" size=\"0.75rem\" />\n  </span>\n  )}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/skills-hub.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-[0.65rem] text-(--ui-text-quaternary) hover:text-(--ui-text-secondary)\"\n  onClick={() => setBrowseHub(v => !v)}\n  size=\"inline\"\n  >\n  {browseHub ? h.pickerHide : h.pickerBrowse}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/skills-hub.tsx",
+  "variant": "secondary",
+  "jsx": "<Button disabled={searching || !query.trim()} onClick={() => void search()} size=\"sm\">\n  {searching ? h.searching : h.search}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/skills-hub.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={b.tools.installHint(r.name)}\n  className=\"shrink-0 px-2 font-semibold\"\n  disabled={installing !== null}\n  onClick={() => void install(r.name)}\n  size=\"sm\"\n  >\n  {installing === r.name ? '\u2026' : '+'}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/model-picker.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"h-6 self-start text-xs text-(--ui-text-tertiary)\"\n  onClick={() => setManualEntry(false)}\n  size=\"sm\"\n  >\n  {b.editor.backToDropdowns}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/roster-pane-groups.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={`${rowProps.group}: ${delta === -1 ? b.sections.moveUp : b.sections.moveDown}`}\n  disabled={!reorderGroupRows(sortedGroupRows, rowProps.group, delta)}\n  onClick={() => moveRoom(rowProps.group, delta)}\n  size=\"icon-xs\"\n  >\n  <Codicon name={delta === -1 ? 'chevron-up' : 'chevron-down'} />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-parts.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={upload} size=\"sm\" type=\"button\">\n  {b.avatar.upload}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-parts.tsx",
+  "variant": "secondary",
+  "jsx": "<Button disabled={busy} onClick={generate} size=\"sm\" type=\"button\">\n  {busy ? b.avatar.generating : b.avatar.generate}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-parts.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => onImage(null)} size=\"sm\" type=\"button\">\n  {t.common.remove}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/mcp-setup.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => void submitKeys()} size=\"xs\">\n  {b.tools.saveTest}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/mcp-setup.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => setPhase('idle')} size=\"xs\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/mcp-setup.tsx",
+  "variant": "link",
+  "jsx": "<Button className=\"underline\" onClick={() => setPhase('idle')} size=\"inline\">\n  {t.common.retry}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/mcp-setup.tsx",
+  "variant": "link",
+  "jsx": "<Button\n  className=\"ml-1.5 text-[0.65rem] text-(--ui-accent) underline\"\n  onClick={() => void (isOAuth ? beginOAuth() : beginKeys())}\n  size=\"inline\"\n  >\n  {isOAuth ? b.tools.signIn : b.tools.setUp}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  aria-label={`${b.group.compressHistory}: ${member.name}`}\n  disabled={compressing !== null}\n  onClick={() => void compressMember(member)}\n  size=\"sm\"\n  >\n  <Codicon name={compressing === key ? 'loading' : 'fold'} spinning={compressing === key} />\n  {b.group.compressHistory}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  className=\"w-fit\"\n  onClick={() => {\n  onClose()\n  onManageMembers()\n  }}\n  size=\"sm\"\n  >\n  <Codicon name=\"organization\" />\n  {`Manage members (${(members || []).length})\u2026`}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={onClose}>\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => (onBack ? onBack() : $groupChatWorkspace.set(null))} size=\"sm\">\n  Back\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={b.group.settingsLabel(group)}\n  className=\"shrink-0 text-(--ui-text-tertiary) hover:text-foreground\"\n  onClick={() => setSettingsOpen(true)}\n  size=\"sm\"\n  >\n  <Codicon name=\"gear\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label=\"Manage group members\"\n  className=\"shrink-0 text-(--ui-text-tertiary) hover:text-foreground\"\n  onClick={() => setMemberPickerOpen(true)}\n  size=\"sm\"\n  >\n  <Codicon name=\"organization\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={b.group.disbandLabel(group)}\n  className=\"shrink-0 text-(--ui-text-tertiary) hover:text-destructive\"\n  onClick={() => setConfirmDisband(true)}\n  size=\"sm\"\n  >\n  <Codicon name=\"trash\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"shrink-0 text-(--ui-accent)\"\n  onClick={() => void stopRoomRun()}\n  size=\"xs\"\n  >\n  <Codicon name=\"debug-stop\" />\n  {b.group.stop}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"shrink-0 text-(--ui-accent)\"\n  onClick={() => void stopRoomRun()}\n  size=\"micro\"\n  >\n  <Codicon name=\"debug-stop\" />\n  {b.group.stop}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={b.group.removeAttachment}\n  onClick={() => removeImage(thread, index)}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"close\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={b.group.attachHint}\n  className=\"shrink-0 text-(--ui-text-tertiary) hover:text-foreground\"\n  onClick={() => void pickGroupAttachments().then(picked => addImages(thread, picked))}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <Codicon name=\"attach\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-left text-[0.7rem] font-semibold text-(--ui-accent)\"\n  onClick={() => setRevealedSpeaker(revealed ? null : entryKey)}\n  size=\"inline\"\n  >\n  {label}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={`Reply to ${display}`}\n  className=\"text-(--ui-text-tertiary) hover:text-foreground\"\n  onClick={() => replyToMember(entry, member)}\n  size=\"icon\"\n  >\n  <Codicon name=\"reply\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "variant": "link",
+  "jsx": "<Button\n  className=\"w-fit px-2 pb-1 text-left text-[0.65rem] text-(--ui-accent) transition-colors\"\n  key={`replylink:${id}`}\n  onClick={() => setReplyThread(id)}\n  size=\"inline\"\n  >\n  {b.group.replyInThread}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view-members.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={onClose}>\n  Cancel\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/roster-pane-content.tsx",
+  "variant": "secondary",
+  "jsx": "<Button className=\"justify-self-start\" onClick={() => void refetch()} size=\"sm\">\n  {b.roster.retryNow}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/roster-pane-content.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  className=\"justify-self-start\"\n  onClick={() => $showHiddenBots.set(true)}\n  size=\"sm\"\n  >\n  {b.roster.showHidden}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/screen-pane.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={busy} onClick={() => void decideImageSwitch(false)} size=\"sm\">\n  {t.screen.imageSwitchKeep}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/screen-pane.tsx",
+  "variant": "secondary",
+  "jsx": "<Button disabled={busy} onClick={() => void handBack()} size=\"sm\">\n  <Codicon name=\"debug-continue\" /> {t.screen.handBack}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/screen-pane.tsx",
+  "variant": "secondary",
+  "jsx": "<Button disabled={busy} onClick={() => void handBack(true)} size=\"sm\">\n  <Codicon name=\"debug-continue\" /> {t.screen.handBackForce}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/screen-pane.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.screen.reconnect}\n  disabled={conn === 'attaching'}\n  onClick={() => void attach()}\n  size=\"sm\"\n  >\n  <Codicon name=\"refresh\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/roster-pane-toolbar.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"rounded-md text-(--ui-text-tertiary) hover:text-foreground\"\n  onClick={() => setActivityToasts(!activityToasts)}\n  size=\"icon-xs\"\n  >\n  <Codicon name={activityToasts ? 'bell' : 'bell-slash'} />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/roster-pane-toolbar.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={b.roster.newBotOrGroup}\n  className=\"rounded-md text-(--ui-text-tertiary) hover:text-foreground\"\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"add\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/roster-pane-toolbar.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={activeFilterCount ? `Filter roster, ${activeFilterCount} active` : 'Filter roster'}\n  className={cn(\n  'size-7 shrink-0 rounded-md text-(--ui-text-tertiary) hover:text-foreground',\n  activeFilterCount && 'text-(--ui-accent)'\n  )}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"list-filter\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/avatar-picker.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => onImage(null)} size=\"sm\" type=\"button\">\n  {b.avatar.removeImage}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/avatar-picker.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  onClick={() => {\n  onImage(null)\n  onShape(blobShapeString(Math.random().toString(36).slice(2, 10), kind))\n  }}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <Codicon className=\"mr-1 text-[0.8rem]\" name=\"refresh\" />\n  {b.avatar.randomize}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/avatar-picker.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  onClick={() => onShape(blobShapeString(locked ? '' : pickerName, kind))}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <Codicon className=\"mr-1 text-[0.8rem]\" name={locked ? 'unlock' : 'lock'} />\n  {locked ? b.editor.unlock : b.editor.lockFace}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/avatar-picker.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"text-(--ui-text-tertiary)\"\n  onClick={() => onShape(defaultShapeFor(pickerName))}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {b.avatar.classicShapes}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/avatar-picker.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  className=\"w-full justify-center\"\n  disabled={genBusy}\n  onClick={generate}\n  type=\"button\"\n  >\n  {genBusy ? (\n  <GlyphSpinner className=\"mr-1 text-[0.8rem]\" spinner=\"breathe\" />\n  ) : (\n  <Codicon className=\"mr-1 text-[0.8rem]\" name=\"sparkle\" />\n  )}\n  {genBusy ? b.avatar.generating : b.avatar.generate}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/avatar-picker.tsx",
+  "variant": "secondary",
+  "jsx": "<Button className=\"w-full justify-center\" onClick={upload} type=\"button\">\n  <Codicon className=\"mr-1 text-[0.8rem]\" name=\"device-camera\" />\n  {b.editor.chooseImage}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/create-dialog.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"flex items-center gap-1 text-xs font-medium text-(--ui-text-tertiary) hover:text-(--ui-text-secondary)\"\n  onClick={() => {\n  setAdvanced(v => {\n  if (!v) {\n  ensureCaps()\n  }\n  return !v\n  })\n  }}\n  size=\"inline\"\n  >\n  <DisclosureCaret open={advanced} />\n  {b.bot.advanced}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/create-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  disabled={busy}\n  onClick={() => {\n  discardDraft()\n  reset()\n  onClose()\n  }}\n  >\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/create-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"justify-self-start\"\n  onClick={() =>\n  void (async () => {\n  // Sequential: each toggle patches groups[] from the current meta.\n  for (const group of current) {\n  await setGroupMembership(bot, group, false)\n  }\n  })()\n  }\n  size=\"sm\"\n  >\n  {b.bot.removeFromAllGroups}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/create-dialog.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={onClose}>\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/cron.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={onClose}>\n  {t.common.close}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/cron.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.common.delete}\n  className=\"opacity-0 transition-opacity group-hover:opacity-100\"\n  disabled={busy}\n  onClick={() => act('remove')}\n  size=\"icon-xs\"\n  >\n  <Codicon name=\"trash\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/cron.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  disabled={busy}\n  onClick={() => {\n  reset()\n  onClose()\n  }}\n  >\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/cron.tsx",
+  "variant": "ghost",
+  "jsx": "<Button aria-label={c.newCron} onClick={openCreate} size=\"icon-xs\">\n  <Codicon name=\"add\" />\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/cron.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => void refetch()} size=\"sm\">\n  {t.common.retry}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/edit-profile-dialog.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"flex items-center gap-1 text-xs font-medium text-(--ui-text-tertiary) hover:text-(--ui-text-secondary)\"\n  onClick={() => setAdvanced(v => !v)}\n  size=\"inline\"\n  >\n  <DisclosureCaret open={advanced} />\n  {b.bot.advancedHint}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/edit-profile-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={busy} onClick={onClose}>\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/pet.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"justify-center\"\n  onClick={() => {\n  setSelectedSlug(null)\n  onImage(null)\n  }}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {b.avatar.removeBackToShape}\n  </Button>"
+ },
+ {
+  "file": "plugins/hermes-bots/user-sections-ui.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => onOpenChange(false)} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "contrib/react/boundary.tsx",
+  "variant": "outline",
+  "jsx": "<Button className=\"justify-self-center\" onClick={reset} size=\"sm\">\n  <Codicon name=\"refresh\" size=\"0.8rem\" />\n  Retry\n  </Button>"
+ },
+ {
+  "file": "components/prompt-overlays.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={submitting} onClick={() => void send('')} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "components/prompt-overlays.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={submitting} onClick={() => void send('')} type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "components/prompt-overlays.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={submitting} onClick={() => void send('')} type=\"button\">\n  {copy.vaultUnlockKeepLocked}\n  </Button>"
+ },
+ {
+  "file": "components/prompt-overlays.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={submitting} onClick={() => void send('')} type=\"button\">\n  {copy.vaultSaveDecline}\n  </Button>"
+ },
+ {
+  "file": "components/prompt-overlays.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={submitting} onClick={() => void send('')} type=\"button\">\n  {copy.vaultCodeSkip}\n  </Button>"
+ },
+ {
+  "file": "components/error-boundary.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => window.location.reload()}>\n  {t.errors.reloadWindow}\n  </Button>"
+ },
+ {
+  "file": "components/error-boundary.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => void window.hermesDesktop?.revealLogs()?.catch(() => undefined)}>\n  {t.errors.openLogs}\n  </Button>"
+ },
+ {
+  "file": "components/error-boundary.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => requestSendDiagnostics(error.stack || error.message)}>\n  {t.errors.sendDiagnostics}\n  </Button>"
+ },
+ {
+  "file": "components/model-picker.tsx",
+  "variant": "ghost",
+  "jsx": "<Button className=\"mr-auto\" onClick={enterSlug}>\n  {copy.addCustomModelAction}\n  </Button>"
+ },
+ {
+  "file": "components/model-picker.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={addProvider}>\n  {copy.addProvider}\n  </Button>"
+ },
+ {
+  "file": "components/model-picker.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={() => onOpenChange(false)}>\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "components/gateway-connecting-overlay.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={onExit} size=\"sm\" type=\"button\">\n  {t.onboarding.continueWithoutSetup}\n  </Button>"
+ },
+ {
+  "file": "components/external-open-failed-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => setFailure(null)}>\n  {copy.close}\n  </Button>"
+ },
+ {
+  "file": "components/model-visibility-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={copy.removeCustomModel}\n  className=\"-my-1 text-(--ui-text-tertiary)\"\n  onClick={event => {\n  event.preventDefault()\n  removeCustomModel(provider.slug, family.id)\n  }}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <X className=\"size-3\" />\n  </Button>"
+ },
+ {
+  "file": "components/model-visibility-dialog.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"-ml-2 text-(--ui-text-tertiary)\"\n  onClick={() => {\n  onOpenChange(false)\n  onOpenProviders()\n  }}\n  size=\"xs\"\n  type=\"button\"\n  >\n  {copy.addProvider}\n  </Button>"
+ },
+ {
+  "file": "components/model-visibility-dialog.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"-mr-2\" onClick={() => void resetToDefaults()} size=\"xs\" type=\"button\">\n  {copy.resetToDefaults}\n  </Button>"
+ },
+ {
+  "file": "components/update-hold-overlay.tsx",
+  "variant": "secondary",
+  "jsx": "<Button disabled={Boolean(busy)} onClick={() => setConfirming(false)}>\n  {copy.confirmKeepWaiting}\n  </Button>"
+ },
+ {
+  "file": "components/update-hold-overlay.tsx",
+  "variant": "destructive",
+  "jsx": "<Button disabled={Boolean(busy)} onClick={() => void startAnyway()}>\n  {busy === 'start' ? <Loader2 className=\"animate-spin\" /> : null}\n  {copy.confirmStart}\n  </Button>"
+ },
+ {
+  "file": "components/update-hold-overlay.tsx",
+  "variant": "secondary",
+  "jsx": "<Button disabled={Boolean(busy)} onClick={() => void quit()}>\n  {busy === 'quit' ? <Loader2 className=\"animate-spin\" /> : <Power />}\n  {copy.quit}\n  </Button>"
+ },
+ {
+  "file": "components/update-hold-overlay.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={openLogs}>\n  <FileText />\n  {copy.openLogs}\n  </Button>"
+ },
+ {
+  "file": "components/update-hold-overlay.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"ml-auto\"\n  disabled={Boolean(busy)}\n  onClick={() => {\n  setRefused(false)\n  setConfirming(true)\n  }}\n  >\n  {copy.startAnyway}\n  </Button>"
+ },
+ {
+  "file": "components/desktop-install-overlay.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  onClick={() => {\n  void navigator.clipboard?.writeText(ups.installCommand).catch(() => {})\n  }}\n  size=\"sm\"\n  >\n  {copy.copyCommand}\n  </Button>"
+ },
+ {
+  "file": "components/desktop-install-overlay.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  onClick={() => {\n  window.hermesDesktop?.openExternal?.(ups.docsUrl)\n  }}\n  size=\"sm\"\n  >\n  {copy.viewDocs}\n  </Button>"
+ },
+ {
+  "file": "components/desktop-install-overlay.tsx",
+  "variant": "secondary",
+  "jsx": "<Button onClick={() => setRemoteOpen(true)} size=\"sm\">\n  <Globe className=\"size-4\" />\n  {copy.connectExistingShort}\n  </Button>"
+ },
+ {
+  "file": "components/desktop-install-overlay.tsx",
+  "variant": "default",
+  "jsx": "<Button onClick={() => window.location.reload()} size=\"sm\">\n  {copy.retryAfterRun}\n  </Button>"
+ },
+ {
+  "file": "components/desktop-install-overlay.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"-ml-2 text-muted-foreground hover:text-foreground\"\n  onClick={() => setLogOpen(v => !v)}\n  size=\"xs\"\n  type=\"button\"\n  >\n  {logOpen ? <ChevronDown className={iconSize.sm} /> : <ChevronRight className={iconSize.sm} />}\n  <span>{logOpen ? copy.hideOutput : copy.showOutput}</span>\n  <span className=\"ml-1 tabular-nums\">({copy.lines(state.log.length)})</span>\n  </Button>"
+ },
+ {
+  "file": "components/desktop-install-overlay.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  disabled={cancelling}\n  onClick={async () => {\n  setCancelling(true)\n  try {\n  await window.hermesDesktop?.cancelBootstrap?.()\n  } catch {\n  // ignore -- the failed/cancelled event will surface the result\n  }\n  }}\n  size=\"sm\"\n  >\n  {cancelling ? <Loader className=\"size-4\" type=\"fourier-flow\" /> : null}\n  {cancelling ? copy.cancelling : copy.cancelInstall}\n  </Button>"
+ },
+ {
+  "file": "components/desktop-install-overlay.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => setState(EMPTY_STATE)} size=\"sm\">\n  {t.common.close}\n  </Button>"
+ },
+ {
+  "file": "components/desktop-install-overlay.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  onClick={() => void window.hermesDesktop?.revealLogs?.().catch(() => undefined)}\n  size=\"sm\"\n  >\n  {copy.openLogs}\n  </Button>"
+ },
+ {
+  "file": "components/desktop-install-overlay.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  onClick={async () => {\n  const text = state.log\n  .map(entry => (entry.stage ? `[${entry.stage}] ${entry.line}` : entry.line))\n  .join('\\n')\n  const fullText = state.error ? `Error: ${state.error}\\n\\n${text}` : text\n  try {\n  await navigator.clipboard.writeText(fullText)\n  setCopied(true)\n  window.setTimeout(() => setCopied(false), 1500)\n  } catch {\n  // ignore -- some environments forbid clipboard writes\n  }\n  }}\n  size=\"sm\"\n  >\n  {copied ? copy.copiedOutput : copy.copyOutput}\n  </Button>"
+ },
+ {
+  "file": "components/desktop-install-overlay.tsx",
+  "variant": "default",
+  "jsx": "<Button\n  onClick={async () => {\n  // Tell main.ts to clear its latched failure BEFORE we\n  // reload. Otherwise the renderer reload calls getConnection\n  // and main short-circuits to the latched error without\n  // re-running install.ps1.\n  try {\n  await window.hermesDesktop?.resetBootstrap?.()\n  } catch {\n  // best-effort -- continue with reload regardless\n  }\n  window.location.reload()\n  }}\n  size=\"sm\"\n  >\n  {copy.reloadRetry}\n  </Button>"
+ },
+ {
+  "file": "components/notifications.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"-ml-2\" onClick={onToggleExpanded} size=\"xs\" type=\"button\">\n  {expanded ? copy.hide : copy.show} {copy.more(older.length)}\n  </Button>"
+ },
+ {
+  "file": "components/notifications.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"-mr-2\"\n  onClick={() => {\n  notifications.forEach(notification => noteUserDismissed(notification.id))\n  clearNotifications()\n  }}\n  size=\"xs\"\n  type=\"button\"\n  >\n  {copy.clearAll}\n  </Button>"
+ },
+ {
+  "file": "components/notifications.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => setExpanded(value => !value)} size=\"xs\">\n  {expanded ? copy.hide : copy.show} {copy.more(older.length)}\n  </Button>"
+ },
+ {
+  "file": "components/notifications.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  onClick={() => notifications.forEach(notification => userDismiss(notification.id))}\n  size=\"xs\"\n  >\n  {copy.clearAll}\n  </Button>"
+ },
+ {
+  "file": "components/notifications.tsx",
+  "variant": "default",
+  "jsx": "<Button\n  disabled={stack.busy || !stack.active}\n  onClick={() => {\n  void stack.depart(() => {\n  notification.action?.onClick()\n  dismissNotification(notification.id)\n  })\n  }}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {notification.action.label}\n  </Button>"
+ },
+ {
+  "file": "components/notifications.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  disabled={stack.busy || !stack.active}\n  onClick={() => {\n  void stack.depart(() => {\n  notification.secondaryAction?.onClick()\n  dismissNotification(notification.id)\n  })\n  }}\n  size=\"sm\"\n  type=\"button\"\n  >\n  {notification.secondaryAction.label}\n  </Button>"
+ },
+ {
+  "file": "components/notifications.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={copy.dismiss}\n  className=\"col-start-3 -mr-1 text-muted-foreground\"\n  disabled={stack.busy || !stack.active}\n  onClick={() => {\n  void stack.depart(() => userDismiss(notification.id))\n  }}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"close\" size=\"0.875rem\" />\n  </Button>"
+ },
+ {
+  "file": "components/update-status.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button\n  className=\"mt-2\"\n  onClick={() => void window.hermesDesktop?.relaunchApp?.()}\n  size=\"sm\"\n  >\n  <RefreshCw className=\"size-3\" />\n  {u.bundleSwapPendingAction}\n  </Button>"
+ },
+ {
+  "file": "components/update-status.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button asChild className=\"mt-2\" size=\"sm\">\n  <a\n  href={INSTALLER_URL}\n  onClick={event => {\n  event.preventDefault()\n  void window.hermesDesktop?.openExternal?.(INSTALLER_URL)\n  }}\n  rel=\"noreferrer\"\n  target=\"_blank\"\n  >\n  <ExternalLink className=\"size-3\" />\n  {u.bundleOutOfSyncAction}\n  </a>\n  </Button>"
+ },
+ {
+  "file": "components/update-status.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={() => openUpdateOverlayFor(target)} size=\"sm\">\n  {u.seeWhatsNew}\n  </Button>"
+ },
+ {
+  "file": "components/update-status.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button\n  disabled={checking || view.applying}\n  onClick={() => void handleCheck()}\n  size=\"sm\"\n  >\n  {checking ? <Loader2 className=\"size-3 animate-spin\" /> : <RefreshCw className=\"size-3\" />}\n  {checking ? u.checkingShort : u.checkNow}\n  </Button>"
+ },
+ {
+  "file": "components/update-status.tsx",
+  "variant": "text",
+  "jsx": "<Button asChild className=\"ml-auto\" size=\"sm\">\n  <a\n  href={RELEASE_NOTES_URL}\n  onClick={event => {\n  event.preventDefault()\n  void window.hermesDesktop?.openExternal?.(RELEASE_NOTES_URL)\n  }}\n  rel=\"noreferrer\"\n  target=\"_blank\"\n  >\n  <ExternalLink className=\"size-3\" />\n  {u.releaseNotes}\n  </a>\n  </Button>"
+ },
+ {
+  "file": "components/send-diagnostics-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={dismissSendDiagnostics}>\n  {copy.cancel}\n  </Button>"
+ },
+ {
+  "file": "components/send-diagnostics-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={dismissSendDiagnostics}>\n  {copy.close}\n  </Button>"
+ },
+ {
+  "file": "components/send-diagnostics-dialog.tsx",
+  "variant": "outline",
+  "jsx": "<Button key={link.key} onClick={() => openExternalLink(link.url)} size=\"sm\">\n  <ExternalLink className=\"size-3\" />\n  {copy.links[link.key]}\n  </Button>"
+ },
+ {
+  "file": "components/send-diagnostics-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={dismissSendDiagnostics}>\n  {copy.close}\n  </Button>"
+ },
+ {
+  "file": "components/billing-banner.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-foreground/90 hover:text-foreground\"\n  onClick={() => runBillingRecovery(block)}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {billingCtaLabel(block, copy)}\n  </Button>"
+ },
+ {
+  "file": "components/billing-banner.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={copy.dismiss}\n  className=\"size-4 rounded-md text-muted-foreground/60 hover:text-foreground/90\"\n  onClick={() => {\n  recordFriction('notice_dismissed', 'billing_banner')\n  clearBillingBlock(sessionId)\n  }}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"close\" size=\"0.75rem\" />\n  </Button>"
+ },
+ {
+  "file": "components/boot-failure-overlay.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={openLogs}>\n  <FileText />\n  {copy.openLogs}\n  </Button>"
+ },
+ {
+  "file": "components/boot-failure-overlay.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"-ml-2 self-start font-medium\"\n  onClick={() => setShowLogs(v => !v)}\n  size=\"xs\"\n  type=\"button\"\n  >\n  {showLogs ? copy.hideRecentLogs : copy.showRecentLogs}\n  </Button>"
+ },
+ {
+  "file": "components/language-switcher.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  aria-expanded={open}\n  aria-label={title}\n  className={cn(\n  'min-w-32 justify-between gap-2 border-(--ui-stroke-tertiary) bg-(--ui-bg-quinary) px-2.5 text-left text-muted-foreground hover:text-foreground',\n  collapsed && 'min-w-0 px-2',\n  className\n  )}\n  disabled={isSavingLocale}\n  size=\"sm\"\n  type=\"button\"\n  >\n  <span className=\"inline-flex min-w-0 items-center gap-2\">\n  <Globe className=\"size-3.5 shrink-0\" />\n  {!collapsed && <span className=\"truncate\">{current.endonym}</span>}\n  </span>\n  {!collapsed && <ChevronDown className=\"size-3 shrink-0 opacity-70\" />}\n  </Button>"
+ },
+ {
+  "file": "components/remote-setup/fields.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={disabled || setup.signingIn} onClick={() => void setup.signOut()}>\n  {g.signOut}\n  </Button>"
+ },
+ {
+  "file": "components/remote-setup/first-run.tsx",
+  "variant": "ghost",
+  "jsx": "<Button disabled={applying} onClick={onBack} size=\"sm\">\n  {copy.backToSetup}\n  </Button>"
+ },
+ {
+  "file": "components/remote-setup/first-run.tsx",
+  "variant": "secondary",
+  "jsx": "<Button\n  disabled={setup.testing || applying || !setup.canTest}\n  onClick={() => void setup.test()}\n  size=\"sm\"\n  >\n  {setup.testing ? <Loader2 className=\"animate-spin\" /> : null}\n  {copy.testConnection}\n  </Button>"
+ },
+ {
+  "file": "components/pane-shell/tree/zone-editor.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  key={t.label}\n  onClick={() => {\n  setSelection([])\n  setMergeAt(null)\n  setModel(t.make(templateCount))\n  }}\n  size=\"sm\"\n  >\n  {t.label}\n  </Button>"
+ },
+ {
+  "file": "components/pane-shell/tree/zone-editor.tsx",
+  "variant": "outline",
+  "jsx": "<Button\n  className=\"shadow-lg\"\n  onClick={merge}\n  onPointerDown={e => e.stopPropagation()}\n  size=\"sm\"\n  >\n  {t.zones.mergeZones(selection.length)}\n  </Button>"
+ },
+ {
+  "file": "components/pane-shell/tree/zone-editor.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={!treeExpressible} onClick={save} size=\"sm\">\n  {t.zones.saveApply}\n  </Button>"
+ },
+ {
+  "file": "components/pane-shell/tree/zone-editor.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => $zoneEditorOpen.set(false)} size=\"sm\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "components/pane-shell/tree/renderer/layout-picker.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"w-full border border-dashed border-(--ui-stroke-secondary) text-muted-foreground hover:border-(--ui-stroke-primary) hover:text-foreground\"\n  onClick={() => $zoneEditorOpen.set(true)}\n  size=\"sm\"\n  >\n  <Codicon name=\"add\" size=\"0.875rem\" />\n  {t.zones.newGridLayout}\n  </Button>"
+ },
+ {
+  "file": "components/pane-shell/tree/renderer/layout-picker.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={!name.trim()} size=\"sm\" type=\"submit\">\n  {t.common.save}\n  </Button>"
+ },
+ {
+  "file": "components/pane-shell/tree/renderer/layout-picker.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => setSaving(false)} size=\"sm\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "components/pane-shell/tree/renderer/layout-picker.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"self-start\" onClick={() => setSaving(true)} size=\"inline\">\n  <Codicon name=\"save\" size=\"0.8125rem\" />\n  {t.zones.saveCurrentAs}\n  </Button>"
+ },
+ {
+  "file": "components/pane-shell/tree/renderer/edit-bar.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={resetLayoutTree} size=\"sm\">\n  {t.zones.reset}\n  </Button>"
+ },
+ {
+  "file": "components/pane-shell/tree/renderer/edit-bar.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={() => $layoutEditMode.set(false)} size=\"sm\">\n  {t.common.done}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/mcp-setup-tool.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={() => void continueConnectionRequest(request)} size=\"xs\">\n  {t.common.continue}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/tooltip-icon-button.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  size=\"icon-xs\"\n  {...rest}\n  aria-label={tooltip}\n  className={cn('aui-button-icon', className)}\n  ref={ref}\n  >\n  {children}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/catalog-advanced-dialog.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={onCancel}>\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/start-chat-tool-parts.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={disabled} onClick={onRetry} size=\"xs\" type=\"button\">\n  {pending ? <Loader2 aria-hidden className=\"size-3.5 animate-spin motion-reduce:animate-none\" /> : null}\n  {copy.retry}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/start-chat-tool-parts.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={onOpen} size=\"xs\" type=\"button\">\n  {copy.open}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/connector-directory-card.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={hosted.refetch} size=\"xs\">\n  {t.connectorsPage.page.retry}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/connector-directory-card.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={finish} size=\"xs\">\n  {t.common.continue}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/connector-tool.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={() => void continueConnectionRequest(request)} size=\"xs\">\n  {t.common.continue}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/connector-tool.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={() => navigate(accountRenameRoute(name, connectionId, owner))} size=\"inline\">\n  {t.connectors.renameAccount}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/catalog-install-tool.tsx",
+  "variant": "textStrong",
+  "jsx": "<Button onClick={() => void continueConnectionRequest(request)} size=\"xs\">\n  {t.common.continue}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/catalog-install-tool.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"h-6 px-1.5 text-(--ui-text-tertiary)\"\n  disabled={sending}\n  loading={sending}\n  onClick={onRetry}\n  size=\"xs\"\n  >\n  {retryLabel}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/catalog-install-tool.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  className=\"h-full rounded-none px-2 text-xs font-medium text-primary hover:bg-primary/15 hover:text-primary\"\n  onClick={onInstall}\n  size=\"xs\"\n  >\n  {copy.install}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/catalog-install-tool.tsx",
+  "variant": "ghost",
+  "jsx": "<Button className=\"h-6 px-1.5 text-(--ui-text-tertiary)\" onClick={onAdvanced} size=\"xs\">\n  {copy.advanced}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/catalog-install-tool.tsx",
+  "variant": "ghost",
+  "jsx": "<Button className=\"h-6 px-1.5 text-(--ui-text-tertiary)\" onClick={onSkip} size=\"xs\">\n  {copy.skip}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/clarify/core/confirm-bar.tsx",
+  "variant": "text",
+  "jsx": "<Button disabled={disabled} onClick={onSkip} size=\"xs\" type=\"button\">\n  {copy.skip}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/thread/message-reactions.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={emoji}\n  aria-pressed={selected === emoji}\n  className={cn('text-base', selected === emoji && 'bg-(--chrome-action-hover)')}\n  key={emoji}\n  onClick={() => {\n  triggerHaptic('selection')\n  onSelect(emoji)\n  }}\n  size=\"icon-sm\"\n  >\n  {emoji}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/thread/message-reactions.tsx",
+  "variant": "ghost",
+  "jsx": "<Button aria-label=\"More emoji\" onClick={() => setExpanded(true)} size=\"icon-sm\">\n  <Plus />\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/tool/approval.tsx",
+  "variant": "text",
+  "jsx": "<Button data-approval-deny=\"\" disabled={busy} onClick={() => void respond('deny')} size=\"sm\">\n  {submitting === 'deny' ? <Loader2 className=\"size-3 animate-spin\" /> : copy.reject}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/tool/approval.tsx",
+  "variant": "secondary",
+  "jsx": "<Button aria-label={copy.moreOptions} disabled={busy} size=\"sm\">\n  {copy.alwaysAllowMenu}\n  <ChevronDown className=\"size-3\" />\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/tool/approval.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => setConfirmAlways(false)} size=\"sm\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/tool/approval.tsx",
+  "variant": "destructive",
+  "jsx": "<Button\n  onClick={() => {\n  setConfirmAlways(false)\n  void respond('always')\n  }}\n  size=\"sm\"\n  >\n  {copy.alwaysAllow}\n  </Button>"
+ },
+ {
+  "file": "components/assistant-ui/tool/fallback.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={statusCopy.dismiss}\n  className={cn(\n  'size-5 rounded-md text-(--ui-text-tertiary) transition-opacity hover:text-(--ui-text-primary) hover:opacity-100',\n  open\n  ? 'opacity-80'\n  : 'opacity-0 group-hover/disclosure-row:opacity-80 group-focus-within/disclosure-row:opacity-80'\n  )}\n  onClick={event => {\n  event.stopPropagation()\n  dismissToolRow(disclosureId)\n  }}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"close\" size=\"0.75rem\" />\n  </Button>"
+ },
+ {
+  "file": "components/free-tier/notice-strip.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-foreground/90 hover:text-foreground\"\n  onClick={() => consume(() => setModelPickerOpen(true))}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {copy.openModelPicker}\n  </Button>"
+ },
+ {
+  "file": "components/free-tier/notice-strip.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-foreground/90 hover:text-foreground\"\n  onClick={() => consume(() => openFreeTierSignIn())}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {copy.signIn}\n  </Button>"
+ },
+ {
+  "file": "components/free-tier/notice-strip.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-muted-foreground/75 hover:text-foreground/90\"\n  onClick={() => {\n  recordFriction('notice_dismissed', 'free_tier_notice')\n  consume()\n  }}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {copy.dismiss}\n  </Button>"
+ },
+ {
+  "file": "components/free-tier/sign-in-dialog.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => closeFreeTierSignIn()} size=\"sm\" type=\"button\">\n  {copy.offer.notNow}\n  </Button>"
+ },
+ {
+  "file": "components/free-tier/sign-in-dialog.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => void copyFreeTierUrl()} size=\"xs\" type=\"button\">\n  {state.urlCopied ? t.common.copied : copy.copyLink}\n  </Button>"
+ },
+ {
+  "file": "components/free-tier/sign-in-dialog.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => closeFreeTierSignIn()} size=\"sm\" type=\"button\">\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "components/free-tier/sign-in-dialog.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  onClick={() => finish(state.model, () => setModelPickerOpen(true))}\n  size=\"inline\"\n  type=\"button\"\n  >\n  {copy.change}\n  </Button>"
+ },
+ {
+  "file": "components/free-tier/sign-in-dialog.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => closeFreeTierSignIn()} size=\"sm\" type=\"button\">\n  {state.kind === 'unavailable' ? copy.done : copy.notNow}\n  </Button>"
+ },
+ {
+  "file": "components/chat/status-dismiss-button.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={label}\n  className=\"status-dismiss-button text-muted-foreground/60 hover:text-foreground/90\"\n  data-slot=\"status-dismiss\"\n  onClick={event => {\n  event.stopPropagation()\n  onDismiss()\n  }}\n  onKeyDown={event => event.stopPropagation()}\n  size=\"icon-xs\"\n  type=\"button\"\n  >\n  <Codicon name=\"close\" size=\"0.8rem\" />\n  </Button>"
+ },
+ {
+  "file": "components/chat/log-search.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.findInPage[direction]}\n  className=\"size-5 shrink-0 text-muted-foreground/85 hover:bg-accent/60 hover:text-foreground\"\n  disabled={search.hits.length === 0}\n  onClick={search[direction]}\n  size=\"icon-xs\"\n  >\n  <Icon className=\"size-3.5\" />\n  </Button>"
+ },
+ {
+  "file": "components/chat/log-tail.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.ui.logs[edge]}\n  className={cn(HOVER_CONTROL, 'text-muted-foreground hover:text-foreground')}\n  onClick={() => jump(edge)}\n  size=\"icon-xs\"\n  >\n  <Icon className=\"size-3\" />\n  </Button>"
+ },
+ {
+  "file": "components/chat/json-document-editor.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.common.formatJson}\n  className={ICON_BUTTON}\n  disabled={disabled}\n  onClick={() => {\n  const result = editorApi.current?.formatJson()\n  if (result && !result.ok) {\n  onFormatJsonError(result.error)\n  }\n  }}\n  size=\"icon\"\n  >\n  <Codicon name=\"json\" size=\"0.8125rem\" />\n  </Button>"
+ },
+ {
+  "file": "components/pet/pet-egg-hatch.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={onCancel} size=\"xs\">\n  {cancelLabel ?? 'Cancel'}\n  </Button>"
+ },
+ {
+  "file": "components/shared-metrics/consent-dialog.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={saving} key={choice} onClick={() => void choose(choice)} type=\"button\">\n  {copy[choice]}\n  </Button>"
+ },
+ {
+  "file": "components/shared-metrics/consent-strip.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-foreground/90 hover:text-foreground\"\n  disabled={saving}\n  key={choice}\n  onClick={() => void choose(choice)}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {copy.stripChoices[choice]}\n  </Button>"
+ },
+ {
+  "file": "components/shared-metrics/consent-strip.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"text-muted-foreground/75 hover:text-foreground/90\"\n  onClick={() => $sharedMetricsDetailsOpen.set(true)}\n  size=\"micro\"\n  type=\"button\"\n  >\n  {copy.stripDetails}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button\n  aria-label={t.common.close}\n  className=\"absolute right-3 top-3 z-10 text-(--ui-text-tertiary) hover:bg-(--chrome-action-hover) hover:text-foreground\"\n  onClick={() => closeManualOnboarding()}\n  size=\"icon-sm\"\n  >\n  <Codicon name=\"close\" size=\"1rem\" />\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/index.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={() => void onDismiss(() => openFreeTierSignIn())} size=\"xs\" type=\"button\">\n  {copy.signInInstead}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/index.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  onClick={() => void onDismiss(() => startManualOnboarding(null))}\n  size=\"xs\"\n  type=\"button\"\n  >\n  {copy.otherProviders}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/index.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"mt-1 self-center font-medium\"\n  onClick={() => setShowAll(persistShowAll(!showAll))}\n  size=\"xs\"\n  type=\"button\"\n  >\n  {showAll ? t.onboarding.collapse : t.onboarding.otherProviders}\n  <ChevronDown className={cn('size-3.5 transition', showAll && 'rotate-180')} />\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/index.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"-mr-2 font-medium\" onClick={() => openKeyForm()} size=\"xs\" type=\"button\">\n  {t.onboarding.haveApiKey}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/index.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"font-medium\" onClick={() => dismissFirstRunOnboarding()} size=\"xs\" type=\"button\">\n  {t.onboarding.chooseLater}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/index.tsx",
+  "variant": "text",
+  "jsx": "<Button className=\"-mt-1 self-start font-medium\" onClick={onBack} size=\"xs\" type=\"button\">\n  <ChevronLeft className=\"size-3\" />\n  {t.onboarding.backToSignIn}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/index.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={() => onClear(option.envKey)} size=\"sm\">\n  {t.common.remove}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/free-tier-setup-notice.tsx",
+  "variant": "outline",
+  "jsx": "<Button disabled={retrying} onClick={() => void retry()} size=\"sm\" type=\"button\">\n  {retrying ? copy.retrying : copy.tryAgain}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/flow.tsx",
+  "variant": "text",
+  "jsx": "<Button onClick={cancelOnboardingFlow}>\n  {t.onboarding.pickDifferentProvider}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/flow.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={() => startManualOnboarding(null, ctx.scope ?? ctx.profile)}>\n  {t.onboarding.useApiKeyInstead}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/flow.tsx",
+  "variant": "outline",
+  "jsx": "<Button onClick={onCopy} size=\"sm\">\n  {copied ? t.common.copied : t.onboarding.copy}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/flow.tsx",
+  "variant": "ghost",
+  "jsx": "<Button onClick={cancelOnboardingFlow} size={size}>\n  {t.common.cancel}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/flow.tsx",
+  "variant": "text",
+  "jsx": "<Button\n  className=\"mt-0.5 text-xs\"\n  disabled={flow.saving}\n  onClick={() => setPickerOpen(true)}\n  size=\"inline\"\n  >\n  {t.onboarding.change}\n  </Button>"
+ },
+ {
+  "file": "components/onboarding/flow.tsx",
+  "variant": "text",
+  "jsx": "<Button asChild size=\"xs\">\n  <a href={href} rel=\"noreferrer\" target=\"_blank\">\n  <ExternalLink className=\"size-3\" />\n  {children}\n  </a>\n  </Button>"
+ }
+]

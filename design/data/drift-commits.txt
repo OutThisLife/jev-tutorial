@@ -1,0 +1,60 @@
+2b5abdfafed|fix(desktop): keep review-flagged owner rules in the gateway-switch fixes
+d0fefc69c37|fix(desktop): render code blocks plain when the highlighter chunk fails to load
+0fc30d63ab1|fix(quick-entry): keep the draft and correlation through an unresolved submit
+aefac127761|refactor(desktop): reuse useZoomPan for image lightbox; add pinch, pointercancel, tests
+f52cb57d443|The local-setup offer works in the new onboarding: tour step, post-task card, model-menu row (#129506)
+6f2a01fce7a|fix(desktop): complete locales and reuse CopyButton for full changelog copy
+1b8569f41f1|feat(desktop): filter Messaging platforms by status
+ee73ba46b6c|fix(desktop): add 'load more' to Command Center sessions list
+efafed5baf1|fix(desktop): Kanban attachment download through the one gated resolver
+632a5cd1c84|feat(desktop): sidebar nav visibility and order for plugins
+7d63f57c7d2|feat(sdk): export ListRow/ToggleRow so plugin panes lay out like core Settings
+1b7e8c45d62|fix(desktop): every settings row renders through one ListRow/ToggleRow/Slider/SearchField
+0087827510b|fix(desktop): move searchable pickers onto the shared menu variant
+2b18ca78675|fix(desktop): preserve Unicode graphemes in profile initials
+eb3116ccba6|refactor(kanban): build the task modal on the shared Dialog primitive
+dc50403a81d|feat(desktop): the Connectors page replaces the MCP tab (#119074)
+5c0e73eff1d|feat(desktop): render plugin-declared settings in the Plugins tab (#46600, #87934)
+6aef2e3bddf|test(desktop): give the toolset-config-panel @/hermes mock the config-origin helpers
+71a0ce913cf|refactor(desktop): share the tail-entry lookup, and plan nothing when nothing is released
+afc3b7c6f39|feat(connectors): one backend-owned connection operation, with a setup card on Desktop, TUI and CLI (#111008)
+9a7d3937e41|fix(desktop): SESSIONS / BOTS tab labels follow the display language
+ba4c0fbbdc7|perf(desktop): drop the loader clock-pause; coalesce composer measures via rafCoalesce; one decode-cursor keyframe
+be81cf7d4d2|fix(desktop): pin the cross-provider onboarding pick test to the confirm card's picker wiring
+e6fa1fd474b|test(desktop): pin the group mention popover to the elevated surface in vitest
+27dfbe397f8|feat(desktop): per-project toggle for gitignored files in the file tree (#101065)
+b08ec00a701|fix(desktop): hand preview guest links to the audited opener via a guest preload
+755781341e7|feat(desktop): auto-grow the Bot group composer for long prompts
+e1c05ffa32d|feat(desktop): persist video playback speed across transcript videos
+b8e8639445b|Guided first launch: smaller code and review fixes over PR B1 (NS-848, PR B2) (#107985)
+0e927c914d0|Guided first launch behind HERMES_GUEST_ONBOARDING: intro, guided chat, first task in default (NS-848, PR B1) (#107958)
+85571c16b62|fix(desktop): reveal the notification session without replacing its tab
+643ead6f53e|fix(desktop): keep settings search opaque under Glass
+c80003ff57b|refactor(desktop): key the live-owner escape off the 4090 reason code, drop the prose sniffer
+6909604f971|fix(desktop): reuse saved Cloud gateways from Settings
+64534b4dd40|fix(desktop): use shared tooltip for listing gallery
+e9dd0bf5d58|feat(desktop): polish bot roster sections — dialog rename, Undo delete, Esc-cancel drag, nested under gateways (salvage #100745)
+648c664eb33|feat(desktop): gate cold-start restore on display.resume_last_session
+aa806267642|fix(tui-gateway): adopt late compute-host compress acks instead of a false 120s timeout (#97948)
+61b6788dd49|fix(desktop): Bots-mode picker routes guarded model switches through the shared confirm handler
+1ad4733343a|feat(desktop): configure per-profile remote overrides from the profile rail
+a662d08f37e|refactor(desktop): replace every window.confirm with the shared dialog
+5df9cd27eae|feat(desktop): let ConfirmDialog carry a secondary action
+1e26c02de6b|refactor(desktop): route cron delete and review revert through ConfirmDialog
+6a843f95c8e|fix(desktop): let Files panel download remote backend files
+7999ac6e3d5|feat(desktop): shared 'Applies to' profile scope across settings pages and Messaging
+d109785bb3c|feat(desktop): shared createBudgetedLoop helper for decorative rAF animations
+93ed11379b6|fix(desktop): recover the tile and regenerate paths from a dead runtime id
+ab3b7394b19|fix(desktop): scope Ctrl+F find to the current chat view (#81726)
+cd104ed49e7|fix(desktop): let you type spaces and arrows in the session rename dialog
+771b214516d|feat(desktop): show every profile's sessions in the sidebar
+35b82fdef35|feat(desktop): drag sidebar rows by the title, not just the grabber
+c8fdc517408|fix(desktop): render remote PDFs in preview rail
+c8648278c38|In-app browser and previews are real layout-tree tabs (#77705)
+0b4bd3c7c77|fix(desktop): the placeholder comes back when you clear the composer
+95571de9d79|fix(desktop): fold delete dialog into shared, level up name field, test the view
+4d9b7718d96|fix(desktop): use shared create-profile dialog on Manage Profiles page
+96999b116b5|refactor(desktop): put every preview on one rail tab list
+0d865ddbb1e|refactor(desktop): webhooks create form uses shared Field; drop status pill
+ef6049c2152|refactor(desktop): fold cron Blueprints into the New Job dialog
+a8c7a5f70f7|refactor(desktop): add shared Field form-dialog primitive

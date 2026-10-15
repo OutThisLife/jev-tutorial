@@ -1,0 +1,479 @@
+[
+ {
+  "file": "app/settings/index.tsx",
+  "tooltip": "Export config",
+  "aria_label": null,
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n        <OverlayIconButton onClick={() => void exportConfig()}>\n          <Download />\n        </OverlayIconButton>\n      "
+ },
+ {
+  "file": "app/settings/index.tsx",
+  "tooltip": "Import config",
+  "aria_label": null,
+  "icon": null,
+  "visible_text": "} >",
+  "menu_trigger": false,
+  "inner": "\n        <OverlayIconButton\n          onClick={() => {\n            triggerHaptic('open')\n            importInputRef.current?.click()\n          }}\n        >\n          <Upload />\n        </OverlayIconButton>\n      "
+ },
+ {
+  "file": "app/settings/index.tsx",
+  "tooltip": "Reset to defaults",
+  "aria_label": null,
+  "icon": null,
+  "visible_text": "} >",
+  "menu_trigger": false,
+  "inner": "\n        <OverlayIconButton\n          className=\"hover:text-destructive\"\n          onClick={() => {\n            triggerHaptic('warning')\n            void resetConfig()\n          }}\n        >\n          <RefreshCw />\n        </OverlayIconButton>\n      "
+ },
+ {
+  "file": "app/settings/sessions-settings.tsx",
+  "tooltip": "Delete permanently",
+  "aria_label": "Delete permanently",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n                        <Button\n                          aria-label={s.deletePermanently}\n                          className=\"text-muted-foreground hover:text-destructive\"\n                          disabled={busy}\n                          onClick={() => void remove(session)}\n                          size=\"icon\"\n                          type=\"button\"\n                          variant=\"ghost\"\n                        >\n                          <Trash2 className=\"size-3.5\" />\n                "
+ },
+ {
+  "file": "app/settings/providers-settings.tsx",
+  "tooltip": "Disconnect (runs the removal command in the terminal)",
+  "aria_label": null,
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n            <Button\n              aria-label={`${copy.disconnect} ${title}`}\n              onClick={() => onTerminalDisconnect(provider)}\n              size=\"icon-xs\"\n              type=\"button\"\n              variant=\"ghost\"\n            >\n              <Trash2 className=\"size-3\" />\n            </Button>\n          "
+ },
+ {
+  "file": "app/settings/keybind-settings.tsx",
+  "tooltip": "Rebind",
+  "aria_label": "Rebind",
+  "icon": null,
+  "visible_text": "{capturing ? ( ) : combos.length > 0 ? ( combos.map(combo => ) ) : ( )}",
+  "menu_trigger": false,
+  "inner": "\n        <button\n          aria-label={k.rebind}\n          className=\"flex shrink-0 items-center gap-1 rounded-lg outline-none\"\n          onClick={() => (capturing ? endCapture() : beginCapture(action.id))}\n          type=\"button\"\n        >\n          {capturing ? (\n            <Kbd variant=\"capturing\">{k.pressKey}</Kbd>\n          ) : combos.length > 0 ? (\n            combos.map(combo => <KbdCombo combo={combo} key={combo} />)\n          ) : (\n            <Kbd variant=\"ghost\">{k.set}</Kbd>\n       "
+ },
+ {
+  "file": "app/settings/keybind-settings.tsx",
+  "tooltip": "Clear",
+  "aria_label": "Clear",
+  "icon": "close",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n            <Button\n              aria-label={k.clear}\n              className=\"shrink-0 text-(--ui-text-tertiary) opacity-0 group-hover:opacity-100 focus-visible:opacity-100\"\n              onClick={() => clearBinding(action.id)}\n              size=\"icon-xs\"\n              variant=\"ghost\"\n            >\n              <Codicon name=\"close\" size=\"0.8125rem\" />\n            </Button>\n          "
+ },
+ {
+  "file": "app/settings/keybind-settings.tsx",
+  "tooltip": "Reset to default",
+  "aria_label": "Reset to default",
+  "icon": "discard",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n          <Button\n            aria-label={k.reset}\n            className=\"shrink-0 text-(--ui-text-tertiary) opacity-0 group-hover:opacity-100 focus-visible:opacity-100\"\n            onClick={() => resetBinding(action.id)}\n            size=\"icon-xs\"\n            variant=\"ghost\"\n          >\n            <Codicon name=\"discard\" size=\"0.8125rem\" />\n          </Button>\n        "
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "tooltip": "Reveal in file manager",
+  "aria_label": null,
+  "icon": "folder-opened",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n                <Button onClick={() => reveal(desktop.file!)} size=\"icon\" variant=\"ghost\">\n                  <Codicon name=\"folder-opened\" size=\"0.85rem\" />\n                </Button>\n              "
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "tooltip": "This backend predates key-addressed plugin toggles \u2014 update Hermes to manage it here.",
+  "aria_label": null,
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n                  <span>\n                    <Switch aria-label={`${p.halfAgent}: ${pkg.name}`} checked={agentOn} disabled />\n                  </span>\n                "
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "tooltip": "Open Desktop plugins folder",
+  "aria_label": "Open Desktop plugins folder",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n              <Button\n                aria-label={d.openFolder}\n                onClick={() => void revealPluginsDir()}\n                size=\"icon\"\n                type=\"button\"\n                variant=\"ghost\"\n              >\n                <FolderOpen className=\"size-3.5\" />\n              </Button>\n            "
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "tooltip": "Rescan",
+  "aria_label": "Rescan",
+  "icon": null,
+  "visible_text": "} size=\"icon\" type=\"button\" variant=\"ghost\" >",
+  "menu_trigger": false,
+  "inner": "\n              <Button\n                aria-label={d.rescan}\n                onClick={() => {\n                  triggerHaptic('selection')\n                  void rescanAll(requestGateway, scope)\n                }}\n                size=\"icon\"\n                type=\"button\"\n                variant=\"ghost\"\n              >\n                <RefreshCw className=\"size-3.5\" />\n              </Button>\n            "
+ },
+ {
+  "file": "app/capabilities/plugins/plugins-tab.tsx",
+  "tooltip": "this app, same for every profile",
+  "aria_label": null,
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n                  <span className=\"font-medium\">{p.halfDesktop}</span>\n                "
+ },
+ {
+  "file": "app/chat/sidebar/index.tsx",
+  "tooltip": "Mark all as read",
+  "aria_label": "Mark all as read",
+  "icon": "check-all",
+  "visible_text": "} size=\"icon-xs\" variant=\"ghost\" >",
+  "menu_trigger": false,
+  "inner": "\n                        <Button\n                          aria-label={s.markAllRead}\n                          className={HEADER_ACTION_BTN}\n                          onClick={event => {\n                            event.stopPropagation()\n                            markAllSessionsRead()\n                            // Ack the persisted layer too, or the next list\n                            // refresh repaints every dot just dismissed.\n                            ackAllSessionsRead()\n          "
+ },
+ {
+  "file": "app/chat/sidebar/index.tsx",
+  "tooltip": "Show projects",
+  "aria_label": "Show projects",
+  "icon": "list-unordered",
+  "visible_text": "} size=\"icon-xs\" variant=\"ghost\" >",
+  "menu_trigger": false,
+  "inner": "\n                            <Button\n                              aria-label={s.showProjects}\n                              className={HEADER_NAV_BTN}\n                              onClick={event => {\n                                event.stopPropagation()\n                                exitProjectScope()\n                              }}\n                              size=\"icon-xs\"\n                              variant=\"ghost\"\n                            >\n                              <Codico"
+ },
+ {
+  "file": "app/chat/sidebar/cron-jobs-section.tsx",
+  "tooltip": "Trigger now",
+  "aria_label": "Trigger now",
+  "icon": "zap",
+  "visible_text": "{busy ? ( ) : ( )}",
+  "menu_trigger": false,
+  "inner": "\n                  <button\n                    aria-label={c.triggerNow}\n                    className=\"grid size-5 place-items-center rounded-sm text-(--ui-text-tertiary) hover:bg-(--ui-control-hover-background) hover:text-foreground disabled:cursor-wait disabled:opacity-60\"\n                    disabled={busy}\n                    onClick={onTrigger}\n                    type=\"button\"\n                  >\n                    {busy ? (\n                      <GlyphSpinner ariaLabel={c.triggerNow} cl"
+ },
+ {
+  "file": "app/chat/sidebar/cron-jobs-section.tsx",
+  "tooltip": "Manage",
+  "aria_label": "Manage",
+  "icon": "watch",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n                  <button\n                    aria-label={c.manage}\n                    className=\"grid size-5 place-items-center rounded-sm text-(--ui-text-tertiary) hover:bg-(--ui-control-hover-background) hover:text-foreground\"\n                    onClick={onManage}\n                    type=\"button\"\n                  >\n                    <Codicon name=\"watch\" size=\"0.75rem\" />\n                  </button>\n                "
+ },
+ {
+  "file": "app/chat/sidebar/session-row.tsx",
+  "tooltip": "Automatic continuation \u2014 this conversation was compressed and continued",
+  "aria_label": null,
+  "icon": "layers",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n                  <Codicon\n                    aria-hidden=\"true\"\n                    className=\"size-3.5 shrink-0 text-(--ui-text-quaternary)\"\n                    name=\"layers\"\n                    size=\"0.75rem\"\n                  />\n                "
+ },
+ {
+  "file": "app/chat/composer/start-voice-button.tsx",
+  "tooltip": "Voice chat engine",
+  "aria_label": "Voice chat engine",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": true,
+  "inner": "\n            <DropdownMenuTrigger asChild>\n              <Button\n                aria-label={t.composer.voiceEngine}\n                className={cn(GHOST_ICON_BTN, 'w-5 rounded-l-none p-0')}\n                disabled={disabled}\n                size=\"icon\"\n                type=\"button\"\n                variant=\"ghost\"\n              >\n                <ChevronDown className={iconSize.xs} />\n              </Button>\n            </DropdownMenuTrigger>\n          "
+ },
+ {
+  "file": "app/chat/composer/controls.tsx",
+  "tooltip": "Reset HUD size and position",
+  "aria_label": "Reset HUD size and position",
+  "icon": "discard",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n        <Button\n          aria-label={t.titlebar.resetHudLayout}\n          className={cn(GHOST_ICON_BTN, 'p-0')}\n          onClick={resetHudLayout}\n          size=\"icon\"\n          type=\"button\"\n          variant=\"ghost\"\n        >\n          <Codicon name=\"discard\" size=\"0.875rem\" />\n        </Button>\n      "
+ },
+ {
+  "file": "app/chat/composer/controls.tsx",
+  "tooltip": "Exit HUD mode",
+  "aria_label": "Exit HUD mode",
+  "icon": "screen-normal",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n        <Button\n          aria-label={t.titlebar.exitHud}\n          className={cn(GHOST_ICON_BTN, 'p-0')}\n          onClick={closeHud}\n          size=\"icon\"\n          type=\"button\"\n          variant=\"ghost\"\n        >\n          <Codicon name=\"screen-normal\" size=\"0.875rem\" />\n        </Button>\n      "
+ },
+ {
+  "file": "app/chat/composer/queue-panel.tsx",
+  "tooltip": "Paused by Stop \u2014 resume sending the queued turns",
+  "aria_label": null,
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n            <Button\n              className=\"text-muted-foreground/75 hover:text-foreground/90\"\n              onClick={onResume}\n              size=\"micro\"\n              type=\"button\"\n              variant=\"text\"\n            >\n              {c.queueResume}\n            </Button>\n          "
+ },
+ {
+  "file": "app/chat/composer/queue-panel.tsx",
+  "tooltip": "Edit",
+  "aria_label": "Edit",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n                  <Button\n                    aria-label={c.queueEdit}\n                    className=\"size-5 rounded-md\"\n                    disabled={Boolean(editingId) && !isEditing}\n                    onClick={() => onEdit(entry)}\n                    size=\"icon-xs\"\n                    type=\"button\"\n                    variant=\"ghost\"\n                  >\n                    <Pencil className={iconSize.xs} />\n                  </Button>\n                "
+ },
+ {
+  "file": "app/chat/composer/queue-panel.tsx",
+  "tooltip": "Steer \u2014 redirect the live turn now",
+  "aria_label": "Steer \u2014 redirect the live turn now",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n                    <Button\n                      aria-label={c.queueSteer}\n                      className=\"size-5 rounded-md\"\n                      disabled={isEditing}\n                      onClick={() => onSteerNow?.(entry.id)}\n                      size=\"icon-xs\"\n                      type=\"button\"\n                      variant=\"ghost\"\n                    >\n                      <SteeringWheel className={iconSize.xs} />\n                    </Button>\n                  "
+ },
+ {
+  "file": "app/chat/right-rail/preview-artifact.tsx",
+  "tooltip": "Older version",
+  "aria_label": "Older version",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n        <button\n          aria-label={copy.olderVersion}\n          className={HEADER_BUTTON_CLASS}\n          disabled={current === 0}\n          onClick={() => onSelect(current - 1)}\n          type=\"button\"\n        >\n          <ChevronLeft className=\"size-3\" />\n        </button>\n      "
+ },
+ {
+  "file": "app/chat/right-rail/preview-artifact.tsx",
+  "tooltip": "Newer version",
+  "aria_label": "Newer version",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n        <button\n          aria-label={copy.newerVersion}\n          className={HEADER_BUTTON_CLASS}\n          disabled={current === total - 1}\n          onClick={() => onSelect(current + 1)}\n          type=\"button\"\n        >\n          <ChevronRight className=\"size-3\" />\n        </button>\n      "
+ },
+ {
+  "file": "app/chat/right-rail/preview-artifact.tsx",
+  "tooltip": "Download",
+  "aria_label": "Download",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n              <button\n                aria-label={copy.download}\n                className={HEADER_BUTTON_CLASS}\n                onClick={() =>\n                  downloadTextFile(\n                    artifactDownloadName(record.kind, record.language, record.title),\n                    version.content,\n                    MIME_BY_KIND[record.kind]\n                  )\n                }\n                type=\"button\"\n              >\n                <Download className=\"size-3\" />\n              </bu"
+ },
+ {
+  "file": "app/chat/right-rail/preview-artifact.tsx",
+  "tooltip": "Open in browser",
+  "aria_label": "Open in browser",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n                <button\n                  aria-label={copy.openInBrowser}\n                  className={HEADER_BUTTON_CLASS}\n                  onClick={() =>\n                    void openHtmlInBrowser(version.content).catch(error => notifyError(error, copy.openInBrowserFailed))\n                  }\n                  type=\"button\"\n                >\n                  <ExternalLink className=\"size-3\" />\n                </button>\n              "
+ },
+ {
+  "file": "app/chat/right-rail/preview-console.tsx",
+  "tooltip": "Send this entry to chat",
+  "aria_label": null,
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n          <button\n            className=\"rounded-md p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground\"\n            onClick={onSend}\n            type=\"button\"\n          >\n            <Send className=\"size-3\" />\n          </button>\n        "
+ },
+ {
+  "file": "app/shell/gateway-menu-panel.tsx",
+  "tooltip": "Reconnect gateway",
+  "aria_label": "Reconnect gateway",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n            <Button\n              aria-label={copy.reconnectGateway}\n              className=\"text-muted-foreground hover:text-foreground\"\n              disabled={reconnecting}\n              onClick={reconnect}\n              size=\"icon-xs\"\n              variant=\"ghost\"\n            >\n              <RefreshCw className={cn(reconnecting && 'animate-spin')} />\n            </Button>\n          "
+ },
+ {
+  "file": "app/shell/gateway-menu-panel.tsx",
+  "tooltip": "Open system panel",
+  "aria_label": "Open system panel",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n            <Button\n              aria-label={copy.openSystem}\n              className=\"text-muted-foreground hover:text-foreground\"\n              onClick={openSystem}\n              size=\"icon-xs\"\n              variant=\"ghost\"\n            >\n              <LayoutDashboard />\n            </Button>\n          "
+ },
+ {
+  "file": "app/shell/gateway-menu-panel.tsx",
+  "tooltip": "Restart gateway",
+  "aria_label": "Restart gateway",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n            <Button\n              aria-label={t.commandCenter.restartGateway}\n              className=\"text-muted-foreground hover:text-destructive\"\n              onClick={restart}\n              size=\"icon-xs\"\n              variant=\"ghost\"\n            >\n              <Power />\n            </Button>\n          "
+ },
+ {
+  "file": "app/pet-generate/components/draft-grid.tsx",
+  "tooltip": "Remix",
+  "aria_label": "Remix",
+  "icon": "git-branch",
+  "visible_text": "} size=\"icon-xs\" type=\"button\" variant=\"ghost\" >",
+  "menu_trigger": false,
+  "inner": "\n                  <Button\n                    aria-label={copy.remix}\n                    className={cn(\n                      'absolute right-1 top-1 z-20',\n                      'text-(--ui-text-tertiary) opacity-10 transition',\n                      'hover:bg-transparent hover:text-foreground focus-visible:opacity-100 group-hover:opacity-100'\n                    )}\n                    onClick={event => {\n                      event.stopPropagation()\n                      onRemix(draft)\n     "
+ },
+ {
+  "file": "app/starmap/share-controls.tsx",
+  "tooltip": "Import / export map",
+  "aria_label": "Import / export map",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n          <DialogTrigger asChild>\n            <Button\n              aria-label={t.starmap.shareTitle}\n              className=\"text-muted-foreground hover:text-foreground\"\n              size=\"icon\"\n              variant=\"ghost\"\n            >\n              <Upload className=\"size-3.5\" />\n            </Button>\n          </DialogTrigger>\n        "
+ },
+ {
+  "file": "app/right-sidebar/index.tsx",
+  "tooltip": "Refresh tree",
+  "aria_label": "Refresh tree",
+  "icon": "refresh",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n          <Button\n            aria-label={r.refreshTree}\n            className={HEADER_ACTION_LABEL_REVEAL}\n            disabled={loading}\n            onClick={onRefresh}\n            size=\"icon-xs\"\n            variant=\"ghost\"\n          >\n            <Codicon name=\"refresh\" size=\"0.8125rem\" spinning={loading} />\n          </Button>\n        "
+ },
+ {
+  "file": "app/right-sidebar/index.tsx",
+  "tooltip": "Collapse all folders",
+  "aria_label": "Collapse all folders",
+  "icon": "collapse-all",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n          <Button\n            aria-label={r.collapseAll}\n            className={cn(HEADER_ACTION_CLASS, !canCollapse && 'pointer-events-none opacity-0')}\n            disabled={!canCollapse}\n            onClick={onCollapseAll}\n            size=\"icon-xs\"\n            variant=\"ghost\"\n          >\n            <Codicon name=\"collapse-all\" size=\"0.8125rem\" />\n          </Button>\n        "
+ },
+ {
+  "file": "app/right-sidebar/terminal/rail.tsx",
+  "tooltip": "Hide terminal",
+  "aria_label": "Hide terminal",
+  "icon": "chevron-down",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n          <button\n            aria-label={t.rightSidebar.terminalHide}\n            className={cn(RAIL_ACTION, 'opacity-0 transition-opacity group-hover/rail:opacity-100')}\n            onClick={() => setTerminalTakeover(false)}\n            type=\"button\"\n          >\n            <Codicon name=\"chevron-down\" size=\"0.8125rem\" />\n          </button>\n        "
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "tooltip": "Stage all",
+  "aria_label": "Stage all",
+  "icon": "add",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n            <Button\n              aria-label={c.stageAll}\n              className={ACTION_BTN}\n              disabled={!hasFiles || !isUncommitted}\n              onClick={() => void stageReviewFile(null).catch(err => notifyError(err, c.stageAll))}\n              size=\"icon-xs\"\n              variant=\"ghost\"\n            >\n              <Codicon name=\"add\" size=\"0.8125rem\" />\n            </Button>\n          "
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "tooltip": "Revert all",
+  "aria_label": "Revert all",
+  "icon": "discard",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n            <Button\n              aria-label={c.revertAll}\n              className={ACTION_BTN}\n              disabled={!hasFiles || !isUncommitted}\n              onClick={() => requestRevert(null)}\n              size=\"icon-xs\"\n              variant=\"ghost\"\n            >\n              <Codicon name=\"discard\" size=\"0.8125rem\" />\n            </Button>\n          "
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "tooltip": "Refresh tree",
+  "aria_label": "Refresh tree",
+  "icon": "refresh",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n            <Button\n              aria-label={t.rightSidebar.refreshTree}\n              className={ACTION_BTN}\n              onClick={() => void refreshReview()}\n              size=\"icon-xs\"\n              variant=\"ghost\"\n            >\n              <Codicon name=\"refresh\" size=\"0.8125rem\" spinning={loading} />\n            </Button>\n          "
+ },
+ {
+  "file": "app/right-sidebar/review/file-tree.tsx",
+  "tooltip": "Revert",
+  "aria_label": "Revert",
+  "icon": "discard",
+  "visible_text": "} size=\"icon-xs\" variant=\"ghost\" >",
+  "menu_trigger": false,
+  "inner": "\n            <Button\n              aria-label={c.revert}\n              className=\"size-4 rounded text-muted-foreground/70 hover:text-(--ui-red)\"\n              onClick={event => {\n                event.stopPropagation()\n                requestRevert(file.path)\n              }}\n              size=\"icon-xs\"\n              variant=\"ghost\"\n            >\n              <Codicon name=\"discard\" size=\"0.7rem\" />\n            </Button>\n          "
+ },
+ {
+  "file": "app/messaging/index.tsx",
+  "tooltip": "Open docs",
+  "aria_label": null,
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n          <Button asChild className=\"size-8 shrink-0\" variant=\"ghost\">\n            <a href={field.url} rel=\"noreferrer\" target=\"_blank\">\n              <ExternalLink className=\"size-3.5\" />\n            </a>\n          </Button>\n        "
+ },
+ {
+  "file": "app/messaging/allowlist-field.tsx",
+  "tooltip": "Remove",
+  "aria_label": "Remove",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n            <Button\n              aria-label={m.removeListEntry}\n              className=\"size-8 shrink-0\"\n              disabled={lone}\n              onClick={() => remove(row.id)}\n              variant=\"ghost\"\n            >\n              <X className=\"size-3.5\" />\n            </Button>\n          "
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "tooltip": "Manage members",
+  "aria_label": "Manage group members",
+  "icon": "organization",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n        <Button\n          aria-label=\"Manage group members\"\n          className=\"shrink-0 text-(--ui-text-tertiary) hover:text-foreground\"\n          onClick={() => setMemberPickerOpen(true)}\n          size=\"sm\"\n          variant=\"ghost\"\n        >\n          <Codicon name=\"organization\" />\n        </Button>\n      "
+ },
+ {
+  "file": "plugins/hermes-bots/roster-pane-toolbar.tsx",
+  "tooltip": "New\u2026",
+  "aria_label": null,
+  "icon": "add",
+  "visible_text": "",
+  "menu_trigger": true,
+  "inner": "\n              <DropdownMenuTrigger asChild>\n                <Button\n                  aria-label={b.roster.newBotOrGroup}\n                  className=\"rounded-md text-(--ui-text-tertiary) hover:text-foreground\"\n                  size=\"icon-xs\"\n                  variant=\"ghost\"\n                >\n                  <Codicon name=\"add\" />\n                </Button>\n              </DropdownMenuTrigger>\n            "
+ },
+ {
+  "file": "plugins/hermes-bots/cron.tsx",
+  "tooltip": "Delete",
+  "aria_label": "Delete",
+  "icon": "trash",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n          <Button\n            aria-label={t.common.delete}\n            className=\"opacity-0 transition-opacity group-hover:opacity-100\"\n            disabled={busy}\n            onClick={() => act('remove')}\n            size=\"icon-xs\"\n            variant=\"ghost\"\n          >\n            <Codicon name=\"trash\" />\n          </Button>\n        "
+ },
+ {
+  "file": "plugins/hermes-bots/cron.tsx",
+  "tooltip": "New cron",
+  "aria_label": "New cron",
+  "icon": "add",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n          <Button aria-label={c.newCron} onClick={openCreate} size=\"icon-xs\" variant=\"ghost\">\n            <Codicon name=\"add\" />\n          </Button>\n        "
+ },
+ {
+  "file": "components/find-bar.tsx",
+  "tooltip": "Previous match",
+  "aria_label": "Previous match",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n        <button\n          aria-label={t.findInPage.previous}\n          className=\"flex h-7 w-7 items-center justify-center rounded text-(--ui-text-secondary) hover:bg-(--ui-control-hover-background)\"\n          onClick={findPrevious}\n          type=\"button\"\n        >\n          <svg height=\"14\" viewBox=\"0 0 16 16\" width=\"14\">\n            <path d=\"M4 10l4-4 4 4\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"1.5\" />\n          </svg>\n        </button>\n      "
+ },
+ {
+  "file": "components/find-bar.tsx",
+  "tooltip": "Next match",
+  "aria_label": "Next match",
+  "icon": null,
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n        <button\n          aria-label={t.findInPage.next}\n          className=\"flex h-7 w-7 items-center justify-center rounded text-(--ui-text-secondary) hover:bg-(--ui-control-hover-background)\"\n          onClick={findNext}\n          type=\"button\"\n        >\n          <svg height=\"14\" viewBox=\"0 0 16 16\" width=\"14\">\n            <path d=\"M4 6l4 4 4-4\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"1.5\" />\n          </svg>\n        </button>\n      "
+ },
+ {
+  "file": "components/ui/search-field.tsx",
+  "tooltip": "Clear search",
+  "aria_label": "Clear search",
+  "icon": "close",
+  "visible_text": "",
+  "menu_trigger": false,
+  "inner": "\n          <Button\n            aria-label={t.ui.search.clear}\n            className=\"shrink-0 text-muted-foreground/85 hover:bg-accent/60 hover:text-foreground\"\n            onClick={clear}\n            size=\"icon-xs\"\n            variant=\"ghost\"\n          >\n            <Codicon name=\"close\" size=\"0.875rem\" />\n          </Button>\n        "
+ },
+ {
+  "file": "components/assistant-ui/thread/user-message.tsx",
+  "tooltip": "Restore checkpoint \u2014 rerun from this prompt",
+  "aria_label": "Restore checkpoint",
+  "icon": "discard",
+  "visible_text": "{ event.preventDefault() event.stopPropagation() triggerHaptic('selection') onRe",
+  "menu_trigger": false,
+  "inner": "\n          <button\n            aria-label={copy.restoreCheckpoint}\n            className={cn('pointer-events-auto size-6', USER_ACTION_ICON_BUTTON_CLASS)}\n            onClick={event => {\n              event.preventDefault()\n              event.stopPropagation()\n              triggerHaptic('selection')\n              onRequestRestoreConfirm?.(messageId, {\n                text: fullText,\n                userOrdinal: runtimeUserOrdinal\n              })\n            }}\n            onPointerDown={event"
+ },
+ {
+  "file": "components/chat/json-document-editor.tsx",
+  "tooltip": "Format JSON",
+  "aria_label": "Format JSON",
+  "icon": "json",
+  "visible_text": "{ const result = editorApi.current?.formatJson() if (result && !result.ok) }} si",
+  "menu_trigger": false,
+  "inner": "\n            <Button\n              aria-label={t.common.formatJson}\n              className={ICON_BUTTON}\n              disabled={disabled}\n              onClick={() => {\n                const result = editorApi.current?.formatJson()\n\n                if (result && !result.ok) {\n                  onFormatJsonError(result.error)\n                }\n              }}\n              size=\"icon\"\n              variant=\"ghost\"\n            >\n              <Codicon name=\"json\" size=\"0.8125rem\" />\n           "
+ },
+ {
+  "file": "components/onboarding-chat/skip.tsx",
+  "tooltip": "Switching you over to your default profile",
+  "aria_label": null,
+  "icon": null,
+  "visible_text": "Skip setup",
+  "menu_trigger": false,
+  "inner": "\n      <button\n        className=\"ml-auto text-[11px] text-(--ui-text-quaternary) transition-colors hover:text-(--ui-text-secondary)\"\n        onClick={skipIntro}\n        type=\"button\"\n      >\n        Skip setup\n      </button>\n    "
+ }
+]

@@ -1,0 +1,31 @@
+diff --git a/agent/message_sanitization.py b/agent/message_sanitization.py
+index f0eb59cb49b1..ede1934630d7 100644
+--- a/agent/message_sanitization.py
++++ b/agent/message_sanitization.py
+@@ -669,7 +669,11 @@ def _set_provider_tool_id(tc: Any, key: str, value: str) -> None:
+     # Vendors that document reasoning_details replay next to reasoning_content.
+     (frozenset({RC, RD}), frozenset({"novita", "tencent-tokenhub", "minimax", "minimax-cn"}),
+      ("novita.ai", "tokenhub.tencentmaas.com", "tokenhub-intl.tencentcloudmaas.com", "minimax.io", "minimaxi.com")),
+-    (_LOCAL_CARRIERS, frozenset({"ollama-cloud", "custom", "lmstudio", "upstage"}), ("ollama.com", "upstage.ai")),
++    # "custom" is deliberately absent: it names a user-supplied endpoint, not a local one. It falls
++    # through to the is_local_endpoint() fallback, so a custom localhost engine keeps both carriers
++    # while a custom remote gateway gets reasoning_content only -- strict serde gateways alias
++    # `reasoning` to `reasoning_content` and reject both keys as a duplicate field (#136486).
++    (_LOCAL_CARRIERS, frozenset({"ollama-cloud", "lmstudio", "upstage"}), ("ollama.com", "upstage.ai")),
+ )
+ 
+ 
+diff --git a/tests/agent/test_reasoning_replay_routes.py b/tests/agent/test_reasoning_replay_routes.py
+index a2f57764404d..46df8e58a328 100644
+--- a/tests/agent/test_reasoning_replay_routes.py
++++ b/tests/agent/test_reasoning_replay_routes.py
+@@ -47,6 +47,9 @@ def _wire(provider, base_url, model="m", rejected=()):
+     # everyone else: the de-facto standard alias
+     ("zai", "https://api.z.ai/api/paas/v4", "glm-5.3", {"reasoning_content"}),
+     ("openai-api", "https://api.openai.com/v1", "gpt-5", {"reasoning_content"}),
++    # a remote gateway named under `providers:` resolves to "custom"; local-engine carriers would
++    # send the `reasoning` alias next to `reasoning_content` -> 400 duplicate field (#136486)
++    ("custom", "https://api.inference.wandb.ai/v1", "m", {"reasoning_content"}),
+ ])
+ def test_each_route_gets_exactly_the_carriers_it_reads(provider, base_url, model, expected):
+     turn, bare = _wire(provider, base_url, model)

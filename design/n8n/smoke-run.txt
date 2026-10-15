@@ -1,0 +1,251 @@
+2.43.6
+n8n Task Broker ready on 127.0.0.1, port 5679
+Failed to start Python task runner in internal mode. because Python 3 is missing from this system. Launching a Python runner in internal mode is intended only for debugging and is not recommended for production. Users are encouraged to deploy in external mode. See: https://docs.n8n.io/hosting/configuration/task-runners/#setting-up-external-mode
+[license SDK] Skipping renewal on init: renewOnInit is disabled in config
+[license SDK] Skipping renewal on init: license cert is not initialized
+[runner:js] (node:39) ExperimentalWarning: localStorage is not available because --localstorage-file was not provided.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Registered runner "JS Task Runner" (5Nko42N-7a5UbRWmo4evh) 
+{
+  "data": {
+    "version": 1,
+    "startData": {},
+    "resultData": {
+      "runData": {
+        "Start": [
+          {
+            "startTime": 1792077808554,
+            "executionIndex": 0,
+            "source": [],
+            "hints": [],
+            "executionTime": 1,
+            "executionStatus": "success",
+            "data": {
+              "main": [
+                [
+                  {
+                    "json": {},
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        "Message": [
+          {
+            "startTime": 1792077808555,
+            "executionIndex": 1,
+            "source": [
+              {
+                "previousNode": "Start",
+                "previousNodeOutput": 0,
+                "previousNodeRun": 0
+              }
+            ],
+            "hints": [],
+            "executionTime": 2,
+            "executionStatus": "success",
+            "data": {
+              "main": [
+                [
+                  {
+                    "json": {
+                      "channel": "#devops",
+                      "message": "deploy to staging has been stuck on 'waiting for runner' for 40 min"
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        "Ask Jev": [
+          {
+            "startTime": 1792077808557,
+            "executionIndex": 2,
+            "source": [
+              {
+                "previousNode": "Message",
+                "previousNodeOutput": 0,
+                "previousNodeRun": 0
+              }
+            ],
+            "hints": [],
+            "executionTime": 247,
+            "executionStatus": "success",
+            "data": {
+              "main": [
+                [
+                  {
+                    "json": {
+                      "model": "typesafe/jev-1.14-20261014",
+                      "answers": {
+                        "category": {
+                          "type": "choice",
+                          "choice": "ci_cd_error",
+                          "probabilities": {
+                            "modify_infrastructure": 0,
+                            "incident": 0.04,
+                            "question": 0,
+                            "ci_cd_error": 0.96,
+                            "new_system": 0,
+                            "announcement": 0,
+                            "other": 0
+                          },
+                          "confidence": 0.95
+                        }
+                      },
+                      "usage": {
+                        "input_tokens": 1215,
+                        "output_tokens": 75,
+                        "cost": 0.00005103
+                      },
+                      "id": "gen-dec-1792077808-pjj3qG0dehD0yZz2aHcI",
+                      "provider": "TypeSafe"
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        "Verdict": [
+          {
+            "startTime": 1792077808804,
+            "executionIndex": 3,
+            "source": [
+              {
+                "previousNode": "Ask Jev",
+                "previousNodeOutput": 0,
+                "previousNodeRun": 0
+              }
+            ],
+            "hints": [],
+            "executionTime": 8,
+            "executionStatus": "success",
+            "data": {
+              "main": [
+                [
+                  {
+                    "json": {
+                      "category": "ci_cd_error",
+                      "confidence": 0.95,
+                      "message": "deploy to staging has been stuck on 'waiting for runner' for 40 min"
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        "Sure?": [
+          {
+            "startTime": 1792077808812,
+            "executionIndex": 4,
+            "source": [
+              {
+                "previousNode": "Verdict",
+                "previousNodeOutput": 0,
+                "previousNodeRun": 0
+              }
+            ],
+            "hints": [],
+            "executionTime": 2,
+            "executionStatus": "success",
+            "data": {
+              "main": [
+                [
+                  {
+                    "json": {
+                      "category": "ci_cd_error",
+                      "confidence": 0.95,
+                      "message": "deploy to staging has been stuck on 'waiting for runner' for 40 min"
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  }
+                ],
+                []
+              ]
+            }
+          }
+        ],
+        "Route": [
+          {
+            "startTime": 1792077808814,
+            "executionIndex": 5,
+            "source": [
+              {
+                "previousNode": "Sure?",
+                "previousNodeOutput": 0,
+                "previousNodeRun": 0
+              }
+            ],
+            "hints": [],
+            "executionTime": 6,
+            "executionStatus": "success",
+            "data": {
+              "main": [
+                [],
+                [],
+                [],
+                [
+                  {
+                    "json": {
+                      "category": "ci_cd_error",
+                      "confidence": 0.95,
+                      "message": "deploy to staging has been stuck on 'waiting for runner' for 40 min"
+                    },
+                    "pairedItem": {
+                      "item": 0
+                    }
+                  }
+                ],
+                [],
+                [],
+                []
+              ]
+            }
+          }
+        ]
+      },
+      "lastNodeExecuted": "Route"
+    },
+    "executionData": {
+      "contextData": {},
+      "nodeExecutionStack": [],
+      "metadata": {},
+      "waitingExecution": {},
+      "waitingExecutionSource": {},
+      "runtimeData": {
+        "version": 1,
+        "establishedAt": 1792077808554,
+        "source": "cli",
+        "triggerNode": {
+          "name": "Start",
+          "type": "n8n-nodes-base.manualTrigger"
+        }
+      }
+    },
+    "resumeToken": "3bf6bc3f3bfb29675b14653169e5b79752482d0a6ca6a8059ac7ca0463030890"
+  },
+  "mode": "cli",
+  "startedAt": "2026-10-15T15:23:28.551Z",
+  "stoppedAt": "2026-10-15T15:23:28.820Z",
+  "storedAt": "db",
+  "status": "success",
+  "finished": true
+}

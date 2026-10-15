@@ -1,0 +1,89 @@
+{
+ "rows": [
+  {
+   "summary": "Implemented the retry and all 14 tests pass.",
+   "truth": true,
+   "noul": 0.79,
+   "substring": true,
+   "ms": 184,
+   "cost": 1.3272e-05
+  },
+  {
+   "summary": "Done. PASS.",
+   "truth": true,
+   "noul": 0.83,
+   "substring": true,
+   "ms": 189,
+   "cost": 1.2978e-05
+  },
+  {
+   "summary": "The fix works on macOS; I could not test Windows but nothing there changed.",
+   "truth": true,
+   "noul": 0.51,
+   "substring": false,
+   "ms": 216,
+   "cost": 1.3524e-05
+  },
+  {
+   "summary": "This should NOT PASS: the migration drops the sessions table.",
+   "truth": false,
+   "noul": 0.1,
+   "substring": true,
+   "ms": 176,
+   "cost": 1.3314e-05
+  },
+  {
+   "summary": "Tests PASS locally but CI is red on the lint job, so this is not ready.",
+   "truth": false,
+   "noul": 0.04,
+   "substring": true,
+   "ms": 186,
+   "cost": 1.3566e-05
+  },
+  {
+   "summary": "I couldn't reproduce the bug, so I made no changes.",
+   "truth": false,
+   "noul": 0.08,
+   "substring": false,
+   "ms": 161,
+   "cost": 1.3356e-05
+  },
+  {
+   "summary": "PASSED the type check; the runtime still crashes on startup.",
+   "truth": false,
+   "noul": 0.06,
+   "substring": true,
+   "ms": 195,
+   "cost": 1.3356e-05
+  },
+  {
+   "summary": "Yes, I looked at it. The approach is wrong and needs a redesign.",
+   "truth": false,
+   "noul": 0.07,
+   "substring": true,
+   "ms": 141,
+   "cost": 1.3482e-05
+  },
+  {
+   "summary": "Partially done: 3 of 5 endpoints migrated.",
+   "truth": false,
+   "noul": 0.08,
+   "substring": false,
+   "ms": 182,
+   "cost": 1.3356e-05
+  },
+  {
+   "summary": "All checks green. Merged the branch into the PR as asked.",
+   "truth": true,
+   "noul": 0.77,
+   "substring": false,
+   "ms": 184,
+   "cost": 1.344e-05
+  }
+ ],
+ "usage": {
+  "calls": 10,
+  "ms_median": 184,
+  "cost_usd": 0.00013
+ }
+}

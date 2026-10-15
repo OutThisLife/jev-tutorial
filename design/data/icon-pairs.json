@@ -1,0 +1,254 @@
+[
+ {
+  "file": "app/master-detail.tsx",
+  "label": "t.common.close",
+  "icon": "close",
+  "text": "Close",
+  "path": "common.close"
+ },
+ {
+  "file": "app/settings/keybind-settings.tsx",
+  "label": "k.clear",
+  "icon": "close",
+  "text": "Clear",
+  "path": "keybinds.clear"
+ },
+ {
+  "file": "app/settings/keybind-settings.tsx",
+  "label": "k.reset",
+  "icon": "discard",
+  "text": "Reset to default",
+  "path": "keybinds.reset"
+ },
+ {
+  "file": "app/settings/env-var-actions-menu.tsx",
+  "label": "copy.actions",
+  "icon": "ellipsis",
+  "text": "Actions",
+  "path": "settings.envActions.actions"
+ },
+ {
+  "file": "app/capabilities/connectors/dialog-menu.tsx",
+  "label": "copy.dialog.moreActions",
+  "icon": "ellipsis",
+  "text": "More actions",
+  "path": "connectorsPage.dialog.moreActions"
+ },
+ {
+  "file": "app/chat/sidebar/index.tsx",
+  "label": "s.markAllRead",
+  "icon": "check-all",
+  "text": "Mark all as read",
+  "path": "sidebar.markAllRead"
+ },
+ {
+  "file": "app/chat/sidebar/index.tsx",
+  "label": "s.showProjects",
+  "icon": "list-unordered",
+  "text": "Show projects",
+  "path": "sidebar.showProjects"
+ },
+ {
+  "file": "app/chat/sidebar/cron-jobs-section.tsx",
+  "label": "c.triggerNow",
+  "icon": "zap",
+  "text": "Trigger now",
+  "path": "cron.triggerNow"
+ },
+ {
+  "file": "app/chat/sidebar/cron-jobs-section.tsx",
+  "label": "c.manage",
+  "icon": "watch",
+  "text": "Manage",
+  "path": "cron.manage"
+ },
+ {
+  "file": "app/chat/composer/controls.tsx",
+  "label": "t.titlebar.resetHudLayout",
+  "icon": "discard",
+  "text": "Reset HUD size and position",
+  "path": "titlebar.resetHudLayout"
+ },
+ {
+  "file": "app/chat/composer/controls.tsx",
+  "label": "t.titlebar.exitHud",
+  "icon": "screen-normal",
+  "text": "Exit HUD mode",
+  "path": "titlebar.exitHud"
+ },
+ {
+  "file": "app/chat/composer/status-stack/session-control.tsx",
+  "label": "ctrl.dismissError",
+  "icon": "close",
+  "text": "Dismiss error",
+  "path": "statusStack.control.dismissError"
+ },
+ {
+  "file": "app/chat/composer/status-stack/coding-row.tsx",
+  "label": "s.newBranch",
+  "icon": "kebab-vertical",
+  "text": "New branch",
+  "path": "statusStack.coding.newBranch"
+ },
+ {
+  "file": "app/session-import/index.tsx",
+  "label": "t.common.refresh",
+  "icon": "refresh",
+  "text": "Refresh",
+  "path": "common.refresh"
+ },
+ {
+  "file": "app/right-sidebar/index.tsx",
+  "label": "r.refreshTree",
+  "icon": "refresh",
+  "text": "Refresh tree",
+  "path": "rightSidebar.refreshTree"
+ },
+ {
+  "file": "app/right-sidebar/index.tsx",
+  "label": "r.collapseAll",
+  "icon": "collapse-all",
+  "text": "Collapse all folders",
+  "path": "rightSidebar.collapseAll"
+ },
+ {
+  "file": "app/right-sidebar/terminal/rail.tsx",
+  "label": "t.rightSidebar.terminalNew",
+  "icon": "add",
+  "text": "New terminal",
+  "path": "rightSidebar.terminalNew"
+ },
+ {
+  "file": "app/right-sidebar/terminal/rail.tsx",
+  "label": "t.rightSidebar.terminalHide",
+  "icon": "chevron-down",
+  "text": "Hide terminal",
+  "path": "rightSidebar.terminalHide"
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "label": "c.stageAll",
+  "icon": "add",
+  "text": "Stage all",
+  "path": "statusStack.coding.stageAll"
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "label": "c.revertAll",
+  "icon": "discard",
+  "text": "Revert all",
+  "path": "statusStack.coding.revertAll"
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "label": "t.rightSidebar.refreshTree",
+  "icon": "refresh",
+  "text": "Refresh tree",
+  "path": "rightSidebar.refreshTree"
+ },
+ {
+  "file": "app/right-sidebar/review/index.tsx",
+  "label": "c.close",
+  "icon": "close",
+  "text": "Close",
+  "path": "statusStack.coding.close"
+ },
+ {
+  "file": "app/right-sidebar/review/file-tree.tsx",
+  "label": "c.revert",
+  "icon": "discard",
+  "text": "Revert",
+  "path": "statusStack.coding.revert"
+ },
+ {
+  "file": "plugins/hermes-bots/cron.tsx",
+  "label": "t.common.delete",
+  "icon": "trash",
+  "text": "Delete",
+  "path": "common.delete"
+ },
+ {
+  "file": "plugins/hermes-bots/cron.tsx",
+  "label": "c.newCron",
+  "icon": "add",
+  "text": "New cron",
+  "path": "cron.newCron"
+ },
+ {
+  "file": "components/notifications.tsx",
+  "label": "copy.dismiss",
+  "icon": "close",
+  "text": "Dismiss notification",
+  "path": "notifications.dismiss"
+ },
+ {
+  "file": "components/ui/pagination.tsx",
+  "label": "t.ui.pagination.previousAria",
+  "icon": "chevron-left",
+  "text": "Go to previous page",
+  "path": "ui.pagination.previousAria"
+ },
+ {
+  "file": "components/ui/pagination.tsx",
+  "label": "t.ui.pagination.nextAria",
+  "icon": "chevron-right",
+  "text": "Go to next page",
+  "path": "ui.pagination.nextAria"
+ },
+ {
+  "file": "components/ui/search-field.tsx",
+  "label": "t.ui.search.clear",
+  "icon": "close",
+  "text": "Clear search",
+  "path": "ui.search.clear"
+ },
+ {
+  "file": "components/assistant-ui/thread/user-message.tsx",
+  "label": "copy.restoreCheckpoint",
+  "icon": "discard",
+  "text": "Restore checkpoint",
+  "path": "assistant.thread.restoreCheckpoint"
+ },
+ {
+  "file": "components/assistant-ui/tool/fallback.tsx",
+  "label": "statusCopy.dismiss",
+  "icon": "close",
+  "text": "Dismiss",
+  "path": "statusStack.dismiss"
+ },
+ {
+  "file": "components/chat/json-document-editor.tsx",
+  "label": "t.common.formatJson",
+  "icon": "json",
+  "text": "Format JSON",
+  "path": "common.formatJson"
+ },
+ {
+  "file": "app/shell/wslg-window-controls.tsx",
+  "label": "Minimize window",
+  "icon": "chrome-minimize",
+  "text": "Minimize window",
+  "path": null
+ },
+ {
+  "file": "app/shell/wslg-window-controls.tsx",
+  "label": "Close window",
+  "icon": "chrome-close",
+  "text": "Close window",
+  "path": null
+ },
+ {
+  "file": "plugins/hermes-bots/group-chat-view.tsx",
+  "label": "Manage group members",
+  "icon": "organization",
+  "text": "Manage group members",
+  "path": null
+ },
+ {
+  "file": "components/ui/split-button.tsx",
+  "label": "More actions",
+  "icon": "chevron-down",
+  "text": "More actions",
+  "path": null
+ }
+]

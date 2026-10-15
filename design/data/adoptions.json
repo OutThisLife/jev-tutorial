@@ -1,0 +1,386 @@
+[
+ {
+  "sha": "c07be22d0c9",
+  "subject": "feat(desktop): directory card for manage_connections display",
+  "file": "apps/desktop/src/components/assistant-ui/connector-tool.tsx",
+  "primitive": "connector-logo",
+  "names": "ConnectorLogo",
+  "removed": "/** Resolve that owner. Null until it resolves and null when it cannot: a card RPC must reach the\n *  gateway that holds the operation, never whichever one the window happens to have in front. */\nexport function useConnectionOwner(sessionId: null | string, active: boolean): ConnectionOwner | null {\n  const [owner, setOwner] = useState<ConnectionOwner | null>(null)\n\n  useEffect(() => {\n    if (!sessionId || !active) {\n      setOwner(null)\n\n      return\n    }\n\n    let cancelled = false\n\n    void connectionOwnerFor(sessionId, 'connectors.connect').then(resolved => {\n      if (!cancelled) {\n        setOwner(resolved)\n      }\n    })\n\n    return () => {\n      cancelled = true\n    }\n  }, [active, sessionId])\n\n  return owner\n}\n"
+ },
+ {
+  "sha": "9809922e049",
+  "subject": "feat(desktop): fade top/bottom of the onboarding connectors list",
+  "file": "apps/desktop/src/components/assistant-ui/clarify/setup-pickers.tsx",
+  "primitive": "fade-scroll",
+  "names": "FadeScroll",
+  "removed": "      <div className=\"grid max-h-72 grid-cols-3 gap-2 overflow-y-auto p-1\" role=\"group\">\n        {rows.map((row, index) =>\n          search && !row.label.toLowerCase().includes(search) ? null : (\n            <PickerItem active={cursor === index} className=\"rounded-[6px]\" key={row.id}>\n              <Chip\n                className={cn('w-full', dim?.(row) && 'opacity-60')}\n                icon={icon(row)}\n                label={row.label}\n                on={picked.includes(row.id)}\n                onToggle={() => onPick(index)}\n                sub={row.detail ?? sub}\n              />\n            </PickerItem>\n          )\n        )}"
+ },
+ {
+  "sha": "5a1700e8b0f",
+  "subject": "fix(desktop): a first-run start that outlasts the boot budget offers to continue without setup",
+  "file": "apps/desktop/src/components/gateway-connecting-overlay.tsx",
+  "primitive": "button",
+  "names": "Button",
+  "removed": "      <DecodeText\n        active={decoding}\n        className={cn(\n          'pl-[0.4em] text-(--theme-primary) transition duration-300 ease-out',\n          leaving ? 'translate-y-2 opacity-0 saturate-0' : 'translate-y-0 opacity-100 saturate-100'\n        )}\n        cursor\n        loop\n        prefix={4}\n        text={TEXT}\n      />"
+ },
+ {
+  "sha": "27ca055ad70",
+  "subject": "ci: shared-metrics v4 lists the setup toolsets; import order; Skip tooltip",
+  "file": "apps/desktop/src/components/onboarding-chat/skip.tsx",
+  "primitive": "tooltip",
+  "names": "Tip",
+  "removed": "    <button\n      className=\"ml-auto text-[11px] text-(--ui-text-quaternary) transition-colors hover:text-(--ui-text-secondary)\"\n      onClick={skipIntro}\n      title=\"Switching you over to your default profile\"\n      type=\"button\"\n    >\n      Skip setup\n    </button>"
+ },
+ {
+  "sha": "a731ffcc49b",
+  "subject": "fix(desktop): plugin settings pages use native Settings rows",
+  "file": "apps/desktop/src/app/settings/plugin-settings.tsx",
+  "primitive": "button",
+  "names": "Button",
+  "removed": "      <div className=\"grid max-w-3xl gap-4\">\n        <div className=\"flex flex-wrap items-baseline justify-between gap-2\">\n          <p className=\"text-[length:var(--conversation-caption-font-size)] leading-(--conversation-caption-line-height) text-(--ui-text-tertiary)\">\n            {copy.blurb}\n          </p>\n          <ManagePluginsLink />\n        </div>\n        {missing && (\n          <p className=\"text-[length:var(--conversation-caption-font-size)] text-(--ui-text-secondary)\" role=\"status\">\n            {copy.missing}\n          </p>\n        )}\n        {entries.length === 0 ? (\n          <EmptyState title={copy.empty} />\n        ) : (\n          <div className=\"grid overflow-hidden rounded-lg border border-(--ui-stroke-tertiary)\">\n            {entries.map(entry => {\n              const Icon = entryIcon(entry)\n              // The landing page counts as one; sub-pages add to it.\n              const pages = entry.children.length + 1\n\n              return (\n                <button\n                  className=\"flex min-h-11 items-center gap-3 border-b border-(--ui-stroke-tertiary) px-3 text-left transition-colors last:border-b-0 hover:bg-(--chrome-action-hover)\"\n                  data-testid={`plugin-settings-row-${entry.key}`}\n                  key={entry.key}\n                  onClick={() => onOpen(entry.key)}\n                  type=\"button\"\n                >\n                  <Icon className=\"size-4 shrink-0 text-(--ui-text-tertiary)\" />\n                  <span className=\"min"
+ },
+ {
+  "sha": "6cb7a64e594",
+  "subject": "revert: Skills and Plugins card catalog browser, third landing (reverts #119381)",
+  "file": "apps/desktop/src/app/capabilities/skills/skills-tab.tsx",
+  "primitive": "badge",
+  "names": "Badge",
+  "removed": "            <SkillDetail\n              onArchive={() => {\n                if (!saving.current) {\n                  setArchiveTarget(skill.name)\n                }\n              }}\n              onEdit={() => void openSkillEditor(skill.name)}\n              profile={profile}\n              skill={skill}\n            />\n            <p className=\"text-xs text-(--ui-text-tertiary)\">{t.skills.changesApplyNewSessions}</p>\n            {skillEditor?.name === skill.name && (\n              <DetailPane\n                actions={\n                  <Button disabled={skillSaving} onClick={() => void saveSkillEdit()} size=\"xs\">\n                    {skillSaving ? t.common.saving : t.common.save}\n                  </Button>\n                }\n                id=\"skill-editor\"\n                onClose={closeSkillEditor}\n                title={\n                  <span className=\"text-[0.68rem] font-normal text-muted-foreground/60\">\n                    {skillEditor.name}/SKILL.md\n                  </span>\n                }\n              >\n                <CodeEditor\n                  disabled={skillSaving}\n                  filePath=\"SKILL.md\"\n                  initialValue={skillDraft}\n                  key={skillEditor.name}\n                  onCancel={closeSkillEditor}\n                  onChange={setSkillDraft}\n                  onSave={() => void saveSkillEdit()}"
+ },
+ {
+  "sha": "40a2637faed",
+  "subject": "fix(desktop): scope pane fallback menus to the clicked content",
+  "file": "apps/desktop/src/app/context-menu/app-context-menu.tsx",
+  "primitive": "actions-menu",
+  "names": "DROPDOWN_KIT",
+  "removed": "/** Bare right-click on app chrome: the window verbs (the old shell fallback). */\nfunction shellSections({ navigate, t }: ShellVerbs): ReactNode[][] {\n  return [\n    [\n      <Item\n        icon=\"add\"\n        key=\"shell-new-chat\"\n        label={t.commandCenter.nav.newChat.title}\n        onSelect={() => navigateToWorkspacePage(navigate, NEW_CHAT_ROUTE)}\n      />,\n      canOpenNewWindow() ? (\n        <Item\n          icon=\"multiple-windows\"\n          key=\"shell-new-window\"\n          label={t.keybinds.actions['session.newWindow']}\n          onSelect={() => void openNewWindow()}\n        />\n      ) : null,\n      <Item icon=\"search\" key=\"shell-palette\" label={t.commandCenter.paletteTitle} onSelect={openCommandPalette} />\n    ].filter(Boolean),\n    [\n      <Item\n        icon=\"layout-statusbar\"\n        key=\"shell-statusbar\"\n        label={t.keybinds.actions['view.toggleStatusbar']}\n        onSelect={toggleStatusbarVisible}\n      />,\n      <Item\n        icon=\"organization\"\n        key=\"shell-profile-rail\"\n        label={t.keybinds.actions['view.toggleProfileRail']}\n        onSelect={toggleProfileRailVisible}\n      />,\n      // The pointer-only way back to a hidden tab strip: right-clicking the\n      // shell reaches this menu from anywhere, including a zone that has no\n      // chrome left to right-click.\n      <Item\n        icon=\"layout-menubar\"\n        key=\"shell-tabstrip\"\n        label={t.keybinds.actions['view.toggleTabStrip']}"
+ },
+ {
+  "sha": "de5bb705dbf",
+  "subject": "fix(desktop): un-nest the session row's drag handle from its primary button",
+  "file": "apps/desktop/src/app/chat/sidebar/session-row.tsx",
+  "primitive": "row-button",
+  "names": "RowButton",
+  "removed": "                  <OverflowTip label={title} placement=\"row\">\n                    <SidebarRowLabel\n                      className={cn(\n                        'hover-marquee text-[0.8125rem] font-medium text-(--ui-text-primary) group-data-[working=true]:text-foreground',\n                        SIDEBAR_TRUNCATED_LEADING\n                      )}\n                      onPointerEnter={armMarquee}\n                      onPointerLeave={disarmMarquee}\n                    >\n                      <span className=\"hover-marquee-inner\">{title}</span>\n                    </SidebarRowLabel>\n                  </OverflowTip>"
+ },
+ {
+  "sha": "b27d9eb7c00",
+  "subject": "feat(desktop): add review-pane diff scope selector (Uncommitted / Branch / Last turn)",
+  "file": "apps/desktop/src/app/right-sidebar/review/index.tsx",
+  "primitive": "segmented-control",
+  "names": "SegmentedControl",
+  "removed": "            <Tip label={selectedFile.staged ? c.unstage : c.stage}>\n              <Button\n                aria-label={selectedFile.staged ? c.unstage : c.stage}\n                className={ACTION_BTN}\n                onClick={() =>\n                  void (\n                    selectedFile.staged ? unstageReviewFile(selectedFile.path) : stageReviewFile(selectedFile.path)\n                  ).catch(err => notifyError(err, c.stage))\n                }\n                size=\"icon-xs\"\n                variant=\"ghost\"\n              >\n                <Codicon name={selectedFile.staged ? 'remove' : 'add'} size=\"0.8rem\" />\n              </Button>\n            </Tip>"
+ },
+ {
+  "sha": "641af6dfc52",
+  "subject": "feat(desktop): shift-click a model to pin it to the top of the picker",
+  "file": "apps/desktop/src/app/shell/model-edit-submenu.tsx",
+  "primitive": "codicon",
+  "names": "Codicon",
+  "removed": "      <DropdownMenuLabel className={dropdownMenuSectionLabel}>{copy.options}</DropdownMenuLabel>\n      {showThinkingToggle ? (\n        <DropdownMenuItem className={dropdownMenuRow} onSelect={event => event.preventDefault()}>\n          {copy.thinking}\n          <Switch\n            checked={thinkingOn}\n            className=\"ml-auto\"\n            onCheckedChange={checked => onSetOptions({ effort: checked ? effortValue || defaultEffort : 'none' })}\n            size=\"xs\"\n          />\n        </DropdownMenuItem>\n      ) : null}\n      {hasFast ? (\n        <DropdownMenuItem className={dropdownMenuRow} onSelect={event => event.preventDefault()}>\n          {copy.fast}\n          <Switch checked={fastOn} className=\"ml-auto\" onCheckedChange={setFast} size=\"xs\" />\n        </DropdownMenuItem>\n      ) : null}\n      {reasoning ? ("
+ },
+ {
+  "sha": "5f461df6055",
+  "subject": "fix(desktop): onboarding boots into the setup chat and the setup cards keep their picks",
+  "file": "apps/desktop/src/components/assistant-ui/clarify/setup-pickers.tsx",
+  "primitive": "kbd",
+  "names": "Kbd",
+  "removed": "    <div className=\"grid gap-px\" role=\"group\">\n      {rows.map((row, index) => (\n        <ChoiceButton\n          active={cursor === index}\n          char={letterFor(index)}\n          choice={row.label}\n          key={row.id}\n          keyShortcuts={`${letterFor(index)} ${index + 1}`}\n          onClick={() => onPick(index)}\n          selected={picked.includes(row.id)}\n        />\n      ))}"
+ },
+ {
+  "sha": "352faef967a",
+  "subject": "fix(desktop): model menus use Badge, RowButton and Codicon spinning",
+  "file": "apps/desktop/src/components/model-visibility-dialog.tsx",
+  "primitive": "row-button",
+  "names": "RowButton",
+  "removed": "            <Button\n              className=\"-mr-2 text-(--ui-text-tertiary)\"\n              onClick={() => void resetToDefaults()}\n              size=\"xs\"\n              type=\"button\"\n              variant=\"text\"\n            >"
+ },
+ {
+  "sha": "6007b3ce4f0",
+  "subject": "refactor(desktop): export DialogCloseButton for the boot-failure overlay",
+  "file": "apps/desktop/src/components/boot-failure-overlay.tsx",
+  "primitive": "dialog",
+  "names": "DialogCloseButton",
+  "removed": "// Radix Close routes through the modal's onOpenChange, same path as Escape.\nfunction DismissControl() {\n  const { t } = useI18n()\n\n  return (\n    <DialogPrimitive.Close asChild data-slot=\"dialog-close-button\">\n      <Button\n        aria-label={t.common.close}\n        className=\"absolute right-2.5 top-2.5 z-20 text-(--ui-text-tertiary) hover:bg-(--chrome-action-hover) hover:text-foreground\"\n        size=\"icon-xs\"\n        variant=\"ghost\"\n      >\n        <X className=\"size-4\" />\n        <span className=\"sr-only\">{t.common.close}</span>\n      </Button>\n    </DialogPrimitive.Close>\n  )\n}\n"
+ },
+ {
+  "sha": "24bbdab4c79",
+  "subject": "fix(desktop): reveal clipped profile rail edges and pin actions",
+  "file": "apps/desktop/src/app/chat/sidebar/profile-switcher.tsx",
+  "primitive": "fade-scroll",
+  "names": "edgeMask, scrollEdges",
+  "removed": "          {fleet\n            ? fleetSequence.map((entry, index) =>\n                entry.kind === 'active' ? (\n                  <Fragment key=\"active\">\n                    <FleetDivider\n                      connection={activeConnection}\n                      first={index === 0}\n                      label={activeConnection ? p.fleet.gateway(activeConnection.label) : null}\n                      reachable\n                    />\n                    <span\n                      aria-label={activeConnection ? p.fleet.gateway(activeConnection.label) : undefined}\n                      className=\"flex shrink-0 items-center gap-1\"\n                      data-active=\"true\"\n                      data-connection-id={activeConnection?.id}\n                      data-slot=\"profile-rail-gateway\"\n                      role=\"group\"\n                    >\n                      {defaultProfile && (\n                        <ProfilePill\n                          active={onDefault}\n                          connectionId={activeConnectionId ?? undefined}\n                          glyph=\"home\"\n                          label={profileLabel(defaultProfile)}\n                          onSelect={() => selectProfile(defaultProfile.name)}\n                          profile={defaultProfile.name}"
+ },
+ {
+  "sha": "f4795c922c2",
+  "subject": "fix(desktop): tell the user when a clarify request never reached the app",
+  "file": "apps/desktop/src/components/assistant-ui/clarify-tool.tsx",
+  "primitive": "alert",
+  "names": "Alert, AlertDescription",
+  "removed": "      <div className=\"flex items-center justify-end gap-1\">\n        <Button disabled={submitting || !ready} onClick={() => void respond('')} size=\"xs\" type=\"button\" variant=\"text\">\n          {copy.skip}\n        </Button>\n        <Button disabled={submitting || !ready || !pendingAnswer} size=\"xs\" type=\"submit\">\n          {submitting ? (\n            <Loader2 className=\"size-3 animate-spin\" />\n          ) : (\n            <>\n              {copy.continueLabel}\n              <span aria-hidden className=\"ml-0.5 text-[0.625rem] opacity-70\">\n                \u23ce\n              </span>\n            </>\n          )}\n        </Button>\n      </div>"
+ },
+ {
+  "sha": "78e2bcfaa97",
+  "subject": "refactor(catalog): browse-only catalog with clickable cards, category reels, and plugin enable/disable switches",
+  "file": "apps/desktop/src/app/capabilities/skills/skills-tab.tsx",
+  "primitive": "switch",
+  "names": "Switch",
+  "removed": "            {visibleOfficial.map(skill => {\n              const installing = runningInstalls.has(skill.identifier)\n\n              return (\n                <CapRow\n                  action={\n                    <Button disabled={installing} onClick={() => handleInstallOfficial(skill)} size=\"xs\" variant=\"text\">\n                      {installing && <Loader2 className=\"size-3 animate-spin\" />}\n                      {installing ? t.skills.hub.installing : t.skills.hub.install}\n                    </Button>\n                  }\n                  active={activeOfficial?.identifier === skill.identifier}\n                  enabled={false}\n                  key={skill.identifier}\n                  onSelect={() => setSelectedOfficial(skill.identifier)}\n                  subtitle={prettyName(skill.category)}\n                  title={skill.name}\n                />\n              )\n            })}\n          </ListColumn>\n          <DetailColumn footer={t.skills.changesApplyNewSessions}>\n            {activeOfficial ? (\n              <OfficialSkillDetail\n                installing={runningInstalls.has(activeOfficial.identifier)}\n                onInstall={() => handleInstallOfficial(activeOfficial)}\n                profile={profile}\n                skill={activeOfficial}\n              />\n            ) : (\n              activeSkill && (\n                <SkillDetail\n                  onArchive={() => setArchiveTarget(activeSkill.name)}\n                  onEdit={() => void openSkillEditor(activeSk"
+ },
+ {
+  "sha": "1b7e8c45d62",
+  "subject": "fix(desktop): every settings row renders through one ListRow/ToggleRow/Slider/SearchField",
+  "file": "apps/desktop/src/app/settings/local-models-settings.tsx",
+  "primitive": "search-field",
+  "names": "SearchField",
+  "removed": "        <div className=\"relative\">\n          <Search className=\"pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground\" />\n          <input\n            className=\"w-full rounded-md border border-(--ui-border) bg-transparent py-1.5 pl-8 pr-3 text-[0.8rem] outline-none placeholder:text-muted-foreground focus:border-primary\"\n            onChange={e => setQuery(e.target.value)}\n            placeholder={copy.browsePlaceholder}\n            value={query}\n          />\n        </div>"
+ },
+ {
+  "sha": "d1ce67c67a8",
+  "subject": "fix(desktop): the connector dialog's verb and switch sit in its header (#119128)",
+  "file": "apps/desktop/src/app/capabilities/connectors/ways-section.tsx",
+  "primitive": "segmented-control",
+  "names": "SegmentedControl",
+  "removed": "      <h3 className=\"text-xs font-medium text-(--ui-text-primary)\">{copy.waysTitle(card.name)}</h3>\n\n      <HostedWay\n        onConnect={rest.hostedVerb === false ? undefined : rest.onConnect}\n        onDisconnect={rest.hostedVerb === false ? undefined : rest.onDisconnect}\n        onReconnect={rest.hostedVerb === false ? undefined : rest.onReconnect}\n        quiet={local.installed === true && local.verb === 'authenticate'}\n        way={hosted}\n      />\n\n      <LocalWay\n        installFields={rest.installFields}\n        installing={rest.installing}\n        name={card.name}\n        onAuthenticate={rest.onAuthenticate}\n        onInstall={rest.onInstall}\n        onServerToggle={rest.onServerToggle}\n        way={local}\n      />"
+ },
+ {
+  "sha": "b54c9568e70",
+  "subject": "feat(desktop): choose plugin install profile (#118889)",
+  "file": "apps/desktop/src/app/settings/plugin-install-modal.tsx",
+  "primitive": "select",
+  "names": "Select, SelectContent, SelectItem, SelectTrigger, SelectValue",
+  "removed": "                  <label className=\"flex items-start gap-3 rounded-lg border border-(--ui-stroke-tertiary) px-3 py-2\">\n                    <Checkbox\n                      checked={installAgent}\n                      disabled={busy}\n                      onCheckedChange={value => setInstallAgent(value === true)}\n                    />\n                    <span className=\"min-w-0\">\n                      <span className=\"block font-medium text-foreground\">{m.agentLabel}</span>\n                      <span className=\"block text-[length:var(--conversation-caption-font-size)] text-(--ui-text-tertiary)\">\n                        {agentTargetHint}\n                        {probe.agentName ? ` \u00b7 ${probe.agentName}` : ''}"
+ },
+ {
+  "sha": "d00c951523a",
+  "subject": "fix(desktop): remove persistent HUD gesture status chrome",
+  "file": "apps/desktop/src/app/settings/hud-modifier-settings.tsx",
+  "primitive": "error-state",
+  "names": "ErrorBanner",
+  "removed": "      {(busy || error || (status?.enabled && status.state !== 'disabled')) && (\n        <ListRow\n          action={\n            busy ? (\n              <Loader className=\"size-5\" />\n            ) : (\n              <div className=\"flex flex-wrap items-center gap-2\">\n                {status?.state === 'input-permission' && (\n                  <Button onClick={() => void openPermissionSettings()} size=\"sm\" variant=\"secondary\">\n                    {common.openSettings}\n                  </Button>\n                )}\n                {canRetry && (\n                  <Button\n                    onClick={() => void refresh(error ? undefined : status?.enabled)}\n                    size=\"sm\"\n                    variant=\"secondary\"\n                  >\n                    {common.retry}\n                  </Button>\n                )}\n              </div>\n            )\n          }\n          description={<span aria-live=\"polite\">{error ?? descriptions[status?.state ?? 'disabled']}</span>}\n          title={copy.statusTitle}\n        />"
+ },
+ {
+  "sha": "afc3b7c6f39",
+  "subject": "feat(connectors): one backend-owned connection operation, with a setup card on Desktop, TUI and CLI (#111008)",
+  "file": "apps/desktop/src/components/assistant-ui/mcp-setup-tool.tsx",
+  "primitive": "setup-form-dialog",
+  "names": "SetupFormDialog",
+  "removed": "    <ConnectorRow\n      action={done ? undefined : { busy: working, label: VERB[action](copy), onClick: () => void approve() }}\n      connector={{ name: server, title: displayName }}\n      cue={waiting ? t.connectors.waiting : undefined}\n      envDraft={envDraft}\n      envFields={entry?.required_env}\n      envOpen={envOpen && !!entry && entry.required_env.length > 0}\n      envRequired={copy.envRequired}\n      mark={mark}\n      markLabel={mark === 'connected' ? t.connectors.connected : waiting ? t.connectors.waiting : t.connectors.notConnected}\n      onEnvChange={(key, value) => setEnvDraft(prev => ({ ...prev, [key]: value }))}\n    />"
+ },
+ {
+  "sha": "0aa13a5e4bf",
+  "subject": "fix(desktop): drop native title= from all 24 button sites the fixed guard flags",
+  "file": "apps/desktop/src/app/settings/providers-settings.tsx",
+  "primitive": "tooltip",
+  "names": "Tip",
+  "removed": "          <Button\n            aria-label={`${copy.disconnect} ${title}`}\n            onClick={() => onTerminalDisconnect(provider)}\n            size=\"icon-xs\"\n            title={copy.disconnectInTerminal}\n            type=\"button\"\n            variant=\"ghost\"\n          >\n            <Trash2 className=\"size-3\" />\n          </Button>"
+ },
+ {
+  "sha": "0aa13a5e4bf",
+  "subject": "fix(desktop): drop native title= from all 24 button sites the fixed guard flags",
+  "file": "apps/desktop/src/components/assistant-ui/thread/changed-files-card.tsx",
+  "primitive": "tooltip",
+  "names": "Tip",
+  "removed": "          <button\n            className=\"row-hover flex shrink-0 items-center gap-2 rounded-md px-1.5 py-1 text-left\"\n            key={file.path}\n            onClick={() => void openReviewForPath(file.path, scopeCwd, composerScope.target)}\n            title={displayPath(file.path)}\n            type=\"button\"\n          >\n            <FileTypeIcon className=\"shrink-0 text-(--ui-text-tertiary)\" path={file.path} size=\"0.875rem\" />\n            <span className=\"min-w-0 flex-1 truncate text-(--ui-text-secondary)\">{file.name}</span>\n            <DiffCount added={file.added} removed={file.removed} />\n          </button>"
+ },
+ {
+  "sha": "0aa13a5e4bf",
+  "subject": "fix(desktop): drop native title= from all 24 button sites the fixed guard flags",
+  "file": "apps/desktop/src/components/assistant-ui/thread/user-message.tsx",
+  "primitive": "tooltip",
+  "names": "Tip",
+  "removed": "                      <button\n                        aria-label={copy.restoreCheckpoint}\n                        className={cn('pointer-events-auto size-6', USER_ACTION_ICON_BUTTON_CLASS)}\n                        onClick={event => {\n                          event.preventDefault()\n                          event.stopPropagation()\n                          triggerHaptic('selection')\n                          onRequestRestoreConfirm?.(messageId, {\n                            text: messageText,\n                            userOrdinal: runtimeUserOrdinal\n                          })\n                        }}\n                        onPointerDown={event => {\n                          event.preventDefault()\n                          event.stopPropagation()\n                        }}\n                        title={copy.restoreFromHere}\n                        type=\"button\"\n                      >\n                        <Codicon name=\"discard\" size=\"0.875rem\" />\n                      </button>"
+ },
+ {
+  "sha": "4c203de493c",
+  "subject": "fix(onboarding): accept custom colors in the existing picker",
+  "file": "apps/desktop/src/components/onboarding-chat/options.tsx",
+  "primitive": "codicon",
+  "names": "Codicon",
+  "removed": "      <button\n        aria-label={name}\n        aria-pressed={active}\n        className={cn(\n          // The border keeps the mono swatch visible when its colour matches the background.\n          'size-9 rounded-full border border-foreground/15 transition-transform duration-150',\n          !active && 'hover:scale-105'\n        )}\n        onClick={onPick}\n        style={{\n          background: hex,\n          boxShadow: active ? `0 0 0 2px var(--dt-background), 0 0 0 4px ${hex}` : undefined\n        }}\n        type=\"button\"\n      />"
+ },
+ {
+  "sha": "cb95c278af5",
+  "subject": "feat(desktop): keep live approval stacks stable during execution",
+  "file": "apps/desktop/src/components/assistant-ui/tool/approval.tsx",
+  "primitive": "codicon",
+  "names": "Codicon",
+  "removed": "    <article data-slot=\"tool-approval-card\" data-request-id={request.requestId} className=\"min-w-0\">\n      <CardStack\n        count={count}\n        direction=\"up\"\n        backClassName=\"rounded-3xl border border-(--stroke-nous) bg-(--ui-widget-surface-background) shadow-nous\"\n      >\n        <div className={cn(WIDGET_SHELL_CLASS, 'grid gap-2 shadow-nous')}>\n          <div className=\"flex min-w-0 items-center gap-2 text-xs text-(--ui-text-secondary)\">\n            <AlertCircle className=\"size-3.5 shrink-0 text-primary\" />\n            <span className=\"min-w-0 flex-1 truncate\">{request.description || copy.jumpToApproval}</span>\n            {count > 1 && <span className=\"shrink-0 tabular-nums text-(--ui-text-tertiary)\">1 / {count}</span>}\n          </div>\n          {hasCommand && (\n            <pre\n              className={cn(\n                'font-mono text-xs leading-relaxed text-foreground',\n                showCommand ? 'max-h-40 overflow-auto whitespace-pre-wrap break-words' : 'truncate'\n              )}\n            >\n              {request.command.trim()}\n            </pre>\n          )}\n        </div>\n      </CardStack>\n      <div className=\"flex items-center gap-2 px-1 py-1.5\" data-slot=\"tool-approval-actions\">\n        <Button data-approval-run=\"\" disabled={busy} onClick={() => void respond('once')} size=\"xs\">\n          {submitting === 'once' ? <Loader2 className=\"animate-spin\" /> : copy.run}\n          <span className=\"opacity-60\">\u21b5</span>"
+ },
+ {
+  "sha": "56ea9bab92c",
+  "subject": "feat(desktop): stack approvals and advance exact requests with Enter",
+  "file": "apps/desktop/src/components/assistant-ui/tool/approval.tsx",
+  "primitive": "card-stack",
+  "names": "CardStack",
+  "removed": "    <div\n      className={cn(surface === 'inline' ? 'mt-1 ps-5' : 'mt-2')}\n      data-slot={surface === 'inline' ? 'tool-approval-inline' : 'tool-approval-actions'}\n    >\n      <div className=\"flex items-center gap-2.5\">\n        <div className=\"inline-flex h-6 items-stretch overflow-hidden rounded-md border border-primary/25 bg-primary/10 text-primary\">\n          <Button\n            className=\"h-full gap-1 rounded-none px-2 text-xs font-medium text-primary hover:bg-primary/15 hover:text-primary\"\n            disabled={busy}\n            loading={submitting === 'once'}\n            onClick={() => void respond('once')}\n            size=\"xs\"\n            variant=\"ghost\"\n          >\n            {copy.run}\n            <span className=\"text-[0.625rem] text-primary/60\">{isMac ? '\u2318\u23ce' : 'Ctrl\u23ce'}</span>\n          </Button>\n          {hasMoreOptions && <span aria-hidden className=\"w-px self-stretch bg-primary/20\" />}\n          {hasMoreOptions && (\n            <DropdownMenu>\n              <DropdownMenuTrigger asChild>\n                <Button\n                  aria-label={copy.moreOptions}\n                  className=\"h-full w-5 rounded-none px-0 text-primary hover:bg-primary/15 hover:text-primary\"\n                  disabled={busy}\n                  size=\"xs\"\n                  variant=\"ghost\"\n                >\n                  <ChevronDown className=\"size-3\" />\n                </Button>\n              </DropdownMenuTrigger>\n              <DropdownMenuContent align=\"start\" className=\"min-w-44\""
+ },
+ {
+  "sha": "3bdd4cc5fda",
+  "subject": "fix(desktop): keep background continuations in one visual response",
+  "file": "apps/desktop/src/components/assistant-ui/thread/system-message.tsx",
+  "primitive": "log-view",
+  "names": "LogView",
+  "removed": "      <MessagePrimitive.Root\n        className=\"flex w-full min-w-0 flex-col self-start py-1\"\n        data-role=\"system\"\n        data-slot=\"aui_system-message-root\"\n      >\n        <div data-conversation-scaffold=\"\">\n          <ScaffoldRow\n            onToggle={() => setReportOpen(!reportOpen)}\n            open={reportOpen}\n            trailing={\n              <>\n                {' '}\n                <MessageTimelineTimestamp />\n              </>\n            }\n          >\n            <span className={SCAFFOLD_LABEL_CLASS}>{text}</span>\n          </ScaffoldRow>\n        </div>\n        {reportOpen && (\n          <div className=\"mt-2 max-h-80 min-w-0 max-w-full overflow-auto overscroll-contain wrap-anywhere\">\n            <MarkdownTextContent isRunning={false} text={asyncResult} />\n          </div>\n        )}"
+ },
+ {
+  "sha": "758638c64cb",
+  "subject": "fix(desktop): trap focus in boot recovery",
+  "file": "apps/desktop/src/components/boot-failure-overlay.tsx",
+  "primitive": "dialog-portal-context",
+  "names": "DialogPortalContainerContext",
+  "removed": "      <div\n        className=\"fixed inset-0 z-(--z-setup) flex items-center justify-center bg-(--ui-chat-surface-background) p-6\"\n        // Masks the whole app on boot failure \u2014 must stay filled under window\n        // glass. Contract: `[data-glass-opaque]` in styles.css.\n        data-glass-opaque=\"\"\n      >"
+ },
+ {
+  "sha": "1ab32b212b3",
+  "subject": "feat(connectors): the connector card offers one verb per row; Continue is the only way out (#110843)",
+  "file": "apps/desktop/src/components/assistant-ui/mcp-setup-tool.tsx",
+  "primitive": "button",
+  "names": "Button",
+  "removed": "function cardCopy(\n  copy: ReturnType<typeof useI18n>['t']['assistant']['mcpSetup'],\n  action: SetupAction\n): ConnectorCardCopy {\n  return {\n    connectAction:\n      action === 'enable' ? copy.enableAction : action === 'authorize' ? copy.authorizeAction : copy.installAction,\n    connectTitle:\n      action === 'enable' ? copy.enableTitle : action === 'authorize' ? copy.authorizeTitle : copy.installTitle,\n    decline: copy.decline,\n    envRequired: copy.envRequired,\n    grantAction: copy.authorizeAction,\n    retryAction: copy.installAction,\n    stateConnected: '',\n    stateDeclined: copy.declined,\n    stateDisabled: '',\n    stateFailed: '',\n    stateNeedsAuth: '',\n    toolCount: copy.toolCount,\n    trustCommunity: '',\n    trustCommunityTip: () => '',\n    trustVerified: () => '',\n    trustVerifiedTip: () => ''\n  }"
+ },
+ {
+  "sha": "99979c3be21",
+  "subject": "fix: Star Map node menu stays inside the viewport near window edges",
+  "file": "apps/desktop/src/app/starmap/node-context-menu.tsx",
+  "primitive": "dropdown-menu",
+  "names": "+  DropdownMenu,\n+  DropdownMenuContent,\n+  DropdownMenuItem,\n+  DropdownMenuLabel,\n+  DropdownMenuTrigger\n+",
+  "removed": "        <>\n          <div className=\"fixed inset-0 z-50\" onClick={onClose} onContextMenu={e => e.preventDefault()} />\n          {/* Styled to DropdownMenuContent/Item scale (rounded-lg card, p-1,\n              text-xs rows) \u2014 the hand-rolled fixed positioning stays because\n              the target is a canvas point, not a DOM anchor. */}\n          <div\n            className=\"fixed z-50 min-w-36 rounded-lg border border-(--ui-stroke-secondary) bg-[color-mix(in_srgb,var(--ui-bg-elevated)_96%,transparent)] p-1 shadow-md backdrop-blur-md\"\n            style={{ left: target.x, top: target.y }}\n          >\n            <div className=\"truncate px-2 py-1 text-[0.68rem] text-muted-foreground\">{target.label}</div>\n            <button\n              className=\"block w-full cursor-pointer rounded-md px-2 py-1 text-left text-xs hover:bg-(--ui-control-active-background) hover:text-foreground disabled:opacity-50\""
+ },
+ {
+  "sha": "4f1966edac9",
+  "subject": "feat(desktop): connector cards that wait for the sign-in, and a guided first launch that holds together (#108292)",
+  "file": "apps/desktop/src/components/assistant-ui/mcp-setup-tool.tsx",
+  "primitive": "connector-card",
+  "names": "ConnectorCard, type ConnectorCardCopy, ConnectorSummary",
+  "removed": "    <div className={cn(SHELL_CLASS, 'my-1.5 grid gap-1.5')} data-slot=\"mcp-setup-inline\">\n      <SetupLine trailing={trailingIcon}>\n        <span className=\"font-medium leading-(--conversation-line-height)\">{title}</span>\n        {reason ? <p className=\"mt-0.5 text-(--ui-text-secondary)\">{reason}</p> : null}\n        {sourceLine && <p className=\"mt-0.5 truncate text-[0.6875rem] text-(--ui-text-tertiary)\">{sourceLine}</p>}\n      </SetupLine>\n      {envOpen && entry && entry.required_env.length > 0 && (\n        <div className=\"grid gap-2\" data-slot=\"mcp-setup-env\">\n          <p className=\"text-[0.6875rem] text-(--ui-text-tertiary)\">{copy.envRequired}</p>\n          {entry.required_env.map(env => (\n            <label className=\"grid gap-1\" key={env.name}>\n              <span className=\"text-[0.6875rem] text-(--ui-text-secondary)\">\n                {env.prompt || env.name}\n                {env.required ? ' *' : ''}\n              </span>\n              <Input\n                className=\"h-7 text-xs\"\n                onChange={event => setEnvDraft(prev => ({ ...prev, [env.name]: event.currentTarget.value }))}\n                type=\"password\"\n                value={envDraft[env.name] ?? ''}\n              />\n            </label>\n          ))}\n        </div>\n      )}\n      {/* Same strip as the tool approval bar (tool/approval.tsx): a bordered\n          primary-tinted action plus a quiet ghost decline, with the matching\n          keyboard hints. One consent vocabulary across the transcript. "
+ },
+ {
+  "sha": "4f1966edac9",
+  "subject": "feat(desktop): connector cards that wait for the sign-in, and a guided first launch that holds together (#108292)",
+  "file": "apps/desktop/src/components/onboarding-chat/cards/setup.tsx",
+  "primitive": "search-field",
+  "names": "SearchField",
+  "removed": "      <div className=\"grid grid-cols-3 gap-2\">\n        {CONNECTORS.map(connector => (\n          <Chip\n            icon={\n              <ConnectorLogo\n                className=\"size-7 rounded-full text-sm\"\n                connector={{ homepage: connector.homepage, name: connector.id, title: connector.name }}"
+ },
+ {
+  "sha": "731b04c06e6",
+  "subject": "feat(desktop): the onboarding connector picker reads the live catalog",
+  "file": "apps/desktop/src/components/onboarding-chat/cards/setup.tsx",
+  "primitive": "search-field",
+  "names": "SearchField",
+  "removed": "      <div className=\"grid grid-cols-3 gap-2\">\n        {CONNECTORS.map(connector => (\n          <Chip\n            icon={\n              <ConnectorLogo\n                className=\"size-7 rounded-full text-sm\"\n                connector={{ homepage: connector.homepage, name: connector.id, title: connector.name }}"
+ },
+ {
+  "sha": "65d46fc3891",
+  "subject": "refactor(desktop): one consent card for connectors and MCP setup",
+  "file": "apps/desktop/src/components/assistant-ui/mcp-setup-tool.tsx",
+  "primitive": "connector-card",
+  "names": "ConnectorCard, type ConnectorCardCopy, ConnectorSummary",
+  "removed": "    <div className={cn(SHELL_CLASS, 'my-1.5 grid gap-1.5')} data-slot=\"mcp-setup-inline\">\n      <SetupLine trailing={trailingIcon}>\n        <span className=\"font-medium leading-(--conversation-line-height)\">{title}</span>\n        {reason ? <p className=\"mt-0.5 text-(--ui-text-secondary)\">{reason}</p> : null}\n        {sourceLine && <p className=\"mt-0.5 truncate text-[0.6875rem] text-(--ui-text-tertiary)\">{sourceLine}</p>}\n      </SetupLine>\n      {envOpen && entry && entry.required_env.length > 0 && (\n        <div className=\"grid gap-2\" data-slot=\"mcp-setup-env\">\n          <p className=\"text-[0.6875rem] text-(--ui-text-tertiary)\">{copy.envRequired}</p>\n          {entry.required_env.map(env => (\n            <label className=\"grid gap-1\" key={env.name}>\n              <span className=\"text-[0.6875rem] text-(--ui-text-secondary)\">\n                {env.prompt || env.name}\n                {env.required ? ' *' : ''}\n              </span>\n              <Input\n                className=\"h-7 text-xs\"\n                onChange={event => setEnvDraft(prev => ({ ...prev, [env.name]: event.currentTarget.value }))}\n                type=\"password\"\n                value={envDraft[env.name] ?? ''}\n              />\n            </label>\n          ))}\n        </div>\n      )}\n      {/* Same strip as the tool approval bar (tool/approval.tsx): a bordered\n          primary-tinted action plus a quiet ghost decline, with the matching\n          keyboard hints. One consent vocabulary across the transcript. "
+ },
+ {
+  "sha": "92e0de0ac41",
+  "subject": "feat(vault): Desktop, TUI and CLI surfaces for password-manager unlock",
+  "file": "apps/desktop/src/app/settings/vault-settings.tsx",
+  "primitive": "switch",
+  "names": "Switch",
+  "removed": "            <Button\n              aria-label={v.deleteAction}\n              className=\"text-(--ui-text-tertiary) hover:text-destructive\"\n              onClick={() => setPendingDelete(item)}\n              size=\"icon-sm\"\n              type=\"button\"\n              variant=\"ghost\"\n            >\n              <Trash2 className=\"size-3.5\" />\n            </Button>"
+ },
+ {
+  "sha": "248ff2d3e8b",
+  "subject": "feat(desktop): one row per plugin; desktop halves are app-level copies, never profile-scoped",
+  "file": "apps/desktop/src/app/skills/plugins-tab.tsx",
+  "primitive": "codicon",
+  "names": "Codicon",
+  "removed": "          {status === 'error' ? (\n            <PanelEmpty\n              action={\n                <Button onClick={() => void loadAgentPlugins(requestGateway, scope)} size=\"sm\">\n                  {t.skills.refresh}\n                </Button>\n              }\n              description={error ?? undefined}\n              icon=\"error\"\n              title={p.loadFailed}\n            />\n          ) : visible.length === 0 && status === 'ready' ? (\n            <p className=\"px-3 py-3 text-[length:var(--conversation-caption-font-size)] text-(--ui-text-tertiary)\">\n              {p.empty} {p.emptyHint}\n            </p>\n          ) : (\n            <div className=\"flex flex-col\">\n              {visible.map(row => (\n                <AgentPluginListRow\n                  busy={busyKey === (row.key ?? row.name) || busyKey === row.name}\n                  key={row.key ?? row.name}\n                  onToggle={enable => {\n                    if (!row.key) {\n                      return\n                    }\n\n                    void toggleAgentPlugin(requestGateway, row.key, enable, p.toggleFailed(row.name), scope)\n                  }}\n                  onUpdate={\n                    row.update_available\n                      ? () => {\n                          void updateAgentPlugin(requestGateway, row.name, p.updateFailed(row.name), scope).then(\n                            applied => {\n                              if (applied) {\n                                notify({ kind: 'success', message: p."
+ },
+ {
+  "sha": "03b5460ad96",
+  "subject": "fix(desktop): distinguish auto-discovered repos from explicit projects in the sidebar overview",
+  "file": "apps/desktop/src/app/chat/sidebar/projects/overview-row.tsx",
+  "primitive": "tooltip",
+  "names": "Tip",
+  "removed": "      label={\n        <SidebarRowLink\n          aria-label={s.projects.enter(project.label)}\n          labelClassName={cn('hover:text-foreground hover:underline', isActive && 'text-foreground')}\n          onClick={() => onEnter?.(project.id)}\n        >\n          {project.label}\n        </SidebarRowLink>\n      }"
+ },
+ {
+  "sha": "00bb169d1b8",
+  "subject": "feat(desktop): full command description hover on slash autocomplete rows (#104729)",
+  "file": "apps/desktop/src/app/chat/composer/trigger-popover.tsx",
+  "primitive": "tooltip",
+  "names": "Tip",
+  "removed": "              <button\n                className={ROW_CLASS}\n                data-highlighted={active ? '' : undefined}\n                onClick={() => onPick(item)}\n                onMouseEnter={() => {\n                  // React bails out when hovering the already-active row. Do\n                  // not leave a marker behind for a later items refresh.\n                  hoverIndexRef.current = index === activeIndex ? -1 : index\n                  onHover(index)\n                }}\n                type=\"button\"\n              >\n                {isEmoji ? (\n                  // The emoji is its own icon \u2014 a glyph column beside it reads\n                  // as decoration.\n                  <span className=\"min-w-0 shrink truncate leading-5 text-foreground\">{display}</span>\n                ) : (\n                  <>\n                    <span className=\"grid size-4 shrink-0 place-items-center text-(--ref-color)\" data-ref={refKind}>\n                      <Codicon name={referenceStyle(refKind).codicon} size=\"0.875rem\" />\n                    </span>\n                    <span className=\"min-w-0 shrink truncate font-medium leading-5 text-foreground\">{display}</span>\n                    {description && (\n                      <span className=\"min-w-0 flex-1 truncate leading-5 text-(--ui-text-tertiary)\">{description}</span>\n                    )}\n                  </>\n                )}\n              </button>"
+ },
+ {
+  "sha": "64534b4dd40",
+  "subject": "fix(desktop): use shared tooltip for listing gallery",
+  "file": "apps/desktop/src/components/assistant-ui/embeds/listing-embed.tsx",
+  "primitive": "tooltip",
+  "names": "Tip",
+  "removed": "    <button\n      className={cn('relative block size-full cursor-zoom-in overflow-hidden bg-muted/55', className)}\n      onClick={onOpen}\n      title={title}\n      type=\"button\"\n    >\n      <img\n        alt={address}\n        className=\"size-full object-cover transition-opacity hover:opacity-90\"\n        loading=\"lazy\"\n        onError={onError}\n        referrerPolicy=\"no-referrer\"\n        src={src}\n      />\n      {more > 0 && (\n        <span\n          className={cn(\n            TEXT_CLASS,\n            'absolute inset-0 grid place-items-center bg-background/55 font-medium tabular-nums text-foreground backdrop-blur-[2px]'\n          )}\n        >\n          +{more}\n        </span>\n      )}\n    </button>"
+ },
+ {
+  "sha": "9ed308f9012",
+  "subject": "refactor(desktop): one identity chip behind every avatar",
+  "file": "apps/desktop/src/app/messaging/platform-icon.tsx",
+  "primitive": "avatar-chip",
+  "names": "AvatarChip",
+  "removed": "    const spec = PLATFORM_ICONS[platformId]\n\n    const baseClass = cn(\n      'inline-grid size-6 shrink-0 place-items-center rounded-md text-[length:var(--conversation-caption-font-size)] font-medium',\n      className\n    )\n\n    if (!spec) {\n      return (\n        <span\n          aria-hidden=\"true\"\n          className={cn(baseClass, 'bg-(--ui-bg-tertiary) text-(--ui-text-tertiary)')}\n          ref={ref}\n          style={style}\n          {...rest}\n        >\n          {platformName.charAt(0).toUpperCase()}\n        </span>\n      )\n    }\n\n    const { Icon, color } = spec\n"
+ },
+ {
+  "sha": "9ed308f9012",
+  "subject": "refactor(desktop): one identity chip behind every avatar",
+  "file": "apps/desktop/src/app/skills/mcp-tab.tsx",
+  "primitive": "avatar-chip",
+  "names": "AvatarChip",
+  "removed": "    <span\n      className={cn(\n        'relative inline-grid size-6 shrink-0 place-items-center rounded-md text-[length:var(--conversation-caption-font-size)] font-medium',\n        !brand && 'bg-(--ui-bg-tertiary) text-(--ui-text-tertiary)',\n        className\n      )}\n      style={brand ? { backgroundColor: `color-mix(in srgb, ${brand.color} 16%, transparent)` } : undefined}\n    >\n      {brand ? (\n        <brand.Icon aria-hidden className=\"size-3.5\" style={brandGlyphStyle(brand)} />\n      ) : (\n        name.charAt(0).toUpperCase()\n      )}\n      <span\n        aria-hidden\n        className={cn(\n          'absolute -bottom-0.5 -right-0.5 size-2 rounded-full ring-2 ring-(--ui-chat-surface-background)',\n          STATUS_DOT[status]\n        )}\n      />\n    </span>"
+ },
+ {
+  "sha": "5df9cd27eae",
+  "subject": "feat(desktop): let ConfirmDialog carry a secondary action",
+  "file": "apps/desktop/src/app/chat/sidebar/projects/entered-content.tsx",
+  "primitive": "confirm-dialog",
+  "names": "ConfirmDialog",
+  "removed": "    <Dialog onOpenChange={isOpen => !isOpen && setTarget(null)} open={Boolean(target)}>\n      <DialogContent>\n        <DialogHeader>\n          <DialogTitle>{`${s.projects.removeWorktree} \"${target?.label ?? ''}\"?`}</DialogTitle>\n          <DialogDescription>{description}</DialogDescription>\n        </DialogHeader>\n        <DialogFooter>\n          <Button onClick={() => setTarget(null)} variant=\"ghost\">\n            {t.common.cancel}\n          </Button>\n          <Button\n            onClick={() => {\n              if (target) {\n                dismissWorktree(target.id)\n              }\n\n              setTarget(null)\n            }}\n            variant=\"secondary\"\n          >\n            {s.projects.removeFromSidebar}\n          </Button>\n          <Button\n            onClick={() => {\n              setTarget(null)\n\n              if (target) {\n                onDestructive(target)\n              }\n            }}\n            variant=\"destructive\"\n          >\n            {destructiveLabel}\n          </Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>"
+ },
+ {
+  "sha": "1e26c02de6b",
+  "subject": "refactor(desktop): route cron delete and review revert through ConfirmDialog",
+  "file": "apps/desktop/src/app/cron/index.tsx",
+  "primitive": "confirm-dialog",
+  "names": "ConfirmDialog",
+  "removed": "      <Dialog onOpenChange={open => !open && !deleting && setPendingDelete(null)} open={pendingDelete !== null}>\n        <DialogContent className=\"max-w-md\">\n          <DialogHeader>\n            <DialogTitle>{c.deleteTitle}</DialogTitle>\n            <DialogDescription>\n              {pendingDelete ? (\n                <>\n                  {c.deleteDescPrefix}\n                  <span className=\"font-medium text-foreground\">{truncate(jobTitle(pendingDelete), 60)}</span>\n                  {c.deleteDescSuffix}\n                </>\n              ) : null}\n            </DialogDescription>\n          </DialogHeader>\n          <DialogFooter>\n            <Button disabled={deleting} onClick={() => setPendingDelete(null)} variant=\"outline\">\n              {t.common.cancel}\n            </Button>\n            <Button disabled={deleting} onClick={() => void handleConfirmDelete()} variant=\"destructive\">\n              {deleting ? c.deleting : t.common.delete}\n            </Button>\n          </DialogFooter>\n        </DialogContent>\n      </Dialog>"
+ },
+ {
+  "sha": "1e26c02de6b",
+  "subject": "refactor(desktop): route cron delete and review revert through ConfirmDialog",
+  "file": "apps/desktop/src/app/right-sidebar/review/index.tsx",
+  "primitive": "confirm-dialog",
+  "names": "ConfirmDialog",
+  "removed": "      <Dialog onOpenChange={open => !open && cancelRevert()} open={revertTarget !== undefined}>\n        <DialogContent>\n          <DialogHeader>\n            <DialogTitle>{revertingAll ? c.revertAll : c.revert}</DialogTitle>\n            <DialogDescription>\n              {revertingAll ? c.revertAllConfirm : c.revertConfirm}\n              {!revertingAll && revertTarget?.path && (\n                <span\n                  className=\"mt-2 block truncate font-mono text-[0.7rem] text-(--ui-text-secondary)\"\n                  title={displayPath(revertTarget.path)}\n                >\n                  {displayPath(revertTarget.path)}\n                </span>\n              )}\n            </DialogDescription>\n          </DialogHeader>\n          <DialogFooter>\n            <Button onClick={cancelRevert} variant=\"ghost\">\n              {t.common.cancel}\n            </Button>\n            <Button onClick={() => void confirmRevert().catch(err => notifyError(err, c.revert))} variant=\"destructive\">\n              {revertingAll ? c.revertAll : c.revert}\n            </Button>\n          </DialogFooter>\n        </DialogContent>\n      </Dialog>"
+ },
+ {
+  "sha": "ccd30f955c1",
+  "subject": "feat(desktop): distinguish sources from profiles",
+  "file": "apps/desktop/src/app/chat/sidebar/profile-switcher.tsx",
+  "primitive": "dropdown-menu",
+  "names": "+  DropdownMenu,\n+  DropdownMenuContent,\n+  DropdownMenuItem,\n+  DropdownMenuRadioGroup,\n+  DropdownMenuRadioItem,\n+  DropdownMenuSeparator,\n+  DropdownMenuTrigger\n+",
+  "removed": "      {/* Multi-gateway discoverability: a plug pinned beside Manage deep-links\n          to Settings \u2192 Gateways (the connections registry lives on the unified\n          Gateways page now). The registry (local runtime + remote gateways +\n          Hermes Cloud + SSH) is otherwise buried three levels into Settings,\n          and the rail is exactly where a user looks when they wonder \"how do I\n          get my other machine's agents in here\". */}\n      <ProfilePill\n        active={false}\n        glyph=\"plug\"\n        label={p.connectGateway}\n        onSelect={() => navigate(`${SETTINGS_ROUTE}?tab=gateway`)}\n      />"
+ },
+ {
+  "sha": "0b879298a78",
+  "subject": "feat(desktop): browser-bar controls for the address and the page",
+  "file": "apps/desktop/src/app/chat/right-rail/preview-browser-bar.tsx",
+  "primitive": "copy-button",
+  "names": "CopyButton",
+  "removed": "      <Input\n        aria-invalid={invalid || undefined}\n        aria-label={copy.address}\n        inputMode=\"url\"\n        onBlur={() => setDraft(null)}\n        onChange={event => setDraft(event.target.value)}\n        onFocus={event => {\n          setDraft(url)\n          event.currentTarget.select()\n        }}\n        onKeyDown={event => {\n          if (event.key === 'Enter') {\n            commit(event.currentTarget.value)\n            event.currentTarget.blur()\n          }"
+ },
+ {
+  "sha": "eb6922a8cd3",
+  "subject": "Settings search is \u2318K: deep field/credential results everywhere, scoped palette + edge pill on Settings (#89167)",
+  "file": "apps/desktop/src/app/settings/keys-settings.tsx",
+  "primitive": "scoped-command-search",
+  "names": "ScopedCommandSearch, type ScopedCommandSearchItem",
+  "removed": "      {visible.map(group => (\n        <div className=\"grid gap-2\" key={group.category}>\n          {group.entries.map(([key, info]: [string, EnvVarInfo]) => {\n            const label = credentialRowLabel(key, info)\n\n            return (\n              <div className=\"scroll-mt-6 rounded-[6px]\" id={`credential-key-${key}`} key={key}>\n                <CredentialKeyCard\n                  expanded={openKey === key}\n                  info={info}\n                  label={label}\n                  onExpand={() => setOpenKey(key)}\n                  onToggle={() => setOpenKey(prev => (prev === key ? null : key))}\n                  placeholder={credentialPlaceholder(key, info, label)}\n                  rowProps={rowProps}\n                  varKey={key}\n                />\n              </div>\n            )\n          })}\n        </div>\n      ))}\n\n      {visible.length === 0 && ("
+ }
+]

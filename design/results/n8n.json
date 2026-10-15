@@ -1,0 +1,607 @@
+{
+ "rows": [
+  {
+   "message": "Bump the CPU request on checkout-api to 500m, it's throttling at peak",
+   "truth": "modify_infrastructure",
+   "pick": "modify_infrastructure",
+   "confidence": 0.99,
+   "probabilities": {
+    "modify_infrastructure": 0.99,
+    "incident": 0.01,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 218,
+   "cost": 5.124e-05,
+   "llm_pick": "modify_infrastructure",
+   "llm_ms": 2081,
+   "llm_cost": 0.005484,
+   "llm_raw": "{\n  \"category\": \"modify_infrastructure\",\n  \"confidence\": 0.97,\n  \"summary\": \"Request to increase the CPU request for checkout-api to 500m due to throttling at peak load.\",\n  \"acknowledge\": \"On it! I'll bump the CPU request on checkout-api to 500m right away.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "Need a new Kafka topic `payments.refunds` with 12 partitions",
+   "truth": "modify_infrastructure",
+   "pick": "modify_infrastructure",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 1,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 207,
+   "cost": 5.0946e-05,
+   "llm_pick": "modify_infrastructure",
+   "llm_ms": 2273,
+   "llm_cost": 0.005568,
+   "llm_raw": "{\n  \"category\": \"modify_infrastructure\",\n  \"confidence\": 0.97,\n  \"summary\": \"Request to create a new Kafka topic `payments.refunds` with 12 partitions.\",\n  \"acknowledge\": \"On it! I'll get the new Kafka topic `payments.refunds` with 12 partitions created for you.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "Can we drop the old staging Elasticsearch? nobody's touched it since march",
+   "truth": "modify_infrastructure",
+   "pick": "modify_infrastructure",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 1,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 186,
+   "cost": 5.0904e-05,
+   "llm_pick": "modify_infrastructure",
+   "llm_ms": 2981,
+   "llm_cost": 0.005349,
+   "llm_raw": "{\n  \"category\": \"modify_infrastructure\",\n  \"confidence\": 0.95,\n  \"summary\": \"Request to remove the old staging Elasticsearch instance that has been unused since March.\",\n  \"acknowledge\": \"Got it, I'll take care of removing the old staging Elasticsearch instance.\",\n  \"is_thread\": false,\n  \"parent_post\": \"root\"\n}"
+  },
+  {
+   "message": "Please add a DNS record for status.example.com pointing at the new LB",
+   "truth": "modify_infrastructure",
+   "pick": "modify_infrastructure",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 1,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 209,
+   "cost": 5.0904e-05,
+   "llm_pick": "modify_infrastructure",
+   "llm_ms": 2039,
+   "llm_cost": 0.005505,
+   "llm_raw": "{\n  \"category\": \"modify_infrastructure\",\n  \"confidence\": 0.95,\n  \"summary\": \"Request to add a DNS record for status.example.com pointing to the new load balancer.\",\n  \"acknowledge\": \"On it! I'll add the DNS record for status.example.com pointing to the new LB right away.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "prod is returning 502s on /login for everyone right now",
+   "truth": "incident",
+   "pick": "incident",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 1,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 179,
+   "cost": 5.0946e-05,
+   "llm_pick": "incident",
+   "llm_ms": 2040,
+   "llm_cost": 0.005253,
+   "llm_raw": "{\n  \"category\": \"incident\",\n  \"confidence\": 0.99,\n  \"summary\": \"Production /login endpoint is returning 502 errors for all users.\",\n  \"acknowledge\": \"On it \u2014 investigating the 502s on /login in production right now.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "Postgres primary just failed over and the app can't reconnect",
+   "truth": "incident",
+   "pick": "incident",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 1,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 188,
+   "cost": 5.082e-05,
+   "llm_pick": "incident",
+   "llm_ms": 2271,
+   "llm_cost": 0.005373,
+   "llm_raw": "{\n  \"category\": \"incident\",\n  \"confidence\": 0.99,\n  \"summary\": \"Postgres primary node failed over and the application is unable to reconnect to the database.\",\n  \"acknowledge\": \"On it \u2014 investigating the Postgres failover and the reconnection issue with the app right now.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "disk on the logging nodes is at 98% and climbing fast",
+   "truth": "incident",
+   "pick": "incident",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 1,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 177,
+   "cost": 5.0904e-05,
+   "llm_pick": "incident",
+   "llm_ms": 2141,
+   "llm_cost": 0.005268,
+   "llm_raw": "{\n  \"category\": \"incident\",\n  \"confidence\": 0.97,\n  \"summary\": \"Disk usage on logging nodes is critically high at 98% and increasing rapidly.\",\n  \"acknowledge\": \"On it \u2014 investigating the disk situation on the logging nodes right now.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "users are reporting that uploads hang forever since ~10 minutes ago",
+   "truth": "incident",
+   "pick": "incident",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 1,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 170,
+   "cost": 5.0862e-05,
+   "llm_pick": "incident",
+   "llm_ms": 2442,
+   "llm_cost": 0.005343,
+   "llm_raw": "{\n  \"category\": \"incident\",\n  \"confidence\": 0.97,\n  \"summary\": \"Users are reporting that file uploads have been hanging indefinitely for the past ~10 minutes.\",\n  \"acknowledge\": \"Got it, investigating the upload hang issue right now.\",\n  \"is_thread\": false,\n  \"parent_post\": \"uploads_hang_incident\"\n}"
+  },
+  {
+   "message": "what's the retention on our Loki logs?",
+   "truth": "question",
+   "pick": "question",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0,
+    "question": 1,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 295,
+   "cost": 5.0694e-05,
+   "llm_pick": "question",
+   "llm_ms": 2345,
+   "llm_cost": 0.005217,
+   "llm_raw": "{\n  \"category\": \"question\",\n  \"confidence\": 0.95,\n  \"summary\": \"User is asking about the log retention period configured for Loki.\",\n  \"acknowledge\": \"On it \u2014 checking the retention settings for Loki logs now.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "Is there a reason staging and prod use different Redis versions?",
+   "truth": "question",
+   "pick": "question",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0,
+    "question": 1,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 193,
+   "cost": 5.082e-05,
+   "llm_pick": "question",
+   "llm_ms": 2054,
+   "llm_cost": 0.005355,
+   "llm_raw": "{\n  \"category\": \"question\",\n  \"confidence\": 0.9,\n  \"summary\": \"User is asking why staging and production environments use different Redis versions.\",\n  \"acknowledge\": \"Looking into the Redis version discrepancy between staging and production now.\",\n  \"is_thread\": false,\n  \"parent_post\": \"00000000000000000000000000\"\n}"
+  },
+  {
+   "message": "how do I get read access to the prod replica?",
+   "truth": "question",
+   "pick": "question",
+   "confidence": 0.54,
+   "probabilities": {
+    "modify_infrastructure": 0.21,
+    "incident": 0,
+    "question": 0.61,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0.18
+   },
+   "ms": 170,
+   "cost": 5.0778e-05,
+   "llm_pick": "question",
+   "llm_ms": 2029,
+   "llm_cost": 0.005277,
+   "llm_raw": "{\n  \"category\": \"question\",\n  \"confidence\": 0.9,\n  \"summary\": \"User is asking how to get read access to the production database replica.\",\n  \"acknowledge\": \"Looking into how read access to the prod replica is granted.\",\n  \"is_thread\": false,\n  \"parent_post\": \"00000000000000\"\n}"
+  },
+  {
+   "message": "where do the alert routing rules live these days?",
+   "truth": "question",
+   "pick": "question",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0,
+    "question": 1,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 176,
+   "cost": 5.0736e-05,
+   "llm_pick": "question",
+   "llm_ms": 2034,
+   "llm_cost": 0.005184,
+   "llm_raw": "{\n  \"category\": \"question\",\n  \"confidence\": 0.92,\n  \"summary\": \"User is asking about the current location of alert routing rules.\",\n  \"acknowledge\": \"Looking into where the alert routing rules are currently stored!\",\n  \"is_thread\": false,\n  \"parent_post\": \"none\"\n}"
+  },
+  {
+   "message": "main is red: the docker build step fails with `no space left on device`",
+   "truth": "ci_cd_error",
+   "pick": "ci_cd_error",
+   "confidence": 0.96,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0.03,
+    "question": 0,
+    "ci_cd_error": 0.97,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 175,
+   "cost": 5.103e-05,
+   "llm_pick": "ci_cd_error",
+   "llm_ms": 2574,
+   "llm_cost": 0.00576,
+   "llm_raw": "{\n  \"category\": \"ci_cd_error\",\n  \"confidence\": 0.92,\n  \"summary\": \"The main branch CI/CD pipeline is failing at the Docker build step due to 'no space left on device' error.\",\n  \"acknowledge\": \"Got it, looking into the Docker build failure on main \u2014 the 'no space left on device' error likely points to disk exhaustion on the build runner.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "deploy to staging has been stuck on 'waiting for runner' for 40 min",
+   "truth": "ci_cd_error",
+   "pick": "ci_cd_error",
+   "confidence": 0.95,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0.04,
+    "question": 0,
+    "ci_cd_error": 0.96,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 208,
+   "cost": 5.103e-05,
+   "llm_pick": "ci_cd_error",
+   "llm_ms": 2165,
+   "llm_cost": 0.005553,
+   "llm_raw": "{\n  \"category\": \"ci_cd_error\",\n  \"confidence\": 0.97,\n  \"summary\": \"Staging deployment has been stuck in 'waiting for runner' state for 40 minutes.\",\n  \"acknowledge\": \"Got it, looking into the stuck staging deployment \u2014 the runner seems to not be picking up the job. On it now.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "every PR's e2e job times out after the node 22 bump",
+   "truth": "ci_cd_error",
+   "pick": "ci_cd_error",
+   "confidence": 0.99,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0.01,
+    "question": 0,
+    "ci_cd_error": 0.99,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 151,
+   "cost": 5.0988e-05,
+   "llm_pick": "ci_cd_error",
+   "llm_ms": 2049,
+   "llm_cost": 0.005442,
+   "llm_raw": "{\n  \"category\": \"ci_cd_error\",\n  \"confidence\": 0.95,\n  \"summary\": \"All PR e2e jobs are timing out after upgrading to Node 22.\",\n  \"acknowledge\": \"Got it, looking into the e2e job timeouts after the Node 22 bump now.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "the release workflow can't push the image, 403 from the registry",
+   "truth": "ci_cd_error",
+   "pick": "ci_cd_error",
+   "confidence": 0.89,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0.09,
+    "question": 0,
+    "ci_cd_error": 0.91,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 252,
+   "cost": 5.0988e-05,
+   "llm_pick": "ci_cd_error",
+   "llm_ms": 2223,
+   "llm_cost": 0.005454,
+   "llm_raw": "{\n  \"category\": \"ci_cd_error\",\n  \"confidence\": 0.95,\n  \"summary\": \"The release workflow is failing with a 403 error when pushing an image to the container registry.\",\n  \"acknowledge\": \"Got it, looking into the 403 error from the registry in the release workflow now.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "We want feature flags; can we stand up Unleash or similar?",
+   "truth": "new_system",
+   "pick": "new_system",
+   "confidence": 0.99,
+   "probabilities": {
+    "modify_infrastructure": 0.01,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0.99,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 168,
+   "cost": 5.0946e-05,
+   "llm_pick": "new_system",
+   "llm_ms": 2176,
+   "llm_cost": 0.005349,
+   "llm_raw": "{\n  \"category\": \"new_system\",\n  \"confidence\": 0.92,\n  \"summary\": \"Request to deploy a feature flag management system such as Unleash.\",\n  \"acknowledge\": \"Got it, looking into standing up a feature flag solution like Unleash for you.\",\n  \"is_thread\": false,\n  \"parent_post\": \"root\"\n}"
+  },
+  {
+   "message": "Let's move our secrets from env files to Vault properly, we've never had it",
+   "truth": "new_system",
+   "pick": "new_system",
+   "confidence": 0.66,
+   "probabilities": {
+    "modify_infrastructure": 0.29,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0.71,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 178,
+   "cost": 5.103e-05,
+   "llm_pick": "new_system",
+   "llm_ms": 2262,
+   "llm_cost": 0.005523,
+   "llm_raw": "{\n  \"category\": \"new_system\",\n  \"confidence\": 0.85,\n  \"summary\": \"Request to implement Vault as a secrets management system to replace env files, which has never been set up before.\",\n  \"acknowledge\": \"Got it! Starting work on migrating secrets from env files to Vault \u2014 setting this up from scratch.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "Could we try Grafana Tempo for tracing? we don't have any tracing yet",
+   "truth": "new_system",
+   "pick": "new_system",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 1,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 176,
+   "cost": 5.0988e-05,
+   "llm_pick": "new_system",
+   "llm_ms": 2113,
+   "llm_cost": 0.005589,
+   "llm_raw": "{\n  \"category\": \"new_system\",\n  \"confidence\": 0.97,\n  \"summary\": \"User requests to set up Grafana Tempo as a new distributed tracing solution, which doesn't currently exist in the infrastructure.\",\n  \"acknowledge\": \"Got it! I'll look into setting up Grafana Tempo for distributed tracing in your infrastructure.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "Proposal: replace Jenkins with GitHub Actions for all services",
+   "truth": "new_system",
+   "pick": "new_system",
+   "confidence": 0.99,
+   "probabilities": {
+    "modify_infrastructure": 0.01,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0.99,
+    "announcement": 0,
+    "other": 0
+   },
+   "ms": 175,
+   "cost": 5.0778e-05,
+   "llm_pick": "new_system",
+   "llm_ms": 2027,
+   "llm_cost": 0.005397,
+   "llm_raw": "{\n  \"category\": \"new_system\",\n  \"confidence\": 0.85,\n  \"summary\": \"Proposal to replace Jenkins with GitHub Actions as the CI/CD solution for all services.\",\n  \"acknowledge\": \"Got it, I've picked up the proposal to migrate from Jenkins to GitHub Actions across all services.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  },
+  {
+   "message": "FYI the cloud provider is upgrading our k8s control plane Saturday 02:00 UTC",
+   "truth": "announcement",
+   "pick": "announcement",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 1,
+    "other": 0
+   },
+   "ms": 213,
+   "cost": 5.1198e-05,
+   "llm_pick": "announcement",
+   "llm_ms": 2279,
+   "llm_cost": 0.00576,
+   "llm_raw": "{\n  \"category\": \"announcement\",\n  \"confidence\": 0.97,\n  \"summary\": \"The cloud provider will be upgrading the Kubernetes control plane on Saturday at 02:00 UTC.\",\n  \"acknowledge\": \"Got it, thanks for the heads-up! I've noted the scheduled Kubernetes control plane upgrade for Saturday at 02:00 UTC.\",\n  \"is_thread\": false,\n  \"parent_post\": \"00000000000000000000000000\"\n}"
+  },
+  {
+   "message": "Heads up: egress pricing goes up 20% next month per the vendor email",
+   "truth": "announcement",
+   "pick": "announcement",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 1,
+    "other": 0
+   },
+   "ms": 180,
+   "cost": 5.1114e-05,
+   "llm_pick": "announcement",
+   "llm_ms": 2080,
+   "llm_cost": 0.005343,
+   "llm_raw": "{\n  \"category\": \"announcement\",\n  \"confidence\": 0.92,\n  \"summary\": \"Egress pricing will increase by 20% next month according to a vendor email.\",\n  \"acknowledge\": \"Got it, thanks for the heads up about the egress pricing change.\",\n  \"is_thread\": false,\n  \"parent_post\": \"root\"\n}"
+  },
+  {
+   "message": "Scheduled maintenance on the shared VPN gateway tomorrow 18:00\u201319:00",
+   "truth": "announcement",
+   "pick": "announcement",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 1,
+    "other": 0
+   },
+   "ms": 177,
+   "cost": 5.1156e-05,
+   "llm_pick": "announcement",
+   "llm_ms": 2089,
+   "llm_cost": 0.005508,
+   "llm_raw": "{\n  \"category\": \"announcement\",\n  \"confidence\": 0.95,\n  \"summary\": \"Scheduled maintenance on the shared VPN gateway tomorrow from 18:00 to 19:00.\",\n  \"acknowledge\": \"Got it, noted the scheduled VPN gateway maintenance window for tomorrow 18:00\u201319:00.\",\n  \"is_thread\": false,\n  \"parent_post\": \"root\"\n}"
+  },
+  {
+   "message": "Reminder: the old bastion host is being retired on the 30th",
+   "truth": "announcement",
+   "pick": "announcement",
+   "confidence": 0.99,
+   "probabilities": {
+    "modify_infrastructure": 0.01,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0.99,
+    "other": 0
+   },
+   "ms": 172,
+   "cost": 5.0988e-05,
+   "llm_pick": "announcement",
+   "llm_ms": 1859,
+   "llm_cost": 0.005382,
+   "llm_raw": "{\n  \"category\": \"announcement\",\n  \"confidence\": 0.95,\n  \"summary\": \"Reminder that the old bastion host will be retired on the 30th.\",\n  \"acknowledge\": \"Got it, noted the reminder about the old bastion host retirement on the 30th.\",\n  \"is_thread\": false,\n  \"parent_post\": \"root\"\n}"
+  },
+  {
+   "message": "thanks for the help yesterday!!",
+   "truth": "other",
+   "pick": "other",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 1
+   },
+   "ms": 203,
+   "cost": 5.0568e-05,
+   "llm_pick": "other",
+   "llm_ms": 1805,
+   "llm_cost": 0.005172,
+   "llm_raw": "{\n  \"category\": \"other\",\n  \"confidence\": 0.95,\n  \"summary\": \"User is expressing gratitude for help received yesterday.\",\n  \"acknowledge\": \"You're welcome! Happy to help anytime. \ud83d\ude0a\",\n  \"is_thread\": false,\n  \"parent_post\": \"none\"\n}"
+  },
+  {
+   "message": "does anyone know a good lunch spot near the office?",
+   "truth": "other",
+   "pick": "other",
+   "confidence": 0.99,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0,
+    "question": 0.01,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0.99
+   },
+   "ms": 192,
+   "cost": 5.0778e-05,
+   "llm_pick": "other",
+   "llm_ms": 1764,
+   "llm_cost": 0.005097,
+   "llm_raw": "{\n  \"category\": \"other\",\n  \"confidence\": 0.99,\n  \"summary\": \"User is asking for lunch spot recommendations near the office.\",\n  \"acknowledge\": \"Got it, noted your message.\",\n  \"is_thread\": false,\n  \"parent_post\": \"none\"\n}"
+  },
+  {
+   "message": "lol",
+   "truth": "other",
+   "pick": "other",
+   "confidence": 1,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0,
+    "question": 0,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 1
+   },
+   "ms": 183,
+   "cost": 5.0358e-05,
+   "llm_pick": "other",
+   "llm_ms": 2188,
+   "llm_cost": 0.00531,
+   "llm_raw": "{\n  \"category\": \"other\",\n  \"confidence\": 0.9,\n  \"summary\": \"User sent a non-informative message with no actionable request.\",\n  \"acknowledge\": \"Hey! \ud83d\ude04 If you need anything infrastructure-related, just let me know!\",\n  \"is_thread\": false,\n  \"parent_post\": \"none\"\n}"
+  },
+  {
+   "message": "can someone review my vacation request in the HR tool",
+   "truth": "other",
+   "pick": "other",
+   "confidence": 0.99,
+   "probabilities": {
+    "modify_infrastructure": 0,
+    "incident": 0,
+    "question": 0.01,
+    "ci_cd_error": 0,
+    "new_system": 0,
+    "announcement": 0,
+    "other": 0.99
+   },
+   "ms": 163,
+   "cost": 5.0736e-05,
+   "llm_pick": "other",
+   "llm_ms": 2518,
+   "llm_cost": 0.005544,
+   "llm_raw": "{\n  \"category\": \"other\",\n  \"confidence\": 0.95,\n  \"summary\": \"User is requesting a review of their vacation request in the HR tool, which is unrelated to infrastructure.\",\n  \"acknowledge\": \"Got it, but this falls outside our infrastructure scope \u2014 you'll need to reach out to HR or your manager directly for vacation request approvals.\",\n  \"is_thread\": false,\n  \"parent_post\": \"\"\n}"
+  }
+ ],
+ "usage": {
+  "calls": 28,
+  "ms_median": 180,
+  "cost_usd": 0.00143
+ },
+ "categories": [
+  "modify_infrastructure",
+  "incident",
+  "question",
+  "ci_cd_error",
+  "new_system",
+  "announcement",
+  "other"
+ ],
+ "llm_prompt_chars": 5280
+}

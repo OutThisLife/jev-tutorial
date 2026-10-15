@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jev, for workflow gates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="toc" aria-label="Contents">
+    <ul class="pages">
+      <li class="here"><a href="index.html" aria-current="page">Tutorial</a>
+        <ol class="sections">
+          <li><a href="#what">What Jev is</a></li>
+          <li><a href="#primitives">Three questions</a></li>
+          <li><a href="#try">Call it</a></li>
+          <li><a href="#think">Thinking in Jev</a></li>
+          <li><a href="#gates">Your gates today</a></li>
+          <li><a href="#rewrite">A Jev gate</a></li>
+          <li><a href="#wire">Wiring it in</a></li>
+          <li><a href="#elsewhere">Other seams</a></li>
+          <li><a href="#careful">Sharp edges</a></li>
+          <li><a href="#next">Do this next</a></li>
+        </ol>
+      </li>
+      <li><a href="cases.html">Workflow gates</a></li>
+      <li><a href="design.html">n8n &amp; design systems</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header>
+      <div class="kicker">Tutorial · Workflows</div>
+      <h1>Jev, for workflow gates</h1>
+      <p class="lede">Jev is a model you can't chat with. You give it state and typed questions, and it returns probabilities your code can branch on. That makes it a good fit for the Judgement arm in your workflow gates.</p>
+      <div class="meta">Grounded in <code>workflow/runner.py</code> from the Workflows PR (<a href="https://github.com/NousResearch/hermes-agent/pull/94367">#94367</a>) and the <a href="https://docs.typesafe.ai/introduction">TypeSafe docs</a>. The runnable code is in this folder.</div>
+    </header>
+
+    <section id="what">
+      <h2>What Jev is</h2>
+      <p>Jev is TypeSafe's first <a href="https://docs.typesafe.ai/concepts/system-one">System One</a> model, released September 2026. A chat model writes text and you parse it. Jev skips the text: every answer comes back already typed.</p>
+      <p class="pull">An LLM is a writer you coax into acting like a function. <em>Jev starts out as a function.</em></p>
+      <p>Each request has three parts:</p>
+      <ul>
+        <li><strong>state</strong>: the thing being judged. A string, or any JSON. Structure helps.</li>
+        <li><strong>questions</strong>: a map from ids you choose to typed questions. All of them run in parallel against the same state, in one call. Adding questions barely changes latency.</li>
+        <li><strong>answers</strong>: the same ids, each holding a typed value and a probability. No prose and no parser.</li>
+      </ul>
+      <p>The trade is that Jev can only pick from options you list. It can't invent one, explain itself, call tools, or reason step by step. In return a call takes tens to hundreds of milliseconds and costs fractions of a cent. Its probabilities are trained to be <em>calibrated</em>: across many calls, answers it gives 0.9 should be right about 90% of the time.</p>
+    </section>
+
+    <section id="primitives">
+      <h2>Three questions</h2>
+      <table>
+        <thead><tr><th>Type</th><th>Asks</th><th>Returns</th></tr></thead>
+        <tbody>
+          <tr><td><code>noul</code></td><td>Is this statement true?</td><td><code>noul</code>: P(yes), 0 to 1. No separate confidence; the number already says it.</td></tr>
+          <tr><td><code>choice</code></td><td>Which of these options? (up to 255)</td><td><code>choice</code>, <code>probabilities</code> (sum to 1), <code>confidence</code></td></tr>
+          <tr><td><code>score</code></td><td>Where on this ordered rubric?</td><td><code>score</code> (a float, e.g. 1.035), <code>legend</code>, <code>confidence</code></td></tr>
+        </tbody>
+      </table>
+      <p>All three in one request, using the support-ticket example from TypeSafe's quickstart:</p>
+      <figure>
+        <figcaption>request</figcaption>
+<pre><code>{
+  <span class="s">"model"</span>: <span class="s">"jev-latest"</span>,
+  <span class="s">"state"</span>: <span class="s">"Stripe won't connect for 3 days. I'm losing sales. ASAP."</span>,
+  <span class="s">"questions"</span>: {
+    <span class="s">"department"</span>: {
+      <span class="s">"type"</span>: <span class="s">"choice"</span>, <span class="s">"instructions"</span>: <span class="s">"Which team should handle this"</span>,
+      <span class="s">"criteria"</span>: { <span class="s">"billing"</span>: <span class="s">"Payment issues"</span>, <span class="s">"technical"</span>: <span class="s">"Bugs or integrations"</span>,
+                    <span class="s">"sales"</span>: <span class="s">"Pricing"</span> } },
+    <span class="s">"frustration"</span>: {
+      <span class="s">"type"</span>: <span class="s">"score"</span>, <span class="s">"instructions"</span>: <span class="s">"How frustrated the customer is"</span>,
+      <span class="s">"criteria"</span>: [<span class="s">"Calm"</span>, <span class="s">"Frustrated but civil"</span>, <span class="s">"Very angry"</span>] },
+    <span class="s">"is_urgent"</span>: { <span class="s">"type"</span>: <span class="s">"noul"</span>, <span class="s">"instructions"</span>: <span class="s">"The message conveys urgency"</span> }
+  }
+}</code></pre>
+      </figure>
+      <figure>
+        <figcaption>response · TypeSafe quickstart</figcaption>
+<pre><code>{ <span class="s">"answers"</span>: {
+    <span class="s">"department"</span>:  { <span class="s">"choice"</span>: <span class="s">"technical"</span>, <span class="s">"confidence"</span>: 0.596,
+                     <span class="s">"probabilities"</span>: { <span class="s">"billing"</span>: 0.159, <span class="s">"technical"</span>: 0.84, <span class="s">"sales"</span>: 0.001 } },
+    <span class="s">"frustration"</span>: { <span class="s">"score"</span>: 1.035, <span class="s">"confidence"</span>: 0.842 },
+    <span class="s">"is_urgent"</span>:   { <span class="s">"noul"</span>: 0.999 } } }</code></pre>
+      </figure>
+      <p>Notice the confidence on <code>department</code>: 0.84 on <em>technical</em> still comes back as only 0.596 because billing took 0.16. Confidence measures how peaked the whole distribution is, not just the size of the winning probability.</p>
+    </section>
+
+    <section id="try">
+      <h2>Call it</h2>
+      <p>The API is a single endpoint, served by TypeSafe directly or through OpenRouter:</p>
+<pre><code><span class="c"># TypeSafe: key from console.typesafe.ai/settings/keys</span>
+curl -s https://api.typesafe.ai/v1/systemone \
+  -H <span class="s">"Authorization: Bearer $TYPESAFE_API_KEY"</span> -H <span class="s">'Content-Type: application/json'</span> \
+  -d <span class="s">'{"model":"jev-latest","state":"…","questions":{…}}'</span>
+
+<span class="c"># OpenRouter: same body, different URL and model id</span>
+curl -s https://openrouter.ai/api/v1/systemone \
+  -H <span class="s">"Authorization: Bearer $OPENROUTER_API_KEY"</span> -H <span class="s">'Content-Type: application/json'</span> \
+  -d <span class="s">'{"model":"~typesafe/jev-latest", …}'</span></code></pre>
+      <p>For the shell, <a href="https://github.com/stefafafan/jev">stefafafan/jev</a> is the most Unix-like CLI: state comes in on stdin, JSON goes out, and thresholds stay in <code>jq</code>, where you can see them.</p>
+<pre><code>git diff main | jev noul <span class="s">"Could this change introduce a regression?"</span> \
+  | jq -e <span class="s">'.answers.result.noul &lt; 0.2'</span> &amp;&amp; echo ship</code></pre>
+      <p>From Python there's <code>uv add typesafe-sdk</code>. Inside Hermes, use plain <code>urllib</code> instead: the runner has no business taking a dependency for one POST. The catalog's <code>jev-judge</code> plugin made the same call and is stdlib-only.</p>
+      
+    </section>
+
+    <section id="think">
+      <h2>Thinking in Jev</h2>
+      <h3>Ask atomic questions, then combine them in code</h3>
+      <p>Each question should be a gut check that a knowledgeable person could answer in a few seconds. "Is this PR good?" is several questions bundled together. Split it into "touches auth?", "has tests?" and "is it only docs?", then combine the answers with an <code>if</code>. When your priorities change, you edit a coefficient, not a prompt.</p>
+      <h3>Ask more than you need</h3>
+      <p>Questions run in parallel and each is judged in isolation, so speculative ones are nearly free and can't pollute each other's context. Ask everything a branch <em>might</em> need and ignore the answers you don't use. TypeSafe calls this <a href="https://docs.typesafe.ai/patterns/fan-out">speculative fan-out</a>.</p>
+      <h3>Treat "I'm not sure" as a third answer</h3>
+      <p>Split the probability into three bands. Act when Jev is confident, refuse when it's confident the other way, and hand the middle to a person. How wide you make the middle band should depend on how costly a wrong answer is. Drag the slider:</p>
+      <div class="bands" style="--no: 35%; --yes: 80%">
+        <div class="track" aria-hidden="true"><span></span><span></span><span></span></div>
+        <input type="range" id="p" min="0" max="1" step="0.01" value="0.62" aria-label="noul probability">
+        <div class="legend"><span>0</span><span>no &lt; 0.35</span><span>0.80 ≤ yes</span><span>1</span></div>
+        <div class="readout"><span class="p" id="pv">0.62</span><span class="verdict" id="pverdict"></span><span class="why" id="pwhy"></span></div>
+      </div>
+      <h3>Know what it can't do</h3>
+      <p>Arithmetic, date comparisons, "is <code>verdict</code> equal to PASS": keep all of that in code. Jev is for <em>semantic</em> judgement, the part a regex can't do.</p>
+    </section>
+
+    <section id="gates">
+      <h2>Your gates today</h2>
+      <p>A gate has ordered <strong>arms</strong>, and the first one that matches wins. Four modes are deterministic (<code>all-pass</code>, <code>any-fail</code>, <code>checks</code>, <code>always</code>). The fifth, labelled <strong>Judgement</strong> in the inspector, is <code>prose</code>, and it does this:</p>
+      <figure>
+        <figcaption>workflow/runner.py · _arm_matches</figcaption>
+<pre><code><span class="k">if</span> when.get(<span class="s">"mode"</span>) != <span class="s">"prose"</span>:
+    <span class="k">return</span> holds(when, inputs)
+source = str(when.get(<span class="s">"source"</span>) <span class="k">or</span> <span class="s">""</span>).strip() <span class="k">or</span> <span class="s">"Should this arm be taken? Answer PASS or FAIL."</span>
+result = execute_agent_step(source, context, payload, {<span class="s">"maxIterations"</span>: 8})
+<span class="c"># …</span>
+text = str(result.get(<span class="s">"summary"</span>) <span class="k">or</span> <span class="s">""</span>).upper()
+<span class="k">return</span> <span class="s">"PASS"</span> <span class="k">in</span> text <span class="k">or</span> text.startswith(<span class="s">"YES"</span>)</code></pre>
+      </figure>
+      <p>That has three problems, and Jev fixes each one:</p>
+      <ul>
+        <li><strong>Slow:</strong> every Judgement arm runs a full agent step with up to 8 iterations, one arm after another. Jev answers all of a gate's arms in one call, usually under a second.</li>
+        <li><strong>Fragile:</strong> when the step returns no explicit verdict, the arm is decided by a substring match, so a reply of "this should NOT PASS" takes the arm. Jev returns a number, so there's nothing to misread.</li>
+        <li><strong>Overconfident:</strong> the answer is yes or no, with no way to say "not sure". Jev's probability gives the gate that middle option.</li>
+      </ul>
+    </section>
+
+    <section id="rewrite">
+      <h2>A Jev gate</h2>
+      <h3>Use a Noul per arm, not a Choice across arms</h3>
+      <p>A Choice across the arms looks like the obvious fit, and it's the wrong one here. A Choice's probabilities sum to 1, which assumes exactly one option is true. Your arms don't work that way: they're ordered, and "touches auth" and "touches tests" can both be true. A Choice would split the probability between them and both arms would look unsure. So ask one Noul per Judgement arm, all in one request, and let the gate's existing order decide among them.</p>
+      <p class="note">Use a Choice when the options really are mutually exclusive, for example "route to frontend, backend or infra". Order doesn't matter there and one answer is correct.</p>
+      <figure>
+        <figcaption>judge.py · the heart of it</figcaption>
+<pre><code><span class="k">def</span> judge_arms(arms, state, ask=ask_jev) -> dict[str, float]:
+    <span class="c">"""One Noul per Judgement arm, all in one call. {arm_id: noul}."""</span>
+    questions = {
+        a[<span class="s">"id"</span>]: {<span class="s">"type"</span>: <span class="s">"noul"</span>, <span class="s">"instructions"</span>: a[<span class="s">"when"</span>][<span class="s">"source"</span>]}
+        <span class="k">for</span> a <span class="k">in</span> arms <span class="k">if</span> (a.get(<span class="s">"when"</span>) <span class="k">or</span> {}).get(<span class="s">"mode"</span>) == <span class="s">"prose"</span>
+    }
+    <span class="k">return</span> {k: v[<span class="s">"noul"</span>] <span class="k">for</span> k, v <span class="k">in</span> ask(state, questions).items()} <span class="k">if</span> questions <span class="k">else</span> {}
+
+
+<span class="k">def</span> choose_arm(arms, inputs, state, holds, ask=ask_jev):
+    <span class="c">"""First match wins, same as today. Returns (arm, why)."""</span>
+    nouls = <span class="k">None</span>                                  <span class="c"># lazy: a rule arm can win with zero Jev calls</span>
+    <span class="k">for</span> arm <span class="k">in</span> arms:
+        when = arm.get(<span class="s">"when"</span>) <span class="k">or</span> {}
+        <span class="k">if</span> when.get(<span class="s">"mode"</span>) != <span class="s">"prose"</span>:
+            <span class="k">if</span> holds(when, inputs):
+                <span class="k">return</span> arm, <span class="s">"rule"</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> nouls <span class="k">is None</span>:
+            nouls = judge_arms(arms, state, ask)     <span class="c"># every Judgement arm, one request</span>
+        p = nouls.get(arm[<span class="s">"id"</span>], 0.0)
+        <span class="k">if</span> p >= YES:                                <span class="c"># 0.80</span>
+            <span class="k">return</span> arm, f<span class="s">"jev {p:.2f}"</span>
+        <span class="k">if</span> p >= NO:                                 <span class="c"># 0.35 — stop, don't fall through</span>
+            unsure = next((a <span class="k">for</span> a <span class="k">in</span> arms <span class="k">if</span> (a.get(<span class="s">"when"</span>) <span class="k">or</span> {}).get(<span class="s">"mode"</span>) == <span class="s">"unsure"</span>), <span class="k">None</span>)
+            <span class="k">return</span> unsure, f<span class="s">"unsure {p:.2f} on {arm['id']}"</span>
+    <span class="k">return None</span>, <span class="s">"no arm"</span></code></pre>
+      </figure>
+      <p>The line that matters most is the <code>p >= NO</code> branch. If Jev is unsure about arm 2 and the loop just moved on, arm 3 or the <code>always</code> fallback would win by default. The gate would have quietly answered no. Instead it stops and routes to an <strong>unsure</strong> arm, which you wire to the Human approval step the graph already has. If no unsure arm exists, the gate fails with the error it already raises when no arm matches.</p>
+      <p>The state is structured data, not a prompt:</p>
+<pre><code>{ <span class="s">"upstream"</span>: [
+    { <span class="s">"step"</span>: <span class="s">"review"</span>, <span class="s">"verdict"</span>: <span class="s">"FAIL"</span>, <span class="s">"summary"</span>: <span class="s">"Removed the CSRF check on /logout…"</span> } ],
+  <span class="s">"trigger_payload"</span>: <span class="s">"{…capped at 2000 chars…}"</span> }</code></pre>
+      <dl class="verified">
+        <dt>Tests</dt><dd><code>python3 test_judge.py</code>: the branch's real <code>holds()</code>, Jev faked.</dd>
+        <dt>Covers</dt><dd>a rule arm wins with no Jev call · two Judgement arms asked in one request · confident no falls through to the next arm · all no reaches <code>always</code> · unsure stops instead of falling through · unsure routes to the unsure arm</dd>
+        <dt>Not covered</dt><dd>A live Jev call, and the runner itself.</dd>
+      </dl>
+    </section>
+
+    <section id="wire">
+      <h2>Wiring it in</h2>
+      <p>Jev is a third-party service with its own key, and the gate sends it step summaries and raw webhook payloads. That's a reason to keep it out of core: the runner gets a seam, and Jev is one plugin that uses it. This is a sketch; none of it is on your branch yet.</p>
+      <figure>
+        <figcaption>workflow/runner.py · core gets a hook, nothing Jev-specific</figcaption>
+<pre><code><span class="k">def</span> _choose_arm(arms, inputs, context, payload, execute_fn, summaries=<span class="k">None</span>):
+    <span class="k">for</span> r <span class="k">in</span> invoke_hook(<span class="s">"workflow_gate"</span>, arms=arms, inputs=inputs,
+                         summaries=summaries <span class="k">or</span> {}, payload=payload):
+        <span class="k">if</span> isinstance(r, dict) <span class="k">and</span> <span class="s">"arm"</span> <span class="k">in</span> r:
+            <span class="k">return</span> r[<span class="s">"arm"</span>]                           <span class="c"># a plugin decided</span>
+    <span class="k">return</span> next((a <span class="k">for</span> a <span class="k">in</span> arms <span class="k">if</span> _arm_matches(a, inputs, context, payload, execute_fn)), <span class="k">None</span>)
+
+<span class="c"># + "workflow_gate" in VALID_HOOKS (hermes_cli/plugins.py)</span></code></pre>
+      </figure>
+      <figure>
+        <figcaption>plugins/jev-gate/__init__.py · the opt-in part</figcaption>
+<pre><code><span class="k">def</span> _on_gate(arms, inputs, summaries, payload, **_):
+    <span class="k">if not</span> any((a.get(<span class="s">"when"</span>) <span class="k">or</span> {}).get(<span class="s">"mode"</span>) == <span class="s">"prose"</span> <span class="k">for</span> a <span class="k">in</span> arms):
+        <span class="k">return None</span>                                  <span class="c"># nothing to judge</span>
+    <span class="k">try</span>:
+        arm, why = choose_arm(arms, inputs, gate_state(inputs, summaries, payload), holds)
+    <span class="k">except</span> (OSError, ValueError, KeyError, RuntimeError):
+        logger.warning(<span class="s">"jev-gate: falling back to the agent judge"</span>, exc_info=<span class="k">True</span>)
+        <span class="k">return None</span>                <span class="c"># fall back to the built-in judge, never to `always`</span>
+    <span class="k">return</span> {<span class="s">"arm"</span>: arm, <span class="s">"why"</span>: why}
+
+<span class="k">def</span> register(ctx):
+    ctx.register_hook(<span class="s">"workflow_gate"</span>, _on_gate)</code></pre>
+      </figure>
+      <p>Three small changes on the canvas side make this visible:</p>
+      <ul>
+        <li><strong>An "unsure" predicate mode</strong> in <code>scenario.ts</code>'s <code>PREDICATE_MODES</code>, labelled something like <em>Not sure</em>, with the hint "Jev couldn't call it, so wire this to a Human approval". <code>holds()</code> already returns <code>False</code> for unknown modes, so the existing rule logic needs no change.</li>
+        <li><strong>The <code>why</code> in the gate's summary.</strong> Pass it into <code>GateEvaluated</code> so the feed reads <code>security · jev 0.93</code> instead of <code>review FAIL → …</code>. Then you can see why a run took the branch it did.</li>
+        <li><strong>A better default for people without Jev.</strong> Replace the 8-iteration agent with one structured call to the auxiliary model that returns a typed verdict. That fixes the "NOT PASS" bug for everyone.</li>
+      </ul>
+    </section>
+
+    <section id="elsewhere">
+      <h2>Other seams</h2>
+      <p>Anywhere in workflows where software has to make a semantic call that an agent currently makes in prose:</p>
+      <table>
+        <thead><tr><th>Where</th><th>Question</th><th>Type</th></tr></thead>
+        <tbody>
+          <tr><td>Approval from a chat</td><td>Is this reply approve, reject, or a question back?</td><td><code>choice</code></td></tr>
+          <tr><td>Webhook trigger</td><td>Is this payload worth starting a run for? Filters noise before it costs an agent turn.</td><td><code>noul</code></td></tr>
+          <tr><td>Agent step verdict</td><td>Score the summary against the step's goal instead of trusting a self-reported PASS.</td><td><code>score</code></td></tr>
+          <tr><td>Hermes events</td><td>"A session ended": did it end in failure or frustration?</td><td><code>noul</code></td></tr>
+        </tbody>
+      </table>
+      <p class="note">Prior art: Hermes's <code>plugin-catalog/</code> already lists jev-judge (a <code>pre_tool_call</code> gate in shadow mode), jev-approvals, jev-agent-router and others. Read <code>jev-judge</code> first; it handles redaction, payload caps, fail-open and the JSONL decision log.</p>
+    </section>
+
+    <section id="careful">
+      <h2>Sharp edges</h2>
+      <ul>
+        <li><strong>Data leaves the machine.</strong> Summaries and trigger payloads go to TypeSafe or OpenRouter. Cap them, redact them, and say so in the plugin description, as <code>jev-judge</code> does.</li>
+        <li><strong>Decide how it fails.</strong> For a gate, a failed call should fall back to the built-in judge or route to the unsure arm. It must never fall through to <code>always</code>, because a timeout that silently takes the default branch is the worst bug a gate can have.</li>
+        <li><strong>Calibration holds in aggregate.</strong> 0.9 means "right about 9 times in 10 across many calls", not "certain this time". Log every <code>noul</code> next to the arm the gate took, then tune <code>YES</code>/<code>NO</code> from real runs.</li>
+        <li><strong>Write instructions as claims.</strong> "The change weakens an auth or CSRF control" works better than "Is it risky?". For a Noul you can add <code>criteria: {true, false}</code> when "yes" needs a definition.</li>
+        <li><strong>Noul has no <code>confidence</code> field.</strong> A value near 0.5 is the uncertainty. Choice and Score carry a separate <code>confidence</code>.</li>
+        <li><strong>Set a timeout.</strong> A five-second cap with a fallback keeps a stalled API from wedging a run's loop thread.</li>
+      </ul>
+    </section>
+
+    <section id="next">
+      <h2>Do this next</h2>
+      <ol>
+        <li>Refresh <code>OPENROUTER_API_KEY</code> (or add <code>TYPESAFE_API_KEY</code>), then send one of your real gate's Judgement sources through the curl above with a real step summary as state. See what the numbers look like.</li>
+        <li>Run <code>python3 test_judge.py</code> in this folder, then change <code>YES</code> and <code>NO</code> and watch which cases flip.</li>
+        <li>Pick one: the runner hook plus a <code>jev-gate</code> plugin, or the structured-call default first. The default helps everyone. The hook and plugin are where Jev pays off.</li>
+      </ol>
+      <footer>
+        Sources: <a href="https://docs.typesafe.ai/introduction">TypeSafe intro</a> ·
+        <a href="https://docs.typesafe.ai/primitives/noul">Noul</a> ·
+        <a href="https://docs.typesafe.ai/primitives/choice">Choice</a> ·
+        <a href="https://docs.typesafe.ai/confidence">Confidence</a> ·
+        <a href="https://github.com/stefafafan/jev">stefafafan/jev</a> ·
+        PR <a href="https://github.com/NousResearch/hermes-agent/pull/94367">#94367</a>
+      </footer>
+    </section>
+  </main>
+</div>
+
+<script>
+  const r = document.getElementById('p'), pv = document.getElementById('pv'),
+        pverdict = document.getElementById('pverdict'), pwhy = document.getElementById('pwhy');
+  const YES = 0.8, NO = 0.35;
+  function band() {
+    const p = +r.value;
+    pv.textContent = p.toFixed(2);
+    const [label, color, why] =
+      p >= YES ? ['take the arm', 'var(--accent)', 'Confident yes. Route without asking anyone.']
+      : p >= NO ? ['unsure', 'var(--unsure-ink)', 'Stop here. Hand off to a human; don\u2019t fall through.']
+      : ['skip', 'var(--muted)', 'Confident no. Try the next arm.'];
+    pverdict.textContent = label; pverdict.style.color = color; pwhy.textContent = why;
+  }
+  r.addEventListener('input', band); band();
+
+  const links = [...document.querySelectorAll('nav.toc .sections a')];
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.hash === '#' + e.target.id));
+  }), { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('main section').forEach(s => io.observe(s));
+</script>
+</body>
+</html>

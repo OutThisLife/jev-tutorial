@@ -1,0 +1,118 @@
+diff --git a/hermes_cli/config_backups.py b/hermes_cli/config_backups.py
+index a20a466f4574..ab004512a055 100644
+--- a/hermes_cli/config_backups.py
++++ b/hermes_cli/config_backups.py
+@@ -10,7 +10,6 @@
+ 
+ from __future__ import annotations
+ 
+-import filecmp
+ import logging
+ import shutil
+ import time
+@@ -55,7 +54,9 @@ def backup_config(config_path: Path, reason: str, *, keep: int = DEFAULT_KEEP) -
+         root.mkdir(parents=True, exist_ok=True)
+         _sweep_legacy_siblings(config_path, root)
+         existing = list_config_backups(config_path, reason)
+-        if existing and filecmp.cmp(config_path, existing[0], shallow=False):
++        # Bytes, not filecmp: its cache is keyed on (size, mtime), so a same-size rewrite inside one
++        # coarse kernel timestamp tick reads as "identical" and the backup is silently skipped.
++        if existing and config_path.read_bytes() == existing[0].read_bytes():
+             return None
+         dest = root / f"{config_path.name}.{reason}.{time.strftime('%Y%m%d-%H%M%S')}"
+         if dest.is_symlink() or dest.exists():  # never write through a planted link
+diff --git a/tests/hermes_cli/test_config_backups.py b/tests/hermes_cli/test_config_backups.py
+index 468f4e7fc47e..2b420aee61a1 100644
+--- a/tests/hermes_cli/test_config_backups.py
++++ b/tests/hermes_cli/test_config_backups.py
+@@ -23,6 +23,26 @@ def test_repeat_backups_dedupe_and_rotate(tmp_path: Path, monkeypatch):
+     assert [p.name for p in tmp_path.iterdir() if p.is_file()] == ["config.yaml"]
+ 
+ 
++
++def test_same_size_rewrite_inside_one_timestamp_tick_is_still_backed_up(tmp_path: Path, monkeypatch):
++    """Coarse kernel timestamps: two writes in one tick share an mtime. The dedupe must compare
++    bytes, not a (size, mtime)-keyed cache, or the changed config is never backed up."""
++    import os
++
++    cfg = tmp_path / "config.yaml"
++    stamps = iter(f"2026010100000{i}" for i in range(10))
++    monkeypatch.setattr("hermes_cli.config_backups.time.strftime", lambda _fmt: next(stamps))
++    tick = 1_700_000_000_000_000_000
++    cfg.write_text("model: a\n")
++    os.utime(cfg, ns=(tick, tick))
++    backup_config(cfg, "pre-setup", keep=5)
++    assert backup_config(cfg, "pre-setup", keep=5) is None  # identical bytes
++    cfg.write_text("model: b\n")  # same size, same tick
++    os.utime(cfg, ns=(tick, tick))
++
++    assert backup_config(cfg, "pre-setup", keep=5) is not None
++    assert list_config_backups(cfg, "pre-setup")[0].read_text() == "model: b\n"
++
+ def test_legacy_siblings_move_but_user_named_copies_stay(tmp_path: Path):
+     cfg = tmp_path / "config.yaml"
+     cfg.write_text("model: a\n")
+diff --git a/tests/tui_gateway/test_change_watcher.py b/tests/tui_gateway/test_change_watcher.py
+index 2c484deed6d7..dd3216fcb6da 100644
+--- a/tests/tui_gateway/test_change_watcher.py
++++ b/tests/tui_gateway/test_change_watcher.py
+@@ -290,6 +290,26 @@ def _profile(name):
+     assert sorted(live_calls) == ["play", "work", "work"]
+ 
+ 
++
++def test_pairing_ledger_created_in_the_previous_ledgers_timestamp_tick_broadcasts(watcher_home):
++    """Coarse kernel timestamps: a new ledger can carry exactly the newest existing mtime, which a
++    newest-mtime signature cannot see."""
++    home, events = watcher_home
++    store = home / "platforms" / "pairing"
++    store.mkdir(parents=True)
++    tick = 1_700_000_000_000_000_000
++    first = store / "telegram-pending.json"
++    first.write_text("{}", encoding="utf-8")
++    os.utime(first, ns=(tick, tick))
++    server._broadcast_watched_changes(now=0.0)
++
++    second = store / "discord-approved.json"
++    second.write_text("{}", encoding="utf-8")
++    os.utime(second, ns=(tick, tick))
++    server._broadcast_watched_changes(now=10.0)
++
++    assert events == [("pairing.changed", {})]
++
+ def test_rate_limit_churn_does_not_broadcast_pairing_changed(watcher_home):
+     """_rate_limits.json moves on every unauthorized DM, including ones that
+     produce no new row — signalling on it would refetch for nothing."""
+diff --git a/tui_gateway/change_watcher.py b/tui_gateway/change_watcher.py
+index 20f87ccfabdd..4abb196af338 100644
+--- a/tui_gateway/change_watcher.py
++++ b/tui_gateway/change_watcher.py
+@@ -287,16 +287,21 @@ def _projects_sig():
+ 
+ 
+ def _pairing_sig():
+-    """Newest mtime across every profile's pairing ledgers (legacy ``pairing/`` and
++    """(path, mtime, size) of every profile's pairing ledgers (legacy ``pairing/`` and
+     ``platforms/pairing/``): the gateway process writes pending codes, so the files are the only
+-    shared signal (a pairing request moves nothing in gateway_state.json)."""
+-    entries = []
++    shared signal (a pairing request moves nothing in gateway_state.json). Per-file, not the newest
++    mtime: a ledger created inside the same coarse timestamp tick as the previous newest one would
++    leave a max-mtime signature unchanged."""
++    sig = []
+     for root in _pairing_roots(_watcher_home()):
+         with contextlib.suppress(OSError):
+-            # Only the ledgers: _rate_limits.json moves on every unauthorized DM.
+-            entries += [
+-                e for e in root.iterdir() if e.name.endswith(("-pending.json", "-approved.json"))]
+-    return _newest_mtime_ns(entries)
++            for e in root.iterdir():
++                # Only the ledgers: _rate_limits.json moves on every unauthorized DM.
++                if e.name.endswith(("-pending.json", "-approved.json")):
++                    with contextlib.suppress(OSError):
++                        st = e.stat()
++                        sig.append((str(e), st.st_mtime_ns, st.st_size))
++    return tuple(sorted(sig)) or None
+ 
+ 
+ # Live-profile pairing roots, cached on (home, ``profiles/`` dir mtime) with a TTL. The liveness

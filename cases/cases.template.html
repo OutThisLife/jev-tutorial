@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jev use cases, run on real Hermes data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="toc" aria-label="Contents">
+    <ul class="pages">
+      <li><a href="index.html">Tutorial</a></li>
+      <li class="here"><a href="cases.html" aria-current="page">Workflow gates</a>
+        <ol class="sections">
+          <li><a href="#verdicts">Did the step work?</a></li>
+          <li><a href="#gate">Gate arms on real PRs</a></li>
+          <li><a href="#dups">Competing PRs</a></li>
+          <li><a href="#router">Issue routing</a></li>
+          <li><a href="#approvals">Approvals from chat</a></li>
+          <li><a href="#comments">Wake on evidence</a></li>
+          <li><a href="#priority">Where it falls short</a></li>
+          <li><a href="#run">Run it yourself</a></li>
+        </ol>
+      </li>
+      <li><a href="design.html">n8n &amp; design systems</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header>
+      <div class="kicker">Use cases · Workflows</div>
+      <h1>Seven jobs for Jev, run on real Hermes data</h1>
+      <p class="lede">Each case is a decision your workflows already make, or could make, with an agent step today. Every number below comes from live Jev calls against real NousResearch/hermes-agent issues, PRs and comments, scored against the labels maintainers actually applied.</p>
+      <div class="meta"><strong>$CALLS</strong> live calls · <strong>$COST</strong> total · <strong>$MS ms</strong> median per call · model <code>typesafe/jev-1.14</code> via OpenRouter. Code and raw results are in <code>cases/</code>.</div>
+    </header>
+
+    <section id="verdicts">
+      <div class="kicker">01 · Agent step → Gate</div>
+      <h2>Did the step actually work?</h2>
+      <p>Every gate starts from a verdict on the step before it. When an agent step doesn't return an explicit verdict, today's runner searches its reply for <code>PASS</code>, or a reply that starts with <code>YES</code>. Here are $V_N step summaries, each asked as one Noul: <em>"The step achieved its goal and the work is ready to move on."</em></p>
+      <div class="scroll">
+      <table class="data">
+        <thead><tr><th>Step summary</th><th>Really done</th><th>Substring rule</th><th>Jev</th></tr></thead>
+        <tbody>$V_ROWS</tbody>
+      </table>
+      </div>
+      <p><strong>The substring rule gets $V_SUB of $V_N wrong; Jev at 0.5 gets $V_JEV wrong.</strong> The substring misses aren't edge cases: "should NOT PASS", "PASSED the type check; the runtime still crashes" and "Yes, I looked at it. The approach is wrong" all pass. The unsure ones are useful too: "I couldn't test Windows" lands at 0.51, exactly the kind of summary a person should look at.</p>
+      <p class="note">Summaries are synthetic, written to cover the failure modes. The substring rule is <code>_arm_matches</code> verbatim.</p>
+    </section>
+
+    <section id="gate">
+      <div class="kicker">02 · Webhook (PR opened) → Gate</div>
+      <h2>Gate arms on real PRs</h2>
+      <p>A PR-intake workflow with three Judgement arms, all asked in <strong>one call per PR</strong>. Ground truth comes from the PR itself: its files (only <code>plugin-catalog/</code>, only <code>.md</code>/<code>website/</code>), or a security label a maintainer applied (<code>type/security</code>, <code>area/auth</code>, <code>sweeper:risk-security-boundary</code>). These are the $G_N most recent PRs.</p>
+<pre><code><span class="s">"catalog"</span>:  <span class="s">"The pull request only adds or updates a plugin-catalog entry and changes</span>
+<span class="s">             no Hermes code."</span>
+<span class="s">"docs"</span>:     <span class="s">"The change only touches documentation and changes no runtime behavior."</span>
+<span class="s">"security"</span>: <span class="s">"The change alters an authentication, authorization, secret-handling,</span>
+<span class="s">             or sandbox boundary."</span></code></pre>
+      <div class="scroll">
+      <table class="data num">
+        <thead><tr><th>Arm</th><th>Really yes</th><th>Took, right</th><th>Took, wrong</th><th>Skipped, wrong</th><th>Unsure → human</th></tr></thead>
+        <tbody>$G_ROWS</tbody>
+      </table>
+      </div>
+      <p><strong>Catalog and docs are clean enough to automate today.</strong> For example, a catalog-only PR could skip the full review agent and go straight to the catalog checks.</p>
+      <p><strong>Security behaves like a smoke detector.</strong> It sends $G_UNS PRs to a human ($G_UNS_POS of them labelled security). Its "wrong" yes answers are worth reading:</p>
+      <ul class="tight">$G_FP</ul>
+      <p>Most of these handle credentials or tokens and simply never got a security label. That makes them misses in the labels, not mistakes by Jev. For a security arm, a false alarm costs a minute of a reviewer's time; a missed real one costs far more. Wire this arm to a human, never to auto-merge.</p>
+    </section>
+
+    <section id="dups">
+      <div class="kicker">03 · Webhook (PR opened) → Agent (comment)</div>
+      <h2>Spot competing PRs</h2>
+      <p>The repo has four known pairs of PRs that fix the same thing. Maintainers or triage bots flagged them in comments like "closing in favour of…". I mixed those 8 PRs with 30 random others and a near-miss pair, then asked each PR one question about every other PR in the pool: <strong>$D_Q Nouls in a single request</strong>, with no embeddings, vector store or pairwise prompts.</p>
+<pre><code>questions = {
+  str(other.number): {<span class="s">"type"</span>: <span class="s">"noul"</span>, <span class="s">"instructions"</span>: {
+      <span class="s">"other_pull_request"</span>: {title, description, files},
+      <span class="s">"question"</span>: <span class="s">"This other pull request fixes the same underlying problem…"</span>}}
+  <span class="k">for</span> other <span class="k">in</span> open_prs }</code></pre>
+      <figure class="chart">
+        $D_SVG
+        <figcaption class="legend-row"><span><i class="dot pos"></i>real duplicate</span><span><i class="dot near"></i>near miss</span><span><i class="dot neg"></i>unrelated pair</span></figcaption>
+      </figure>
+      <div class="scroll">
+      <table class="data">
+        <thead><tr><th>PRs</th><th>Titles</th><th>Jev</th></tr></thead>
+        <tbody>$D_ROWS</tbody>
+      </table>
+      </div>
+      <p><strong>Perfect separation.</strong> The lowest real duplicate scored $D_MIN; the highest unrelated pair scored $D_MAX. The near miss is the impressive one: two "retry on update" PRs from the same afternoon, with almost the same titles, that fix different code paths. Jev put them at 0.12. A title-similarity bot would have flagged them.</p>
+      <p>Cost: $D_CALLS calls, $D_COST, about $D_MS ms each, for every pair in a $D_POOL-PR pool. In a workflow, a new PR asks one question per open PR in the same component. When the score is above 0.8, an agent step drafts the "possible duplicate of…" comment for a human to post.</p>
+    </section>
+
+    <section id="router">
+      <div class="kicker">04 · Webhook (issue opened) → Gate → Agent per component</div>
+      <h2>Route issues to a component</h2>
+      <p>One Choice over the repo's 11 <code>comp/*</code> labels, using the label descriptions from GitHub as the options. A pick counts as right if it matches any of the issue's maintainer-applied <code>comp/</code> labels. That's $R_N issues, and <strong>$R_ACC were right overall</strong>, but the overall number isn't the useful part. The useful part is what the confidence tells you:</p>
+      <table class="data">
+        <thead><tr><th>Confidence</th><th>Issues</th><th>Right</th></tr></thead>
+        <tbody>$R_BANDS</tbody>
+      </table>
+      <p>A gate that auto-routes at 0.9 or higher handles <strong>$R_HI_SHARE of issues at $R_HI_ACC accuracy</strong> and sends the rest to the triage agent. Its confident misses are mostly reasonable disagreements:</p>
+      <ul class="tight">$R_MISSES</ul>
+      <h3>Tune on one set, score on another</h3>
+      <p>Many misses are messaging adapters, which this repo files under <code>comp/plugins</code>. Rewriting the option descriptions to say so looks like an obvious fix. On <strong>150 held-out issues</strong>, though, the original descriptions score $H1_ACC ($H1_HI at 0.9 or higher), and the "improved" ones score $H2_ACC ($H2_HI). The rewrite was fitted to the misses it was written from. Keep a held-out set, and don't tune questions on the examples you score them with.</p>
+    </section>
+
+    <section id="approvals">
+      <div class="kicker">05 · Human step (reply from Telegram/Slack/Discord)</div>
+      <h2>Read an approval reply</h2>
+      <p>The Human step parks until someone answers from a chat. A Choice turns the free-text reply into something the run can act on. The <code>conditional</code> and <code>question</code> options matter most: they keep "yes but fix the typo first" from counting as a yes.</p>
+      <table class="data">
+        <thead><tr><th>Reply</th><th>Read as</th><th>Confidence</th></tr></thead>
+        <tbody>$A_ROWS</tbody>
+      </table>
+      <p>All $A_N replies are read the way a person would read them, including "ok". "idk ask teknium" comes back as <code>unclear</code> at 0.75, below the auto-act line, which is right. In the workflow, <code>approve</code> at 0.9 or higher resumes the run, <code>reject</code> stops it, and everything else re-asks with the reply quoted.</p>
+      <p class="note">Replies are synthetic.</p>
+    </section>
+
+    <section id="comments">
+      <div class="kicker">06 · Event trigger (issue comment) → Agent</div>
+      <h2>Wake an agent only when evidence arrives</h2>
+      <p>Long issue threads mostly fill up with +1s, bot output and closing notes. Three Nouls in one call, on each of the $C_N most recent comments in the repo: does it add new evidence, is it automated, and does it close or supersede something?</p>
+      <div class="scroll">
+      <table class="data num">
+        <thead><tr><th>Author</th><th>Comment</th><th>Evidence</th><th>Bot</th><th>Closing</th></tr></thead>
+        <tbody>$C_ROWS</tbody>
+      </table>
+      </div>
+      <p><strong>$C_WAKE of $C_N</strong> comments would wake a re-investigation agent (evidence 0.8 or higher, not automated). Every one of them is a reproduction or a field measurement: Windows confirmations, OOM-kill rates, a 180-message branch repro. The $C_CLOSE closing notes could update a "superseded" state without running an agent.</p>
+      <p class="note">One wrinkle: LordMelkor's 🤖-prefixed comments are agent-written, but they score low on "automated" because they read as considered prose. Jev answers the question you asked. If what you really mean is "was this written by an agent", ask that as its own question.</p>
+    </section>
+
+    <section id="priority">
+      <div class="kicker">07 · The negative result</div>
+      <h2>Where it falls short: priority</h2>
+      <p>Score was asked to place each bug on the repo's P3 to P0 rubric. On $P_N labeled bugs it hit the exact label only <strong>$P_EXACT</strong> of the time, and its average score barely separates P3 from P2:</p>
+      <table class="data">
+        <thead><tr><th>Label</th><th>Bugs</th><th>Mean score (0 = P3, 3 = P0)</th></tr></thead>
+        <tbody>$P_ROWS</tbody>
+      </table>
+      <p>For ranking, though, it's useful: a random P1 outscores a random non-P1 <strong>$P_AUC1</strong> of the time (0.5 would be chance). The top of the list is the right kind of bug:</p>
+      <ul class="tight">$P_TOP</ul>
+      <p>So use it to sort the queue, not to set the label. P2 versus P3 here mostly depends on things that aren't in the issue text: how many people are affected, what's shipping this week, which maintainer picked it up. Jev can only judge what's in the state you send it, and here the state doesn't contain the answer. Splitting the rubric into six separate Noul questions combined with weights (TypeSafe's recommended "atomic questions" approach) didn't help either: 0.80 versus 0.79.</p>
+    </section>
+
+    <section id="run">
+      <h2>Run it yourself</h2>
+<pre><code>cd cases
+export OPENROUTER_API_KEY=…          <span class="c"># any OpenRouter key with credit</span>
+python3 run.py                       <span class="c"># all cases, ~15 s, about 5¢</span>
+python3 run.py duplicates gate       <span class="c"># or just some</span>
+python3 build.py                     <span class="c"># rebuilds this page from results/</span></code></pre>
+      <p>The data snapshots in <code>cases/data/</code> came from <code>gh</code> on Oct 15.</p>
+      <h3>Build order</h3>
+      <ol>
+        <li><strong>Step verdicts (01).</strong> This fixes a real bug in the runner, and every gate benefits.</li>
+        <li><strong>Competing-PR detection (03)</strong> on PR intake. It separated the pairs perfectly here, and it saves maintainers the most time.</li>
+        <li><strong>Approval replies (05)</strong> for the Human step. Without it, a reply from chat can't drive the run at all.</li>
+      </ol>
+      <footer>
+        Data: <a href="$GH">NousResearch/hermes-agent</a> issues, PRs and comments as of Oct 15, 2026 ·
+        <a href="https://docs.typesafe.ai/introduction">TypeSafe docs</a> ·
+        <a href="index.html">← back to the tutorial</a>
+      </footer>
+    </section>
+  </main>
+</div>
+<script>
+  const links = [...document.querySelectorAll('nav.toc .sections a')];
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.hash === '#' + e.target.id));
+  }), { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('main section').forEach(s => io.observe(s));
+</script>
+</body>
+</html>

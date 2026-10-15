@@ -1,0 +1,122 @@
+[
+ {
+  "file": "app/chat/composer/start-voice-button.tsx",
+  "primitive": "Button",
+  "jsx": "        <Button\n          aria-label={label}\n          className={cn(PRIMARY_ICON_BTN, engine && 'rounded-r-none')}\n          disabled={disabled}\n          onClick={() => {\n            triggerHaptic('open')\n            recordAction('composer.voice', 'click')\n            onStart()\n          }}\n          size=\"icon\"\n          type=\"button\"\n        >\n          <AudioLines className={iconSize.sm} />\n        </Button>"
+ },
+ {
+  "file": "app/shell/statusbar-controls.tsx",
+  "primitive": "Tip",
+  "jsx": "      <Tip label={tooltipLabel}>\n        <div\n          className={cn(\n            'inline-flex h-full items-center gap-1 px-1.5 text-[0.6875rem] text-(--ui-text-tertiary)',\n            item.className\n          )}\n        >\n          {content}\n        </div>\n      </Tip>"
+ },
+ {
+  "file": "app/chat/composer/status-stack/drawer.tsx",
+  "primitive": "Button",
+  "jsx": "      <Button\n        aria-controls={controls}\n        aria-expanded={!collapsed}\n        aria-label={label}\n        className=\"status-drawer-toggle absolute -top-2 left-1/2 z-10 -translate-x-1/2\"\n        data-slot=\"status-drawer-toggle\"\n        onClick={onToggle}\n        size=\"grip\"\n        type=\"button\"\n        variant=\"grip\"\n      >\n        <span aria-hidden className=\"h-0.75 w-7 rounded-full bg-current\" />\n      </Button>"
+ },
+ {
+  "file": "app/starmap/node-context-menu.tsx",
+  "primitive": "Button",
+  "jsx": "            <Button disabled={saving} onClick={() => setEditing(null)} type=\"button\" variant=\"ghost\">\n              Cancel\n            </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/connector-row-card.tsx",
+  "primitive": "Button",
+  "jsx": "        <Button\n          disabled={busy}\n          loading={busy}\n          onClick={onVerb}\n          size=\"xs\"\n          variant={card.state === 'available' ? 'outline' : 'secondary'}\n        >\n          {copy.verb[card.verb]}\n        </Button>"
+ },
+ {
+  "file": "app/settings/chat-font-setting.tsx",
+  "primitive": "Button",
+  "jsx": "            <Button disabled={!value || draft === null} onClick={() => update('')} size=\"inline\" variant=\"text\">\n              {copy.chatFontReset}\n            </Button>"
+ },
+ {
+  "file": "app/chat/right-rail/real-profile-consent-dialog.tsx",
+  "primitive": "Button",
+  "jsx": "            <Button disabled={busy} onClick={() => $realProfilePromptMuted.set(true)} type=\"button\" variant=\"ghost\">\n              {prompt.notNow}\n            </Button>"
+ },
+ {
+  "file": "app/settings/local-models-quickstart.tsx",
+  "primitive": "Button",
+  "jsx": "                <Button onClick={onConfigure} size=\"sm\" variant=\"outline\">\n                  {copy.quickstartConfigure}\n                </Button>"
+ },
+ {
+  "file": "app/chat/composer/reasoning-pill.tsx",
+  "primitive": "Button",
+  "jsx": "          <Button\n            aria-label={title}\n            className={PILL}\n            data-testid=\"reasoning-pill\"\n            disabled={disabled}\n            type=\"button\"\n            variant=\"ghost\"\n          >\n            {pending ? <GlyphSpinner className=\"opacity-50\" spinner=\"braille\" /> : <span>{label}</span>}\n            <ChevronDown className=\"size-2.5 shrink-0 opacity-50\" />\n          </Button>"
+ },
+ {
+  "file": "app/settings/memory/provider-config-panel.tsx",
+  "primitive": "Button",
+  "jsx": "          <Button onClick={() => void refresh()} size=\"sm\" type=\"button\" variant=\"secondary\">\n            Retry\n          </Button>"
+ },
+ {
+  "file": "app/messaging/index.tsx",
+  "primitive": "Button",
+  "jsx": "                      <Button\n                        disabled={gatewayRestarting}\n                        onClick={() => void restartGatewayNow()}\n                        size=\"sm\"\n                        variant=\"secondary\"\n                      >\n                        <RefreshCw className={gatewayRestarting ? 'animate-spin' : undefined} />\n                        {gatewayRestarting ? m.restarting : m.restartNow}\n                      </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/session-actions-menu.tsx",
+  "primitive": "Button",
+  "jsx": "          <Button disabled={submitting} onClick={() => onOpenChange(false)} type=\"button\" variant=\"ghost\">\n            {t.common.cancel}\n          </Button>"
+ },
+ {
+  "file": "app/settings/billing/index.tsx",
+  "primitive": "Button",
+  "jsx": "          <Button className=\"mt-3\" onClick={notice.action.onSelect} size=\"sm\" type=\"button\" variant=\"outline\">\n            {notice.action.label}\n          </Button>"
+ },
+ {
+  "file": "app/command-center/index.tsx",
+  "primitive": "Button",
+  "jsx": "      <Button\n        aria-label={title}\n        className={cn('text-(--ui-text-tertiary) hover:bg-(--chrome-action-hover) hover:text-foreground', className)}\n        onClick={onClick}\n        size=\"icon-xs\"\n        type=\"button\"\n        variant=\"ghost\"\n      >\n        {children}\n      </Button>"
+ },
+ {
+  "file": "app/right-sidebar/terminal/rail.tsx",
+  "primitive": "Tip",
+  "jsx": "          <Tip\n            label={<TipHintLabel hint={newHint && formatCombo(newHint)} text={t.rightSidebar.terminalNew} />}\n            placement=\"right-rail\"\n          >\n            <button\n              aria-label={t.rightSidebar.terminalNew}\n              className={cn(RAIL_ACTION, 'size-7 text-(--ui-text-quaternary)')}\n              onClick={() => createTerminal()}\n              type=\"button\"\n            >\n              <Codicon name=\"add\" size=\"0.8125rem\" />\n            </button>\n          </Tip>"
+ },
+ {
+  "file": "app/capabilities/connectors/connectors-directory.tsx",
+  "primitive": "Button",
+  "jsx": "                  <Button onClick={() => set({ segment: 'all' })} size=\"xs\" variant=\"text\">\n                    {copy.page.showAllMatches}\n                  </Button>"
+ },
+ {
+  "file": "app/settings/pet-settings.tsx",
+  "primitive": "Button",
+  "jsx": "            <Button onClick={() => setRenameTarget(null)} type=\"button\" variant=\"ghost\">\n              {t.common.cancel}\n            </Button>"
+ },
+ {
+  "file": "app/settings/notifications-settings.tsx",
+  "primitive": "Button",
+  "jsx": "\n              <Button\n                className=\"gap-1.5\"\n                onClick={() => {\n                  previewCompletionSound()\n                  triggerHaptic('crisp')\n                }}\n                size=\"sm\"\n                type=\"button\"\n                variant=\"outline\"\n              >\n                <Play className=\"size-3.5\" />\n                {copy.completionSoundPreview}\n              </Button>"
+ },
+ {
+  "file": "app/chat/sidebar/load-more-row.tsx",
+  "primitive": "Tip",
+  "jsx": "    <Tip label={label}>\n      <button\n        aria-label={label}\n        className=\"mr-2 ml-auto grid size-5 place-items-center rounded-sm bg-transparent text-(--ui-text-tertiary) transition-colors hover:bg-(--ui-control-hover-background) hover:text-foreground disabled:cursor-default disabled:opacity-60 disabled:hover:bg-transparent disabled:hover:text-(--ui-text-tertiary)\"\n        disabled={loading}\n        onClick={onClick}\n        type=\"button\"\n      >\n        {loading ? (\n          <GlyphSpinner ariaLabel={label} className=\"text-[0.75rem]\" />\n        ) : (\n          <Codicon name=\"ellipsis\" size=\"0.75rem\" />\n        )}\n      </button>\n    </Tip>"
+ },
+ {
+  "file": "app/chat/composer/restored-draft-notice.tsx",
+  "primitive": "Button",
+  "jsx": "        <Button\n          className=\"h-6 rounded-md px-2 text-[0.68rem]\"\n          onClick={() => {\n            if (undoRestoredDraft(readLiveText())) {\n              onUndone()\n            }\n          }}\n          type=\"button\"\n          variant=\"ghost\"\n        >\n          {t.composer.restoredDraftUndo}\n        </Button>"
+ },
+ {
+  "file": "app/pet-generate/components/generate-unavailable.tsx",
+  "primitive": "Button",
+  "jsx": "      <Button onClick={onSetup} size=\"sm\">\n        <Settings2 className=\"size-4\" />\n        Set up image generation\n      </Button>"
+ },
+ {
+  "file": "app/overlays/overlay-split-layout.tsx",
+  "primitive": "Button",
+  "jsx": "                  <Button\n                    aria-controls={childrenId}\n                    aria-expanded={expanded}\n                    aria-label={`${expanded ? t.common.collapse : t.common.expand}: ${group.label}`}\n                    className=\"absolute right-0.5 top-1/2 -translate-y-1/2\"\n                    data-tour={`nav-toggle-${group.id}`}\n                    onClick={() => setDisclosures(previous => ({ ...previous, [group.id]: !expanded }))}\n                    size=\"icon-xs\"\n                    type=\"button\"\n                    variant=\"ghost\"\n                  >\n                    <DisclosureCaret open={expanded} />\n                  </Button>"
+ },
+ {
+  "file": "app/capabilities/connectors/tools-filter-bar.tsx",
+  "primitive": "Button",
+  "jsx": "\n        <Button className=\"shrink-0\" onClick={onShowSummary} size=\"xs\" variant=\"text\">\n          {copy.showSummary}\n        </Button>"
+ },
+ {
+  "file": "app/chat/right-rail/preview-pane.tsx",
+  "primitive": "Tip",
+  "jsx": "              <Tip label={copy.openTarget(currentUrl)}>\n                <a\n                  className=\"pointer-events-auto inline max-w-full truncate text-left text-xs font-medium text-foreground underline-offset-4 decoration-current/20 transition-colors hover:text-primary hover:underline\"\n                  href={isRemoteHtmlTarget ? undefined : currentUrl}\n                  onClick={event => {\n                    if (isRemoteHtmlTarget) {\n                      event.preventDefault()\n                      void openPreviewTargetInBrowser(target).catch(error => notifyError(error, t.preview.unavailable))\n                    }\n                  }}\n                  rel=\"noreferrer\"\n                  target={isRemoteHtmlTarget ? undefined : '_blank'}\n                >\n                  {previewLabel || copy.fallbackTitle}\n                </a>\n              </Tip>"
+ }
+]

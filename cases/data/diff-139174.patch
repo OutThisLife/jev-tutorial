@@ -1,0 +1,184 @@
+diff --git a/apps/desktop/electron/local-gateway-python-runtime.test.ts b/apps/desktop/electron/local-gateway-python-runtime.test.ts
+index 85091b4214034..5afdabe2d0606 100644
+--- a/apps/desktop/electron/local-gateway-python-runtime.test.ts
++++ b/apps/desktop/electron/local-gateway-python-runtime.test.ts
+@@ -24,6 +24,22 @@ test('a Python backend is the helper interpreter as-is', async () => {
+   await expect(ticketRuntimeFor(backend)).resolves.toBe(backend)
+ })
+ 
++test('a bundled launcher keeps its CLI command but names the payload Python for ticket minting', async () => {
++  const backend = {
++    command: '/resources/agent-payload/bin/hermes.exe',
++    kind: 'python',
++    shell: false,
++    env: { HERMES_RUNTIME_DIR: '/resources/agent-payload/tools' },
++    ticketCommand: '/resources/agent-payload/tools/python/python.exe',
++    ticketEnv: { PYTHONPATH: '/resources/agent-payload/repo;/resources/agent-payload/venv/Lib/site-packages' }
++  }
++
++  await expect(ticketRuntimeFor(backend)).resolves.toEqual({
++    command: backend.ticketCommand,
++    env: { ...backend.env, ...backend.ticketEnv }
++  })
++})
++
+ test.skipIf(process.platform === 'win32')('an installed launcher backend mints with the interpreter it reports', async () => {
+   // The normal Windows install resolves to kind 'command' (the installation launcher).
+   const python = process.execPath
+diff --git a/apps/desktop/electron/local-gateway-python.ts b/apps/desktop/electron/local-gateway-python.ts
+index b2f53797ceae8..088ff150a340c 100644
+--- a/apps/desktop/electron/local-gateway-python.ts
++++ b/apps/desktop/electron/local-gateway-python.ts
+@@ -163,6 +163,9 @@ interface ResolvedTicketBackend {
+   shell?: boolean
+   env?: NodeJS.ProcessEnv
+   root?: string
++  /** A bundled CLI still launches normally, but ticket minting needs its interpreter. */
++  ticketCommand?: string
++  ticketEnv?: NodeJS.ProcessEnv
+ }
+ 
+ const RUNTIME_COMMAND_TIMEOUT_MS = 30_000
+@@ -221,6 +224,10 @@ function isFile(candidate: string): boolean {
+  * PYTHONPATH is its whole import closure (-P still keeps the cwd out).
+  */
+ export async function ticketRuntimeFor(backend: ResolvedTicketBackend): Promise<{ command: string; env?: NodeJS.ProcessEnv }> {
++  if (backend.ticketCommand) {
++    return { command: backend.ticketCommand, env: { ...backend.env, ...backend.ticketEnv } }
++  }
++
+   if (backend.kind === 'python' && !backend.shell) {
+     return backend
+   }
+diff --git a/apps/desktop/electron/main.ts b/apps/desktop/electron/main.ts
+index 74265e1edef7d..322fa90491e39 100644
+--- a/apps/desktop/electron/main.ts
++++ b/apps/desktop/electron/main.ts
+@@ -413,7 +413,14 @@ import {
+ import { wireOauthSessionResponse } from './oauth-session-response'
+ import { listWindowsProcesses, reapPackageRootedProcesses } from './package-process-reap'
+ import { createParentStartMarkerResolver } from './parent-process-identity'
+-import { bundledPayload, installIdForRoot, type PayloadInfo, payloadPythonPath } from './payload-backend'
++import {
++  bundledPayload,
++  installIdForRoot,
++  type PayloadInfo,
++  payloadPythonPath,
++  payloadTicketRuntime,
++  requireBundledPayload
++} from './payload-backend'
+ import { petOverlayClickThrough, shouldPopInOnOverlayClosed } from './pet-overlay'
+ import { placePetOverlay, registerPetOverlayIpc } from './pet-overlay-ipc'
+ import {
+@@ -3667,21 +3674,6 @@ function createNativePackagedStrategy(
+   return new ExternalStrategy(INSTALL_STAMP)
+ }
+ 
+-/**
+- * The bundled Python payload for a strategy whose update check runs inside
+- * it. A stamp that names such a mechanism without a payload is a broken
+- * install; say so instead of failing on `payload.storePython`.
+- */
+-function requireBundledPayload(mechanism: UpdaterStrategy['mechanism']): PayloadInfo {
+-  const payload: PayloadInfo | null = bundledPayload(process.resourcesPath)
+-
+-  if (!payload) {
+-    throw new Error(`${mechanism} updates require the bundled application payload, which this install has none of`)
+-  }
+-
+-  return payload
+-}
+-
+ /**
+  * The checkout updater strategy (windows-handoff / posix-handoff). The flow
+  * lives in updater/checkout.ts; this is the composition root that hands it
+@@ -5019,6 +5011,7 @@ async function resolveHermesBackend(backendArgs: string[]): Promise<ResolvedHerm
+       command: payload.shim,
+       args: [...backendArgs],
+       env: { ...buildDesktopBackendEnv(), HERMES_RUNTIME_DIR: payload.toolsDir },
++      ...payloadTicketRuntime(payload),
+       root: payload.repoDir,
+       bootstrap: false,
+       shell: false,
+@@ -5203,6 +5196,8 @@ interface ResolvedHermesBackend {
+   shell: boolean
+   local?: string
+   root?: string
++  ticketCommand?: string
++  ticketEnv?: NodeJS.ProcessEnv
+   installStamp?: Readonly<InstallStamp> | null
+   activeRoot?: string
+   isPackaged?: boolean
+diff --git a/apps/desktop/electron/payload-backend.test.ts b/apps/desktop/electron/payload-backend.test.ts
+index 4492fd2cca065..a52e83705ed17 100644
+--- a/apps/desktop/electron/payload-backend.test.ts
++++ b/apps/desktop/electron/payload-backend.test.ts
+@@ -6,7 +6,7 @@ import path from 'node:path'
+ import { test, vi } from 'vitest'
+ 
+ import type { InstallStamp, PayloadRuntime } from './install-stamp'
+-import { bundledPayload, installIdForRoot, payloadPythonPath } from './payload-backend'
++import { bundledPayload, installIdForRoot, payloadPythonPath, payloadTicketRuntime } from './payload-backend'
+ 
+ function stamp(runtime: PayloadRuntime, payload: InstallStamp['payload'] = 'bundled'): InstallStamp {
+   return {
+@@ -66,6 +66,21 @@ test('bundled launch paths come from build metadata without filesystem access',
+   }
+ })
+ 
++test('ticket minting runs the payload python, never the CLI shim', () => {
++  const payload = {
++    storePython: '/p/tools/python',
++    repoDir: '/p/repo',
++    sitePackages: '/p/venv/site-packages',
++    shim: '/p/bin/hermes'
++  }
++
++  const runtime = payloadTicketRuntime(payload)
++
++  assert.equal(runtime.ticketCommand, payload.storePython)
++  assert.notEqual(runtime.ticketCommand, payload.shim)
++  assert.deepEqual(runtime.ticketEnv, { PYTHONPATH: payloadPythonPath(payload) })
++})
++
+ // ─── update channel helpers ─────────────────────────────────────────
+ 
+ test('installIdForRoot matches the Python install id (sha16 of the canonical path)', () => {
+diff --git a/apps/desktop/electron/payload-backend.ts b/apps/desktop/electron/payload-backend.ts
+index ba1c2a39f8e0b..a1398f8fe397f 100644
+--- a/apps/desktop/electron/payload-backend.ts
++++ b/apps/desktop/electron/payload-backend.ts
+@@ -46,6 +46,33 @@ export function payloadPythonPath(payload: Pick<PayloadInfo, 'repoDir' | 'sitePa
+   return [payload.repoDir, payload.sitePackages].join(path.delimiter)
+ }
+ 
++/**
++ * The bundled shim is the Hermes CLI, not an interpreter, so it rejects the
++ * ticket bridge's `-P -u -c`. Ticket minting runs the payload python against
++ * the same import closure the shim gives the CLI.
++ */
++export function payloadTicketRuntime(payload: Pick<PayloadInfo, 'storePython' | 'repoDir' | 'sitePackages'>): {
++  ticketCommand: string
++  ticketEnv: NodeJS.ProcessEnv
++} {
++  return { ticketCommand: payload.storePython, ticketEnv: { PYTHONPATH: payloadPythonPath(payload) } }
++}
++
++/**
++ * The bundled Python payload for a strategy whose update check runs inside
++ * it. A stamp that names such a mechanism without a payload is a broken
++ * install; say so instead of failing on `payload.storePython`.
++ */
++export function requireBundledPayload(mechanism: string, resourcesPath = process.resourcesPath): PayloadInfo {
++  const payload: PayloadInfo | null = bundledPayload(resourcesPath)
++
++  if (!payload) {
++    throw new Error(`${mechanism} updates require the bundled application payload, which this install has none of`)
++  }
++
++  return payload
++}
++
+ // ─── update channel ─────────────────────────────────────────────────────────
+ //
+ // The CLI owns the channel records; Electron only reads the install id for

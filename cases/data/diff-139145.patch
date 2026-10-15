@@ -1,0 +1,617 @@
+diff --git a/hermes_cli/web_routers/dashboard_ui.py b/hermes_cli/web_routers/dashboard_ui.py
+index af5b6cb9f5bbf..545bd2a001b11 100644
+--- a/hermes_cli/web_routers/dashboard_ui.py
++++ b/hermes_cli/web_routers/dashboard_ui.py
+@@ -17,6 +17,7 @@
+ from hermes_cli.web_routers._common import config_scoped_to_thread
+ from hermes_cli.web_server_dashboard import (
+     _BUILTIN_DASHBOARD_THEMES, _discover_user_themes, _invalidate_plugins_hub_cache, _merged_plugins_hub,
++    _plugin_consent_withheld,
+ )
+ from hermes_cli.web_server_memory import _normalize_memory_provider_name, _require_memory_provider_ready
+ from hermes_cli.web_models import (
+@@ -106,44 +107,18 @@ async def set_dashboard_font(body: FontSetBody, profile: Optional[str] = None):
+     return {"ok": True, "font": font}
+ 
+ 
+-def _plugin_enable_sets() -> tuple[set, set]:
+-    """(enabled, disabled) plugin name sets; empty on any failure."""
+-    try:
+-        from hermes_cli.plugins_cmd import _get_enabled_set, _get_disabled_set
+-        return _get_enabled_set(), _get_disabled_set()
+-    except Exception:
+-        return set(), set()
+-
+-
+-def _plugin_activated(plugin: dict, enabled_set: set, disabled_set: set) -> bool:
+-    """Gate: user plugins must be in plugins.enabled and not in plugins.disabled; bundled
+-    plugins must not be explicitly disabled — the frontend must never load JS/CSS from
+-    plugins the user never activated."""
+-    name = plugin.get("name", "")
+-    source = plugin.get("source")
+-    if source == "user":
+-        return name not in disabled_set and name in enabled_set
+-    if source == "bundled":
+-        return name not in disabled_set
+-    return True
+-
+-
+ @router.get("/api/dashboard/plugins")
+ async def get_dashboard_plugins(profile: Optional[str] = None):
+     """Return discovered dashboard plugins (excludes user-hidden and non-enabled ones)."""
+     def _run():
+-        plugins = _get_dashboard_plugins()
+         hidden: list = cfg_get(load_config(), "dashboard", "hidden_plugins", default=[]) or []
+-        return plugins, hidden, *_plugin_enable_sets()
+-
+-    plugins, hidden, enabled_set, disabled_set = await config_scoped_to_thread(profile, _run)
++        # The consent the asset route and the API gates apply, so no listed tab fails to load.
++        return [p for p in _get_dashboard_plugins()
++                if p.get("name", "") not in hidden and not _plugin_consent_withheld(p)]
+ 
+     # Strip internal fields before sending to frontend.
+-    return [
+-        {k: v for k, v in p.items() if not k.startswith("_")}
+-        for p in plugins
+-        if p.get("name", "") not in hidden and _plugin_activated(p, enabled_set, disabled_set)
+-    ]
++    return [{k: v for k, v in p.items() if not k.startswith("_")}
++            for p in await config_scoped_to_thread(profile, _run)]
+ 
+ 
+ @router.get("/api/dashboard/plugins/rescan")
+@@ -391,13 +366,14 @@ async def serve_plugin_asset(plugin_name: str, file_path: str):
+     allowlist — user plugins ship a ``plugin_api.py`` backend the browser never
+     fetches, and without it anyone on the loopback port could curl a private
+     plugin's source. Path traversal is blocked via ``resolve().is_relative_to()``;
+-    user plugins must be enabled (bundled ones not disabled) (GHSA-mcfc-hp25-cjv7).
++    user plugins must be enabled (bundled ones not disabled) (GHSA-mcfc-hp25-cjv7), in the
++    launch profile whose copy these files are as well as in a native ticket's profile.
+ 
+     See #46435.
+     """
+     plugins = _get_dashboard_plugins()
+     plugin = next((p for p in plugins if p["name"] == plugin_name), None)
+-    if not plugin or not _plugin_activated(plugin, *_plugin_enable_sets()):
++    if not plugin or _plugin_consent_withheld(plugin):
+         raise HTTPException(status_code=404, detail="Plugin not found")
+ 
+     base = Path(plugin["_dir"])
+diff --git a/hermes_cli/web_server.py b/hermes_cli/web_server.py
+index a3103b2cc3a8d..7f6dcbb07e37d 100644
+--- a/hermes_cli/web_server.py
++++ b/hermes_cli/web_server.py
+@@ -395,20 +395,22 @@ async def host_header_middleware(request: Request, call_next):
+     return await call_next(request)
+ 
+ 
++from hermes_cli.web_server_dashboard import (
++    PluginApiWebSocketGate, _plugin_api_name, _plugin_api_request_refused,
++)
++
++
+ @app.middleware("http")
+ async def _plugin_api_runtime_gate(request: Request, call_next):
+-    """Block requests to disabled plugin API routes at request time.
++    """Block requests to disabled plugin API routes at request time
++    (:func:`_plugin_api_request_refused`).
+ 
+-    :func:`_mount_plugin_api_routes` gates at import time; a plugin disabled
+-    while running keeps its router mounted until restart, so enforce on every
+-    ``/api/plugins/{name}/...`` request. Registered BEFORE the auth middlewares
+-    (runs AFTER them): an unauthenticated caller must get auth's 401, never this
+-    404, or the status code becomes a plugin-name oracle.
++    Registered BEFORE the auth middlewares (runs AFTER them): an unauthenticated
++    caller must get auth's 401, never this 404, or the status code becomes a
++    plugin-name oracle.
+     """
+     path = request.url.path
+-    # parts: ['', 'api', 'plugins', '<name>', ...]
+-    parts = path.split("/")
+-    plugin_name = parts[3] if path.startswith("/api/plugins/") and len(parts) >= 4 else ""
++    plugin_name = _plugin_api_name(request.scope)
+     # Only gate authenticated requests. Unauthenticated ones fall through so
+     # auth_middleware / the OAuth gate return 401 first and this route can't
+     # be used as a plugin-name oracle. Desktop authenticates with a native ticket.
+@@ -418,26 +420,15 @@ async def _plugin_api_runtime_gate(request: Request, call_next):
+         or getattr(request.app.state, "auth_required", False)
+         or _has_valid_session_token(request)
+         or _has_valid_query_token(request, path)
+-    ):
+-        try:
+-            # Gate: only serve user plugins that are in plugins.enabled and not in plugins.disabled. This
+-            # prevents the frontend from loading JS/CSS from plugins the user has not explicitly activated.
+-            # (#46435)
+-            from hermes_cli.plugins_cmd import _get_enabled_set, _get_disabled_set
+-            enabled_set = _get_enabled_set()
+-            disabled_set = _get_disabled_set()
+-        except Exception:
+-            enabled_set = set()
+-            disabled_set = set()
+-        # Source from the cached plugin list; unknown => user plugin (safe default — blocks).
+-        plugin = next((p for p in _get_dashboard_plugins() if p.get("name") == plugin_name), None)
+-        source = plugin.get("source") if plugin else "user"
+-        blocked = plugin_name in disabled_set or (source == "user" and plugin_name not in enabled_set)
+-        if blocked and source in ("user", "bundled"):
+-            return JSONResponse(status_code=404, content={"detail": "Plugin not found"})
++    ) and _plugin_api_request_refused(plugin_name):
++        return JSONResponse(status_code=404, content={"detail": "Plugin not found"})
+     return await call_next(request)
+ 
+ 
++# The same gate for WebSocket upgrades: ``@app.middleware("http")`` passes those through untouched.
++app.add_middleware(PluginApiWebSocketGate)
++
++
+ @app.middleware("http")
+ async def _dashboard_auth_gate(request: Request, call_next):
+     """OAuth gate — active only when start_server flags ``auth_required``; pass-through on loopback.
+diff --git a/hermes_cli/web_server_dashboard.py b/hermes_cli/web_server_dashboard.py
+index 4ea8032f01a97..ba02f7ec515a4 100644
+--- a/hermes_cli/web_server_dashboard.py
++++ b/hermes_cli/web_server_dashboard.py
+@@ -9,10 +9,14 @@
+ import sys
+ import threading
+ import time
++from contextlib import contextmanager
+ import hermes_yaml as yaml
+-from fastapi import Depends, FastAPI, Request
++from fastapi import Depends, FastAPI, HTTPException, Request, WebSocketException
+ from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, Response
+ from fastapi.staticfiles import StaticFiles
++from starlette import status
++from starlette._utils import get_route_path
++from starlette.requests import HTTPConnection
+ from pathlib import Path
+ from typing import Any, Dict, List, Optional
+ 
+@@ -807,12 +811,96 @@ def _plugin_api_mount_skip_reason(plugin: dict[str, Any], enabled_set: set, disa
+     return None
+ 
+ 
++@contextmanager
++def _launch_profile_scope():
++    """Resolve config as the launch profile's, whichever profile the request is scoped to."""
++    from hermes_constants import reset_hermes_home_override, set_hermes_home_override
++    token = set_hermes_home_override(None)
++    try:
++        yield
++    finally:
++        reset_hermes_home_override(token)
++
++
++def _plugin_enable_sets_here() -> tuple[set, set]:
++    """``(plugins.enabled, plugins.disabled)`` of the active profile scope from one cached read-only
++    config read: the gates run on the event loop for every plugin request and upgrade."""
++    from hermes_cli.config import load_config_readonly
++    try:
++        config = load_config_readonly()
++    except Exception:  # health: allow BLE001 -- an unreadable config grants no consent (empty sets), as plugins_cmd reads it
++        config = {}
++    enabled, disabled = (cfg_get(config, "plugins", key, default=[]) for key in ("enabled", "disabled"))
++    return (set(enabled) if isinstance(enabled, list) else set(),
++            set(disabled) if isinstance(disabled, list) else set())
++
++
++def _plugin_consent_withheld(plugin: dict[str, Any]) -> bool:
++    """Whether a request must not reach ``plugin``'s backend or assets (#46435, GHSA-mcfc-hp25-cjv7).
++
++    Discovery scans only the launch home and the root, so every copy this process imports, hands to
++    a plugin host or serves files from is the launch profile's: the launch profile must have it
++    enabled. So must the profile the request acts for, the active scope: a native ticket's profile,
++    a ``?profile=`` selection once :func:`_plugin_route_secret_scope` binds it, else the launch
++    profile (#134889).
++    """
++    from hermes_constants import get_hermes_home, hermes_home_key
++    if _plugin_api_mount_skip_reason(plugin, *_plugin_enable_sets_here()):
++        return True
++    if hermes_home_key(get_hermes_home()) == hermes_home_key(get_process_hermes_home()):
++        return False
++    with _launch_profile_scope():
++        return _plugin_api_mount_skip_reason(plugin, *_plugin_enable_sets_here()) is not None
++
++
++def _plugin_api_name(scope) -> str:
++    """``<name>`` of an ``/api/plugins/<name>/...`` request (the path the router matches), else ``""``."""
++    path = get_route_path(scope)
++    parts = path.split("/")  # ['', 'api', 'plugins', '<name>', ...]
++    return parts[3] if path.startswith("/api/plugins/") and len(parts) >= 4 else ""
++
++
++def _plugin_api_request_refused(name: str) -> bool:
++    """The runtime gate for one ``/api/plugins/<name>/`` request, HTTP and WebSocket alike.
++
++    :func:`_mount_plugin_api_routes` gates at import time; a plugin disabled while the server runs
++    keeps its router mounted until restart, so every request is checked again. An unknown name
++    counts as a user plugin (safe default: refused).
++    """
++    from hermes_cli.web_server import _get_dashboard_plugins
++    plugin = next((p for p in _get_dashboard_plugins() if p.get("name") == name), {"name": name, "source": "user"})
++    return _plugin_consent_withheld(plugin)
++
++
++class PluginApiWebSocketGate:
++    """:func:`_plugin_api_request_refused` for WebSocket upgrades. ``_plugin_api_runtime_gate`` is
++    HTTP middleware and never sees one, so a plugin disabled at runtime kept accepting connections
++    on its websocket routes until restart (#134889).
++
++    It refuses before the route's own credential check, which is the disabled plugin's code, so it
++    cannot wait for auth (a gated-mode ticket is single-use: only the route may redeem it). That is
++    no plugin-name oracle: a close before accept reaches the client as the same 403 handshake
++    answer whether the plugin is disabled, unknown, or the credential was refused.
++    """
++
++    def __init__(self, app) -> None:
++        self.app = app
++
++    async def __call__(self, scope, receive, send) -> None:
++        if scope["type"] == "websocket":
++            name = _plugin_api_name(scope)
++            if name and _plugin_api_request_refused(name):
++                await send({"type": "websocket.close", "code": status.WS_1008_POLICY_VIOLATION})
++                return
++        await self.app(scope, receive, send)
++
++
+ # Serializes plugin API mounts: concurrent first requests for a freshly enabled plugin must import
+ # and mount it exactly once.
+ _plugin_api_mount_lock = threading.Lock()
+ 
+ 
+-async def _plugin_route_secret_scope(profile: Optional[str] = None):
++async def _plugin_route_secret_scope(conn: HTTPConnection, profile: Optional[str] = None):
+     """Home + secret scope for one ``/api/plugins/<name>/`` request: the launch profile's, or the
+     ``?profile=``-requested one — the same ``_config_profile_scope`` seam the built-in routers use.
+     Without it plugin handlers ran unscoped, so under multi-profile hosting every ``get_secret``
+@@ -821,8 +909,14 @@ async def _plugin_route_secret_scope(profile: Optional[str] = None):
+     a sync yield-dependency's setup and teardown run on different threadpool threads, so the
+     scope token would be reset in a foreign context; sync handlers still see the scope because
+     ``run_in_threadpool`` copies the request context into the worker."""
+-    from hermes_cli.web_server_profiles import _config_profile_scope
++    from hermes_cli.web_server_profiles import _config_profile_scope, _is_current_profile
+     with _config_profile_scope(profile):
++        # The gates checked the request's own scope; a ``?profile=`` selection binds another one
++        # only here, and the plugin must not run on a profile that disabled it (#134889).
++        if not _is_current_profile(profile) and _plugin_api_request_refused(_plugin_api_name(conn.scope)):
++            if conn.scope["type"] == "websocket":
++                raise WebSocketException(code=status.WS_1008_POLICY_VIOLATION)
++            raise HTTPException(status_code=404, detail="Plugin not found")
+         yield
+ 
+ 
+@@ -834,7 +928,8 @@ def _mount_hosted_plugin_api(app, plugin: dict, api_file_name: str) -> None:
+ 
+     async def forward(request: Request, path: str = "") -> Response:
+         # Resolve the plugin again in the REQUESTING profile (the route is mounted once, from the
+-        # launch profile): its own copy, gated by its own plugins.enabled, served by its own host.
++        # launch profile): gated by its own plugins.enabled, served by its own host. The copy is
++        # still the launch profile's (discovery scans only the launch home and the root).
+         target = await asyncio.to_thread(_hosted_plugin_for_request, name)
+         if target is None:
+             return JSONResponse({"detail": f"plugin {name!r} is not enabled in this profile"}, status_code=404)
+@@ -904,17 +999,19 @@ def _try_hot_mount_plugin_api(name: str) -> bool:
+ 
+     A plugin installed or enabled after server start had no route until restart: the startup
+     sweep is the only other caller of ``_mount_one_plugin_api``. Discovery is re-run (the plugin
+-    dir may not have existed at startup) and the launch profile's enable sets apply, exactly as
+-    at startup, so a not-enabled plugin is never imported. New routes are spliced in just ahead
+-    of the hot-mount fallback, which sits before the SPA catch-all: appended at the end they
+-    would land behind ``/{full_path:path}`` and every GET would keep missing them.
++    dir may not have existed at startup) and the whole decision is the launch profile's, exactly
++    as at startup (its enable sets and its ``plugins.isolation``), whichever profile's request
++    triggered it, so a plugin the launch profile did not enable is never imported or forwarded
++    (#134889). New routes are spliced in just ahead of the hot-mount fallback, which sits before
++    the SPA catch-all: appended at the end they would land behind ``/{full_path:path}`` and every
++    GET would keep missing them.
+     """
+     if not name or any(c in name for c in "/\\{}") or name == "..":
+         return False
+     from hermes_cli.plugins_cmd import _get_disabled_set, _get_enabled_set
+     from hermes_cli.web_server import _get_dashboard_plugins, app
+-    enabled_set, disabled_set = _get_enabled_set(), _get_disabled_set()
+-    with _plugin_api_mount_lock:
++    with _launch_profile_scope(), _plugin_api_mount_lock:
++        enabled_set, disabled_set = _get_enabled_set(), _get_disabled_set()
+         if _plugin_api_mounted(app, name):  # a mounted plugin's unknown subpath: no disk rescan
+             return False
+         plugin = next((p for p in _get_dashboard_plugins(force_rescan=True) if p.get("name") == name), None)
+diff --git a/tests/hermes_cli/test_plugin_api_consent_gate.py b/tests/hermes_cli/test_plugin_api_consent_gate.py
+new file mode 100644
+index 0000000000000..6d6557743650a
+--- /dev/null
++++ b/tests/hermes_cli/test_plugin_api_consent_gate.py
+@@ -0,0 +1,214 @@
++"""The runtime plugin gate holds on every transport and for every profile a multiplexed daemon serves.
++
++Regressions for #134889:
++
++- PLG-8: ``_plugin_api_runtime_gate`` is HTTP middleware, so a plugin disabled while the server ran
++  kept accepting new connections on its websocket routes until restart.
++- PLG-9: under a secondary profile's native ticket the gate read only that profile's plugin lists,
++  while dashboard discovery only ever finds the launch profile's copy of a plugin: the secondary
++  profile kept reaching a plugin the launch profile had disabled, and its first request for a plugin
++  only it enabled imported that copy here or handed it to its plugin host.
++
++Driven through the real app (native-ticket auth, the gates, the hot mount, the plugin's own router)
++against a temp HERMES_HOME. The daemon is a stand-in runner carrying a real ``TicketStore``; the
++plugin host, another process, is a recorder of what this process would ask it to run.
++"""
++from __future__ import annotations
++
++import json
++import sys
++from types import SimpleNamespace
++
++import pytest
++from starlette.websockets import WebSocketDisconnect
++
++from hermes_cli import web_server
++
++_PLUGIN_API = '''
++from pathlib import Path
++
++from fastapi import APIRouter, WebSocket
++
++Path(__file__).with_name("IMPORTED").touch()
++router = APIRouter()
++
++
++@router.get("/ping")
++async def ping():
++    return {"pong": True}
++
++
++@router.websocket("/events")
++async def events(ws: WebSocket):
++    # The canonical WS credential check every dashboard plugin socket makes (kanban's too).
++    from hermes_cli.web_server_chat import _ws_auth_ok
++    if not _ws_auth_ok(ws):
++        await ws.close(code=1008)
++        return
++    await ws.accept()
++    await ws.send_text("hello")
++    await ws.close()
++'''
++
++
++def _install(home, name):
++    dashboard = home / "plugins" / name / "dashboard"
++    dashboard.mkdir(parents=True)
++    (dashboard / "manifest.json").write_text(json.dumps({"name": name, "api": "plugin_api.py"}))
++    (dashboard / "plugin_api.py").write_text(_PLUGIN_API)
++    (dashboard / "index.js").write_text("export {}\n")
++    return dashboard / "IMPORTED"
++
++
++def _plugins(home, *, enabled=(), disabled=(), isolation="in_process"):
++    (home / "config.yaml").write_text(json.dumps({"plugins": {
++        "enabled": list(enabled), "disabled": list(disabled), "isolation": isolation}}))
++
++
++def listed(daemon):
++    """The dashboard plugins the secondary profile's ticket is offered."""
++    return {p["name"] for p in daemon.client.get("/api/dashboard/plugins", headers=daemon.beta_ticket()).json()}
++
++
++@pytest.fixture
++def daemon(_isolate_hermes_home, monkeypatch):
++    """The dashboard app as a multiplexing gateway serves it: the launch home plus profile ``beta``."""
++    from starlette.testclient import TestClient
++
++    import tui_gateway.launch_profile_policy as launch_policy
++    from agent.secret_scope import is_multiplex_active, set_multiplex_active
++    from hermes_cli import profiles
++    from hermes_cli.plugin_host import PluginHost
++    from gateway.runtime_bootstrap import TicketStore
++    from gateway.session_authorities import SessionAuthorities
++    from hermes_constants import get_hermes_home
++
++    launch = get_hermes_home().resolve()
++    beta = launch / "profiles" / "beta"
++    beta.mkdir(parents=True)
++    authorities = SessionAuthorities(launch, multiplexed=True)
++    for home in (launch, beta):
++        authorities.add(home, SimpleNamespace(profile_id=str(home), instance_id="daemon"))
++    store = TicketStore("daemon", authorities.profile_ids())
++    runner = SimpleNamespace(
++        session_authorities=authorities, session_ticket_store=store, _draining=False,
++        session_runtime_descriptor={"state": "ready", "instance_id": "daemon",
++                                    "served_profiles": authorities.served_profiles()})
++    monkeypatch.setattr(web_server.app.state, "gateway_runner", runner, raising=False)
++    monkeypatch.setattr(launch_policy, "_snapshot", None)
++    monkeypatch.setattr(profiles, "_get_default_hermes_home", lambda: launch)
++    monkeypatch.setattr(profiles, "_get_profiles_root", lambda: launch / "profiles")
++    hosted = []
++
++    def asgi_request(host, plugin, dashboard_dir, *_request):
++        hosted.append(plugin)
++        return {"status": 200, "headers": [], "body": b'{"hosted": true}'}
++
++    monkeypatch.setattr(PluginHost, "asgi_request", asgi_request)
++    multiplexed, routes, modules = is_multiplex_active(), list(web_server.app.router.routes), set(sys.modules)
++    web_server._dashboard_plugins_cache = None
++
++    async def loopback_peer(scope, receive, send):
++        # GatewayRuntimeAPI records the socket peer before any proxy middleware; native tickets need loopback.
++        scope["hermes.gateway_socket_peer"] = ("127.0.0.1", 50000)
++        await web_server.app(scope, receive, send)
++
++    client = TestClient(loopback_peer)
++    try:
++        yield SimpleNamespace(
++            client=client, launch=launch, beta=beta, hosted=hosted,
++            owner={web_server._SESSION_HEADER_NAME: web_server._SESSION_TOKEN},
++            beta_ticket=lambda: {"X-Hermes-Gateway-Ticket": store.mint(
++                profile_id=str(beta), subject="desktop", purpose="native-http")})
++    finally:
++        web_server.app.router.routes[:] = routes
++        web_server._dashboard_plugins_cache = None
++        for name in set(sys.modules) - modules:
++            if name.startswith("hermes_dashboard_plugin_"):
++                del sys.modules[name]
++        set_multiplex_active(multiplexed)
++
++
++def test_disabled_plugin_refuses_new_websocket_connections(daemon):
++    """PLG-8: disabling a plugin at runtime closes its websocket routes to new connections, and an
++    unauthenticated caller still cannot tell a disabled plugin from a refused credential."""
++    _install(daemon.launch, "socket-probe")
++    _plugins(daemon.launch, enabled=["socket-probe"])
++    assert daemon.client.get("/api/plugins/socket-probe/ping", headers=daemon.owner).status_code == 200
++    events = "/api/plugins/socket-probe/events"
++    with daemon.client.websocket_connect(f"{events}?token={web_server._SESSION_TOKEN}") as ws:
++        assert ws.receive_text() == "hello"
++    with pytest.raises(WebSocketDisconnect) as no_credential, daemon.client.websocket_connect(events):
++        pass
++
++    _plugins(daemon.launch, enabled=["socket-probe"], disabled=["socket-probe"])
++
++    with pytest.raises(WebSocketDisconnect) as refused, \
++            daemon.client.websocket_connect(f"{events}?token={web_server._SESSION_TOKEN}"):
++        pass
++    with pytest.raises(WebSocketDisconnect) as anonymous, daemon.client.websocket_connect(events):
++        pass
++    assert refused.value.code == anonymous.value.code == no_credential.value.code
++
++
++def test_secondary_ticket_cannot_reach_a_plugin_the_launch_profile_disabled(daemon):
++    """PLG-9: the in-process router and the served files are the launch profile's copy; when the
++    launch profile disables the plugin at runtime a secondary profile's ticket loses both too,
++    whatever that profile's own lists say, and the plugin list stops offering a tab that cannot load."""
++    _install(daemon.launch, "consent-probe")
++    _plugins(daemon.launch, enabled=["consent-probe"])
++    _plugins(daemon.beta, enabled=["consent-probe"])
++    ping, asset = "/api/plugins/consent-probe/ping", "/dashboard-plugins/consent-probe/index.js"
++    assert daemon.client.get(ping, headers=daemon.owner).status_code == 200
++    assert daemon.client.get(ping, headers=daemon.beta_ticket()).status_code == 200
++    assert daemon.client.get(asset, headers=daemon.beta_ticket()).status_code == 200
++    assert "consent-probe" in listed(daemon)
++
++    _plugins(daemon.launch, enabled=["consent-probe"], disabled=["consent-probe"])
++
++    assert daemon.client.get(ping, headers=daemon.owner).status_code == 404
++    assert daemon.client.get(ping, headers=daemon.beta_ticket()).status_code == 404
++    assert daemon.client.get(asset, headers=daemon.beta_ticket()).status_code == 404
++    assert "consent-probe" not in listed(daemon)
++
++
++@pytest.mark.parametrize("isolation", ["in_process", "host"])
++def test_secondary_ticket_never_runs_a_plugin_only_it_enabled(daemon, isolation):
++    """PLG-9 "loses one it enabled": the only copy this server can find is the launch profile's,
++    which the launch profile never enabled, so a secondary profile's consent must neither import it
++    here nor hand it to that profile's plugin host."""
++    imported = _install(daemon.launch, "beta-only")
++    _plugins(daemon.launch)
++    _plugins(daemon.beta, enabled=["beta-only"], isolation=isolation)
++
++    assert daemon.client.get("/api/plugins/beta-only/ping", headers=daemon.beta_ticket()).status_code == 404
++    assert not imported.exists() and daemon.hosted == []
++
++
++def test_hot_mount_keeps_the_launch_profiles_isolation(daemon):
++    """The launch profile runs its plugins in a plugin host; a secondary profile's first request
++    must not import the launch copy into this process because that profile's own config says
++    in-process."""
++    imported = _install(daemon.launch, "iso-probe")
++    _plugins(daemon.launch, enabled=["iso-probe"], isolation="host")
++    _plugins(daemon.beta, enabled=["iso-probe"])
++
++    assert daemon.client.get("/api/plugins/iso-probe/ping", headers=daemon.beta_ticket()).json() == {"hosted": True}
++    assert not imported.exists() and daemon.hosted == ["iso-probe"]
++
++
++def test_profile_selector_cannot_run_a_plugin_on_a_profile_that_disabled_it(daemon):
++    """``?profile=`` with the session token binds the selected profile's scope for the handler, so
++    that profile's opt-out holds there exactly as it does for its own ticket, HTTP and WebSocket."""
++    _install(daemon.launch, "q-probe")
++    _plugins(daemon.launch, enabled=["q-probe"])
++    _plugins(daemon.beta, enabled=["q-probe"], disabled=["q-probe"])
++    ping = "/api/plugins/q-probe/ping"
++    assert daemon.client.get(ping, headers=daemon.owner).status_code == 200
++
++    assert daemon.client.get(ping, params={"profile": "beta"}, headers=daemon.owner).status_code == 404
++    events = f"/api/plugins/q-probe/events?token={web_server._SESSION_TOKEN}"
++    with daemon.client.websocket_connect(events) as ws:
++        assert ws.receive_text() == "hello"
++    with pytest.raises(WebSocketDisconnect), daemon.client.websocket_connect(f"{events}&profile=beta"):
++        pass
+diff --git a/tests/hermes_cli/test_plugin_runtime_disable_gate.py b/tests/hermes_cli/test_plugin_runtime_disable_gate.py
+index 42ecd7bbb0a3c..68ac1fef350a5 100644
+--- a/tests/hermes_cli/test_plugin_runtime_disable_gate.py
++++ b/tests/hermes_cli/test_plugin_runtime_disable_gate.py
+@@ -99,8 +99,7 @@ async def test_middleware_blocks_disabled_user_plugin(self):
+         call_next = AsyncMock(return_value=JSONResponse({"ok": True}))
+ 
+         with patch.object(web_server, "_get_dashboard_plugins", return_value=[fake_plugin]), \
+-             patch("hermes_cli.plugins_cmd._get_enabled_set", return_value={"hot"}), \
+-             patch("hermes_cli.plugins_cmd._get_disabled_set", return_value={"hot"}):
++             patch("hermes_cli.web_server_dashboard._plugin_enable_sets_here", return_value=({"hot"}, {"hot"})):
+             response = await web_server._plugin_api_runtime_gate(request, call_next)
+ 
+         assert response.status_code == 404
+@@ -150,8 +149,7 @@ async def test_middleware_unknown_plugin_defaults_to_user_blocks(self):
+         call_next = AsyncMock(return_value=JSONResponse({"ok": True}))
+ 
+         with patch.object(web_server, "_get_dashboard_plugins", return_value=[]), \
+-             patch("hermes_cli.plugins_cmd._get_enabled_set", return_value=set()), \
+-             patch("hermes_cli.plugins_cmd._get_disabled_set", return_value=set()):
++             patch("hermes_cli.web_server_dashboard._plugin_enable_sets_here", return_value=(set(), set())):
+             response = await web_server._plugin_api_runtime_gate(request, call_next)
+ 
+         assert response.status_code == 404
+@@ -179,8 +177,7 @@ async def test_middleware_blocks_disabled_plugin_for_native_ticket_request(self)
+         call_next = AsyncMock(return_value=JSONResponse({"ok": True}))
+ 
+         with patch.object(web_server, "_get_dashboard_plugins", return_value=[{"name": "hot", "source": "user"}]), \
+-             patch("hermes_cli.plugins_cmd._get_enabled_set", return_value={"hot"}), \
+-             patch("hermes_cli.plugins_cmd._get_disabled_set", return_value={"hot"}):
++             patch("hermes_cli.web_server_dashboard._plugin_enable_sets_here", return_value=({"hot"}, {"hot"})):
+             response = await web_server._plugin_api_runtime_gate(request, call_next)
+ 
+         assert response.status_code == 404
+@@ -208,22 +205,14 @@ def test_bundled_asset_returns_404_when_disabled(self, test_client, tmp_path, mo
+ 
+         with patch.object(web_server, "_get_dashboard_plugins", return_value=[fake_plugin]):
+             # Sanity: asset is served when not disabled.
+-            with patch(
+-                "hermes_cli.plugins_cmd._get_enabled_set", return_value=set()
+-            ), patch(
+-                "hermes_cli.plugins_cmd._get_disabled_set", return_value=set()
+-            ):
++            with patch("hermes_cli.web_server_dashboard._plugin_enable_sets_here", return_value=(set(), set())):
+                 resp = test_client.get("/dashboard-plugins/bundledx/dist/index.js")
+                 assert resp.status_code == 200, (
+                     "Sanity: bundled plugin asset should be served when not disabled"
+                 )
+ 
+             # Disable it.
+-            with patch(
+-                "hermes_cli.plugins_cmd._get_enabled_set", return_value=set()
+-            ), patch(
+-                "hermes_cli.plugins_cmd._get_disabled_set", return_value={"bundledx"}
+-            ):
++            with patch("hermes_cli.web_server_dashboard._plugin_enable_sets_here", return_value=(set(), {"bundledx"})):
+                 resp = test_client.get("/dashboard-plugins/bundledx/dist/index.js")
+                 assert resp.status_code == 404, (
+                     "Disabled bundled plugin asset must return 404"
+diff --git a/tests/hermes_cli/test_web_server.py b/tests/hermes_cli/test_web_server.py
+index 2538c63951728..97b41faa8c031 100644
+--- a/tests/hermes_cli/test_web_server.py
++++ b/tests/hermes_cli/test_web_server.py
+@@ -4839,11 +4839,11 @@ def _setup(self, monkeypatch, _isolate_hermes_home, _install_example_plugin):
+         monkeypatch.setattr(profiles, "_get_default_hermes_home", lambda: default_home)
+         monkeypatch.setattr(profiles, "_get_profiles_root", lambda: profiles_root)
+ 
+-        # Named profile B: a live profile (``.env`` is both an identity marker and the
+-        # secret source) with its OWN value for the probe key.
+-        worker_home = profiles_root / "workerb"
+-        worker_home.mkdir(parents=True, exist_ok=True)
++        # Named profile B: a live profile with its OWN probe key value in ``.env`` (also its identity
++        # marker); ``?profile=`` runs the plugin on B, so B has enabled it too (#134889).
++        (worker_home := profiles_root / "workerb").mkdir(parents=True, exist_ok=True)
+         (worker_home / ".env").write_text(f"{self._PROBE_KEY}=sk-workerb\n", encoding="utf-8")
++        (worker_home / "config.yaml").write_text("plugins:\n  enabled: [example]\n", encoding="utf-8")
+ 
+         # Launch profile A: an env-only credential (systemd ``Environment=`` style), frozen
+         # into the launch scope when multi-profile hosting activates.

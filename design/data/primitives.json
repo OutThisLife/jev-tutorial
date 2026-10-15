@@ -1,0 +1,336 @@
+[
+ {
+  "file": "action-status.tsx",
+  "exports": [
+   "ActionStatus"
+  ],
+  "doc": "idle \u2192 saving \u2192 done label+icon for action buttons (create / rename / delete\u2026)."
+ },
+ {
+  "file": "actions-menu.tsx",
+  "exports": [
+   "DROPDOWN_KIT",
+   "CONTEXT_KIT",
+   "ActionsMenu",
+   "ActionsContextMenu"
+  ],
+  "doc": "One place to define a set of actions and get BOTH a kebab dropdown and a matching right-click context menu \u2014 so a row's \u22ef menu and its right-click menu never drift. The dropdown and context primitives share an identical item surface (Item / Separator / Sub\u2026), so a caller writes `items={kit => \u2026}` once and hands the render function to both wrappers. // The pattern originated inline in the session row menu; it lives here so every kebab in the app can add right-click parity in one line. A menu flav"
+ },
+ {
+  "file": "avatar-chip.tsx",
+  "exports": [
+   "AvatarChip"
+  ],
+  "doc": "The square identity chip: a brand glyph on a 16% tint of its own color, or a letter monogram when we have no mark for the thing. * One treatment, three surfaces \u2014 messaging platforms, the MCP servers tab, connector cards \u2014 which is one more than it took for the copies to drift. They had already diverged on radius, on glyph size, and on what an unknown name looks like. Size and radius are the caller's call (`className`); everything else is fixed here so a Slack row and a Linear card wear the same"
+ },
+ {
+  "file": "badge.tsx",
+  "exports": [
+   "Badge"
+  ],
+  "doc": "Small status/metadata tag. App radius (not a full pill); tones map to the shared accent/muted/destructive surfaces so badges read consistently. Solid fill \u2014 icon-corner counts (titlebar unread, etc.)."
+ },
+ {
+  "file": "card-stack.tsx",
+  "exports": [
+   "CardStack"
+  ],
+  "doc": ""
+ },
+ {
+  "file": "codicon.tsx",
+  "exports": [
+   "Codicon"
+  ],
+  "doc": "Wrap a codicon as a Tabler-shaped icon for nav rows that expect `IconComponent`."
+ },
+ {
+  "file": "color-swatches.tsx",
+  "exports": [
+   "ColorSwatches"
+  ],
+  "doc": "Shared swatch grid + clear row used by the profile rail and the project dialog, so color picking looks and behaves identically everywhere."
+ },
+ {
+  "file": "confirm-dialog.tsx",
+  "exports": [
+   "ConfirmDialog"
+  ],
+  "doc": "Does the work. Throw to surface an inline error and keep the dialog open. Close as soon as onConfirm resolves \u2014 for optimistic actions that finish in the background. \"Remove from sidebar\" beside \"Delete worktree\"). Closes on click. */ Shared confirmation dialog: opens focused on Confirm, Enter confirms (from anywhere in the dialog), Esc/Cancel/backdrop dismiss. Owns the pending \u2192 done \u2192 close beat and inline error, so callers pass only an async onConfirm that does the work."
+ },
+ {
+  "file": "connector-card.tsx",
+  "exports": [
+   "ConnectorCard",
+   "ConnectorRow",
+   "ConnectorSummary"
+  ],
+  "doc": "Presentation leaf: callers own connector semantics and localized copy. * The card offers; the transcript explains. One shell, one heading, one row per app. A row carries a mark, a name, at most one cue and at most one verb; it never says why. The verb lives in a fixed lane so every row's control is the same box on the same edge. /"
+ },
+ {
+  "file": "connector-logo.tsx",
+  "exports": [
+   "ConnectorLogo"
+  ],
+  "doc": "live. Structural on purpose \u2014 a caller's richer connector type satisfies this without the visual layer knowing that type exists. */"
+ },
+ {
+  "file": "context-menu.tsx",
+  "exports": [
+   "HERMES_CONTEXT_MENU_TRIGGER_ATTR"
+  ],
+  "doc": "`data-slot` is overwritten when the child sets its own `data-slot` (status bar footer); this attribute is not. */"
+ },
+ {
+  "file": "copy-button.tsx",
+  "exports": [
+   "CopyButton"
+  ],
+  "doc": ""
+ },
+ {
+  "file": "decode-text.tsx",
+  "exports": [
+   "DECODE_SCRAMBLE_CHARS",
+   "DecodeText"
+  ],
+  "doc": "DecodeText \u2014 the \"CONNECTING\" scramble-decode effect as a reusable primitive (extracted from gateway-connecting-overlay.tsx; same mechanics): * - Even-weight mono ascii charset so cycling glyphs never jump width (matches the nousnet-web download-button decode effect). - Decode resolves half a character per 45ms tick; when fully resolved it holds for 16 ticks, then (in loop mode) replays. - The first `prefix` characters NEVER scramble \u2014 split at render level so no timer logic (even a stale HMR on"
+ },
+ {
+  "file": "diff-count.tsx",
+  "exports": [
+   "AnimatedInt",
+   "DiffCount"
+  ],
+  "doc": "Snappy spring \u2014 fast transitions per the design. A single integer that springs to its value via Motion (renders the motion value straight to the DOM, no per-frame React re-render). It initialises AT its value, so mounting/navigating shows it instantly \u2014 only a real change to the number (a live edit) springs it up/down. Switching threads in the same worktree (same numbers) therefore doesn't animate."
+ },
+ {
+  "file": "disclosure-caret.tsx",
+  "exports": [
+   "DisclosureCaret"
+  ],
+  "doc": "Chrome caret for collapsible sections: points right when closed (\u25b6), rotates to point down (\u25bc) when open. Override `className` to layer hover/opacity styling; twMerge resolves transition conflicts."
+ },
+ {
+  "file": "drop-affordance.tsx",
+  "exports": [
+   "DROP_SHEET_CLASS",
+   "DROP_SHEET_BLUR_CLASS"
+  ],
+  "doc": "Shared drag-and-drop visual language \u2014 ONE dashed accent sheet, used by every drop affordance (the composer file/session overlay, the layout zone targets) so \"you can drop here\" reads identically everywhere. / The sheet: a dashed region marking where a drop would land."
+ },
+ {
+  "file": "empty-state.tsx",
+  "exports": [
+   "EmptyState"
+  ],
+  "doc": "Canonical centered empty state (title + description). The default for \"no results / nothing here yet\" page bodies. For richer master-detail lists that want an icon + action, use PanelEmpty (overlays/panel); the file-tree's inline uppercase error state is its own deliberately-distinct treatment."
+ },
+ {
+  "file": "error-state.tsx",
+  "exports": [
+   "ErrorIcon",
+   "ErrorBanner",
+   "ErrorState"
+  ],
+  "doc": "The single canonical error glyph (codicon's filled error mark). Use this everywhere an error is surfaced (boundaries, dialogs, banners) so failures read identically \u2014 one icon, one color, no background chip."
+ },
+ {
+  "file": "fade-scroll.tsx",
+  "exports": [
+   "FadeScroll"
+  ],
+  "doc": "How much of a clipped edge the gradient eats."
+ },
+ {
+  "file": "fade-text.tsx",
+  "exports": [
+   "FadeText"
+  ],
+  "doc": "Width of the fade region on the trailing edge. Accepts any CSS length. Defaults to 3rem so long strings clearly trail off \u2014 short enough to preserve readable content, long enough to feel like a deliberate fade rather than a clipped ellipsis. / Single-line text that fades out instead of truncating with an ellipsis. * Uses an inline mask-image so the fade resolves against whatever the parent background is \u2014 no need to know the surface color, no after-pseudo overlap. The mask is only applied when t"
+ },
+ {
+  "file": "fan-menu.tsx",
+  "exports": [
+   "FanMenu"
+  ],
+  "doc": "A toggle that is ON. Solid primary disc, so it reads from across the room. / active?: boolean disabled?: boolean onSelect: () => void } export interface FanMenuProps { / The always-visible control. Hovering or focusing it fans `items` out. / hub: FanMenuItem & { className?: string } items: readonly FanMenuItem[] direction?: FanDirection / Accessible name for the fanned group. / label: string / Gap between discs, px. Discs are the hub's measured size; the step between them is that size plus this."
+ },
+ {
+  "file": "favicon.tsx",
+  "exports": [
+   "Favicon"
+  ],
+  "doc": "A site's icon, resolved the thorough way. * The work happens in the main process (`electron/favicon.ts`): read the page, collect every declared `<link rel=\"icon\">` and web-app-manifest icon, rank them, then fall back to the well-known paths. None of that is reachable from here \u2014 cross-origin HTML is unreadable under CORS \u2014 so this component is just the request, the wait, and the placeholder. * `fallback` holds the box before and after: a spinner marks the lookup, and a site with no readable icon"
+ },
+ {
+  "file": "field.tsx",
+  "exports": [
+   "Field",
+   "FieldHint"
+  ],
+  "doc": "Shared form-field primitive for dialog forms: a label stacked above its control, with an optional inline \"(optional)\" tag. Pair with FieldHint for help text below the control. This is the single field language for every form dialog (cron, webhooks, profiles, \u2026) \u2014 don't hand-roll label+control stacks or reach for the settings-surface ListRow inside a dialog. Stack Fields in a `grid gap-4` form; pair two across with `grid items-start gap-4 sm:grid-cols-2`."
+ },
+ {
+  "file": "file-type-icon.tsx",
+  "exports": [
+   "FileTypeIcon"
+  ],
+  "doc": "A code-fence language tag (e.g. `ts`, `json`). Used when no `path`. / language?: string / A file path or bare name; its extension selects the icon. Wins over `language`. / path?: string } / Icon for a file or code language, resolved through the one mapping shared with code blocks (`codiconForFilename` / `codiconForLanguage`). Renders via `ToolIcon`, so it uses a filled glyph when one exists and falls back to the outline codicon font otherwise. Pass a `path` for file rows or a `language` for fenc"
+ },
+ {
+  "file": "generate-button.tsx",
+  "exports": [
+   "GenerateButton"
+  ],
+  "doc": "True while a generation is in flight. Start a generation. generating (for one-shots that can't be cancelled). */ Tooltip + aria label at rest (and while generating if no `generatingLabel`). Tooltip while generating (e.g. \"Stop\" with cancel, \"Generating\u2026\" without). commit-message box and the new-project idea field so they stay one pattern. Sparkle \u2192 click generates; with `onCancel`, a Stop square appears mid-run; without it, the sparkle spins until the one-shot resolves. */"
+ },
+ {
+  "file": "glyph-spinner.tsx",
+  "exports": [
+   "GlyphSpinner"
+  ],
+  "doc": "The two custom properties `glyph-spinner.css` reads off the strip to size `steps()` and the cycle duration. Naming them in a type, rather than casting the inline style with a bare `as CSSProperties`, makes a typo in a property name a compile error instead of a silently dead declaration that falls back to the braille defaults at runtime."
+ },
+ {
+  "file": "highlight-matches.tsx",
+  "exports": [
+   "HighlightMatches"
+  ],
+  "doc": "Emphasize every case-insensitive occurrence of `query` inside `text` \u2014 the \"why is this row in my filtered list\" affordance for searchable pickers. Renders semantic `<mark>`s (screen readers announce them as highlighted) restyled to the accent token instead of the browser's yellow slab, so the emphasis reads as text hierarchy, not a highlighter pen. * The query must mirror the surface's OWN filter semantics, or the emphasis lies about why a row matched: - literal matching by default, including p"
+ },
+ {
+  "file": "loader.tsx",
+  "exports": [
+   "LOADER_TYPES",
+   "Loader"
+  ],
+  "doc": ""
+ },
+ {
+  "file": "log-view.tsx",
+  "exports": [
+   "LogView"
+  ],
+  "doc": "Shared raw-log viewer: no bg, hairline border, tight padding, small mono. One style everywhere we surface logs. Pass a max-h-* via className. Selectable by default \u2014 logs exist to be read and copied."
+ },
+ {
+  "file": "pane-tab.tsx",
+  "exports": [
+   "PANE_TAB_STRIP_LINE_LEFT",
+   "PANE_TAB_STRIP_LINE_RIGHT",
+   "PaneTab",
+   "PaneTabLabel",
+   "PaneTabStrip",
+   "PaneStripGlyph"
+  ],
+  "doc": "Inset stroke for a vertical tab rail \u2014 content-facing edge."
+ },
+ {
+  "file": "profile-glyph.tsx",
+  "exports": [
+   "ProfileGlyph"
+  ],
+  "doc": "has no color of its own and an initial would read as just another named profile); every other profile is a soft tint of its color carrying its initial. Presentational \u2014 callers resolve the color from `$profileColors`. */"
+ },
+ {
+  "file": "progress.tsx",
+  "exports": [
+   "Progress"
+  ],
+  "doc": "Completion as a 0\u20131 fraction; clamped. Ignored when `indeterminate`. / value?: number / No known endpoint \u2014 animate instead of showing a fixed width. / indeterminate?: boolean / Use the continuous sliding animation for the indeterminate state (the pet hatch look) instead of the default pulse. No effect when determinate. / animated?: boolean / Swap the fill to the destructive color for error / over-limit states. / destructive?: boolean size?: keyof typeof TRACK_HEIGHT / Override the fill color/sh"
+ },
+ {
+  "file": "sandboxed-frame.tsx",
+  "exports": [
+   "SANDBOXED_FRAME_DEFAULT_SANDBOX",
+   "SandboxedFrame"
+  ],
+  "doc": "has an OPAQUE origin (no reach into the app, its storage, or the bridge). */"
+ },
+ {
+  "file": "sanitized-input.tsx",
+  "exports": [
+   "SanitizedInput"
+  ],
+  "doc": "A formatter from `@/lib/sanitize` (gitRef, slug, \u2026) run on every keystroke. An <Input> that can only ever hold a valid value: every keystroke is run through `sanitize`, so callers never have to validate-then-reject (a space in a branch name becomes \"-\" as you type instead of erroring at submit)."
+ },
+ {
+  "file": "search-field.tsx",
+  "exports": [
+   "SearchField"
+  ],
+  "doc": "Data-driven placeholder suggestions (\"Try \\u201ccreative\\u201d\") \u2014 one is picked at random per mount, the nudge that search understands more than names. Falls back to `placeholder` when absent/empty. / Shared search field used everywhere (sessions sidebar, pages, overlays, command center, cron). No box \u2014 borderless until focus, then an underline. Rests at low opacity until focused or filled. Width/placement come from `containerClassName`. /"
+ },
+ {
+  "file": "segmented-control.tsx",
+  "exports": [
+   "SegmentedControl"
+  ],
+  "doc": "Dims the whole track and blocks selection (e.g. gated behind a prerequisite). / disabled?: boolean } / Grouped one-row toggle used for small mutually-exclusive choices (color mode, tool-call display, usage period, etc.). Flat by design \u2014 no per-option borders, just a tinted track with a raised active pill."
+ },
+ {
+  "file": "setup-field-list.tsx",
+  "exports": [
+   "SetupFieldList"
+  ],
+  "doc": ""
+ },
+ {
+  "file": "setup-form-dialog.tsx",
+  "exports": [
+   "SetupFormDialog"
+  ],
+  "doc": ""
+ },
+ {
+  "file": "slider.tsx",
+  "exports": [
+   "Slider"
+  ],
+  "doc": "The one range control: a hairline track in the app's stroke tint with the native thumb in the primary accent. Settings rows compose it beside a readout or inside a labelled group; nothing hand-rolls `type=\"range\"`."
+ },
+ {
+  "file": "split-button.tsx",
+  "exports": [
+   "SplitButton"
+  ],
+  "doc": "The id of the action the primary button runs (the user's current default). / value: string / Picking from the menu changes the default (so the next primary click repeats it). / onValueChange: (id: string) => void / Run an action by id (primary click or menu pick both call this). / onTrigger: (id: string) => void disabled?: boolean className?: string / Icon shown on the primary button only (e.g. a \u2713 for Commit). / primaryIcon?: ReactNode variant?: VariantProps<typeof buttonVariants>['variant'] si"
+ },
+ {
+  "file": "status-pulse.tsx",
+  "exports": [
+   "StatusPulse"
+  ],
+  "doc": "One pause controller + one period timer shared by every StatusPulse instance. A sidebar can show dozens of pulsing dots at once; per-instance controllers would mean N\u00d7(document/window/bridge) listeners and N unsynchronized 5s wakes. Ref-counted: the controller and timer exist only while at least one pulse is mounted, and all pulses play in one aligned wake so the renderer sleeps between beats. Minimized/hidden: cancel in-flight animations so the compositor can sleep immediately instead of finish"
+ },
+ {
+  "file": "tab-dropdown.tsx",
+  "exports": [
+   "TabDropdown",
+   "ResponsiveTabs"
+  ],
+  "doc": "A count badge beside a tab label. `null` = still loading (pulsing chip, not a fake 0); numbers render compact; strings pass through; `undefined` = no badge."
+ },
+ {
+  "file": "title-menu-trigger.tsx",
+  "exports": [
+   "TitleMenuTrigger"
+  ],
+  "doc": "Compact \"Label \u25be\" chrome trigger. Domain-agnostic \u2014 drop in as the child of `DropdownMenuTrigger asChild` (or any asChild menu trigger). Sessions, projects, filters, etc. own their menus; this only owns the trigger look. /"
+ },
+ {
+  "file": "tool-icon.tsx",
+  "exports": [
+   "ToolIcon"
+  ],
+  "doc": "Solid (filled) glyphs for in-thread tool rows. Codicons are an outline icon *font*, so an outline glyph has no separate fillable region \u2014 a filled look can't be derived from it (stroke-thickening just bolds the outline). To get the Cursor-style filled tool icons we render dedicated solid SVG paths, keyed by the same names used in `TOOL_META` (tool-fallback-model.ts). // Paths are Phosphor Icons (MIT) \"fill\" weight, 256\u00d7256 viewBox. Inlining the path data mirrors the existing precedent in `direct"
+ },
+ {
+  "file": "zoomable.tsx",
+  "exports": [
+   "Zoomable"
+  ],
+  "doc": "Inline content; also the default full-view content. Full-view content, if it should differ from the inline version."
+ }
+]

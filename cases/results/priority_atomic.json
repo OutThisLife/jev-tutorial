@@ -1,0 +1,1817 @@
+{
+ "rows": [
+  {
+   "number": 139190,
+   "title": "[Bug]: Desktop queue panel shows the previous session's queued prompt in a new chat \u2014 display-only, storage binding correct",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.05,
+    "security": 0.05,
+    "cannot_start": 0.07,
+    "no_workaround": 0.28,
+    "cosmetic": 0.46,
+    "narrow": 0.38
+   },
+   "ms": 238,
+   "cost": 4.9182e-05
+  },
+  {
+   "number": 139189,
+   "title": "[Bug]: Desktop: pending clarify card vanishes on session re-entry \u2014 turn strands unanswerable until stopped, renders \"Result unavailable\"",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.12,
+    "security": 0.03,
+    "cannot_start": 0.14,
+    "no_workaround": 0.45,
+    "cosmetic": 0.03,
+    "narrow": 0.41
+   },
+   "ms": 206,
+   "cost": 4.5696e-05
+  },
+  {
+   "number": 139183,
+   "title": "[Bug]: SenseNova Provider Issues \u2014 Follow-up HTTP 400 and Custom Connection Rejects API Key After Saving",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.08,
+    "security": 0.1,
+    "cannot_start": 0.1,
+    "no_workaround": 0.29,
+    "cosmetic": 0.03,
+    "narrow": 0.37
+   },
+   "ms": 302,
+   "cost": 3.9438e-05
+  },
+  {
+   "number": 139179,
+   "title": "[Bug]: A2A inbound silently rejects all peers (403) when bound to 0.0.0.0 and no trusted peers configured",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.03,
+    "security": 0.06,
+    "cannot_start": 0.5,
+    "no_workaround": 0.03,
+    "cosmetic": 0.02,
+    "narrow": 0.28
+   },
+   "ms": 230,
+   "cost": 4.8384e-05
+  },
+  {
+   "number": 139176,
+   "title": "[Bug]: hermes update --check reports \"api.github.com did not answer within 10 seconds\" on a source install when the proxy cold TLS handshake exceeds the hard-coded 10 s ceiling",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.03,
+    "security": 0.03,
+    "cannot_start": 0.14,
+    "no_workaround": 0.21,
+    "cosmetic": 0.02,
+    "narrow": 0.55
+   },
+   "ms": 251,
+   "cost": 5.4558e-05
+  },
+  {
+   "number": 139162,
+   "title": "Gateway fixes (#134889), package 4: messaging bots, cron and Kanban workers",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.28,
+    "security": 0.19,
+    "cannot_start": 0.33,
+    "no_workaround": 0.19,
+    "cosmetic": 0.09,
+    "narrow": 0.31
+   },
+   "ms": 241,
+   "cost": 4.5486e-05
+  },
+  {
+   "number": 139161,
+   "title": "Gateway fixes (#134889), package 3: Ink TUI and Desktop sessions, commands and live events",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.31,
+    "security": 0.14,
+    "cannot_start": 0.33,
+    "no_workaround": 0.17,
+    "cosmetic": 0.11,
+    "narrow": 0.29
+   },
+   "ms": 225,
+   "cost": 4.5612e-05
+  },
+  {
+   "number": 139160,
+   "title": "Gateway fixes (#134889), package 2: session creation, model picks and credentials",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.29,
+    "security": 0.34,
+    "cannot_start": 0.3,
+    "no_workaround": 0.19,
+    "cosmetic": 0.07,
+    "narrow": 0.23
+   },
+   "ms": 223,
+   "cost": 4.5822e-05
+  },
+  {
+   "number": 139158,
+   "title": "Gateway fixes (#134889), package 1: classic CLI",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.29,
+    "security": 0.12,
+    "cannot_start": 0.41,
+    "no_workaround": 0.2,
+    "cosmetic": 0.1,
+    "narrow": 0.25
+   },
+   "ms": 223,
+   "cost": 4.5318e-05
+  },
+  {
+   "number": 139155,
+   "title": "Kanban workers send an empty API key for anthropic_messages providers other than Anthropic (custom providers, MiniMax): `Illegal header value b'Bearer '`",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.12,
+    "cannot_start": 0.29,
+    "no_workaround": 0.2,
+    "cosmetic": 0.01,
+    "narrow": 0.39
+   },
+   "ms": 178,
+   "cost": 4.9644e-05
+  },
+  {
+   "number": 139154,
+   "title": "[Bug]: v0.22.0 \u2014 `hermes` exits immediately with a bare \"Error: invalid_params\" when a configured MCP server is unreachable (gateway session.create rejects config-resolved toolsets)",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.03,
+    "security": 0.04,
+    "cannot_start": 0.87,
+    "no_workaround": 0.27,
+    "cosmetic": 0.02,
+    "narrow": 0.38
+   },
+   "ms": 164,
+   "cost": 4.7964e-05
+  },
+  {
+   "number": 139150,
+   "title": "[Bug]: IRC bot never reconnects after a silent network drop and stays deaf until restart",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.6,
+    "security": 0.03,
+    "cannot_start": 0.51,
+    "no_workaround": 0.31,
+    "cosmetic": 0.01,
+    "narrow": 0.41
+   },
+   "ms": 180,
+   "cost": 4.0656e-05
+  },
+  {
+   "number": 139148,
+   "title": "[Bug]: Discord durable re-authorization ignores platforms.discord.allowed_roles, dropping role-authorized messages with permission_denied",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.15,
+    "security": 0.28,
+    "cannot_start": 0.15,
+    "no_workaround": 0.24,
+    "cosmetic": 0.02,
+    "narrow": 0.23
+   },
+   "ms": 228,
+   "cost": 4.494e-05
+  },
+  {
+   "number": 139138,
+   "title": "Discord/bot-mailbox receipts with status ambiguous from permission_denied are rejected as unknown receipt schema on every gateway scan",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.07,
+    "security": 0.06,
+    "cannot_start": 0.07,
+    "no_workaround": 0.31,
+    "cosmetic": 0.42,
+    "narrow": 0.47
+   },
+   "ms": 286,
+   "cost": 3.3726e-05
+  },
+  {
+   "number": 139135,
+   "title": "[Bug]: Discord async child completes but durable result stays pending and parent does not resume",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.09,
+    "security": 0.04,
+    "cannot_start": 0.09,
+    "no_workaround": 0.25,
+    "cosmetic": 0.02,
+    "narrow": 0.52
+   },
+   "ms": 167,
+   "cost": 4.1202e-05
+  },
+  {
+   "number": 139134,
+   "title": "Plugin registration race: seven platform plugins fail with \"dictionary changed size during iteration\" at startup",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.05,
+    "cannot_start": 0.44,
+    "no_workaround": 0.28,
+    "cosmetic": 0.01,
+    "narrow": 0.62
+   },
+   "ms": 222,
+   "cost": 3.3558e-05
+  },
+  {
+   "number": 139133,
+   "title": "hermes gateway status blocks for minutes in a pending-tail state, and the Desktop error recommends it",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.04,
+    "cannot_start": 0.61,
+    "no_workaround": 0.11,
+    "cosmetic": 0.05,
+    "narrow": 0.41
+   },
+   "ms": 183,
+   "cost": 2.8602e-05
+  },
+  {
+   "number": 139132,
+   "title": "Windows: interrupted source-update auto-repair loops on every launch (sync-stage failures bypass the retry counter; marker reclaim does not clear the pending obligation)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.13,
+    "security": 0.05,
+    "cannot_start": 0.84,
+    "no_workaround": 0.13,
+    "cosmetic": 0.02,
+    "narrow": 0.46
+   },
+   "ms": 168,
+   "cost": 4.6452e-05
+  },
+  {
+   "number": 139125,
+   "title": "Model-switch timeline notice is a hardcoded English 'model changed' \u2014 not localized, and discards the new model/provider the backend already provides",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.37,
+    "security": 0.03,
+    "cannot_start": 0.14,
+    "no_workaround": 0.4,
+    "cosmetic": 0.09,
+    "narrow": 0.07
+   },
+   "ms": 175,
+   "cost": 4.4226e-05
+  },
+  {
+   "number": 139124,
+   "title": "Desktop model picker permanently loses the current-selection checkmark once composer localStorage is dirty \u2014 no self-heal, 'Refresh models' is a dead end, users cannot verify which endpoint receives traffic",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.3,
+    "security": 0.05,
+    "cannot_start": 0.18,
+    "no_workaround": 0.17,
+    "cosmetic": 0.02,
+    "narrow": 0.33
+   },
+   "ms": 158,
+   "cost": 4.5444e-05
+  },
+  {
+   "number": 139123,
+   "title": "fix(plugins): bind the owning profile's secret scope before native plugin registration/background workers",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.14,
+    "security": 0.16,
+    "cannot_start": 0.34,
+    "no_workaround": 0.08,
+    "cosmetic": 0.02,
+    "narrow": 0.34
+   },
+   "ms": 181,
+   "cost": 4.0908e-05
+  },
+  {
+   "number": 139121,
+   "title": "[Bug]: Streaming STT resampler adds samples when 44.1 kHz audio arrives in chunks",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.37,
+    "security": 0.03,
+    "cannot_start": 0.1,
+    "no_workaround": 0.2,
+    "cosmetic": 0.02,
+    "narrow": 0.2
+   },
+   "ms": 165,
+   "cost": 5.0022e-05
+  },
+  {
+   "number": 139104,
+   "title": "Desktop: mouse wheel does not scroll the mcp.json editor in the connector Advanced pane (scrollbar drag only)",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.03,
+    "security": 0.03,
+    "cannot_start": 0.07,
+    "no_workaround": 0.09,
+    "cosmetic": 0.02,
+    "narrow": 0.12
+   },
+   "ms": 203,
+   "cost": 3.5994e-05
+  },
+  {
+   "number": 139103,
+   "title": "[Bug]: Hermes Desktop fails to launch from Ubuntu app launcher",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.03,
+    "security": 0.03,
+    "cannot_start": 0.58,
+    "no_workaround": 0.07,
+    "cosmetic": 0.02,
+    "narrow": 0.28
+   },
+   "ms": 194,
+   "cost": 3.549e-05
+  },
+  {
+   "number": 139102,
+   "title": "Reactions fail with 'unknown method: message.react' on all ticketed WS connections (desktop app included) \u2014 authority dispatch never registered message.react",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.05,
+    "security": 0.05,
+    "cannot_start": 0.1,
+    "no_workaround": 0.42,
+    "cosmetic": 0.01,
+    "narrow": 0.03
+   },
+   "ms": 197,
+   "cost": 4.7628e-05
+  },
+  {
+   "number": 139099,
+   "title": "Desktop updater: stable channel always offers v0.22.2 to git installs on main, then fails with exit 1 (refusal surfaced as 'Failed to update')",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.07,
+    "security": 0.03,
+    "cannot_start": 0.08,
+    "no_workaround": 0.13,
+    "cosmetic": 0.03,
+    "narrow": 0.52
+   },
+   "ms": 191,
+   "cost": 5.0778e-05
+  },
+  {
+   "number": 139091,
+   "title": "[Bug]: stable update 10s merge-base probe times out even when both commits are local (partial clone, commit-graph writes disabled)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.03,
+    "cannot_start": 0.15,
+    "no_workaround": 0.06,
+    "cosmetic": 0.02,
+    "narrow": 0.56
+   },
+   "ms": 186,
+   "cost": 4.9098e-05
+  },
+  {
+   "number": 139088,
+   "title": "[Bug]: on Windows, an update fails when the live Hermes holds a tools entry directory (WinError 5 on rename)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.03,
+    "cannot_start": 0.16,
+    "no_workaround": 0.24,
+    "cosmetic": 0.02,
+    "narrow": 0.37
+   },
+   "ms": 164,
+   "cost": 4.2672e-05
+  },
+  {
+   "number": 139087,
+   "title": "[Bug]: the update check reads no credentials when its environment doesn't carry <hermes home>/.env \u2014 anonymous quota, 403s",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.03,
+    "security": 0.12,
+    "cannot_start": 0.08,
+    "no_workaround": 0.19,
+    "cosmetic": 0.02,
+    "narrow": 0.33
+   },
+   "ms": 187,
+   "cost": 4.3008e-05
+  },
+  {
+   "number": 139086,
+   "title": "[Bug]: hermes update aborts the whole run on a single transient git fetch failure",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.03,
+    "cannot_start": 0.13,
+    "no_workaround": 0.21,
+    "cosmetic": 0.02,
+    "narrow": 0.24
+   },
+   "ms": 138,
+   "cost": 3.9858e-05
+  },
+  {
+   "number": 139085,
+   "title": "[Bug]: a gateway worker under a Python 3.14 runtime inherits a legacy hermes-agent/venv (cp311) site-packages from sys.path and dies on pydantic_core",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.04,
+    "cannot_start": 0.79,
+    "no_workaround": 0.16,
+    "cosmetic": 0.01,
+    "narrow": 0.81
+   },
+   "ms": 158,
+   "cost": 4.3554e-05
+  },
+  {
+   "number": 139084,
+   "title": "[Bug]: the Windows named-pipe peer check refuses a short-lived ensure child \u2014 OpenProcess can't read an exited peer's SID, so boot-time auto-starts are rejected",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.05,
+    "security": 0.34,
+    "cannot_start": 0.41,
+    "no_workaround": 0.31,
+    "cosmetic": 0.02,
+    "narrow": 0.17
+   },
+   "ms": 182,
+   "cost": 4.7544e-05
+  },
+  {
+   "number": 139083,
+   "title": "[Bug]: gateway ensure can never verify an installed Scheduled Task on a localized Windows host (cp936 XML/CSV + XML default elision)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.09,
+    "cannot_start": 0.64,
+    "no_workaround": 0.14,
+    "cosmetic": 0.02,
+    "narrow": 0.35
+   },
+   "ms": 157,
+   "cost": 4.9728e-05
+  },
+  {
+   "number": 139080,
+   "title": "[Bug]: profile-scoped /api/status reports a multiplexed profile's Telegram as disconnected (Desktop shows \"telegram down\")",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.05,
+    "security": 0.05,
+    "cannot_start": 0.14,
+    "no_workaround": 0.22,
+    "cosmetic": 0.06,
+    "narrow": 0.73
+   },
+   "ms": 716,
+   "cost": 4.3806e-05
+  },
+  {
+   "number": 139073,
+   "title": "[Bug] Chinese voice chat is unusable: STT hard-locked to language=en with no auto-detect, and TTS defaults to an en-US voice for Chinese text",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.03,
+    "cannot_start": 0.25,
+    "no_workaround": 0.1,
+    "cosmetic": 0.02,
+    "narrow": 0.04
+   },
+   "ms": 160,
+   "cost": 4.4646e-05
+  },
+  {
+   "number": 139065,
+   "title": "Bedrock Converse/ConverseStream: plugin-registered tool schemas with top-level allOf/anyOf/oneOf fail ValidationException",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.04,
+    "cannot_start": 0.58,
+    "no_workaround": 0.2,
+    "cosmetic": 0.02,
+    "narrow": 0.39
+   },
+   "ms": 170,
+   "cost": 4.6578e-05
+  },
+  {
+   "number": 139062,
+   "title": "execute_code: a nested tool call outlives its cell and applies a protected-file write after the cell timed out",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.67,
+    "security": 0.63,
+    "cannot_start": 0.13,
+    "no_workaround": 0.3,
+    "cosmetic": 0.02,
+    "narrow": 0.47
+   },
+   "ms": 177,
+   "cost": 4.7964e-05
+  },
+  {
+   "number": 139061,
+   "title": "[Bug]: Pasting an image fails with invalid_params in a non-default profile (attachment staged in the default profile's cache)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.11,
+    "security": 0.11,
+    "cannot_start": 0.09,
+    "no_workaround": 0.25,
+    "cosmetic": 0.02,
+    "narrow": 0.45
+   },
+   "ms": 159,
+   "cost": 5.292e-05
+  },
+  {
+   "number": 139060,
+   "title": "[Bug]: Multiplexed gateway: a secondary profile's Desktop chat runs the profile default instead of its model pick once the primary profile has a local session",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.14,
+    "security": 0.05,
+    "cannot_start": 0.36,
+    "no_workaround": 0.16,
+    "cosmetic": 0.01,
+    "narrow": 0.64
+   },
+   "ms": 196,
+   "cost": 4.8132e-05
+  },
+  {
+   "number": 139059,
+   "title": "Bug report \u2014 Hermes desktop: UI freezes / stops accepting clicks while the agent drives an iPhone via Device Hub (recovers after minimize+restore)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.04,
+    "cannot_start": 0.58,
+    "no_workaround": 0.09,
+    "cosmetic": 0.02,
+    "narrow": 0.56
+   },
+   "ms": 172,
+   "cost": 3.801e-05
+  },
+  {
+   "number": 139049,
+   "title": "`hermes -c` / `--resume latest` lands on empty launch stubs in 0.22.1 \u2014 empty rows are never discarded and gateway-hosted chats are invisible to the CLI's MRU lookup",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.21,
+    "security": 0.06,
+    "cannot_start": 0.2,
+    "no_workaround": 0.13,
+    "cosmetic": 0.02,
+    "narrow": 0.13
+   },
+   "ms": 163,
+   "cost": 4.9854e-05
+  },
+  {
+   "number": 139048,
+   "title": "[Bug] Orphan gateway_routing entries can never be pruned, and the Desktop 404 delete failure never names its target",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.49,
+    "security": 0.07,
+    "cannot_start": 0.39,
+    "no_workaround": 0.55,
+    "cosmetic": 0.03,
+    "narrow": 0.28
+   },
+   "ms": 206,
+   "cost": 4.8048e-05
+  },
+  {
+   "number": 139045,
+   "title": "[Bug]: every plain message to the default profile is refused with RuntimeStoreError(invalid_params) when gateway.multiplex_profiles is true (v0.22.1)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.05,
+    "security": 0.09,
+    "cannot_start": 0.23,
+    "no_workaround": 0.4,
+    "cosmetic": 0.02,
+    "narrow": 0.39
+   },
+   "ms": 197,
+   "cost": 4.4478e-05
+  },
+  {
+   "number": 139041,
+   "title": "fix(gateway): restart drain waits the full cap on a turn blocked on user approval/clarify while Desktop is refused",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.11,
+    "security": 0.06,
+    "cannot_start": 0.78,
+    "no_workaround": 0.28,
+    "cosmetic": 0.02,
+    "narrow": 0.24
+   },
+   "ms": 166,
+   "cost": 4.5486e-05
+  },
+  {
+   "number": 139040,
+   "title": "[Bug]: /retry from a messaging platform fails with RuntimeStoreError(invalid_params) when multiplex_profiles is on",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.81,
+    "security": 0.06,
+    "cannot_start": 0.24,
+    "no_workaround": 0.25,
+    "cosmetic": 0.02,
+    "narrow": 0.36
+   },
+   "ms": 175,
+   "cost": 4.6536e-05
+  },
+  {
+   "number": 139035,
+   "title": "`hermes chat -q` fails with `GatewayRPCError: invalid_params` (session.create)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.05,
+    "security": 0.07,
+    "cannot_start": 0.24,
+    "no_workaround": 0.2,
+    "cosmetic": 0.03,
+    "narrow": 0.24
+   },
+   "ms": 266,
+   "cost": 4.9308e-05
+  },
+  {
+   "number": 139029,
+   "title": "[Bug]: Kanban managed worker dies with WorkerPersistenceError: synchronous_rpc_on_event_loop",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.19,
+    "security": 0.05,
+    "cannot_start": 0.35,
+    "no_workaround": 0.37,
+    "cosmetic": 0.01,
+    "narrow": 0.34
+   },
+   "ms": 179,
+   "cost": 4.7292e-05
+  },
+  {
+   "number": 139018,
+   "title": "[Bug]: Desktop onboarding with Google AI Studio key keeps OpenRouter base_url \u2192 401 shown as \"Google AI Studio rejected your API key\"",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.09,
+    "security": 0.09,
+    "cannot_start": 0.08,
+    "no_workaround": 0.18,
+    "cosmetic": 0.03,
+    "narrow": 0.12
+   },
+   "ms": 182,
+   "cost": 4.704e-05
+  },
+  {
+   "number": 139017,
+   "title": "[Bug]: Desktop treats messaging-channel sessions as local: WeChat completions count as unread, and opening a WeChat session raises \"Session controls unavailable: stale_generation\" (v0.22.1)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.05,
+    "cannot_start": 0.13,
+    "no_workaround": 0.5,
+    "cosmetic": 0.03,
+    "narrow": 0.17
+   },
+   "ms": 194,
+   "cost": 3.9228e-05
+  },
+  {
+   "number": 139016,
+   "title": "[Bug]: Desktop statusbar context gauge / cache-hit / tokens-per-second never populate on unified-gateway sessions \u2014 session.usage payload shape mismatch (v0.22.1)",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.03,
+    "cannot_start": 0.11,
+    "no_workaround": 0.32,
+    "cosmetic": 0.03,
+    "narrow": 0.09
+   },
+   "ms": 151,
+   "cost": 4.3722e-05
+  },
+  {
+   "number": 139015,
+   "title": "[Bug]: Desktop model picker loses the current-model checkmark on unified-gateway sessions \u2014 session.info carries no provider field (v0.22.1)",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.17,
+    "security": 0.04,
+    "cannot_start": 0.11,
+    "no_workaround": 0.28,
+    "cosmetic": 0.03,
+    "narrow": 0.14
+   },
+   "ms": 180,
+   "cost": 3.4692e-05
+  },
+  {
+   "number": 139013,
+   "title": "[Bug]: Windows gateway identity check can never pass \u2014 RunLevel compared against the schema spelling (element stripped by schtasks), missing <Enabled> read as disabled",
+   "truth": 2,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.21,
+    "cannot_start": 0.78,
+    "no_workaround": 0.57,
+    "cosmetic": 0.02,
+    "narrow": 0.06
+   },
+   "ms": 183,
+   "cost": 4.8174e-05
+  },
+  {
+   "number": 139012,
+   "title": "[Bug]: post-update state.db auto-restore picks the oldest matching snapshot, not the newest \u2014 and prints \"Auto-restore did not complete\" after the live DB has already been replaced",
+   "truth": 2,
+   "f": {
+    "data_loss": 0.81,
+    "security": 0.06,
+    "cannot_start": 0.28,
+    "no_workaround": 0.13,
+    "cosmetic": 0.03,
+    "narrow": 0.3
+   },
+   "ms": 197,
+   "cost": 5.166e-05
+  },
+  {
+   "number": 139011,
+   "title": "[Bug]: blocking heartbeat file touch on the gateway event loop stalls the owner; managed workers die with owner_unavailable",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.12,
+    "security": 0.04,
+    "cannot_start": 0.58,
+    "no_workaround": 0.2,
+    "cosmetic": 0.01,
+    "narrow": 0.22
+   },
+   "ms": 195,
+   "cost": 4.6704e-05
+  },
+  {
+   "number": 139008,
+   "title": "Anthropic \"Current session\" usage shows 100% when real usage is ~1%",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.05,
+    "security": 0.03,
+    "cannot_start": 0.14,
+    "no_workaround": 0.25,
+    "cosmetic": 0.27,
+    "narrow": 0.49
+   },
+   "ms": 195,
+   "cost": 3.5112e-05
+  },
+  {
+   "number": 139002,
+   "title": "[Bug]: Desktop group creation always fails with `invalid_params` \u2014 service only knows own profile",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.06,
+    "cannot_start": 0.08,
+    "no_workaround": 0.03,
+    "cosmetic": 0.01,
+    "narrow": 0.05
+   },
+   "ms": 174,
+   "cost": 4.431e-05
+  },
+  {
+   "number": 138998,
+   "title": "[Bug]: Auto-title requests drop provider auth headers (e.g. `api-key`) \u2014 session titles 401 on header-auth gateways",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.19,
+    "security": 0.08,
+    "cannot_start": 0.11,
+    "no_workaround": 0.29,
+    "cosmetic": 0.02,
+    "narrow": 0.28
+   },
+   "ms": 162,
+   "cost": 4.3722e-05
+  },
+  {
+   "number": 138994,
+   "title": "[Bug]: Unset plugin secret field is invisible in the dark theme (Settings \u25b8 Plugins \u25b8 Agent settings)",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.06,
+    "cannot_start": 0.06,
+    "no_workaround": 0.12,
+    "cosmetic": 0.11,
+    "narrow": 0.28
+   },
+   "ms": 154,
+   "cost": 3.297e-05
+  },
+  {
+   "number": 138992,
+   "title": "[Bug]: Kanban turns run by the profile owner are not finite \u2014 approvals hang for approvals.timeout and the card blocks",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.07,
+    "security": 0.09,
+    "cannot_start": 0.3,
+    "no_workaround": 0.31,
+    "cosmetic": 0.02,
+    "narrow": 0.17
+   },
+   "ms": 172,
+   "cost": 4.4058e-05
+  },
+  {
+   "number": 138990,
+   "title": "Docker image ships no payload `manifest.json`, so every `runtime_command`-spawned action (skill install, MCP install, doctor, backup) dies with \"no dependency environment is committed for this install\"",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.07,
+    "cannot_start": 0.37,
+    "no_workaround": 0.05,
+    "cosmetic": 0.02,
+    "narrow": 0.25
+   },
+   "ms": 166,
+   "cost": 5.1576e-05
+  },
+  {
+   "number": 138985,
+   "title": "[Bug]: kanban per-profile cap never sets capacity_full, so false \"dispatcher stuck\" telemetry persists (PR #131755 head)",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.03,
+    "cannot_start": 0.1,
+    "no_workaround": 0.23,
+    "cosmetic": 0.06,
+    "narrow": 0.24
+   },
+   "ms": 169,
+   "cost": 4.9644e-05
+  },
+  {
+   "number": 138984,
+   "title": "Compaction boundary re-arms read dedup but not the tool guardrail, so the post-compaction re-read is refused",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.19,
+    "security": 0.08,
+    "cannot_start": 0.25,
+    "no_workaround": 0.28,
+    "cosmetic": 0.02,
+    "narrow": 0.22
+   },
+   "ms": 168,
+   "cost": 4.4772e-05
+  },
+  {
+   "number": 138979,
+   "title": "Background review fork inherits the turn's fallback runtime, so a one-off failover keeps billing the fallback provider after the turn ends",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.05,
+    "cannot_start": 0.08,
+    "no_workaround": 0.03,
+    "cosmetic": 0.02,
+    "narrow": 0.38
+   },
+   "ms": 180,
+   "cost": 4.1454e-05
+  },
+  {
+   "number": 138974,
+   "title": "Upgrade breaks inherited ACLs on %LOCALAPPDATA%\\hermes\\tools\\* \u2014 desktop backend fails to spawn (\"Access is denied\")",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.21,
+    "security": 0.13,
+    "cannot_start": 0.76,
+    "no_workaround": 0.09,
+    "cosmetic": 0.02,
+    "narrow": 0.27
+   },
+   "ms": 158,
+   "cost": 5.0316e-05
+  },
+  {
+   "number": 138969,
+   "title": "[Bug]: OpenCode Go `hy4-preview` \u2014 the model picker offers it, the session.create gate refuses it (curated-catalog drift)",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.07,
+    "cannot_start": 0.31,
+    "no_workaround": 0.14,
+    "cosmetic": 0.02,
+    "narrow": 0.19
+   },
+   "ms": 168,
+   "cost": 5.0358e-05
+  },
+  {
+   "number": 138964,
+   "title": "[Bug]: Open Setup Guide Link",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.03,
+    "security": 0.03,
+    "cannot_start": 0.08,
+    "no_workaround": 0.31,
+    "cosmetic": 0.07,
+    "narrow": 0.11
+   },
+   "ms": 155,
+   "cost": 2.667e-05
+  },
+  {
+   "number": 138963,
+   "title": "[Bug]: Desktop Bot Mode rewrote 4 profiles' profile.yaml at once, clearing group membership (group: null / groups: []) without a user ungroup",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.94,
+    "security": 0.23,
+    "cannot_start": 0.16,
+    "no_workaround": 0.23,
+    "cosmetic": 0.02,
+    "narrow": 0.28
+   },
+   "ms": 190,
+   "cost": 5.3046e-05
+  },
+  {
+   "number": 138952,
+   "title": "[Bug]: Desktop: changing reasoning effort repeatedly fails with `stale_generation` (\"\u6a21\u578b\u9009\u9879\u66f4\u65b0\u5931\u8d25\") \u2014 retained `session.mutate` keeps a stale `expected_generation`",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.04,
+    "cannot_start": 0.17,
+    "no_workaround": 0.03,
+    "cosmetic": 0.02,
+    "narrow": 0.5
+   },
+   "ms": 184,
+   "cost": 4.8468e-05
+  },
+  {
+   "number": 138945,
+   "title": "[Bug]: Hermes docker no longer start",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.05,
+    "security": 0.04,
+    "cannot_start": 0.87,
+    "no_workaround": 0.28,
+    "cosmetic": 0.04,
+    "narrow": 0.28
+   },
+   "ms": 176,
+   "cost": 3.7548e-05
+  },
+  {
+   "number": 138943,
+   "title": "session_authority._handle crashes with TypeError when a live in-memory session's DB row is deleted \u2014 breaks every session.list call",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.07,
+    "security": 0.08,
+    "cannot_start": 0.59,
+    "no_workaround": 0.26,
+    "cosmetic": 0.02,
+    "narrow": 0.49
+   },
+   "ms": 173,
+   "cost": 4.7166e-05
+  },
+  {
+   "number": 138940,
+   "title": "[Bug]: Background process completion notifications fail delivery to Discord and spin in infinite retry injection loop",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.05,
+    "cannot_start": 0.42,
+    "no_workaround": 0.38,
+    "cosmetic": 0.02,
+    "narrow": 0.25
+   },
+   "ms": 165,
+   "cost": 3.6372e-05
+  },
+  {
+   "number": 138939,
+   "title": "Kanban dispatcher kills worker PID from DB without verifying process identity (PID reuse can hit an unrelated process)",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.15,
+    "security": 0.13,
+    "cannot_start": 0.15,
+    "no_workaround": 0.21,
+    "cosmetic": 0.01,
+    "narrow": 0.28
+   },
+   "ms": 152,
+   "cost": 4.2252e-05
+  },
+  {
+   "number": 138938,
+   "title": "hermes update permanently fails on blob:none partial clone: stable channel probe lazy-fetches and self-deadlocks at its own 10s timeout",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.03,
+    "cannot_start": 0.29,
+    "no_workaround": 0.04,
+    "cosmetic": 0.02,
+    "narrow": 0.63
+   },
+   "ms": 142,
+   "cost": 4.7544e-05
+  },
+  {
+   "number": 138934,
+   "title": "[Bug]: Desktop \u2014 composer queue entries duplicate, cannot be deleted, and reappear minutes after clearing",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.24,
+    "security": 0.05,
+    "cannot_start": 0.13,
+    "no_workaround": 0.19,
+    "cosmetic": 0.02,
+    "narrow": 0.29
+   },
+   "ms": 152,
+   "cost": 4.5066e-05
+  },
+  {
+   "number": 138923,
+   "title": "Public subagent lifecycle re-truncates native summaries and drops spill recovery metadata",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.8,
+    "security": 0.08,
+    "cannot_start": 0.13,
+    "no_workaround": 0.26,
+    "cosmetic": 0.02,
+    "narrow": 0.09
+   },
+   "ms": 229,
+   "cost": 3.7086e-05
+  },
+  {
+   "number": 138915,
+   "title": "Dashboard mutations refused 409 while a gateway owns state.db (bulk actions always fail)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.1,
+    "security": 0.08,
+    "cannot_start": 0.12,
+    "no_workaround": 0.22,
+    "cosmetic": 0.02,
+    "narrow": 0.07
+   },
+   "ms": 177,
+   "cost": 4.7082e-05
+  },
+  {
+   "number": 138914,
+   "title": "session.list crash-loops when a live session's DB row is gone (TypeError in session_authority._handle)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.1,
+    "security": 0.05,
+    "cannot_start": 0.75,
+    "no_workaround": 0.41,
+    "cosmetic": 0.02,
+    "narrow": 0.27
+   },
+   "ms": 206,
+   "cost": 4.4478e-05
+  },
+  {
+   "number": 138913,
+   "title": "Dashboard mutations (delete/rename/pin/model) silently fail on any non-secure origin",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.07,
+    "security": 0.06,
+    "cannot_start": 0.12,
+    "no_workaround": 0.22,
+    "cosmetic": 0.01,
+    "narrow": 0.16
+   },
+   "ms": 158,
+   "cost": 4.8678e-05
+  },
+  {
+   "number": 138912,
+   "title": "[Bug]: adopt_legacy_session drops row['model_config'] provider/base_url/reasoning \u2014 resumed pre-v0.22.1 sessions route model to wrong provider (HTTP 404)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.55,
+    "security": 0.07,
+    "cannot_start": 0.18,
+    "no_workaround": 0.21,
+    "cosmetic": 0.01,
+    "narrow": 0.42
+   },
+   "ms": 157,
+   "cost": 5.5146e-05
+  },
+  {
+   "number": 138908,
+   "title": "[Bug]: groups.log violates its wire contract \u2014 RoomActor is missing profile/display_name/connection_id",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.07,
+    "security": 0.06,
+    "cannot_start": 0.14,
+    "no_workaround": 0.29,
+    "cosmetic": 0.02,
+    "narrow": 0.08
+   },
+   "ms": 148,
+   "cost": 4.6452e-05
+  },
+  {
+   "number": 138906,
+   "title": "[Bug]: Microsoft Store Windows install stuck on Connecting \u2014 ticket bridge passes Python flags to hermes.exe",
+   "truth": 2,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.06,
+    "cannot_start": 0.47,
+    "no_workaround": 0.27,
+    "cosmetic": 0.02,
+    "narrow": 0.15
+   },
+   "ms": 188,
+   "cost": 4.4646e-05
+  },
+  {
+   "number": 138905,
+   "title": "[Bug]: Legacy remote session edits fetch mutation-snapshot locally while PATCH goes to the remote",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.3,
+    "security": 0.51,
+    "cannot_start": 0.15,
+    "no_workaround": 0.25,
+    "cosmetic": 0.02,
+    "narrow": 0.55
+   },
+   "ms": 182,
+   "cost": 4.053e-05
+  },
+  {
+   "number": 138903,
+   "title": "[Bug]: macOS update corrupts dashboard respawn argv and misattributes restart follow-ups",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.13,
+    "security": 0.04,
+    "cannot_start": 0.49,
+    "no_workaround": 0.26,
+    "cosmetic": 0.03,
+    "narrow": 0.27
+   },
+   "ms": 232,
+   "cost": 4.0278e-05
+  },
+  {
+   "number": 138901,
+   "title": "[Bug]: /memory approve|reject|approval refused as unsupported_command on desktop/local sessions \u2014 _CONTROL_ARGUMENTS has no memory entry",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.08,
+    "cannot_start": 0.08,
+    "no_workaround": 0.28,
+    "cosmetic": 0.02,
+    "narrow": 0.07
+   },
+   "ms": 172,
+   "cost": 4.5612e-05
+  },
+  {
+   "number": 138895,
+   "title": "[Bug]: Mattermost text posts refused with invalid_params by native admission (media_urls=None)",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.05,
+    "cannot_start": 0.18,
+    "no_workaround": 0.21,
+    "cosmetic": 0.02,
+    "narrow": 0.08
+   },
+   "ms": 165,
+   "cost": 3.9984e-05
+  },
+  {
+   "number": 138886,
+   "title": "kanban: a running worker cannot hand its task to another profile (assign raises, reassign --reclaim kills the caller, no agent tool)",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.17,
+    "security": 0.08,
+    "cannot_start": 0.34,
+    "no_workaround": 0.53,
+    "cosmetic": 0.02,
+    "narrow": 0.18
+   },
+   "ms": 181,
+   "cost": 4.9728e-05
+  },
+  {
+   "number": 138881,
+   "title": "[bug]: memory setup stringifies list/dict defaults; accepting mnemosyne sync_roles default silently disables capture",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.24,
+    "security": 0.16,
+    "cannot_start": 0.08,
+    "no_workaround": 0.11,
+    "cosmetic": 0.02,
+    "narrow": 0.1
+   },
+   "ms": 162,
+   "cost": 4.4226e-05
+  },
+  {
+   "number": 138879,
+   "title": "Desktop chat model switch fails: session.mutate crashes with AuthError \"provider 'custom' resolved without credentials\" for local-DM sessions of secondary profiles",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.09,
+    "cannot_start": 0.34,
+    "no_workaround": 0.3,
+    "cosmetic": 0.02,
+    "narrow": 0.56
+   },
+   "ms": 164,
+   "cost": 4.5696e-05
+  },
+  {
+   "number": 138878,
+   "title": "[Bug]: TUI can't start or recover its gateway on a source install: gateway_bootstrap.py dies with No module named 'ruamel'",
+   "truth": 2,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.03,
+    "cannot_start": 0.85,
+    "no_workaround": 0.19,
+    "cosmetic": 0.02,
+    "narrow": 0.12
+   },
+   "ms": 220,
+   "cost": 5.2122e-05
+  },
+  {
+   "number": 138873,
+   "title": "Cron run can sit \"waiting for non-streaming API response\" for hours without the inactivity guard ending it",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.07,
+    "security": 0.05,
+    "cannot_start": 0.42,
+    "no_workaround": 0.05,
+    "cosmetic": 0.02,
+    "narrow": 0.37
+   },
+   "ms": 160,
+   "cost": 4.5822e-05
+  },
+  {
+   "number": 138872,
+   "title": "Gateway boot crash: unguarded chmod(0o700) in bot_live_delivery._locked() aborts startup on Windows ACL anomaly",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.15,
+    "cannot_start": 0.86,
+    "no_workaround": 0.08,
+    "cosmetic": 0.01,
+    "narrow": 0.68
+   },
+   "ms": 184,
+   "cost": 4.9224e-05
+  },
+  {
+   "number": 138864,
+   "title": "ctx.dispatch_tool and ctx.call_mcp skip pre_tool_call and tool_execution middleware",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.07,
+    "security": 0.82,
+    "cannot_start": 0.11,
+    "no_workaround": 0.11,
+    "cosmetic": 0.02,
+    "narrow": 0.1
+   },
+   "ms": 190,
+   "cost": 3.2886e-05
+  },
+  {
+   "number": 138863,
+   "title": "[Bug]: cron .sh scripts that call python get the bare store Python since v0.21.6 (store-first PATH from pm.activate())",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.04,
+    "cannot_start": 0.2,
+    "no_workaround": 0.16,
+    "cosmetic": 0.02,
+    "narrow": 0.23
+   },
+   "ms": 161,
+   "cost": 4.8384e-05
+  },
+  {
+   "number": 138860,
+   "title": "Public subagent lifecycle handles stop working after parent-session rotation",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.14,
+    "security": 0.1,
+    "cannot_start": 0.19,
+    "no_workaround": 0.22,
+    "cosmetic": 0.02,
+    "narrow": 0.3
+   },
+   "ms": 199,
+   "cost": 4.2042e-05
+  },
+  {
+   "number": 138859,
+   "title": "plugins: register_skill accepts a directory, stores it, and skill_view later fails with EISDIR",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.05,
+    "cannot_start": 0.16,
+    "no_workaround": 0.18,
+    "cosmetic": 0.02,
+    "narrow": 0.35
+   },
+   "ms": 235,
+   "cost": 3.1248e-05
+  },
+  {
+   "number": 138856,
+   "title": "[Bug][TUI] /model picker fails with \"unsupported canonical model option: --reasoning\" on the shared gateway",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.03,
+    "cannot_start": 0.1,
+    "no_workaround": 0.02,
+    "cosmetic": 0.01,
+    "narrow": 0.27
+   },
+   "ms": 171,
+   "cost": 4.914e-05
+  },
+  {
+   "number": 138852,
+   "title": "[Bug]: Desktop (local viewer) final replies can get the messaging-platform \ud83d\udcad Reasoning projection prepended after the unified gateway runtime",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.07,
+    "security": 0.06,
+    "cannot_start": 0.09,
+    "no_workaround": 0.23,
+    "cosmetic": 0.35,
+    "narrow": 0.46
+   },
+   "ms": 189,
+   "cost": 4.4436e-05
+  },
+  {
+   "number": 138843,
+   "title": "[Bug]: a local session.create `provider` override keeps the profile's stale model.base_url \u2014 the new provider's key is sent to the old provider's endpoint (401)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.08,
+    "security": 0.31,
+    "cannot_start": 0.14,
+    "no_workaround": 0.09,
+    "cosmetic": 0.01,
+    "narrow": 0.29
+   },
+   "ms": 157,
+   "cost": 4.7376e-05
+  },
+  {
+   "number": 138836,
+   "title": "[Bug]: Desktop Kanban delivery policy and lifecycle gaps (notify/wake, compaction, attention events)",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.14,
+    "security": 0.11,
+    "cannot_start": 0.16,
+    "no_workaround": 0.19,
+    "cosmetic": 0.03,
+    "narrow": 0.13
+   },
+   "ms": 206,
+   "cost": 4.1496e-05
+  },
+  {
+   "number": 138831,
+   "title": "[Bug]: CLI /sessions always empty \u2014 placeholder first-write stamps created_source='unknown', which escapes the SurfaceLabelReader compat filter",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.27,
+    "security": 0.05,
+    "cannot_start": 0.14,
+    "no_workaround": 0.25,
+    "cosmetic": 0.02,
+    "narrow": 0.12
+   },
+   "ms": 187,
+   "cost": 4.6536e-05
+  },
+  {
+   "number": 138828,
+   "title": "Public subagent lifecycle cannot carry native images or output-schema contracts",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.25,
+    "security": 0.05,
+    "cannot_start": 0.1,
+    "no_workaround": 0.32,
+    "cosmetic": 0.02,
+    "narrow": 0.12
+   },
+   "ms": 173,
+   "cost": 4.1202e-05
+  },
+  {
+   "number": 138826,
+   "title": "Deleting a non-root profile's session always 409s: runtime_coordination_required (store._routing_db vs authority.db)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.1,
+    "cannot_start": 0.16,
+    "no_workaround": 0.31,
+    "cosmetic": 0.02,
+    "narrow": 0.14
+   },
+   "ms": 173,
+   "cost": 4.6956e-05
+  },
+  {
+   "number": 138816,
+   "title": "Cron preflight reports 'provider credential missing' for a rate-limited Anthropic credential (is_rate_limited_auth_error is codex-only)",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.05,
+    "security": 0.06,
+    "cannot_start": 0.1,
+    "no_workaround": 0.24,
+    "cosmetic": 0.03,
+    "narrow": 0.38
+   },
+   "ms": 172,
+   "cost": 4.5234e-05
+  },
+  {
+   "number": 138814,
+   "title": "[Bug]: Model switch confirmed but not committed \u2014 TUI note/picker show the new model while the session keeps serving the old one",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.11,
+    "security": 0.04,
+    "cannot_start": 0.09,
+    "no_workaround": 0.26,
+    "cosmetic": 0.04,
+    "narrow": 0.17
+   },
+   "ms": 156,
+   "cost": 4.8762e-05
+  },
+  {
+   "number": 138812,
+   "title": "[Bug]: agent cron runs on the unified runtime get local-* session ids; run history still scans cron_{job_id}_* so the desktop run rows become unclickable",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.09,
+    "security": 0.05,
+    "cannot_start": 0.1,
+    "no_workaround": 0.28,
+    "cosmetic": 0.02,
+    "narrow": 0.11
+   },
+   "ms": 167,
+   "cost": 4.641e-05
+  },
+  {
+   "number": 138810,
+   "title": "[Bug]: Kanban TUI notification silently dropped when a non-owning backend (dashboard Chat) claims it and its wake-up is refused SESSION_NOT_OWNED",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.79,
+    "security": 0.08,
+    "cannot_start": 0.12,
+    "no_workaround": 0.29,
+    "cosmetic": 0.01,
+    "narrow": 0.58
+   },
+   "ms": 193,
+   "cost": 4.4352e-05
+  },
+  {
+   "number": 138806,
+   "title": "TUI gateway starts a second notification poller on agent rebuild and orphans the first",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.18,
+    "security": 0.05,
+    "cannot_start": 0.32,
+    "no_workaround": 0.25,
+    "cosmetic": 0.02,
+    "narrow": 0.31
+   },
+   "ms": 181,
+   "cost": 2.5536e-05
+  },
+  {
+   "number": 138802,
+   "title": "Provider plugins with their own client can't start without an API key and base_url",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.13,
+    "cannot_start": 0.4,
+    "no_workaround": 0.12,
+    "cosmetic": 0.02,
+    "narrow": 0.33
+   },
+   "ms": 196,
+   "cost": 2.667e-05
+  },
+  {
+   "number": 138800,
+   "title": "Single-query (-q) turns get a new random task_id on every call",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.43,
+    "security": 0.18,
+    "cannot_start": 0.14,
+    "no_workaround": 0.24,
+    "cosmetic": 0.02,
+    "narrow": 0.15
+   },
+   "ms": 151,
+   "cost": 2.5662e-05
+  },
+  {
+   "number": 138799,
+   "title": "execute_code tool calls and their connector batch entries have no distinct tool_call_id",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.2,
+    "security": 0.3,
+    "cannot_start": 0.15,
+    "no_workaround": 0.28,
+    "cosmetic": 0.02,
+    "narrow": 0.08
+   },
+   "ms": 130,
+   "cost": 2.6964e-05
+  },
+  {
+   "number": 138797,
+   "title": "Browser idle cleanup can close a session that became active after it was picked",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.18,
+    "security": 0.05,
+    "cannot_start": 0.28,
+    "no_workaround": 0.21,
+    "cosmetic": 0.02,
+    "narrow": 0.49
+   },
+   "ms": 156,
+   "cost": 2.6544e-05
+  },
+  {
+   "number": 138796,
+   "title": "kanban: a max_retries=0 card is respawned after a rate-limited run",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.33,
+    "security": 0.05,
+    "cannot_start": 0.11,
+    "no_workaround": 0.16,
+    "cosmetic": 0.02,
+    "narrow": 0.7
+   },
+   "ms": 124,
+   "cost": 2.9904e-05
+  },
+  {
+   "number": 138794,
+   "title": "[Bug]: TUI session list never loads (TypeError in session_authority._handle) after `hermes sessions delete` removes a live-registered session - every `session.list` crashes until gateway restart",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.07,
+    "security": 0.07,
+    "cannot_start": 0.82,
+    "no_workaround": 0.29,
+    "cosmetic": 0.01,
+    "narrow": 0.28
+   },
+   "ms": 155,
+   "cost": 4.704e-05
+  },
+  {
+   "number": 138793,
+   "title": "Telegram: messages held across a disconnect are replayed out of order",
+   "truth": 2,
+   "f": {
+    "data_loss": 0.21,
+    "security": 0.03,
+    "cannot_start": 0.12,
+    "no_workaround": 0.31,
+    "cosmetic": 0.02,
+    "narrow": 0.17
+   },
+   "ms": 157,
+   "cost": 5.2542e-05
+  },
+  {
+   "number": 138791,
+   "title": "[Bug]: Desktop boot fails with `Gateway starting (deadline)` when the sticky active_profile is a parked profile \u2014 regression after update",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.09,
+    "cannot_start": 0.88,
+    "no_workaround": 0.23,
+    "cosmetic": 0.02,
+    "narrow": 0.63
+   },
+   "ms": 188,
+   "cost": 4.998e-05
+  },
+  {
+   "number": 138790,
+   "title": "desktop: composer model switch silently fails (session_busy / revision_conflict) until a session-level operation",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.08,
+    "security": 0.04,
+    "cannot_start": 0.08,
+    "no_workaround": 0.09,
+    "cosmetic": 0.02,
+    "narrow": 0.12
+   },
+   "ms": 149,
+   "cost": 3.6792e-05
+  },
+  {
+   "number": 138789,
+   "title": "desktop: a fresh session's first submit answers with a busy-style reply until the model is re-picked",
+   "truth": 1,
+   "f": {
+    "data_loss": 0.11,
+    "security": 0.04,
+    "cannot_start": 0.11,
+    "no_workaround": 0.03,
+    "cosmetic": 0.04,
+    "narrow": 0.27
+   },
+   "ms": 180,
+   "cost": 3.7338e-05
+  },
+  {
+   "number": 138788,
+   "title": "desktop: statusbar cache-hit-rate / tokens-per-second never populate \u2014 canonical session.usage ticks carry top-level fields, desktop only reads nested usage",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.04,
+    "security": 0.03,
+    "cannot_start": 0.07,
+    "no_workaround": 0.33,
+    "cosmetic": 0.04,
+    "narrow": 0.07
+   },
+   "ms": 160,
+   "cost": 4.0446e-05
+  },
+  {
+   "number": 138787,
+   "title": "desktop: live reasoning stream never appears mid-turn \u2014 desktop never sets the session's show_reasoning flag (v0.22.1 regression)",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.06,
+    "security": 0.04,
+    "cannot_start": 0.07,
+    "no_workaround": 0.09,
+    "cosmetic": 0.02,
+    "narrow": 0.07
+   },
+   "ms": 152,
+   "cost": 4.2e-05
+  },
+  {
+   "number": 138785,
+   "title": "Anthropic 'credentials are rate-limited for <model>' AuthError has no code, so a kanban worker exits 1 (not 75) at startup and charges the failure breaker",
+   "truth": 0,
+   "f": {
+    "data_loss": 0.05,
+    "security": 0.05,
+    "cannot_start": 0.7,
+    "no_workaround": 0.22,
+    "cosmetic": 0.02,
+    "narrow": 0.36
+   },
+   "ms": 196,
+   "cost": 4.6872e-05
+  }
+ ],
+ "usage": {
+  "calls": 120,
+  "ms_median": 177,
+  "cost_usd": 0.00524
+ },
+ "factors": {
+  "data_loss": "The bug loses, corrupts, or overwrites user data.",
+  "security": "The bug exposes secrets or lets someone bypass an access control.",
+  "cannot_start": "Hermes or a whole surface cannot start, crash-loops, or becomes unusable until restarted.",
+  "no_workaround": "The reporter has no way to work around the problem.",
+  "cosmetic": "The bug is cosmetic: wrong text, styling, or a misleading message, with no functional impact.",
+  "narrow": "The bug only affects an unusual configuration or a rare edge case."
+ }
+}

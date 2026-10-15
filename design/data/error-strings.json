@@ -1,0 +1,506 @@
+[
+ {
+  "key": "serverError",
+  "text": "The server refused the connection."
+ },
+ {
+  "key": "hostedFailedTitle",
+  "text": "Could not reach the hosted apps."
+ },
+ {
+  "key": "hostedFailedBody",
+  "text": "The servers on this computer are unaffected and still running. Nothing was turned off."
+ },
+ {
+  "key": "managedUnavailable",
+  "text": "Managed apps are not available for this account yet."
+ },
+ {
+  "key": "writeFailed",
+  "text": "That change was not saved."
+ },
+ {
+  "key": "refreshFailed",
+  "text": "The tool list was not refreshed."
+ },
+ {
+  "key": "saveFailed",
+  "text": "That server was not saved."
+ },
+ {
+  "key": "saveFailed",
+  "text": "Those tool rules were not saved."
+ },
+ {
+  "key": "importError",
+  "text": "Could not import this conversation."
+ },
+ {
+  "key": "revealUnavailable",
+  "text": "That path is not on this computer \u2014 it lives on the backend machine. Use \u201cReveal in filetree\u201d."
+ },
+ {
+  "key": "copyDetailFailed",
+  "text": "Could not copy notification detail"
+ },
+ {
+  "key": "gatewayAuthFailed",
+  "text": "This Hermes no longer accepts your saved sign-in. Open Gateways and sign in again (or paste a new access token), then retry."
+ },
+ {
+  "key": "microphoneStartFailed",
+  "text": "Could not start microphone recording."
+ },
+ {
+  "key": "transcriptionFailed",
+  "text": "Voice transcription failed"
+ },
+ {
+  "key": "transcriptionUnavailable",
+  "text": "Voice transcription is not available yet."
+ },
+ {
+  "key": "liveDelegationFailed",
+  "text": "Could not hand the request to Hermes"
+ },
+ {
+  "key": "failedHint",
+  "text": "You can also run `hermes debug share --nous` from a terminal, or `hermes debug share --local` to print the report without uploading."
+ },
+ {
+  "key": "gatewayManagedUpdatesUnavailable",
+  "text": "Remote updates need a desktop version with managed SSH update support."
+ },
+ {
+  "key": "pinToCommitInvalid",
+  "text": "Must be a full 40-character commit SHA (branches and tags are not accepted)."
+ },
+ {
+  "key": "probeUnavailable",
+  "text": "Plugin inspection is unavailable in this environment."
+ },
+ {
+  "key": "desktopUnavailable",
+  "text": "Desktop plugin install is unavailable in this environment."
+ },
+ {
+  "key": "agentFailed",
+  "text": "Agent plugin install failed"
+ },
+ {
+  "key": "desktopFailed",
+  "text": "Desktop plugin install failed"
+ },
+ {
+  "key": "loadFailed",
+  "text": "Could not load vault items"
+ },
+ {
+  "key": "originInvalid",
+  "text": "Enter a valid URL like https://example.com."
+ },
+ {
+  "key": "toggleFailed",
+  "text": "Could not update password manager"
+ },
+ {
+  "key": "installError",
+  "text": "Could not install that theme."
+ },
+ {
+  "key": "turnOnFailed",
+  "text": "Could not turn the pet on."
+ },
+ {
+  "key": "turnOffFailed",
+  "text": "Could not turn the pet off."
+ },
+ {
+  "key": "endpointValidationFailed",
+  "text": "Endpoint validation failed."
+ },
+ {
+  "key": "minimizeToTrayUnavailable",
+  "text": "The system tray is unavailable. Windows will minimize and close normally. Turn this off and on to retry."
+ },
+ {
+  "key": "resetOnboardingFailed",
+  "text": "Could not reset onboarding"
+ },
+ {
+  "key": "errorTitle",
+  "text": "Screenshot shortcut error"
+ },
+ {
+  "key": "loadFailed",
+  "text": "Could not read the shortcut status. Retry to check its current setting."
+ },
+ {
+  "key": "saveFailed",
+  "text": "Could not confirm the shortcut change. Retry to check its current setting."
+ },
+ {
+  "key": "permissionFailed",
+  "text": "Could not open System Settings. Open Privacy & Security manually, then retry."
+ },
+ {
+  "key": "captureFailed",
+  "text": "Could not capture the frontmost window. Nothing was attached or sent."
+ },
+ {
+  "key": "loadFailed",
+  "text": "Could not load connections"
+ },
+ {
+  "key": "saveFailed",
+  "text": "Could not save the connection"
+ },
+ {
+  "key": "removeFailed",
+  "text": "Could not remove the connection"
+ },
+ {
+  "key": "cloudDiscoverFailed",
+  "text": "Could not load your Hermes Cloud agents"
+ },
+ {
+  "key": "cloudConnectFailed",
+  "text": "Could not connect to that agent"
+ },
+ {
+  "key": "cloudSignInFailed",
+  "text": "Hermes Cloud sign-in failed"
+ },
+ {
+  "key": "keychainEncryptionFailed",
+  "text": "Could not change secret encryption"
+ },
+ {
+  "key": "failedLoad",
+  "text": "Gateway settings failed to load"
+ },
+ {
+  "key": "testFailed",
+  "text": "Remote gateway test failed"
+ },
+ {
+  "key": "applyFailed",
+  "text": "Could not apply gateway settings"
+ },
+ {
+  "key": "saveFailed",
+  "text": "Could not save gateway settings"
+ },
+ {
+  "key": "deepLinkNameInvalid",
+  "text": "Names use 1-64 letters, digits, dots, dashes, or underscores."
+ },
+ {
+  "key": "deepLinkErrorTitle",
+  "text": "MCP install link rejected"
+ },
+ {
+  "key": "deepLinkErrorName",
+  "text": "The link\\u2019s server name is missing or invalid."
+ },
+ {
+  "key": "deepLinkErrorConfig",
+  "text": "The link\\u2019s config is not valid base64-encoded JSON."
+ },
+ {
+  "key": "deepLinkErrorShape",
+  "text": "The config must be a JSON object with a string `url` or `command` field."
+ },
+ {
+  "key": "deepLinkErrorUrl",
+  "text": "Only http:// and https:// server URLs are allowed."
+ },
+ {
+  "key": "deepLinkErrorTooLarge",
+  "text": "The config payload exceeds the 32KB limit."
+ },
+ {
+  "key": "defaultsFailed",
+  "text": "Failed to save model defaults"
+ },
+ {
+  "key": "restartFailed",
+  "text": "Could not restart the backend"
+ },
+ {
+  "key": "autoArchiveFailed",
+  "text": "Could not update auto-archive"
+ },
+ {
+  "key": "failedLoad",
+  "text": "Could not load archived sessions"
+ },
+ {
+  "key": "updateDirFailed",
+  "text": "Could not update default directory"
+ },
+ {
+  "key": "clearDirFailed",
+  "text": "Could not clear default directory"
+ },
+ {
+  "key": "failedLoad",
+  "text": "Tool configuration failed to load"
+ },
+ {
+  "key": "nousAuthFailed",
+  "text": "Nous sign-in did not complete"
+ },
+ {
+  "key": "postSetupErrorTitle",
+  "text": "Setup finished with errors"
+ },
+ {
+  "key": "failedLoad",
+  "text": "Could not load terminal backends"
+ },
+ {
+  "key": "failedSave",
+  "text": "Could not save the real-profile setting"
+ },
+ {
+  "key": "toolsetsRefreshFailed",
+  "text": "Toolsets failed to refresh"
+ },
+ {
+  "key": "loadFailed",
+  "text": "Could not load agent plugins"
+ },
+ {
+  "key": "deepLinkErrorTitle",
+  "text": "Plugin install link rejected"
+ },
+ {
+  "key": "deepLinkCatalogInvalidName",
+  "text": "The link\\u2019s catalog name is missing or invalid."
+ },
+ {
+  "key": "deepLinkCatalogUnavailable",
+  "text": "Could not load the Hermes plugin catalog. Check your connection and open the link again."
+ },
+ {
+  "key": "loadFailed",
+  "text": "Could not load memory graph"
+ },
+ {
+  "key": "transcriptUnavailable",
+  "text": "Live transcript unavailable"
+ },
+ {
+  "key": "error",
+  "text": "Could not reach the petdex gallery."
+ },
+ {
+  "key": "adoptFailed",
+  "text": "Could not adopt that pet."
+ },
+ {
+  "key": "genericError",
+  "text": "Generation failed \u2014 try again or pick a suggestion."
+ },
+ {
+  "key": "referenceImageInvalid",
+  "text": "Could not read that reference image. Try a PNG, JPG, WebP, or GIF."
+ },
+ {
+  "key": "error",
+  "text": "Could not reach the Marketplace."
+ },
+ {
+  "key": "loadFailed",
+  "text": "Messaging platforms failed to load"
+ },
+ {
+  "key": "restartFailedManualDetail",
+  "text": "Try Restart again; if it still fails, open the logs and send diagnostics."
+ },
+ {
+  "key": "urlInvalid",
+  "text": "Enter a full address starting with http:// or https://"
+ },
+ {
+  "key": "removeFailed",
+  "text": "Could not remove the remote connection"
+ },
+ {
+  "key": "authFailedTitle",
+  "text": "Remote host rejected the saved token"
+ },
+ {
+  "key": "failedSetDefault",
+  "text": "Could not set the default profile"
+ },
+ {
+  "key": "failedCopy",
+  "text": "Failed to copy setup command"
+ },
+ {
+  "key": "saveFailed",
+  "text": "Hermes did not save that model change."
+ },
+ {
+  "key": "failedUpdate",
+  "text": "Failed to update cron job"
+ },
+ {
+  "key": "failedTrigger",
+  "text": "Failed to trigger cron job"
+ },
+ {
+  "key": "failedDelete",
+  "text": "Failed to delete cron job"
+ },
+ {
+  "key": "failedLoad",
+  "text": "Failed to load blueprints"
+ },
+ {
+  "key": "openInBrowserFailed",
+  "text": "Could not open in browser"
+ },
+ {
+  "key": "unreadFailed",
+  "text": "Could not update unread state"
+ },
+ {
+  "key": "copyIdFailed",
+  "text": "Could not copy session ID"
+ },
+ {
+  "key": "voiceEngineChangeFailed",
+  "text": "Could not change the voice chat engine"
+ },
+ {
+  "key": "copyFailure",
+  "text": "Failed to copy criterion to clipboard"
+ },
+ {
+  "key": "continuationFailed",
+  "text": "Failed to submit goal continuation"
+ },
+ {
+  "key": "checkFailedTitle",
+  "text": "Couldn\u2019t check for updates"
+ },
+ {
+  "key": "errorBody",
+  "text": "No worries \u2014 nothing was lost. You can try again now."
+ },
+ {
+  "key": "everythingFanoutFailedTitle",
+  "text": "Couldn\u2019t update other instances"
+ },
+ {
+  "key": "localStartUnavailable",
+  "text": "Local installation could not start. Restart Hermes Desktop and try again."
+ },
+ {
+  "key": "serverError",
+  "text": "The Nous service had a hiccup. Tap Try again in a moment, or connect another provider for now."
+ },
+ {
+  "key": "updateFailed",
+  "text": "Model option update failed"
+ },
+ {
+  "key": "remotePickerInvalidFolderName",
+  "text": "Enter a single folder name, without slashes."
+ },
+ {
+  "key": "treeErrorBody",
+  "text": "The file tree hit an error rendering this folder."
+ },
+ {
+  "key": "copyFailed",
+  "text": "Could not copy console output"
+ },
+ {
+  "key": "appFailedToBoot",
+  "text": "Preview app failed to boot"
+ },
+ {
+  "key": "restartFailedMessage",
+  "text": "Hermes could not restart the server."
+ },
+ {
+  "key": "annotateFailed",
+  "text": "Could not start annotation mode"
+ },
+ {
+  "key": "errorCompressFailed",
+  "text": "Could not compress the conversation"
+ },
+ {
+  "key": "errorOpenHermesFolderFailed",
+  "text": "Could not open the Hermes folder"
+ },
+ {
+  "key": "errorSignInFreeTier",
+  "text": "Sign in with a Nous account"
+ },
+ {
+  "key": "errorOpenLogsFailed",
+  "text": "Could not open the logs folder"
+ },
+ {
+  "key": "sendFailed",
+  "text": "Could not send your answer"
+ },
+ {
+  "key": "sendFailed",
+  "text": "Could not send clarify response"
+ },
+ {
+  "key": "sendFailed",
+  "text": "Could not send MCP setup response"
+ },
+ {
+  "key": "reloadFailed",
+  "text": "Server saved, but reloading MCP tools failed \u2014 they load next session"
+ },
+ {
+  "key": "resourceFailed",
+  "text": "Failed to read skill resource"
+ },
+ {
+  "key": "sudoSendFailed",
+  "text": "Could not send sudo password"
+ },
+ {
+  "key": "sudoCommandUnavailable",
+  "text": "This agent did not provide the command. Cancel if you cannot verify it in the conversation."
+ },
+ {
+  "key": "vaultUnlockSendFailed",
+  "text": "Could not send master password"
+ },
+ {
+  "key": "audioReadFailed",
+  "text": "Could not read recorded audio"
+ },
+ {
+  "key": "createSessionFailed",
+  "text": "Could not create a new session"
+ },
+ {
+  "key": "editTurnUnavailable",
+  "text": "This turn is no longer in server history (it may have been compressed away)."
+ },
+ {
+  "key": "cwdChangeFailed",
+  "text": "Working directory change failed"
+ },
+ {
+  "key": "imageWriteFailed",
+  "text": "Failed to write image to disk."
+ },
+ {
+  "key": "pasteAttachFailed",
+  "text": "Could not attach pasted text"
+ }
+]

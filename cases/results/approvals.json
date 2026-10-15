@@ -1,0 +1,240 @@
+{
+ "rows": [
+  {
+   "reply": "yes go ahead",
+   "pick": "approve",
+   "confidence": 1,
+   "probabilities": {
+    "approve": 1,
+    "reject": 0,
+    "question": 0,
+    "conditional": 0,
+    "unclear": 0
+   },
+   "ms": 928,
+   "cost": 1.7136e-05
+  },
+  {
+   "reply": "lgtm \ud83d\ude80",
+   "pick": "approve",
+   "confidence": 1,
+   "probabilities": {
+    "approve": 1,
+    "reject": 0,
+    "question": 0,
+    "conditional": 0,
+    "unclear": 0
+   },
+   "ms": 297,
+   "cost": 1.7262e-05
+  },
+  {
+   "reply": "ship it",
+   "pick": "approve",
+   "confidence": 1,
+   "probabilities": {
+    "approve": 1,
+    "reject": 0,
+    "question": 0,
+    "conditional": 0,
+    "unclear": 0
+   },
+   "ms": 241,
+   "cost": 1.7094e-05
+  },
+  {
+   "reply": "approved, thanks!",
+   "pick": "approve",
+   "confidence": 1,
+   "probabilities": {
+    "approve": 1,
+    "reject": 0,
+    "question": 0,
+    "conditional": 0,
+    "unclear": 0
+   },
+   "ms": 238,
+   "cost": 1.7178e-05
+  },
+  {
+   "reply": "no",
+   "pick": "reject",
+   "confidence": 1,
+   "probabilities": {
+    "approve": 0,
+    "reject": 1,
+    "question": 0,
+    "conditional": 0,
+    "unclear": 0
+   },
+   "ms": 232,
+   "cost": 1.7052e-05
+  },
+  {
+   "reply": "don't merge this",
+   "pick": "reject",
+   "confidence": 1,
+   "probabilities": {
+    "approve": 0,
+    "reject": 1,
+    "question": 0,
+    "conditional": 0,
+    "unclear": 0
+   },
+   "ms": 270,
+   "cost": 1.7178e-05
+  },
+  {
+   "reply": "reject \u2014 wrong branch",
+   "pick": "reject",
+   "confidence": 1,
+   "probabilities": {
+    "approve": 0,
+    "reject": 1,
+    "question": 0,
+    "conditional": 0,
+    "unclear": 0
+   },
+   "ms": 250,
+   "cost": 1.7178e-05
+  },
+  {
+   "reply": "hold off, this breaks prod",
+   "pick": "reject",
+   "confidence": 0.99,
+   "probabilities": {
+    "approve": 0,
+    "reject": 0.99,
+    "question": 0,
+    "conditional": 0.01,
+    "unclear": 0
+   },
+   "ms": 224,
+   "cost": 1.7262e-05
+  },
+  {
+   "reply": "what does this change for windows users?",
+   "pick": "question",
+   "confidence": 1,
+   "probabilities": {
+    "approve": 0,
+    "reject": 0,
+    "question": 1,
+    "conditional": 0,
+    "unclear": 0
+   },
+   "ms": 168,
+   "cost": 1.7346e-05
+  },
+  {
+   "reply": "can you show me the diff first?",
+   "pick": "question",
+   "confidence": 0.95,
+   "probabilities": {
+    "approve": 0,
+    "reject": 0,
+    "question": 0.96,
+    "conditional": 0.04,
+    "unclear": 0
+   },
+   "ms": 176,
+   "cost": 1.7346e-05
+  },
+  {
+   "reply": "yes but fix the typo in the title first",
+   "pick": "conditional",
+   "confidence": 1,
+   "probabilities": {
+    "approve": 0,
+    "reject": 0,
+    "question": 0,
+    "conditional": 1,
+    "unclear": 0
+   },
+   "ms": 204,
+   "cost": 1.7388e-05
+  },
+  {
+   "reply": "sure, after the release on friday",
+   "pick": "conditional",
+   "confidence": 1,
+   "probabilities": {
+    "approve": 0,
+    "reject": 0,
+    "question": 0,
+    "conditional": 1,
+    "unclear": 0
+   },
+   "ms": 184,
+   "cost": 1.7304e-05
+  },
+  {
+   "reply": "hmm",
+   "pick": "unclear",
+   "confidence": 0.99,
+   "probabilities": {
+    "approve": 0,
+    "reject": 0,
+    "question": 0.01,
+    "conditional": 0,
+    "unclear": 0.99
+   },
+   "ms": 211,
+   "cost": 1.7094e-05
+  },
+  {
+   "reply": "ok",
+   "pick": "approve",
+   "confidence": 0.99,
+   "probabilities": {
+    "approve": 0.99,
+    "reject": 0,
+    "question": 0,
+    "conditional": 0,
+    "unclear": 0.01
+   },
+   "ms": 164,
+   "cost": 1.7052e-05
+  },
+  {
+   "reply": "\ud83d\udc40",
+   "pick": "unclear",
+   "confidence": 0.97,
+   "probabilities": {
+    "approve": 0.01,
+    "reject": 0,
+    "question": 0.01,
+    "conditional": 0,
+    "unclear": 0.98
+   },
+   "ms": 156,
+   "cost": 1.7094e-05
+  },
+  {
+   "reply": "idk ask teknium",
+   "pick": "unclear",
+   "confidence": 0.75,
+   "probabilities": {
+    "approve": 0,
+    "reject": 0.03,
+    "question": 0.15,
+    "conditional": 0.02,
+    "unclear": 0.8
+   },
+   "ms": 186,
+   "cost": 1.722e-05
+  }
+ ],
+ "usage": {
+  "calls": 16,
+  "ms_median": 224,
+  "cost_usd": 0.00028
+ },
+ "criteria": {
+  "approve": "Approves the action now, unconditionally",
+  "reject": "Declines or blocks the action",
+  "question": "Asks for more information before deciding",
+  "conditional": "Approves only once something else happens first",
+  "unclear": "Does not express a decision"
+ }
+}

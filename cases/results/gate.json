@@ -1,0 +1,3886 @@
+{
+ "rows": [
+  {
+   "number": 139197,
+   "title": "fix(acp): retain provider identity in gateway model picks",
+   "labels": [],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.04,
+    "security": 0.11,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 180,
+   "cost": 2.6922e-05
+  },
+  {
+   "number": 139195,
+   "title": "feat(providers): let provider plugins claim tenant-scoped endpoint hosts",
+   "labels": [],
+   "files": 8,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.93,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 192,
+   "cost": 3.0912e-05
+  },
+  {
+   "number": 139194,
+   "title": "fix(a2a): name the trust-list entry format in the fail-closed 403 and startup log",
+   "labels": [
+    "type/bug",
+    "comp/plugins",
+    "P3"
+   ],
+   "files": 5,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.48,
+    "docs": 0.15
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 180,
+   "cost": 3.2466e-05
+  },
+  {
+   "number": 139193,
+   "title": "feat(plugins): core-made xAI Grok requests so plugins never hold the token",
+   "labels": [
+    "type/feature",
+    "comp/cli",
+    "comp/plugins",
+    "provider/xai",
+    "P3",
+    "sweeper:risk-security-boundary"
+   ],
+   "files": 5,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.97,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": true,
+    "docs": false
+   },
+   "ms": 160,
+   "cost": 3.0954e-05
+  },
+  {
+   "number": 139192,
+   "title": "fix(tui): rank an exact skill match above weaker command matches in slash search",
+   "labels": [
+    "type/bug",
+    "comp/tui",
+    "P3"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.04,
+    "security": 0.03,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 170,
+   "cost": 2.94e-05
+  },
+  {
+   "number": 139191,
+   "title": "fix(whatsapp): handle locked session dir on re-pair and reject empty creds in preflight",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/plugins",
+    "platform/whatsapp",
+    "P3",
+    "sweeper:risk-platform-windows",
+    "platform/windows"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.85,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 181,
+   "cost": 3.0492e-05
+  },
+  {
+   "number": 139188,
+   "title": "feat(gateway): add opt-in Telegram DM topic transfer",
+   "labels": [
+    "type/feature",
+    "comp/gateway",
+    "platform/telegram",
+    "P3",
+    "sweeper:risk-message-delivery"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.07,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 172,
+   "cost": 2.772e-05
+  },
+  {
+   "number": 139187,
+   "title": "/loop shows a live countdown to the next wakeup on CLI, TUI and Desktop",
+   "labels": [
+    "type/feature",
+    "comp/cli",
+    "comp/gateway",
+    "comp/tui",
+    "P3",
+    "sweeper:risk-session-state",
+    "comp/desktop",
+    "ci-reviewed"
+   ],
+   "files": 34,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 150,
+   "cost": 4.5234e-05
+  },
+  {
+   "number": 139186,
+   "title": "fix(agent): don't give custom providers local-engine reasoning carriers",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "P2"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.05,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 182,
+   "cost": 3.0282e-05
+  },
+  {
+   "number": 139185,
+   "title": "feat(desktop): configure messaging slash admins",
+   "labels": [
+    "type/feature",
+    "comp/cli",
+    "area/config",
+    "P3",
+    "sweeper:risk-compatibility",
+    "comp/desktop"
+   ],
+   "files": 6,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.69,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 172,
+   "cost": 2.9442e-05
+  },
+  {
+   "number": 139184,
+   "title": "fix(rss-feeds): normalize non-strict publication dates",
+   "labels": [
+    "type/bug",
+    "tool/skills",
+    "P3"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.05,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 166,
+   "cost": 2.6922e-05
+  },
+  {
+   "number": 139182,
+   "title": "fix(update): retry a timed-out source API read once",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "area/config",
+    "P2",
+    "sweeper:risk-compatibility",
+    "platform/windows",
+    "area/install-update"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.08,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 171,
+   "cost": 2.8392e-05
+  },
+  {
+   "number": 139181,
+   "title": "fix(agent): resolve a key-less non-native anthropic_messages provider's own key",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "comp/gateway",
+    "comp/cron",
+    "provider/minimax",
+    "area/auth",
+    "P3",
+    "sweeper:risk-security-boundary",
+    "area/profiles"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.94,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": true,
+    "docs": false
+   },
+   "ms": 230,
+   "cost": 2.919e-05
+  },
+  {
+   "number": 139180,
+   "title": "fix(slack): send enum status on Agent Sessions, fall back to phrase",
+   "labels": [
+    "type/bug",
+    "comp/plugins",
+    "platform/slack",
+    "P3",
+    "sweeper:risk-message-delivery"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.05,
+    "security": 0.19,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 183,
+   "cost": 2.9736e-05
+  },
+  {
+   "number": 139178,
+   "title": "fix(tui_gateway): import Path in methods_onboarding \u2014 module failed to import, killing cron WS session spawns",
+   "labels": [
+    "type/bug",
+    "duplicate",
+    "comp/tui",
+    "P1"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 178,
+   "cost": 3.0618e-05
+  },
+  {
+   "number": 139177,
+   "title": "docs(mcp): correct stale single-underscore tool names in docs and skills",
+   "labels": [
+    "type/docs",
+    "tool/mcp",
+    "P3"
+   ],
+   "files": 17,
+   "nouls": {
+    "catalog": 0.08,
+    "security": 0.05,
+    "docs": 0.89
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": true
+   },
+   "ms": 181,
+   "cost": 4.4688e-05
+  },
+  {
+   "number": 139175,
+   "title": "fix(gateway): keep pending-tail status diagnostic fast",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "P2",
+    "sweeper:risk-compatibility",
+    "comp/desktop",
+    "area/install-update"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.05,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 212,
+   "cost": 2.9316e-05
+  },
+  {
+   "number": 139174,
+   "title": "fix(desktop): mint gateway tickets with the bundled payload's Python",
+   "labels": [
+    "type/bug",
+    "P2",
+    "comp/desktop",
+    "platform/windows"
+   ],
+   "files": 5,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.14,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 155,
+   "cost": 3.2382e-05
+  },
+  {
+   "number": 139173,
+   "title": "fix: delete of live secondary-profile sessions refused (routing index vs own store)",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-session-state",
+    "area/sessions",
+    "area/profiles"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.19,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 152,
+   "cost": 2.835e-05
+  },
+  {
+   "number": 139172,
+   "title": "fix(tts): ship piper with the Chinese phonemization stack",
+   "labels": [
+    "type/bug",
+    "tool/tts",
+    "P2",
+    "sweeper:risk-compatibility",
+    "area/install-update",
+    "area/i18n"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.1,
+    "security": 0.03,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 142,
+   "cost": 3.1122e-05
+  },
+  {
+   "number": 139171,
+   "title": "fix(discord): durable re-authorization reads allowed_roles from the platforms block like ingress",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "comp/plugins",
+    "platform/discord",
+    "area/auth",
+    "P3"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.04,
+    "security": 0.94,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": true,
+    "docs": false
+   },
+   "ms": 172,
+   "cost": 2.9358e-05
+  },
+  {
+   "number": 139170,
+   "title": "fix(discord): resolve the durable re-authorization role gate from the platform block",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "comp/plugins",
+    "platform/discord",
+    "area/auth",
+    "P3"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.94,
+    "docs": 0.03
+   },
+   "truth": {
+    "catalog": false,
+    "security": true,
+    "docs": false
+   },
+   "ms": 192,
+   "cost": 2.9148e-05
+  },
+  {
+   "number": 139169,
+   "title": "fix(desktop): recover picker selection from catalog",
+   "labels": [
+    "type/bug",
+    "P3",
+    "comp/desktop"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.05,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 144,
+   "cost": 2.7594e-05
+  },
+  {
+   "number": 139168,
+   "title": "Docs search monitor no longer cries wolf when only its own cached copy is stale",
+   "labels": [
+    "type/bug",
+    "P3",
+    "sweeper:risk-automation",
+    "comp/dashboard",
+    "ci-reviewed"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.05,
+    "security": 0.04,
+    "docs": 0.14
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": true
+   },
+   "ms": 203,
+   "cost": 3.0492e-05
+  },
+  {
+   "number": 139167,
+   "title": "Windows Desktop attaches to a Scheduled-Task gateway again (#139013, #139083)",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-compatibility",
+    "sweeper:risk-platform-windows",
+    "comp/desktop",
+    "platform/windows",
+    "ci-reviewed",
+    "area/install-update"
+   ],
+   "files": 5,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.58,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 184,
+   "cost": 3.2466e-05
+  },
+  {
+   "number": 139166,
+   "title": "fix(agent): retain stale failures after partial stream errors",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "P2",
+    "area/streaming"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 162,
+   "cost": 2.625e-05
+  },
+  {
+   "number": 139164,
+   "title": "feat(plugins): fence and join managed workers across reloads",
+   "labels": [
+    "type/feature",
+    "comp/cli",
+    "comp/plugins",
+    "P3"
+   ],
+   "files": 8,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.17,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 187,
+   "cost": 2.8056e-05
+  },
+  {
+   "number": 139159,
+   "title": "fix(gateway): skip refusal-left bot mailbox pins quietly instead of warning on every scan",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P3",
+    "sweeper:risk-message-delivery"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.09,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 273,
+   "cost": 2.8266e-05
+  },
+  {
+   "number": 139156,
+   "title": "fix(stt): keep resampler phase exact across chunk boundaries",
+   "labels": [
+    "type/bug",
+    "tool/tts",
+    "P2",
+    "comp/desktop"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.02,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 187,
+   "cost": 2.9694e-05
+  },
+  {
+   "number": 139153,
+   "title": "Plugin catalog: add tradersagent-plugin \u2014 Trader's Agent, a chart-first Vela console for Desktop",
+   "labels": [
+    "type/feature",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.61,
+    "security": 0.14,
+    "docs": 0.19
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 139,
+   "cost": 2.8476e-05
+  },
+  {
+   "number": 139151,
+   "title": "fix(irc): reconnect when the server goes silent instead of staying deaf",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "comp/plugins",
+    "P3",
+    "sweeper:risk-message-delivery"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.03,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 178,
+   "cost": 2.8938e-05
+  },
+  {
+   "number": 139149,
+   "title": "/retry from messaging platforms works again on multi-profile gateways (#139040, salvage #139044)",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "platform/telegram",
+    "platform/discord",
+    "platform/slack",
+    "platform/whatsapp",
+    "P2",
+    "sweeper:risk-session-state",
+    "ci-reviewed",
+    "area/sessions",
+    "area/profiles"
+   ],
+   "files": 5,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.4,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 192,
+   "cost": 3.234e-05
+  },
+  {
+   "number": 139145,
+   "title": "fix(security): hold the plugin gate on websockets and for every served profile",
+   "labels": [
+    "type/security",
+    "comp/cli",
+    "comp/plugins",
+    "P3",
+    "comp/dashboard",
+    "area/profiles"
+   ],
+   "files": 6,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.93,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": true,
+    "docs": false
+   },
+   "ms": 152,
+   "cost": 3.1374e-05
+  },
+  {
+   "number": 139143,
+   "title": "feat(plugin-catalog): add wallaby-provider plugin",
+   "labels": [
+    "type/feature",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.85,
+    "security": 0.53,
+    "docs": 0.05
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 167,
+   "cost": 2.814e-05
+  },
+  {
+   "number": 139142,
+   "title": "feat(kanban): expose current blocker in diagnostics",
+   "labels": [
+    "type/feature",
+    "comp/cli",
+    "P3"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.06,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 195,
+   "cost": 2.9274e-05
+  },
+  {
+   "number": 139140,
+   "title": "fix(gateway): name the field a session.create refusal is about",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/gateway",
+    "P2"
+   ],
+   "files": 7,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.07,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 231,
+   "cost": 3.0492e-05
+  },
+  {
+   "number": 139139,
+   "title": "fix(plugins): bind unscoped native registration workers to their owner",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/plugins",
+    "area/auth",
+    "P3",
+    "sweeper:risk-security-boundary",
+    "area/profiles"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.94,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": true,
+    "docs": false
+   },
+   "ms": 197,
+   "cost": 2.751e-05
+  },
+  {
+   "number": 139137,
+   "title": "fix(desktop): name the switched-to model in the timeline notice",
+   "labels": [
+    "type/bug",
+    "comp/tui",
+    "P3",
+    "comp/desktop"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 212,
+   "cost": 2.8014e-05
+  },
+  {
+   "number": 139131,
+   "title": "[codex] feat(gateway): expose opt-in activation evidence",
+   "labels": [
+    "type/feature",
+    "comp/gateway",
+    "area/config",
+    "P3",
+    "needs-decision",
+    "sweeper:risk-compatibility"
+   ],
+   "files": 7,
+   "nouls": {
+    "catalog": 0.04,
+    "security": 0.38,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 177,
+   "cost": 2.8308e-05
+  },
+  {
+   "number": 139130,
+   "title": "chore(plugin-catalog): repin kanban-gantt to 51d9e6a and pin 1.6.1",
+   "labels": [
+    "type/feature",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.94,
+    "security": 0.04,
+    "docs": 0.68
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 200,
+   "cost": 3.3894e-05
+  },
+  {
+   "number": 139129,
+   "title": "fix(desktop): restore connector editor wheel scrolling",
+   "labels": [
+    "type/bug",
+    "tool/mcp",
+    "P3",
+    "comp/desktop"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.04,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 181,
+   "cost": 2.9946e-05
+  },
+  {
+   "number": 139128,
+   "title": "chore(plugin-catalog): pin kanban-gantt at 1.6.1",
+   "labels": [
+    "type/feature",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.94,
+    "security": 0.04,
+    "docs": 0.66
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 187,
+   "cost": 3.3432e-05
+  },
+  {
+   "number": 139127,
+   "title": "fix: config watcher and config backups race conditions",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/tui",
+    "area/config",
+    "P2",
+    "sweeper:risk-compatibility"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.09,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 177,
+   "cost": 1.806e-05
+  },
+  {
+   "number": 139126,
+   "title": "fix: config backups and Desktop pairing updates no longer miss writes in the same timestamp tick (main red after #137895)",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/tui",
+    "area/config",
+    "P2",
+    "sweeper:risk-compatibility",
+    "ci-reviewed"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.08,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 164,
+   "cost": 3.0744e-05
+  },
+  {
+   "number": 139122,
+   "title": "fix(kanban): contain respawn-guard skip loops and bound rate-limit retries",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/cron",
+    "comp/plugins",
+    "P3",
+    "sweeper:risk-automation"
+   ],
+   "files": 9,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.34,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 198,
+   "cost": 3.3348e-05
+  },
+  {
+   "number": 139120,
+   "title": "chore(actions)(deps): bump the actions-minor-patch group across 1 directory with 7 updates",
+   "labels": [
+    "type/refactor",
+    "P3",
+    "dependencies",
+    "sweeper:risk-automation"
+   ],
+   "files": 12,
+   "nouls": {
+    "catalog": 0.08,
+    "security": 0.29,
+    "docs": 0.09
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 174,
+   "cost": 4.0026e-05
+  },
+  {
+   "number": 139119,
+   "title": "chore(plugin-catalog): pin kanban-gantt at 1.6.1",
+   "labels": [],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.9,
+    "security": 0.1,
+    "docs": 0.08
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 170,
+   "cost": 2.562e-05
+  },
+  {
+   "number": 139118,
+   "title": "fix(tts): abandon an in-flight sync synthesis on barge-in",
+   "labels": [
+    "type/bug",
+    "duplicate",
+    "tool/tts",
+    "P2",
+    "area/streaming"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.03,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 162,
+   "cost": 2.8476e-05
+  },
+  {
+   "number": 139117,
+   "title": "fix(update): retry transient fetch failures",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "P2",
+    "sweeper:risk-compatibility",
+    "area/install-update"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 141,
+   "cost": 2.7762e-05
+  },
+  {
+   "number": 139116,
+   "title": "feat(desktop): add a Role label to bots, shown beside the name and in teammates' rosters",
+   "labels": [
+    "type/feature",
+    "comp/agent",
+    "P3",
+    "comp/desktop"
+   ],
+   "files": 19,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.05,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 186,
+   "cost": 4.1664e-05
+  },
+  {
+   "number": 139115,
+   "title": "docs(model-catalog): add full-catalog OpenRouter picker recipe",
+   "labels": [
+    "type/docs",
+    "provider/openrouter",
+    "P3"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.45,
+    "security": 0.06,
+    "docs": 0.97
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": true
+   },
+   "ms": 212,
+   "cost": 2.8182e-05
+  },
+  {
+   "number": 139113,
+   "title": "fix(tools): address reactions by the durable session id",
+   "labels": [
+    "type/bug",
+    "comp/tools",
+    "P2",
+    "sweeper:risk-session-state",
+    "area/sessions"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.13,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 172,
+   "cost": 2.7426e-05
+  },
+  {
+   "number": 139112,
+   "title": "fix(tts): do not hold an interrupted turn waiting for the sync provider",
+   "labels": [
+    "type/bug",
+    "tool/tts",
+    "P2",
+    "area/streaming"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.03,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 182,
+   "cost": 2.8014e-05
+  },
+  {
+   "number": 139111,
+   "title": "fix(computer-use): support WSL Windows CUA driver interop (os error 123)",
+   "labels": [
+    "type/bug",
+    "comp/tools",
+    "P2",
+    "sweeper:risk-platform-windows",
+    "platform/windows"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.09,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 155,
+   "cost": 2.3562e-05
+  },
+  {
+   "number": 139110,
+   "title": "fix(pm): keep identical held tool entries live",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "P2",
+    "sweeper:risk-compatibility",
+    "sweeper:risk-platform-windows",
+    "comp/desktop",
+    "platform/windows",
+    "area/install-update"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.14,
+    "security": 0.05,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 157,
+   "cost": 2.8098e-05
+  },
+  {
+   "number": 139109,
+   "title": "fix(cli): load the home dotenv before the update check reads a token",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "area/auth",
+    "P2",
+    "sweeper:risk-compatibility",
+    "comp/desktop",
+    "area/install-update"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.94,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": true,
+    "docs": false
+   },
+   "ms": 147,
+   "cost": 2.7384e-05
+  },
+  {
+   "number": 139108,
+   "title": "fix(web_server): attach dashboard chat when it names the serving profile",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "P2",
+    "sweeper:risk-session-state",
+    "comp/dashboard",
+    "area/profiles"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.19,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 161,
+   "cost": 2.8224e-05
+  },
+  {
+   "number": 139107,
+   "title": "fix(update): tolerate stable ancestry probe timeouts",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "P2",
+    "sweeper:risk-compatibility",
+    "area/install-update"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 180,
+   "cost": 2.7972e-05
+  },
+  {
+   "number": 139105,
+   "title": "fix(gateway): serve a named-pipe peer that exits before its SID is read",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-security-boundary",
+    "sweeper:risk-platform-windows",
+    "comp/desktop",
+    "platform/windows"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.82,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": true,
+    "docs": false
+   },
+   "ms": 146,
+   "cost": 2.8266e-05
+  },
+  {
+   "number": 139101,
+   "title": "fix(bedrock): Converse tool schemas drop top-level combinators",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "provider/bedrock",
+    "P2",
+    "sweeper:risk-compatibility"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.05,
+    "docs": 0.03
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 362,
+   "cost": 2.9106e-05
+  },
+  {
+   "number": 139100,
+   "title": "fix(cli): put the Windows gateway tree in UTF-8 mode with PYTHONUTF8",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-compatibility",
+    "sweeper:risk-platform-windows",
+    "platform/windows"
+   ],
+   "files": 5,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.06,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 184,
+   "cost": 3.2046e-05
+  },
+  {
+   "number": 139098,
+   "title": "fix(skills): bound ClawHub owner enrichment",
+   "labels": [
+    "type/bug",
+    "tool/skills",
+    "P3",
+    "sweeper:risk-automation",
+    "Plugin Catalog"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.04,
+    "security": 0.06,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 164,
+   "cost": 2.8308e-05
+  },
+  {
+   "number": 139097,
+   "title": "fix(gateway): enable UTF-8 mode for Windows launchers",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-compatibility",
+    "sweeper:risk-platform-windows",
+    "platform/windows"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 155,
+   "cost": 2.9022e-05
+  },
+  {
+   "number": 139095,
+   "title": "fix(desktop): suggest Mandarin Edge voices",
+   "labels": [
+    "type/bug",
+    "tool/tts",
+    "P3",
+    "comp/desktop",
+    "area/i18n"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.07,
+    "security": 0.03,
+    "docs": 0.03
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 145,
+   "cost": 2.8098e-05
+  },
+  {
+   "number": 139094,
+   "title": "fix(status): use multiplex runtime for served profile status",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-compatibility",
+    "comp/desktop",
+    "comp/dashboard",
+    "area/profiles"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.06,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 252,
+   "cost": 2.8182e-05
+  },
+  {
+   "number": 139090,
+   "title": "fix(bedrock): strip top-level oneOf/allOf/anyOf from Converse tool inputSchema",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "provider/bedrock",
+    "P2",
+    "sweeper:risk-compatibility"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.06,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 144,
+   "cost": 2.9274e-05
+  },
+  {
+   "number": 139089,
+   "title": "fix(gateway): skip human waits during restart drain",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-session-state"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.05,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 164,
+   "cost": 2.7762e-05
+  },
+  {
+   "number": 139081,
+   "title": "fix(execute_code): a nested tool call does not outlive its cell, and the stub stops replaying a request the host is still serving",
+   "labels": [
+    "type/bug",
+    "comp/tools",
+    "tool/file",
+    "tool/code-exec",
+    "P2",
+    "sweeper:risk-security-boundary"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.45,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": true,
+    "docs": false
+   },
+   "ms": 152,
+   "cost": 3.0534e-05
+  },
+  {
+   "number": 139079,
+   "title": "hermes update no longer refuses the stable channel when git is slow to find the unfetched release (#137646, salvage #137649)",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "P2",
+    "sweeper:risk-compatibility",
+    "ci-reviewed",
+    "area/install-update"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.05,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 164,
+   "cost": 3.5574e-05
+  },
+  {
+   "number": 139078,
+   "title": "feat(plugin-catalog): add gemini-voice",
+   "labels": [
+    "type/feature",
+    "P3",
+    "needs-decision",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.96,
+    "security": 0.32,
+    "docs": 0.3
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 222,
+   "cost": 2.9694e-05
+  },
+  {
+   "number": 139076,
+   "title": "Plugin-rewritten messages are no longer refused on multi-profile gateways (#139045)",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "comp/plugins",
+    "P3",
+    "sweeper:risk-message-delivery",
+    "ci-reviewed"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.68,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 140,
+   "cost": 2.8308e-05
+  },
+  {
+   "number": 139072,
+   "title": "fix(plugin-catalog): bump web-search-plus to 5.1.1",
+   "labels": [
+    "type/security",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.93,
+    "security": 0.27,
+    "docs": 0.04
+   },
+   "truth": {
+    "catalog": true,
+    "security": true,
+    "docs": false
+   },
+   "ms": 170,
+   "cost": 3.3768e-05
+  },
+  {
+   "number": 139071,
+   "title": "fix(api_server): drop unknown include_editorial kwarg from /v1/skills",
+   "labels": [
+    "type/bug",
+    "duplicate",
+    "comp/gateway",
+    "tool/skills",
+    "P2",
+    "sweeper:risk-message-delivery"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.04,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 133,
+   "cost": 2.9442e-05
+  },
+  {
+   "number": 139070,
+   "title": "fix(tools): withdraw nested protected writes on cell timeout",
+   "labels": [
+    "type/bug",
+    "comp/tools",
+    "tool/file",
+    "tool/code-exec",
+    "P2",
+    "sweeper:risk-security-boundary"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.79,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": true,
+    "docs": false
+   },
+   "ms": 211,
+   "cost": 2.73e-05
+  },
+  {
+   "number": 139069,
+   "title": "fix(gateway): log why a watch notification was not admitted (from #139032)",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P3",
+    "sweeper:risk-message-delivery"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.18,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 154,
+   "cost": 2.9904e-05
+  },
+  {
+   "number": 139068,
+   "title": "fix(gateway): keep native provenance through a pre_gateway_dispatch rewrite",
+   "labels": [
+    "type/bug",
+    "duplicate",
+    "comp/gateway",
+    "comp/plugins",
+    "P3"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.05,
+    "security": 0.38,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 143,
+   "cost": 2.8644e-05
+  },
+  {
+   "number": 139067,
+   "title": "Shell hooks ask for consent on the CLI and follow config/allowlist changes without a gateway restart (CLI-5, #134889)",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "comp/cli",
+    "comp/gateway",
+    "area/config",
+    "P2",
+    "sweeper:risk-session-state",
+    "sweeper:risk-compatibility",
+    "area/sessions",
+    "area/profiles"
+   ],
+   "files": 11,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.68,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 157,
+   "cost": 3.276e-05
+  },
+  {
+   "number": 139066,
+   "title": "fix(skills): enable stripe-link-cli on Windows and document real-run pitfalls",
+   "labels": [
+    "type/docs",
+    "tool/skills",
+    "P3",
+    "platform/windows"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.56,
+    "security": 0.51,
+    "docs": 0.38
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": true
+   },
+   "ms": 167,
+   "cost": 2.8896e-05
+  },
+  {
+   "number": 139064,
+   "title": "fix(desktop): scope chat image uploads to profile",
+   "labels": [
+    "type/bug",
+    "P2",
+    "comp/desktop",
+    "area/profiles"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.55,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 147,
+   "cost": 2.9274e-05
+  },
+  {
+   "number": 139063,
+   "title": "fix(gateway): preserve secondary local session policy",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-session-state",
+    "area/profiles"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.8,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 156,
+   "cost": 2.8056e-05
+  },
+  {
+   "number": 139058,
+   "title": "fix(sessions): restore CLI MRU for gateway rows",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "P2",
+    "sweeper:risk-session-state",
+    "area/sessions"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.06,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 213,
+   "cost": 2.8602e-05
+  },
+  {
+   "number": 139057,
+   "title": "fix(gateway): session.usage frames carry the projected usage object",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P3",
+    "sweeper:risk-session-state",
+    "comp/desktop",
+    "area/usage-cost"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.04,
+    "docs": 0.03
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 190,
+   "cost": 2.8812e-05
+  },
+  {
+   "number": 139056,
+   "title": "fix(agent): never auto-archive a skill that a live skill depends on",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "tool/skills",
+    "P2",
+    "sweeper:risk-automation"
+   ],
+   "files": 5,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 159,
+   "cost": 3.003e-05
+  },
+  {
+   "number": 139055,
+   "title": "feat(desktop): preview Word, Excel, CSV, PowerPoint, and OpenDocument in the rail",
+   "labels": [
+    "type/feature",
+    "P3",
+    "comp/desktop"
+   ],
+   "files": 24,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.11,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 145,
+   "cost": 4.1916e-05
+  },
+  {
+   "number": 139054,
+   "title": "fix(gateway): preserve native event identity on hook rewrite",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "comp/plugins",
+    "P3"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.16,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 161,
+   "cost": 2.7888e-05
+  },
+  {
+   "number": 139053,
+   "title": "fix(gateway): prune orphaned routing entries",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-session-state",
+    "comp/desktop",
+    "area/sessions",
+    "area/profiles"
+   ],
+   "files": 5,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.08,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 209,
+   "cost": 3.0114e-05
+  },
+  {
+   "number": 139052,
+   "title": "Add the Promoat plugin to the catalog",
+   "labels": [
+    "type/feature",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.92,
+    "security": 0.67,
+    "docs": 0.11
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 172,
+   "cost": 2.2008e-05
+  },
+  {
+   "number": 139051,
+   "title": "feat(desktop): native composer behavior seam for standalone plugins",
+   "labels": [
+    "type/feature",
+    "comp/plugins",
+    "P3",
+    "needs-decision",
+    "sweeper:risk-session-state",
+    "comp/desktop"
+   ],
+   "files": 15,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.47,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 164,
+   "cost": 3.612e-05
+  },
+  {
+   "number": 139050,
+   "title": "fix(agent): auxiliary Relay calls decode as chat completions (#137202, salvage #137203)",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "provider/openai",
+    "P2",
+    "area/streaming"
+   ],
+   "files": 6,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.12,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 168,
+   "cost": 3.3306e-05
+  },
+  {
+   "number": 139047,
+   "title": "fix(gateway): keep tool calls in caller-supplied /v1/runs conversation_history",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-message-delivery"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.05,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 252,
+   "cost": 2.8686e-05
+  },
+  {
+   "number": 139046,
+   "title": "fix(usage): stop double-scaling Anthropic utilization below 1 percent",
+   "labels": [
+    "type/bug",
+    "duplicate",
+    "comp/agent",
+    "provider/anthropic",
+    "P2",
+    "area/billing",
+    "area/usage-cost"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 164,
+   "cost": 3.0576e-05
+  },
+  {
+   "number": 139044,
+   "title": "fix(gateway): re-enter the native callback for a messaging /retry redispatch",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-session-state",
+    "area/sessions",
+    "area/profiles"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.22,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 306,
+   "cost": 2.9064e-05
+  },
+  {
+   "number": 139043,
+   "title": "fix(cli): Ctrl+T monitor and dock read the gateway session's subagents (CLI-12)",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "tool/delegate",
+    "P2"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.13,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 185,
+   "cost": 2.9862e-05
+  },
+  {
+   "number": 139042,
+   "title": "fix(desktop): honor the active gateway for new sessions",
+   "labels": [
+    "type/bug",
+    "P2",
+    "sweeper:risk-session-state",
+    "comp/desktop",
+    "area/sessions",
+    "area/profiles"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.08,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 205,
+   "cost": 2.2848e-05
+  },
+  {
+   "number": 139039,
+   "title": "feat(telegram): select Desktop Projects when starting a new session",
+   "labels": [
+    "type/feature",
+    "comp/gateway",
+    "comp/plugins",
+    "tool/terminal",
+    "platform/telegram",
+    "backend/local",
+    "P3",
+    "needs-decision",
+    "sweeper:risk-session-state",
+    "sweeper:risk-message-delivery",
+    "comp/desktop",
+    "area/sessions"
+   ],
+   "files": 27,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.15,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 174,
+   "cost": 3.8514e-05
+  },
+  {
+   "number": 139038,
+   "title": "fix(gateway): retain shared runtime for validated profile owner",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P2",
+    "area/profiles"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.05,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 159,
+   "cost": 2.7174e-05
+  },
+  {
+   "number": 139037,
+   "title": "fix(agent): persist managed worker RPCs from async callbacks",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "P3",
+    "sweeper:risk-session-state",
+    "area/sessions"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.08,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 176,
+   "cost": 2.73e-05
+  },
+  {
+   "number": 139036,
+   "title": "fix(scale-to-zero): keep the dashboard-client heartbeat write off the connection path",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "comp/tui",
+    "P2",
+    "area/profiles"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.14,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 162,
+   "cost": 2.8266e-05
+  },
+  {
+   "number": 139034,
+   "title": "feat(kanban): kanban.auto_subscribe_wake - passive chat auto-subscriptions per platform",
+   "labels": [
+    "type/feature",
+    "comp/cli",
+    "comp/gateway",
+    "comp/tools",
+    "area/config",
+    "P3",
+    "sweeper:risk-message-delivery",
+    "sweeper:risk-compatibility"
+   ],
+   "files": 7,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.06,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 160,
+   "cost": 3.0912e-05
+  },
+  {
+   "number": 139033,
+   "title": "fix(acp): surface failed provider turns",
+   "labels": [
+    "type/bug",
+    "comp/acp",
+    "sweeper:risk-message-delivery",
+    "P4"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.07,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 155,
+   "cost": 2.7972e-05
+  },
+  {
+   "number": 139032,
+   "title": "Background-job completions reach the chat again on Telegram and Discord (#138940, salvage #138967)",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "tool/terminal",
+    "platform/telegram",
+    "platform/discord",
+    "P2",
+    "sweeper:risk-session-state",
+    "sweeper:risk-message-delivery",
+    "ci-reviewed",
+    "area/sessions"
+   ],
+   "files": 5,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.09,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 151,
+   "cost": 3.0702e-05
+  },
+  {
+   "number": 139031,
+   "title": "fix(desktop): ignore messaging session completions and controls",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "platform/wecom",
+    "P2",
+    "sweeper:risk-session-state",
+    "comp/desktop",
+    "area/sessions"
+   ],
+   "files": 5,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.09,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 190,
+   "cost": 3.0156e-05
+  },
+  {
+   "number": 139030,
+   "title": "fix(desktop): accept bare session usage events",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P3",
+    "sweeper:risk-session-state",
+    "comp/desktop",
+    "area/usage-cost"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 179,
+   "cost": 2.877e-05
+  },
+  {
+   "number": 139028,
+   "title": "Fix state.db WAL lock owner attribution under container device translation",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "P3",
+    "sweeper:risk-session-state",
+    "area/sessions"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.12,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 145,
+   "cost": 2.8476e-05
+  },
+  {
+   "number": 139026,
+   "title": "fix(gateway): Discord/Telegram background completions reach the agent instead of requeueing forever (#138940, salvage #138947 #138967 #138986)",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "tool/terminal",
+    "platform/telegram",
+    "platform/discord",
+    "P2",
+    "sweeper:risk-session-state",
+    "sweeper:risk-message-delivery",
+    "area/sessions"
+   ],
+   "files": 7,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.17,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 179,
+   "cost": 3.3768e-05
+  },
+  {
+   "number": 139025,
+   "title": "feat(feishu): show live per-turn progress in a collapsible card",
+   "labels": [
+    "type/feature",
+    "comp/gateway",
+    "comp/plugins",
+    "platform/feishu",
+    "P3",
+    "sweeper:risk-message-delivery"
+   ],
+   "files": 8,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.12,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 167,
+   "cost": 2.52e-05
+  },
+  {
+   "number": 139024,
+   "title": "feat(plugin-catalog): add devkit (per-session Scratchpad)",
+   "labels": [
+    "type/feature",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.85,
+    "security": 0.16,
+    "docs": 0.07
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 192,
+   "cost": 2.9652e-05
+  },
+  {
+   "number": 139023,
+   "title": "fix(tui): write the dashboard-client heartbeat marker off the event loop",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "comp/tui",
+    "P2",
+    "sweeper:risk-session-state"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.05,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 167,
+   "cost": 2.8938e-05
+  },
+  {
+   "number": 139022,
+   "title": "fix(gateway): include provider in local session info",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P3",
+    "sweeper:risk-session-state",
+    "comp/desktop",
+    "area/sessions"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.04,
+    "security": 0.06,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 149,
+   "cost": 2.6922e-05
+  },
+  {
+   "number": 139021,
+   "title": "fix(update): restore newest valid state snapshot",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "P1",
+    "sweeper:risk-session-state",
+    "sweeper:risk-compatibility",
+    "area/sessions",
+    "area/install-update"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 162,
+   "cost": 2.7846e-05
+  },
+  {
+   "number": 139020,
+   "title": "fix(gateway): honor omitted Windows task defaults",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/gateway",
+    "P1",
+    "sweeper:risk-compatibility",
+    "sweeper:risk-platform-windows",
+    "platform/windows",
+    "area/install-update"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.54,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 158,
+   "cost": 2.7384e-05
+  },
+  {
+   "number": 139019,
+   "title": "fix(cli): restore snapshots through an offline gateway handoff",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-session-state",
+    "area/sessions"
+   ],
+   "files": 7,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.38,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 141,
+   "cost": 3.0408e-05
+  },
+  {
+   "number": 139014,
+   "title": "Desktop no longer hangs on macOS when the home path's letter case differs (#138754, salvage #138961)",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P2",
+    "comp/desktop",
+    "ci-reviewed",
+    "area/profiles"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.39,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 152,
+   "cost": 3.066e-05
+  },
+  {
+   "number": 139010,
+   "title": "fix(agent): preserve custom provider headers for auto titles",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "area/config",
+    "P3"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.85,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 160,
+   "cost": 2.7846e-05
+  },
+  {
+   "number": 139009,
+   "title": "fix(gateway): a following session drops the coding posture when its profile leaves focus",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "comp/gateway",
+    "area/config",
+    "P2",
+    "sweeper:risk-session-state",
+    "sweeper:risk-compatibility"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.06,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 199,
+   "cost": 3.1122e-05
+  },
+  {
+   "number": 139007,
+   "title": "fix(background-review): run unrouted review forks on the pending primary runtime after a fallback",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "P2",
+    "area/billing",
+    "area/usage-cost"
+   ],
+   "files": 6,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.08,
+    "docs": 0.03
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 231,
+   "cost": 3.0282e-05
+  },
+  {
+   "number": 139006,
+   "title": "feat(desktop): host the Desktop renderer through the existing Hermes web server",
+   "labels": [
+    "type/feature",
+    "comp/cli",
+    "tool/terminal",
+    "area/auth",
+    "P3",
+    "needs-decision",
+    "sweeper:risk-security-boundary",
+    "sweeper:risk-compatibility",
+    "comp/desktop",
+    "comp/dashboard"
+   ],
+   "files": 40,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.84,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": true,
+    "docs": false
+   },
+   "ms": 190,
+   "cost": 4.0824e-05
+  },
+  {
+   "number": 139005,
+   "title": "Stable releases start the Windows bundle without waiting for the arm64 smoke (~12 min faster)",
+   "labels": [
+    "type/perf",
+    "P3",
+    "sweeper:risk-automation",
+    "sweeper:risk-platform-windows",
+    "platform/windows",
+    "ci-reviewed",
+    "area/install-update"
+   ],
+   "files": 7,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.05,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 156,
+   "cost": 3.1626e-05
+  },
+  {
+   "number": 139004,
+   "title": "Pasei/prompt workspace tail",
+   "labels": [],
+   "files": 40,
+   "nouls": {
+    "catalog": 0.06,
+    "security": 0.09,
+    "docs": 0.07
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 191,
+   "cost": 3.1794e-05
+  },
+  {
+   "number": 139003,
+   "title": "fix(gateway): preserve legacy ui meta CAS",
+   "labels": [
+    "type/bug",
+    "comp/tui",
+    "P1",
+    "sweeper:risk-compatibility",
+    "area/profiles"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.08,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 932,
+   "cost": 2.856e-05
+  },
+  {
+   "number": 139001,
+   "title": "fix(kanban): admit owner-run tasks as finite turns",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "comp/cron",
+    "P2",
+    "sweeper:risk-session-state",
+    "area/sessions"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.33,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 150,
+   "cost": 2.8266e-05
+  },
+  {
+   "number": 139000,
+   "title": "fix(cli): drop the blank line above the streamed reasoning box footer",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "P3",
+    "area/streaming"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.02,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 141,
+   "cost": 2.898e-05
+  },
+  {
+   "number": 138999,
+   "title": "fix(toolsets): make zero tools expressible, fail closed on an empty -t",
+   "labels": [
+    "type/feature",
+    "comp/cli",
+    "comp/tools",
+    "P3"
+   ],
+   "files": 6,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.75,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 159,
+   "cost": 3.066e-05
+  },
+  {
+   "number": 138997,
+   "title": "test(install): preload Compression assembly for PS 5.1 ZipArchiveMode",
+   "labels": [
+    "type/test",
+    "P3",
+    "sweeper:risk-platform-windows",
+    "platform/windows",
+    "area/install-update"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.06,
+    "security": 0.03,
+    "docs": 0.06
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 244,
+   "cost": 3.1836e-05
+  },
+  {
+   "number": 138996,
+   "title": "test(cli): skip the live schtasks /Create probes when task creation is denied",
+   "labels": [
+    "type/test",
+    "comp/cli",
+    "P3",
+    "sweeper:risk-platform-windows",
+    "platform/windows"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.27,
+    "docs": 0.06
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 176,
+   "cost": 2.9064e-05
+  },
+  {
+   "number": 138995,
+   "title": "perf(cli): memoize stable profile home resolution",
+   "labels": [
+    "type/perf",
+    "comp/cli",
+    "comp/plugins",
+    "P2",
+    "area/profiles"
+   ],
+   "files": 4,
+   "nouls": {
+    "catalog": 0.01,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 154,
+   "cost": 2.7258e-05
+  },
+  {
+   "number": 138993,
+   "title": "fix(desktop): give an unset plugin secret field a placeholder",
+   "labels": [
+    "type/bug",
+    "comp/plugins",
+    "P3",
+    "comp/desktop"
+   ],
+   "files": 8,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.4,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 175,
+   "cost": 3.3768e-05
+  },
+  {
+   "number": 138991,
+   "title": "fix(config): load SOUL.md from HERMES_MANAGED_DIR",
+   "labels": [
+    "type/feature",
+    "comp/agent",
+    "comp/cli",
+    "area/config",
+    "P3",
+    "sweeper:risk-compatibility"
+   ],
+   "files": 5,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.32,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 167,
+   "cost": 3.1206e-05
+  },
+  {
+   "number": 138989,
+   "title": "fix(models): list hy4-preview in the curated opencode-go catalog",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "P3"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.26,
+    "security": 0.06,
+    "docs": 0.03
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 205,
+   "cost": 2.9442e-05
+  },
+  {
+   "number": 138988,
+   "title": "fix(cli): avoid repeated footer overflow redraws",
+   "labels": [
+    "type/perf",
+    "comp/cli",
+    "P2"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.02,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 185,
+   "cost": 2.856e-05
+  },
+  {
+   "number": 138987,
+   "title": "chore(plugins): pin birkin-mnemosyne to core 0.7.2",
+   "labels": [
+    "type/feature",
+    "tool/memory",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.95,
+    "security": 0.07,
+    "docs": 0.2
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 221,
+   "cost": 3.5532e-05
+  },
+  {
+   "number": 138986,
+   "title": "fix(gateway): never reply-anchor internal wakes to their producer identity",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "platform/telegram",
+    "P2",
+    "sweeper:risk-message-delivery"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.05,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 229,
+   "cost": 2.8728e-05
+  },
+  {
+   "number": 138981,
+   "title": "chore(plugins): update Activity to v0.2.2",
+   "labels": [
+    "type/refactor",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.87,
+    "security": 0.1,
+    "docs": 0.1
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 165,
+   "cost": 2.4234e-05
+  },
+  {
+   "number": 138980,
+   "title": "fix(messaging): link Discord setup guide to Hermes docs",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "platform/discord",
+    "P3",
+    "comp/dashboard"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.04,
+    "security": 0.09,
+    "docs": 0.1
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 166,
+   "cost": 2.856e-05
+  },
+  {
+   "number": 138978,
+   "title": "fix(ssh): budget the full ControlMaster listener path for every root",
+   "labels": [
+    "type/bug",
+    "backend/ssh",
+    "tool/terminal",
+    "P2"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.25,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 163,
+   "cost": 3.0912e-05
+  },
+  {
+   "number": 138977,
+   "title": "fix(process): stop env-backed background writers and their children",
+   "labels": [
+    "type/bug",
+    "comp/tools",
+    "tool/terminal",
+    "P2"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.1,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 179,
+   "cost": 2.6964e-05
+  },
+  {
+   "number": 138976,
+   "title": "fix(cli): survive aarch64 hosts that advertise SVE they cannot execute",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "P2"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.09,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 288,
+   "cost": 2.9862e-05
+  },
+  {
+   "number": 138972,
+   "title": "fix(copy): advise /model on exhaustion only when a viable hop remains",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "P3"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.06,
+    "docs": 0.03
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 178,
+   "cost": 2.94e-05
+  },
+  {
+   "number": 138971,
+   "title": "feat(kanban): retain more of latest context comment",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "P3"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 161,
+   "cost": 2.9106e-05
+  },
+  {
+   "number": 138970,
+   "title": "fix(subagent-lifecycle): stop double-clipping native-finalized summaries and pass spill metadata through",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "comp/plugins",
+    "tool/delegate",
+    "P3"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.03
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 170,
+   "cost": 3.15e-05
+  },
+  {
+   "number": 138968,
+   "title": "fix(cron): find unified-runtime cron runs by their scheduler admission",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "comp/cron",
+    "P2",
+    "sweeper:risk-session-state",
+    "comp/desktop",
+    "area/sessions"
+   ],
+   "files": 14,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.07,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 295,
+   "cost": 3.6078e-05
+  },
+  {
+   "number": 138967,
+   "title": "fix(gateway): admit completion wakes whose source differs only by message_id",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "platform/telegram",
+    "platform/discord",
+    "P2",
+    "sweeper:risk-session-state",
+    "sweeper:risk-message-delivery",
+    "area/sessions"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.11,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 302,
+   "cost": 2.7846e-05
+  },
+  {
+   "number": 138966,
+   "title": "plugin-catalog: bump Jot to 0.4.1",
+   "labels": [
+    "type/feature",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.67,
+    "security": 0.67,
+    "docs": 0.06
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 232,
+   "cost": 3.0618e-05
+  },
+  {
+   "number": 138962,
+   "title": "fix(desktop): localize the \"New session\" / \"Untitled session\" tab names",
+   "labels": [
+    "type/bug",
+    "P3",
+    "comp/desktop",
+    "area/i18n"
+   ],
+   "files": 6,
+   "nouls": {
+    "catalog": 0.04,
+    "security": 0.03,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 188,
+   "cost": 3.2214e-05
+  },
+  {
+   "number": 138961,
+   "title": "fix(desktop): mint gateway tickets for a home's identity, not its spelling",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P2",
+    "comp/desktop",
+    "area/profiles"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.26,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 174,
+   "cost": 2.9232e-05
+  },
+  {
+   "number": 138960,
+   "title": "fix(gateway): keep a local session's endpoint and key together on a model pick",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "area/auth",
+    "area/config",
+    "P2",
+    "sweeper:risk-session-state",
+    "sweeper:risk-compatibility",
+    "area/sessions",
+    "area/profiles"
+   ],
+   "files": 5,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.89,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": true,
+    "docs": false
+   },
+   "ms": 189,
+   "cost": 2.9778e-05
+  },
+  {
+   "number": 138959,
+   "title": "fix(desktop): retire stale generation mutations",
+   "labels": [
+    "type/bug",
+    "P2",
+    "sweeper:risk-session-state",
+    "comp/desktop"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.13,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 168,
+   "cost": 2.835e-05
+  },
+  {
+   "number": 138958,
+   "title": "feat(plugin-catalog): add hermes-xai (Grok Voice for Desktop + read-only xAI Collections search)",
+   "labels": [
+    "type/feature",
+    "tool/tts",
+    "provider/xai",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.8,
+    "security": 0.82,
+    "docs": 0.06
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 133,
+   "cost": 3.0786e-05
+  },
+  {
+   "number": 138957,
+   "title": "fix(docker): start TUI gateway through s6",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/gateway",
+    "area/docker",
+    "P2"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.08,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 136,
+   "cost": 2.814e-05
+  },
+  {
+   "number": 138956,
+   "title": "fix(gateway): the gateway picks the coding toolsets, decided once per session (salvage #138818)",
+   "labels": [
+    "type/bug",
+    "comp/agent",
+    "comp/cli",
+    "comp/gateway",
+    "comp/tui",
+    "comp/acp",
+    "area/config",
+    "P0",
+    "sweeper:risk-session-state",
+    "sweeper:risk-compatibility",
+    "sweeper:risk-caching",
+    "comp/desktop"
+   ],
+   "files": 12,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.16,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 152,
+   "cost": 3.3684e-05
+  },
+  {
+   "number": 138955,
+   "title": "feat(plugin-catalog): add specstream plugin",
+   "labels": [
+    "type/feature",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.89,
+    "security": 0.76,
+    "docs": 0.11
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 171,
+   "cost": 2.4276e-05
+  },
+  {
+   "number": 138954,
+   "title": "fix(gateway): re-sweep idle scratch entries on the housekeeping tick",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-message-delivery"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.03,
+    "security": 0.05,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 181,
+   "cost": 2.9232e-05
+  },
+  {
+   "number": 138953,
+   "title": "feat(agent): add opt-in finished reasoning replay trimming",
+   "labels": [
+    "type/feature",
+    "comp/agent",
+    "area/config",
+    "P3",
+    "sweeper:risk-compatibility",
+    "area/usage-cost"
+   ],
+   "files": 6,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 142,
+   "cost": 2.8686e-05
+  },
+  {
+   "number": 138951,
+   "title": "fix(acp): resolve private overlay gateway homes",
+   "labels": [
+    "type/bug",
+    "comp/cli",
+    "comp/acp",
+    "sweeper:risk-session-state",
+    "P4",
+    "area/profiles"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.43,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 142,
+   "cost": 2.8686e-05
+  },
+  {
+   "number": 138950,
+   "title": "fix(dashboard): forward standalone mutations to the live gateway owner",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "P2",
+    "sweeper:risk-session-state",
+    "comp/dashboard",
+    "area/sessions"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.59,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 174,
+   "cost": 2.793e-05
+  },
+  {
+   "number": 138948,
+   "title": "catalog: add hermes-federated-search",
+   "labels": [
+    "type/feature",
+    "tool/web",
+    "P3",
+    "Plugin Catalog"
+   ],
+   "files": 1,
+   "nouls": {
+    "catalog": 0.91,
+    "security": 0.49,
+    "docs": 0.12
+   },
+   "truth": {
+    "catalog": true,
+    "security": false,
+    "docs": false
+   },
+   "ms": 169,
+   "cost": 2.7384e-05
+  },
+  {
+   "number": 138947,
+   "title": "fix(gateway): bound failed completion notification retries",
+   "labels": [
+    "type/bug",
+    "comp/gateway",
+    "tool/terminal",
+    "P2",
+    "sweeper:risk-message-delivery"
+   ],
+   "files": 2,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.04,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 178,
+   "cost": 2.6754e-05
+  },
+  {
+   "number": 138946,
+   "title": "feat(plugins): expose tool registration options",
+   "labels": [
+    "type/feature",
+    "comp/tools",
+    "comp/plugins",
+    "P3"
+   ],
+   "files": 3,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.07,
+    "docs": 0.03
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 152,
+   "cost": 2.7804e-05
+  },
+  {
+   "number": 138944,
+   "title": "feat(cron): support URL blueprint slots",
+   "labels": [
+    "type/feature",
+    "comp/cli",
+    "comp/cron",
+    "comp/plugins",
+    "P3",
+    "comp/desktop",
+    "comp/dashboard",
+    "area/profiles"
+   ],
+   "files": 12,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.34,
+    "docs": 0.02
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 193,
+   "cost": 3.3558e-05
+  },
+  {
+   "number": 138942,
+   "title": "feat(plugins): add session lifecycle admission hooks",
+   "labels": [
+    "type/feature",
+    "comp/agent",
+    "comp/cli",
+    "comp/tui",
+    "comp/plugins",
+    "P3",
+    "needs-decision",
+    "sweeper:risk-session-state",
+    "area/sessions"
+   ],
+   "files": 11,
+   "nouls": {
+    "catalog": 0.02,
+    "security": 0.59,
+    "docs": 0.01
+   },
+   "truth": {
+    "catalog": false,
+    "security": false,
+    "docs": false
+   },
+   "ms": 159,
+   "cost": 3.3096e-05
+  }
+ ],
+ "usage": {
+  "calls": 160,
+  "ms_median": 172,
+  "cost_usd": 0.00478
+ },
+ "arms": {
+  "catalog": "The pull request only adds or updates a plugin-catalog entry and changes no Hermes code.",
+  "security": "The change alters an authentication, authorization, secret-handling, or sandbox boundary.",
+  "docs": "The change only touches documentation and changes no runtime behavior."
+ }
+}

@@ -1,0 +1,400 @@
+{
+ "rows": [
+  {
+   "sha": "c07be22d0c9",
+   "subject": "feat(desktop): directory card for manage_connections display",
+   "file": "apps/desktop/src/components/assistant-ui/connector-tool.tsx",
+   "truth": "connector-logo",
+   "pick": "connector-card",
+   "confidence": 0.21,
+   "top3": [
+    "connector-card",
+    "avatar-chip",
+    "tab-dropdown"
+   ],
+   "ms": 1474,
+   "cost": 0.000140364
+  },
+  {
+   "sha": "9809922e049",
+   "subject": "feat(desktop): fade top/bottom of the onboarding connectors list",
+   "file": "apps/desktop/src/components/assistant-ui/clarify/setup-pickers.tsx",
+   "truth": "fade-scroll",
+   "pick": "color-swatches",
+   "confidence": 0.24,
+   "top3": [
+    "color-swatches",
+    "connector-card",
+    "highlight-matches"
+   ],
+   "ms": 201,
+   "cost": 0.000138558
+  },
+  {
+   "sha": "6cb7a64e594",
+   "subject": "revert: Skills and Plugins card catalog browser, third landing (reverts #119381)",
+   "file": "apps/desktop/src/app/capabilities/skills/skills-tab.tsx",
+   "truth": "badge",
+   "pick": "actions-menu",
+   "confidence": 0.39,
+   "top3": [
+    "actions-menu",
+    "connector-card",
+    "action-status"
+   ],
+   "ms": 195,
+   "cost": 0.000144984
+  },
+  {
+   "sha": "40a2637faed",
+   "subject": "fix(desktop): scope pane fallback menus to the clicked content",
+   "file": "apps/desktop/src/app/context-menu/app-context-menu.tsx",
+   "truth": "actions-menu",
+   "pick": "actions-menu",
+   "confidence": 0.92,
+   "top3": [
+    "actions-menu",
+    "context-menu",
+    "action-status"
+   ],
+   "ms": 240,
+   "cost": 0.000148218
+  },
+  {
+   "sha": "b27d9eb7c00",
+   "subject": "feat(desktop): add review-pane diff scope selector (Uncommitted / Branch / Last turn)",
+   "file": "apps/desktop/src/app/right-sidebar/review/index.tsx",
+   "truth": "segmented-control",
+   "pick": "generate-button",
+   "confidence": 0.47,
+   "top3": [
+    "generate-button",
+    "codicon",
+    "action-status"
+   ],
+   "ms": 198,
+   "cost": 0.00013818
+  },
+  {
+   "sha": "641af6dfc52",
+   "subject": "feat(desktop): shift-click a model to pin it to the top of the picker",
+   "file": "apps/desktop/src/app/shell/model-edit-submenu.tsx",
+   "truth": "codicon",
+   "pick": "actions-menu",
+   "confidence": 0.9,
+   "top3": [
+    "actions-menu",
+    "segmented-control",
+    "fan-menu"
+   ],
+   "ms": 207,
+   "cost": 0.00014238
+  },
+  {
+   "sha": "24bbdab4c79",
+   "subject": "fix(desktop): reveal clipped profile rail edges and pin actions",
+   "file": "apps/desktop/src/app/chat/sidebar/profile-switcher.tsx",
+   "truth": "fade-scroll",
+   "pick": "connector-card",
+   "confidence": 0.39,
+   "top3": [
+    "connector-card",
+    "profile-glyph",
+    "avatar-chip"
+   ],
+   "ms": 191,
+   "cost": 0.000142128
+  },
+  {
+   "sha": "1b7e8c45d62",
+   "subject": "fix(desktop): every settings row renders through one ListRow/ToggleRow/Slider/SearchField",
+   "file": "apps/desktop/src/app/settings/local-models-settings.tsx",
+   "truth": "search-field",
+   "pick": "search-field",
+   "confidence": 0.97,
+   "top3": [
+    "search-field",
+    "field",
+    "action-status"
+   ],
+   "ms": 197,
+   "cost": 0.00013755
+  },
+  {
+   "sha": "d1ce67c67a8",
+   "subject": "fix(desktop): the connector dialog's verb and switch sit in its header (#119128)",
+   "file": "apps/desktop/src/app/capabilities/connectors/ways-section.tsx",
+   "truth": "segmented-control",
+   "pick": "connector-card",
+   "confidence": 0.98,
+   "top3": [
+    "connector-card",
+    "setup-field-list",
+    "action-status"
+   ],
+   "ms": 241,
+   "cost": 0.000140364
+  },
+  {
+   "sha": "d00c951523a",
+   "subject": "fix(desktop): remove persistent HUD gesture status chrome",
+   "file": "apps/desktop/src/app/settings/hud-modifier-settings.tsx",
+   "truth": "error-state",
+   "pick": "connector-card",
+   "confidence": 0.56,
+   "top3": [
+    "connector-card",
+    "action-status",
+    "empty-state"
+   ],
+   "ms": 245,
+   "cost": 0.000140658
+  },
+  {
+   "sha": "afc3b7c6f39",
+   "subject": "feat(connectors): one backend-owned connection operation, with a setup card on Desktop, TUI and CLI (#111008)",
+   "file": "apps/desktop/src/components/assistant-ui/mcp-setup-tool.tsx",
+   "truth": "setup-form-dialog",
+   "pick": "connector-card",
+   "confidence": 1,
+   "top3": [
+    "connector-card",
+    "action-status",
+    "actions-menu"
+   ],
+   "ms": 191,
+   "cost": 0.000139272
+  },
+  {
+   "sha": "4c203de493c",
+   "subject": "fix(onboarding): accept custom colors in the existing picker",
+   "file": "apps/desktop/src/components/onboarding-chat/options.tsx",
+   "truth": "codicon",
+   "pick": "color-swatches",
+   "confidence": 1,
+   "top3": [
+    "color-swatches",
+    "action-status",
+    "actions-menu"
+   ],
+   "ms": 173,
+   "cost": 0.000137844
+  },
+  {
+   "sha": "cb95c278af5",
+   "subject": "feat(desktop): keep live approval stacks stable during execution",
+   "file": "apps/desktop/src/components/assistant-ui/tool/approval.tsx",
+   "truth": "codicon",
+   "pick": "card-stack",
+   "confidence": 0.48,
+   "top3": [
+    "card-stack",
+    "confirm-dialog",
+    "connector-card"
+   ],
+   "ms": 222,
+   "cost": 0.000148596
+  },
+  {
+   "sha": "56ea9bab92c",
+   "subject": "feat(desktop): stack approvals and advance exact requests with Enter",
+   "file": "apps/desktop/src/components/assistant-ui/tool/approval.tsx",
+   "truth": "card-stack",
+   "pick": "split-button",
+   "confidence": 0.62,
+   "top3": [
+    "split-button",
+    "actions-menu",
+    "copy-button"
+   ],
+   "ms": 241,
+   "cost": 0.000148218
+  },
+  {
+   "sha": "3bdd4cc5fda",
+   "subject": "fix(desktop): keep background continuations in one visual response",
+   "file": "apps/desktop/src/components/assistant-ui/thread/system-message.tsx",
+   "truth": "log-view",
+   "pick": "disclosure-caret",
+   "confidence": 0.51,
+   "top3": [
+    "disclosure-caret",
+    "log-view",
+    "connector-card"
+   ],
+   "ms": 218,
+   "cost": 0.0001407
+  },
+  {
+   "sha": "4f1966edac9",
+   "subject": "feat(desktop): connector cards that wait for the sign-in, and a guided first launch that holds together (#108292)",
+   "file": "apps/desktop/src/components/assistant-ui/mcp-setup-tool.tsx",
+   "truth": "connector-card",
+   "pick": "setup-field-list",
+   "confidence": 0.38,
+   "top3": [
+    "setup-field-list",
+    "field",
+    "connector-card"
+   ],
+   "ms": 191,
+   "cost": 0.0001491
+  },
+  {
+   "sha": "4f1966edac9",
+   "subject": "feat(desktop): connector cards that wait for the sign-in, and a guided first launch that holds together (#108292)",
+   "file": "apps/desktop/src/components/onboarding-chat/cards/setup.tsx",
+   "truth": "search-field",
+   "pick": "avatar-chip",
+   "confidence": 0.53,
+   "top3": [
+    "avatar-chip",
+    "connector-logo",
+    "connector-card"
+   ],
+   "ms": 248,
+   "cost": 0.000134778
+  },
+  {
+   "sha": "731b04c06e6",
+   "subject": "feat(desktop): the onboarding connector picker reads the live catalog",
+   "file": "apps/desktop/src/components/onboarding-chat/cards/setup.tsx",
+   "truth": "search-field",
+   "pick": "avatar-chip",
+   "confidence": 0.55,
+   "top3": [
+    "avatar-chip",
+    "connector-logo",
+    "connector-card"
+   ],
+   "ms": 221,
+   "cost": 0.000134778
+  },
+  {
+   "sha": "65d46fc3891",
+   "subject": "refactor(desktop): one consent card for connectors and MCP setup",
+   "file": "apps/desktop/src/components/assistant-ui/mcp-setup-tool.tsx",
+   "truth": "connector-card",
+   "pick": "setup-field-list",
+   "confidence": 0.35,
+   "top3": [
+    "setup-field-list",
+    "field",
+    "connector-card"
+   ],
+   "ms": 186,
+   "cost": 0.0001491
+  },
+  {
+   "sha": "248ff2d3e8b",
+   "subject": "feat(desktop): one row per plugin; desktop halves are app-level copies, never profile-scoped",
+   "file": "apps/desktop/src/app/skills/plugins-tab.tsx",
+   "truth": "codicon",
+   "pick": "empty-state",
+   "confidence": 0.5,
+   "top3": [
+    "empty-state",
+    "connector-card",
+    "error-state"
+   ],
+   "ms": 160,
+   "cost": 0.000145278
+  },
+  {
+   "sha": "9ed308f9012",
+   "subject": "refactor(desktop): one identity chip behind every avatar",
+   "file": "apps/desktop/src/app/messaging/platform-icon.tsx",
+   "truth": "avatar-chip",
+   "pick": "avatar-chip",
+   "confidence": 0.93,
+   "top3": [
+    "avatar-chip",
+    "connector-logo",
+    "badge"
+   ],
+   "ms": 204,
+   "cost": 0.00013839
+  },
+  {
+   "sha": "9ed308f9012",
+   "subject": "refactor(desktop): one identity chip behind every avatar",
+   "file": "apps/desktop/src/app/skills/mcp-tab.tsx",
+   "truth": "avatar-chip",
+   "pick": "avatar-chip",
+   "confidence": 0.99,
+   "top3": [
+    "avatar-chip",
+    "profile-glyph",
+    "action-status"
+   ],
+   "ms": 246,
+   "cost": 0.00014112
+  },
+  {
+   "sha": "5df9cd27eae",
+   "subject": "feat(desktop): let ConfirmDialog carry a secondary action",
+   "file": "apps/desktop/src/app/chat/sidebar/projects/entered-content.tsx",
+   "truth": "confirm-dialog",
+   "pick": "confirm-dialog",
+   "confidence": 1,
+   "top3": [
+    "confirm-dialog",
+    "action-status",
+    "actions-menu"
+   ],
+   "ms": 184,
+   "cost": 0.000142884
+  },
+  {
+   "sha": "1e26c02de6b",
+   "subject": "refactor(desktop): route cron delete and review revert through ConfirmDialog",
+   "file": "apps/desktop/src/app/cron/index.tsx",
+   "truth": "confirm-dialog",
+   "pick": "confirm-dialog",
+   "confidence": 1,
+   "top3": [
+    "confirm-dialog",
+    "action-status",
+    "actions-menu"
+   ],
+   "ms": 230,
+   "cost": 0.00014301
+  },
+  {
+   "sha": "1e26c02de6b",
+   "subject": "refactor(desktop): route cron delete and review revert through ConfirmDialog",
+   "file": "apps/desktop/src/app/right-sidebar/review/index.tsx",
+   "truth": "confirm-dialog",
+   "pick": "confirm-dialog",
+   "confidence": 1,
+   "top3": [
+    "confirm-dialog",
+    "action-status",
+    "actions-menu"
+   ],
+   "ms": 164,
+   "cost": 0.00014406
+  },
+  {
+   "sha": "0b879298a78",
+   "subject": "feat(desktop): browser-bar controls for the address and the page",
+   "file": "apps/desktop/src/app/chat/right-rail/preview-browser-bar.tsx",
+   "truth": "copy-button",
+   "pick": "field",
+   "confidence": 0.75,
+   "top3": [
+    "field",
+    "sanitized-input",
+    "search-field"
+   ],
+   "ms": 159,
+   "cost": 0.000136626
+  }
+ ],
+ "usage": {
+  "calls": 26,
+  "ms_median": 204,
+  "cost_usd": 0.00369
+ },
+ "n_options": 45
+}
