@@ -18,7 +18,7 @@
       <li class="here"><a href="index.html" aria-current="page">What is Jev?</a>
         <ol class="sections">
           <li><a href="#what">What kind of model</a></li>
-          <li><a href="#primitives">The three questions</a></li>
+          <li><a href="#primitives">The kinds of question</a></li>
           <li><a href="#try">Making a call</a></li>
           <li><a href="#think">Writing good questions</a></li>
           <li><a href="#gates">How a gate decides</a></li>
@@ -61,55 +61,60 @@
       </div>
       <p>Jev, from TypeSafe, removes that whole step. You don't prompt it and it never writes anything. You send it the thing you want judged plus a list of typed questions about it, and it sends back an answer to each question with a probability attached. TypeSafe calls this a <a href="https://docs.typesafe.ai/concepts/system-one">System One</a> model, borrowing the psychology term for fast, automatic judgement, as opposed to the slow, step-by-step reasoning a chat model does.</p>
       <p>A request has three parts. The <strong>state</strong> is whatever you want judged. It can be a string or any JSON, and JSON with clear field names tends to get better answers than a wall of text. The <strong>questions</strong> are a map you write, from ids you pick to typed questions. The <strong>answers</strong> come back under those same ids. Jev evaluates every question separately and in parallel against the same state, so asking ten questions takes about as long as asking one.</p>
-      <p>What you give up is flexibility. Jev only picks among options you provide. It can't explain an answer, call a tool, or work through a problem in steps. In exchange it's fast (tens to a few hundred milliseconds), cheap (the 926 calls behind the workflow-gate examples cost under five cents in total), and its probabilities mean something. TypeSafe trains it to be <em>calibrated</em>: across many calls, the answers it gives 0.9 should be right about nine times out of ten.</p>
+      <p>What you give up is flexibility. Jev only picks among options you provide. It can't explain an answer, call a tool, or work through a problem in steps. In exchange it's fast (tens to a few hundred milliseconds), cheap (the 926 calls behind the <a href="cases.html">workflow-gate examples</a> cost under five cents in total, by OpenRouter's billing), and its probabilities mean something. TypeSafe trains it to be <em>calibrated</em>: across many calls, the answers it gives 0.9 should be right about nine times out of ten.</p>
     </section>
 
     <section id="primitives">
-      <h2>The three kinds of question</h2>
-      <p>There are only three, and most of the craft is picking the right one. A <strong>noul</strong> is a yes/no question, and its answer is simply the probability of yes. Reach for it whenever you'd naturally say "is it true that…". A <strong>choice</strong> picks one option from a list of up to 255 and gives a probability for each, all adding up to 1. Use it when exactly one option can be right. A <strong>score</strong> places the state on an ordered scale you describe, like calm, frustrated, furious, and returns where it falls as a decimal.</p>
+      <h2>The kinds of question</h2>
+      <p>For text, there are three, and most of the craft is picking the right one. A <strong>noul</strong> is a yes/no question, and its answer is simply the probability of yes. Reach for it whenever you'd naturally say "is it true that…". A <strong>choice</strong> picks one option from a list of up to 255 and gives a probability for each, all adding up to 1. Use it when exactly one option can be right. A <strong>score</strong> places the state on an ordered scale you describe, like calm, frustrated, furious, and tells you where it falls as a decimal, along with a probability for each step. (There's also a fourth kind, <a href="https://docs.typesafe.ai/primitives/box">box</a>, which finds where something is in an image. It doesn't come up in workflow gates, so it's left out here.)</p>
       <table>
         <thead><tr><th>Type</th><th>It asks</th><th>You get back</th></tr></thead>
         <tbody>
           <tr><td><code>noul</code></td><td>Is this statement true?</td><td><code>noul</code>, the probability of yes, from 0 to 1</td></tr>
           <tr><td><code>choice</code></td><td>Which of these options?</td><td><code>choice</code>, <code>probabilities</code> for every option, <code>confidence</code></td></tr>
-          <tr><td><code>score</code></td><td>Where on this scale?</td><td><code>score</code> as a decimal (e.g. 1.035), <code>legend</code>, <code>confidence</code></td></tr>
+          <tr><td><code>score</code></td><td>Where on this scale?</td><td><code>score</code> as a decimal, <code>probabilities</code> for every step, <code>legend</code>, <code>confidence</code></td></tr>
         </tbody>
       </table>
-      <p>Here's TypeSafe's own quickstart example, which asks all three about one support ticket:</p>
+      <p>Here's the example from <a href="https://docs.typesafe.ai/introduction/quickstart">TypeSafe's quickstart</a>, which asks all three about one support ticket:</p>
       <figure>
         <figcaption>Request</figcaption>
 <pre><code>{
   <span class="s">"model"</span>: <span class="s">"jev-latest"</span>,
-  <span class="s">"state"</span>: <span class="s">"Stripe won't connect for 3 days. I'm losing sales. ASAP."</span>,
+  <span class="s">"state"</span>: <span class="s">"Our API integration started returning 500 errors on every request about 20 minutes
+            ago, and we can't process any customer orders until this is fixed."</span>,
   <span class="s">"questions"</span>: {
     <span class="s">"department"</span>: {
       <span class="s">"type"</span>: <span class="s">"choice"</span>, <span class="s">"instructions"</span>: <span class="s">"Which team should handle this"</span>,
-      <span class="s">"criteria"</span>: { <span class="s">"billing"</span>: <span class="s">"Payment issues"</span>, <span class="s">"technical"</span>: <span class="s">"Bugs or integrations"</span>,
-                    <span class="s">"sales"</span>: <span class="s">"Pricing"</span> } },
+      <span class="s">"criteria"</span>: { <span class="s">"billing"</span>: <span class="s">"Payment or subscription issues"</span>,
+                    <span class="s">"technical"</span>: <span class="s">"Bugs or integration problems"</span>,
+                    <span class="s">"sales"</span>: <span class="s">"Pricing or account questions"</span> } },
     <span class="s">"frustration"</span>: {
-      <span class="s">"type"</span>: <span class="s">"score"</span>, <span class="s">"instructions"</span>: <span class="s">"How frustrated the customer is"</span>,
-      <span class="s">"criteria"</span>: [<span class="s">"Calm"</span>, <span class="s">"Frustrated but civil"</span>, <span class="s">"Very angry"</span>] },
-    <span class="s">"is_urgent"</span>: { <span class="s">"type"</span>: <span class="s">"noul"</span>, <span class="s">"instructions"</span>: <span class="s">"The message conveys urgency"</span> }
+      <span class="s">"type"</span>: <span class="s">"score"</span>, <span class="s">"instructions"</span>: <span class="s">"How frustrated the customer appears"</span>,
+      <span class="s">"criteria"</span>: [<span class="s">"Calm, just stating facts"</span>, <span class="s">"Frustrated but civil"</span>, <span class="s">"Very angry, strong language"</span>] },
+    <span class="s">"is_urgent"</span>: { <span class="s">"type"</span>: <span class="s">"noul"</span>, <span class="s">"instructions"</span>: <span class="s">"The message conveys urgency or time-sensitivity"</span> }
   }
 }</code></pre>
       </figure>
       <figure>
-        <figcaption>Response</figcaption>
+        <figcaption>Response, as shown in the quickstart</figcaption>
 <pre><code>{ <span class="s">"answers"</span>: {
-    <span class="s">"department"</span>:  { <span class="s">"choice"</span>: <span class="s">"technical"</span>, <span class="s">"confidence"</span>: 0.596,
-                     <span class="s">"probabilities"</span>: { <span class="s">"billing"</span>: 0.159, <span class="s">"technical"</span>: 0.84, <span class="s">"sales"</span>: 0.001 } },
-    <span class="s">"frustration"</span>: { <span class="s">"score"</span>: 1.035, <span class="s">"confidence"</span>: 0.842 },
-    <span class="s">"is_urgent"</span>:   { <span class="s">"noul"</span>: 0.999 } } }</code></pre>
+    <span class="s">"department"</span>:  { <span class="s">"choice"</span>: <span class="s">"technical"</span>, <span class="s">"confidence"</span>: 1.0,
+                     <span class="s">"probabilities"</span>: { <span class="s">"technical"</span>: 1.0, <span class="s">"billing"</span>: 0.0, <span class="s">"sales"</span>: 0.0 } },
+    <span class="s">"frustration"</span>: { <span class="s">"score"</span>: 0.67, <span class="s">"confidence"</span>: 0.5,
+                     <span class="s">"probabilities"</span>: { <span class="s">"0"</span>: 0.33, <span class="s">"1"</span>: 0.67, <span class="s">"2"</span>: 0.0 } },
+    <span class="s">"is_urgent"</span>:   { <span class="s">"noul"</span>: 0.99 } } }</code></pre>
       </figure>
-      <p>Look at the department answer for a moment. Jev put 84% on technical, yet the confidence is only 0.596. Confidence describes the whole spread of probabilities rather than just the winner, and billing still got 16%, so that leftover doubt pulls the confidence down. When you're deciding whether to act on a choice, confidence is usually the number to check.</p>
+      <p>The department answer is as clear as it gets: all the probability on technical, so confidence is 1.0. Frustration is more interesting. The score of 0.67 sits between "calm" and "frustrated but civil" because Jev split its belief two to one between them, and the confidence of 0.5 says it's torn.</p>
+      <p>Confidence isn't the same as the winning probability. For a choice, TypeSafe rescales the top probability so that an even split counts as 0 and certainty as 1. That makes it comparable across questions with different numbers of options: 0.5 is a weak answer when there are two options and a strong one when there are ten. Try it:</p>
       <div class="widget" id="w-conf">
         <div class="wtitle">Move the probabilities and watch confidence</div>
         <div class="wrow three"><span class="lab">billing</span><input type="range" min="0" max="100" value="16" aria-label="billing"><span data-opt></span></div>
         <div class="wrow three"><span class="lab">technical</span><input type="range" min="0" max="100" value="84" aria-label="technical"><span data-opt></span></div>
         <div class="wrow three"><span class="lab">sales</span><input type="range" min="0" max="100" value="0" aria-label="sales"><span data-opt></span></div>
-        <div class="readout"><span class="big" data-conf></span><span><span class="wsub">confidence</span><span class="dim" data-top></span></span><button class="wbtn" data-reset style="margin-left:auto">Reset to the quickstart</button></div>
-        <div class="wcap">The sliders are rescaled to add up to 1. Confidence here is one minus the normalised entropy, an approximation of TypeSafe's formula that behaves the same way: it only gets high when one option takes nearly everything.</div>
+        <div class="readout"><span class="big" data-conf></span><span><span class="wsub">confidence</span><span class="dim" data-top></span></span><button class="wbtn" data-reset style="margin-left:auto">Reset</button></div>
+        <div class="wcap">The sliders are rescaled to add up to 1. Confidence uses TypeSafe's <a href="https://docs.typesafe.ai/confidence#choice">published choice formula</a>, (top − 1/n) / (1 − 1/n).</div>
       </div>
+      <p>A score's confidence also looks at <em>where</em> the leftover probability sits. Being torn between two neighbouring steps costs less than being torn between opposite ends: with three steps, a 50/50 split between the top two gives 0.25, while a 50/50 split between the bottom and the top gives 0. The quickstart's frustration answer is the neighbouring kind.</p>
     </section>
 
     <section id="try">
@@ -145,7 +150,7 @@ curl -s https://openrouter.ai/api/v1/systemone \
           <div class="wsub" style="margin-top:.8rem">Jev, every question in one call</div>
           <div class="tlwrap"><div class="lane" data-jev></div><span class="t" data-jt></span></div>
         </div>
-        <div class="wcap">Illustrative timings: about 6.5 s per agent step, and about 180 ms for a Jev call, which was the median in the examples.</div>
+        <div class="wcap">Illustrative timings: about 6.5 s per agent step, and about 180 ms for a Jev call, the median across the <a href="cases.html">workflow-gate examples</a>.</div>
       </div>
       <h3>Give "I don't know" somewhere to go</h3>
       <p>A probability beats a plain yes or no because it can tell you when the model isn't sure. To use that, split the range into three bands: act on a confident yes, skip on a confident no, and send everything in between to a person. How wide to make the middle depends on what a mistake costs. A narrow band is fine for routing a ticket. For anything that merges code touching auth, you want a wide one. Drag the slider to get a feel for it:</p>

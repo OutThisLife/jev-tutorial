@@ -41,7 +41,7 @@ function seg(root, onPick) {
   render();
 })();
 
-// Confidence vs the winning probability
+// Confidence vs the winning probability, with TypeSafe's choice formula
 (() => {
   const w = $('#w-conf'); if (!w) return;
   const sliders = $$('input[type=range]', w), outs = $$('[data-opt]', w);
@@ -49,8 +49,7 @@ function seg(root, onPick) {
   const render = () => {
     const raw = sliders.map(s => Math.max(+s.value, 0.1));
     const sum = raw.reduce((a, b) => a + b, 0), p = raw.map(x => x / sum);
-    const H = -p.reduce((a, x) => a + x * Math.log(x), 0);
-    const conf = 1 - H / Math.log(p.length);
+    const n = p.length, conf = (Math.max(...p) - 1 / n) / (1 - 1 / n);
     const top = p.indexOf(Math.max(...p));
     outs.forEach((o, i) => { o.textContent = f2(p[i]); });
     $('[data-conf]', w).textContent = f2(conf);
