@@ -43,6 +43,20 @@
     <section id="what">
       <h2>What kind of model this is</h2>
       <p>Think about how you'd usually get a yes or no out of a language model. You write a prompt that ends with "answer PASS or FAIL", the model writes a sentence, and your code searches that sentence for the word PASS. It works most of the time. Then one day the model writes "this should NOT PASS", and your code ships it anyway.</p>
+      <div class="widget" id="w-parse">
+        <div class="wtitle">Try to fool the substring check</div>
+        <div class="seg">
+          <button>Done, all tests PASS.</button>
+          <button>This should NOT PASS review.</button>
+          <button>PASSED the type check; the runtime still crashes.</button>
+          <button>Yes, I looked at it. The approach is wrong.</button>
+          <button>Merged, CI green.</button>
+        </div>
+        <input type="text" value="This should NOT PASS review." aria-label="Step summary">
+        <div class="wrow"><span class="lab">"PASS" in text</span><span data-rule></span></div>
+        <div class="wrow"><span class="lab">A typed answer</span><span data-jev></span></div>
+        <div class="wcap">Pick one or type your own. The second row is a stand-in for a noul, scored on this page by a few keyword rules. It shows the shape of the answer, not Jev's real judgement.</div>
+      </div>
       <p>Jev, from TypeSafe, removes that whole step. You don't prompt it and it never writes anything. You send it the thing you want judged plus a list of typed questions about it, and it sends back an answer to each question with a probability attached. TypeSafe calls this a <a href="https://docs.typesafe.ai/concepts/system-one">System One</a> model, borrowing the psychology term for fast, automatic judgement, as opposed to the slow, step-by-step reasoning a chat model does.</p>
       <p>A request has three parts. The <strong>state</strong> is whatever you want judged. It can be a string or any JSON, and JSON with clear field names tends to get better answers than a wall of text. The <strong>questions</strong> are a map you write, from ids you pick to typed questions. The <strong>answers</strong> come back under those same ids. Jev evaluates every question separately and in parallel against the same state, so asking ten questions takes about as long as asking one.</p>
       <p>What you give up is flexibility. Jev only picks among options you provide. It can't explain an answer, call a tool, or work through a problem in steps. In exchange it's fast (tens to a few hundred milliseconds), cheap (the 926 calls behind the workflow-gate examples cost under five cents in total), and its probabilities mean something. TypeSafe trains it to be <em>calibrated</em>: across many calls, the answers it gives 0.9 should be right about nine times out of ten.</p>
@@ -86,6 +100,14 @@
     <span class="s">"is_urgent"</span>:   { <span class="s">"noul"</span>: 0.999 } } }</code></pre>
       </figure>
       <p>Look at the department answer for a moment. Jev put 84% on technical, yet the confidence is only 0.596. Confidence describes the whole spread of probabilities rather than just the winner, and billing still got 16%, so that leftover doubt pulls the confidence down. When you're deciding whether to act on a choice, confidence is usually the number to check.</p>
+      <div class="widget" id="w-conf">
+        <div class="wtitle">Move the probabilities and watch confidence</div>
+        <div class="wrow three"><span class="lab">billing</span><input type="range" min="0" max="100" value="16" aria-label="billing"><span data-opt></span></div>
+        <div class="wrow three"><span class="lab">technical</span><input type="range" min="0" max="100" value="84" aria-label="technical"><span data-opt></span></div>
+        <div class="wrow three"><span class="lab">sales</span><input type="range" min="0" max="100" value="0" aria-label="sales"><span data-opt></span></div>
+        <div class="readout"><span class="big" data-conf></span><span><span class="wsub">confidence</span><span class="dim" data-top></span></span><button class="wbtn" data-reset style="margin-left:auto">Reset to the quickstart</button></div>
+        <div class="wcap">The sliders are rescaled to add up to 1. Confidence here is one minus the normalised entropy, an approximation of TypeSafe's formula that behaves the same way: it only gets high when one option takes nearly everything.</div>
+      </div>
     </section>
 
     <section id="try">
@@ -112,13 +134,30 @@ curl -s https://openrouter.ai/api/v1/systemone \
       <p>The best questions are ones a knowledgeable person could answer in a few seconds without looking anything up. "Is this PR good?" isn't one of those. It's really three or four smaller questions bundled together: does it touch auth, does it have tests, is it only docs. Ask those separately and combine the answers in code. Later, when you decide tests matter more than they used to, you change a number in an <code>if</code> instead of rewording a prompt and hoping.</p>
       <h3>Ask the questions you might need</h3>
       <p>Each question is judged on its own, so an extra question doesn't muddy the others, and it barely adds time. That means it's fine to ask things you'll only need on some branches. If a later step cares about a ticket's language only when it's a billing ticket, ask about the language anyway and ignore the answer when it doesn't matter. TypeSafe calls this <a href="https://docs.typesafe.ai/patterns/fan-out">speculative fan-out</a>.</p>
+      <div class="widget" id="w-fan">
+        <div class="wtitle" data-n></div>
+        <input type="range" min="1" max="10" value="3" aria-label="number of questions">
+        <div style="margin-top:1rem">
+          <div class="wsub">An agent step per question, one after another</div>
+          <div class="tlwrap"><div class="lane" data-agent></div><span class="t" data-at></span></div>
+          <div class="wsub" style="margin-top:.8rem">Jev, every question in one call</div>
+          <div class="tlwrap"><div class="lane" data-jev></div><span class="t" data-jt></span></div>
+        </div>
+        <div class="wcap">Illustrative timings: about 6.5 s per agent step, and about 180 ms for a Jev call, which was the median in the examples.</div>
+      </div>
       <h3>Give "I don't know" somewhere to go</h3>
       <p>A probability beats a plain yes or no because it can tell you when the model isn't sure. To use that, split the range into three bands: act on a confident yes, skip on a confident no, and send everything in between to a person. How wide to make the middle depends on what a mistake costs. A narrow band is fine for routing a ticket. For anything that merges code touching auth, you want a wide one. Drag the slider to get a feel for it:</p>
       <div class="bands" style="--no: 35%; --yes: 80%">
+        <div class="seg">
+          <button data-no="0.45" data-yes="0.6" data-cost="Cheap to get wrong, so the unsure band is narrow.">Routing a ticket</button>
+          <button aria-pressed="true" data-no="0.35" data-yes="0.8" data-cost="The defaults the gate in this tutorial uses.">A typical gate</button>
+          <button data-no="0.1" data-yes="0.95" data-cost="Expensive to get wrong, so almost everything goes to a person.">Merging auth code</button>
+        </div>
         <div class="track" aria-hidden="true"><span></span><span></span><span></span></div>
         <input type="range" id="p" min="0" max="1" step="0.01" value="0.62" aria-label="noul probability">
-        <div class="legend"><span>0</span><span>no below 0.35</span><span>yes from 0.80</span><span>1</span></div>
+        <div class="legend"><span>0</span><span data-lno>no below 0.35</span><span data-lyes>yes from 0.80</span><span>1</span></div>
         <div class="readout"><span class="p" id="pv">0.62</span><span class="verdict" id="pverdict"></span><span class="why" id="pwhy"></span></div>
+        <div class="wcap" data-cost>The defaults the gate in this tutorial uses.</div>
       </div>
       <h3>Leave exact checks to code</h3>
       <p>Jev is for judgements that need reading comprehension. Anything you can check exactly, like comparing dates, doing arithmetic, or testing whether a field equals <code>PASS</code>, belongs in ordinary code. Code gets those right every time, and asking Jev would only add a chance of being wrong.</p>
@@ -144,12 +183,36 @@ text = str(result.get(<span class="s">"summary"</span>) <span class="k">or</span
         <li>It can't say "not sure". Every arm comes out yes or no, even when the agent was clearly torn.</li>
       </ul>
       <p>Jev helps with all three. One call answers every Judgement arm at once, the answer is a number rather than a sentence, and the number tells you how sure Jev is.</p>
+      <p>Here's what that looks like, using the gate built in the next section. Pick a PR and step through the arms in order:</p>
+      <div class="widget" id="w-gate">
+        <div class="seg" data-sc>
+          <button data-k="catalog" aria-pressed="true">Catalog entry</button>
+          <button data-k="token">Token refresh</button>
+          <button data-k="csrf">Removed CSRF check</button>
+          <button data-k="typo">Typo fix</button>
+        </div>
+        <div class="wstate" data-state></div>
+        <ol class="arms"></ol>
+        <p class="wlog" data-log></p>
+        <div class="wbar"><button class="wbtn" data-step>Step</button><button class="wbtn" data-run>Run to the end</button><button class="wbtn" data-reset>Reset</button><span class="dim" data-calls></span></div>
+        <div class="wcap">The PRs and Jev's numbers are made up for illustration. The walk itself follows <code>choose_arm</code> below.</div>
+      </div>
     </section>
 
     <section id="rewrite">
       <h2>Building a Jev gate</h2>
       <h3>One yes/no question per arm</h3>
       <p>The natural first idea is a single choice question: "which of these arms should the run take?" It's worth seeing why that doesn't fit. A choice assumes exactly one option is right, so its probabilities always add up to 1. Gate arms don't work like that. They're checked in order, and more than one can be true at once, since a change can touch auth and also have no tests. Asked as a choice, Jev has to split its belief between those two arms, and both come out looking uncertain even though both are clearly true.</p>
+      <div class="widget" id="w-split">
+        <div class="wtitle">Which arms are true for this PR?</div>
+        <div class="checks"><label><input type="checkbox" checked>touches auth</label><label><input type="checkbox" checked>has no tests</label></div>
+        <div class="wcols">
+          <div><div class="wsub">One choice across the arms</div><div data-choice></div></div>
+          <div><div class="wsub">One noul per arm</div><div data-noul></div></div>
+        </div>
+        <p class="wlog" data-note></p>
+        <div class="wcap">Mocked numbers that show the shape of each answer.</div>
+      </div>
       <p>Asking a separate noul for each arm avoids that. You still send all of them in one request, and the gate's existing order decides which of the true arms wins.</p>
       <p class="note">Choice is the right tool when the options really do exclude each other, like routing a ticket to frontend, backend or infra. There exactly one answer is correct, and order doesn't matter.</p>
       <figure>
@@ -278,21 +341,8 @@ text = str(result.get(<span class="s">"summary"</span>) <span class="k">or</span
   </main>
 </div>
 
+<script src="widgets.js"></script>
 <script>
-  const r = document.getElementById('p'), pv = document.getElementById('pv'),
-        pverdict = document.getElementById('pverdict'), pwhy = document.getElementById('pwhy');
-  const YES = 0.8, NO = 0.35;
-  function band() {
-    const p = +r.value;
-    pv.textContent = p.toFixed(2);
-    const [label, color, why] =
-      p >= YES ? ['take the arm', 'var(--accent)', 'A confident yes, so the gate takes this arm.']
-      : p >= NO ? ['not sure', 'var(--unsure-ink)', 'Jev isn\u2019t sure, so the gate stops and asks a person.']
-      : ['skip', 'var(--muted)', 'A confident no, so the gate moves on to the next arm.'];
-    pverdict.textContent = label; pverdict.style.color = color; pwhy.textContent = why;
-  }
-  r.addEventListener('input', band); band();
-
   const links = [...document.querySelectorAll('nav.toc .sections a')];
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.hash === '#' + e.target.id));
