@@ -44,6 +44,8 @@ nav.toc .pages > li > a:hover { background: var(--ice); color: var(--ink); }
 nav.toc .pages > li.here > a { background: none; color: var(--ink); font-weight: 600; }
 nav.toc .pages > li.here > a:hover { background: none; }
 nav.toc .sections { margin: .1rem .2rem .45rem; }
+nav.toc .sections li.group { padding: .75rem .7rem .2rem; font: 500 11.5px/1.3 var(--sans); color: var(--soft); letter-spacing: .02em; }
+nav.toc .sections li.group:first-child { padding-top: .35rem; }
 nav.toc .sections a {
   display: flex; align-items: baseline; gap: .55rem; padding: .3rem .7rem; border-radius: 8px;
   color: var(--soft); text-decoration: none; line-height: 1.38; font-size: 13.5px;

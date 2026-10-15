@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-<link rel="stylesheet" href="style.css?v=4825eddw">
+<link rel="stylesheet" href="style.css?v=56e2e89o">
 </head>
 <body>
 <div class="layout">
@@ -17,15 +17,18 @@
     <ul class="pages">
       <li class="here"><a href="index.html" aria-current="page">What is Jev?</a>
         <ol class="sections">
-          <li><a href="#what">What kind of model</a></li>
+          <li class="group">The model</li>
           <li><a href="#why">Why Jev</a></li>
+          <li><a href="#how">How it works</a></li>
           <li><a href="#primitives">The kinds of question</a></li>
           <li><a href="#try">Making a call</a></li>
           <li><a href="#think">Writing good questions</a></li>
+          <li class="group">Using it in a workflow</li>
           <li><a href="#gates">How a gate decides</a></li>
           <li><a href="#rewrite">Building a Jev gate</a></li>
           <li><a href="#wire">Plugging it in</a></li>
           <li><a href="#elsewhere">Other places</a></li>
+          <li class="group">Before you ship</li>
           <li><a href="#careful">Watch out for</a></li>
           <li><a href="#next">Next steps</a></li>
         </ol>
@@ -43,8 +46,8 @@
       <div class="meta">API examples are from <a href="https://docs.typesafe.ai/introduction">TypeSafe's docs</a>. The gate code is in the repo and runs.</div>
     </header>
 
-    <section id="what">
-      <h2>What kind of model this is</h2>
+    <section id="why">
+      <h2>Why Jev</h2>
       <p>The usual way to get a yes or no from a language model is to end the prompt with "answer PASS or FAIL" and search the reply for PASS. It works until the model writes "this should NOT PASS" and your code ships it.</p>
       <div class="widget" id="w-parse">
         <div class="wtitle">Try to fool the substring check</div>
@@ -54,13 +57,7 @@
         <div class="wrow"><span class="lab">Jev, one yes/no question</span><span data-jev></span></div>
         <div class="wcap">Real Jev answers to "The step achieved its goal and the work is ready to move on". The summaries are hand-written.</div>
       </div>
-      <p>Jev, from TypeSafe, skips the text. You send it the thing to judge and a few typed questions, and it returns an answer to each with a probability. TypeSafe calls it a <a href="https://docs.typesafe.ai/concepts/system-one">System One</a> model: fast, automatic judgement rather than step-by-step reasoning.</p>
-      <p>The trade is flexibility. Jev only picks from options you give it, and it can't explain itself, call tools or reason in steps. In return it's fast (tens to hundreds of milliseconds), cheap (the 1,326 calls behind the <a href="cases.html">examples</a> cost seven cents) and <em>calibrated</em>: answers it gives 0.9 are right about nine times in ten.</p>
-    </section>
-
-    <section id="why">
-      <h2>Why Jev</h2>
-      <p>Most "AI decisions" in a workflow are a model writing a sentence and code guessing what it meant. Jev hands you the decision itself. Measured on the <a href="cases.html">examples</a> behind this page:</p>
+      <p>Jev hands you the decision itself instead of a sentence about it. Measured on the <a href="cases.html">examples</a> behind this page:</p>
       <div class="scroll"><table>
         <thead><tr><th></th><th>The usual way</th><th>Jev</th></tr></thead>
         <tbody>
@@ -70,7 +67,12 @@
           <tr><td>Knowing when it's unsure</td><td>Always yes or no</td><td>A confidence: issue routing at 0.9+ was right 95% of the time</td></tr>
         </tbody>
       </table></div>
-      <p>Skip it for anything that needs reasoning, writing or tools, and for anything code can check exactly.</p>
+    </section>
+
+    <section id="how">
+      <h2>How it works</h2>
+      <p>Jev, from TypeSafe, skips the text. You send it the thing to judge and a few typed questions, and it returns an answer to each with a probability. TypeSafe calls it a <a href="https://docs.typesafe.ai/concepts/system-one">System One</a> model: fast, automatic judgement rather than step-by-step reasoning.</p>
+      <p>The trade is flexibility. Jev only picks from options you give it, and it can't explain itself, call tools or reason in steps. In return it's fast, cheap and <em>calibrated</em>: answers it gives 0.9 are right about nine times in ten. Skip it for anything that needs writing, and for anything code can check exactly.</p>
     </section>
 
     <section id="primitives">
@@ -331,8 +333,8 @@ curl -s https://openrouter.ai/api/v1/systemone \
   </main>
 </div>
 
-<script src="widget-data.js?v=4825eddw"></script>
-<script src="widgets.js?v=4825eddw"></script>
+<script src="widget-data.js?v=56e2e89o"></script>
+<script src="widgets.js?v=56e2e89o"></script>
 <script>
   const links = [...document.querySelectorAll('nav.toc .sections a')];
   const io = new IntersectionObserver(es => es.forEach(e => {
