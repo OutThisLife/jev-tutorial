@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-<link rel="stylesheet" href="style.css?v=4d30838x">
+<link rel="stylesheet" href="style.css?v=4825eddw">
 </head>
 <body>
 <div class="layout">
@@ -18,6 +18,7 @@
       <li class="here"><a href="index.html" aria-current="page">What is Jev?</a>
         <ol class="sections">
           <li><a href="#what">What kind of model</a></li>
+          <li><a href="#why">Why Jev</a></li>
           <li><a href="#primitives">The kinds of question</a></li>
           <li><a href="#try">Making a call</a></li>
           <li><a href="#think">Writing good questions</a></li>
@@ -55,6 +56,21 @@
       </div>
       <p>Jev, from TypeSafe, skips the text. You send it the thing to judge and a few typed questions, and it returns an answer to each with a probability. TypeSafe calls it a <a href="https://docs.typesafe.ai/concepts/system-one">System One</a> model: fast, automatic judgement rather than step-by-step reasoning.</p>
       <p>The trade is flexibility. Jev only picks from options you give it, and it can't explain itself, call tools or reason in steps. In return it's fast (tens to hundreds of milliseconds), cheap (the 1,326 calls behind the <a href="cases.html">examples</a> cost seven cents) and <em>calibrated</em>: answers it gives 0.9 are right about nine times in ten.</p>
+    </section>
+
+    <section id="why">
+      <h2>Why Jev</h2>
+      <p>Most "AI decisions" in a workflow are a model writing a sentence and code guessing what it meant. Jev hands you the decision itself. Measured on the <a href="cases.html">examples</a> behind this page:</p>
+      <div class="scroll"><table>
+        <thead><tr><th></th><th>The usual way</th><th>Jev</th></tr></thead>
+        <tbody>
+          <tr><td>Reading the answer</td><td>Search the reply for PASS: 6 of 10 wrong</td><td>A number: 0 of 10 wrong</td></tr>
+          <tr><td>Speed</td><td>2.1 s per question (a Sonnet classifier)</td><td>180 ms, or 283 ms for 39 questions at once</td></tr>
+          <tr><td>Cost</td><td>The same n8n routing task</td><td>106× cheaper, same 28 of 28 answers</td></tr>
+          <tr><td>Knowing when it's unsure</td><td>Always yes or no</td><td>A confidence: issue routing at 0.9+ was right 95% of the time</td></tr>
+        </tbody>
+      </table></div>
+      <p>Skip it for anything that needs reasoning, writing or tools, and for anything code can check exactly.</p>
     </section>
 
     <section id="primitives">
@@ -315,8 +331,8 @@ curl -s https://openrouter.ai/api/v1/systemone \
   </main>
 </div>
 
-<script src="widget-data.js?v=4d30838x"></script>
-<script src="widgets.js?v=4d30838x"></script>
+<script src="widget-data.js?v=4825eddw"></script>
+<script src="widgets.js?v=4825eddw"></script>
 <script>
   const links = [...document.querySelectorAll('nav.toc .sections a')];
   const io = new IntersectionObserver(es => es.forEach(e => {
